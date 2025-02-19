@@ -877,10 +877,10 @@ enums:
 
   AssociatedFileType:
     permissible_values:
-      "Sanger sequencing":
+      "Sequencing file":
         description: >-
-          Sanger sequencing trace file
-        meaning: NCIT:C172877
+          A file containing sequencing data
+        meaning: NCIT:C171177
 
   CollectionOptionType:
     permissible_values:

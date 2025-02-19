@@ -124,8 +124,8 @@ class AnnotationTool(str, Enum):
 
 
 class AssociatedFileType(str, Enum):
-    # Sanger sequencing trace file
-    Sanger_sequencing = "Sanger sequencing"
+    # A file containing sequencing data
+    Sequencing_file = "Sequencing file"
 
 
 class CollectionOptionType(str, Enum):

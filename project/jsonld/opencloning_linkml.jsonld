@@ -476,9 +476,9 @@
       "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
       "permissible_values": [
         {
-          "text": "Sanger sequencing",
-          "description": "Sanger sequencing trace file",
-          "meaning": "NCIT:C172877"
+          "text": "Sequencing file",
+          "description": "A file containing sequencing data",
+          "meaning": "NCIT:C171177"
         }
       ]
     },
@@ -3439,9 +3439,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "opencloning_linkml.yaml",
-  "source_file_date": "2025-02-14T10:44:58",
-  "source_file_size": 24927,
-  "generation_date": "2025-02-14T10:45:05",
+  "source_file_date": "2025-02-19T20:37:56",
+  "source_file_size": 24930,
+  "generation_date": "2025-02-19T20:38:22",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/opencloning_linkml.context.jsonld",

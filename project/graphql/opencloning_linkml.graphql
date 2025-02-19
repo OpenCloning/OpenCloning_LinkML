@@ -12,7 +12,7 @@ enum AnnotationTool
 
 enum AssociatedFileType
   {
-    Sanger_sequencing
+    Sequencing_file
   }
 
 enum Collection

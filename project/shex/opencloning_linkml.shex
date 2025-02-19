@@ -102,7 +102,7 @@ linkml:Sparqlpath xsd:string
        (  $<AssociatedFile_tes> (  <type> @linkml:String ? ;
              <sequence_id> @<Sequence> ;
              <file_name> @linkml:String ;
-             <file_type> [ <http://purl.obolibrary.org/obo/NCIT_C172877> ]
+             <file_type> [ <http://purl.obolibrary.org/obo/NCIT_C171177> ]
           ) ;
           rdf:type [ <AssociatedFile> ] ?
        )

@@ -323,7 +323,7 @@
         "AssociatedFileType": {
             "description": "",
             "enum": [
-                "Sanger sequencing"
+                "Sequencing file"
             ],
             "title": "AssociatedFileType",
             "type": "string"
