@@ -1,5 +1,5 @@
 # Auto generated from opencloning_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-02-14T10:45:07
+# Generation date: 2025-02-19T20:38:24
 # Schema: OpenCloning_LinkML
 #
 # id: https://w3id.org/genestorian/OpenCloning_LinkML
@@ -1903,9 +1903,9 @@ class AssociatedFileType(EnumDefinitionImpl):
     def _addvals(cls):
         setattr(
             cls,
-            "Sanger sequencing",
+            "Sequencing file",
             PermissibleValue(
-                text="Sanger sequencing", description="Sanger sequencing trace file", meaning=NCIT["C172877"]
+                text="Sequencing file", description="A file containing sequencing data", meaning=NCIT["C171177"]
             ),
         )
 

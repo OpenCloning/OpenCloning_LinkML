@@ -804,7 +804,7 @@ CREATE TABLE "AssociatedFile" (
 	type TEXT,
 	sequence_id INTEGER NOT NULL,
 	file_name TEXT NOT NULL,
-	file_type VARCHAR(17) NOT NULL,
+	file_type VARCHAR(15) NOT NULL,
 	"CloningStrategy_id" INTEGER,
 	PRIMARY KEY (id),
 	FOREIGN KEY(sequence_id) REFERENCES "Sequence" (id),
@@ -815,7 +815,7 @@ CREATE TABLE "SequencingFile" (
 	type TEXT,
 	sequence_id INTEGER NOT NULL,
 	file_name TEXT NOT NULL,
-	file_type VARCHAR(17) NOT NULL,
+	file_type VARCHAR(15) NOT NULL,
 	PRIMARY KEY (id),
 	FOREIGN KEY(sequence_id) REFERENCES "Sequence" (id)
 );
