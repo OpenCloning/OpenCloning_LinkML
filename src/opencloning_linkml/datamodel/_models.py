@@ -306,6 +306,13 @@ class Primer(Sequence):
             }
         },
     )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
+    )
     sequence: Optional[str] = Field(
         default=None,
         json_schema_extra={
@@ -435,6 +442,13 @@ class Source(NamedThing):
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
     )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -506,6 +520,13 @@ class CollectionSource(Source):
         default=None,
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
+    )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
     )
     id: int = Field(
         default=...,
@@ -712,6 +733,13 @@ class ManuallyTypedSource(Source):
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
     )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -795,6 +823,13 @@ class UploadedFileSource(Source):
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
     )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -845,6 +880,13 @@ class RepositoryIdSource(Source):
         default=None,
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
+    )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
     )
     id: int = Field(
         default=...,
@@ -910,6 +952,13 @@ class AddGeneIdSource(RepositoryIdSource):
         default=None,
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
+    )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
     )
     id: int = Field(
         default=...,
@@ -996,6 +1045,13 @@ class WekWikGeneIdSource(RepositoryIdSource):
         default=None,
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
+    )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
     )
     id: int = Field(
         default=...,
@@ -1104,6 +1160,13 @@ class SEVASource(RepositoryIdSource):
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
     )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -1192,6 +1255,13 @@ class BenchlingUrlSource(RepositoryIdSource):
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
     )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -1275,6 +1345,13 @@ class SnapGenePlasmidSource(RepositoryIdSource):
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
     )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -1348,6 +1425,13 @@ class EuroscarfSource(RepositoryIdSource):
         default=None,
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
+    )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
     )
     id: int = Field(
         default=...,
@@ -1439,6 +1523,13 @@ class IGEMSource(RepositoryIdSource):
         default=None,
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
+    )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
     )
     id: int = Field(
         default=...,
@@ -1540,6 +1631,13 @@ class GenomeCoordinatesSource(Source):
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
     )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -1600,6 +1698,13 @@ class SequenceCutSource(Source):
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
     )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -1659,6 +1764,13 @@ class RestrictionEnzymeDigestionSource(SequenceCutSource):
         default=None,
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
+    )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
     )
     id: int = Field(
         default=...,
@@ -1779,6 +1891,13 @@ class AssemblySource(Source):
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
     )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -1843,6 +1962,13 @@ class PCRSource(AssemblySource):
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
     )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -1899,6 +2025,13 @@ class LigationSource(AssemblySource):
         default=None,
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
+    )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
     )
     id: int = Field(
         default=...,
@@ -1957,6 +2090,13 @@ class HomologousRecombinationSource(AssemblySource):
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
     )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -2013,6 +2153,13 @@ class GibsonAssemblySource(AssemblySource):
         default=None,
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
+    )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
     )
     id: int = Field(
         default=...,
@@ -2071,6 +2218,13 @@ class InFusionSource(AssemblySource):
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
     )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -2127,6 +2281,13 @@ class OverlapExtensionPCRLigationSource(AssemblySource):
         default=None,
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
+    )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
     )
     id: int = Field(
         default=...,
@@ -2200,6 +2361,13 @@ class RestrictionAndLigationSource(AssemblySource):
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
     )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -2267,6 +2435,13 @@ class GatewaySource(AssemblySource):
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
     )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -2328,6 +2503,13 @@ class CRISPRSource(HomologousRecombinationSource):
         default=None,
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
+    )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
     )
     id: int = Field(
         default=...,
@@ -2391,6 +2573,13 @@ class OligoHybridizationSource(Source):
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
     )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -2432,6 +2621,13 @@ class PolymeraseExtensionSource(Source):
         default=None,
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
+    )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
     )
     id: int = Field(
         default=...,
@@ -2669,6 +2865,13 @@ class AnnotationSource(Source):
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
     )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -2710,6 +2913,13 @@ class ReverseComplementSource(Source):
         default=None,
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
+    )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "database_id", "domain_of": ["Primer", "Source"], "slot_uri": "schema:identifier"}
+        },
     )
     id: int = Field(
         default=...,

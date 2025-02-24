@@ -1,5 +1,5 @@
 # Auto generated from opencloning_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-02-19T20:38:24
+# Generation date: 2025-02-24T13:29:30
 # Schema: OpenCloning_LinkML
 #
 # id: https://w3id.org/genestorian/OpenCloning_LinkML
@@ -339,6 +339,7 @@ class Primer(Sequence):
 
     id: Union[int, PrimerId] = None
     name: Optional[str] = None
+    database_id: Optional[int] = None
     sequence: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -349,6 +350,9 @@ class Primer(Sequence):
 
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
+
+        if self.database_id is not None and not isinstance(self.database_id, int):
+            self.database_id = int(self.database_id)
 
         if self.sequence is not None and not isinstance(self.sequence, str):
             self.sequence = str(self.sequence)
@@ -431,6 +435,7 @@ class Source(NamedThing):
     output: Optional[Union[int, SequenceId]] = None
     type: Optional[str] = None
     output_name: Optional[str] = None
+    database_id: Optional[int] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if not isinstance(self.input, list):
@@ -444,6 +449,9 @@ class Source(NamedThing):
 
         if self.output_name is not None and not isinstance(self.output_name, str):
             self.output_name = str(self.output_name)
+
+        if self.database_id is not None and not isinstance(self.database_id, int):
+            self.database_id = int(self.database_id)
 
         super().__post_init__(**kwargs)
 
@@ -1932,6 +1940,15 @@ slots.id = Slot(
     model_uri=OPENCLONING_LINKML.id,
     domain=None,
     range=URIRef,
+)
+
+slots.database_id = Slot(
+    uri=SCHEMA.identifier,
+    name="database_id",
+    curie=SCHEMA.curie("identifier"),
+    model_uri=OPENCLONING_LINKML.database_id,
+    domain=None,
+    range=Optional[int],
 )
 
 slots.name = Slot(
