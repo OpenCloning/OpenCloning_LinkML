@@ -127,6 +127,17 @@ classes:
       - type
       - output_name
       - database_id
+
+  DatabaseSource:
+    is_a: Source
+    description: >-
+      Represents the source of a sequence that is identified by a database id
+    slots:
+      - database_id
+    slot_usage:
+      database_id:
+        required: true
+
   CollectionSource:
     is_a: Source
     description: >-
