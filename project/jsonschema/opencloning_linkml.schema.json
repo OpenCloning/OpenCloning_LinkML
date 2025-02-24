@@ -556,6 +556,9 @@
                     "items": {
                         "anyOf": [
                             {
+                                "$ref": "#/$defs/DatabaseSource"
+                            },
+                            {
                                 "$ref": "#/$defs/CollectionSource"
                             },
                             {
@@ -681,6 +684,9 @@
                 },
                 "source": {
                     "anyOf": [
+                        {
+                            "$ref": "#/$defs/DatabaseSource"
+                        },
                         {
                             "$ref": "#/$defs/CollectionSource"
                         },
@@ -918,6 +924,60 @@
                 "id"
             ],
             "title": "CollectionSource",
+            "type": "object"
+        },
+        "DatabaseSource": {
+            "additionalProperties": false,
+            "description": "Represents the source of a sequence that is identified by a database id",
+            "properties": {
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": "integer"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "integer"
+                },
+                "input": {
+                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "output": {
+                    "description": "Identifier of the sequence that is the output of this source.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "output_name": {
+                    "description": "Used to specify the name of the output sequence",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "description": "Designates the class",
+                    "enum": [
+                        "DatabaseSource"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "database_id",
+                "id"
+            ],
+            "title": "DatabaseSource",
             "type": "object"
         },
         "EuroscarfSource": {

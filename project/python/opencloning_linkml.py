@@ -1,5 +1,5 @@
 # Auto generated from opencloning_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-02-24T13:29:30
+# Generation date: 2025-02-24T14:09:40
 # Schema: OpenCloning_LinkML
 #
 # id: https://w3id.org/genestorian/OpenCloning_LinkML
@@ -69,6 +69,10 @@ class PrimerId(SequenceId):
 
 
 class SourceId(NamedThingId):
+    pass
+
+
+class DatabaseSourceId(SourceId):
     pass
 
 
@@ -470,6 +474,37 @@ class Source(NamedThing):
                     f"has no subclass with ['class_name']='{kwargs[type_designator]}'"
                 )
             return super().__new__(target_cls, *args, **kwargs)
+
+
+@dataclass(repr=False)
+class DatabaseSource(Source):
+    """
+    Represents the source of a sequence that is identified by a database id
+    """
+
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["DatabaseSource"]
+    class_class_curie: ClassVar[str] = "opencloning_linkml:DatabaseSource"
+    class_name: ClassVar[str] = "DatabaseSource"
+    class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.DatabaseSource
+
+    id: Union[int, DatabaseSourceId] = None
+    database_id: int = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, DatabaseSourceId):
+            self.id = DatabaseSourceId(self.id)
+
+        if self._is_empty(self.database_id):
+            self.MissingRequiredField("database_id")
+        if not isinstance(self.database_id, int):
+            self.database_id = int(self.database_id)
+
+        super().__post_init__(**kwargs)
+        self.type = str(self.class_name)
 
 
 @dataclass(repr=False)
@@ -2782,6 +2817,15 @@ slots.RestrictionSequenceCut_restriction_enzyme = Slot(
     model_uri=OPENCLONING_LINKML.RestrictionSequenceCut_restriction_enzyme,
     domain=RestrictionSequenceCut,
     range=str,
+)
+
+slots.DatabaseSource_database_id = Slot(
+    uri=SCHEMA.identifier,
+    name="DatabaseSource_database_id",
+    curie=SCHEMA.curie("identifier"),
+    model_uri=OPENCLONING_LINKML.DatabaseSource_database_id,
+    domain=DatabaseSource,
+    range=int,
 )
 
 slots.CollectionOption_name = Slot(

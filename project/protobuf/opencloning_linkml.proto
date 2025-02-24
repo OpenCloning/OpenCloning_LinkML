@@ -126,6 +126,16 @@ message CRISPRSource
  repeated  assemblyFragment assembly = 0
  repeated  primer guides = 0
  }
+// Represents the source of a sequence that is identified by a database id
+message DatabaseSource
+ {
+  integer id = 0
+ repeated  sequence input = 0
+  sequence output = 0
+  string type = 0
+  string outputName = 0
+  integer databaseId = 0
+ }
 // Represents the source of a sequence from the Euroscarf plasmid library
 message EuroscarfSource
  {

@@ -39,6 +39,12 @@
 --     * Slot: database_id Description: The id of an entity in a database
 --     * Slot: id Description: A unique identifier for a thing
 --     * Slot: CloningStrategy_id Description: Autocreated FK slot
+-- # Class: "DatabaseSource" Description: "Represents the source of a sequence that is identified by a database id"
+--     * Slot: database_id Description: The id of an entity in a database
+--     * Slot: output Description: Identifier of the sequence that is the output of this source.
+--     * Slot: type Description: Designates the class
+--     * Slot: output_name Description: Used to specify the name of the output sequence
+--     * Slot: id Description: A unique identifier for a thing
 -- # Class: "CollectionSource" Description: "Represents a collection of possible sources in a template"
 --     * Slot: category_id Description: The identifier of the category of the part in the template
 --     * Slot: title Description: The title of the category
@@ -342,6 +348,9 @@
 -- # Class: "Source_input" Description: ""
 --     * Slot: Source_id Description: Autocreated FK slot
 --     * Slot: input_id Description: The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.
+-- # Class: "DatabaseSource_input" Description: ""
+--     * Slot: DatabaseSource_id Description: Autocreated FK slot
+--     * Slot: input_id Description: The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.
 -- # Class: "CollectionSource_image" Description: ""
 --     * Slot: CollectionSource_id Description: Autocreated FK slot
 --     * Slot: image Description: URL and size of the image representing this category. For images with size specification, this is a list with two elements: [url, size].
@@ -539,6 +548,15 @@ CREATE TABLE "Source" (
 	PRIMARY KEY (id),
 	FOREIGN KEY(output) REFERENCES "Sequence" (id),
 	FOREIGN KEY("CloningStrategy_id") REFERENCES "CloningStrategy" (id)
+);
+CREATE TABLE "DatabaseSource" (
+	database_id INTEGER NOT NULL,
+	output INTEGER,
+	type TEXT,
+	output_name TEXT,
+	id INTEGER NOT NULL,
+	PRIMARY KEY (id),
+	FOREIGN KEY(output) REFERENCES "Sequence" (id)
 );
 CREATE TABLE "CollectionSource" (
 	category_id TEXT,
@@ -933,6 +951,13 @@ CREATE TABLE "Source_input" (
 	input_id INTEGER,
 	PRIMARY KEY ("Source_id", input_id),
 	FOREIGN KEY("Source_id") REFERENCES "Source" (id),
+	FOREIGN KEY(input_id) REFERENCES "Sequence" (id)
+);
+CREATE TABLE "DatabaseSource_input" (
+	"DatabaseSource_id" INTEGER,
+	input_id INTEGER,
+	PRIMARY KEY ("DatabaseSource_id", input_id),
+	FOREIGN KEY("DatabaseSource_id") REFERENCES "DatabaseSource" (id),
 	FOREIGN KEY(input_id) REFERENCES "Sequence" (id)
 );
 CREATE TABLE "CollectionSource_image" (
