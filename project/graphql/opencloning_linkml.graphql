@@ -178,6 +178,16 @@ type CRISPRSource
     guides: [Primer]!
   }
 
+type DatabaseSource
+  {
+    id: Integer!
+    input: [Sequence]
+    output: Sequence
+    type: String
+    outputName: String
+    databaseId: Integer!
+  }
+
 type EuroscarfSource
   {
     id: Integer!

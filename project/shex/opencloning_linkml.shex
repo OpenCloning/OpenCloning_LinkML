@@ -172,6 +172,15 @@ linkml:Sparqlpath xsd:string
     )
 }
 
+<DatabaseSource> CLOSED {
+    (  $<DatabaseSource_tes> (  &<Source_tes> ;
+          rdf:type [ <Source> ] ? ;
+          schema1:identifier @linkml:Integer
+       ) ;
+       rdf:type [ <DatabaseSource> ]
+    )
+}
+
 <EuroscarfSource> CLOSED {
     (  $<EuroscarfSource_tes> (  &<RepositoryIdSource_tes> ;
           rdf:type [ <RepositoryIdSource> ] ? ;
@@ -469,9 +478,9 @@ linkml:Sparqlpath xsd:string
 }
 
 <Source>  (
-    @<AnnotationSource> OR @<AssemblySource> OR @<CollectionSource> OR @<GenomeCoordinatesSource> OR @<ManuallyTypedSource> OR
-    @<OligoHybridizationSource> OR @<PolymeraseExtensionSource> OR @<RepositoryIdSource> OR @<ReverseComplementSource> OR
-    @<SequenceCutSource> OR @<UploadedFileSource>
+    @<AnnotationSource> OR @<AssemblySource> OR @<CollectionSource> OR @<DatabaseSource> OR @<GenomeCoordinatesSource> OR
+    @<ManuallyTypedSource> OR @<OligoHybridizationSource> OR @<PolymeraseExtensionSource> OR @<RepositoryIdSource> OR
+    @<ReverseComplementSource> OR @<SequenceCutSource> OR @<UploadedFileSource>
 )
 
 <Source_struct> {
