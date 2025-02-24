@@ -9,6 +9,7 @@ message AddGeneIdSource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   string repositoryId = 0
   repositoryName repositoryName = 0
   string sequenceFileUrl = 0
@@ -27,6 +28,7 @@ message AnnotationSource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   annotationTool annotationTool = 0
   string annotationToolVersion = 0
  repeated  annotationReport annotationReport = 0
@@ -47,6 +49,7 @@ message AssemblySource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   boolean circular = 0
  repeated  assemblyFragment assembly = 0
  }
@@ -66,6 +69,7 @@ message BenchlingUrlSource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   repositoryName repositoryName = 0
   string repositoryId = 0
  }
@@ -102,6 +106,7 @@ message CollectionSource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   string categoryId = 0
   string title = 0
   string description = 0
@@ -116,6 +121,7 @@ message CRISPRSource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   boolean circular = 0
  repeated  assemblyFragment assembly = 0
  repeated  primer guides = 0
@@ -128,6 +134,7 @@ message EuroscarfSource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   repositoryName repositoryName = 0
   string repositoryId = 0
  }
@@ -139,6 +146,7 @@ message GatewaySource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   boolean circular = 0
  repeated  assemblyFragment assembly = 0
   gatewayReactionType reactionType = 0
@@ -152,6 +160,7 @@ message GenomeCoordinatesSource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   string assemblyAccession = 0
   string sequenceAccession = 0
   string locusTag = 0
@@ -168,6 +177,7 @@ message GibsonAssemblySource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   boolean circular = 0
  repeated  assemblyFragment assembly = 0
  }
@@ -179,6 +189,7 @@ message HomologousRecombinationSource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   boolean circular = 0
  repeated  assemblyFragment assembly = 0
  }
@@ -190,6 +201,7 @@ message IGEMSource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   repositoryName repositoryName = 0
   string sequenceFileUrl = 0
   string repositoryId = 0
@@ -202,6 +214,7 @@ message InFusionSource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   boolean circular = 0
  repeated  assemblyFragment assembly = 0
  }
@@ -213,6 +226,7 @@ message LigationSource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   boolean circular = 0
  repeated  assemblyFragment assembly = 0
  }
@@ -224,6 +238,7 @@ message ManuallyTypedSource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   integer overhangCrick3prime = 0
   integer overhangWatson3prime = 0
   string userInput = 0
@@ -241,6 +256,7 @@ message OligoHybridizationSource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   integer overhangCrick3prime = 0
   primer forwardOligo = 0
   primer reverseOligo = 0
@@ -253,6 +269,7 @@ message OverlapExtensionPCRLigationSource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   boolean circular = 0
  repeated  assemblyFragment assembly = 0
  }
@@ -264,6 +281,7 @@ message PCRSource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   boolean circular = 0
  repeated  assemblyFragment assembly = 0
   boolean addPrimerFeatures = 0
@@ -295,6 +313,7 @@ message PolymeraseExtensionSource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
  }
 // An oligonucleotide or primer
 message Primer
@@ -302,6 +321,7 @@ message Primer
   integer id = 0
   string type = 0
   string name = 0
+  integer databaseId = 0
   string sequence = 0
  }
 // Represents the source of a sequence that is identified by a repository id
@@ -312,6 +332,7 @@ message RepositoryIdSource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   string repositoryId = 0
   repositoryName repositoryName = 0
  }
@@ -323,6 +344,7 @@ message RestrictionAndLigationSource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   boolean circular = 0
  repeated  assemblyFragment assembly = 0
  repeated  string restrictionEnzymes = 0
@@ -335,6 +357,7 @@ message RestrictionEnzymeDigestionSource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   restrictionSequenceCut leftEdge = 0
   restrictionSequenceCut rightEdge = 0
  }
@@ -353,6 +376,7 @@ message ReverseComplementSource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
  }
 // Represents a cut in a DNA sequence
 message SequenceCut
@@ -368,6 +392,7 @@ message SequenceCutSource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   sequenceCut leftEdge = 0
   sequenceCut rightEdge = 0
  }
@@ -388,6 +413,7 @@ message SEVASource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   repositoryName repositoryName = 0
   string sequenceFileUrl = 0
   string repositoryId = 0
@@ -407,6 +433,7 @@ message SnapGenePlasmidSource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   repositoryName repositoryName = 0
   string repositoryId = 0
  }
@@ -436,6 +463,7 @@ message UploadedFileSource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   sequenceFileFormat sequenceFileFormat = 0
   string fileName = 0
   integer indexInFile = 0
@@ -449,6 +477,7 @@ message WekWikGeneIdSource
   sequence output = 0
   string type = 0
   string outputName = 0
+  integer databaseId = 0
   repositoryName repositoryName = 0
   string sequenceFileUrl = 0
   string repositoryId = 0

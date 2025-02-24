@@ -60,6 +60,7 @@ type AddGeneIdSource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     repositoryId: String!
     repositoryName: RepositoryName!
     sequenceFileUrl: String
@@ -78,6 +79,7 @@ type AnnotationSource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     annotationTool: AnnotationTool!
     annotationToolVersion: String
     annotationReport: [AnnotationReport]
@@ -98,6 +100,7 @@ type AssemblySource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     circular: Boolean
     assembly: [AssemblyFragment]
   }
@@ -117,6 +120,7 @@ type BenchlingUrlSource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     repositoryName: RepositoryName!
     repositoryId: String!
   }
@@ -153,6 +157,7 @@ type CollectionSource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     categoryId: String
     title: String!
     description: String
@@ -167,6 +172,7 @@ type CRISPRSource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     circular: Boolean
     assembly: [AssemblyFragment]
     guides: [Primer]!
@@ -179,6 +185,7 @@ type EuroscarfSource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     repositoryName: RepositoryName!
     repositoryId: String!
   }
@@ -190,6 +197,7 @@ type GatewaySource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     circular: Boolean
     assembly: [AssemblyFragment]
     reactionType: GatewayReactionType!
@@ -203,6 +211,7 @@ type GenomeCoordinatesSource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     assemblyAccession: String
     sequenceAccession: String!
     locusTag: String
@@ -219,6 +228,7 @@ type GibsonAssemblySource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     circular: Boolean
     assembly: [AssemblyFragment]
   }
@@ -230,6 +240,7 @@ type HomologousRecombinationSource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     circular: Boolean
     assembly: [AssemblyFragment]
   }
@@ -241,6 +252,7 @@ type IGEMSource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     repositoryName: RepositoryName!
     sequenceFileUrl: String!
     repositoryId: String!
@@ -253,6 +265,7 @@ type InFusionSource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     circular: Boolean
     assembly: [AssemblyFragment]
   }
@@ -264,6 +277,7 @@ type LigationSource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     circular: Boolean
     assembly: [AssemblyFragment]
   }
@@ -275,6 +289,7 @@ type ManuallyTypedSource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     overhangCrick3prime: Integer
     overhangWatson3prime: Integer
     userInput: String!
@@ -293,6 +308,7 @@ type OligoHybridizationSource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     overhangCrick3prime: Integer
     forwardOligo: Primer!
     reverseOligo: Primer!
@@ -305,6 +321,7 @@ type OverlapExtensionPCRLigationSource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     circular: Boolean
     assembly: [AssemblyFragment]
   }
@@ -316,6 +333,7 @@ type PCRSource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     circular: Boolean
     assembly: [AssemblyFragment]
     addPrimerFeatures: Boolean
@@ -347,6 +365,7 @@ type PolymeraseExtensionSource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
   }
 
 type Primer
@@ -354,6 +373,7 @@ type Primer
     id: Integer!
     type: String
     name: String
+    databaseId: Integer
     sequence: String
   }
 
@@ -364,6 +384,7 @@ type RepositoryIdSource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     repositoryId: String!
     repositoryName: RepositoryName!
   }
@@ -375,6 +396,7 @@ type RestrictionAndLigationSource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     circular: Boolean
     assembly: [AssemblyFragment]
     restrictionEnzymes: [String]!
@@ -387,6 +409,7 @@ type RestrictionEnzymeDigestionSource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     leftEdge: RestrictionSequenceCut
     rightEdge: RestrictionSequenceCut
   }
@@ -405,6 +428,7 @@ type ReverseComplementSource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
   }
 
 interface Sequence
@@ -426,6 +450,7 @@ type SequenceCutSource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     leftEdge: SequenceCut
     rightEdge: SequenceCut
   }
@@ -446,6 +471,7 @@ type SEVASource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     repositoryName: RepositoryName!
     sequenceFileUrl: String!
     repositoryId: String!
@@ -465,6 +491,7 @@ type SnapGenePlasmidSource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     repositoryName: RepositoryName!
     repositoryId: String!
   }
@@ -476,6 +503,7 @@ interface Source
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
   }
 
 type TemplateSequence
@@ -503,6 +531,7 @@ type UploadedFileSource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     sequenceFileFormat: SequenceFileFormat!
     fileName: String
     indexInFile: Integer
@@ -516,6 +545,7 @@ type WekWikGeneIdSource
     output: Sequence
     type: String
     outputName: String
+    databaseId: Integer
     repositoryName: RepositoryName!
     sequenceFileUrl: String
     repositoryId: String!

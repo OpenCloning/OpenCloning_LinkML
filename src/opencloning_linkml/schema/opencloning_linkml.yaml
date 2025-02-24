@@ -81,6 +81,7 @@ classes:
       An oligonucleotide or primer
     slots:
       - name
+      - database_id
     attributes:
       - sequence:
           range: string
@@ -125,7 +126,7 @@ classes:
       - output
       - type
       - output_name
-
+      - database_id
   CollectionSource:
     is_a: Source
     description: >-
@@ -733,6 +734,14 @@ slots:
     slot_uri: schema:identifier
     range: integer
     description: A unique identifier for a thing
+
+  database_id:
+    slot_uri: schema:identifier
+    range: integer
+    description: >-
+      The id of an entity in a database
+    required: false
+
   name:
     slot_uri: schema:name
     description: A human-readable name for a thing

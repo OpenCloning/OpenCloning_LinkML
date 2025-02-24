@@ -7,6 +7,13 @@
                 "addgene_sequence_type": {
                     "$ref": "#/$defs/AddGeneSequenceType"
                 },
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "A unique identifier for a thing",
                     "type": "integer"
@@ -126,6 +133,13 @@
                         "null"
                     ]
                 },
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "A unique identifier for a thing",
                     "type": "integer"
@@ -240,6 +254,13 @@
                         "null"
                     ]
                 },
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "A unique identifier for a thing",
                     "type": "integer"
@@ -332,6 +353,13 @@
             "additionalProperties": false,
             "description": "Represents the source of a sequence that is identified by a Benchling URL",
             "properties": {
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "A unique identifier for a thing",
                     "type": "integer"
@@ -405,6 +433,13 @@
                     "description": "Whether the assembly is circular or not",
                     "type": [
                         "boolean",
+                        "null"
+                    ]
+                },
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
                         "null"
                     ]
                 },
@@ -801,6 +836,13 @@
                         "null"
                     ]
                 },
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "description": {
                     "description": "A description of the category",
                     "type": [
@@ -882,6 +924,13 @@
             "additionalProperties": false,
             "description": "Represents the source of a sequence from the Euroscarf plasmid library",
             "properties": {
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "A unique identifier for a thing",
                     "type": "integer"
@@ -967,6 +1016,13 @@
                         "null"
                     ]
                 },
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "greedy": {
                     "description": "Whether to use a greedy consensus sequence for att sites (see https://github.com/manulera/GateWayMine)",
                     "type": [
@@ -1031,6 +1087,13 @@
                     "description": "The accession of the assembly",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
                         "null"
                     ]
                 },
@@ -1134,6 +1197,13 @@
                         "null"
                     ]
                 },
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "A unique identifier for a thing",
                     "type": "integer"
@@ -1200,6 +1270,13 @@
                         "null"
                     ]
                 },
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "A unique identifier for a thing",
                     "type": "integer"
@@ -1249,6 +1326,13 @@
             "additionalProperties": false,
             "description": "Represents the source of a sequence from an iGEM collection",
             "properties": {
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "A unique identifier for a thing",
                     "type": "integer"
@@ -1330,6 +1414,13 @@
                         "null"
                     ]
                 },
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "A unique identifier for a thing",
                     "type": "integer"
@@ -1396,6 +1487,13 @@
                         "null"
                     ]
                 },
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "A unique identifier for a thing",
                     "type": "integer"
@@ -1449,6 +1547,13 @@
                     "description": "Whether the sequence is circular or not",
                     "type": [
                         "boolean",
+                        "null"
+                    ]
+                },
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
                         "null"
                     ]
                 },
@@ -1538,6 +1643,13 @@
             "additionalProperties": false,
             "description": "Represents the source of a sequence that is generated by oligo hybridization",
             "properties": {
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "forward_oligo": {
                     "description": "The forward oligo used in the hybridization",
                     "type": "integer"
@@ -1621,6 +1733,13 @@
                         "null"
                     ]
                 },
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "A unique identifier for a thing",
                     "type": "integer"
@@ -1691,6 +1810,13 @@
                     "description": "Whether the assembly is circular or not",
                     "type": [
                         "boolean",
+                        "null"
+                    ]
+                },
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
                         "null"
                     ]
                 },
@@ -1845,6 +1971,13 @@
             "additionalProperties": false,
             "description": "Represents the source of a sequence that is generated by polymerase extension",
             "properties": {
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "A unique identifier for a thing",
                     "type": "integer"
@@ -1894,6 +2027,13 @@
             "additionalProperties": false,
             "description": "An oligonucleotide or primer",
             "properties": {
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "A unique identifier for a thing",
                     "type": "integer"
@@ -1933,6 +2073,13 @@
             "additionalProperties": false,
             "description": "Represents the source of a sequence that is identified by a repository id",
             "properties": {
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "A unique identifier for a thing",
                     "type": "integer"
@@ -2023,6 +2170,13 @@
                         "null"
                     ]
                 },
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "A unique identifier for a thing",
                     "type": "integer"
@@ -2079,6 +2233,13 @@
             "additionalProperties": false,
             "description": "Represents the source of a sequence that is a subfragment of another sequence, generated by sequence cutting using restriction enzymes.",
             "properties": {
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "A unique identifier for a thing",
                     "type": "integer"
@@ -2172,6 +2333,13 @@
             "additionalProperties": false,
             "description": "Represents the in-silico transformation of a sequence into its reverse complement",
             "properties": {
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "A unique identifier for a thing",
                     "type": "integer"
@@ -2221,6 +2389,13 @@
             "additionalProperties": false,
             "description": "Represents the source of a sequence that is identified by a SEVA id",
             "properties": {
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "A unique identifier for a thing",
                     "type": "integer"
@@ -2306,6 +2481,13 @@
             "additionalProperties": false,
             "description": "Represents the source of a sequence that is a subfragment of another sequence, generated by sequence cutting.",
             "properties": {
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "A unique identifier for a thing",
                     "type": "integer"
@@ -2456,6 +2638,13 @@
             "additionalProperties": false,
             "description": "Represents the source of a sequence from the SnapGene plasmid library identified by a SnapGene subpath of https://www.snapgene.com/plasmids/",
             "properties": {
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "A unique identifier for a thing",
                     "type": "integer"
@@ -2611,6 +2800,13 @@
                         "null"
                     ]
                 },
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "file_name": {
                     "description": "The name of the file",
                     "type": [
@@ -2679,6 +2875,13 @@
             "additionalProperties": false,
             "description": "Represents the source of a sequence that is identified by a WekWikGene id",
             "properties": {
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "A unique identifier for a thing",
                     "type": "integer"

@@ -333,6 +333,7 @@ linkml:Sparqlpath xsd:string
     (  $<Primer_tes> (  &<Sequence_tes> ;
           rdf:type [ <Sequence> ] ? ;
           schema1:name @linkml:String ? ;
+          schema1:identifier @linkml:Integer ? ;
           <sequence> @linkml:String ?
        ) ;
        rdf:type [ <Primer> ]
@@ -479,7 +480,8 @@ linkml:Sparqlpath xsd:string
           <input> @<Sequence> * ;
           <output> @<Sequence> ? ;
           <type> @linkml:String ? ;
-          <output_name> @linkml:String ?
+          <output_name> @linkml:String ? ;
+          schema1:identifier @linkml:Integer ?
        ) ;
        rdf:type [ <Source> ]
     )

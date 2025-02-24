@@ -519,6 +519,23 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "database_id",
+      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/database_id",
+      "description": "The id of an entity in a database",
+      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "mappings": [
+        "http://schema.org/identifier"
+      ],
+      "slot_uri": "http://schema.org/identifier",
+      "owner": "Source",
+      "domain_of": [
+        "Primer",
+        "Source"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "name",
       "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/name",
       "description": "A human-readable name for a thing",
@@ -2174,6 +2191,7 @@
         "id",
         "type",
         "name",
+        "database_id",
         "primer__sequence"
       ],
       "slot_usage": {},
@@ -2244,7 +2262,8 @@
         "input",
         "output",
         "type",
-        "output_name"
+        "output_name",
+        "database_id"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/Source",
@@ -2262,6 +2281,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "collectionSource__category_id",
         "collectionSource__title",
         "collectionSource__description",
@@ -2393,6 +2413,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "ManuallyTypedSource_overhang_crick_3prime",
         "ManuallyTypedSource_overhang_watson_3prime",
         "manuallyTypedSource__user_input",
@@ -2429,6 +2450,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "UploadedFileSource_sequence_file_format",
         "uploadedFileSource__file_name",
         "uploadedFileSource__index_in_file",
@@ -2470,6 +2492,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "repository_id",
         "repositoryIdSource__repository_name"
       ],
@@ -2497,6 +2520,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "repository_id",
         "repositoryIdSource__repository_name",
         "sequence_file_url",
@@ -2525,6 +2549,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "repositoryIdSource__repository_name",
         "sequence_file_url",
         "WekWikGeneIdSource_repository_id"
@@ -2545,6 +2570,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "repositoryIdSource__repository_name",
         "SEVASource_sequence_file_url",
         "SEVASource_repository_id"
@@ -2565,6 +2591,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "repositoryIdSource__repository_name",
         "BenchlingUrlSource_repository_id"
       ],
@@ -2584,6 +2611,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "repositoryIdSource__repository_name",
         "SnapGenePlasmidSource_repository_id"
       ],
@@ -2603,6 +2631,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "repositoryIdSource__repository_name",
         "EuroscarfSource_repository_id"
       ],
@@ -2622,6 +2651,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "repositoryIdSource__repository_name",
         "IGEMSource_sequence_file_url",
         "IGEMSource_repository_id"
@@ -2642,6 +2672,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "genomeCoordinatesSource__assembly_accession",
         "genomeCoordinatesSource__sequence_accession",
         "genomeCoordinatesSource__locus_tag",
@@ -2714,6 +2745,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "sequenceCutSource__left_edge",
         "sequenceCutSource__right_edge"
       ],
@@ -2747,6 +2779,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "restrictionEnzymeDigestionSource__left_edge",
         "restrictionEnzymeDigestionSource__right_edge"
       ],
@@ -2858,6 +2891,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "assemblySource__circular",
         "assemblySource__assembly"
       ],
@@ -2893,6 +2927,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "assemblySource__circular",
         "assemblySource__assembly",
         "pCRSource__add_primer_features"
@@ -2922,6 +2957,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "assemblySource__circular",
         "assemblySource__assembly"
       ],
@@ -2941,6 +2977,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "assemblySource__circular",
         "assemblySource__assembly"
       ],
@@ -2960,6 +2997,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "assemblySource__circular",
         "assemblySource__assembly"
       ],
@@ -2979,6 +3017,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "assemblySource__circular",
         "assemblySource__assembly"
       ],
@@ -2998,6 +3037,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "assemblySource__circular",
         "assemblySource__assembly"
       ],
@@ -3017,6 +3057,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "assemblySource__circular",
         "assemblySource__assembly",
         "RestrictionAndLigationSource_restriction_enzymes"
@@ -3037,6 +3078,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "assemblySource__circular",
         "assemblySource__assembly",
         "gatewaySource__reaction_type",
@@ -3073,6 +3115,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "assemblySource__circular",
         "assemblySource__assembly",
         "cRISPRSource__guides"
@@ -3103,6 +3146,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "overhang_crick_3prime",
         "oligoHybridizationSource__forward_oligo",
         "oligoHybridizationSource__reverse_oligo"
@@ -3138,7 +3182,8 @@
         "input",
         "output",
         "type",
-        "output_name"
+        "output_name",
+        "database_id"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/PolymeraseExtensionSource",
@@ -3325,6 +3370,7 @@
         "output",
         "type",
         "output_name",
+        "database_id",
         "annotationSource__annotation_tool",
         "annotationSource__annotation_tool_version",
         "annotationSource__annotation_report"
@@ -3365,7 +3411,8 @@
         "input",
         "output",
         "type",
-        "output_name"
+        "output_name",
+        "database_id"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/ReverseComplementSource",
@@ -3439,9 +3486,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "opencloning_linkml.yaml",
-  "source_file_date": "2025-02-19T20:37:56",
-  "source_file_size": 24930,
-  "generation_date": "2025-02-19T20:38:22",
+  "source_file_date": "2025-02-24T13:29:24",
+  "source_file_size": 25117,
+  "generation_date": "2025-02-24T13:29:29",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/opencloning_linkml.context.jsonld",
