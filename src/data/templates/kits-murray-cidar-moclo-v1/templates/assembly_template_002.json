@@ -149,14 +149,14 @@
           "name": "UC16m - gQi Cas9 gRNA",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121038"
           },
           "info": {
             "name": "UC16m",
             "description": "gQi Cas9 gRNA",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 2 / A / 9"
           }
@@ -165,14 +165,14 @@
           "name": "UC17m - gV1 Cas9 gRNA",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121039"
           },
           "info": {
             "name": "UC17m",
             "description": "gV1 Cas9 gRNA",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 2 / A / 10"
           }
@@ -181,14 +181,14 @@
           "name": "UC20m - gN2 gRNA",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121040"
           },
           "info": {
             "name": "UC20m",
             "description": "gN2 gRNA",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 2 / A / 11"
           }
@@ -197,14 +197,14 @@
           "name": "UCT1m - gQi gRNA",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121041"
           },
           "info": {
             "name": "UCT1m",
             "description": "gQi gRNA",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 2 / A / 12"
           }
@@ -228,14 +228,14 @@
           "name": "T1m - T500_noGap, short attachment (T11)",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121028"
           },
           "info": {
             "name": "T1m",
             "description": "T500_noGap, short attachment (T11)",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / H / 11"
           }
@@ -244,14 +244,14 @@
           "name": "T2m - ECK120033736, modified",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121029"
           },
           "info": {
             "name": "T2m",
             "description": "ECK120033736, modified",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / H / 12"
           }
@@ -260,14 +260,14 @@
           "name": "T7m - S. pyogenes tracrRNA terminator",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121030"
           },
           "info": {
             "name": "T7m",
             "description": "S. pyogenes tracrRNA terminator",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 2 / A / 1"
           }
@@ -276,14 +276,14 @@
           "name": "T12m - ECK120029600",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121031"
           },
           "info": {
             "name": "T12m",
             "description": "ECK120029600",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 2 / A / 2"
           }
@@ -292,14 +292,14 @@
           "name": "T13m - ECK120033737",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121032"
           },
           "info": {
             "name": "T13m",
             "description": "ECK120033737",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 2 / A / 3"
           }
@@ -308,14 +308,14 @@
           "name": "T14m - L3S1P13",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121033"
           },
           "info": {
             "name": "T14m",
             "description": "L3S1P13",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 2 / A / 4"
           }
@@ -324,14 +324,14 @@
           "name": "T15m - modified L3S3P11",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121034"
           },
           "info": {
             "name": "T15m",
             "description": "modified L3S3P11",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 2 / A / 5"
           }
@@ -340,14 +340,14 @@
           "name": "T16m - L3S2P55",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121035"
           },
           "info": {
             "name": "T16m",
             "description": "L3S2P55",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 2 / A / 6"
           }
@@ -356,14 +356,14 @@
           "name": "T17m - L3S2P11",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121036"
           },
           "info": {
             "name": "T17m",
             "description": "L3S2P11",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 2 / A / 7"
           }
@@ -372,14 +372,14 @@
           "name": "T18m - modified L3S2P21",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121037"
           },
           "info": {
             "name": "T18m",
             "description": "modified L3S2P21",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 2 / A / 8"
           }

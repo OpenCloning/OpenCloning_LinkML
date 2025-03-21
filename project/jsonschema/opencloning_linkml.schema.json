@@ -1,11 +1,11 @@
 {
     "$defs": {
-        "AddGeneIdSource": {
+        "AddgeneIdSource": {
             "additionalProperties": false,
-            "description": "Represents the source of a sequence that is identified by an AddGene id",
+            "description": "Represents the source of a sequence that is identified by an Addgene id",
             "properties": {
                 "addgene_sequence_type": {
-                    "$ref": "#/$defs/AddGeneSequenceType"
+                    "$ref": "#/$defs/AddgeneSequenceType"
                 },
                 "database_id": {
                     "description": "The id of an entity in a database",
@@ -60,7 +60,7 @@
                 "type": {
                     "description": "Designates the class",
                     "enum": [
-                        "AddGeneIdSource"
+                        "AddgeneIdSource"
                     ],
                     "type": [
                         "string",
@@ -73,16 +73,16 @@
                 "repository_name",
                 "id"
             ],
-            "title": "AddGeneIdSource",
+            "title": "AddgeneIdSource",
             "type": "object"
         },
-        "AddGeneSequenceType": {
+        "AddgeneSequenceType": {
             "description": "",
             "enum": [
                 "depositor-full",
                 "addgene-full"
             ],
-            "title": "AddGeneSequenceType",
+            "title": "AddgeneSequenceType",
             "type": "string"
         },
         "AnnotationReport": {
@@ -622,7 +622,7 @@
                                 "$ref": "#/$defs/RestrictionEnzymeDigestionSource"
                             },
                             {
-                                "$ref": "#/$defs/AddGeneIdSource"
+                                "$ref": "#/$defs/AddgeneIdSource"
                             },
                             {
                                 "$ref": "#/$defs/WekWikGeneIdSource"
@@ -657,7 +657,7 @@
         "Collection": {
             "description": "",
             "enum": [
-                "AddGenePlasmid",
+                "AddgenePlasmid",
                 "OligoPair"
             ],
             "title": "Collection",
@@ -751,7 +751,7 @@
                             "$ref": "#/$defs/RestrictionEnzymeDigestionSource"
                         },
                         {
-                            "$ref": "#/$defs/AddGeneIdSource"
+                            "$ref": "#/$defs/AddgeneIdSource"
                         },
                         {
                             "$ref": "#/$defs/WekWikGeneIdSource"
@@ -826,7 +826,7 @@
             "description": "",
             "enum": [
                 "OligoPair",
-                "AddGenePlasmid"
+                "AddgenePlasmid"
             ],
             "title": "CollectionOptionType",
             "type": "string"

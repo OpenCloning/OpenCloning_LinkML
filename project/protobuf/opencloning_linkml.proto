@@ -1,8 +1,8 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// Represents the source of a sequence that is identified by an AddGene id
-message AddGeneIdSource
+// Represents the source of a sequence that is identified by an Addgene id
+message AddgeneIdSource
  {
   integer id = 0
  repeated  sequence input = 0
@@ -13,7 +13,7 @@ message AddGeneIdSource
   string repositoryId = 0
   repositoryName repositoryName = 0
   string sequenceFileUrl = 0
-  addGeneSequenceType addgeneSequenceType = 0
+  addgeneSequenceType addgeneSequenceType = 0
  }
 // Represents a report of an annotation step
 message AnnotationReport

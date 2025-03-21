@@ -402,8 +402,8 @@
       "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
       "permissible_values": [
         {
-          "text": "AddGenePlasmid",
-          "description": "A plasmid from AddGene"
+          "text": "AddgenePlasmid",
+          "description": "A plasmid from Addgene"
         },
         {
           "text": "OligoPair",
@@ -431,8 +431,8 @@
       ]
     },
     {
-      "name": "AddGeneSequenceType",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/AddGeneSequenceType",
+      "name": "AddgeneSequenceType",
+      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/AddgeneSequenceType",
       "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
       "permissible_values": [
         {
@@ -492,8 +492,8 @@
           "description": "A pair of oligonucleotides for hybridization"
         },
         {
-          "text": "AddGenePlasmid",
-          "description": "A plasmid from AddGene"
+          "text": "AddgenePlasmid",
+          "description": "A plasmid from Addgene"
         }
       ]
     }
@@ -694,7 +694,7 @@
       "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/sequence_file_url",
       "owner": "IGEMSource",
       "domain_of": [
-        "AddGeneIdSource",
+        "AddgeneIdSource",
         "WekWikGeneIdSource",
         "SEVASource",
         "IGEMSource"
@@ -1027,15 +1027,15 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "addGeneIdSource__addgene_sequence_type",
+      "name": "addgeneIdSource__addgene_sequence_type",
       "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
       "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/addgene_sequence_type",
       "alias": "addgene_sequence_type",
-      "owner": "AddGeneIdSource",
+      "owner": "AddgeneIdSource",
       "domain_of": [
-        "AddGeneIdSource"
+        "AddgeneIdSource"
       ],
-      "range": "AddGeneSequenceType",
+      "range": "AddgeneSequenceType",
       "@type": "SlotDefinition"
     },
     {
@@ -2550,9 +2550,9 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "AddGeneIdSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/AddGeneIdSource",
-      "description": "Represents the source of a sequence that is identified by an AddGene id",
+      "name": "AddgeneIdSource",
+      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/AddgeneIdSource",
+      "description": "Represents the source of a sequence that is identified by an Addgene id",
       "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
       "is_a": "RepositoryIdSource",
       "slots": [
@@ -2565,17 +2565,17 @@
         "repository_id",
         "repositoryIdSource__repository_name",
         "sequence_file_url",
-        "addGeneIdSource__addgene_sequence_type"
+        "addgeneIdSource__addgene_sequence_type"
       ],
       "slot_usage": {},
       "attributes": [
         {
           "name": "addgene_sequence_type",
-          "range": "AddGeneSequenceType",
+          "range": "AddgeneSequenceType",
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/AddGeneIdSource",
+      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/AddgeneIdSource",
       "@type": "ClassDefinition"
     },
     {
@@ -3527,9 +3527,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "opencloning_linkml.yaml",
-  "source_file_date": "2025-02-24T14:08:15",
+  "source_file_date": "2025-03-21T11:12:36",
   "source_file_size": 25341,
-  "generation_date": "2025-02-24T14:09:40",
+  "generation_date": "2025-03-21T11:13:18",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/opencloning_linkml.context.jsonld",

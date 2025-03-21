@@ -284,14 +284,14 @@ classes:
     slots:
       - repository_id
 
-  AddGeneIdSource:
+  AddgeneIdSource:
     is_a: RepositoryIdSource
     description: >-
-      Represents the source of a sequence that is identified by an AddGene id
+      Represents the source of a sequence that is identified by an Addgene id
     attributes:
       # TODO: repository_name constrain to addgene
       - addgene_sequence_type:
-          range: AddGeneSequenceType
+          range: AddgeneSequenceType
     slots:
       - sequence_file_url
 
@@ -856,9 +856,9 @@ enums:
 
   Collection:
     permissible_values:
-      AddGenePlasmid:
+      AddgenePlasmid:
         description: >-
-          A plasmid from AddGene
+          A plasmid from Addgene
       OligoPair:
         description: >-
           A pair of oligonucleotides for hybridization
@@ -873,7 +873,7 @@ enums:
   # TODO:
   # Full list is 'depositor-full', 'depositor-partial', 'addgene-full', 'addgene-partial'
   # Only the first two should be accepted in the id, but it would be good to list them all
-  AddGeneSequenceType:
+  AddgeneSequenceType:
     permissible_values:
       depositor-full:
         description: >-
@@ -907,6 +907,6 @@ enums:
       OligoPair:
         description: >-
           A pair of oligonucleotides for hybridization
-      AddGenePlasmid:
+      AddgenePlasmid:
         description: >-
-          A plasmid from AddGene
+          A plasmid from Addgene

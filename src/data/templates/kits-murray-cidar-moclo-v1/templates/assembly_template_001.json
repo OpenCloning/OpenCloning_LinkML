@@ -152,14 +152,14 @@
           "name": "P1m - J23101 strong constitutive promoter (1,791x J23112, 0.7x J23119)",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120934"
           },
           "info": {
             "name": "P1m",
             "description": "J23101 strong constitutive promoter (1,791x J23112, 0.7x J23119)",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / A / 1"
           }
@@ -168,14 +168,14 @@
           "name": "p3m - J23150 medium-strong constitutive promoter (620x J23112, 0.25x J23119)",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120935"
           },
           "info": {
             "name": "p3m",
             "description": "J23150 medium-strong constitutive promoter (620x J23112, 0.25x J23119)",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / A / 2"
           }
@@ -184,14 +184,14 @@
           "name": "p4m - J23151 strong constitutive promoter (1,245x J23112, 0.49x J23119)",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120936"
           },
           "info": {
             "name": "p4m",
             "description": "J23151 strong constitutive promoter (1,245x J23112, 0.49x J23119)",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / A / 3"
           }
@@ -200,14 +200,14 @@
           "name": "P9m - Pr-OR1-OR2",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120937"
           },
           "info": {
             "name": "P9m",
             "description": "Pr-OR1-OR2",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / A / 4"
           }
@@ -216,14 +216,14 @@
           "name": "P12m - PLasTetO",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120938"
           },
           "info": {
             "name": "P12m",
             "description": "PLasTetO",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / A / 5"
           }
@@ -232,14 +232,14 @@
           "name": "P15m - PCinTetO",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120939"
           },
           "info": {
             "name": "P15m",
             "description": "PCinTetO",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / A / 6"
           }
@@ -248,14 +248,14 @@
           "name": "P16m - PCinLacO-m",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120940"
           },
           "info": {
             "name": "P16m",
             "description": "PCinLacO-m",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / A / 7"
           }
@@ -264,14 +264,14 @@
           "name": "P18m - Weak T7",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120941"
           },
           "info": {
             "name": "P18m",
             "description": "Weak T7",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / A / 8"
           }
@@ -280,14 +280,14 @@
           "name": "P30m - PL-lacO1",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120942"
           },
           "info": {
             "name": "P30m",
             "description": "PL-lacO1",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / A / 9"
           }
@@ -296,14 +296,14 @@
           "name": "P32m - PlacO",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120943"
           },
           "info": {
             "name": "P32m",
             "description": "PlacO",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / A / 10"
           }
@@ -312,14 +312,14 @@
           "name": "P33m - P11",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120944"
           },
           "info": {
             "name": "P33m",
             "description": "P11",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / A / 11"
           }
@@ -328,14 +328,14 @@
           "name": "P34m - P13",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120945"
           },
           "info": {
             "name": "P34m",
             "description": "P13",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / A / 12"
           }
@@ -344,14 +344,14 @@
           "name": "P35m - PLbda-CasRQi",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120946"
           },
           "info": {
             "name": "P35m",
             "description": "PLbda-CasRQi",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / B / 1"
           }
@@ -360,14 +360,14 @@
           "name": "P37m - PRpa",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120947"
           },
           "info": {
             "name": "P37m",
             "description": "PRpa",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / B / 2"
           }
@@ -376,14 +376,14 @@
           "name": "P38m - PTra*",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120948"
           },
           "info": {
             "name": "P38m",
             "description": "PTra*",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / B / 3"
           }
@@ -392,14 +392,14 @@
           "name": "P57m - PCin",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120949"
           },
           "info": {
             "name": "P57m",
             "description": "PCin",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / B / 4"
           }
@@ -408,14 +408,14 @@
           "name": "P58m - PLas-M",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120950"
           },
           "info": {
             "name": "P58m",
             "description": "PLas-M",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / B / 5"
           }
@@ -424,14 +424,14 @@
           "name": "P59m - PLux76B",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120951"
           },
           "info": {
             "name": "P59m",
             "description": "PLux76B",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / B / 6"
           }
@@ -440,14 +440,14 @@
           "name": "P60m - PSal-M",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120952"
           },
           "info": {
             "name": "P60m",
             "description": "PSal-M",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / B / 7"
           }
@@ -456,14 +456,14 @@
           "name": "P61m - PTac",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120953"
           },
           "info": {
             "name": "P61m",
             "description": "PTac",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / B / 8"
           }
@@ -472,14 +472,14 @@
           "name": "P66m - PRpa-M",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120954"
           },
           "info": {
             "name": "P66m",
             "description": "PRpa-M",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / B / 9"
           }
@@ -488,14 +488,14 @@
           "name": "J23100_AB - Strong constitutive promoter (2,547x J23112 strength)",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65980"
           },
           "info": {
             "name": "J23100_AB",
             "description": "Strong constitutive promoter (2,547x J23112 strength)",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit A / 1"
           }
@@ -504,14 +504,14 @@
           "name": "J23102_AB - Strong constitutive promoter (2,179x J23112 strength)",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65984"
           },
           "info": {
             "name": "J23102_AB",
             "description": "Strong constitutive promoter (2,179x J23112 strength)",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit A / 5"
           }
@@ -520,14 +520,14 @@
           "name": "J23103_AB - Weak constitutive promoter (17x J23112 strength)",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65988"
           },
           "info": {
             "name": "J23103_AB",
             "description": "Weak constitutive promoter (17x J23112 strength)",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit A / 9"
           }
@@ -536,14 +536,14 @@
           "name": "J23106_AB - Medium-strength constitutive promoter (1,185x J23112 strength)",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65992"
           },
           "info": {
             "name": "J23106_AB",
             "description": "Medium-strength constitutive promoter (1,185x J23112 strength)",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit B / 1"
           }
@@ -552,14 +552,14 @@
           "name": "J23107_AB - Medium-strength constitutive promoter (908x J23112 strength)",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65996"
           },
           "info": {
             "name": "J23107_AB",
             "description": "Medium-strength constitutive promoter (908x J23112 strength)",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit B / 5"
           }
@@ -568,14 +568,14 @@
           "name": "J23116_AB - Weak-medium constitutive promoter (396x J23112 strength)",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "66000"
           },
           "info": {
             "name": "J23116_AB",
             "description": "Weak-medium constitutive promoter (396x J23112 strength)",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit B / 9"
           }
@@ -584,14 +584,14 @@
           "name": "R0010 (pLacI)_AB - pLacI",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "66004"
           },
           "info": {
             "name": "R0010 (pLacI)_AB",
             "description": "pLacI",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit C / 1"
           }
@@ -600,14 +600,14 @@
           "name": "R0040 (pTet)_AB - pTet",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "66008"
           },
           "info": {
             "name": "R0040 (pTet)_AB",
             "description": "pTet",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit C / 5"
           }
@@ -616,14 +616,14 @@
           "name": "R0063 (pLuxR-pR)_AB - PLuxR-pL",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "66012"
           },
           "info": {
             "name": "R0063 (pLuxR-pR)_AB",
             "description": "PLuxR-pL",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit C / 9"
           }
@@ -632,14 +632,14 @@
           "name": "I13453 (pBAD)_AB - pBad",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "66016"
           },
           "info": {
             "name": "I13453 (pBAD)_AB",
             "description": "pBad",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit D / 1"
           }
@@ -663,14 +663,14 @@
           "name": "U2m - BCD11",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121015"
           },
           "info": {
             "name": "U2m",
             "description": "BCD11",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / G / 10"
           }
@@ -679,14 +679,14 @@
           "name": "U3m - BCD13",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121016"
           },
           "info": {
             "name": "U3m",
             "description": "BCD13",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / G / 11"
           }
@@ -695,14 +695,14 @@
           "name": "U4m - UTR1",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121017"
           },
           "info": {
             "name": "U4m",
             "description": "UTR1",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / G / 12"
           }
@@ -711,14 +711,14 @@
           "name": "U5m - BCD14",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121018"
           },
           "info": {
             "name": "U5m",
             "description": "BCD14",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / H / 1"
           }
@@ -727,14 +727,14 @@
           "name": "U6m - BCD20",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121019"
           },
           "info": {
             "name": "U6m",
             "description": "BCD20",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / H / 2"
           }
@@ -743,14 +743,14 @@
           "name": "U7m - BCD16",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121020"
           },
           "info": {
             "name": "U7m",
             "description": "BCD16",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / H / 3"
           }
@@ -759,14 +759,14 @@
           "name": "U8m - BCD24",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121021"
           },
           "info": {
             "name": "U8m",
             "description": "BCD24",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / H / 4"
           }
@@ -775,14 +775,14 @@
           "name": "U9m - BCD22",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121022"
           },
           "info": {
             "name": "U9m",
             "description": "BCD22",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / H / 5"
           }
@@ -791,14 +791,14 @@
           "name": "U17m - Bujard RBS",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121023"
           },
           "info": {
             "name": "U17m",
             "description": "Bujard RBS",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / H / 6"
           }
@@ -807,14 +807,14 @@
           "name": "U19m - MG-apt",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121024"
           },
           "info": {
             "name": "U19m",
             "description": "MG-apt",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / H / 7"
           }
@@ -823,14 +823,14 @@
           "name": "U22m - BCD6",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121025"
           },
           "info": {
             "name": "U22m",
             "description": "BCD6",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / H / 8"
           }
@@ -839,14 +839,14 @@
           "name": "U24m - RiboJ + BCD2",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121026"
           },
           "info": {
             "name": "U24m",
             "description": "RiboJ + BCD2",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / H / 9"
           }
@@ -855,14 +855,14 @@
           "name": "U25m - RiboJ + UTR1",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121027"
           },
           "info": {
             "name": "U25m",
             "description": "RiboJ + UTR1",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / H / 10"
           }
@@ -871,14 +871,14 @@
           "name": "B0032m_BC - Medium Weiss RBS",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "66020"
           },
           "info": {
             "name": "B0032m_BC",
             "description": "Medium Weiss RBS",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit D / 5"
           }
@@ -887,14 +887,14 @@
           "name": "B0033m_BC - Weak Weiss RBS",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "66021"
           },
           "info": {
             "name": "B0033m_BC",
             "description": "Weak Weiss RBS",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit D / 6"
           }
@@ -903,14 +903,14 @@
           "name": "B0034m_BC - Strong Weiss RBS",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "66022"
           },
           "info": {
             "name": "B0034m_BC",
             "description": "Strong Weiss RBS",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit D / 7"
           }
@@ -919,14 +919,14 @@
           "name": "BCD12_BC - Strongest BCD RBS",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "66023"
           },
           "info": {
             "name": "BCD12_BC",
             "description": "Strongest BCD RBS",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit D / 8"
           }
@@ -935,14 +935,14 @@
           "name": "BCD2_BC - Extremely weak BCD RBS",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "66024"
           },
           "info": {
             "name": "BCD2_BC",
             "description": "Extremely weak BCD RBS",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit D / 9"
           }
@@ -951,14 +951,14 @@
           "name": "BCD8_BC - Medium-strength BCD RBS",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "66025"
           },
           "info": {
             "name": "BCD8_BC",
             "description": "Medium-strength BCD RBS",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit D / 10"
           }
@@ -982,14 +982,14 @@
           "name": "C1m - deGFP",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120955"
           },
           "info": {
             "name": "C1m",
             "description": "deGFP",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / B / 10"
           }
@@ -998,14 +998,14 @@
           "name": "C3m - sfGFP",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120956"
           },
           "info": {
             "name": "C3m",
             "description": "sfGFP",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / B / 11"
           }
@@ -1014,14 +1014,14 @@
           "name": "C5m - mRFP",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120957"
           },
           "info": {
             "name": "C5m",
             "description": "mRFP",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / B / 12"
           }
@@ -1030,14 +1030,14 @@
           "name": "C9m - deCFP",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120958"
           },
           "info": {
             "name": "C9m",
             "description": "deCFP",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / C / 1"
           }
@@ -1046,14 +1046,14 @@
           "name": "C11m - Citrine",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120959"
           },
           "info": {
             "name": "C11m",
             "description": "Citrine",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / C / 2"
           }
@@ -1062,14 +1062,14 @@
           "name": "C13m - Cerulean",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120960"
           },
           "info": {
             "name": "C13m",
             "description": "Cerulean",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / C / 3"
           }
@@ -1078,14 +1078,14 @@
           "name": "C20m - sfYFP-ssrA",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120961"
           },
           "info": {
             "name": "C20m",
             "description": "sfYFP-ssrA",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / C / 4"
           }
@@ -1094,14 +1094,14 @@
           "name": "C21m - MG-apt",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120962"
           },
           "info": {
             "name": "C21m",
             "description": "MG-apt",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / C / 5"
           }
@@ -1110,14 +1110,14 @@
           "name": "C22m - mSpinach",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120963"
           },
           "info": {
             "name": "C22m",
             "description": "mSpinach",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / C / 6"
           }
@@ -1126,14 +1126,14 @@
           "name": "C24m - lambda-cI",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120964"
           },
           "info": {
             "name": "C24m",
             "description": "lambda-cI",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / C / 7"
           }
@@ -1142,14 +1142,14 @@
           "name": "C27m - TetR",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120965"
           },
           "info": {
             "name": "C27m",
             "description": "TetR",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / C / 8"
           }
@@ -1158,14 +1158,14 @@
           "name": "C31m - bxb1 integrase",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120966"
           },
           "info": {
             "name": "C31m",
             "description": "bxb1 integrase",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / C / 9"
           }
@@ -1174,14 +1174,14 @@
           "name": "C32m - CinR",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120967"
           },
           "info": {
             "name": "C32m",
             "description": "CinR",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / C / 10"
           }
@@ -1190,14 +1190,14 @@
           "name": "C33m - AiiA degradase",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120968"
           },
           "info": {
             "name": "C33m",
             "description": "AiiA degradase",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / C / 11"
           }
@@ -1206,14 +1206,14 @@
           "name": "C35m - RhlR",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120969"
           },
           "info": {
             "name": "C35m",
             "description": "RhlR",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / C / 12"
           }
@@ -1222,14 +1222,14 @@
           "name": "C36m - RhlI",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120970"
           },
           "info": {
             "name": "C36m",
             "description": "RhlI",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / D / 1"
           }
@@ -1238,14 +1238,14 @@
           "name": "C38m - Sigma38 (RpoS)",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120971"
           },
           "info": {
             "name": "C38m",
             "description": "Sigma38 (RpoS)",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / D / 2"
           }
@@ -1254,14 +1254,14 @@
           "name": "C39m - ccdB toxin",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120972"
           },
           "info": {
             "name": "C39m",
             "description": "ccdB toxin",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / D / 3"
           }
@@ -1270,14 +1270,14 @@
           "name": "C40m - 50 bp Blank",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120973"
           },
           "info": {
             "name": "C40m",
             "description": "50 bp Blank",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / D / 4"
           }
@@ -1286,14 +1286,14 @@
           "name": "C41m - dCas9",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120974"
           },
           "info": {
             "name": "C41m",
             "description": "dCas9",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / D / 5"
           }
@@ -1302,14 +1302,14 @@
           "name": "C51m - sfYFP",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120975"
           },
           "info": {
             "name": "C51m",
             "description": "sfYFP",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / D / 6"
           }
@@ -1318,14 +1318,14 @@
           "name": "C59m - mScarlet",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120976"
           },
           "info": {
             "name": "C59m",
             "description": "mScarlet",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / D / 7"
           }
@@ -1334,14 +1334,14 @@
           "name": "C61m - RpaR",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120977"
           },
           "info": {
             "name": "C61m",
             "description": "RpaR",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / D / 8"
           }
@@ -1350,14 +1350,14 @@
           "name": "C62m - TraR(W)",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120978"
           },
           "info": {
             "name": "C62m",
             "description": "TraR(W)",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / D / 9"
           }
@@ -1366,14 +1366,14 @@
           "name": "C63m - LacI",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120979"
           },
           "info": {
             "name": "C63m",
             "description": "LacI",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / D / 10"
           }
@@ -1382,14 +1382,14 @@
           "name": "C64m - temperature sensitive lambda repressor (cI857)",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120980"
           },
           "info": {
             "name": "C64m",
             "description": "temperature sensitive lambda repressor (cI857)",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / D / 11"
           }
@@ -1398,14 +1398,14 @@
           "name": "C67m - Bxb1 integrase - mScarlet-i-LAA",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120981"
           },
           "info": {
             "name": "C67m",
             "description": "Bxb1 integrase - mScarlet-i-LAA",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / D / 12"
           }
@@ -1414,14 +1414,14 @@
           "name": "C70m - RpaR-TYQEVV",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120982"
           },
           "info": {
             "name": "C70m",
             "description": "RpaR-TYQEVV",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / E / 1"
           }
@@ -1430,14 +1430,14 @@
           "name": "C71m - CinR-CIDDHYRTC n-2v",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120983"
           },
           "info": {
             "name": "C71m",
             "description": "CinR-CIDDHYRTC n-2v",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / E / 2"
           }
@@ -1446,14 +1446,14 @@
           "name": "C72m - LacI-M",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120984"
           },
           "info": {
             "name": "C72m",
             "description": "LacI-M",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / E / 3"
           }
@@ -1462,14 +1462,14 @@
           "name": "C73m - LasR-LSTPLVMI",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120985"
           },
           "info": {
             "name": "C73m",
             "description": "LasR-LSTPLVMI",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / E / 4"
           }
@@ -1478,14 +1478,14 @@
           "name": "C74m - LuxRQ FMY",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120986"
           },
           "info": {
             "name": "C74m",
             "description": "LuxRQ FMY",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / E / 5"
           }
@@ -1494,14 +1494,14 @@
           "name": "C75m - NahR-M",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120987"
           },
           "info": {
             "name": "C75m",
             "description": "NahR-M",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / E / 6"
           }
@@ -1510,14 +1510,14 @@
           "name": "C76m - KanR",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120988"
           },
           "info": {
             "name": "C76m",
             "description": "KanR",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / E / 7"
           }
@@ -1526,14 +1526,14 @@
           "name": "C77m - AmpR",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120989"
           },
           "info": {
             "name": "C77m",
             "description": "AmpR",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / E / 8"
           }
@@ -1542,14 +1542,14 @@
           "name": "C78m - ChlorR",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120990"
           },
           "info": {
             "name": "C78m",
             "description": "ChlorR",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / E / 9"
           }
@@ -1558,14 +1558,14 @@
           "name": "C79m - ccdA antitoxin",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120991"
           },
           "info": {
             "name": "C79m",
             "description": "ccdA antitoxin",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / E / 10"
           }
@@ -1574,14 +1574,14 @@
           "name": "C80m - mfLon protease",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120992"
           },
           "info": {
             "name": "C80m",
             "description": "mfLon protease",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / E / 11"
           }
@@ -1590,14 +1590,14 @@
           "name": "C82m - Rpa Synthase (RpaI)",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120993"
           },
           "info": {
             "name": "C82m",
             "description": "Rpa Synthase (RpaI)",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / E / 12"
           }
@@ -1606,14 +1606,14 @@
           "name": "C83m - pir protein",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120994"
           },
           "info": {
             "name": "C83m",
             "description": "pir protein",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / F / 1"
           }
@@ -1622,14 +1622,14 @@
           "name": "C84m - Sigma28",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120995"
           },
           "info": {
             "name": "C84m",
             "description": "Sigma28",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / F / 2"
           }
@@ -1638,14 +1638,14 @@
           "name": "C85m - SigmaX (ECF20_992)",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120996"
           },
           "info": {
             "name": "C85m",
             "description": "SigmaX (ECF20_992)",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / F / 3"
           }
@@ -1654,14 +1654,14 @@
           "name": "C86m - \u03c6X174 Lysis Protein (X174E)",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120997"
           },
           "info": {
             "name": "C86m",
             "description": "\u03c6X174 Lysis Protein (X174E)",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / F / 4"
           }
@@ -1670,14 +1670,14 @@
           "name": "C90m - NahR-sfGFP fusion",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120998"
           },
           "info": {
             "name": "C90m",
             "description": "NahR-sfGFP fusion",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / F / 5"
           }
@@ -1686,14 +1686,14 @@
           "name": "C91m - sfCFP",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "120999"
           },
           "info": {
             "name": "C91m",
             "description": "sfCFP",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / F / 6"
           }
@@ -1702,14 +1702,14 @@
           "name": "C92m - sfCFPpdt3",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121000"
           },
           "info": {
             "name": "C92m",
             "description": "sfCFPpdt3",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / F / 7"
           }
@@ -1718,14 +1718,14 @@
           "name": "C95m - T7 RNA polymerase",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121001"
           },
           "info": {
             "name": "C95m",
             "description": "T7 RNA polymerase",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / F / 8"
           }
@@ -1734,14 +1734,14 @@
           "name": "C98m - Gp2 toxin",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121002"
           },
           "info": {
             "name": "C98m",
             "description": "Gp2 toxin",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / F / 9"
           }
@@ -1750,14 +1750,14 @@
           "name": "C99m - mScarlet-I codon optimized",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121003"
           },
           "info": {
             "name": "C99m",
             "description": "mScarlet-I codon optimized",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / F / 10"
           }
@@ -1766,14 +1766,14 @@
           "name": "C100m",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121004"
           },
           "info": {
             "name": "C100m",
             "description": null,
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / F / 11"
           }
@@ -1782,14 +1782,14 @@
           "name": "C101m - sfCFP-LAA",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121005"
           },
           "info": {
             "name": "C101m",
             "description": "sfCFP-LAA",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / F / 12"
           }
@@ -1798,14 +1798,14 @@
           "name": "C102m - treRT-LAA",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121006"
           },
           "info": {
             "name": "C102m",
             "description": "treRT-LAA",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / G / 1"
           }
@@ -1814,14 +1814,14 @@
           "name": "C103m - mScarlet-I-LAA",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121007"
           },
           "info": {
             "name": "C103m",
             "description": "mScarlet-I-LAA",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / G / 2"
           }
@@ -1830,14 +1830,14 @@
           "name": "C105m - sfYFP-AAV-ssrA",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121008"
           },
           "info": {
             "name": "C105m",
             "description": "sfYFP-AAV-ssrA",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / G / 3"
           }
@@ -1846,14 +1846,14 @@
           "name": "C106m - sfYFP-DAS-ssrA",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121009"
           },
           "info": {
             "name": "C106m",
             "description": "sfYFP-DAS-ssrA",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / G / 4"
           }
@@ -1862,14 +1862,14 @@
           "name": "C108m - mScarlet-I-pdt3",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121010"
           },
           "info": {
             "name": "C108m",
             "description": "mScarlet-I-pdt3",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / G / 5"
           }
@@ -1878,14 +1878,14 @@
           "name": "C109m - mfLon-pdt3 tag",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121011"
           },
           "info": {
             "name": "C109m",
             "description": "mfLon-pdt3 tag",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / G / 6"
           }
@@ -1894,14 +1894,14 @@
           "name": "C113m - Cas9",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121012"
           },
           "info": {
             "name": "C113m",
             "description": "Cas9",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / G / 7"
           }
@@ -1910,14 +1910,14 @@
           "name": "C114m - dCas9, BbsI-safe",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121013"
           },
           "info": {
             "name": "C114m",
             "description": "dCas9, BbsI-safe",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / G / 8"
           }
@@ -1926,14 +1926,14 @@
           "name": "C115m - TP901 integrase",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121014"
           },
           "info": {
             "name": "C115m",
             "description": "TP901 integrase",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / G / 9"
           }
@@ -1942,14 +1942,14 @@
           "name": "C0012m (lacI)_CD - LacI-ssrA",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "66026"
           },
           "info": {
             "name": "C0012m (lacI)_CD",
             "description": "LacI-ssrA",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit D / 11"
           }
@@ -1958,14 +1958,14 @@
           "name": "C0040 (tetR)_CD - TetR-ssrA",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "66027"
           },
           "info": {
             "name": "C0040 (tetR)_CD",
             "description": "TetR-ssrA",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit D / 12"
           }
@@ -1974,14 +1974,14 @@
           "name": "C0062 (luxR)_CD - LuxR",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "66028"
           },
           "info": {
             "name": "C0062 (luxR)_CD",
             "description": "LuxR",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit E / 1"
           }
@@ -1990,14 +1990,14 @@
           "name": "C0080 (araC)_CD - AraC-ssrA",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "66029"
           },
           "info": {
             "name": "C0080 (araC)_CD",
             "description": "AraC-ssrA",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit E / 2"
           }
@@ -2006,14 +2006,14 @@
           "name": "cre_CD - Cre recombinase",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "66030"
           },
           "info": {
             "name": "cre_CD",
             "description": "Cre recombinase",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit E / 3"
           }
@@ -2022,14 +2022,14 @@
           "name": "E0030 (YFP)_CD - YFP",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "66031"
           },
           "info": {
             "name": "E0030 (YFP)_CD",
             "description": "YFP",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit E / 4"
           }
@@ -2038,14 +2038,14 @@
           "name": "E0040m (GFP)_CD - GFP",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "66032"
           },
           "info": {
             "name": "E0040m (GFP)_CD",
             "description": "GFP",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit E / 5"
           }
@@ -2054,14 +2054,14 @@
           "name": "E1010m (RFP)_CD - RFP",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "66033"
           },
           "info": {
             "name": "E1010m (RFP)_CD",
             "description": "RFP",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit E / 6"
           }
@@ -2070,14 +2070,14 @@
           "name": "eBFP2 (eBFP2)_CD - eBFP2",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "66034"
           },
           "info": {
             "name": "eBFP2 (eBFP2)_CD",
             "description": "eBFP2",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit E / 7"
           }
@@ -2101,14 +2101,14 @@
           "name": "T1m - T500_noGap, short attachment (T11)",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121028"
           },
           "info": {
             "name": "T1m",
             "description": "T500_noGap, short attachment (T11)",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / H / 11"
           }
@@ -2117,14 +2117,14 @@
           "name": "T2m - ECK120033736, modified",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121029"
           },
           "info": {
             "name": "T2m",
             "description": "ECK120033736, modified",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 1 / H / 12"
           }
@@ -2133,14 +2133,14 @@
           "name": "T7m - S. pyogenes tracrRNA terminator",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121030"
           },
           "info": {
             "name": "T7m",
             "description": "S. pyogenes tracrRNA terminator",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 2 / A / 1"
           }
@@ -2149,14 +2149,14 @@
           "name": "T12m - ECK120029600",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121031"
           },
           "info": {
             "name": "T12m",
             "description": "ECK120029600",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 2 / A / 2"
           }
@@ -2165,14 +2165,14 @@
           "name": "T13m - ECK120033737",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121032"
           },
           "info": {
             "name": "T13m",
             "description": "ECK120033737",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 2 / A / 3"
           }
@@ -2181,14 +2181,14 @@
           "name": "T14m - L3S1P13",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121033"
           },
           "info": {
             "name": "T14m",
             "description": "L3S1P13",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 2 / A / 4"
           }
@@ -2197,14 +2197,14 @@
           "name": "T15m - modified L3S3P11",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121034"
           },
           "info": {
             "name": "T15m",
             "description": "modified L3S3P11",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 2 / A / 5"
           }
@@ -2213,14 +2213,14 @@
           "name": "T16m - L3S2P55",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121035"
           },
           "info": {
             "name": "T16m",
             "description": "L3S2P55",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 2 / A / 6"
           }
@@ -2229,14 +2229,14 @@
           "name": "T17m - L3S2P11",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121036"
           },
           "info": {
             "name": "T17m",
             "description": "L3S2P11",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 2 / A / 7"
           }
@@ -2245,14 +2245,14 @@
           "name": "T18m - modified L3S2P21",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "121037"
           },
           "info": {
             "name": "T18m",
             "description": "modified L3S2P21",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Plate 2 / A / 8"
           }
@@ -2261,14 +2261,14 @@
           "name": "B0015_DE - Terminator",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "66035"
           },
           "info": {
             "name": "B0015_DE",
             "description": "Terminator",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "Base CIDAR Kit E / 8"
           }

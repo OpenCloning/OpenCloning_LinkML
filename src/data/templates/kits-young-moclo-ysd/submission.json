@@ -17,7 +17,7 @@
       "name": "pYTK002",
       "category": "1",
       "description": "ConLS",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65109",
       "resistance": "Chloramphenicol",
       "well": "A / 2"
@@ -26,7 +26,7 @@
       "name": "pYTK003",
       "category": "1",
       "description": "ConL1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65110",
       "resistance": "Chloramphenicol",
       "well": "A / 3"
@@ -35,7 +35,7 @@
       "name": "pYTK004",
       "category": "1",
       "description": "ConL2",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65111",
       "resistance": "Chloramphenicol",
       "well": "A / 4"
@@ -44,7 +44,7 @@
       "name": "pYTK005",
       "category": "1",
       "description": "ConL3",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65112",
       "resistance": "Chloramphenicol",
       "well": "A / 5"
@@ -53,7 +53,7 @@
       "name": "pYTK006",
       "category": "1",
       "description": "ConL4",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65113",
       "resistance": "Chloramphenicol",
       "well": "A / 6"
@@ -62,7 +62,7 @@
       "name": "pYTK007",
       "category": "1",
       "description": "ConL5",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65114",
       "resistance": "Chloramphenicol",
       "well": "A / 7"
@@ -71,7 +71,7 @@
       "name": "pYTK008",
       "category": "1",
       "description": "ConLS'",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65115",
       "resistance": "Chloramphenicol",
       "well": "A / 8"
@@ -80,7 +80,7 @@
       "name": "pYTK009",
       "category": "2",
       "description": "pTDH3",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65116",
       "resistance": "Chloramphenicol",
       "well": "A / 9"
@@ -89,7 +89,7 @@
       "name": "pYTK010",
       "category": "2",
       "description": "pCCW12",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65117",
       "resistance": "Chloramphenicol",
       "well": "A / 10"
@@ -98,7 +98,7 @@
       "name": "pYTK011",
       "category": "2",
       "description": "pPGK1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65118",
       "resistance": "Chloramphenicol",
       "well": "A / 11"
@@ -107,7 +107,7 @@
       "name": "pYTK012",
       "category": "2",
       "description": "pHHF2",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65119",
       "resistance": "Chloramphenicol",
       "well": "A / 12"
@@ -116,7 +116,7 @@
       "name": "pYTK013",
       "category": "2",
       "description": "pTEF1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65120",
       "resistance": "Chloramphenicol",
       "well": "B / 1"
@@ -125,7 +125,7 @@
       "name": "pYTK014",
       "category": "2",
       "description": "pTEF2",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65121",
       "resistance": "Chloramphenicol",
       "well": "B / 2"
@@ -134,7 +134,7 @@
       "name": "pYTK015",
       "category": "2",
       "description": "pHHF1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65122",
       "resistance": "Chloramphenicol",
       "well": "B / 3"
@@ -143,7 +143,7 @@
       "name": "pYTK016",
       "category": "2",
       "description": "pHTB2",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65123",
       "resistance": "Chloramphenicol",
       "well": "B / 4"
@@ -152,7 +152,7 @@
       "name": "pYTK017",
       "category": "2",
       "description": "pRPL18B",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65124",
       "resistance": "Chloramphenicol",
       "well": "B / 5"
@@ -161,7 +161,7 @@
       "name": "pYTK018",
       "category": "2",
       "description": "pALD6",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65125",
       "resistance": "Chloramphenicol",
       "well": "B / 6"
@@ -170,7 +170,7 @@
       "name": "pYTK019",
       "category": "2",
       "description": "pPAB1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65126",
       "resistance": "Chloramphenicol",
       "well": "B / 7"
@@ -179,7 +179,7 @@
       "name": "pYTK020",
       "category": "2",
       "description": "pRET2",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65127",
       "resistance": "Chloramphenicol",
       "well": "B / 8"
@@ -188,7 +188,7 @@
       "name": "pYTK021",
       "category": "2",
       "description": "pRNR1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65128",
       "resistance": "Chloramphenicol",
       "well": "B / 9"
@@ -197,7 +197,7 @@
       "name": "pYTK022",
       "category": "2",
       "description": "pSAC6",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65129",
       "resistance": "Chloramphenicol",
       "well": "B / 10"
@@ -206,7 +206,7 @@
       "name": "pYTK023",
       "category": "2",
       "description": "pRNR2",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65130",
       "resistance": "Chloramphenicol",
       "well": "B / 11"
@@ -215,7 +215,7 @@
       "name": "pYTK024",
       "category": "2",
       "description": "pPOP6",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65131",
       "resistance": "Chloramphenicol",
       "well": "B / 12"
@@ -224,7 +224,7 @@
       "name": "pYTK025",
       "category": "2",
       "description": "pRAD27",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65132",
       "resistance": "Chloramphenicol",
       "well": "C / 1"
@@ -233,7 +233,7 @@
       "name": "pYTK026",
       "category": "2",
       "description": "pPSP2",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65133",
       "resistance": "Chloramphenicol",
       "well": "C / 2"
@@ -242,7 +242,7 @@
       "name": "pYTK027",
       "category": "2",
       "description": "pREV1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65134",
       "resistance": "Chloramphenicol",
       "well": "C / 3"
@@ -251,7 +251,7 @@
       "name": "pYTK028",
       "category": "2",
       "description": "pMFA1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65135",
       "resistance": "Chloramphenicol",
       "well": "C / 4"
@@ -260,7 +260,7 @@
       "name": "pYTK029",
       "category": "2",
       "description": "pMF\u03b12",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65136",
       "resistance": "Chloramphenicol",
       "well": "C / 5"
@@ -269,7 +269,7 @@
       "name": "pYTK030",
       "category": "2",
       "description": "pGAL1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65137",
       "resistance": "Chloramphenicol",
       "well": "C / 6"
@@ -278,7 +278,7 @@
       "name": "pYTK031",
       "category": "2",
       "description": "pCUP1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65138",
       "resistance": "Chloramphenicol",
       "well": "C / 7"
@@ -287,7 +287,7 @@
       "name": "pYTK051",
       "category": "4",
       "description": "tENO1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65158",
       "resistance": "Chloramphenicol",
       "well": "E / 3"
@@ -296,7 +296,7 @@
       "name": "pYTK052",
       "category": "4",
       "description": "tSSA1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65159",
       "resistance": "Chloramphenicol",
       "well": "E / 4"
@@ -305,7 +305,7 @@
       "name": "pYTK053",
       "category": "4",
       "description": "tADH1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65160",
       "resistance": "Chloramphenicol",
       "well": "E / 5"
@@ -314,7 +314,7 @@
       "name": "pYTK054",
       "category": "4",
       "description": "tPGK1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65161",
       "resistance": "Chloramphenicol",
       "well": "E / 6"
@@ -323,7 +323,7 @@
       "name": "pYTK055",
       "category": "4",
       "description": "tENO2",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65162",
       "resistance": "Chloramphenicol",
       "well": "E / 7"
@@ -332,7 +332,7 @@
       "name": "pYTK056",
       "category": "4",
       "description": "tTDH1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65163",
       "resistance": "Chloramphenicol",
       "well": "E / 8"
@@ -341,7 +341,7 @@
       "name": "pYTK057",
       "category": "4a",
       "description": "mTurquoise2",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65164",
       "resistance": "Chloramphenicol",
       "well": "E / 9"
@@ -350,7 +350,7 @@
       "name": "pYTK058",
       "category": "4a",
       "description": "Venus",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65165",
       "resistance": "Chloramphenicol",
       "well": "E / 10"
@@ -359,7 +359,7 @@
       "name": "pYTK059",
       "category": "4a",
       "description": "mRuby2",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65166",
       "resistance": "Chloramphenicol",
       "well": "E / 11"
@@ -368,7 +368,7 @@
       "name": "pYTK060",
       "category": "4a",
       "description": "3XFLAG-6XHis",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65167",
       "resistance": "Chloramphenicol",
       "well": "E / 12"
@@ -377,7 +377,7 @@
       "name": "pYTK061",
       "category": "4b",
       "description": "tENO1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65168",
       "resistance": "Chloramphenicol",
       "well": "F / 1"
@@ -386,7 +386,7 @@
       "name": "pYTK062",
       "category": "4b",
       "description": "tSSA1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65169",
       "resistance": "Chloramphenicol",
       "well": "F / 2"
@@ -395,7 +395,7 @@
       "name": "pYTK063",
       "category": "4b",
       "description": "tADH1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65170",
       "resistance": "Chloramphenicol",
       "well": "F / 3"
@@ -404,7 +404,7 @@
       "name": "pYTK064",
       "category": "4b",
       "description": "tPGK1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65171",
       "resistance": "Chloramphenicol",
       "well": "F / 4"
@@ -413,7 +413,7 @@
       "name": "pYTK065",
       "category": "4b",
       "description": "tENO2",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65172",
       "resistance": "Chloramphenicol",
       "well": "F / 5"
@@ -422,7 +422,7 @@
       "name": "pYTK066",
       "category": "4b",
       "description": "tTDH1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65173",
       "resistance": "Chloramphenicol",
       "well": "F / 6"
@@ -431,7 +431,7 @@
       "name": "pYTK067",
       "category": "5",
       "description": "ConR1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65174",
       "resistance": "Chloramphenicol",
       "well": "F / 7"
@@ -440,7 +440,7 @@
       "name": "pYTK068",
       "category": "5",
       "description": "ConR2",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65175",
       "resistance": "Chloramphenicol",
       "well": "F / 8"
@@ -449,7 +449,7 @@
       "name": "pYTK069",
       "category": "5",
       "description": "ConR3",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65176",
       "resistance": "Chloramphenicol",
       "well": "F / 9"
@@ -458,7 +458,7 @@
       "name": "pYTK070",
       "category": "5",
       "description": "ConR4",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65177",
       "resistance": "Chloramphenicol",
       "well": "F / 10"
@@ -467,7 +467,7 @@
       "name": "pYTK071",
       "category": "5",
       "description": "ConR5",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65178",
       "resistance": "Chloramphenicol",
       "well": "F / 11"
@@ -476,7 +476,7 @@
       "name": "pYTK072",
       "category": "5",
       "description": "ConRE",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65179",
       "resistance": "Chloramphenicol",
       "well": "F / 12"
@@ -485,7 +485,7 @@
       "name": "pYTK073",
       "category": "5",
       "description": "ConRE'",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65180",
       "resistance": "Chloramphenicol",
       "well": "G / 1"
@@ -494,7 +494,7 @@
       "name": "pYTK074",
       "category": "6",
       "description": "URA3",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65181",
       "resistance": "Chloramphenicol",
       "well": "G / 2"
@@ -503,7 +503,7 @@
       "name": "pYTK075",
       "category": "6",
       "description": "LEU2",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65182",
       "resistance": "Chloramphenicol",
       "well": "G / 3"
@@ -512,7 +512,7 @@
       "name": "pYTK076",
       "category": "6",
       "description": "HIS3",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65183",
       "resistance": "Chloramphenicol",
       "well": "G / 4"
@@ -521,7 +521,7 @@
       "name": "pYTK077",
       "category": "6",
       "description": "KanamycinR",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65184",
       "resistance": "Chloramphenicol",
       "well": "G / 5"
@@ -530,7 +530,7 @@
       "name": "pYTK078",
       "category": "6",
       "description": "NourseothricinR",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65185",
       "resistance": "Chloramphenicol",
       "well": "G / 6"
@@ -539,7 +539,7 @@
       "name": "pYTK079",
       "category": "6",
       "description": "HygromycinR",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65186",
       "resistance": "Chloramphenicol",
       "well": "G / 7"
@@ -548,7 +548,7 @@
       "name": "pYTK080",
       "category": "6",
       "description": "ZeocinR",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65187",
       "resistance": "Chloramphenicol",
       "well": "G / 8"
@@ -557,7 +557,7 @@
       "name": "pYTK081",
       "category": "7",
       "description": "CEN6/ARS4",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65188",
       "resistance": "Chloramphenicol",
       "well": "G / 9"
@@ -566,7 +566,7 @@
       "name": "pYTK082",
       "category": "7",
       "description": "2micron",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65189",
       "resistance": "Chloramphenicol",
       "well": "G / 10"
@@ -575,7 +575,7 @@
       "name": "pYTK083",
       "category": "8",
       "description": "AmpR-ColE1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65190",
       "resistance": "Ampicillin",
       "well": "G / 11"
@@ -584,7 +584,7 @@
       "name": "pYTK084",
       "category": "8",
       "description": "KanR-ColE1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65191",
       "resistance": "Kanamycin",
       "well": "G / 12"
@@ -593,7 +593,7 @@
       "name": "pYTK085",
       "category": "8",
       "description": "SpecR-ColE1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65192",
       "resistance": "Spectinomycin",
       "well": "H / 1"
@@ -602,7 +602,7 @@
       "name": "pYTK086",
       "category": "7h",
       "description": "URA3 3' Homology",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65193",
       "resistance": "Chloramphenicol",
       "well": "H / 2"
@@ -611,7 +611,7 @@
       "name": "pYTK087",
       "category": "7h",
       "description": "LEU2 3' Homology",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65194",
       "resistance": "Chloramphenicol",
       "well": "H / 3"
@@ -620,7 +620,7 @@
       "name": "pYTK088",
       "category": "7h",
       "description": "HO 3' Homology",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65195",
       "resistance": "Chloramphenicol",
       "well": "H / 4"
@@ -629,7 +629,7 @@
       "name": "pYTK089",
       "category": "8a",
       "description": "AmpR-ColE1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65196",
       "resistance": "Ampicillin",
       "well": "H / 5"
@@ -638,7 +638,7 @@
       "name": "pYTK090",
       "category": "8a",
       "description": "KanR-ColE1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65197",
       "resistance": "Kanamycin",
       "well": "H / 6"
@@ -647,7 +647,7 @@
       "name": "pYTK091",
       "category": "8a",
       "description": "SpecR-ColE1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65198",
       "resistance": "Spectinomycin",
       "well": "H / 7"
@@ -656,7 +656,7 @@
       "name": "pYTK092",
       "category": "8b",
       "description": "URA3 5' Homology",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65199",
       "resistance": "Chloramphenicol",
       "well": "H / 8"
@@ -665,7 +665,7 @@
       "name": "pYTK093",
       "category": "8b",
       "description": "LEU2 5' Homology",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65200",
       "resistance": "Chloramphenicol",
       "well": "H / 9"
@@ -674,7 +674,7 @@
       "name": "pYTK094",
       "category": "8b",
       "description": "HO 5' Homology",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65201",
       "resistance": "Chloramphenicol",
       "well": "H / 10"
@@ -683,7 +683,7 @@
       "name": "pYTK095",
       "category": "678",
       "description": "AmpR-ColE1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "65202",
       "resistance": "Ampicillin",
       "well": "H / 11"
@@ -692,7 +692,7 @@
       "name": "pYSD001",
       "category": "3a'",
       "description": "AGA2 pre-SP",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "212898",
       "resistance": "Chloramphenicol",
       "well": "A / 1"
@@ -701,7 +701,7 @@
       "name": "pYSD002",
       "category": "3a'",
       "description": "CRH1 pre-SP",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "212899",
       "resistance": "Chloramphenicol",
       "well": "A / 2"
@@ -710,7 +710,7 @@
       "name": "pYSD003",
       "category": "3a'",
       "description": "ECM14 pre-SP",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "212900",
       "resistance": "Chloramphenicol",
       "well": "A / 3"
@@ -719,7 +719,7 @@
       "name": "pYSD004",
       "category": "3a'",
       "description": "SUC2 (Invertase) pre-SP",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "212901",
       "resistance": "Chloramphenicol",
       "well": "A / 4"
@@ -728,7 +728,7 @@
       "name": "pYSD005",
       "category": "3a'",
       "description": "KSH1 pre-SP",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "212902",
       "resistance": "Chloramphenicol",
       "well": "A / 5"
@@ -737,7 +737,7 @@
       "name": "pYSD006",
       "category": "3a'",
       "description": "MFalpha1 pre-SP",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "212903",
       "resistance": "Chloramphenicol",
       "well": "A / 6"
@@ -746,7 +746,7 @@
       "name": "pYSD007",
       "category": "3a'",
       "description": "OST1 pre-SP",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "212904",
       "resistance": "Chloramphenicol",
       "well": "A / 7"
@@ -755,7 +755,7 @@
       "name": "pYSD008",
       "category": "3a'",
       "description": "PLB1 pre-SP",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "212905",
       "resistance": "Chloramphenicol",
       "well": "A / 8"
@@ -764,7 +764,7 @@
       "name": "pYSD009",
       "category": "3a'",
       "description": "SRL1 pre-SP",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "212906",
       "resistance": "Chloramphenicol",
       "well": "A / 9"
@@ -773,7 +773,7 @@
       "name": "pYSD021",
       "category": "3a'",
       "description": "MFalpha1 PrePro-app8 SP",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "212907",
       "resistance": "Chloramphenicol",
       "well": "A / 10"
@@ -782,7 +782,7 @@
       "name": "pYSD022",
       "category": "3a'",
       "description": "MFalpha1 PrePro-OPT SP",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "212908",
       "resistance": "Chloramphenicol",
       "well": "A / 11"
@@ -791,7 +791,7 @@
       "name": "pYSD023",
       "category": "3a'",
       "description": "OST1-Pre-MFalpha1 Pro SP",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "212909",
       "resistance": "Chloramphenicol",
       "well": "A / 12"
@@ -800,7 +800,7 @@
       "name": "pYSD024",
       "category": "3a'",
       "description": "MFalpha1 PrePro-WT SP",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "212910",
       "resistance": "Chloramphenicol",
       "well": "B / 1"
@@ -809,7 +809,7 @@
       "name": "pYSD041",
       "category": "3a'",
       "description": "YAR066W TFP",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "212911",
       "resistance": "Chloramphenicol",
       "well": "B / 2"
@@ -818,7 +818,7 @@
       "name": "pYSD042",
       "category": "3a'",
       "description": "HSP150 TFP",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "212912",
       "resistance": "Chloramphenicol",
       "well": "B / 3"
@@ -827,7 +827,7 @@
       "name": "pYSD043",
       "category": "3a'",
       "description": "SCW4 (111AA) TFP",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "212913",
       "resistance": "Chloramphenicol",
       "well": "B / 4"
@@ -836,7 +836,7 @@
       "name": "pYSD044",
       "category": "3a'",
       "description": "SCW4 (142AA) TFP",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "212914",
       "resistance": "Chloramphenicol",
       "well": "B / 5"
@@ -845,7 +845,7 @@
       "name": "pYSD061",
       "category": "3b'",
       "description": "Invertase (SUC2)",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "212915",
       "resistance": "Chloramphenicol",
       "well": "B / 6"
@@ -854,7 +854,7 @@
       "name": "pYSD063",
       "category": "3b'",
       "description": "mRuby2",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "212916",
       "resistance": "Chloramphenicol",
       "well": "B / 7"
@@ -863,7 +863,7 @@
       "name": "pYSD080",
       "category": "3",
       "description": "AGA1p",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "212917",
       "resistance": "Chloramphenicol",
       "well": "B / 8"
@@ -872,7 +872,7 @@
       "name": "pYSD081",
       "category": "4a",
       "description": "AGA2p display anchor",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "212918",
       "resistance": "Chloramphenicol",
       "well": "B / 9"
@@ -881,7 +881,7 @@
       "name": "pYSD082",
       "category": "4a",
       "description": "CWP2p display anchor",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "212919",
       "resistance": "Chloramphenicol",
       "well": "B / 10"
@@ -890,7 +890,7 @@
       "name": "pYSD083",
       "category": "4a",
       "description": "SED1p display anchor",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "212920",
       "resistance": "Chloramphenicol",
       "well": "B / 11"
@@ -899,7 +899,7 @@
       "name": "pYSD084",
       "category": "4a",
       "description": "TIP1p display anchor",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "212921",
       "resistance": "Chloramphenicol",
       "well": "B / 12"
@@ -908,7 +908,7 @@
       "name": "pYSD085",
       "category": "4a",
       "description": "649 stalk display anchor",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "212922",
       "resistance": "Chloramphenicol",
       "well": "C / 1"

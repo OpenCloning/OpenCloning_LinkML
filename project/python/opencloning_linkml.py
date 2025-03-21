@@ -1,5 +1,5 @@
 # Auto generated from opencloning_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-02-24T14:09:40
+# Generation date: 2025-03-21T11:13:20
 # Schema: OpenCloning_LinkML
 #
 # id: https://w3id.org/genestorian/OpenCloning_LinkML
@@ -92,7 +92,7 @@ class RepositoryIdSourceId(SourceId):
     pass
 
 
-class AddGeneIdSourceId(RepositoryIdSourceId):
+class AddgeneIdSourceId(RepositoryIdSourceId):
     pass
 
 
@@ -752,35 +752,35 @@ class RepositoryIdSource(Source):
 
 
 @dataclass(repr=False)
-class AddGeneIdSource(RepositoryIdSource):
+class AddgeneIdSource(RepositoryIdSource):
     """
-    Represents the source of a sequence that is identified by an AddGene id
+    Represents the source of a sequence that is identified by an Addgene id
     """
 
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["AddGeneIdSource"]
-    class_class_curie: ClassVar[str] = "opencloning_linkml:AddGeneIdSource"
-    class_name: ClassVar[str] = "AddGeneIdSource"
-    class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.AddGeneIdSource
+    class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["AddgeneIdSource"]
+    class_class_curie: ClassVar[str] = "opencloning_linkml:AddgeneIdSource"
+    class_name: ClassVar[str] = "AddgeneIdSource"
+    class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.AddgeneIdSource
 
-    id: Union[int, AddGeneIdSourceId] = None
+    id: Union[int, AddgeneIdSourceId] = None
     repository_id: str = None
     repository_name: Union[str, "RepositoryName"] = None
     sequence_file_url: Optional[str] = None
-    addgene_sequence_type: Optional[Union[str, "AddGeneSequenceType"]] = None
+    addgene_sequence_type: Optional[Union[str, "AddgeneSequenceType"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
-        if not isinstance(self.id, AddGeneIdSourceId):
-            self.id = AddGeneIdSourceId(self.id)
+        if not isinstance(self.id, AddgeneIdSourceId):
+            self.id = AddgeneIdSourceId(self.id)
 
         if self.sequence_file_url is not None and not isinstance(self.sequence_file_url, str):
             self.sequence_file_url = str(self.sequence_file_url)
 
-        if self.addgene_sequence_type is not None and not isinstance(self.addgene_sequence_type, AddGeneSequenceType):
-            self.addgene_sequence_type = AddGeneSequenceType(self.addgene_sequence_type)
+        if self.addgene_sequence_type is not None and not isinstance(self.addgene_sequence_type, AddgeneSequenceType):
+            self.addgene_sequence_type = AddgeneSequenceType(self.addgene_sequence_type)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -1875,7 +1875,7 @@ class RepositoryName(EnumDefinitionImpl):
 
 class Collection(EnumDefinitionImpl):
 
-    AddGenePlasmid = PermissibleValue(text="AddGenePlasmid", description="A plasmid from AddGene")
+    AddgenePlasmid = PermissibleValue(text="AddgenePlasmid", description="A plasmid from Addgene")
     OligoPair = PermissibleValue(text="OligoPair", description="A pair of oligonucleotides for hybridization")
 
     _defn = EnumDefinition(
@@ -1895,10 +1895,10 @@ class SequenceFileFormat(EnumDefinitionImpl):
     )
 
 
-class AddGeneSequenceType(EnumDefinitionImpl):
+class AddgeneSequenceType(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="AddGeneSequenceType",
+        name="AddgeneSequenceType",
     )
 
     @classmethod
@@ -1956,7 +1956,7 @@ class AssociatedFileType(EnumDefinitionImpl):
 class CollectionOptionType(EnumDefinitionImpl):
 
     OligoPair = PermissibleValue(text="OligoPair", description="A pair of oligonucleotides for hybridization")
-    AddGenePlasmid = PermissibleValue(text="AddGenePlasmid", description="A plasmid from AddGene")
+    AddgenePlasmid = PermissibleValue(text="AddgenePlasmid", description="A plasmid from Addgene")
 
     _defn = EnumDefinition(
         name="CollectionOptionType",
@@ -2306,13 +2306,13 @@ slots.repositoryIdSource__repository_name = Slot(
     range=Union[str, "RepositoryName"],
 )
 
-slots.addGeneIdSource__addgene_sequence_type = Slot(
+slots.addgeneIdSource__addgene_sequence_type = Slot(
     uri=OPENCLONING_LINKML.addgene_sequence_type,
-    name="addGeneIdSource__addgene_sequence_type",
+    name="addgeneIdSource__addgene_sequence_type",
     curie=OPENCLONING_LINKML.curie("addgene_sequence_type"),
-    model_uri=OPENCLONING_LINKML.addGeneIdSource__addgene_sequence_type,
+    model_uri=OPENCLONING_LINKML.addgeneIdSource__addgene_sequence_type,
     domain=None,
-    range=Optional[Union[str, "AddGeneSequenceType"]],
+    range=Optional[Union[str, "AddgeneSequenceType"]],
 )
 
 slots.genomeCoordinatesSource__assembly_accession = Slot(
