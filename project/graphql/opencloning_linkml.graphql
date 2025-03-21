@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-enum AddGeneSequenceType
+enum AddgeneSequenceType
   {
     depositor__HYPHEN_MINUS__full
     addgene__HYPHEN_MINUS__full
@@ -17,14 +17,14 @@ enum AssociatedFileType
 
 enum Collection
   {
-    AddGenePlasmid
+    AddgenePlasmid
     OligoPair
   }
 
 enum CollectionOptionType
   {
     OligoPair
-    AddGenePlasmid
+    AddgenePlasmid
   }
 
 enum GatewayReactionType
@@ -53,7 +53,7 @@ enum SequenceFileFormat
     embl
   }
 
-type AddGeneIdSource
+type AddgeneIdSource
   {
     id: Integer!
     input: [Sequence]
@@ -64,7 +64,7 @@ type AddGeneIdSource
     repositoryId: String!
     repositoryName: RepositoryName!
     sequenceFileUrl: String
-    addgeneSequenceType: AddGeneSequenceType
+    addgeneSequenceType: AddgeneSequenceType
   }
 
 type AnnotationReport

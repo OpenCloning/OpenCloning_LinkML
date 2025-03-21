@@ -92,8 +92,8 @@ class RepositoryName(str, Enum):
 
 
 class Collection(str, Enum):
-    # A plasmid from AddGene
-    AddGenePlasmid = "AddGenePlasmid"
+    # A plasmid from Addgene
+    AddgenePlasmid = "AddgenePlasmid"
     # A pair of oligonucleotides for hybridization
     OligoPair = "OligoPair"
 
@@ -105,7 +105,7 @@ class SequenceFileFormat(str, Enum):
     embl = "embl"
 
 
-class AddGeneSequenceType(str, Enum):
+class AddgeneSequenceType(str, Enum):
     # Full sequence of the plasmid submitted by the depositor
     depositor_full = "depositor-full"
     # Full sequence of the plasmid performed by Addgene
@@ -131,8 +131,8 @@ class AssociatedFileType(str, Enum):
 class CollectionOptionType(str, Enum):
     # A pair of oligonucleotides for hybridization
     OligoPair = "OligoPair"
-    # A plasmid from AddGene
-    AddGenePlasmid = "AddGenePlasmid"
+    # A plasmid from Addgene
+    AddgenePlasmid = "AddgenePlasmid"
 
 
 class NamedThing(ConfiguredBaseModel):
@@ -654,7 +654,7 @@ class CollectionOption(ConfiguredBaseModel):
         GatewaySource,
         CRISPRSource,
         RestrictionEnzymeDigestionSource,
-        AddGeneIdSource,
+        AddgeneIdSource,
         WekWikGeneIdSource,
         SEVASource,
         BenchlingUrlSource,
@@ -980,9 +980,9 @@ class RepositoryIdSource(Source):
     )
 
 
-class AddGeneIdSource(RepositoryIdSource):
+class AddgeneIdSource(RepositoryIdSource):
     """
-    Represents the source of a sequence that is identified by an AddGene id
+    Represents the source of a sequence that is identified by an Addgene id
     """
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
@@ -993,13 +993,13 @@ class AddGeneIdSource(RepositoryIdSource):
         json_schema_extra={
             "linkml_meta": {
                 "alias": "sequence_file_url",
-                "domain_of": ["AddGeneIdSource", "WekWikGeneIdSource", "SEVASource", "IGEMSource"],
+                "domain_of": ["AddgeneIdSource", "WekWikGeneIdSource", "SEVASource", "IGEMSource"],
             }
         },
     )
-    addgene_sequence_type: Optional[AddGeneSequenceType] = Field(
+    addgene_sequence_type: Optional[AddgeneSequenceType] = Field(
         default=None,
-        json_schema_extra={"linkml_meta": {"alias": "addgene_sequence_type", "domain_of": ["AddGeneIdSource"]}},
+        json_schema_extra={"linkml_meta": {"alias": "addgene_sequence_type", "domain_of": ["AddgeneIdSource"]}},
     )
     repository_id: str = Field(
         default=...,
@@ -1020,8 +1020,8 @@ class AddGeneIdSource(RepositoryIdSource):
         description="""Identifier of the sequence that is the output of this source.""",
         json_schema_extra={"linkml_meta": {"alias": "output", "domain_of": ["Source"]}},
     )
-    type: Literal["AddGeneIdSource"] = Field(
-        default="AddGeneIdSource",
+    type: Literal["AddgeneIdSource"] = Field(
+        default="AddgeneIdSource",
         description="""Designates the class""",
         json_schema_extra={
             "linkml_meta": {
@@ -1094,7 +1094,7 @@ class WekWikGeneIdSource(RepositoryIdSource):
         json_schema_extra={
             "linkml_meta": {
                 "alias": "sequence_file_url",
-                "domain_of": ["AddGeneIdSource", "WekWikGeneIdSource", "SEVASource", "IGEMSource"],
+                "domain_of": ["AddgeneIdSource", "WekWikGeneIdSource", "SEVASource", "IGEMSource"],
             }
         },
     )
@@ -1212,7 +1212,7 @@ class SEVASource(RepositoryIdSource):
         json_schema_extra={
             "linkml_meta": {
                 "alias": "sequence_file_url",
-                "domain_of": ["AddGeneIdSource", "WekWikGeneIdSource", "SEVASource", "IGEMSource"],
+                "domain_of": ["AddgeneIdSource", "WekWikGeneIdSource", "SEVASource", "IGEMSource"],
             }
         },
     )
@@ -1592,7 +1592,7 @@ class IGEMSource(RepositoryIdSource):
         json_schema_extra={
             "linkml_meta": {
                 "alias": "sequence_file_url",
-                "domain_of": ["AddGeneIdSource", "WekWikGeneIdSource", "SEVASource", "IGEMSource"],
+                "domain_of": ["AddgeneIdSource", "WekWikGeneIdSource", "SEVASource", "IGEMSource"],
             }
         },
     )
@@ -2846,7 +2846,7 @@ class CloningStrategy(ConfiguredBaseModel):
             GatewaySource,
             CRISPRSource,
             RestrictionEnzymeDigestionSource,
-            AddGeneIdSource,
+            AddgeneIdSource,
             WekWikGeneIdSource,
             SEVASource,
             BenchlingUrlSource,
@@ -3206,7 +3206,7 @@ CollectionOptionInfo.model_rebuild()
 ManuallyTypedSource.model_rebuild()
 UploadedFileSource.model_rebuild()
 RepositoryIdSource.model_rebuild()
-AddGeneIdSource.model_rebuild()
+AddgeneIdSource.model_rebuild()
 WekWikGeneIdSource.model_rebuild()
 SEVASource.model_rebuild()
 BenchlingUrlSource.model_rebuild()

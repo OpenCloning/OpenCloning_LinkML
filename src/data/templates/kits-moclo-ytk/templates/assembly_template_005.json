@@ -17,14 +17,14 @@
           "name": "pYTK002 - ConLS",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65109"
           },
           "info": {
             "name": "pYTK002",
             "description": "ConLS",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "A / 2"
           }
@@ -33,14 +33,14 @@
           "name": "pYTK003 - ConL1",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65110"
           },
           "info": {
             "name": "pYTK003",
             "description": "ConL1",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "A / 3"
           }
@@ -49,14 +49,14 @@
           "name": "pYTK004 - ConL2",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65111"
           },
           "info": {
             "name": "pYTK004",
             "description": "ConL2",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "A / 4"
           }
@@ -65,14 +65,14 @@
           "name": "pYTK005 - ConL3",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65112"
           },
           "info": {
             "name": "pYTK005",
             "description": "ConL3",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "A / 5"
           }
@@ -81,14 +81,14 @@
           "name": "pYTK006 - ConL4",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65113"
           },
           "info": {
             "name": "pYTK006",
             "description": "ConL4",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "A / 6"
           }
@@ -97,14 +97,14 @@
           "name": "pYTK007 - ConL5",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65114"
           },
           "info": {
             "name": "pYTK007",
             "description": "ConL5",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "A / 7"
           }
@@ -113,14 +113,14 @@
           "name": "pYTK008 - ConLS'",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65115"
           },
           "info": {
             "name": "pYTK008",
             "description": "ConLS'",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "A / 8"
           }
@@ -144,14 +144,14 @@
           "name": "pYTK009 - pTDH3",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65116"
           },
           "info": {
             "name": "pYTK009",
             "description": "pTDH3",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "A / 9"
           }
@@ -160,14 +160,14 @@
           "name": "pYTK010 - pCCW12",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65117"
           },
           "info": {
             "name": "pYTK010",
             "description": "pCCW12",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "A / 10"
           }
@@ -176,14 +176,14 @@
           "name": "pYTK011 - pPGK1",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65118"
           },
           "info": {
             "name": "pYTK011",
             "description": "pPGK1",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "A / 11"
           }
@@ -192,14 +192,14 @@
           "name": "pYTK012 - pHHF2",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65119"
           },
           "info": {
             "name": "pYTK012",
             "description": "pHHF2",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "A / 12"
           }
@@ -208,14 +208,14 @@
           "name": "pYTK013 - pTEF1",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65120"
           },
           "info": {
             "name": "pYTK013",
             "description": "pTEF1",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "B / 1"
           }
@@ -224,14 +224,14 @@
           "name": "pYTK014 - pTEF2",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65121"
           },
           "info": {
             "name": "pYTK014",
             "description": "pTEF2",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "B / 2"
           }
@@ -240,14 +240,14 @@
           "name": "pYTK015 - pHHF1",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65122"
           },
           "info": {
             "name": "pYTK015",
             "description": "pHHF1",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "B / 3"
           }
@@ -256,14 +256,14 @@
           "name": "pYTK016 - pHTB2",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65123"
           },
           "info": {
             "name": "pYTK016",
             "description": "pHTB2",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "B / 4"
           }
@@ -272,14 +272,14 @@
           "name": "pYTK017 - pRPL18B",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65124"
           },
           "info": {
             "name": "pYTK017",
             "description": "pRPL18B",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "B / 5"
           }
@@ -288,14 +288,14 @@
           "name": "pYTK018 - pALD6",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65125"
           },
           "info": {
             "name": "pYTK018",
             "description": "pALD6",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "B / 6"
           }
@@ -304,14 +304,14 @@
           "name": "pYTK019 - pPAB1",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65126"
           },
           "info": {
             "name": "pYTK019",
             "description": "pPAB1",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "B / 7"
           }
@@ -320,14 +320,14 @@
           "name": "pYTK020 - pRET2",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65127"
           },
           "info": {
             "name": "pYTK020",
             "description": "pRET2",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "B / 8"
           }
@@ -336,14 +336,14 @@
           "name": "pYTK021 - pRNR1",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65128"
           },
           "info": {
             "name": "pYTK021",
             "description": "pRNR1",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "B / 9"
           }
@@ -352,14 +352,14 @@
           "name": "pYTK022 - pSAC6",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65129"
           },
           "info": {
             "name": "pYTK022",
             "description": "pSAC6",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "B / 10"
           }
@@ -368,14 +368,14 @@
           "name": "pYTK023 - pRNR2",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65130"
           },
           "info": {
             "name": "pYTK023",
             "description": "pRNR2",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "B / 11"
           }
@@ -384,14 +384,14 @@
           "name": "pYTK024 - pPOP6",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65131"
           },
           "info": {
             "name": "pYTK024",
             "description": "pPOP6",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "B / 12"
           }
@@ -400,14 +400,14 @@
           "name": "pYTK025 - pRAD27",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65132"
           },
           "info": {
             "name": "pYTK025",
             "description": "pRAD27",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "C / 1"
           }
@@ -416,14 +416,14 @@
           "name": "pYTK026 - pPSP2",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65133"
           },
           "info": {
             "name": "pYTK026",
             "description": "pPSP2",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "C / 2"
           }
@@ -432,14 +432,14 @@
           "name": "pYTK027 - pREV1",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65134"
           },
           "info": {
             "name": "pYTK027",
             "description": "pREV1",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "C / 3"
           }
@@ -448,14 +448,14 @@
           "name": "pYTK028 - pMFA1",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65135"
           },
           "info": {
             "name": "pYTK028",
             "description": "pMFA1",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "C / 4"
           }
@@ -464,14 +464,14 @@
           "name": "pYTK029 - pMF\u03b12",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65136"
           },
           "info": {
             "name": "pYTK029",
             "description": "pMF\u03b12",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "C / 5"
           }
@@ -480,14 +480,14 @@
           "name": "pYTK030 - pGAL1",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65137"
           },
           "info": {
             "name": "pYTK030",
             "description": "pGAL1",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "C / 6"
           }
@@ -496,14 +496,14 @@
           "name": "pYTK031 - pCUP1",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65138"
           },
           "info": {
             "name": "pYTK031",
             "description": "pCUP1",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "C / 7"
           }
@@ -527,14 +527,14 @@
           "name": "pYTK037 - mTurquoise2",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65144"
           },
           "info": {
             "name": "pYTK037",
             "description": "mTurquoise2",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "D / 1"
           }
@@ -543,14 +543,14 @@
           "name": "pYTK038 - Venus",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65145"
           },
           "info": {
             "name": "pYTK038",
             "description": "Venus",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "D / 2"
           }
@@ -559,14 +559,14 @@
           "name": "pYTK039 - mRuby2",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65146"
           },
           "info": {
             "name": "pYTK039",
             "description": "mRuby2",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "D / 3"
           }
@@ -575,14 +575,14 @@
           "name": "pYTK040 - 3XFLAG-6XHis",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65147"
           },
           "info": {
             "name": "pYTK040",
             "description": "3XFLAG-6XHis",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "D / 4"
           }
@@ -591,14 +591,14 @@
           "name": "pYTK041 - Ubi-M",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65148"
           },
           "info": {
             "name": "pYTK041",
             "description": "Ubi-M",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "D / 5"
           }
@@ -607,14 +607,14 @@
           "name": "pYTK042 - Ubi-Y",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65149"
           },
           "info": {
             "name": "pYTK042",
             "description": "Ubi-Y",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "D / 6"
           }
@@ -623,14 +623,14 @@
           "name": "pYTK043 - Ubi-R",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65150"
           },
           "info": {
             "name": "pYTK043",
             "description": "Ubi-R",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "D / 7"
           }
@@ -654,14 +654,14 @@
           "name": "pYTK044 - mTurquoise2",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65151"
           },
           "info": {
             "name": "pYTK044",
             "description": "mTurquoise2",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "D / 8"
           }
@@ -670,14 +670,14 @@
           "name": "pYTK045 - Venus",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65152"
           },
           "info": {
             "name": "pYTK045",
             "description": "Venus",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "D / 9"
           }
@@ -686,14 +686,14 @@
           "name": "pYTK046 - mRuby2",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65153"
           },
           "info": {
             "name": "pYTK046",
             "description": "mRuby2",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "D / 10"
           }
@@ -717,14 +717,14 @@
           "name": "pYTK051 - tENO1",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65158"
           },
           "info": {
             "name": "pYTK051",
             "description": "tENO1",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "E / 3"
           }
@@ -733,14 +733,14 @@
           "name": "pYTK052 - tSSA1",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65159"
           },
           "info": {
             "name": "pYTK052",
             "description": "tSSA1",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "E / 4"
           }
@@ -749,14 +749,14 @@
           "name": "pYTK053 - tADH1",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65160"
           },
           "info": {
             "name": "pYTK053",
             "description": "tADH1",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "E / 5"
           }
@@ -765,14 +765,14 @@
           "name": "pYTK054 - tPGK1",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65161"
           },
           "info": {
             "name": "pYTK054",
             "description": "tPGK1",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "E / 6"
           }
@@ -781,14 +781,14 @@
           "name": "pYTK055 - tENO2",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65162"
           },
           "info": {
             "name": "pYTK055",
             "description": "tENO2",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "E / 7"
           }
@@ -797,14 +797,14 @@
           "name": "pYTK056 - tTDH1",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65163"
           },
           "info": {
             "name": "pYTK056",
             "description": "tTDH1",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "E / 8"
           }
@@ -828,14 +828,14 @@
           "name": "pYTK067 - ConR1",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65174"
           },
           "info": {
             "name": "pYTK067",
             "description": "ConR1",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "F / 7"
           }
@@ -844,14 +844,14 @@
           "name": "pYTK068 - ConR2",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65175"
           },
           "info": {
             "name": "pYTK068",
             "description": "ConR2",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "F / 8"
           }
@@ -860,14 +860,14 @@
           "name": "pYTK069 - ConR3",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65176"
           },
           "info": {
             "name": "pYTK069",
             "description": "ConR3",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "F / 9"
           }
@@ -876,14 +876,14 @@
           "name": "pYTK070 - ConR4",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65177"
           },
           "info": {
             "name": "pYTK070",
             "description": "ConR4",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "F / 10"
           }
@@ -892,14 +892,14 @@
           "name": "pYTK071 - ConR5",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65178"
           },
           "info": {
             "name": "pYTK071",
             "description": "ConR5",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "F / 11"
           }
@@ -908,14 +908,14 @@
           "name": "pYTK072 - ConRE",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65179"
           },
           "info": {
             "name": "pYTK072",
             "description": "ConRE",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "F / 12"
           }
@@ -924,14 +924,14 @@
           "name": "pYTK073 - ConRE'",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65180"
           },
           "info": {
             "name": "pYTK073",
             "description": "ConRE'",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "G / 1"
           }
@@ -955,14 +955,14 @@
           "name": "pYTK074 - URA3",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65181"
           },
           "info": {
             "name": "pYTK074",
             "description": "URA3",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "G / 2"
           }
@@ -971,14 +971,14 @@
           "name": "pYTK075 - LEU2",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65182"
           },
           "info": {
             "name": "pYTK075",
             "description": "LEU2",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "G / 3"
           }
@@ -987,14 +987,14 @@
           "name": "pYTK076 - HIS3",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65183"
           },
           "info": {
             "name": "pYTK076",
             "description": "HIS3",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "G / 4"
           }
@@ -1003,14 +1003,14 @@
           "name": "pYTK077 - KanamycinR",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65184"
           },
           "info": {
             "name": "pYTK077",
             "description": "KanamycinR",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "G / 5"
           }
@@ -1019,14 +1019,14 @@
           "name": "pYTK078 - NourseothricinR",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65185"
           },
           "info": {
             "name": "pYTK078",
             "description": "NourseothricinR",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "G / 6"
           }
@@ -1035,14 +1035,14 @@
           "name": "pYTK079 - HygromycinR",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65186"
           },
           "info": {
             "name": "pYTK079",
             "description": "HygromycinR",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "G / 7"
           }
@@ -1051,14 +1051,14 @@
           "name": "pYTK080 - ZeocinR",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65187"
           },
           "info": {
             "name": "pYTK080",
             "description": "ZeocinR",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "G / 8"
           }
@@ -1082,14 +1082,14 @@
           "name": "pYTK086 - URA3 3' Homology",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65193"
           },
           "info": {
             "name": "pYTK086",
             "description": "URA3 3' Homology",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "H / 2"
           }
@@ -1098,14 +1098,14 @@
           "name": "pYTK087 - LEU2 3' Homology",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65194"
           },
           "info": {
             "name": "pYTK087",
             "description": "LEU2 3' Homology",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "H / 3"
           }
@@ -1114,14 +1114,14 @@
           "name": "pYTK088 - HO 3' Homology",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65195"
           },
           "info": {
             "name": "pYTK088",
             "description": "HO 3' Homology",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "H / 4"
           }
@@ -1145,14 +1145,14 @@
           "name": "pYTK089 - AmpR-ColE1",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65196"
           },
           "info": {
             "name": "pYTK089",
             "description": "AmpR-ColE1",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Ampicillin",
             "well": "H / 5"
           }
@@ -1161,14 +1161,14 @@
           "name": "pYTK090 - KanR-ColE1",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65197"
           },
           "info": {
             "name": "pYTK090",
             "description": "KanR-ColE1",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Kanamycin",
             "well": "H / 6"
           }
@@ -1177,14 +1177,14 @@
           "name": "pYTK091 - SpecR-ColE1",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65198"
           },
           "info": {
             "name": "pYTK091",
             "description": "SpecR-ColE1",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Spectinomycin",
             "well": "H / 7"
           }
@@ -1208,14 +1208,14 @@
           "name": "pYTK092 - URA3 5' Homology",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65199"
           },
           "info": {
             "name": "pYTK092",
             "description": "URA3 5' Homology",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "H / 8"
           }
@@ -1224,14 +1224,14 @@
           "name": "pYTK093 - LEU2 5' Homology",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65200"
           },
           "info": {
             "name": "pYTK093",
             "description": "LEU2 5' Homology",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "H / 9"
           }
@@ -1240,14 +1240,14 @@
           "name": "pYTK094 - HO 5' Homology",
           "source": {
             "id": 0,
-            "type": "AddGeneIdSource",
+            "type": "AddgeneIdSource",
             "repository_name": "addgene",
             "repository_id": "65201"
           },
           "info": {
             "name": "pYTK094",
             "description": "HO 5' Homology",
-            "type": "AddGenePlasmid",
+            "type": "AddgenePlasmid",
             "resistance": "Chloramphenicol",
             "well": "H / 10"
           }

@@ -44,14 +44,14 @@ linkml:Jsonpath xsd:string
 
 linkml:Sparqlpath xsd:string
 
-<AddGeneIdSource> CLOSED {
-    (  $<AddGeneIdSource_tes> (  &<RepositoryIdSource_tes> ;
+<AddgeneIdSource> CLOSED {
+    (  $<AddgeneIdSource_tes> (  &<RepositoryIdSource_tes> ;
           rdf:type [ <RepositoryIdSource> ] ? ;
           <sequence_file_url> @linkml:String ? ;
-          <addgene_sequence_type> [ <https://w3id.org/genestorian/OpenCloning_LinkML/AddGeneSequenceType#depositor-full>
-             <https://w3id.org/genestorian/OpenCloning_LinkML/AddGeneSequenceType#addgene-full> ] ?
+          <addgene_sequence_type> [ <https://w3id.org/genestorian/OpenCloning_LinkML/AddgeneSequenceType#depositor-full>
+             <https://w3id.org/genestorian/OpenCloning_LinkML/AddgeneSequenceType#addgene-full> ] ?
        ) ;
-       rdf:type [ <AddGeneIdSource> ]
+       rdf:type [ <AddgeneIdSource> ]
     )
 }
 
@@ -142,7 +142,7 @@ linkml:Sparqlpath xsd:string
     (  $<CollectionOptionInfo_tes> (  schema1:name @linkml:String ? ;
           <description> @linkml:String ? ;
           <type> [ <https://w3id.org/genestorian/OpenCloning_LinkML/CollectionOptionType#OligoPair>
-             <https://w3id.org/genestorian/OpenCloning_LinkML/CollectionOptionType#AddGenePlasmid> ] ? ;
+             <https://w3id.org/genestorian/OpenCloning_LinkML/CollectionOptionType#AddgenePlasmid> ] ? ;
           <resistance> @linkml:String ? ;
           <well> @linkml:String ?
        ) ;
@@ -365,7 +365,7 @@ linkml:Sparqlpath xsd:string
           ) ;
           rdf:type [ <RepositoryIdSource> ]
        )
-    } OR @<AddGeneIdSource> OR @<BenchlingUrlSource> OR @<EuroscarfSource> OR @<IGEMSource> OR @<SEVASource> OR
+    } OR @<AddgeneIdSource> OR @<BenchlingUrlSource> OR @<EuroscarfSource> OR @<IGEMSource> OR @<SEVASource> OR
     @<SnapGenePlasmidSource> OR @<WekWikGeneIdSource>
 )
 

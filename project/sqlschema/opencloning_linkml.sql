@@ -95,7 +95,7 @@
 --     * Slot: output_name Description: Used to specify the name of the output sequence
 --     * Slot: database_id Description: The id of an entity in a database
 --     * Slot: id Description: A unique identifier for a thing
--- # Class: "AddGeneIdSource" Description: "Represents the source of a sequence that is identified by an AddGene id"
+-- # Class: "AddgeneIdSource" Description: "Represents the source of a sequence that is identified by an Addgene id"
 --     * Slot: sequence_file_url Description: The URL of a sequence file
 --     * Slot: addgene_sequence_type Description:
 --     * Slot: repository_id Description: The id of the sequence in the repository
@@ -366,8 +366,8 @@
 -- # Class: "RepositoryIdSource_input" Description: ""
 --     * Slot: RepositoryIdSource_id Description: Autocreated FK slot
 --     * Slot: input_id Description: The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.
--- # Class: "AddGeneIdSource_input" Description: ""
---     * Slot: AddGeneIdSource_id Description: Autocreated FK slot
+-- # Class: "AddgeneIdSource_input" Description: ""
+--     * Slot: AddgeneIdSource_id Description: Autocreated FK slot
 --     * Slot: input_id Description: The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.
 -- # Class: "WekWikGeneIdSource_input" Description: ""
 --     * Slot: WekWikGeneIdSource_id Description: Autocreated FK slot
@@ -607,7 +607,7 @@ CREATE TABLE "RepositoryIdSource" (
 	PRIMARY KEY (id),
 	FOREIGN KEY(output) REFERENCES "Sequence" (id)
 );
-CREATE TABLE "AddGeneIdSource" (
+CREATE TABLE "AddgeneIdSource" (
 	sequence_file_url TEXT,
 	addgene_sequence_type VARCHAR(14),
 	repository_id TEXT NOT NULL,
@@ -994,11 +994,11 @@ CREATE TABLE "RepositoryIdSource_input" (
 	FOREIGN KEY("RepositoryIdSource_id") REFERENCES "RepositoryIdSource" (id),
 	FOREIGN KEY(input_id) REFERENCES "Sequence" (id)
 );
-CREATE TABLE "AddGeneIdSource_input" (
-	"AddGeneIdSource_id" INTEGER,
+CREATE TABLE "AddgeneIdSource_input" (
+	"AddgeneIdSource_id" INTEGER,
 	input_id INTEGER,
-	PRIMARY KEY ("AddGeneIdSource_id", input_id),
-	FOREIGN KEY("AddGeneIdSource_id") REFERENCES "AddGeneIdSource" (id),
+	PRIMARY KEY ("AddgeneIdSource_id", input_id),
+	FOREIGN KEY("AddgeneIdSource_id") REFERENCES "AddgeneIdSource" (id),
 	FOREIGN KEY(input_id) REFERENCES "Sequence" (id)
 );
 CREATE TABLE "WekWikGeneIdSource_input" (

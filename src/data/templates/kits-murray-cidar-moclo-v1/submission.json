@@ -17,7 +17,7 @@
       "name": "P1m",
       "category": "promoter",
       "description": "J23101 strong constitutive promoter (1,791x J23112, 0.7x J23119)",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120934",
       "resistance": "Ampicillin",
       "well": "Plate 1 / A / 1"
@@ -26,7 +26,7 @@
       "name": "p3m",
       "category": "promoter",
       "description": "J23150 medium-strong constitutive promoter (620x J23112, 0.25x J23119)",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120935",
       "resistance": "Ampicillin",
       "well": "Plate 1 / A / 2"
@@ -35,7 +35,7 @@
       "name": "p4m",
       "category": "promoter",
       "description": "J23151 strong constitutive promoter (1,245x J23112, 0.49x J23119)",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120936",
       "resistance": "Ampicillin",
       "well": "Plate 1 / A / 3"
@@ -44,7 +44,7 @@
       "name": "P9m",
       "category": "promoter",
       "description": "Pr-OR1-OR2",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120937",
       "resistance": "Ampicillin",
       "well": "Plate 1 / A / 4"
@@ -53,7 +53,7 @@
       "name": "P12m",
       "category": "promoter",
       "description": "PLasTetO",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120938",
       "resistance": "Ampicillin",
       "well": "Plate 1 / A / 5"
@@ -62,7 +62,7 @@
       "name": "P15m",
       "category": "promoter",
       "description": "PCinTetO",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120939",
       "resistance": "Ampicillin",
       "well": "Plate 1 / A / 6"
@@ -71,7 +71,7 @@
       "name": "P16m",
       "category": "promoter",
       "description": "PCinLacO-m",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120940",
       "resistance": "Ampicillin",
       "well": "Plate 1 / A / 7"
@@ -80,7 +80,7 @@
       "name": "P18m",
       "category": "promoter",
       "description": "Weak T7",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120941",
       "resistance": "Ampicillin",
       "well": "Plate 1 / A / 8"
@@ -89,7 +89,7 @@
       "name": "P30m",
       "category": "promoter",
       "description": "PL-lacO1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120942",
       "resistance": "Ampicillin",
       "well": "Plate 1 / A / 9"
@@ -98,7 +98,7 @@
       "name": "P32m",
       "category": "promoter",
       "description": "PlacO",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120943",
       "resistance": "Ampicillin",
       "well": "Plate 1 / A / 10"
@@ -107,7 +107,7 @@
       "name": "P33m",
       "category": "promoter",
       "description": "P11",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120944",
       "resistance": "Ampicillin",
       "well": "Plate 1 / A / 11"
@@ -116,7 +116,7 @@
       "name": "P34m",
       "category": "promoter",
       "description": "P13",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120945",
       "resistance": "Ampicillin",
       "well": "Plate 1 / A / 12"
@@ -125,7 +125,7 @@
       "name": "P35m",
       "category": "promoter",
       "description": "PLbda-CasRQi",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120946",
       "resistance": "Ampicillin",
       "well": "Plate 1 / B / 1"
@@ -134,7 +134,7 @@
       "name": "P37m",
       "category": "promoter",
       "description": "PRpa",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120947",
       "resistance": "Ampicillin",
       "well": "Plate 1 / B / 2"
@@ -143,7 +143,7 @@
       "name": "P38m",
       "category": "promoter",
       "description": "PTra*",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120948",
       "resistance": "Ampicillin",
       "well": "Plate 1 / B / 3"
@@ -152,7 +152,7 @@
       "name": "P57m",
       "category": "promoter",
       "description": "PCin",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120949",
       "resistance": "Ampicillin",
       "well": "Plate 1 / B / 4"
@@ -161,7 +161,7 @@
       "name": "P58m",
       "category": "promoter",
       "description": "PLas-M",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120950",
       "resistance": "Ampicillin",
       "well": "Plate 1 / B / 5"
@@ -170,7 +170,7 @@
       "name": "P59m",
       "category": "promoter",
       "description": "PLux76B",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120951",
       "resistance": "Ampicillin",
       "well": "Plate 1 / B / 6"
@@ -179,7 +179,7 @@
       "name": "P60m",
       "category": "promoter",
       "description": "PSal-M",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120952",
       "resistance": "Ampicillin",
       "well": "Plate 1 / B / 7"
@@ -188,7 +188,7 @@
       "name": "P61m",
       "category": "promoter",
       "description": "PTac",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120953",
       "resistance": "Ampicillin",
       "well": "Plate 1 / B / 8"
@@ -197,7 +197,7 @@
       "name": "P66m",
       "category": "promoter",
       "description": "PRpa-M",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120954",
       "resistance": "Ampicillin",
       "well": "Plate 1 / B / 9"
@@ -206,7 +206,7 @@
       "name": "C1m",
       "category": "cds",
       "description": "deGFP",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120955",
       "resistance": "Ampicillin",
       "well": "Plate 1 / B / 10"
@@ -215,7 +215,7 @@
       "name": "C3m",
       "category": "cds",
       "description": "sfGFP",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120956",
       "resistance": "Ampicillin",
       "well": "Plate 1 / B / 11"
@@ -224,7 +224,7 @@
       "name": "C5m",
       "category": "cds",
       "description": "mRFP",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120957",
       "resistance": "Ampicillin",
       "well": "Plate 1 / B / 12"
@@ -233,7 +233,7 @@
       "name": "C9m",
       "category": "cds",
       "description": "deCFP",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120958",
       "resistance": "Ampicillin",
       "well": "Plate 1 / C / 1"
@@ -242,7 +242,7 @@
       "name": "C11m",
       "category": "cds",
       "description": "Citrine",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120959",
       "resistance": "Ampicillin",
       "well": "Plate 1 / C / 2"
@@ -251,7 +251,7 @@
       "name": "C13m",
       "category": "cds",
       "description": "Cerulean",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120960",
       "resistance": "Ampicillin",
       "well": "Plate 1 / C / 3"
@@ -260,7 +260,7 @@
       "name": "C20m",
       "category": "cds",
       "description": "sfYFP-ssrA",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120961",
       "resistance": "Ampicillin",
       "well": "Plate 1 / C / 4"
@@ -269,7 +269,7 @@
       "name": "C21m",
       "category": "cds",
       "description": "MG-apt",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120962",
       "resistance": "Ampicillin",
       "well": "Plate 1 / C / 5"
@@ -278,7 +278,7 @@
       "name": "C22m",
       "category": "cds",
       "description": "mSpinach",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120963",
       "resistance": "Ampicillin",
       "well": "Plate 1 / C / 6"
@@ -287,7 +287,7 @@
       "name": "C24m",
       "category": "cds",
       "description": "lambda-cI",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120964",
       "resistance": "Ampicillin",
       "well": "Plate 1 / C / 7"
@@ -296,7 +296,7 @@
       "name": "C27m",
       "category": "cds",
       "description": "TetR",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120965",
       "resistance": "Ampicillin",
       "well": "Plate 1 / C / 8"
@@ -305,7 +305,7 @@
       "name": "C31m",
       "category": "cds",
       "description": "bxb1 integrase",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120966",
       "resistance": "Ampicillin",
       "well": "Plate 1 / C / 9"
@@ -314,7 +314,7 @@
       "name": "C32m",
       "category": "cds",
       "description": "CinR",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120967",
       "resistance": "Ampicillin",
       "well": "Plate 1 / C / 10"
@@ -323,7 +323,7 @@
       "name": "C33m",
       "category": "cds",
       "description": "AiiA degradase",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120968",
       "resistance": "Ampicillin",
       "well": "Plate 1 / C / 11"
@@ -332,7 +332,7 @@
       "name": "C35m",
       "category": "cds",
       "description": "RhlR",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120969",
       "resistance": "Ampicillin",
       "well": "Plate 1 / C / 12"
@@ -341,7 +341,7 @@
       "name": "C36m",
       "category": "cds",
       "description": "RhlI",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120970",
       "resistance": "Ampicillin",
       "well": "Plate 1 / D / 1"
@@ -350,7 +350,7 @@
       "name": "C38m",
       "category": "cds",
       "description": "Sigma38 (RpoS)",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120971",
       "resistance": "Ampicillin",
       "well": "Plate 1 / D / 2"
@@ -359,7 +359,7 @@
       "name": "C39m",
       "category": "cds",
       "description": "ccdB toxin",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120972",
       "resistance": "Ampicillin",
       "well": "Plate 1 / D / 3"
@@ -368,7 +368,7 @@
       "name": "C40m",
       "category": "cds",
       "description": "50 bp Blank",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120973",
       "resistance": "Ampicillin",
       "well": "Plate 1 / D / 4"
@@ -377,7 +377,7 @@
       "name": "C41m",
       "category": "cds",
       "description": "dCas9",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120974",
       "resistance": "Ampicillin",
       "well": "Plate 1 / D / 5"
@@ -386,7 +386,7 @@
       "name": "C51m",
       "category": "cds",
       "description": "sfYFP",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120975",
       "resistance": "Ampicillin",
       "well": "Plate 1 / D / 6"
@@ -395,7 +395,7 @@
       "name": "C59m",
       "category": "cds",
       "description": "mScarlet",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120976",
       "resistance": "Ampicillin",
       "well": "Plate 1 / D / 7"
@@ -404,7 +404,7 @@
       "name": "C61m",
       "category": "cds",
       "description": "RpaR",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120977",
       "resistance": "Ampicillin",
       "well": "Plate 1 / D / 8"
@@ -413,7 +413,7 @@
       "name": "C62m",
       "category": "cds",
       "description": "TraR(W)",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120978",
       "resistance": "Ampicillin",
       "well": "Plate 1 / D / 9"
@@ -422,7 +422,7 @@
       "name": "C63m",
       "category": "cds",
       "description": "LacI",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120979",
       "resistance": "Ampicillin",
       "well": "Plate 1 / D / 10"
@@ -431,7 +431,7 @@
       "name": "C64m",
       "category": "cds",
       "description": "temperature sensitive lambda repressor (cI857)",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120980",
       "resistance": "Ampicillin",
       "well": "Plate 1 / D / 11"
@@ -440,7 +440,7 @@
       "name": "C67m",
       "category": "cds",
       "description": "Bxb1 integrase - mScarlet-i-LAA",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120981",
       "resistance": "Ampicillin",
       "well": "Plate 1 / D / 12"
@@ -449,7 +449,7 @@
       "name": "C70m",
       "category": "cds",
       "description": "RpaR-TYQEVV",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120982",
       "resistance": "Ampicillin",
       "well": "Plate 1 / E / 1"
@@ -458,7 +458,7 @@
       "name": "C71m",
       "category": "cds",
       "description": "CinR-CIDDHYRTC n-2v",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120983",
       "resistance": "Ampicillin",
       "well": "Plate 1 / E / 2"
@@ -467,7 +467,7 @@
       "name": "C72m",
       "category": "cds",
       "description": "LacI-M",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120984",
       "resistance": "Ampicillin",
       "well": "Plate 1 / E / 3"
@@ -476,7 +476,7 @@
       "name": "C73m",
       "category": "cds",
       "description": "LasR-LSTPLVMI",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120985",
       "resistance": "Ampicillin",
       "well": "Plate 1 / E / 4"
@@ -485,7 +485,7 @@
       "name": "C74m",
       "category": "cds",
       "description": "LuxRQ FMY",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120986",
       "resistance": "Ampicillin",
       "well": "Plate 1 / E / 5"
@@ -494,7 +494,7 @@
       "name": "C75m",
       "category": "cds",
       "description": "NahR-M",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120987",
       "resistance": "Ampicillin",
       "well": "Plate 1 / E / 6"
@@ -503,7 +503,7 @@
       "name": "C76m",
       "category": "cds",
       "description": "KanR",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120988",
       "resistance": "Ampicillin",
       "well": "Plate 1 / E / 7"
@@ -512,7 +512,7 @@
       "name": "C77m",
       "category": "cds",
       "description": "AmpR",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120989",
       "resistance": "Ampicillin",
       "well": "Plate 1 / E / 8"
@@ -521,7 +521,7 @@
       "name": "C78m",
       "category": "cds",
       "description": "ChlorR",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120990",
       "resistance": "Ampicillin",
       "well": "Plate 1 / E / 9"
@@ -530,7 +530,7 @@
       "name": "C79m",
       "category": "cds",
       "description": "ccdA antitoxin",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120991",
       "resistance": "Ampicillin",
       "well": "Plate 1 / E / 10"
@@ -539,7 +539,7 @@
       "name": "C80m",
       "category": "cds",
       "description": "mfLon protease",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120992",
       "resistance": "Ampicillin",
       "well": "Plate 1 / E / 11"
@@ -548,7 +548,7 @@
       "name": "C82m",
       "category": "cds",
       "description": "Rpa Synthase (RpaI)",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120993",
       "resistance": "Ampicillin",
       "well": "Plate 1 / E / 12"
@@ -557,7 +557,7 @@
       "name": "C83m",
       "category": "cds",
       "description": "pir protein",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120994",
       "resistance": "Ampicillin",
       "well": "Plate 1 / F / 1"
@@ -566,7 +566,7 @@
       "name": "C84m",
       "category": "cds",
       "description": "Sigma28",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120995",
       "resistance": "Ampicillin",
       "well": "Plate 1 / F / 2"
@@ -575,7 +575,7 @@
       "name": "C85m",
       "category": "cds",
       "description": "SigmaX (ECF20_992)",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120996",
       "resistance": "Ampicillin",
       "well": "Plate 1 / F / 3"
@@ -584,7 +584,7 @@
       "name": "C86m",
       "category": "cds",
       "description": "\u03c6X174 Lysis Protein (X174E)",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120997",
       "resistance": "Ampicillin",
       "well": "Plate 1 / F / 4"
@@ -593,7 +593,7 @@
       "name": "C90m",
       "category": "cds",
       "description": "NahR-sfGFP fusion",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120998",
       "resistance": "Ampicillin",
       "well": "Plate 1 / F / 5"
@@ -602,7 +602,7 @@
       "name": "C91m",
       "category": "cds",
       "description": "sfCFP",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "120999",
       "resistance": "Ampicillin",
       "well": "Plate 1 / F / 6"
@@ -611,7 +611,7 @@
       "name": "C92m",
       "category": "cds",
       "description": "sfCFPpdt3",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121000",
       "resistance": "Ampicillin",
       "well": "Plate 1 / F / 7"
@@ -620,7 +620,7 @@
       "name": "C95m",
       "category": "cds",
       "description": "T7 RNA polymerase",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121001",
       "resistance": "Ampicillin",
       "well": "Plate 1 / F / 8"
@@ -629,7 +629,7 @@
       "name": "C98m",
       "category": "cds",
       "description": "Gp2 toxin",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121002",
       "resistance": "Ampicillin",
       "well": "Plate 1 / F / 9"
@@ -638,7 +638,7 @@
       "name": "C99m",
       "category": "cds",
       "description": "mScarlet-I codon optimized",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121003",
       "resistance": "Ampicillin",
       "well": "Plate 1 / F / 10"
@@ -647,7 +647,7 @@
       "name": "C100m",
       "category": "cds",
       "description": null,
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121004",
       "resistance": "Ampicillin",
       "well": "Plate 1 / F / 11"
@@ -656,7 +656,7 @@
       "name": "C101m",
       "category": "cds",
       "description": "sfCFP-LAA",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121005",
       "resistance": "Ampicillin",
       "well": "Plate 1 / F / 12"
@@ -665,7 +665,7 @@
       "name": "C102m",
       "category": "cds",
       "description": "treRT-LAA",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121006",
       "resistance": "Ampicillin",
       "well": "Plate 1 / G / 1"
@@ -674,7 +674,7 @@
       "name": "C103m",
       "category": "cds",
       "description": "mScarlet-I-LAA",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121007",
       "resistance": "Ampicillin",
       "well": "Plate 1 / G / 2"
@@ -683,7 +683,7 @@
       "name": "C105m",
       "category": "cds",
       "description": "sfYFP-AAV-ssrA",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121008",
       "resistance": "Ampicillin",
       "well": "Plate 1 / G / 3"
@@ -692,7 +692,7 @@
       "name": "C106m",
       "category": "cds",
       "description": "sfYFP-DAS-ssrA",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121009",
       "resistance": "Ampicillin",
       "well": "Plate 1 / G / 4"
@@ -701,7 +701,7 @@
       "name": "C108m",
       "category": "cds",
       "description": "mScarlet-I-pdt3",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121010",
       "resistance": "Ampicillin",
       "well": "Plate 1 / G / 5"
@@ -710,7 +710,7 @@
       "name": "C109m",
       "category": "cds",
       "description": "mfLon-pdt3 tag",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121011",
       "resistance": "Ampicillin",
       "well": "Plate 1 / G / 6"
@@ -719,7 +719,7 @@
       "name": "C113m",
       "category": "cds",
       "description": "Cas9",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121012",
       "resistance": "Ampicillin",
       "well": "Plate 1 / G / 7"
@@ -728,7 +728,7 @@
       "name": "C114m",
       "category": "cds",
       "description": "dCas9, BbsI-safe",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121013",
       "resistance": "Ampicillin",
       "well": "Plate 1 / G / 8"
@@ -737,7 +737,7 @@
       "name": "C115m",
       "category": "cds",
       "description": "TP901 integrase",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121014",
       "resistance": "Ampicillin",
       "well": "Plate 1 / G / 9"
@@ -746,7 +746,7 @@
       "name": "U2m",
       "category": "five_utr",
       "description": "BCD11",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121015",
       "resistance": "Ampicillin",
       "well": "Plate 1 / G / 10"
@@ -755,7 +755,7 @@
       "name": "U3m",
       "category": "five_utr",
       "description": "BCD13",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121016",
       "resistance": "Ampicillin",
       "well": "Plate 1 / G / 11"
@@ -764,7 +764,7 @@
       "name": "U4m",
       "category": "five_utr",
       "description": "UTR1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121017",
       "resistance": "Ampicillin",
       "well": "Plate 1 / G / 12"
@@ -773,7 +773,7 @@
       "name": "U5m",
       "category": "five_utr",
       "description": "BCD14",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121018",
       "resistance": "Ampicillin",
       "well": "Plate 1 / H / 1"
@@ -782,7 +782,7 @@
       "name": "U6m",
       "category": "five_utr",
       "description": "BCD20",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121019",
       "resistance": "Ampicillin",
       "well": "Plate 1 / H / 2"
@@ -791,7 +791,7 @@
       "name": "U7m",
       "category": "five_utr",
       "description": "BCD16",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121020",
       "resistance": "Ampicillin",
       "well": "Plate 1 / H / 3"
@@ -800,7 +800,7 @@
       "name": "U8m",
       "category": "five_utr",
       "description": "BCD24",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121021",
       "resistance": "Ampicillin",
       "well": "Plate 1 / H / 4"
@@ -809,7 +809,7 @@
       "name": "U9m",
       "category": "five_utr",
       "description": "BCD22",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121022",
       "resistance": "Ampicillin",
       "well": "Plate 1 / H / 5"
@@ -818,7 +818,7 @@
       "name": "U17m",
       "category": "five_utr",
       "description": "Bujard RBS",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121023",
       "resistance": "Ampicillin",
       "well": "Plate 1 / H / 6"
@@ -827,7 +827,7 @@
       "name": "U19m",
       "category": "five_utr",
       "description": "MG-apt",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121024",
       "resistance": "Ampicillin",
       "well": "Plate 1 / H / 7"
@@ -836,7 +836,7 @@
       "name": "U22m",
       "category": "five_utr",
       "description": "BCD6",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121025",
       "resistance": "Ampicillin",
       "well": "Plate 1 / H / 8"
@@ -845,7 +845,7 @@
       "name": "U24m",
       "category": "five_utr",
       "description": "RiboJ + BCD2",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121026",
       "resistance": "Ampicillin",
       "well": "Plate 1 / H / 9"
@@ -854,7 +854,7 @@
       "name": "U25m",
       "category": "five_utr",
       "description": "RiboJ + UTR1",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121027",
       "resistance": "Ampicillin",
       "well": "Plate 1 / H / 10"
@@ -863,7 +863,7 @@
       "name": "T1m",
       "category": "terminator",
       "description": "T500_noGap, short attachment (T11)",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121028",
       "resistance": "Ampicillin",
       "well": "Plate 1 / H / 11"
@@ -872,7 +872,7 @@
       "name": "T2m",
       "category": "terminator",
       "description": "ECK120033736, modified",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121029",
       "resistance": "Ampicillin",
       "well": "Plate 1 / H / 12"
@@ -881,7 +881,7 @@
       "name": "T7m",
       "category": "terminator",
       "description": "S. pyogenes tracrRNA terminator",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121030",
       "resistance": "Ampicillin",
       "well": "Plate 2 / A / 1"
@@ -890,7 +890,7 @@
       "name": "T12m",
       "category": "terminator",
       "description": "ECK120029600",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121031",
       "resistance": "Ampicillin",
       "well": "Plate 2 / A / 2"
@@ -899,7 +899,7 @@
       "name": "T13m",
       "category": "terminator",
       "description": "ECK120033737",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121032",
       "resistance": "Ampicillin",
       "well": "Plate 2 / A / 3"
@@ -908,7 +908,7 @@
       "name": "T14m",
       "category": "terminator",
       "description": "L3S1P13",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121033",
       "resistance": "Ampicillin",
       "well": "Plate 2 / A / 4"
@@ -917,7 +917,7 @@
       "name": "T15m",
       "category": "terminator",
       "description": "modified L3S3P11",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121034",
       "resistance": "Ampicillin",
       "well": "Plate 2 / A / 5"
@@ -926,7 +926,7 @@
       "name": "T16m",
       "category": "terminator",
       "description": "L3S2P55",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121035",
       "resistance": "Ampicillin",
       "well": "Plate 2 / A / 6"
@@ -935,7 +935,7 @@
       "name": "T17m",
       "category": "terminator",
       "description": "L3S2P11",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121036",
       "resistance": "Ampicillin",
       "well": "Plate 2 / A / 7"
@@ -944,7 +944,7 @@
       "name": "T18m",
       "category": "terminator",
       "description": "modified L3S2P21",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121037",
       "resistance": "Ampicillin",
       "well": "Plate 2 / A / 8"
@@ -953,7 +953,7 @@
       "name": "UC16m",
       "category": "five_utr_gRna",
       "description": "gQi Cas9 gRNA",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121038",
       "resistance": "Ampicillin",
       "well": "Plate 2 / A / 9"
@@ -962,7 +962,7 @@
       "name": "UC17m",
       "category": "five_utr_gRna",
       "description": "gV1 Cas9 gRNA",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121039",
       "resistance": "Ampicillin",
       "well": "Plate 2 / A / 10"
@@ -971,7 +971,7 @@
       "name": "UC20m",
       "category": "five_utr_gRna",
       "description": "gN2 gRNA",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121040",
       "resistance": "Ampicillin",
       "well": "Plate 2 / A / 11"
@@ -980,7 +980,7 @@
       "name": "UCT1m",
       "category": "five_utr_gRna",
       "description": "gQi gRNA",
-      "type": "AddGenePlasmid",
+      "type": "AddgenePlasmid",
       "addgene_id": "121041",
       "resistance": "Ampicillin",
       "well": "Plate 2 / A / 12"
