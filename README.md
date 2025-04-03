@@ -4,7 +4,7 @@ A LinkML data model for OpenCloning, a standardized schema for describing molecu
 
 ## Website
 
-[https://genestorian.github.io/OpenCloning_LinkML](https://genestorian.github.io/OpenCloning_LinkML)](https://opencloning.github.io/OpenCloning_LinkML)
+https://genestorian.github.io/OpenCloning_LinkML
 
 ## Repository Structure
 
