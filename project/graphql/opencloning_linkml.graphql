@@ -165,6 +165,18 @@ type CollectionSource
     options: [CollectionOption]
   }
 
+type CreLoxRecombinationSource
+  {
+    id: Integer!
+    input: [Sequence]
+    output: Sequence
+    type: String
+    outputName: String
+    databaseId: Integer
+    circular: Boolean
+    assembly: [AssemblyFragment]
+  }
+
 type CRISPRSource
   {
     id: Integer!
@@ -269,6 +281,18 @@ type IGEMSource
   }
 
 type InFusionSource
+  {
+    id: Integer!
+    input: [Sequence]
+    output: Sequence
+    type: String
+    outputName: String
+    databaseId: Integer
+    circular: Boolean
+    assembly: [AssemblyFragment]
+  }
+
+type InVivoAssemblySource
   {
     id: Integer!
     input: [Sequence]
