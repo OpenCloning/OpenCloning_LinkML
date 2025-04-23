@@ -547,7 +547,8 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/genestorian/OpenCloning_LinkML/SequenceFileFormat#embl> ] ;
           <file_name> @linkml:String ? ;
           <index_in_file> @linkml:Integer ? ;
-          <circularize> @linkml:Boolean ?
+          <circularize> @linkml:Boolean ? ;
+          <coordinates> @<SimpleSequenceLocation> ?
        ) ;
        rdf:type [ <UploadedFileSource> ]
     )

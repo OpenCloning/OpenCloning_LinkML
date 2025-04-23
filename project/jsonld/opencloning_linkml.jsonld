@@ -1014,6 +1014,20 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "uploadedFileSource__coordinates",
+      "description": "If provided, coordinates within the sequence of the file to extract a subsequence",
+      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/coordinates",
+      "alias": "coordinates",
+      "owner": "UploadedFileSource",
+      "domain_of": [
+        "UploadedFileSource"
+      ],
+      "range": "SimpleSequenceLocation",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "repositoryIdSource__repository_name",
       "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
       "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/repository_name",
@@ -1187,7 +1201,7 @@
     },
     {
       "name": "simpleSequenceLocation__start",
-      "description": "The starting coordinate (1-based) of the location",
+      "description": "The starting coordinate (0-based) of the location",
       "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
       "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/start",
       "alias": "start",
@@ -1201,7 +1215,7 @@
     },
     {
       "name": "simpleSequenceLocation__end",
-      "description": "The ending coordinate (1-based) of the location",
+      "description": "The ending coordinate (0-based) of the location",
       "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
       "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/end",
       "alias": "end",
@@ -2495,7 +2509,8 @@
         "UploadedFileSource_sequence_file_format",
         "uploadedFileSource__file_name",
         "uploadedFileSource__index_in_file",
-        "uploadedFileSource__circularize"
+        "uploadedFileSource__circularize",
+        "uploadedFileSource__coordinates"
       ],
       "slot_usage": {},
       "attributes": [
@@ -2515,6 +2530,13 @@
           "name": "circularize",
           "description": "Whether the sequence should be circularized (FASTA only)",
           "range": "boolean",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "coordinates",
+          "description": "If provided, coordinates within the sequence of the file to extract a subsequence",
+          "range": "SimpleSequenceLocation",
+          "inlined": true,
           "@type": "SlotDefinition"
         }
       ],
@@ -2856,14 +2878,14 @@
       "attributes": [
         {
           "name": "start",
-          "description": "The starting coordinate (1-based) of the location",
+          "description": "The starting coordinate (0-based) of the location",
           "range": "integer",
           "required": true,
           "@type": "SlotDefinition"
         },
         {
           "name": "end",
-          "description": "The ending coordinate (1-based) of the location",
+          "description": "The ending coordinate (0-based) of the location",
           "range": "integer",
           "required": true,
           "@type": "SlotDefinition"
@@ -3567,9 +3589,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "opencloning_linkml.yaml",
-  "source_file_date": "2025-04-22T18:20:49",
-  "source_file_size": 25701,
-  "generation_date": "2025-04-22T18:21:34",
+  "source_file_date": "2025-04-23T14:13:22",
+  "source_file_size": 25932,
+  "generation_date": "2025-04-23T14:13:26",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/opencloning_linkml.context.jsonld",

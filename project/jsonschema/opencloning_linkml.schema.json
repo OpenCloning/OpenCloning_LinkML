@@ -2830,11 +2830,11 @@
             "description": "Represents a location within a sequence, for now support for ranges only",
             "properties": {
                 "end": {
-                    "description": "The ending coordinate (1-based) of the location",
+                    "description": "The ending coordinate (0-based) of the location",
                     "type": "integer"
                 },
                 "start": {
-                    "description": "The starting coordinate (1-based) of the location",
+                    "description": "The starting coordinate (0-based) of the location",
                     "type": "integer"
                 },
                 "strand": {
@@ -3017,6 +3017,17 @@
                         "boolean",
                         "null"
                     ]
+                },
+                "coordinates": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/SimpleSequenceLocation"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "If provided, coordinates within the sequence of the file to extract a subsequence"
                 },
                 "database_id": {
                     "description": "The id of an entity in a database",
