@@ -874,6 +874,11 @@ class UploadedFileSource(Source):
         description="""Whether the sequence should be circularized (FASTA only)""",
         json_schema_extra={"linkml_meta": {"alias": "circularize", "domain_of": ["UploadedFileSource"]}},
     )
+    coordinates: Optional[SimpleSequenceLocation] = Field(
+        default=None,
+        description="""If provided, coordinates within the sequence of the file to extract a subsequence""",
+        json_schema_extra={"linkml_meta": {"alias": "coordinates", "domain_of": ["UploadedFileSource"]}},
+    )
     input: Optional[List[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",

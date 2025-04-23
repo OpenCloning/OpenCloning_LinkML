@@ -87,6 +87,7 @@
 --     * Slot: output_name Description: Used to specify the name of the output sequence
 --     * Slot: database_id Description: The id of an entity in a database
 --     * Slot: id Description: A unique identifier for a thing
+--     * Slot: coordinates_id Description: If provided, coordinates within the sequence of the file to extract a subsequence
 -- # Class: "RepositoryIdSource" Description: "Represents the source of a sequence that is identified by a repository id"
 --     * Slot: repository_id Description: The id of the sequence in the repository
 --     * Slot: repository_name Description:
@@ -615,8 +616,10 @@ CREATE TABLE "UploadedFileSource" (
 	output_name TEXT,
 	database_id INTEGER,
 	id INTEGER NOT NULL,
+	coordinates_id INTEGER,
 	PRIMARY KEY (id),
-	FOREIGN KEY(output) REFERENCES "Sequence" (id)
+	FOREIGN KEY(output) REFERENCES "Sequence" (id),
+	FOREIGN KEY(coordinates_id) REFERENCES "SimpleSequenceLocation" (id)
 );
 CREATE TABLE "RepositoryIdSource" (
 	repository_id TEXT NOT NULL,

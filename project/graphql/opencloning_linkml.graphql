@@ -570,6 +570,7 @@ type UploadedFileSource
     fileName: String
     indexInFile: Integer
     circularize: Boolean
+    coordinates: SimpleSequenceLocation
   }
 
 type WekWikGeneIdSource

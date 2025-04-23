@@ -1,5 +1,5 @@
 # Auto generated from opencloning_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-04-22T18:21:36
+# Generation date: 2025-04-23T13:44:41
 # Schema: OpenCloning_LinkML
 #
 # id: https://w3id.org/genestorian/OpenCloning_LinkML
@@ -697,6 +697,7 @@ class UploadedFileSource(Source):
     file_name: Optional[str] = None
     index_in_file: Optional[int] = None
     circularize: Optional[Union[bool, Bool]] = None
+    coordinates: Optional[Union[dict, "SimpleSequenceLocation"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -717,6 +718,9 @@ class UploadedFileSource(Source):
 
         if self.circularize is not None and not isinstance(self.circularize, Bool):
             self.circularize = Bool(self.circularize)
+
+        if self.coordinates is not None and not isinstance(self.coordinates, SimpleSequenceLocation):
+            self.coordinates = SimpleSequenceLocation(**as_dict(self.coordinates))
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -2354,6 +2358,15 @@ slots.uploadedFileSource__circularize = Slot(
     model_uri=OPENCLONING_LINKML.uploadedFileSource__circularize,
     domain=None,
     range=Optional[Union[bool, Bool]],
+)
+
+slots.uploadedFileSource__coordinates = Slot(
+    uri=OPENCLONING_LINKML.coordinates,
+    name="uploadedFileSource__coordinates",
+    curie=OPENCLONING_LINKML.curie("coordinates"),
+    model_uri=OPENCLONING_LINKML.uploadedFileSource__coordinates,
+    domain=None,
+    range=Optional[Union[dict, SimpleSequenceLocation]],
 )
 
 slots.repositoryIdSource__repository_name = Slot(

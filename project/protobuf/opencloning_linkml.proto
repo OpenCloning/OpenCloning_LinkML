@@ -502,6 +502,7 @@ message UploadedFileSource
   string fileName = 0
   integer indexInFile = 0
   boolean circularize = 0
+  simpleSequenceLocation coordinates = 0
  }
 // Represents the source of a sequence that is identified by a WekWikGene id
 message WekWikGeneIdSource

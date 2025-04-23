@@ -3018,6 +3018,17 @@
                         "null"
                     ]
                 },
+                "coordinates": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/SimpleSequenceLocation"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "If provided, coordinates within the sequence of the file to extract a subsequence"
+                },
                 "database_id": {
                     "description": "The id of an entity in a database",
                     "type": [
