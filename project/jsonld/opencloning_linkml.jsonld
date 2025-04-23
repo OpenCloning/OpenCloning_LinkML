@@ -1201,7 +1201,7 @@
     },
     {
       "name": "simpleSequenceLocation__start",
-      "description": "The starting coordinate (1-based) of the location",
+      "description": "The starting coordinate (0-based) of the location",
       "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
       "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/start",
       "alias": "start",
@@ -1215,7 +1215,7 @@
     },
     {
       "name": "simpleSequenceLocation__end",
-      "description": "The ending coordinate (1-based) of the location",
+      "description": "The ending coordinate (0-based) of the location",
       "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
       "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/end",
       "alias": "end",
@@ -2878,14 +2878,14 @@
       "attributes": [
         {
           "name": "start",
-          "description": "The starting coordinate (1-based) of the location",
+          "description": "The starting coordinate (0-based) of the location",
           "range": "integer",
           "required": true,
           "@type": "SlotDefinition"
         },
         {
           "name": "end",
-          "description": "The ending coordinate (1-based) of the location",
+          "description": "The ending coordinate (0-based) of the location",
           "range": "integer",
           "required": true,
           "@type": "SlotDefinition"
@@ -3589,9 +3589,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "opencloning_linkml.yaml",
-  "source_file_date": "2025-04-23T12:30:53",
+  "source_file_date": "2025-04-23T14:13:22",
   "source_file_size": 25932,
-  "generation_date": "2025-04-23T13:44:39",
+  "generation_date": "2025-04-23T14:13:26",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/opencloning_linkml.context.jsonld",

@@ -188,8 +188,8 @@
 --     * Slot: right_edge_id Description:
 -- # Class: "SimpleSequenceLocation" Description: "Represents a location within a sequence, for now support for ranges only"
 --     * Slot: id Description:
---     * Slot: start Description: The starting coordinate (1-based) of the location
---     * Slot: end Description: The ending coordinate (1-based) of the location
+--     * Slot: start Description: The starting coordinate (0-based) of the location
+--     * Slot: end Description: The ending coordinate (0-based) of the location
 --     * Slot: strand Description: The strand of the location, should be 1 or -1 or null
 -- # Class: "AssemblyFragment" Description: "Represents a fragment in an assembly"
 --     * Slot: id Description:

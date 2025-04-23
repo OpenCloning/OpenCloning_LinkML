@@ -460,12 +460,12 @@ classes:
       - start:
           range: integer
           description: >-
-            The starting coordinate (1-based) of the location
+            The starting coordinate (0-based) of the location
           required: true
       - end:
           range: integer
           description: >-
-            The ending coordinate (1-based) of the location
+            The ending coordinate (0-based) of the location
           required: true
       - strand:
           range: integer

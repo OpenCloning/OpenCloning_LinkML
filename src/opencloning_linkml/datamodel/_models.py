@@ -1920,14 +1920,14 @@ class SimpleSequenceLocation(ConfiguredBaseModel):
 
     start: int = Field(
         default=...,
-        description="""The starting coordinate (1-based) of the location""",
+        description="""The starting coordinate (0-based) of the location""",
         json_schema_extra={
             "linkml_meta": {"alias": "start", "domain_of": ["GenomeCoordinatesSource", "SimpleSequenceLocation"]}
         },
     )
     end: int = Field(
         default=...,
-        description="""The ending coordinate (1-based) of the location""",
+        description="""The ending coordinate (0-based) of the location""",
         json_schema_extra={
             "linkml_meta": {"alias": "end", "domain_of": ["GenomeCoordinatesSource", "SimpleSequenceLocation"]}
         },
