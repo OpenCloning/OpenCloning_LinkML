@@ -93,8 +93,9 @@ linkml:Sparqlpath xsd:string
           ) ;
           rdf:type [ <AssemblySource> ]
        )
-    } OR @<GatewaySource> OR @<GibsonAssemblySource> OR @<HomologousRecombinationSource> OR @<InFusionSource> OR @<LigationSource>
-    OR @<OverlapExtensionPCRLigationSource> OR @<PCRSource> OR @<RestrictionAndLigationSource>
+    } OR @<CreLoxRecombinationSource> OR @<GatewaySource> OR @<GibsonAssemblySource> OR @<HomologousRecombinationSource> OR
+    @<InFusionSource> OR @<InVivoAssemblySource> OR @<LigationSource> OR @<OverlapExtensionPCRLigationSource> OR @<PCRSource> OR
+    @<RestrictionAndLigationSource>
 )
 
 <AssociatedFile>  (
@@ -160,6 +161,14 @@ linkml:Sparqlpath xsd:string
           <options> @<CollectionOption> *
        ) ;
        rdf:type [ <CollectionSource> ]
+    )
+}
+
+<CreLoxRecombinationSource> CLOSED {
+    (  $<CreLoxRecombinationSource_tes> (  &<AssemblySource_tes> ;
+          rdf:type [ <AssemblySource> ] ?
+       ) ;
+       rdf:type [ <CreLoxRecombinationSource> ]
     )
 }
 
@@ -249,6 +258,14 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <AssemblySource> ] ?
        ) ;
        rdf:type [ <InFusionSource> ]
+    )
+}
+
+<InVivoAssemblySource> CLOSED {
+    (  $<InVivoAssemblySource_tes> (  &<AssemblySource_tes> ;
+          rdf:type [ <AssemblySource> ] ?
+       ) ;
+       rdf:type [ <InVivoAssemblySource> ]
     )
 }
 
