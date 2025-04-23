@@ -269,6 +269,12 @@ classes:
           range: boolean
           description: >-
             Whether the sequence should be circularized (FASTA only)
+      - coordinates:
+          range: SimpleSequenceLocation
+          description: >-
+            If provided, coordinates within the sequence of the file to extract a subsequence
+          required: false
+          inlined: true
     slot_usage:
       sequence_file_format:
         required: true
