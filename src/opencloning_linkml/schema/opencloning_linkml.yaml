@@ -1,17 +1,15 @@
 ---
-id: https://w3id.org/genestorian/OpenCloning_LinkML
+id: https://opencloning.github.io/OpenCloning_LinkML
 name: OpenCloning_LinkML
 title: OpenCloning_LinkML
 description: |-
   A LinkML data model for OpenCloning
 license: MIT
 see_also:
-  - https://genestorian.github.io/OpenCloning_LinkML
+  - https://pypi.org/project/opencloning-linkml/
 
 prefixes:
-  # These are the prefixes that you would use in the URL to refer to the classes,
-  # for example, for NCIT:C172877 http://purl.obolibrary.org/obo/NCIT_C172877
-  opencloning_linkml: https://w3id.org/genestorian/OpenCloning_LinkML/
+  opencloning_linkml: https://opencloning.github.io/OpenCloning_LinkML/
   linkml: https://w3id.org/linkml/
   biolink: https://w3id.org/biolink/
   schema: http://schema.org/

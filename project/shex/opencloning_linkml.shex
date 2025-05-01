@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-BASE <https://w3id.org/genestorian/OpenCloning_LinkML/>
+BASE <https://opencloning.github.io/OpenCloning_LinkML/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX linkml: <https://w3id.org/linkml/>
@@ -48,8 +48,8 @@ linkml:Sparqlpath xsd:string
     (  $<AddgeneIdSource_tes> (  &<RepositoryIdSource_tes> ;
           rdf:type [ <RepositoryIdSource> ] ? ;
           <sequence_file_url> @linkml:String ? ;
-          <addgene_sequence_type> [ <https://w3id.org/genestorian/OpenCloning_LinkML/AddgeneSequenceType#depositor-full>
-             <https://w3id.org/genestorian/OpenCloning_LinkML/AddgeneSequenceType#addgene-full> ] ?
+          <addgene_sequence_type> [ <https://opencloning.github.io/OpenCloning_LinkML/AddgeneSequenceType#depositor-full>
+             <https://opencloning.github.io/OpenCloning_LinkML/AddgeneSequenceType#addgene-full> ] ?
        ) ;
        rdf:type [ <AddgeneIdSource> ]
     )
@@ -66,7 +66,7 @@ linkml:Sparqlpath xsd:string
 <AnnotationSource> CLOSED {
     (  $<AnnotationSource_tes> (  &<Source_tes> ;
           rdf:type [ <Source> ] ? ;
-          <annotation_tool> [ <https://w3id.org/genestorian/OpenCloning_LinkML/AnnotationTool#plannotate> ] ;
+          <annotation_tool> [ <https://opencloning.github.io/OpenCloning_LinkML/AnnotationTool#plannotate> ] ;
           <annotation_tool_version> @linkml:String ? ;
           <annotation_report> @<AnnotationReport> *
        ) ;
@@ -142,8 +142,8 @@ linkml:Sparqlpath xsd:string
 <CollectionOptionInfo> CLOSED {
     (  $<CollectionOptionInfo_tes> (  schema1:name @linkml:String ? ;
           <description> @linkml:String ? ;
-          <type> [ <https://w3id.org/genestorian/OpenCloning_LinkML/CollectionOptionType#OligoPair>
-             <https://w3id.org/genestorian/OpenCloning_LinkML/CollectionOptionType#AddgenePlasmid> ] ? ;
+          <type> [ <https://opencloning.github.io/OpenCloning_LinkML/CollectionOptionType#OligoPair>
+             <https://opencloning.github.io/OpenCloning_LinkML/CollectionOptionType#AddgenePlasmid> ] ? ;
           <resistance> @linkml:String ? ;
           <well> @linkml:String ?
        ) ;
@@ -202,8 +202,8 @@ linkml:Sparqlpath xsd:string
 <GatewaySource> CLOSED {
     (  $<GatewaySource_tes> (  &<AssemblySource_tes> ;
           rdf:type [ <AssemblySource> ] ? ;
-          <reaction_type> [ <https://w3id.org/genestorian/OpenCloning_LinkML/GatewayReactionType#LR>
-             <https://w3id.org/genestorian/OpenCloning_LinkML/GatewayReactionType#BP> ] ;
+          <reaction_type> [ <https://opencloning.github.io/OpenCloning_LinkML/GatewayReactionType#LR>
+             <https://opencloning.github.io/OpenCloning_LinkML/GatewayReactionType#BP> ] ;
           <greedy> @linkml:Boolean ?
        ) ;
        rdf:type [ <GatewaySource> ]
@@ -371,14 +371,14 @@ linkml:Sparqlpath xsd:string
        (  $<RepositoryIdSource_tes> (  &<Source_tes> ;
              rdf:type [ <Source> ] ? ;
              <repository_id> @linkml:String ;
-             <repository_name> [ <https://w3id.org/genestorian/OpenCloning_LinkML/RepositoryName#addgene>
-                <https://w3id.org/genestorian/OpenCloning_LinkML/RepositoryName#genbank>
-                <https://w3id.org/genestorian/OpenCloning_LinkML/RepositoryName#benchling>
-                <https://w3id.org/genestorian/OpenCloning_LinkML/RepositoryName#snapgene>
-                <https://w3id.org/genestorian/OpenCloning_LinkML/RepositoryName#euroscarf>
-                <https://w3id.org/genestorian/OpenCloning_LinkML/RepositoryName#igem>
-                <https://w3id.org/genestorian/OpenCloning_LinkML/RepositoryName#wekwikgene>
-                <https://w3id.org/genestorian/OpenCloning_LinkML/RepositoryName#seva> ]
+             <repository_name> [ <https://opencloning.github.io/OpenCloning_LinkML/RepositoryName#addgene>
+                <https://opencloning.github.io/OpenCloning_LinkML/RepositoryName#genbank>
+                <https://opencloning.github.io/OpenCloning_LinkML/RepositoryName#benchling>
+                <https://opencloning.github.io/OpenCloning_LinkML/RepositoryName#snapgene>
+                <https://opencloning.github.io/OpenCloning_LinkML/RepositoryName#euroscarf>
+                <https://opencloning.github.io/OpenCloning_LinkML/RepositoryName#igem>
+                <https://opencloning.github.io/OpenCloning_LinkML/RepositoryName#wekwikgene>
+                <https://opencloning.github.io/OpenCloning_LinkML/RepositoryName#seva> ]
           ) ;
           rdf:type [ <RepositoryIdSource> ]
        )
@@ -526,10 +526,10 @@ linkml:Sparqlpath xsd:string
 <TextFileSequence> CLOSED {
     (  $<TextFileSequence_tes> (  &<Sequence_tes> ;
           rdf:type [ <Sequence> ] ? ;
-          <sequence_file_format> [ <https://w3id.org/genestorian/OpenCloning_LinkML/SequenceFileFormat#fasta>
-             <https://w3id.org/genestorian/OpenCloning_LinkML/SequenceFileFormat#genbank>
-             <https://w3id.org/genestorian/OpenCloning_LinkML/SequenceFileFormat#snapgene>
-             <https://w3id.org/genestorian/OpenCloning_LinkML/SequenceFileFormat#embl> ] ;
+          <sequence_file_format> [ <https://opencloning.github.io/OpenCloning_LinkML/SequenceFileFormat#fasta>
+             <https://opencloning.github.io/OpenCloning_LinkML/SequenceFileFormat#genbank>
+             <https://opencloning.github.io/OpenCloning_LinkML/SequenceFileFormat#snapgene>
+             <https://opencloning.github.io/OpenCloning_LinkML/SequenceFileFormat#embl> ] ;
           <overhang_crick_3prime> @linkml:Integer ? ;
           <overhang_watson_3prime> @linkml:Integer ? ;
           <file_content> @linkml:String ?
@@ -541,10 +541,10 @@ linkml:Sparqlpath xsd:string
 <UploadedFileSource> CLOSED {
     (  $<UploadedFileSource_tes> (  &<Source_tes> ;
           rdf:type [ <Source> ] ? ;
-          <sequence_file_format> [ <https://w3id.org/genestorian/OpenCloning_LinkML/SequenceFileFormat#fasta>
-             <https://w3id.org/genestorian/OpenCloning_LinkML/SequenceFileFormat#genbank>
-             <https://w3id.org/genestorian/OpenCloning_LinkML/SequenceFileFormat#snapgene>
-             <https://w3id.org/genestorian/OpenCloning_LinkML/SequenceFileFormat#embl> ] ;
+          <sequence_file_format> [ <https://opencloning.github.io/OpenCloning_LinkML/SequenceFileFormat#fasta>
+             <https://opencloning.github.io/OpenCloning_LinkML/SequenceFileFormat#genbank>
+             <https://opencloning.github.io/OpenCloning_LinkML/SequenceFileFormat#snapgene>
+             <https://opencloning.github.io/OpenCloning_LinkML/SequenceFileFormat#embl> ] ;
           <file_name> @linkml:String ? ;
           <index_in_file> @linkml:Integer ? ;
           <circularize> @linkml:Boolean ? ;

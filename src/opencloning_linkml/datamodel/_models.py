@@ -48,7 +48,7 @@ linkml_meta = LinkMLMeta(
         "default_prefix": "opencloning_linkml",
         "default_range": "string",
         "description": "A LinkML data model for OpenCloning",
-        "id": "https://w3id.org/genestorian/OpenCloning_LinkML",
+        "id": "https://opencloning.github.io/OpenCloning_LinkML",
         "imports": ["linkml:types"],
         "license": "MIT",
         "name": "OpenCloning_LinkML",
@@ -61,11 +61,11 @@ linkml_meta = LinkMLMeta(
             "linkml": {"prefix_prefix": "linkml", "prefix_reference": "https://w3id.org/linkml/"},
             "opencloning_linkml": {
                 "prefix_prefix": "opencloning_linkml",
-                "prefix_reference": "https://w3id.org/genestorian/OpenCloning_LinkML/",
+                "prefix_reference": "https://opencloning.github.io/OpenCloning_LinkML/",
             },
             "schema": {"prefix_prefix": "schema", "prefix_reference": "http://schema.org/"},
         },
-        "see_also": ["https://genestorian.github.io/OpenCloning_LinkML"],
+        "see_also": ["https://pypi.org/project/opencloning-linkml/"],
         "source_file": "src/opencloning_linkml/schema/opencloning_linkml.yaml",
         "title": "OpenCloning_LinkML",
     }
@@ -137,7 +137,7 @@ class CollectionOptionType(str, Enum):
 
 class NamedThing(ConfiguredBaseModel):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
-        {"class_uri": "schema:Thing", "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"}
+        {"class_uri": "schema:Thing", "from_schema": "https://opencloning.github.io/OpenCloning_LinkML"}
     )
 
     id: int = Field(
@@ -155,7 +155,7 @@ class Sequence(NamedThing):
     """
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
-        {"abstract": True, "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"}
+        {"abstract": True, "from_schema": "https://opencloning.github.io/OpenCloning_LinkML"}
     )
 
     id: int = Field(
@@ -183,7 +183,7 @@ class TemplateSequence(Sequence):
     Represents a sequence that is part of a template, where the actual sequence content will be determined by the user's actions
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     circular: Optional[bool] = Field(
         default=None,
@@ -227,7 +227,7 @@ class TextFileSequence(Sequence):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
         {
-            "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+            "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
             "slot_usage": {
                 "overhang_crick_3prime": {"ifabsent": "int(0)", "name": "overhang_crick_3prime"},
                 "overhang_watson_3prime": {"ifabsent": "int(0)", "name": "overhang_watson_3prime"},
@@ -293,7 +293,7 @@ class Primer(Sequence):
     An oligonucleotide or primer
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     name: Optional[str] = Field(
         default=None,
@@ -363,7 +363,7 @@ class SequenceCut(ConfiguredBaseModel):
     Represents a cut in a DNA sequence
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     cut_watson: int = Field(
         default=...,
@@ -384,7 +384,7 @@ class RestrictionSequenceCut(SequenceCut):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
         {
-            "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+            "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
             "slot_usage": {"restriction_enzyme": {"name": "restriction_enzyme", "required": True}},
         }
     )
@@ -417,7 +417,7 @@ class Source(NamedThing):
     """
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
-        {"abstract": True, "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"}
+        {"abstract": True, "from_schema": "https://opencloning.github.io/OpenCloning_LinkML"}
     )
 
     input: Optional[List[int]] = Field(
@@ -473,7 +473,7 @@ class DatabaseSource(Source):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
         {
-            "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+            "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
             "slot_usage": {"database_id": {"name": "database_id", "required": True}},
         }
     )
@@ -529,7 +529,7 @@ class CollectionSource(Source):
     Represents a collection of possible sources in a template
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     category_id: Optional[str] = Field(
         default=None,
@@ -614,7 +614,7 @@ class CollectionOption(ConfiguredBaseModel):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
         {
-            "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+            "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
             "slot_usage": {"name": {"name": "name", "required": True}},
         }
     )
@@ -682,7 +682,7 @@ class CollectionOptionInfo(ConfiguredBaseModel):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
         {
-            "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+            "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
             "slot_usage": {"name": {"name": "name", "required": False}},
         }
     )
@@ -737,7 +737,7 @@ class ManuallyTypedSource(Source):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
         {
-            "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+            "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
             "slot_usage": {
                 "overhang_crick_3prime": {"ifabsent": "int(0)", "name": "overhang_crick_3prime"},
                 "overhang_watson_3prime": {"ifabsent": "int(0)", "name": "overhang_watson_3prime"},
@@ -845,7 +845,7 @@ class UploadedFileSource(Source):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
         {
-            "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+            "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
             "slot_usage": {"sequence_file_format": {"name": "sequence_file_format", "required": True}},
         }
     )
@@ -930,7 +930,7 @@ class RepositoryIdSource(Source):
     Represents the source of a sequence that is identified by a repository id
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     repository_id: str = Field(
         default=...,
@@ -992,7 +992,7 @@ class AddgeneIdSource(RepositoryIdSource):
     Represents the source of a sequence that is identified by an Addgene id
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     sequence_file_url: Optional[str] = Field(
         default=None,
@@ -1084,7 +1084,7 @@ class WekWikGeneIdSource(RepositoryIdSource):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
         {
-            "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+            "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
             "slot_usage": {
                 "repository_id": {
                     "description": "The id of the gene in the " "WekWik gene database",
@@ -1193,7 +1193,7 @@ class SEVASource(RepositoryIdSource):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
         {
-            "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+            "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
             "slot_usage": {
                 "repository_id": {
                     "description": "The SEVA plasmid name",
@@ -1311,7 +1311,7 @@ class BenchlingUrlSource(RepositoryIdSource):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
         {
-            "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+            "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
             "slot_usage": {
                 "repository_id": {
                     "description": "The url of the gb file " "associated with the sequence",
@@ -1396,7 +1396,7 @@ class SnapGenePlasmidSource(RepositoryIdSource):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
         {
-            "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+            "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
             "slot_usage": {
                 "repository_id": {
                     "description": "The subpath of the plasmid "
@@ -1490,7 +1490,7 @@ class EuroscarfSource(RepositoryIdSource):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
         {
-            "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+            "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
             "slot_usage": {
                 "repository_id": {
                     "description": "The id of the plasmid in the " "Euroscarf plasmid library",
@@ -1575,7 +1575,7 @@ class IGEMSource(RepositoryIdSource):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
         {
-            "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+            "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
             "slot_usage": {
                 "repository_id": {
                     "description": "The unique identifier of the "
@@ -1677,7 +1677,7 @@ class GenomeCoordinatesSource(Source):
     Represents the source of a sequence that is identified by genome coordinates, requested from NCBI
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     assembly_accession: Optional[str] = Field(
         default=None,
@@ -1774,7 +1774,7 @@ class SequenceCutSource(Source):
     Represents the source of a sequence that is a subfragment of another sequence, generated by sequence cutting.
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     left_edge: Optional[SequenceCut] = Field(
         default=None,
@@ -1845,7 +1845,7 @@ class RestrictionEnzymeDigestionSource(SequenceCutSource):
     Represents the source of a sequence that is a subfragment of another sequence, generated by sequence cutting using restriction enzymes.
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     left_edge: Optional[RestrictionSequenceCut] = Field(
         default=None,
@@ -1916,7 +1916,7 @@ class SimpleSequenceLocation(ConfiguredBaseModel):
     Represents a location within a sequence, for now support for ranges only
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     start: int = Field(
         default=...,
@@ -1949,7 +1949,7 @@ class AssemblyFragment(ConfiguredBaseModel):
     Represents a fragment in an assembly
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     sequence: int = Field(
         default=...,
@@ -1978,7 +1978,7 @@ class AssemblySource(Source):
     Represents the source of a sequence that is an assembly of other sequences
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     circular: Optional[bool] = Field(
         default=None,
@@ -2046,7 +2046,7 @@ class PCRSource(AssemblySource):
     Represents the source of a sequence that is generated by PCR
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     add_primer_features: Optional[bool] = Field(
         default=False,
@@ -2121,7 +2121,7 @@ class LigationSource(AssemblySource):
     Represents the source of a sequence that is generated by ligation with sticky or blunt ends.
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     circular: Optional[bool] = Field(
         default=None,
@@ -2189,7 +2189,7 @@ class HomologousRecombinationSource(AssemblySource):
     Represents the source of a sequence that is generated by homologous recombination
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     circular: Optional[bool] = Field(
         default=None,
@@ -2257,7 +2257,7 @@ class GibsonAssemblySource(AssemblySource):
     Represents the source of a sequence that is generated by Gibson assembly
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     circular: Optional[bool] = Field(
         default=None,
@@ -2325,7 +2325,7 @@ class InFusionSource(AssemblySource):
     Represents the source of a sequence that is generated by In-Fusion cloning by Takara Bio
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     circular: Optional[bool] = Field(
         default=None,
@@ -2393,7 +2393,7 @@ class OverlapExtensionPCRLigationSource(AssemblySource):
     Represents the source of a sequence that is generated by ligation of PCR products as part of overlap extension PCR. Algorithmically equivalent to Gibson assembly.
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     circular: Optional[bool] = Field(
         default=None,
@@ -2461,7 +2461,7 @@ class InVivoAssemblySource(AssemblySource):
     Represents the source of a sequence that is generated by in vivo assembly. Algorithmically equivalent to Gibson assembly.
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     circular: Optional[bool] = Field(
         default=None,
@@ -2531,7 +2531,7 @@ class RestrictionAndLigationSource(AssemblySource):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
         {
-            "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+            "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
             "slot_usage": {"restriction_enzymes": {"name": "restriction_enzymes", "required": True}},
         }
     )
@@ -2612,7 +2612,7 @@ class GatewaySource(AssemblySource):
     Represents the source of a sequence that is generated by Gateway cloning
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     reaction_type: GatewayReactionType = Field(
         default=..., json_schema_extra={"linkml_meta": {"alias": "reaction_type", "domain_of": ["GatewaySource"]}}
@@ -2690,7 +2690,7 @@ class CreLoxRecombinationSource(AssemblySource):
     Represents the source of a sequence that is generated by Cre - Lox recombination
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     circular: Optional[bool] = Field(
         default=None,
@@ -2758,7 +2758,7 @@ class CRISPRSource(HomologousRecombinationSource):
     Represents the source of a sequence that is generated by CRISPR
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     guides: List[int] = Field(
         default=...,
@@ -2831,7 +2831,7 @@ class OligoHybridizationSource(Source):
     Represents the source of a sequence that is generated by oligo hybridization
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     overhang_crick_3prime: Optional[int] = Field(
         default=None,
@@ -2904,7 +2904,7 @@ class PolymeraseExtensionSource(Source):
     Represents the source of a sequence that is generated by polymerase extension
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     input: Optional[List[int]] = Field(
         default=None,
@@ -2957,7 +2957,7 @@ class CloningStrategy(ConfiguredBaseModel):
     Represents a cloning strategy
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     sequences: List[Union[Sequence, TemplateSequence, TextFileSequence, Primer]] = Field(
         default=...,
@@ -3031,7 +3031,7 @@ class AnnotationReport(ConfiguredBaseModel):
     Represents a report of an annotation step
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     type: Literal["AnnotationReport"] = Field(
         default="AnnotationReport",
@@ -3051,7 +3051,7 @@ class PlannotateAnnotationReport(AnnotationReport):
     Represents a report of an annotation step using Plannotate
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     sseqid: Optional[str] = Field(
         default=None,
@@ -3142,7 +3142,7 @@ class AnnotationSource(Source):
     Represents a computational step in which sequence features are annotated in a sequence
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     annotation_tool: AnnotationTool = Field(
         default=..., json_schema_extra={"linkml_meta": {"alias": "annotation_tool", "domain_of": ["AnnotationSource"]}}
@@ -3207,7 +3207,7 @@ class ReverseComplementSource(Source):
     Represents the in-silico transformation of a sequence into its reverse complement
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     input: Optional[List[int]] = Field(
         default=None,
@@ -3260,7 +3260,7 @@ class AssociatedFile(ConfiguredBaseModel):
     Represents a file associated with a sequence
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     type: Literal["AssociatedFile"] = Field(
         default="AssociatedFile",
@@ -3297,7 +3297,7 @@ class SequencingFile(AssociatedFile):
     Represents a sequencing file and its alignment to a sequence
     """
 
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML"})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
     alignment: List[str] = Field(
         default=...,

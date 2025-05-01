@@ -3175,7 +3175,7 @@
             "type": "object"
         }
     },
-    "$id": "https://w3id.org/genestorian/OpenCloning_LinkML",
+    "$id": "https://opencloning.github.io/OpenCloning_LinkML",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
     "metamodel_version": "1.7.0",
