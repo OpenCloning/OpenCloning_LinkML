@@ -5,7 +5,7 @@
    "biolink": "https://w3id.org/biolink/",
    "example": "https://example.org/",
    "linkml": "https://w3id.org/linkml/",
-   "opencloning_linkml": "https://w3id.org/genestorian/OpenCloning_LinkML/",
+   "opencloning_linkml": "https://opencloning.github.io/OpenCloning_LinkML/",
    "schema": "http://schema.org/",
    "NamedThing": {
       "@id": "schema:Thing"

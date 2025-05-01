@@ -2,10 +2,7 @@
   "name": "OpenCloning_LinkML",
   "description": "A LinkML data model for OpenCloning",
   "title": "OpenCloning_LinkML",
-  "see_also": [
-    "https://genestorian.github.io/OpenCloning_LinkML"
-  ],
-  "id": "https://w3id.org/genestorian/OpenCloning_LinkML",
+  "id": "https://opencloning.github.io/OpenCloning_LinkML",
   "imports": [
     "linkml:types"
   ],
@@ -13,7 +10,7 @@
   "prefixes": [
     {
       "prefix_prefix": "opencloning_linkml",
-      "prefix_reference": "https://w3id.org/genestorian/OpenCloning_LinkML/"
+      "prefix_reference": "https://opencloning.github.io/OpenCloning_LinkML/"
     },
     {
       "prefix_prefix": "linkml",
@@ -359,8 +356,8 @@
   "enums": [
     {
       "name": "RepositoryName",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/RepositoryName",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/RepositoryName",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "permissible_values": [
         {
           "text": "addgene",
@@ -398,8 +395,8 @@
     },
     {
       "name": "Collection",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/Collection",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/Collection",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "permissible_values": [
         {
           "text": "AddgenePlasmid",
@@ -413,8 +410,8 @@
     },
     {
       "name": "SequenceFileFormat",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/SequenceFileFormat",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/SequenceFileFormat",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "permissible_values": [
         {
           "text": "fasta"
@@ -432,8 +429,8 @@
     },
     {
       "name": "AddgeneSequenceType",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/AddgeneSequenceType",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/AddgeneSequenceType",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "permissible_values": [
         {
           "text": "depositor-full",
@@ -447,8 +444,8 @@
     },
     {
       "name": "GatewayReactionType",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/GatewayReactionType",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/GatewayReactionType",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "permissible_values": [
         {
           "text": "LR",
@@ -462,8 +459,8 @@
     },
     {
       "name": "AnnotationTool",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/AnnotationTool",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/AnnotationTool",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "permissible_values": [
         {
           "text": "plannotate"
@@ -472,8 +469,8 @@
     },
     {
       "name": "AssociatedFileType",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/AssociatedFileType",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/AssociatedFileType",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "permissible_values": [
         {
           "text": "Sequencing file",
@@ -484,8 +481,8 @@
     },
     {
       "name": "CollectionOptionType",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/CollectionOptionType",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/CollectionOptionType",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "permissible_values": [
         {
           "text": "OligoPair",
@@ -501,9 +498,9 @@
   "slots": [
     {
       "name": "id",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/id",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/id",
       "description": "A unique identifier for a thing",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "mappings": [
         "http://schema.org/identifier"
       ],
@@ -520,9 +517,9 @@
     },
     {
       "name": "database_id",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/database_id",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/database_id",
       "description": "The id of an entity in a database",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "mappings": [
         "http://schema.org/identifier"
       ],
@@ -538,9 +535,9 @@
     },
     {
       "name": "name",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/name",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/name",
       "description": "A human-readable name for a thing",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "mappings": [
         "http://schema.org/name"
       ],
@@ -556,12 +553,12 @@
     },
     {
       "name": "restriction_enzyme",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/restriction_enzyme",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/restriction_enzyme",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/OBI_0000732"
       ],
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/restriction_enzyme",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/restriction_enzyme",
       "owner": "RestrictionSequenceCut",
       "domain_of": [
         "RestrictionSequenceCut"
@@ -571,12 +568,12 @@
     },
     {
       "name": "restriction_enzymes",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/restriction_enzymes",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/restriction_enzymes",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/OBI_0000732"
       ],
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/restriction_enzymes",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/restriction_enzymes",
       "owner": "RestrictionAndLigationSource",
       "domain_of": [
         "RestrictionAndLigationSource"
@@ -587,10 +584,10 @@
     },
     {
       "name": "input",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/input",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/input",
       "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/input",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/input",
       "owner": "Source",
       "domain_of": [
         "Source"
@@ -601,10 +598,10 @@
     },
     {
       "name": "output",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/output",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/output",
       "description": "Identifier of the sequence that is the output of this source.",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/output",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/output",
       "owner": "Source",
       "domain_of": [
         "Source"
@@ -614,10 +611,10 @@
     },
     {
       "name": "output_name",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/output_name",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/output_name",
       "description": "Used to specify the name of the output sequence",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/output_name",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/output_name",
       "owner": "Source",
       "domain_of": [
         "Source"
@@ -627,10 +624,10 @@
     },
     {
       "name": "type",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/type",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/type",
       "description": "Designates the class",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/type",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/type",
       "designates_type": true,
       "owner": "AssociatedFile",
       "domain_of": [
@@ -644,10 +641,10 @@
     },
     {
       "name": "sequence_file_format",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/sequence_file_format",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequence_file_format",
       "description": "The format of a sequence file",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/sequence_file_format",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequence_file_format",
       "owner": "UploadedFileSource",
       "domain_of": [
         "TextFileSequence",
@@ -658,10 +655,10 @@
     },
     {
       "name": "overhang_crick_3prime",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/overhang_crick_3prime",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/overhang_crick_3prime",
       "description": "Taken from pydna's `dseq::ovhg`An integer describing the length of the crick strand overhang in the 5' of the molecule, or 3' of the crick strand",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/overhang_crick_3prime",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/overhang_crick_3prime",
       "owner": "OligoHybridizationSource",
       "domain_of": [
         "TextFileSequence",
@@ -673,10 +670,10 @@
     },
     {
       "name": "overhang_watson_3prime",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/overhang_watson_3prime",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/overhang_watson_3prime",
       "description": "The equivalent of `overhang_crick_3prime` but for the watson strand",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/overhang_watson_3prime",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/overhang_watson_3prime",
       "ifabsent": "int(0)",
       "owner": "ManuallyTypedSource",
       "domain_of": [
@@ -688,10 +685,10 @@
     },
     {
       "name": "sequence_file_url",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/sequence_file_url",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequence_file_url",
       "description": "The URL of a sequence file",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/sequence_file_url",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequence_file_url",
       "owner": "IGEMSource",
       "domain_of": [
         "AddgeneIdSource",
@@ -705,10 +702,10 @@
     },
     {
       "name": "repository_id",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/repository_id",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/repository_id",
       "description": "The id of the sequence in the repository",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/repository_id",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/repository_id",
       "owner": "RepositoryIdSource",
       "domain_of": [
         "RepositoryIdSource"
@@ -720,8 +717,8 @@
     {
       "name": "templateSequence__circular",
       "description": "Whether the sequence is circular or linear",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/circular",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/circular",
       "alias": "circular",
       "owner": "TemplateSequence",
       "domain_of": [
@@ -733,8 +730,8 @@
     {
       "name": "templateSequence__primer_design",
       "description": "Can be used to indicate the intended primer design for this sequence in the template",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/primer_design",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/primer_design",
       "alias": "primer_design",
       "owner": "TemplateSequence",
       "domain_of": [
@@ -745,8 +742,8 @@
     },
     {
       "name": "textFileSequence__file_content",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/file_content",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/file_content",
       "alias": "file_content",
       "owner": "TextFileSequence",
       "domain_of": [
@@ -757,8 +754,8 @@
     },
     {
       "name": "primer__sequence",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/sequence",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequence",
       "alias": "sequence",
       "owner": "Primer",
       "domain_of": [
@@ -771,8 +768,8 @@
     {
       "name": "sequenceCut__cut_watson",
       "description": "The position of the cut in the watson strand. The cut is made before the base at this position (zero-based), so that cut position 1 cuts after the first base.",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/cut_watson",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/cut_watson",
       "alias": "cut_watson",
       "owner": "SequenceCut",
       "domain_of": [
@@ -785,8 +782,8 @@
     {
       "name": "sequenceCut__overhang",
       "description": "The length of the overhang that is left after the cut. It can be negative, same meaning as in pydna's `dseq::ovhg` and biopython's `Bio.Restriction.RestrictionType.ovhg`.",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/overhang",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/overhang",
       "alias": "overhang",
       "owner": "SequenceCut",
       "domain_of": [
@@ -799,8 +796,8 @@
     {
       "name": "collectionSource__category_id",
       "description": "The identifier of the category of the part in the template",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/category_id",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/category_id",
       "alias": "category_id",
       "owner": "CollectionSource",
       "domain_of": [
@@ -812,8 +809,8 @@
     {
       "name": "collectionSource__title",
       "description": "The title of the category",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/title",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/title",
       "alias": "title",
       "owner": "CollectionSource",
       "domain_of": [
@@ -826,8 +823,8 @@
     {
       "name": "collectionSource__description",
       "description": "A description of the category",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/description",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/description",
       "alias": "description",
       "owner": "CollectionSource",
       "domain_of": [
@@ -839,8 +836,8 @@
     {
       "name": "collectionSource__image",
       "description": "URL and size of the image representing this category. For images with size specification, this is a list with two elements: [url, size].",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/image",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/image",
       "alias": "image",
       "owner": "CollectionSource",
       "domain_of": [
@@ -853,8 +850,8 @@
     {
       "name": "collectionSource__options",
       "description": "The options available in this category.",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/options",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/options",
       "alias": "options",
       "owner": "CollectionSource",
       "domain_of": [
@@ -869,8 +866,8 @@
     {
       "name": "collectionOption__source",
       "description": "The source of the sequence for this option",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/source",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/source",
       "alias": "source",
       "owner": "CollectionOption",
       "domain_of": [
@@ -884,8 +881,8 @@
     {
       "name": "collectionOption__info",
       "description": "Additional information about this option",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/info",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/info",
       "alias": "info",
       "owner": "CollectionOption",
       "domain_of": [
@@ -898,8 +895,8 @@
     {
       "name": "collectionOptionInfo__description",
       "description": "A description of the option",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/description",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/description",
       "alias": "description",
       "owner": "CollectionOptionInfo",
       "domain_of": [
@@ -911,8 +908,8 @@
     {
       "name": "collectionOptionInfo__type",
       "description": "The type of the option, this is redundant with the type of the source, and could be removed.",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/type",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/type",
       "alias": "type",
       "owner": "CollectionOptionInfo",
       "domain_of": [
@@ -924,8 +921,8 @@
     {
       "name": "collectionOptionInfo__resistance",
       "description": "The antibiotic resistance of the plasmid",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/resistance",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/resistance",
       "alias": "resistance",
       "owner": "CollectionOptionInfo",
       "domain_of": [
@@ -937,8 +934,8 @@
     {
       "name": "collectionOptionInfo__well",
       "description": "The well position in the kit plate",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/well",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/well",
       "alias": "well",
       "owner": "CollectionOptionInfo",
       "domain_of": [
@@ -949,8 +946,8 @@
     },
     {
       "name": "manuallyTypedSource__user_input",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/user_input",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/user_input",
       "alias": "user_input",
       "owner": "ManuallyTypedSource",
       "domain_of": [
@@ -964,8 +961,8 @@
     {
       "name": "manuallyTypedSource__circular",
       "description": "Whether the sequence is circular or not",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/circular",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/circular",
       "alias": "circular",
       "owner": "ManuallyTypedSource",
       "domain_of": [
@@ -977,8 +974,8 @@
     {
       "name": "uploadedFileSource__file_name",
       "description": "The name of the file",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/file_name",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/file_name",
       "alias": "file_name",
       "owner": "UploadedFileSource",
       "domain_of": [
@@ -990,8 +987,8 @@
     {
       "name": "uploadedFileSource__index_in_file",
       "description": "The index of the sequence in the file",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/index_in_file",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/index_in_file",
       "alias": "index_in_file",
       "owner": "UploadedFileSource",
       "domain_of": [
@@ -1003,8 +1000,8 @@
     {
       "name": "uploadedFileSource__circularize",
       "description": "Whether the sequence should be circularized (FASTA only)",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/circularize",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/circularize",
       "alias": "circularize",
       "owner": "UploadedFileSource",
       "domain_of": [
@@ -1016,8 +1013,8 @@
     {
       "name": "uploadedFileSource__coordinates",
       "description": "If provided, coordinates within the sequence of the file to extract a subsequence",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/coordinates",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/coordinates",
       "alias": "coordinates",
       "owner": "UploadedFileSource",
       "domain_of": [
@@ -1029,8 +1026,8 @@
     },
     {
       "name": "repositoryIdSource__repository_name",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/repository_name",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/repository_name",
       "alias": "repository_name",
       "owner": "RepositoryIdSource",
       "domain_of": [
@@ -1042,8 +1039,8 @@
     },
     {
       "name": "addgeneIdSource__addgene_sequence_type",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/addgene_sequence_type",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/addgene_sequence_type",
       "alias": "addgene_sequence_type",
       "owner": "AddgeneIdSource",
       "domain_of": [
@@ -1055,8 +1052,8 @@
     {
       "name": "genomeCoordinatesSource__assembly_accession",
       "description": "The accession of the assembly",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/assembly_accession",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/assembly_accession",
       "alias": "assembly_accession",
       "owner": "GenomeCoordinatesSource",
       "domain_of": [
@@ -1068,8 +1065,8 @@
     {
       "name": "genomeCoordinatesSource__sequence_accession",
       "description": "The accession of the sequence",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/sequence_accession",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequence_accession",
       "alias": "sequence_accession",
       "owner": "GenomeCoordinatesSource",
       "domain_of": [
@@ -1082,8 +1079,8 @@
     {
       "name": "genomeCoordinatesSource__locus_tag",
       "description": "The locus tag of the sequence",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/locus_tag",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/locus_tag",
       "alias": "locus_tag",
       "owner": "GenomeCoordinatesSource",
       "domain_of": [
@@ -1095,8 +1092,8 @@
     {
       "name": "genomeCoordinatesSource__gene_id",
       "description": "The gene id of the sequence",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/gene_id",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/gene_id",
       "alias": "gene_id",
       "owner": "GenomeCoordinatesSource",
       "domain_of": [
@@ -1108,8 +1105,8 @@
     {
       "name": "genomeCoordinatesSource__start",
       "description": "The starting coordinate (1-based) of the sequence in the sequence accession",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/start",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/start",
       "alias": "start",
       "owner": "GenomeCoordinatesSource",
       "domain_of": [
@@ -1122,8 +1119,8 @@
     {
       "name": "genomeCoordinatesSource__end",
       "description": "The ending coordinate (1-based) of the sequence in the sequence accession",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/end",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/end",
       "alias": "end",
       "owner": "GenomeCoordinatesSource",
       "domain_of": [
@@ -1136,8 +1133,8 @@
     {
       "name": "genomeCoordinatesSource__strand",
       "description": "The strand of the sequence in the sequence accession, should be 1 or -1",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/strand",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/strand",
       "alias": "strand",
       "owner": "GenomeCoordinatesSource",
       "domain_of": [
@@ -1149,8 +1146,8 @@
     },
     {
       "name": "sequenceCutSource__left_edge",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/left_edge",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/left_edge",
       "alias": "left_edge",
       "owner": "SequenceCutSource",
       "domain_of": [
@@ -1162,8 +1159,8 @@
     },
     {
       "name": "sequenceCutSource__right_edge",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/right_edge",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/right_edge",
       "alias": "right_edge",
       "owner": "SequenceCutSource",
       "domain_of": [
@@ -1175,8 +1172,8 @@
     },
     {
       "name": "restrictionEnzymeDigestionSource__left_edge",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/left_edge",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/left_edge",
       "alias": "left_edge",
       "owner": "RestrictionEnzymeDigestionSource",
       "domain_of": [
@@ -1188,8 +1185,8 @@
     },
     {
       "name": "restrictionEnzymeDigestionSource__right_edge",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/right_edge",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/right_edge",
       "alias": "right_edge",
       "owner": "RestrictionEnzymeDigestionSource",
       "domain_of": [
@@ -1202,8 +1199,8 @@
     {
       "name": "simpleSequenceLocation__start",
       "description": "The starting coordinate (0-based) of the location",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/start",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/start",
       "alias": "start",
       "owner": "SimpleSequenceLocation",
       "domain_of": [
@@ -1216,8 +1213,8 @@
     {
       "name": "simpleSequenceLocation__end",
       "description": "The ending coordinate (0-based) of the location",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/end",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/end",
       "alias": "end",
       "owner": "SimpleSequenceLocation",
       "domain_of": [
@@ -1230,8 +1227,8 @@
     {
       "name": "simpleSequenceLocation__strand",
       "description": "The strand of the location, should be 1 or -1 or null",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/strand",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/strand",
       "alias": "strand",
       "owner": "SimpleSequenceLocation",
       "domain_of": [
@@ -1242,8 +1239,8 @@
     },
     {
       "name": "assemblyFragment__sequence",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/sequence",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequence",
       "alias": "sequence",
       "owner": "AssemblyFragment",
       "domain_of": [
@@ -1255,8 +1252,8 @@
     },
     {
       "name": "assemblyFragment__left_location",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/left_location",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/left_location",
       "alias": "left_location",
       "owner": "AssemblyFragment",
       "domain_of": [
@@ -1268,8 +1265,8 @@
     },
     {
       "name": "assemblyFragment__right_location",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/right_location",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/right_location",
       "alias": "right_location",
       "owner": "AssemblyFragment",
       "domain_of": [
@@ -1282,8 +1279,8 @@
     {
       "name": "assemblyFragment__reverse_complemented",
       "description": "Whether the sequence is reverse complemented in the assembly",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/reverse_complemented",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/reverse_complemented",
       "alias": "reverse_complemented",
       "owner": "AssemblyFragment",
       "domain_of": [
@@ -1296,8 +1293,8 @@
     {
       "name": "assemblySource__circular",
       "description": "Whether the assembly is circular or not",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/circular",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/circular",
       "alias": "circular",
       "owner": "AssemblySource",
       "domain_of": [
@@ -1309,8 +1306,8 @@
     {
       "name": "assemblySource__assembly",
       "description": "A list of the fragments that are assembled, in order",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/assembly",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/assembly",
       "alias": "assembly",
       "owner": "AssemblySource",
       "domain_of": [
@@ -1325,8 +1322,8 @@
     {
       "name": "pCRSource__add_primer_features",
       "description": "Whether to add primer features to the PCR product",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/add_primer_features",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/add_primer_features",
       "ifabsent": "boolean(false)",
       "alias": "add_primer_features",
       "owner": "PCRSource",
@@ -1338,8 +1335,8 @@
     },
     {
       "name": "gatewaySource__reaction_type",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/reaction_type",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/reaction_type",
       "alias": "reaction_type",
       "owner": "GatewaySource",
       "domain_of": [
@@ -1352,8 +1349,8 @@
     {
       "name": "gatewaySource__greedy",
       "description": "Whether to use a greedy consensus sequence for att sites (see https://github.com/manulera/GateWayMine)",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/greedy",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/greedy",
       "ifabsent": "boolean(false)",
       "alias": "greedy",
       "owner": "GatewaySource",
@@ -1366,8 +1363,8 @@
     {
       "name": "cRISPRSource__guides",
       "description": "The guide RNAs used in the CRISPR",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/guides",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/guides",
       "alias": "guides",
       "owner": "CRISPRSource",
       "domain_of": [
@@ -1381,8 +1378,8 @@
     {
       "name": "oligoHybridizationSource__forward_oligo",
       "description": "The forward oligo used in the hybridization",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/forward_oligo",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/forward_oligo",
       "alias": "forward_oligo",
       "owner": "OligoHybridizationSource",
       "domain_of": [
@@ -1395,8 +1392,8 @@
     {
       "name": "oligoHybridizationSource__reverse_oligo",
       "description": "The reverse oligo used in the hybridization",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/reverse_oligo",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/reverse_oligo",
       "alias": "reverse_oligo",
       "owner": "OligoHybridizationSource",
       "domain_of": [
@@ -1409,8 +1406,8 @@
     {
       "name": "cloningStrategy__sequences",
       "description": "The sequences that are used in the cloning strategy",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/sequences",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequences",
       "alias": "sequences",
       "owner": "CloningStrategy",
       "domain_of": [
@@ -1426,8 +1423,8 @@
     {
       "name": "cloningStrategy__sources",
       "description": "The sources of the sequences that are used in the cloning strategy",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/sources",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/sources",
       "alias": "sources",
       "owner": "CloningStrategy",
       "domain_of": [
@@ -1443,8 +1440,8 @@
     {
       "name": "cloningStrategy__primers",
       "description": "The primers that are used in the cloning strategy",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/primers",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/primers",
       "alias": "primers",
       "owner": "CloningStrategy",
       "domain_of": [
@@ -1459,8 +1456,8 @@
     {
       "name": "cloningStrategy__description",
       "description": "A description of the cloning strategy",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/description",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/description",
       "alias": "description",
       "owner": "CloningStrategy",
       "domain_of": [
@@ -1472,8 +1469,8 @@
     {
       "name": "cloningStrategy__files",
       "description": "Files associated with this cloning strategy",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/files",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/files",
       "alias": "files",
       "owner": "CloningStrategy",
       "domain_of": [
@@ -1487,8 +1484,8 @@
     },
     {
       "name": "plannotateAnnotationReport__sseqid",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/sseqid",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/sseqid",
       "alias": "sseqid",
       "owner": "PlannotateAnnotationReport",
       "domain_of": [
@@ -1499,8 +1496,8 @@
     },
     {
       "name": "plannotateAnnotationReport__start_location",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/start_location",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/start_location",
       "alias": "start_location",
       "owner": "PlannotateAnnotationReport",
       "domain_of": [
@@ -1511,8 +1508,8 @@
     },
     {
       "name": "plannotateAnnotationReport__end_location",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/end_location",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/end_location",
       "alias": "end_location",
       "owner": "PlannotateAnnotationReport",
       "domain_of": [
@@ -1523,8 +1520,8 @@
     },
     {
       "name": "plannotateAnnotationReport__strand",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/strand",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/strand",
       "alias": "strand",
       "owner": "PlannotateAnnotationReport",
       "domain_of": [
@@ -1535,8 +1532,8 @@
     },
     {
       "name": "plannotateAnnotationReport__percent_identity",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/percent_identity",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/percent_identity",
       "alias": "percent_identity",
       "owner": "PlannotateAnnotationReport",
       "domain_of": [
@@ -1547,8 +1544,8 @@
     },
     {
       "name": "plannotateAnnotationReport__full_length_of_feature_in_db",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/full_length_of_feature_in_db",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/full_length_of_feature_in_db",
       "alias": "full_length_of_feature_in_db",
       "owner": "PlannotateAnnotationReport",
       "domain_of": [
@@ -1559,8 +1556,8 @@
     },
     {
       "name": "plannotateAnnotationReport__length_of_found_feature",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/length_of_found_feature",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/length_of_found_feature",
       "alias": "length_of_found_feature",
       "owner": "PlannotateAnnotationReport",
       "domain_of": [
@@ -1571,8 +1568,8 @@
     },
     {
       "name": "plannotateAnnotationReport__percent_match_length",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/percent_match_length",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/percent_match_length",
       "alias": "percent_match_length",
       "owner": "PlannotateAnnotationReport",
       "domain_of": [
@@ -1583,8 +1580,8 @@
     },
     {
       "name": "plannotateAnnotationReport__fragment",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/fragment",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/fragment",
       "alias": "fragment",
       "owner": "PlannotateAnnotationReport",
       "domain_of": [
@@ -1595,8 +1592,8 @@
     },
     {
       "name": "plannotateAnnotationReport__database",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/database",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/database",
       "alias": "database",
       "owner": "PlannotateAnnotationReport",
       "domain_of": [
@@ -1607,8 +1604,8 @@
     },
     {
       "name": "plannotateAnnotationReport__Feature",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/Feature",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/Feature",
       "alias": "Feature",
       "owner": "PlannotateAnnotationReport",
       "domain_of": [
@@ -1619,8 +1616,8 @@
     },
     {
       "name": "plannotateAnnotationReport__Type",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/Type",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/Type",
       "alias": "Type",
       "owner": "PlannotateAnnotationReport",
       "domain_of": [
@@ -1631,8 +1628,8 @@
     },
     {
       "name": "plannotateAnnotationReport__Description",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/Description",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/Description",
       "alias": "Description",
       "owner": "PlannotateAnnotationReport",
       "domain_of": [
@@ -1643,8 +1640,8 @@
     },
     {
       "name": "plannotateAnnotationReport__sequence",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/sequence",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequence",
       "alias": "sequence",
       "owner": "PlannotateAnnotationReport",
       "domain_of": [
@@ -1655,8 +1652,8 @@
     },
     {
       "name": "annotationSource__annotation_tool",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/annotation_tool",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/annotation_tool",
       "alias": "annotation_tool",
       "owner": "AnnotationSource",
       "domain_of": [
@@ -1669,8 +1666,8 @@
     {
       "name": "annotationSource__annotation_tool_version",
       "description": "The version of the annotation tool",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/annotation_tool_version",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/annotation_tool_version",
       "alias": "annotation_tool_version",
       "owner": "AnnotationSource",
       "domain_of": [
@@ -1681,8 +1678,8 @@
     },
     {
       "name": "annotationSource__annotation_report",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/annotation_report",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/annotation_report",
       "alias": "annotation_report",
       "owner": "AnnotationSource",
       "domain_of": [
@@ -1697,8 +1694,8 @@
     {
       "name": "associatedFile__sequence_id",
       "description": "The sequence this file is associated with",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/sequence_id",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequence_id",
       "alias": "sequence_id",
       "owner": "AssociatedFile",
       "domain_of": [
@@ -1711,8 +1708,8 @@
     {
       "name": "associatedFile__file_name",
       "description": "The name of the file",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/file_name",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/file_name",
       "alias": "file_name",
       "owner": "AssociatedFile",
       "domain_of": [
@@ -1725,8 +1722,8 @@
     {
       "name": "associatedFile__file_type",
       "description": "The type of file",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/file_type",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/file_type",
       "alias": "file_type",
       "owner": "AssociatedFile",
       "domain_of": [
@@ -1739,8 +1736,8 @@
     {
       "name": "sequencingFile__alignment",
       "description": "The alignment of the sequencing read to the sequence. List of strings representing aligned sequences.",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/alignment",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/alignment",
       "alias": "alignment",
       "owner": "SequencingFile",
       "domain_of": [
@@ -1753,12 +1750,12 @@
     },
     {
       "name": "TextFileSequence_sequence_file_format",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/sequence_file_format",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequence_file_format",
       "description": "The format of a sequence file",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "sequence_file_format",
       "domain": "TextFileSequence",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/sequence_file_format",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequence_file_format",
       "alias": "sequence_file_format",
       "owner": "TextFileSequence",
       "domain_of": [
@@ -1772,12 +1769,12 @@
     },
     {
       "name": "TextFileSequence_overhang_crick_3prime",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/overhang_crick_3prime",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/overhang_crick_3prime",
       "description": "Taken from pydna's `dseq::ovhg`An integer describing the length of the crick strand overhang in the 5' of the molecule, or 3' of the crick strand",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "overhang_crick_3prime",
       "domain": "TextFileSequence",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/overhang_crick_3prime",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/overhang_crick_3prime",
       "ifabsent": "int(0)",
       "alias": "overhang_crick_3prime",
       "owner": "TextFileSequence",
@@ -1791,12 +1788,12 @@
     },
     {
       "name": "TextFileSequence_overhang_watson_3prime",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/overhang_watson_3prime",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/overhang_watson_3prime",
       "description": "The equivalent of `overhang_crick_3prime` but for the watson strand",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "overhang_watson_3prime",
       "domain": "TextFileSequence",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/overhang_watson_3prime",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/overhang_watson_3prime",
       "ifabsent": "int(0)",
       "alias": "overhang_watson_3prime",
       "owner": "TextFileSequence",
@@ -1810,14 +1807,14 @@
     },
     {
       "name": "RestrictionSequenceCut_restriction_enzyme",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/restriction_enzyme",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/restriction_enzyme",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/OBI_0000732"
       ],
       "is_a": "restriction_enzyme",
       "domain": "RestrictionSequenceCut",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/restriction_enzyme",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/restriction_enzyme",
       "alias": "restriction_enzyme",
       "owner": "RestrictionSequenceCut",
       "domain_of": [
@@ -1831,9 +1828,9 @@
     },
     {
       "name": "DatabaseSource_database_id",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/database_id",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/database_id",
       "description": "The id of an entity in a database",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "mappings": [
         "http://schema.org/identifier"
       ],
@@ -1853,9 +1850,9 @@
     },
     {
       "name": "CollectionOption_name",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/name",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/name",
       "description": "A human-readable name for a thing",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "mappings": [
         "http://schema.org/name"
       ],
@@ -1875,9 +1872,9 @@
     },
     {
       "name": "CollectionOptionInfo_name",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/name",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/name",
       "description": "A human-readable name for a thing",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "mappings": [
         "http://schema.org/name"
       ],
@@ -1896,12 +1893,12 @@
     },
     {
       "name": "ManuallyTypedSource_overhang_crick_3prime",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/overhang_crick_3prime",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/overhang_crick_3prime",
       "description": "Taken from pydna's `dseq::ovhg`An integer describing the length of the crick strand overhang in the 5' of the molecule, or 3' of the crick strand",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "overhang_crick_3prime",
       "domain": "ManuallyTypedSource",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/overhang_crick_3prime",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/overhang_crick_3prime",
       "ifabsent": "int(0)",
       "alias": "overhang_crick_3prime",
       "owner": "ManuallyTypedSource",
@@ -1915,12 +1912,12 @@
     },
     {
       "name": "ManuallyTypedSource_overhang_watson_3prime",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/overhang_watson_3prime",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/overhang_watson_3prime",
       "description": "The equivalent of `overhang_crick_3prime` but for the watson strand",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "overhang_watson_3prime",
       "domain": "ManuallyTypedSource",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/overhang_watson_3prime",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/overhang_watson_3prime",
       "ifabsent": "int(0)",
       "alias": "overhang_watson_3prime",
       "owner": "ManuallyTypedSource",
@@ -1934,12 +1931,12 @@
     },
     {
       "name": "UploadedFileSource_sequence_file_format",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/sequence_file_format",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequence_file_format",
       "description": "The format of a sequence file",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "sequence_file_format",
       "domain": "UploadedFileSource",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/sequence_file_format",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequence_file_format",
       "alias": "sequence_file_format",
       "owner": "UploadedFileSource",
       "domain_of": [
@@ -1953,12 +1950,12 @@
     },
     {
       "name": "WekWikGeneIdSource_repository_id",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/repository_id",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/repository_id",
       "description": "The id of the gene in the WekWik gene database",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "repository_id",
       "domain": "WekWikGeneIdSource",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/repository_id",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/repository_id",
       "alias": "repository_id",
       "owner": "WekWikGeneIdSource",
       "domain_of": [
@@ -1973,12 +1970,12 @@
     },
     {
       "name": "SEVASource_repository_id",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/repository_id",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/repository_id",
       "description": "The SEVA plasmid name",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "repository_id",
       "domain": "SEVASource",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/repository_id",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/repository_id",
       "alias": "repository_id",
       "owner": "SEVASource",
       "domain_of": [
@@ -1993,12 +1990,12 @@
     },
     {
       "name": "SEVASource_sequence_file_url",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/sequence_file_url",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequence_file_url",
       "description": "The URL of the sequence file, which can refer to a a gb file hosted on the SEVA website or an entry in the NCBI.",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "sequence_file_url",
       "domain": "SEVASource",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/sequence_file_url",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequence_file_url",
       "alias": "sequence_file_url",
       "owner": "SEVASource",
       "domain_of": [
@@ -2013,12 +2010,12 @@
     },
     {
       "name": "BenchlingUrlSource_repository_id",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/repository_id",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/repository_id",
       "description": "The url of the gb file associated with the sequence",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "repository_id",
       "domain": "BenchlingUrlSource",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/repository_id",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/repository_id",
       "alias": "repository_id",
       "owner": "BenchlingUrlSource",
       "domain_of": [
@@ -2033,12 +2030,12 @@
     },
     {
       "name": "SnapGenePlasmidSource_repository_id",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/repository_id",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/repository_id",
       "description": "The subpath of the plasmid in the SnapGene plasmid library. Requesting the plasmid is possible with https://www.snapgene.com/local/fetch.php?set={category_path}&plasmid={plasmid['subpath']} where category_path is the left part of the subpath before the first / and plasmid is the subpath after the /.",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "repository_id",
       "domain": "SnapGenePlasmidSource",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/repository_id",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/repository_id",
       "alias": "repository_id",
       "owner": "SnapGenePlasmidSource",
       "domain_of": [
@@ -2053,12 +2050,12 @@
     },
     {
       "name": "EuroscarfSource_repository_id",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/repository_id",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/repository_id",
       "description": "The id of the plasmid in the Euroscarf plasmid library",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "repository_id",
       "domain": "EuroscarfSource",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/repository_id",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/repository_id",
       "alias": "repository_id",
       "owner": "EuroscarfSource",
       "domain_of": [
@@ -2073,12 +2070,12 @@
     },
     {
       "name": "IGEMSource_repository_id",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/repository_id",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/repository_id",
       "description": "The unique identifier of the sequence in the iGEM collection (for now, {part_id}-{plasmid_backbone})",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "repository_id",
       "domain": "IGEMSource",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/repository_id",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/repository_id",
       "alias": "repository_id",
       "owner": "IGEMSource",
       "domain_of": [
@@ -2092,12 +2089,12 @@
     },
     {
       "name": "IGEMSource_sequence_file_url",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/sequence_file_url",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequence_file_url",
       "description": "The URL of the sequence file, for now github repository",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "sequence_file_url",
       "domain": "IGEMSource",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/sequence_file_url",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequence_file_url",
       "alias": "sequence_file_url",
       "owner": "IGEMSource",
       "domain_of": [
@@ -2112,14 +2109,14 @@
     },
     {
       "name": "RestrictionAndLigationSource_restriction_enzymes",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/restriction_enzymes",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/restriction_enzymes",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/OBI_0000732"
       ],
       "is_a": "restriction_enzymes",
       "domain": "RestrictionAndLigationSource",
-      "slot_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/restriction_enzymes",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/restriction_enzymes",
       "alias": "restriction_enzymes",
       "owner": "RestrictionAndLigationSource",
       "domain_of": [
@@ -2136,8 +2133,8 @@
   "classes": [
     {
       "name": "NamedThing",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/NamedThing",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/NamedThing",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "mappings": [
         "schema:Thing"
       ],
@@ -2150,9 +2147,9 @@
     },
     {
       "name": "Sequence",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/Sequence",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/Sequence",
       "description": "Represents a sequence",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "NamedThing",
       "abstract": true,
       "slots": [
@@ -2160,14 +2157,14 @@
         "type"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/Sequence",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/Sequence",
       "@type": "ClassDefinition"
     },
     {
       "name": "TemplateSequence",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/TemplateSequence",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/TemplateSequence",
       "description": "Represents a sequence that is part of a template, where the actual sequence content will be determined by the user's actions",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "Sequence",
       "slots": [
         "id",
@@ -2190,14 +2187,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/TemplateSequence",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/TemplateSequence",
       "@type": "ClassDefinition"
     },
     {
       "name": "TextFileSequence",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/TextFileSequence",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/TextFileSequence",
       "description": "A sequence (may have features) defined by the content of a text file",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "Sequence",
       "slots": [
         "id",
@@ -2215,14 +2212,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/TextFileSequence",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/TextFileSequence",
       "@type": "ClassDefinition"
     },
     {
       "name": "Primer",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/Primer",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/Primer",
       "description": "An oligonucleotide or primer",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "Sequence",
       "slots": [
         "id",
@@ -2240,14 +2237,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/Primer",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/Primer",
       "@type": "ClassDefinition"
     },
     {
       "name": "SequenceCut",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/SequenceCut",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/SequenceCut",
       "description": "Represents a cut in a DNA sequence",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "slots": [
         "sequenceCut__cut_watson",
         "sequenceCut__overhang"
@@ -2269,14 +2266,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/SequenceCut",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/SequenceCut",
       "@type": "ClassDefinition"
     },
     {
       "name": "RestrictionSequenceCut",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/RestrictionSequenceCut",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/RestrictionSequenceCut",
       "description": "Represents a cut in a DNA sequence that is made by a restriction enzyme",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "SequenceCut",
       "slots": [
         "sequenceCut__cut_watson",
@@ -2284,14 +2281,14 @@
         "RestrictionSequenceCut_restriction_enzyme"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/RestrictionSequenceCut",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/RestrictionSequenceCut",
       "@type": "ClassDefinition"
     },
     {
       "name": "Source",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/Source",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/Source",
       "description": "Represents the source of a sequence",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "NamedThing",
       "abstract": true,
       "slots": [
@@ -2303,14 +2300,14 @@
         "database_id"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/Source",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/Source",
       "@type": "ClassDefinition"
     },
     {
       "name": "DatabaseSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/DatabaseSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/DatabaseSource",
       "description": "Represents the source of a sequence that is identified by a database id",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "Source",
       "slots": [
         "id",
@@ -2321,14 +2318,14 @@
         "DatabaseSource_database_id"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/DatabaseSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/DatabaseSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "CollectionSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/CollectionSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/CollectionSource",
       "description": "Represents a collection of possible sources in a template",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "Source",
       "slots": [
         "id",
@@ -2380,14 +2377,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/CollectionSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/CollectionSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "CollectionOption",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/CollectionOption",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/CollectionOption",
       "description": "Represents an option in a collection",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "slots": [
         "CollectionOption_name",
         "collectionOption__source",
@@ -2411,14 +2408,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/CollectionOption",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/CollectionOption",
       "@type": "ClassDefinition"
     },
     {
       "name": "CollectionOptionInfo",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/CollectionOptionInfo",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/CollectionOptionInfo",
       "description": "Additional information about a collection option",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "slots": [
         "CollectionOptionInfo_name",
         "collectionOptionInfo__description",
@@ -2453,14 +2450,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/CollectionOptionInfo",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/CollectionOptionInfo",
       "@type": "ClassDefinition"
     },
     {
       "name": "ManuallyTypedSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/ManuallyTypedSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/ManuallyTypedSource",
       "description": "Represents the source of a sequence that is manually typed by the user",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "Source",
       "slots": [
         "id",
@@ -2490,14 +2487,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/ManuallyTypedSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/ManuallyTypedSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "UploadedFileSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/UploadedFileSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/UploadedFileSource",
       "description": "Represents the source of a sequence that is uploaded as a file",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "Source",
       "slots": [
         "id",
@@ -2540,14 +2537,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/UploadedFileSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/UploadedFileSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "RepositoryIdSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/RepositoryIdSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/RepositoryIdSource",
       "description": "Represents the source of a sequence that is identified by a repository id",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "Source",
       "slots": [
         "id",
@@ -2568,14 +2565,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/RepositoryIdSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/RepositoryIdSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "AddgeneIdSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/AddgeneIdSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/AddgeneIdSource",
       "description": "Represents the source of a sequence that is identified by an Addgene id",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "RepositoryIdSource",
       "slots": [
         "id",
@@ -2597,14 +2594,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/AddgeneIdSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/AddgeneIdSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "WekWikGeneIdSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/WekWikGeneIdSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/WekWikGeneIdSource",
       "description": "Represents the source of a sequence that is identified by a WekWikGene id",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "RepositoryIdSource",
       "slots": [
         "id",
@@ -2618,14 +2615,14 @@
         "WekWikGeneIdSource_repository_id"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/WekWikGeneIdSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/WekWikGeneIdSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "SEVASource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/SEVASource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/SEVASource",
       "description": "Represents the source of a sequence that is identified by a SEVA id",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "RepositoryIdSource",
       "slots": [
         "id",
@@ -2639,14 +2636,14 @@
         "SEVASource_repository_id"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/SEVASource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/SEVASource",
       "@type": "ClassDefinition"
     },
     {
       "name": "BenchlingUrlSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/BenchlingUrlSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/BenchlingUrlSource",
       "description": "Represents the source of a sequence that is identified by a Benchling URL",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "RepositoryIdSource",
       "slots": [
         "id",
@@ -2659,14 +2656,14 @@
         "BenchlingUrlSource_repository_id"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/BenchlingUrlSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/BenchlingUrlSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "SnapGenePlasmidSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/SnapGenePlasmidSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/SnapGenePlasmidSource",
       "description": "Represents the source of a sequence from the SnapGene plasmid library identified by a SnapGene subpath of https://www.snapgene.com/plasmids/",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "RepositoryIdSource",
       "slots": [
         "id",
@@ -2679,14 +2676,14 @@
         "SnapGenePlasmidSource_repository_id"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/SnapGenePlasmidSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/SnapGenePlasmidSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "EuroscarfSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/EuroscarfSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/EuroscarfSource",
       "description": "Represents the source of a sequence from the Euroscarf plasmid library",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "RepositoryIdSource",
       "slots": [
         "id",
@@ -2699,14 +2696,14 @@
         "EuroscarfSource_repository_id"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/EuroscarfSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/EuroscarfSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "IGEMSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/IGEMSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/IGEMSource",
       "description": "Represents the source of a sequence from an iGEM collection",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "RepositoryIdSource",
       "slots": [
         "id",
@@ -2720,14 +2717,14 @@
         "IGEMSource_repository_id"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/IGEMSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/IGEMSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "GenomeCoordinatesSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/GenomeCoordinatesSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/GenomeCoordinatesSource",
       "description": "Represents the source of a sequence that is identified by genome coordinates, requested from NCBI",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "Source",
       "slots": [
         "id",
@@ -2793,14 +2790,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/GenomeCoordinatesSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/GenomeCoordinatesSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "SequenceCutSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/SequenceCutSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/SequenceCutSource",
       "description": "Represents the source of a sequence that is a subfragment of another sequence, generated by sequence cutting.",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "Source",
       "slots": [
         "id",
@@ -2827,14 +2824,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/SequenceCutSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/SequenceCutSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "RestrictionEnzymeDigestionSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/RestrictionEnzymeDigestionSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/RestrictionEnzymeDigestionSource",
       "description": "Represents the source of a sequence that is a subfragment of another sequence, generated by sequence cutting using restriction enzymes.",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "SequenceCutSource",
       "slots": [
         "id",
@@ -2861,14 +2858,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/RestrictionEnzymeDigestionSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/RestrictionEnzymeDigestionSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "SimpleSequenceLocation",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/SimpleSequenceLocation",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/SimpleSequenceLocation",
       "description": "Represents a location within a sequence, for now support for ranges only",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "slots": [
         "simpleSequenceLocation__start",
         "simpleSequenceLocation__end",
@@ -2897,14 +2894,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/SimpleSequenceLocation",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/SimpleSequenceLocation",
       "@type": "ClassDefinition"
     },
     {
       "name": "AssemblyFragment",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/AssemblyFragment",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/AssemblyFragment",
       "description": "Represents a fragment in an assembly",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "slots": [
         "assemblyFragment__sequence",
         "assemblyFragment__left_location",
@@ -2939,14 +2936,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/AssemblyFragment",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/AssemblyFragment",
       "@type": "ClassDefinition"
     },
     {
       "name": "AssemblySource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/AssemblySource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/AssemblySource",
       "description": "Represents the source of a sequence that is an assembly of other sequences",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "Source",
       "slots": [
         "id",
@@ -2975,14 +2972,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/AssemblySource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/AssemblySource",
       "@type": "ClassDefinition"
     },
     {
       "name": "PCRSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/PCRSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/PCRSource",
       "description": "Represents the source of a sequence that is generated by PCR",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "AssemblySource",
       "slots": [
         "id",
@@ -3005,14 +3002,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/PCRSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/PCRSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "LigationSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/LigationSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/LigationSource",
       "description": "Represents the source of a sequence that is generated by ligation with sticky or blunt ends.",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "AssemblySource",
       "slots": [
         "id",
@@ -3025,14 +3022,14 @@
         "assemblySource__assembly"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/LigationSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/LigationSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "HomologousRecombinationSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/HomologousRecombinationSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/HomologousRecombinationSource",
       "description": "Represents the source of a sequence that is generated by homologous recombination",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "AssemblySource",
       "slots": [
         "id",
@@ -3045,14 +3042,14 @@
         "assemblySource__assembly"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/HomologousRecombinationSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/HomologousRecombinationSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "GibsonAssemblySource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/GibsonAssemblySource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/GibsonAssemblySource",
       "description": "Represents the source of a sequence that is generated by Gibson assembly",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "AssemblySource",
       "slots": [
         "id",
@@ -3065,14 +3062,14 @@
         "assemblySource__assembly"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/GibsonAssemblySource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/GibsonAssemblySource",
       "@type": "ClassDefinition"
     },
     {
       "name": "InFusionSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/InFusionSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/InFusionSource",
       "description": "Represents the source of a sequence that is generated by In-Fusion cloning by Takara Bio",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "AssemblySource",
       "slots": [
         "id",
@@ -3085,14 +3082,14 @@
         "assemblySource__assembly"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/InFusionSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/InFusionSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "OverlapExtensionPCRLigationSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/OverlapExtensionPCRLigationSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/OverlapExtensionPCRLigationSource",
       "description": "Represents the source of a sequence that is generated by ligation of PCR products as part of overlap extension PCR. Algorithmically equivalent to Gibson assembly.",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "AssemblySource",
       "slots": [
         "id",
@@ -3105,14 +3102,14 @@
         "assemblySource__assembly"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/OverlapExtensionPCRLigationSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/OverlapExtensionPCRLigationSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "InVivoAssemblySource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/InVivoAssemblySource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/InVivoAssemblySource",
       "description": "Represents the source of a sequence that is generated by in vivo assembly. Algorithmically equivalent to Gibson assembly.",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "AssemblySource",
       "slots": [
         "id",
@@ -3125,14 +3122,14 @@
         "assemblySource__assembly"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/InVivoAssemblySource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/InVivoAssemblySource",
       "@type": "ClassDefinition"
     },
     {
       "name": "RestrictionAndLigationSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/RestrictionAndLigationSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/RestrictionAndLigationSource",
       "description": "Represents the source of a sequence that is generated by restriction and ligation",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "AssemblySource",
       "slots": [
         "id",
@@ -3146,14 +3143,14 @@
         "RestrictionAndLigationSource_restriction_enzymes"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/RestrictionAndLigationSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/RestrictionAndLigationSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "GatewaySource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/GatewaySource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/GatewaySource",
       "description": "Represents the source of a sequence that is generated by Gateway cloning",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "AssemblySource",
       "slots": [
         "id",
@@ -3183,14 +3180,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/GatewaySource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/GatewaySource",
       "@type": "ClassDefinition"
     },
     {
       "name": "CreLoxRecombinationSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/CreLoxRecombinationSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/CreLoxRecombinationSource",
       "description": "Represents the source of a sequence that is generated by Cre - Lox recombination",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "AssemblySource",
       "slots": [
         "id",
@@ -3203,14 +3200,14 @@
         "assemblySource__assembly"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/CreLoxRecombinationSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/CreLoxRecombinationSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "CRISPRSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/CRISPRSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/CRISPRSource",
       "description": "Represents the source of a sequence that is generated by CRISPR",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "HomologousRecombinationSource",
       "slots": [
         "id",
@@ -3234,14 +3231,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/CRISPRSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/CRISPRSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "OligoHybridizationSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/OligoHybridizationSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/OligoHybridizationSource",
       "description": "Represents the source of a sequence that is generated by oligo hybridization",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "Source",
       "slots": [
         "id",
@@ -3271,14 +3268,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/OligoHybridizationSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/OligoHybridizationSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "PolymeraseExtensionSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/PolymeraseExtensionSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/PolymeraseExtensionSource",
       "description": "Represents the source of a sequence that is generated by polymerase extension",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "Source",
       "slots": [
         "id",
@@ -3289,14 +3286,14 @@
         "database_id"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/PolymeraseExtensionSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/PolymeraseExtensionSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "CloningStrategy",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/CloningStrategy",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/CloningStrategy",
       "description": "Represents a cloning strategy",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "slots": [
         "cloningStrategy__sequences",
         "cloningStrategy__sources",
@@ -3347,26 +3344,26 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/CloningStrategy",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/CloningStrategy",
       "@type": "ClassDefinition"
     },
     {
       "name": "AnnotationReport",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/AnnotationReport",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/AnnotationReport",
       "description": "Represents a report of an annotation step",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "slots": [
         "type"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/AnnotationReport",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/AnnotationReport",
       "@type": "ClassDefinition"
     },
     {
       "name": "PlannotateAnnotationReport",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/PlannotateAnnotationReport",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/PlannotateAnnotationReport",
       "description": "Represents a report of an annotation step using Plannotate",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "AnnotationReport",
       "slots": [
         "type",
@@ -3458,14 +3455,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/PlannotateAnnotationReport",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/PlannotateAnnotationReport",
       "@type": "ClassDefinition"
     },
     {
       "name": "AnnotationSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/AnnotationSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/AnnotationSource",
       "description": "Represents a computational step in which sequence features are annotated in a sequence",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "Source",
       "slots": [
         "id",
@@ -3500,14 +3497,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/AnnotationSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/AnnotationSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "ReverseComplementSource",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/ReverseComplementSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/ReverseComplementSource",
       "description": "Represents the in-silico transformation of a sequence into its reverse complement",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "Source",
       "slots": [
         "id",
@@ -3518,14 +3515,14 @@
         "database_id"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/ReverseComplementSource",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/ReverseComplementSource",
       "@type": "ClassDefinition"
     },
     {
       "name": "AssociatedFile",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/AssociatedFile",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/AssociatedFile",
       "description": "Represents a file associated with a sequence",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "slots": [
         "type",
         "associatedFile__sequence_id",
@@ -3556,14 +3553,14 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/AssociatedFile",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/AssociatedFile",
       "@type": "ClassDefinition"
     },
     {
       "name": "SequencingFile",
-      "definition_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/SequencingFile",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/SequencingFile",
       "description": "Represents a sequencing file and its alignment to a sequence",
-      "from_schema": "https://w3id.org/genestorian/OpenCloning_LinkML",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "AssociatedFile",
       "slots": [
         "type",
@@ -3583,21 +3580,21 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/genestorian/OpenCloning_LinkML/SequencingFile",
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/SequencingFile",
       "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
   "source_file": "opencloning_linkml.yaml",
-  "source_file_date": "2025-04-23T14:13:22",
-  "source_file_size": 25932,
-  "generation_date": "2025-04-23T14:13:26",
+  "source_file_date": "2025-05-01T17:58:00",
+  "source_file_size": 25711,
+  "generation_date": "2025-05-01T17:58:16",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/opencloning_linkml.context.jsonld",
     "https://w3id.org/linkml/types.context.jsonld",
     {
-      "@base": "https://w3id.org/genestorian/OpenCloning_LinkML/"
+      "@base": "https://opencloning.github.io/OpenCloning_LinkML/"
     }
   ]
 }

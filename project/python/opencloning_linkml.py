@@ -1,8 +1,8 @@
 # Auto generated from opencloning_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-04-23T14:13:27
+# Generation date: 2025-05-01T17:58:16
 # Schema: OpenCloning_LinkML
 #
-# id: https://w3id.org/genestorian/OpenCloning_LinkML
+# id: https://opencloning.github.io/OpenCloning_LinkML
 # description: A LinkML data model for OpenCloning
 # license: MIT
 
@@ -39,7 +39,7 @@ PATO = CurieNamespace("PATO", "http://purl.obolibrary.org/obo/PATO_")
 BIOLINK = CurieNamespace("biolink", "https://w3id.org/biolink/")
 EXAMPLE = CurieNamespace("example", "https://example.org/")
 LINKML = CurieNamespace("linkml", "https://w3id.org/linkml/")
-OPENCLONING_LINKML = CurieNamespace("opencloning_linkml", "https://w3id.org/genestorian/OpenCloning_LinkML/")
+OPENCLONING_LINKML = CurieNamespace("opencloning_linkml", "https://opencloning.github.io/OpenCloning_LinkML/")
 SCHEMA = CurieNamespace("schema", "http://schema.org/")
 DEFAULT_ = OPENCLONING_LINKML
 
