@@ -2,6 +2,9 @@
   "name": "OpenCloning_LinkML",
   "description": "A LinkML data model for OpenCloning",
   "title": "OpenCloning_LinkML",
+  "see_also": [
+    "https://pypi.org/project/opencloning-linkml/"
+  ],
   "id": "https://opencloning.github.io/OpenCloning_LinkML",
   "imports": [
     "linkml:types"
@@ -3586,9 +3589,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "opencloning_linkml.yaml",
-  "source_file_date": "2025-05-01T17:58:00",
-  "source_file_size": 25711,
-  "generation_date": "2025-05-01T17:58:16",
+  "source_file_date": "2025-05-01T17:59:13",
+  "source_file_size": 25770,
+  "generation_date": "2025-05-01T17:59:50",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/opencloning_linkml.context.jsonld",

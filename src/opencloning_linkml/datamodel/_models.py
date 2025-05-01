@@ -65,6 +65,7 @@ linkml_meta = LinkMLMeta(
             },
             "schema": {"prefix_prefix": "schema", "prefix_reference": "http://schema.org/"},
         },
+        "see_also": ["https://pypi.org/project/opencloning-linkml/"],
         "source_file": "src/opencloning_linkml/schema/opencloning_linkml.yaml",
         "title": "OpenCloning_LinkML",
     }
