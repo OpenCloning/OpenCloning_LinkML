@@ -13,6 +13,7 @@ prefixes:
   linkml: https://w3id.org/linkml/
   biolink: https://w3id.org/biolink/
   schema: http://schema.org/
+  bioschemas: https://bioschemas.org/
   PATO: http://purl.obolibrary.org/obo/PATO_
   example: https://example.org/
   OBI: http://purl.obolibrary.org/obo/OBI_
@@ -32,6 +33,7 @@ classes:
   Sequence:
     is_a: NamedThing
     abstract: true
+    class_uri: bioschemas:DNA
     description: >-
       Represents a sequence
     slots:
@@ -116,6 +118,7 @@ classes:
 
   Source:
     is_a: NamedThing
+    class_uri: schema:CreateAction
     abstract: true
     description: >-
       Represents the source of a sequence
@@ -452,15 +455,18 @@ classes:
     # TODO: Validation, at least one of them exists
 
   SimpleSequenceLocation:
+    class_uri: bioschemas:SequenceRange
     description: >-
       Represents a location within a sequence, for now support for ranges only
     attributes:
       - start:
+          slot_uri: bioschemas:rangeStart
           range: integer
           description: >-
             The starting coordinate (0-based) of the location
           required: true
       - end:
+          slot_uri: bioschemas:rangeEnd
           range: integer
           description: >-
             The ending coordinate (0-based) of the location
@@ -786,6 +792,7 @@ slots:
 
   input:
     required: false
+    slot_uri: schema:object
     description: >-
       The sequences that are an input to this source.
       If the source represents external import of a sequence, it's empty.
@@ -794,6 +801,7 @@ slots:
     range: Sequence
   output:
     required: false
+    slot_uri: schema:result
     description: >-
       Identifier of the sequence that is the output of this source.
     range: Sequence
