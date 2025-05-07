@@ -28,6 +28,10 @@
       "prefix_reference": "http://schema.org/"
     },
     {
+      "prefix_prefix": "bioschemas",
+      "prefix_reference": "https://bioschemas.org/"
+    },
+    {
       "prefix_prefix": "PATO",
       "prefix_reference": "http://purl.obolibrary.org/obo/PATO_"
     },
@@ -590,7 +594,10 @@
       "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/input",
       "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/input",
+      "mappings": [
+        "http://schema.org/object"
+      ],
+      "slot_uri": "http://schema.org/object",
       "owner": "Source",
       "domain_of": [
         "Source"
@@ -604,7 +611,10 @@
       "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/output",
       "description": "Identifier of the sequence that is the output of this source.",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/output",
+      "mappings": [
+        "http://schema.org/result"
+      ],
+      "slot_uri": "http://schema.org/result",
       "owner": "Source",
       "domain_of": [
         "Source"
@@ -1203,7 +1213,10 @@
       "name": "simpleSequenceLocation__start",
       "description": "The starting coordinate (0-based) of the location",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/start",
+      "mappings": [
+        "https://bioschemas.org/rangeStart"
+      ],
+      "slot_uri": "https://bioschemas.org/rangeStart",
       "alias": "start",
       "owner": "SimpleSequenceLocation",
       "domain_of": [
@@ -1217,7 +1230,10 @@
       "name": "simpleSequenceLocation__end",
       "description": "The ending coordinate (0-based) of the location",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/end",
+      "mappings": [
+        "https://bioschemas.org/rangeEnd"
+      ],
+      "slot_uri": "https://bioschemas.org/rangeEnd",
       "alias": "end",
       "owner": "SimpleSequenceLocation",
       "domain_of": [
@@ -2153,6 +2169,9 @@
       "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/Sequence",
       "description": "Represents a sequence",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "mappings": [
+        "bioschemas:DNA"
+      ],
       "is_a": "NamedThing",
       "abstract": true,
       "slots": [
@@ -2160,7 +2179,7 @@
         "type"
       ],
       "slot_usage": {},
-      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/Sequence",
+      "class_uri": "https://bioschemas.org/DNA",
       "@type": "ClassDefinition"
     },
     {
@@ -2292,6 +2311,9 @@
       "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/Source",
       "description": "Represents the source of a sequence",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "mappings": [
+        "schema:CreateAction"
+      ],
       "is_a": "NamedThing",
       "abstract": true,
       "slots": [
@@ -2303,7 +2325,7 @@
         "database_id"
       ],
       "slot_usage": {},
-      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/Source",
+      "class_uri": "http://schema.org/CreateAction",
       "@type": "ClassDefinition"
     },
     {
@@ -2869,6 +2891,9 @@
       "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/SimpleSequenceLocation",
       "description": "Represents a location within a sequence, for now support for ranges only",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "mappings": [
+        "bioschemas:SequenceRange"
+      ],
       "slots": [
         "simpleSequenceLocation__start",
         "simpleSequenceLocation__end",
@@ -2879,6 +2904,7 @@
         {
           "name": "start",
           "description": "The starting coordinate (0-based) of the location",
+          "slot_uri": "bioschemas:rangeStart",
           "range": "integer",
           "required": true,
           "@type": "SlotDefinition"
@@ -2886,6 +2912,7 @@
         {
           "name": "end",
           "description": "The ending coordinate (0-based) of the location",
+          "slot_uri": "bioschemas:rangeEnd",
           "range": "integer",
           "required": true,
           "@type": "SlotDefinition"
@@ -2897,7 +2924,7 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/SimpleSequenceLocation",
+      "class_uri": "https://bioschemas.org/SequenceRange",
       "@type": "ClassDefinition"
     },
     {
@@ -3589,9 +3616,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "opencloning_linkml.yaml",
-  "source_file_date": "2025-05-01T17:59:13",
-  "source_file_size": 25770,
-  "generation_date": "2025-05-01T17:59:50",
+  "source_file_date": "2025-05-07T09:13:30",
+  "source_file_size": 26051,
+  "generation_date": "2025-05-07T09:13:49",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/opencloning_linkml.context.jsonld",

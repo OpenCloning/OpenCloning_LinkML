@@ -1,5 +1,5 @@
 # Auto generated from opencloning_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-05-01T17:59:50
+# Generation date: 2025-05-07T09:13:51
 # Schema: OpenCloning_LinkML
 #
 # id: https://opencloning.github.io/OpenCloning_LinkML
@@ -37,6 +37,7 @@ NCIT = CurieNamespace("NCIT", "http://purl.obolibrary.org/obo/NCIT_")
 OBI = CurieNamespace("OBI", "http://purl.obolibrary.org/obo/OBI_")
 PATO = CurieNamespace("PATO", "http://purl.obolibrary.org/obo/PATO_")
 BIOLINK = CurieNamespace("biolink", "https://w3id.org/biolink/")
+BIOSCHEMAS = CurieNamespace("bioschemas", "https://bioschemas.org/")
 EXAMPLE = CurieNamespace("example", "https://example.org/")
 LINKML = CurieNamespace("linkml", "https://w3id.org/linkml/")
 OPENCLONING_LINKML = CurieNamespace("opencloning_linkml", "https://opencloning.github.io/OpenCloning_LinkML/")
@@ -224,8 +225,8 @@ class Sequence(NamedThing):
 
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["Sequence"]
-    class_class_curie: ClassVar[str] = "opencloning_linkml:Sequence"
+    class_class_uri: ClassVar[URIRef] = BIOSCHEMAS["DNA"]
+    class_class_curie: ClassVar[str] = "bioschemas:DNA"
     class_name: ClassVar[str] = "Sequence"
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.Sequence
 
@@ -437,8 +438,8 @@ class Source(NamedThing):
 
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["Source"]
-    class_class_curie: ClassVar[str] = "opencloning_linkml:Source"
+    class_class_uri: ClassVar[URIRef] = SCHEMA["CreateAction"]
+    class_class_curie: ClassVar[str] = "schema:CreateAction"
     class_name: ClassVar[str] = "Source"
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.Source
 
@@ -1143,8 +1144,8 @@ class SimpleSequenceLocation(YAMLRoot):
 
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["SimpleSequenceLocation"]
-    class_class_curie: ClassVar[str] = "opencloning_linkml:SimpleSequenceLocation"
+    class_class_uri: ClassVar[URIRef] = BIOSCHEMAS["SequenceRange"]
+    class_class_curie: ClassVar[str] = "bioschemas:SequenceRange"
     class_name: ClassVar[str] = "SimpleSequenceLocation"
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.SimpleSequenceLocation
 
@@ -2077,18 +2078,18 @@ slots.restriction_enzymes = Slot(
 )
 
 slots.input = Slot(
-    uri=OPENCLONING_LINKML.input,
+    uri=SCHEMA.object,
     name="input",
-    curie=OPENCLONING_LINKML.curie("input"),
+    curie=SCHEMA.curie("object"),
     model_uri=OPENCLONING_LINKML.input,
     domain=None,
     range=Optional[Union[Union[int, SequenceId], List[Union[int, SequenceId]]]],
 )
 
 slots.output = Slot(
-    uri=OPENCLONING_LINKML.output,
+    uri=SCHEMA.result,
     name="output",
-    curie=OPENCLONING_LINKML.curie("output"),
+    curie=SCHEMA.curie("result"),
     model_uri=OPENCLONING_LINKML.output,
     domain=None,
     range=Optional[Union[int, SequenceId]],
@@ -2487,18 +2488,18 @@ slots.restrictionEnzymeDigestionSource__right_edge = Slot(
 )
 
 slots.simpleSequenceLocation__start = Slot(
-    uri=OPENCLONING_LINKML.start,
+    uri=BIOSCHEMAS.rangeStart,
     name="simpleSequenceLocation__start",
-    curie=OPENCLONING_LINKML.curie("start"),
+    curie=BIOSCHEMAS.curie("rangeStart"),
     model_uri=OPENCLONING_LINKML.simpleSequenceLocation__start,
     domain=None,
     range=int,
 )
 
 slots.simpleSequenceLocation__end = Slot(
-    uri=OPENCLONING_LINKML.end,
+    uri=BIOSCHEMAS.rangeEnd,
     name="simpleSequenceLocation__end",
-    curie=OPENCLONING_LINKML.curie("end"),
+    curie=BIOSCHEMAS.curie("rangeEnd"),
     model_uri=OPENCLONING_LINKML.simpleSequenceLocation__end,
     domain=None,
     range=int,

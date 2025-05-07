@@ -4,6 +4,7 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX linkml: <https://w3id.org/linkml/>
 PREFIX schema1: <http://schema.org/>
+PREFIX bioschemas: <https://bioschemas.org/>
 
 
 linkml:String xsd:string
@@ -65,7 +66,7 @@ linkml:Sparqlpath xsd:string
 
 <AnnotationSource> CLOSED {
     (  $<AnnotationSource_tes> (  &<Source_tes> ;
-          rdf:type [ <Source> ] ? ;
+          rdf:type [ schema1:CreateAction ] ? ;
           <annotation_tool> [ <https://opencloning.github.io/OpenCloning_LinkML/AnnotationTool#plannotate> ] ;
           <annotation_tool_version> @linkml:String ? ;
           <annotation_report> @<AnnotationReport> *
@@ -87,7 +88,7 @@ linkml:Sparqlpath xsd:string
 <AssemblySource>  (
     CLOSED {
        (  $<AssemblySource_tes> (  &<Source_tes> ;
-             rdf:type [ <Source> ] ? ;
+             rdf:type [ schema1:CreateAction ] ? ;
              <circular> @linkml:Boolean ? ;
              <assembly> @<AssemblyFragment> *
           ) ;
@@ -153,7 +154,7 @@ linkml:Sparqlpath xsd:string
 
 <CollectionSource> CLOSED {
     (  $<CollectionSource_tes> (  &<Source_tes> ;
-          rdf:type [ <Source> ] ? ;
+          rdf:type [ schema1:CreateAction ] ? ;
           <category_id> @linkml:String ? ;
           <title> @linkml:String ;
           <description> @linkml:String ? ;
@@ -183,7 +184,7 @@ linkml:Sparqlpath xsd:string
 
 <DatabaseSource> CLOSED {
     (  $<DatabaseSource_tes> (  &<Source_tes> ;
-          rdf:type [ <Source> ] ? ;
+          rdf:type [ schema1:CreateAction ] ? ;
           schema1:identifier @linkml:Integer
        ) ;
        rdf:type [ <DatabaseSource> ]
@@ -212,7 +213,7 @@ linkml:Sparqlpath xsd:string
 
 <GenomeCoordinatesSource> CLOSED {
     (  $<GenomeCoordinatesSource_tes> (  &<Source_tes> ;
-          rdf:type [ <Source> ] ? ;
+          rdf:type [ schema1:CreateAction ] ? ;
           <assembly_accession> @linkml:String ? ;
           <sequence_accession> @linkml:String ;
           <locus_tag> @linkml:String ? ;
@@ -279,7 +280,7 @@ linkml:Sparqlpath xsd:string
 
 <ManuallyTypedSource> CLOSED {
     (  $<ManuallyTypedSource_tes> (  &<Source_tes> ;
-          rdf:type [ <Source> ] ? ;
+          rdf:type [ schema1:CreateAction ] ? ;
           <overhang_crick_3prime> @linkml:Integer ? ;
           <overhang_watson_3prime> @linkml:Integer ? ;
           <user_input> @linkml:String ;
@@ -299,7 +300,7 @@ linkml:Sparqlpath xsd:string
 
 <OligoHybridizationSource> CLOSED {
     (  $<OligoHybridizationSource_tes> (  &<Source_tes> ;
-          rdf:type [ <Source> ] ? ;
+          rdf:type [ schema1:CreateAction ] ? ;
           <overhang_crick_3prime> @linkml:Integer ? ;
           <forward_oligo> @<Primer> ;
           <reverse_oligo> @<Primer>
@@ -349,7 +350,7 @@ linkml:Sparqlpath xsd:string
 
 <PolymeraseExtensionSource> CLOSED {
     (  $<PolymeraseExtensionSource_tes> (  &<Source_tes> ;
-          rdf:type [ <Source> ] ?
+          rdf:type [ schema1:CreateAction ] ?
        ) ;
        rdf:type [ <PolymeraseExtensionSource> ]
     )
@@ -357,7 +358,7 @@ linkml:Sparqlpath xsd:string
 
 <Primer> CLOSED {
     (  $<Primer_tes> (  &<Sequence_tes> ;
-          rdf:type [ <Sequence> ] ? ;
+          rdf:type [ bioschemas:DNA ] ? ;
           schema1:name @linkml:String ? ;
           schema1:identifier @linkml:Integer ? ;
           <sequence> @linkml:String ?
@@ -369,7 +370,7 @@ linkml:Sparqlpath xsd:string
 <RepositoryIdSource>  (
     CLOSED {
        (  $<RepositoryIdSource_tes> (  &<Source_tes> ;
-             rdf:type [ <Source> ] ? ;
+             rdf:type [ schema1:CreateAction ] ? ;
              <repository_id> @linkml:String ;
              <repository_name> [ <https://opencloning.github.io/OpenCloning_LinkML/RepositoryName#addgene>
                 <https://opencloning.github.io/OpenCloning_LinkML/RepositoryName#genbank>
@@ -416,7 +417,7 @@ linkml:Sparqlpath xsd:string
 
 <ReverseComplementSource> CLOSED {
     (  $<ReverseComplementSource_tes> (  &<Source_tes> ;
-          rdf:type [ <Source> ] ?
+          rdf:type [ schema1:CreateAction ] ?
        ) ;
        rdf:type [ <ReverseComplementSource> ]
     )
@@ -431,7 +432,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ schema1:Thing ] ? ;
           <type> @linkml:String ?
        ) ;
-       rdf:type [ <Sequence> ]
+       rdf:type [ bioschemas:DNA ]
     )
 }
 
@@ -448,7 +449,7 @@ linkml:Sparqlpath xsd:string
 <SequenceCutSource>  (
     CLOSED {
        (  $<SequenceCutSource_tes> (  &<Source_tes> ;
-             rdf:type [ <Source> ] ? ;
+             rdf:type [ schema1:CreateAction ] ? ;
              <left_edge> @<SequenceCut> ? ;
              <right_edge> @<SequenceCut> ?
           ) ;
@@ -477,11 +478,11 @@ linkml:Sparqlpath xsd:string
 }
 
 <SimpleSequenceLocation> CLOSED {
-    (  $<SimpleSequenceLocation_tes> (  <start> @linkml:Integer ;
-          <end> @linkml:Integer ;
+    (  $<SimpleSequenceLocation_tes> (  bioschemas:rangeStart @linkml:Integer ;
+          bioschemas:rangeEnd @linkml:Integer ;
           <strand> @linkml:Integer ?
        ) ;
-       rdf:type [ <SimpleSequenceLocation> ] ?
+       rdf:type [ bioschemas:SequenceRange ] ?
     )
 }
 
@@ -503,19 +504,19 @@ linkml:Sparqlpath xsd:string
 <Source_struct> {
     (  $<Source_tes> (  &<NamedThing_tes> ;
           rdf:type [ schema1:Thing ] ? ;
-          <input> @<Sequence> * ;
-          <output> @<Sequence> ? ;
+          schema1:object @<Sequence> * ;
+          schema1:result @<Sequence> ? ;
           <type> @linkml:String ? ;
           <output_name> @linkml:String ? ;
           schema1:identifier @linkml:Integer ?
        ) ;
-       rdf:type [ <Source> ]
+       rdf:type [ schema1:CreateAction ]
     )
 }
 
 <TemplateSequence> CLOSED {
     (  $<TemplateSequence_tes> (  &<Sequence_tes> ;
-          rdf:type [ <Sequence> ] ? ;
+          rdf:type [ bioschemas:DNA ] ? ;
           <circular> @linkml:Boolean ? ;
           <primer_design> @linkml:String ?
        ) ;
@@ -525,7 +526,7 @@ linkml:Sparqlpath xsd:string
 
 <TextFileSequence> CLOSED {
     (  $<TextFileSequence_tes> (  &<Sequence_tes> ;
-          rdf:type [ <Sequence> ] ? ;
+          rdf:type [ bioschemas:DNA ] ? ;
           <sequence_file_format> [ <https://opencloning.github.io/OpenCloning_LinkML/SequenceFileFormat#fasta>
              <https://opencloning.github.io/OpenCloning_LinkML/SequenceFileFormat#genbank>
              <https://opencloning.github.io/OpenCloning_LinkML/SequenceFileFormat#snapgene>
@@ -540,7 +541,7 @@ linkml:Sparqlpath xsd:string
 
 <UploadedFileSource> CLOSED {
     (  $<UploadedFileSource_tes> (  &<Source_tes> ;
-          rdf:type [ <Source> ] ? ;
+          rdf:type [ schema1:CreateAction ] ? ;
           <sequence_file_format> [ <https://opencloning.github.io/OpenCloning_LinkML/SequenceFileFormat#fasta>
              <https://opencloning.github.io/OpenCloning_LinkML/SequenceFileFormat#genbank>
              <https://opencloning.github.io/OpenCloning_LinkML/SequenceFileFormat#snapgene>
