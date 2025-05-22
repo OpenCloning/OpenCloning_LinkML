@@ -1,6 +1,6 @@
 -- # Class: "NamedThing" Description: ""
 --     * Slot: id Description: A unique identifier for a thing
--- # Class: "Sequence" Description: "Represents a sequence"
+-- # Abstract Class: "Sequence" Description: "Represents a sequence"
 --     * Slot: id Description: A unique identifier for a thing
 --     * Slot: type Description: Designates the class
 --     * Slot: CloningStrategy_id Description: Autocreated FK slot
@@ -32,7 +32,7 @@
 --     * Slot: restriction_enzyme Description:
 --     * Slot: cut_watson Description: The position of the cut in the watson strand. The cut is made before the base at this position (zero-based), so that cut position 1 cuts after the first base.
 --     * Slot: overhang Description: The length of the overhang that is left after the cut. It can be negative, same meaning as in pydna's `dseq::ovhg` and biopython's `Bio.Restriction.RestrictionType.ovhg`.
--- # Class: "Source" Description: "Represents the source of a sequence"
+-- # Abstract Class: "Source" Description: "Represents the source of a sequence"
 --     * Slot: output Description: Identifier of the sequence that is the output of this source.
 --     * Slot: type Description: Designates the class
 --     * Slot: output_name Description: Used to specify the name of the output sequence
@@ -314,6 +314,9 @@
 -- # Class: "CloningStrategy" Description: "Represents a cloning strategy"
 --     * Slot: id Description:
 --     * Slot: description Description: A description of the cloning strategy
+--     * Slot: schema_version Description: The version of the schema that was used to generate this cloning strategy
+--     * Slot: backend_version Description: The version of the backend that was used to generate this cloning strategy
+--     * Slot: frontend_version Description: The version of the frontend that was used to generate this cloning strategy
 -- # Class: "AnnotationReport" Description: "Represents a report of an annotation step"
 --     * Slot: id Description:
 --     * Slot: type Description: Designates the class
@@ -523,6 +526,9 @@ CREATE TABLE "SimpleSequenceLocation" (
 CREATE TABLE "CloningStrategy" (
 	id INTEGER NOT NULL,
 	description TEXT,
+	schema_version TEXT,
+	backend_version TEXT,
+	frontend_version TEXT,
 	PRIMARY KEY (id)
 );
 CREATE TABLE "PlannotateAnnotationReport" (

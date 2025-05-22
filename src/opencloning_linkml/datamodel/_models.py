@@ -5,7 +5,7 @@ import sys
 from datetime import date, datetime, time
 from decimal import Decimal
 from enum import Enum
-from typing import Any, ClassVar, Dict, List, Literal, Optional, Union
+from typing import Any, ClassVar, Literal, Optional, Union
 
 from pydantic import BaseModel, ConfigDict, Field, RootModel, field_validator
 
@@ -27,7 +27,7 @@ class ConfiguredBaseModel(BaseModel):
 
 
 class LinkMLMeta(RootModel):
-    root: Dict[str, Any] = {}
+    root: dict[str, Any] = {}
     model_config = ConfigDict(frozen=True)
 
     def __getattr__(self, key: str):
@@ -53,6 +53,7 @@ linkml_meta = LinkMLMeta(
         "license": "MIT",
         "name": "OpenCloning_LinkML",
         "prefixes": {
+            "IAO": {"prefix_prefix": "IAO", "prefix_reference": "http://purl.obolibrary.org/obo/IAO_"},
             "NCIT": {"prefix_prefix": "NCIT", "prefix_reference": "http://purl.obolibrary.org/obo/NCIT_"},
             "OBI": {"prefix_prefix": "OBI", "prefix_reference": "http://purl.obolibrary.org/obo/OBI_"},
             "PATO": {"prefix_prefix": "PATO", "prefix_reference": "http://purl.obolibrary.org/obo/PATO_"},
@@ -69,34 +70,63 @@ linkml_meta = LinkMLMeta(
         "see_also": ["https://pypi.org/project/opencloning-linkml/"],
         "source_file": "src/opencloning_linkml/schema/opencloning_linkml.yaml",
         "title": "OpenCloning_LinkML",
+        "types": {
+            "version_number": {
+                "description": "A version number",
+                "exact_mappings": ["IAO:0000129"],
+                "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+                "name": "version_number",
+                "typeof": "string",
+            }
+        },
     }
 )
 
 
 class RepositoryName(str, Enum):
-    # Addgene
     addgene = "addgene"
-    # GenBank
+    """
+    Addgene
+    """
     genbank = "genbank"
-    # Benchling
+    """
+    GenBank
+    """
     benchling = "benchling"
-    # SnapGene plasmid library
+    """
+    Benchling
+    """
     snapgene = "snapgene"
-    # Euroscarf (plasmids only)
+    """
+    SnapGene plasmid library
+    """
     euroscarf = "euroscarf"
-    # iGEM collection
+    """
+    Euroscarf (plasmids only)
+    """
     igem = "igem"
-    # WekWikGene
+    """
+    iGEM collection
+    """
     wekwikgene = "wekwikgene"
-    # SEVA (Standard European Vector Architecture)
+    """
+    WekWikGene
+    """
     seva = "seva"
+    """
+    SEVA (Standard European Vector Architecture)
+    """
 
 
 class Collection(str, Enum):
-    # A plasmid from Addgene
     AddgenePlasmid = "AddgenePlasmid"
-    # A pair of oligonucleotides for hybridization
+    """
+    A plasmid from Addgene
+    """
     OligoPair = "OligoPair"
+    """
+    A pair of oligonucleotides for hybridization
+    """
 
 
 class SequenceFileFormat(str, Enum):
@@ -107,17 +137,25 @@ class SequenceFileFormat(str, Enum):
 
 
 class AddgeneSequenceType(str, Enum):
-    # Full sequence of the plasmid submitted by the depositor
     depositor_full = "depositor-full"
-    # Full sequence of the plasmid performed by Addgene
+    """
+    Full sequence of the plasmid submitted by the depositor
+    """
     addgene_full = "addgene-full"
+    """
+    Full sequence of the plasmid performed by Addgene
+    """
 
 
 class GatewayReactionType(str, Enum):
-    # LR reaction
     LR = "LR"
-    # BP reaction
+    """
+    LR reaction
+    """
     BP = "BP"
+    """
+    BP reaction
+    """
 
 
 class AnnotationTool(str, Enum):
@@ -125,15 +163,21 @@ class AnnotationTool(str, Enum):
 
 
 class AssociatedFileType(str, Enum):
-    # A file containing sequencing data
     Sequencing_file = "Sequencing file"
+    """
+    A file containing sequencing data
+    """
 
 
 class CollectionOptionType(str, Enum):
-    # A pair of oligonucleotides for hybridization
     OligoPair = "OligoPair"
-    # A plasmid from Addgene
+    """
+    A pair of oligonucleotides for hybridization
+    """
     AddgenePlasmid = "AddgenePlasmid"
+    """
+    A plasmid from Addgene
+    """
 
 
 class NamedThing(ConfiguredBaseModel):
@@ -355,11 +399,12 @@ class Primer(Sequence):
         pattern = re.compile(r"^[acgtACGT]+$")
         if isinstance(v, list):
             for element in v:
-                if isinstance(v, str) and not pattern.match(element):
-                    raise ValueError(f"Invalid sequence format: {element}")
-        elif isinstance(v, str):
-            if not pattern.match(v):
-                raise ValueError(f"Invalid sequence format: {v}")
+                if isinstance(element, str) and not pattern.match(element):
+                    err_msg = f"Invalid sequence format: {element}"
+                    raise ValueError(err_msg)
+        elif isinstance(v, str) and not pattern.match(v):
+            err_msg = f"Invalid sequence format: {v}"
+            raise ValueError(err_msg)
         return v
 
 
@@ -429,7 +474,7 @@ class Source(NamedThing):
         }
     )
 
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -498,7 +543,7 @@ class DatabaseSource(Source):
             }
         },
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -560,17 +605,17 @@ class CollectionSource(Source):
             }
         },
     )
-    image: Optional[List[str]] = Field(
+    image: Optional[list[str]] = Field(
         default=None,
         description="""URL and size of the image representing this category. For images with size specification, this is a list with two elements: [url, size].""",
         json_schema_extra={"linkml_meta": {"alias": "image", "domain_of": ["CollectionSource"]}},
     )
-    options: Optional[List[CollectionOption]] = Field(
+    options: Optional[list[CollectionOption]] = Field(
         default=None,
         description="""The options available in this category.""",
         json_schema_extra={"linkml_meta": {"alias": "options", "domain_of": ["CollectionSource"]}},
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -789,7 +834,7 @@ class ManuallyTypedSource(Source):
             }
         },
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -839,11 +884,12 @@ class ManuallyTypedSource(Source):
         pattern = re.compile(r"^[acgtACGT]+$")
         if isinstance(v, list):
             for element in v:
-                if isinstance(v, str) and not pattern.match(element):
-                    raise ValueError(f"Invalid user_input format: {element}")
-        elif isinstance(v, str):
-            if not pattern.match(v):
-                raise ValueError(f"Invalid user_input format: {v}")
+                if isinstance(element, str) and not pattern.match(element):
+                    err_msg = f"Invalid user_input format: {element}"
+                    raise ValueError(err_msg)
+        elif isinstance(v, str) and not pattern.match(v):
+            err_msg = f"Invalid user_input format: {v}"
+            raise ValueError(err_msg)
         return v
 
 
@@ -888,7 +934,7 @@ class UploadedFileSource(Source):
         description="""If provided, coordinates within the sequence of the file to extract a subsequence""",
         json_schema_extra={"linkml_meta": {"alias": "coordinates", "domain_of": ["UploadedFileSource"]}},
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -950,7 +996,7 @@ class RepositoryIdSource(Source):
         default=...,
         json_schema_extra={"linkml_meta": {"alias": "repository_name", "domain_of": ["RepositoryIdSource"]}},
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -1026,7 +1072,7 @@ class AddgeneIdSource(RepositoryIdSource):
         default=...,
         json_schema_extra={"linkml_meta": {"alias": "repository_name", "domain_of": ["RepositoryIdSource"]}},
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -1078,11 +1124,12 @@ class AddgeneIdSource(RepositoryIdSource):
         )
         if isinstance(v, list):
             for element in v:
-                if isinstance(v, str) and not pattern.match(element):
-                    raise ValueError(f"Invalid sequence_file_url format: {element}")
-        elif isinstance(v, str):
-            if not pattern.match(v):
-                raise ValueError(f"Invalid sequence_file_url format: {v}")
+                if isinstance(element, str) and not pattern.match(element):
+                    err_msg = f"Invalid sequence_file_url format: {element}"
+                    raise ValueError(err_msg)
+        elif isinstance(v, str) and not pattern.match(v):
+            err_msg = f"Invalid sequence_file_url format: {v}"
+            raise ValueError(err_msg)
         return v
 
 
@@ -1123,7 +1170,7 @@ class WekWikGeneIdSource(RepositoryIdSource):
         default=...,
         json_schema_extra={"linkml_meta": {"alias": "repository_name", "domain_of": ["RepositoryIdSource"]}},
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -1175,11 +1222,12 @@ class WekWikGeneIdSource(RepositoryIdSource):
         )
         if isinstance(v, list):
             for element in v:
-                if isinstance(v, str) and not pattern.match(element):
-                    raise ValueError(f"Invalid sequence_file_url format: {element}")
-        elif isinstance(v, str):
-            if not pattern.match(v):
-                raise ValueError(f"Invalid sequence_file_url format: {v}")
+                if isinstance(element, str) and not pattern.match(element):
+                    err_msg = f"Invalid sequence_file_url format: {element}"
+                    raise ValueError(err_msg)
+        elif isinstance(v, str) and not pattern.match(v):
+            err_msg = f"Invalid sequence_file_url format: {v}"
+            raise ValueError(err_msg)
         return v
 
     @field_validator("repository_id")
@@ -1187,11 +1235,12 @@ class WekWikGeneIdSource(RepositoryIdSource):
         pattern = re.compile(r"^\d+$")
         if isinstance(v, list):
             for element in v:
-                if isinstance(v, str) and not pattern.match(element):
-                    raise ValueError(f"Invalid repository_id format: {element}")
-        elif isinstance(v, str):
-            if not pattern.match(v):
-                raise ValueError(f"Invalid repository_id format: {v}")
+                if isinstance(element, str) and not pattern.match(element):
+                    err_msg = f"Invalid repository_id format: {element}"
+                    raise ValueError(err_msg)
+        elif isinstance(v, str) and not pattern.match(v):
+            err_msg = f"Invalid repository_id format: {v}"
+            raise ValueError(err_msg)
         return v
 
 
@@ -1241,7 +1290,7 @@ class SEVASource(RepositoryIdSource):
         default=...,
         json_schema_extra={"linkml_meta": {"alias": "repository_name", "domain_of": ["RepositoryIdSource"]}},
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -1293,11 +1342,12 @@ class SEVASource(RepositoryIdSource):
         )
         if isinstance(v, list):
             for element in v:
-                if isinstance(v, str) and not pattern.match(element):
-                    raise ValueError(f"Invalid sequence_file_url format: {element}")
-        elif isinstance(v, str):
-            if not pattern.match(v):
-                raise ValueError(f"Invalid sequence_file_url format: {v}")
+                if isinstance(element, str) and not pattern.match(element):
+                    err_msg = f"Invalid sequence_file_url format: {element}"
+                    raise ValueError(err_msg)
+        elif isinstance(v, str) and not pattern.match(v):
+            err_msg = f"Invalid sequence_file_url format: {v}"
+            raise ValueError(err_msg)
         return v
 
     @field_validator("repository_id")
@@ -1305,11 +1355,12 @@ class SEVASource(RepositoryIdSource):
         pattern = re.compile(r"^pSEVA\d+.*$")
         if isinstance(v, list):
             for element in v:
-                if isinstance(v, str) and not pattern.match(element):
-                    raise ValueError(f"Invalid repository_id format: {element}")
-        elif isinstance(v, str):
-            if not pattern.match(v):
-                raise ValueError(f"Invalid repository_id format: {v}")
+                if isinstance(element, str) and not pattern.match(element):
+                    err_msg = f"Invalid repository_id format: {element}"
+                    raise ValueError(err_msg)
+        elif isinstance(v, str) and not pattern.match(v):
+            err_msg = f"Invalid repository_id format: {v}"
+            raise ValueError(err_msg)
         return v
 
 
@@ -1340,7 +1391,7 @@ class BenchlingUrlSource(RepositoryIdSource):
         default=...,
         json_schema_extra={"linkml_meta": {"alias": "repository_name", "domain_of": ["RepositoryIdSource"]}},
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -1390,11 +1441,12 @@ class BenchlingUrlSource(RepositoryIdSource):
         pattern = re.compile(r"^https:\/\/benchling\.com\/.+\.gb$")
         if isinstance(v, list):
             for element in v:
-                if isinstance(v, str) and not pattern.match(element):
-                    raise ValueError(f"Invalid repository_id format: {element}")
-        elif isinstance(v, str):
-            if not pattern.match(v):
-                raise ValueError(f"Invalid repository_id format: {v}")
+                if isinstance(element, str) and not pattern.match(element):
+                    err_msg = f"Invalid repository_id format: {element}"
+                    raise ValueError(err_msg)
+        elif isinstance(v, str) and not pattern.match(v):
+            err_msg = f"Invalid repository_id format: {v}"
+            raise ValueError(err_msg)
         return v
 
 
@@ -1434,7 +1486,7 @@ class SnapGenePlasmidSource(RepositoryIdSource):
         default=...,
         json_schema_extra={"linkml_meta": {"alias": "repository_name", "domain_of": ["RepositoryIdSource"]}},
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -1484,11 +1536,12 @@ class SnapGenePlasmidSource(RepositoryIdSource):
         pattern = re.compile(r"^.+\/.+$")
         if isinstance(v, list):
             for element in v:
-                if isinstance(v, str) and not pattern.match(element):
-                    raise ValueError(f"Invalid repository_id format: {element}")
-        elif isinstance(v, str):
-            if not pattern.match(v):
-                raise ValueError(f"Invalid repository_id format: {v}")
+                if isinstance(element, str) and not pattern.match(element):
+                    err_msg = f"Invalid repository_id format: {element}"
+                    raise ValueError(err_msg)
+        elif isinstance(v, str) and not pattern.match(v):
+            err_msg = f"Invalid repository_id format: {v}"
+            raise ValueError(err_msg)
         return v
 
 
@@ -1519,7 +1572,7 @@ class EuroscarfSource(RepositoryIdSource):
         default=...,
         json_schema_extra={"linkml_meta": {"alias": "repository_name", "domain_of": ["RepositoryIdSource"]}},
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -1569,11 +1622,12 @@ class EuroscarfSource(RepositoryIdSource):
         pattern = re.compile(r"^P\d+$")
         if isinstance(v, list):
             for element in v:
-                if isinstance(v, str) and not pattern.match(element):
-                    raise ValueError(f"Invalid repository_id format: {element}")
-        elif isinstance(v, str):
-            if not pattern.match(v):
-                raise ValueError(f"Invalid repository_id format: {v}")
+                if isinstance(element, str) and not pattern.match(element):
+                    err_msg = f"Invalid repository_id format: {element}"
+                    raise ValueError(err_msg)
+        elif isinstance(v, str) and not pattern.match(v):
+            err_msg = f"Invalid repository_id format: {v}"
+            raise ValueError(err_msg)
         return v
 
 
@@ -1621,7 +1675,7 @@ class IGEMSource(RepositoryIdSource):
         default=...,
         json_schema_extra={"linkml_meta": {"alias": "repository_name", "domain_of": ["RepositoryIdSource"]}},
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -1673,11 +1727,12 @@ class IGEMSource(RepositoryIdSource):
         )
         if isinstance(v, list):
             for element in v:
-                if isinstance(v, str) and not pattern.match(element):
-                    raise ValueError(f"Invalid sequence_file_url format: {element}")
-        elif isinstance(v, str):
-            if not pattern.match(v):
-                raise ValueError(f"Invalid sequence_file_url format: {v}")
+                if isinstance(element, str) and not pattern.match(element):
+                    err_msg = f"Invalid sequence_file_url format: {element}"
+                    raise ValueError(err_msg)
+        elif isinstance(v, str) and not pattern.match(v):
+            err_msg = f"Invalid sequence_file_url format: {v}"
+            raise ValueError(err_msg)
         return v
 
 
@@ -1732,7 +1787,7 @@ class GenomeCoordinatesSource(Source):
             }
         },
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -1803,7 +1858,7 @@ class SequenceCutSource(Source):
             }
         },
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -1874,7 +1929,7 @@ class RestrictionEnzymeDigestionSource(SequenceCutSource):
             }
         },
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -2009,12 +2064,12 @@ class AssemblySource(Source):
             }
         },
     )
-    assembly: Optional[List[AssemblyFragment]] = Field(
+    assembly: Optional[list[AssemblyFragment]] = Field(
         default=None,
         description="""A list of the fragments that are assembled, in order""",
         json_schema_extra={"linkml_meta": {"alias": "assembly", "domain_of": ["AssemblySource"]}},
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -2084,12 +2139,12 @@ class PCRSource(AssemblySource):
             }
         },
     )
-    assembly: Optional[List[AssemblyFragment]] = Field(
+    assembly: Optional[list[AssemblyFragment]] = Field(
         default=None,
         description="""A list of the fragments that are assembled, in order""",
         json_schema_extra={"linkml_meta": {"alias": "assembly", "domain_of": ["AssemblySource"]}},
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -2152,12 +2207,12 @@ class LigationSource(AssemblySource):
             }
         },
     )
-    assembly: Optional[List[AssemblyFragment]] = Field(
+    assembly: Optional[list[AssemblyFragment]] = Field(
         default=None,
         description="""A list of the fragments that are assembled, in order""",
         json_schema_extra={"linkml_meta": {"alias": "assembly", "domain_of": ["AssemblySource"]}},
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -2220,12 +2275,12 @@ class HomologousRecombinationSource(AssemblySource):
             }
         },
     )
-    assembly: Optional[List[AssemblyFragment]] = Field(
+    assembly: Optional[list[AssemblyFragment]] = Field(
         default=None,
         description="""A list of the fragments that are assembled, in order""",
         json_schema_extra={"linkml_meta": {"alias": "assembly", "domain_of": ["AssemblySource"]}},
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -2288,12 +2343,12 @@ class GibsonAssemblySource(AssemblySource):
             }
         },
     )
-    assembly: Optional[List[AssemblyFragment]] = Field(
+    assembly: Optional[list[AssemblyFragment]] = Field(
         default=None,
         description="""A list of the fragments that are assembled, in order""",
         json_schema_extra={"linkml_meta": {"alias": "assembly", "domain_of": ["AssemblySource"]}},
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -2356,12 +2411,12 @@ class InFusionSource(AssemblySource):
             }
         },
     )
-    assembly: Optional[List[AssemblyFragment]] = Field(
+    assembly: Optional[list[AssemblyFragment]] = Field(
         default=None,
         description="""A list of the fragments that are assembled, in order""",
         json_schema_extra={"linkml_meta": {"alias": "assembly", "domain_of": ["AssemblySource"]}},
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -2424,12 +2479,12 @@ class OverlapExtensionPCRLigationSource(AssemblySource):
             }
         },
     )
-    assembly: Optional[List[AssemblyFragment]] = Field(
+    assembly: Optional[list[AssemblyFragment]] = Field(
         default=None,
         description="""A list of the fragments that are assembled, in order""",
         json_schema_extra={"linkml_meta": {"alias": "assembly", "domain_of": ["AssemblySource"]}},
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -2492,12 +2547,12 @@ class InVivoAssemblySource(AssemblySource):
             }
         },
     )
-    assembly: Optional[List[AssemblyFragment]] = Field(
+    assembly: Optional[list[AssemblyFragment]] = Field(
         default=None,
         description="""A list of the fragments that are assembled, in order""",
         json_schema_extra={"linkml_meta": {"alias": "assembly", "domain_of": ["AssemblySource"]}},
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -2555,7 +2610,7 @@ class RestrictionAndLigationSource(AssemblySource):
         }
     )
 
-    restriction_enzymes: List[str] = Field(
+    restriction_enzymes: list[str] = Field(
         default=...,
         json_schema_extra={
             "linkml_meta": {
@@ -2575,12 +2630,12 @@ class RestrictionAndLigationSource(AssemblySource):
             }
         },
     )
-    assembly: Optional[List[AssemblyFragment]] = Field(
+    assembly: Optional[list[AssemblyFragment]] = Field(
         default=None,
         description="""A list of the fragments that are assembled, in order""",
         json_schema_extra={"linkml_meta": {"alias": "assembly", "domain_of": ["AssemblySource"]}},
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -2653,12 +2708,12 @@ class GatewaySource(AssemblySource):
             }
         },
     )
-    assembly: Optional[List[AssemblyFragment]] = Field(
+    assembly: Optional[list[AssemblyFragment]] = Field(
         default=None,
         description="""A list of the fragments that are assembled, in order""",
         json_schema_extra={"linkml_meta": {"alias": "assembly", "domain_of": ["AssemblySource"]}},
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -2721,12 +2776,12 @@ class CreLoxRecombinationSource(AssemblySource):
             }
         },
     )
-    assembly: Optional[List[AssemblyFragment]] = Field(
+    assembly: Optional[list[AssemblyFragment]] = Field(
         default=None,
         description="""A list of the fragments that are assembled, in order""",
         json_schema_extra={"linkml_meta": {"alias": "assembly", "domain_of": ["AssemblySource"]}},
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -2779,7 +2834,7 @@ class CRISPRSource(HomologousRecombinationSource):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
-    guides: List[int] = Field(
+    guides: list[int] = Field(
         default=...,
         description="""The guide RNAs used in the CRISPR""",
         json_schema_extra={"linkml_meta": {"alias": "guides", "domain_of": ["CRISPRSource"]}},
@@ -2794,12 +2849,12 @@ class CRISPRSource(HomologousRecombinationSource):
             }
         },
     )
-    assembly: Optional[List[AssemblyFragment]] = Field(
+    assembly: Optional[list[AssemblyFragment]] = Field(
         default=None,
         description="""A list of the fragments that are assembled, in order""",
         json_schema_extra={"linkml_meta": {"alias": "assembly", "domain_of": ["AssemblySource"]}},
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -2872,7 +2927,7 @@ class OligoHybridizationSource(Source):
         description="""The reverse oligo used in the hybridization""",
         json_schema_extra={"linkml_meta": {"alias": "reverse_oligo", "domain_of": ["OligoHybridizationSource"]}},
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -2925,7 +2980,7 @@ class PolymeraseExtensionSource(Source):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -2978,12 +3033,12 @@ class CloningStrategy(ConfiguredBaseModel):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
-    sequences: List[Union[Sequence, TemplateSequence, TextFileSequence, Primer]] = Field(
+    sequences: list[Union[Sequence, TemplateSequence, TextFileSequence, Primer]] = Field(
         default=...,
         description="""The sequences that are used in the cloning strategy""",
         json_schema_extra={"linkml_meta": {"alias": "sequences", "domain_of": ["CloningStrategy"]}},
     )
-    sources: List[
+    sources: list[
         Union[
             Source,
             DatabaseSource,
@@ -3023,7 +3078,7 @@ class CloningStrategy(ConfiguredBaseModel):
         description="""The sources of the sequences that are used in the cloning strategy""",
         json_schema_extra={"linkml_meta": {"alias": "sources", "domain_of": ["CloningStrategy"]}},
     )
-    primers: Optional[List[Primer]] = Field(
+    primers: Optional[list[Primer]] = Field(
         default=None,
         description="""The primers that are used in the cloning strategy""",
         json_schema_extra={"linkml_meta": {"alias": "primers", "domain_of": ["CloningStrategy"]}},
@@ -3038,10 +3093,25 @@ class CloningStrategy(ConfiguredBaseModel):
             }
         },
     )
-    files: Optional[List[Union[AssociatedFile, SequencingFile]]] = Field(
+    files: Optional[list[Union[AssociatedFile, SequencingFile]]] = Field(
         default=None,
         description="""Files associated with this cloning strategy""",
         json_schema_extra={"linkml_meta": {"alias": "files", "domain_of": ["CloningStrategy"]}},
+    )
+    schema_version: Optional[str] = Field(
+        default=None,
+        description="""The version of the schema that was used to generate this cloning strategy""",
+        json_schema_extra={"linkml_meta": {"alias": "schema_version", "domain_of": ["CloningStrategy"]}},
+    )
+    backend_version: Optional[str] = Field(
+        default=None,
+        description="""The version of the backend that was used to generate this cloning strategy""",
+        json_schema_extra={"linkml_meta": {"alias": "backend_version", "domain_of": ["CloningStrategy"]}},
+    )
+    frontend_version: Optional[str] = Field(
+        default=None,
+        description="""The version of the frontend that was used to generate this cloning strategy""",
+        json_schema_extra={"linkml_meta": {"alias": "frontend_version", "domain_of": ["CloningStrategy"]}},
     )
 
 
@@ -3171,11 +3241,11 @@ class AnnotationSource(Source):
         description="""The version of the annotation tool""",
         json_schema_extra={"linkml_meta": {"alias": "annotation_tool_version", "domain_of": ["AnnotationSource"]}},
     )
-    annotation_report: Optional[List[Union[AnnotationReport, PlannotateAnnotationReport]]] = Field(
+    annotation_report: Optional[list[Union[AnnotationReport, PlannotateAnnotationReport]]] = Field(
         default=None,
         json_schema_extra={"linkml_meta": {"alias": "annotation_report", "domain_of": ["AnnotationSource"]}},
     )
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -3228,7 +3298,7 @@ class ReverseComplementSource(Source):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
-    input: Optional[List[int]] = Field(
+    input: Optional[list[int]] = Field(
         default=None,
         description="""The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
@@ -3318,7 +3388,7 @@ class SequencingFile(AssociatedFile):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
-    alignment: List[str] = Field(
+    alignment: list[str] = Field(
         default=...,
         description="""The alignment of the sequencing read to the sequence. List of strings representing aligned sequences.""",
         json_schema_extra={"linkml_meta": {"alias": "alignment", "domain_of": ["SequencingFile"]}},

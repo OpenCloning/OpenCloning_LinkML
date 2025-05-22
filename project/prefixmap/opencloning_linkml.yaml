@@ -1,4 +1,5 @@
 {
+   "IAO": "http://purl.obolibrary.org/obo/IAO_",
    "NCIT": "http://purl.obolibrary.org/obo/NCIT_",
    "OBI": "http://purl.obolibrary.org/obo/OBI_",
    "PATO": "http://purl.obolibrary.org/obo/PATO_",

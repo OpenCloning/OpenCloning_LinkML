@@ -18,11 +18,20 @@ prefixes:
   example: https://example.org/
   OBI: http://purl.obolibrary.org/obo/OBI_
   NCIT: http://purl.obolibrary.org/obo/NCIT_
+  IAO: http://purl.obolibrary.org/obo/IAO_
 default_prefix: opencloning_linkml
 default_range: string
 
 imports:
   - linkml:types
+
+types:
+  version_number:
+    typeof: string
+    description: >-
+      A version number
+    exact_mappings:
+      - IAO:0000129
 
 classes:
   NamedThing:
@@ -661,6 +670,21 @@ classes:
           required: false
           multivalued: true
           inlined_as_list: true
+      - schema_version:
+          range: version_number
+          description: >-
+            The version of the schema that was used to generate this cloning strategy
+          required: false
+      - backend_version:
+          range: version_number
+          description: >-
+            The version of the backend that was used to generate this cloning strategy
+          required: false
+      - frontend_version:
+          range: version_number
+          description: >-
+            The version of the frontend that was used to generate this cloning strategy
+          required: false
 
   AnnotationReport:
     description: >-

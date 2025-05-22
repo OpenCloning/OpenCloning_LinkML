@@ -1,5 +1,5 @@
 # Auto generated from opencloning_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-05-07T09:13:51
+# Generation date: 2025-05-22T11:42:57
 # Schema: OpenCloning_LinkML
 #
 # id: https://opencloning.github.io/OpenCloning_LinkML
@@ -15,7 +15,6 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from jsonasobj2 import JsonObj, as_dict
 from linkml_runtime.linkml_model.meta import EnumDefinition, PermissibleValue, PvFormulaOptions
 from linkml_runtime.utils.curienamespace import CurieNamespace
-from linkml_runtime.utils.dataclass_extensions_376 import dataclasses_init_fn_with_kwargs
 from linkml_runtime.utils.enumerations import EnumDefinitionImpl
 from linkml_runtime.utils.formatutils import camelcase, sfx, underscore
 from linkml_runtime.utils.metamodelcore import bnode, empty_dict, empty_list
@@ -29,10 +28,8 @@ from linkml_runtime.utils.metamodelcore import Bool
 metamodel_version = "1.7.0"
 version = None
 
-# Overwrite dataclasses _init_fn to add **kwargs in __init__
-dataclasses._init_fn = dataclasses_init_fn_with_kwargs
-
 # Namespaces
+IAO = CurieNamespace("IAO", "http://purl.obolibrary.org/obo/IAO_")
 NCIT = CurieNamespace("NCIT", "http://purl.obolibrary.org/obo/NCIT_")
 OBI = CurieNamespace("OBI", "http://purl.obolibrary.org/obo/OBI_")
 PATO = CurieNamespace("PATO", "http://purl.obolibrary.org/obo/PATO_")
@@ -42,10 +39,18 @@ EXAMPLE = CurieNamespace("example", "https://example.org/")
 LINKML = CurieNamespace("linkml", "https://w3id.org/linkml/")
 OPENCLONING_LINKML = CurieNamespace("opencloning_linkml", "https://opencloning.github.io/OpenCloning_LinkML/")
 SCHEMA = CurieNamespace("schema", "http://schema.org/")
+XSD = CurieNamespace("xsd", "http://www.w3.org/2001/XMLSchema#")
 DEFAULT_ = OPENCLONING_LINKML
 
 
 # Types
+class VersionNumber(String):
+    """A version number"""
+
+    type_class_uri = XSD["string"]
+    type_class_curie = "xsd:string"
+    type_name = "version_number"
+    type_model_uri = OPENCLONING_LINKML.VersionNumber
 
 
 # Class references
@@ -199,7 +204,7 @@ class ReverseComplementSourceId(SourceId):
 
 @dataclass(repr=False)
 class NamedThing(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = SCHEMA["Thing"]
     class_class_curie: ClassVar[str] = "schema:Thing"
@@ -208,7 +213,7 @@ class NamedThing(YAMLRoot):
 
     id: Union[int, NamedThingId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, NamedThingId):
@@ -223,7 +228,7 @@ class Sequence(NamedThing):
     Represents a sequence
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOSCHEMAS["DNA"]
     class_class_curie: ClassVar[str] = "bioschemas:DNA"
@@ -233,7 +238,7 @@ class Sequence(NamedThing):
     id: Union[int, SequenceId] = None
     type: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, SequenceId):
@@ -267,7 +272,7 @@ class TemplateSequence(Sequence):
     user's actions
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["TemplateSequence"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:TemplateSequence"
@@ -278,7 +283,7 @@ class TemplateSequence(Sequence):
     circular: Optional[Union[bool, Bool]] = None
     primer_design: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, TemplateSequenceId):
@@ -300,7 +305,7 @@ class TextFileSequence(Sequence):
     A sequence (may have features) defined by the content of a text file
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["TextFileSequence"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:TextFileSequence"
@@ -313,7 +318,7 @@ class TextFileSequence(Sequence):
     overhang_watson_3prime: Optional[int] = 0
     file_content: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, TextFileSequenceId):
@@ -343,7 +348,7 @@ class Primer(Sequence):
     An oligonucleotide or primer
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["Primer"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:Primer"
@@ -355,7 +360,7 @@ class Primer(Sequence):
     database_id: Optional[int] = None
     sequence: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PrimerId):
@@ -380,7 +385,7 @@ class SequenceCut(YAMLRoot):
     Represents a cut in a DNA sequence
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["SequenceCut"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:SequenceCut"
@@ -390,7 +395,7 @@ class SequenceCut(YAMLRoot):
     cut_watson: int = None
     overhang: int = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.cut_watson):
             self.MissingRequiredField("cut_watson")
         if not isinstance(self.cut_watson, int):
@@ -410,7 +415,7 @@ class RestrictionSequenceCut(SequenceCut):
     Represents a cut in a DNA sequence that is made by a restriction enzyme
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["RestrictionSequenceCut"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:RestrictionSequenceCut"
@@ -421,7 +426,7 @@ class RestrictionSequenceCut(SequenceCut):
     overhang: int = None
     restriction_enzyme: str = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.restriction_enzyme):
             self.MissingRequiredField("restriction_enzyme")
         if not isinstance(self.restriction_enzyme, str):
@@ -436,7 +441,7 @@ class Source(NamedThing):
     Represents the source of a sequence
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = SCHEMA["CreateAction"]
     class_class_curie: ClassVar[str] = "schema:CreateAction"
@@ -444,13 +449,13 @@ class Source(NamedThing):
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.Source
 
     id: Union[int, SourceId] = None
-    input: Optional[Union[Union[int, SequenceId], List[Union[int, SequenceId]]]] = empty_list()
+    input: Optional[Union[Union[int, SequenceId], list[Union[int, SequenceId]]]] = empty_list()
     output: Optional[Union[int, SequenceId]] = None
     type: Optional[str] = None
     output_name: Optional[str] = None
     database_id: Optional[int] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if not isinstance(self.input, list):
             self.input = [self.input] if self.input is not None else []
         self.input = [v if isinstance(v, SequenceId) else SequenceId(v) for v in self.input]
@@ -491,7 +496,7 @@ class DatabaseSource(Source):
     Represents the source of a sequence that is identified by a database id
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["DatabaseSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:DatabaseSource"
@@ -501,7 +506,7 @@ class DatabaseSource(Source):
     id: Union[int, DatabaseSourceId] = None
     database_id: int = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DatabaseSourceId):
@@ -522,7 +527,7 @@ class CollectionSource(Source):
     Represents a collection of possible sources in a template
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["CollectionSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:CollectionSource"
@@ -533,10 +538,10 @@ class CollectionSource(Source):
     title: str = None
     category_id: Optional[str] = None
     description: Optional[str] = None
-    image: Optional[Union[str, List[str]]] = empty_list()
-    options: Optional[Union[Union[dict, "CollectionOption"], List[Union[dict, "CollectionOption"]]]] = empty_list()
+    image: Optional[Union[str, list[str]]] = empty_list()
+    options: Optional[Union[Union[dict, "CollectionOption"], list[Union[dict, "CollectionOption"]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, CollectionSourceId):
@@ -571,7 +576,7 @@ class CollectionOption(YAMLRoot):
     Represents an option in a collection
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["CollectionOption"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:CollectionOption"
@@ -582,7 +587,7 @@ class CollectionOption(YAMLRoot):
     source: Union[dict, Source] = None
     info: Optional[Union[dict, "CollectionOptionInfo"]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.name):
             self.MissingRequiredField("name")
         if not isinstance(self.name, str):
@@ -605,7 +610,7 @@ class CollectionOptionInfo(YAMLRoot):
     Additional information about a collection option
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["CollectionOptionInfo"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:CollectionOptionInfo"
@@ -618,7 +623,7 @@ class CollectionOptionInfo(YAMLRoot):
     resistance: Optional[str] = None
     well: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
 
@@ -643,7 +648,7 @@ class ManuallyTypedSource(Source):
     Represents the source of a sequence that is manually typed by the user
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["ManuallyTypedSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:ManuallyTypedSource"
@@ -656,7 +661,7 @@ class ManuallyTypedSource(Source):
     overhang_watson_3prime: Optional[int] = 0
     circular: Optional[Union[bool, Bool]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ManuallyTypedSourceId):
@@ -686,7 +691,7 @@ class UploadedFileSource(Source):
     Represents the source of a sequence that is uploaded as a file
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["UploadedFileSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:UploadedFileSource"
@@ -700,7 +705,7 @@ class UploadedFileSource(Source):
     circularize: Optional[Union[bool, Bool]] = None
     coordinates: Optional[Union[dict, "SimpleSequenceLocation"]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, UploadedFileSourceId):
@@ -733,7 +738,7 @@ class RepositoryIdSource(Source):
     Represents the source of a sequence that is identified by a repository id
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["RepositoryIdSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:RepositoryIdSource"
@@ -744,7 +749,7 @@ class RepositoryIdSource(Source):
     repository_id: str = None
     repository_name: Union[str, "RepositoryName"] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, RepositoryIdSourceId):
@@ -770,7 +775,7 @@ class AddgeneIdSource(RepositoryIdSource):
     Represents the source of a sequence that is identified by an Addgene id
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["AddgeneIdSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:AddgeneIdSource"
@@ -783,7 +788,7 @@ class AddgeneIdSource(RepositoryIdSource):
     sequence_file_url: Optional[str] = None
     addgene_sequence_type: Optional[Union[str, "AddgeneSequenceType"]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, AddgeneIdSourceId):
@@ -805,7 +810,7 @@ class WekWikGeneIdSource(RepositoryIdSource):
     Represents the source of a sequence that is identified by a WekWikGene id
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["WekWikGeneIdSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:WekWikGeneIdSource"
@@ -817,7 +822,7 @@ class WekWikGeneIdSource(RepositoryIdSource):
     repository_id: str = None
     sequence_file_url: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, WekWikGeneIdSourceId):
@@ -841,7 +846,7 @@ class SEVASource(RepositoryIdSource):
     Represents the source of a sequence that is identified by a SEVA id
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["SEVASource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:SEVASource"
@@ -853,7 +858,7 @@ class SEVASource(RepositoryIdSource):
     sequence_file_url: str = None
     repository_id: str = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, SEVASourceId):
@@ -879,7 +884,7 @@ class BenchlingUrlSource(RepositoryIdSource):
     Represents the source of a sequence that is identified by a Benchling URL
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["BenchlingUrlSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:BenchlingUrlSource"
@@ -890,7 +895,7 @@ class BenchlingUrlSource(RepositoryIdSource):
     repository_name: Union[str, "RepositoryName"] = None
     repository_id: str = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, BenchlingUrlSourceId):
@@ -912,7 +917,7 @@ class SnapGenePlasmidSource(RepositoryIdSource):
     https://www.snapgene.com/plasmids/
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["SnapGenePlasmidSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:SnapGenePlasmidSource"
@@ -923,7 +928,7 @@ class SnapGenePlasmidSource(RepositoryIdSource):
     repository_name: Union[str, "RepositoryName"] = None
     repository_id: str = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, SnapGenePlasmidSourceId):
@@ -944,7 +949,7 @@ class EuroscarfSource(RepositoryIdSource):
     Represents the source of a sequence from the Euroscarf plasmid library
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["EuroscarfSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:EuroscarfSource"
@@ -955,7 +960,7 @@ class EuroscarfSource(RepositoryIdSource):
     repository_name: Union[str, "RepositoryName"] = None
     repository_id: str = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, EuroscarfSourceId):
@@ -976,7 +981,7 @@ class IGEMSource(RepositoryIdSource):
     Represents the source of a sequence from an iGEM collection
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["IGEMSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:IGEMSource"
@@ -988,7 +993,7 @@ class IGEMSource(RepositoryIdSource):
     sequence_file_url: str = None
     repository_id: str = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, IGEMSourceId):
@@ -1014,7 +1019,7 @@ class GenomeCoordinatesSource(Source):
     Represents the source of a sequence that is identified by genome coordinates, requested from NCBI
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["GenomeCoordinatesSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:GenomeCoordinatesSource"
@@ -1030,7 +1035,7 @@ class GenomeCoordinatesSource(Source):
     locus_tag: Optional[str] = None
     gene_id: Optional[int] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GenomeCoordinatesSourceId):
@@ -1075,7 +1080,7 @@ class SequenceCutSource(Source):
     Represents the source of a sequence that is a subfragment of another sequence, generated by sequence cutting.
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["SequenceCutSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:SequenceCutSource"
@@ -1086,7 +1091,7 @@ class SequenceCutSource(Source):
     left_edge: Optional[Union[dict, SequenceCut]] = None
     right_edge: Optional[Union[dict, SequenceCut]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, SequenceCutSourceId):
@@ -1109,7 +1114,7 @@ class RestrictionEnzymeDigestionSource(SequenceCutSource):
     restriction enzymes.
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["RestrictionEnzymeDigestionSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:RestrictionEnzymeDigestionSource"
@@ -1120,7 +1125,7 @@ class RestrictionEnzymeDigestionSource(SequenceCutSource):
     left_edge: Optional[Union[dict, RestrictionSequenceCut]] = None
     right_edge: Optional[Union[dict, RestrictionSequenceCut]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, RestrictionEnzymeDigestionSourceId):
@@ -1142,7 +1147,7 @@ class SimpleSequenceLocation(YAMLRoot):
     Represents a location within a sequence, for now support for ranges only
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOSCHEMAS["SequenceRange"]
     class_class_curie: ClassVar[str] = "bioschemas:SequenceRange"
@@ -1153,7 +1158,7 @@ class SimpleSequenceLocation(YAMLRoot):
     end: int = None
     strand: Optional[int] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.start):
             self.MissingRequiredField("start")
         if not isinstance(self.start, int):
@@ -1176,7 +1181,7 @@ class AssemblyFragment(YAMLRoot):
     Represents a fragment in an assembly
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["AssemblyFragment"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:AssemblyFragment"
@@ -1188,7 +1193,7 @@ class AssemblyFragment(YAMLRoot):
     left_location: Optional[Union[dict, SimpleSequenceLocation]] = None
     right_location: Optional[Union[dict, SimpleSequenceLocation]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.sequence):
             self.MissingRequiredField("sequence")
         if not isinstance(self.sequence, SequenceId):
@@ -1214,7 +1219,7 @@ class AssemblySource(Source):
     Represents the source of a sequence that is an assembly of other sequences
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["AssemblySource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:AssemblySource"
@@ -1223,9 +1228,9 @@ class AssemblySource(Source):
 
     id: Union[int, AssemblySourceId] = None
     circular: Optional[Union[bool, Bool]] = None
-    assembly: Optional[Union[Union[dict, AssemblyFragment], List[Union[dict, AssemblyFragment]]]] = empty_list()
+    assembly: Optional[Union[Union[dict, AssemblyFragment], list[Union[dict, AssemblyFragment]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, AssemblySourceId):
@@ -1250,7 +1255,7 @@ class PCRSource(AssemblySource):
     Represents the source of a sequence that is generated by PCR
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["PCRSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:PCRSource"
@@ -1260,7 +1265,7 @@ class PCRSource(AssemblySource):
     id: Union[int, PCRSourceId] = None
     add_primer_features: Optional[Union[bool, Bool]] = False
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PCRSourceId):
@@ -1279,7 +1284,7 @@ class LigationSource(AssemblySource):
     Represents the source of a sequence that is generated by ligation with sticky or blunt ends.
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["LigationSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:LigationSource"
@@ -1288,7 +1293,7 @@ class LigationSource(AssemblySource):
 
     id: Union[int, LigationSourceId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, LigationSourceId):
@@ -1304,7 +1309,7 @@ class HomologousRecombinationSource(AssemblySource):
     Represents the source of a sequence that is generated by homologous recombination
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["HomologousRecombinationSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:HomologousRecombinationSource"
@@ -1313,7 +1318,7 @@ class HomologousRecombinationSource(AssemblySource):
 
     id: Union[int, HomologousRecombinationSourceId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, HomologousRecombinationSourceId):
@@ -1329,7 +1334,7 @@ class GibsonAssemblySource(AssemblySource):
     Represents the source of a sequence that is generated by Gibson assembly
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["GibsonAssemblySource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:GibsonAssemblySource"
@@ -1338,7 +1343,7 @@ class GibsonAssemblySource(AssemblySource):
 
     id: Union[int, GibsonAssemblySourceId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GibsonAssemblySourceId):
@@ -1354,7 +1359,7 @@ class InFusionSource(AssemblySource):
     Represents the source of a sequence that is generated by In-Fusion cloning by Takara Bio
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["InFusionSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:InFusionSource"
@@ -1363,7 +1368,7 @@ class InFusionSource(AssemblySource):
 
     id: Union[int, InFusionSourceId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, InFusionSourceId):
@@ -1380,7 +1385,7 @@ class OverlapExtensionPCRLigationSource(AssemblySource):
     PCR. Algorithmically equivalent to Gibson assembly.
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["OverlapExtensionPCRLigationSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:OverlapExtensionPCRLigationSource"
@@ -1389,7 +1394,7 @@ class OverlapExtensionPCRLigationSource(AssemblySource):
 
     id: Union[int, OverlapExtensionPCRLigationSourceId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, OverlapExtensionPCRLigationSourceId):
@@ -1406,7 +1411,7 @@ class InVivoAssemblySource(AssemblySource):
     assembly.
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["InVivoAssemblySource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:InVivoAssemblySource"
@@ -1415,7 +1420,7 @@ class InVivoAssemblySource(AssemblySource):
 
     id: Union[int, InVivoAssemblySourceId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, InVivoAssemblySourceId):
@@ -1431,7 +1436,7 @@ class RestrictionAndLigationSource(AssemblySource):
     Represents the source of a sequence that is generated by restriction and ligation
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["RestrictionAndLigationSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:RestrictionAndLigationSource"
@@ -1439,9 +1444,9 @@ class RestrictionAndLigationSource(AssemblySource):
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.RestrictionAndLigationSource
 
     id: Union[int, RestrictionAndLigationSourceId] = None
-    restriction_enzymes: Union[str, List[str]] = None
+    restriction_enzymes: Union[str, list[str]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, RestrictionAndLigationSourceId):
@@ -1463,7 +1468,7 @@ class GatewaySource(AssemblySource):
     Represents the source of a sequence that is generated by Gateway cloning
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["GatewaySource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:GatewaySource"
@@ -1474,7 +1479,7 @@ class GatewaySource(AssemblySource):
     reaction_type: Union[str, "GatewayReactionType"] = None
     greedy: Optional[Union[bool, Bool]] = False
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GatewaySourceId):
@@ -1498,7 +1503,7 @@ class CreLoxRecombinationSource(AssemblySource):
     Represents the source of a sequence that is generated by Cre - Lox recombination
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["CreLoxRecombinationSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:CreLoxRecombinationSource"
@@ -1507,7 +1512,7 @@ class CreLoxRecombinationSource(AssemblySource):
 
     id: Union[int, CreLoxRecombinationSourceId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, CreLoxRecombinationSourceId):
@@ -1523,7 +1528,7 @@ class CRISPRSource(HomologousRecombinationSource):
     Represents the source of a sequence that is generated by CRISPR
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["CRISPRSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:CRISPRSource"
@@ -1531,9 +1536,9 @@ class CRISPRSource(HomologousRecombinationSource):
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.CRISPRSource
 
     id: Union[int, CRISPRSourceId] = None
-    guides: Union[Union[int, PrimerId], List[Union[int, PrimerId]]] = None
+    guides: Union[Union[int, PrimerId], list[Union[int, PrimerId]]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, CRISPRSourceId):
@@ -1555,7 +1560,7 @@ class OligoHybridizationSource(Source):
     Represents the source of a sequence that is generated by oligo hybridization
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["OligoHybridizationSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:OligoHybridizationSource"
@@ -1567,7 +1572,7 @@ class OligoHybridizationSource(Source):
     reverse_oligo: Union[int, PrimerId] = None
     overhang_crick_3prime: Optional[int] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, OligoHybridizationSourceId):
@@ -1596,7 +1601,7 @@ class PolymeraseExtensionSource(Source):
     Represents the source of a sequence that is generated by polymerase extension
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["PolymeraseExtensionSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:PolymeraseExtensionSource"
@@ -1605,7 +1610,7 @@ class PolymeraseExtensionSource(Source):
 
     id: Union[int, PolymeraseExtensionSourceId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PolymeraseExtensionSourceId):
@@ -1621,20 +1626,23 @@ class CloningStrategy(YAMLRoot):
     Represents a cloning strategy
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["CloningStrategy"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:CloningStrategy"
     class_name: ClassVar[str] = "CloningStrategy"
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.CloningStrategy
 
-    sequences: Union[Dict[Union[int, SequenceId], Union[dict, Sequence]], List[Union[dict, Sequence]]] = empty_dict()
-    sources: Union[Dict[Union[int, SourceId], Union[dict, Source]], List[Union[dict, Source]]] = empty_dict()
-    primers: Optional[Union[Dict[Union[int, PrimerId], Union[dict, Primer]], List[Union[dict, Primer]]]] = empty_dict()
+    sequences: Union[dict[Union[int, SequenceId], Union[dict, Sequence]], list[Union[dict, Sequence]]] = empty_dict()
+    sources: Union[dict[Union[int, SourceId], Union[dict, Source]], list[Union[dict, Source]]] = empty_dict()
+    primers: Optional[Union[dict[Union[int, PrimerId], Union[dict, Primer]], list[Union[dict, Primer]]]] = empty_dict()
     description: Optional[str] = None
-    files: Optional[Union[Union[dict, "AssociatedFile"], List[Union[dict, "AssociatedFile"]]]] = empty_list()
+    files: Optional[Union[Union[dict, "AssociatedFile"], list[Union[dict, "AssociatedFile"]]]] = empty_list()
+    schema_version: Optional[Union[str, VersionNumber]] = None
+    backend_version: Optional[Union[str, VersionNumber]] = None
+    frontend_version: Optional[Union[str, VersionNumber]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.sequences):
             self.MissingRequiredField("sequences")
         self._normalize_inlined_as_list(slot_name="sequences", slot_type=Sequence, key_name="id", keyed=True)
@@ -1652,6 +1660,15 @@ class CloningStrategy(YAMLRoot):
             self.files = [self.files] if self.files is not None else []
         self.files = [v if isinstance(v, AssociatedFile) else AssociatedFile(**as_dict(v)) for v in self.files]
 
+        if self.schema_version is not None and not isinstance(self.schema_version, VersionNumber):
+            self.schema_version = VersionNumber(self.schema_version)
+
+        if self.backend_version is not None and not isinstance(self.backend_version, VersionNumber):
+            self.backend_version = VersionNumber(self.backend_version)
+
+        if self.frontend_version is not None and not isinstance(self.frontend_version, VersionNumber):
+            self.frontend_version = VersionNumber(self.frontend_version)
+
         super().__post_init__(**kwargs)
 
 
@@ -1661,7 +1678,7 @@ class AnnotationReport(YAMLRoot):
     Represents a report of an annotation step
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["AnnotationReport"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:AnnotationReport"
@@ -1670,7 +1687,7 @@ class AnnotationReport(YAMLRoot):
 
     type: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         self.type = str(self.class_name)
 
         super().__post_init__(**kwargs)
@@ -1698,7 +1715,7 @@ class PlannotateAnnotationReport(AnnotationReport):
     Represents a report of an annotation step using Plannotate
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["PlannotateAnnotationReport"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:PlannotateAnnotationReport"
@@ -1720,7 +1737,7 @@ class PlannotateAnnotationReport(AnnotationReport):
     Description: Optional[str] = None
     sequence: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.sseqid is not None and not isinstance(self.sseqid, str):
             self.sseqid = str(self.sseqid)
 
@@ -1773,7 +1790,7 @@ class AnnotationSource(Source):
     Represents a computational step in which sequence features are annotated in a sequence
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["AnnotationSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:AnnotationSource"
@@ -1783,11 +1800,11 @@ class AnnotationSource(Source):
     id: Union[int, AnnotationSourceId] = None
     annotation_tool: Union[str, "AnnotationTool"] = None
     annotation_tool_version: Optional[str] = None
-    annotation_report: Optional[Union[Union[dict, AnnotationReport], List[Union[dict, AnnotationReport]]]] = (
+    annotation_report: Optional[Union[Union[dict, AnnotationReport], list[Union[dict, AnnotationReport]]]] = (
         empty_list()
     )
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, AnnotationSourceId):
@@ -1817,7 +1834,7 @@ class ReverseComplementSource(Source):
     Represents the in-silico transformation of a sequence into its reverse complement
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["ReverseComplementSource"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:ReverseComplementSource"
@@ -1826,7 +1843,7 @@ class ReverseComplementSource(Source):
 
     id: Union[int, ReverseComplementSourceId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ReverseComplementSourceId):
@@ -1842,7 +1859,7 @@ class AssociatedFile(YAMLRoot):
     Represents a file associated with a sequence
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["AssociatedFile"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:AssociatedFile"
@@ -1854,7 +1871,7 @@ class AssociatedFile(YAMLRoot):
     file_type: Union[str, "AssociatedFileType"] = None
     type: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.sequence_id):
             self.MissingRequiredField("sequence_id")
         if not isinstance(self.sequence_id, SequenceId):
@@ -1897,7 +1914,7 @@ class SequencingFile(AssociatedFile):
     Represents a sequencing file and its alignment to a sequence
     """
 
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["SequencingFile"]
     class_class_curie: ClassVar[str] = "opencloning_linkml:SequencingFile"
@@ -1907,9 +1924,9 @@ class SequencingFile(AssociatedFile):
     sequence_id: Union[int, SequenceId] = None
     file_name: str = None
     file_type: Union[str, "AssociatedFileType"] = None
-    alignment: Union[str, List[str]] = None
+    alignment: Union[str, list[str]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.alignment):
             self.MissingRequiredField("alignment")
         if not isinstance(self.alignment, list):
@@ -2074,7 +2091,7 @@ slots.restriction_enzymes = Slot(
     curie=OPENCLONING_LINKML.curie("restriction_enzymes"),
     model_uri=OPENCLONING_LINKML.restriction_enzymes,
     domain=None,
-    range=Optional[Union[str, List[str]]],
+    range=Optional[Union[str, list[str]]],
 )
 
 slots.input = Slot(
@@ -2083,7 +2100,7 @@ slots.input = Slot(
     curie=SCHEMA.curie("object"),
     model_uri=OPENCLONING_LINKML.input,
     domain=None,
-    range=Optional[Union[Union[int, SequenceId], List[Union[int, SequenceId]]]],
+    range=Optional[Union[Union[int, SequenceId], list[Union[int, SequenceId]]]],
 )
 
 slots.output = Slot(
@@ -2249,7 +2266,7 @@ slots.collectionSource__image = Slot(
     curie=OPENCLONING_LINKML.curie("image"),
     model_uri=OPENCLONING_LINKML.collectionSource__image,
     domain=None,
-    range=Optional[Union[str, List[str]]],
+    range=Optional[Union[str, list[str]]],
 )
 
 slots.collectionSource__options = Slot(
@@ -2258,7 +2275,7 @@ slots.collectionSource__options = Slot(
     curie=OPENCLONING_LINKML.curie("options"),
     model_uri=OPENCLONING_LINKML.collectionSource__options,
     domain=None,
-    range=Optional[Union[Union[dict, CollectionOption], List[Union[dict, CollectionOption]]]],
+    range=Optional[Union[Union[dict, CollectionOption], list[Union[dict, CollectionOption]]]],
 )
 
 slots.collectionOption__source = Slot(
@@ -2565,7 +2582,7 @@ slots.assemblySource__assembly = Slot(
     curie=OPENCLONING_LINKML.curie("assembly"),
     model_uri=OPENCLONING_LINKML.assemblySource__assembly,
     domain=None,
-    range=Optional[Union[Union[dict, AssemblyFragment], List[Union[dict, AssemblyFragment]]]],
+    range=Optional[Union[Union[dict, AssemblyFragment], list[Union[dict, AssemblyFragment]]]],
 )
 
 slots.pCRSource__add_primer_features = Slot(
@@ -2601,7 +2618,7 @@ slots.cRISPRSource__guides = Slot(
     curie=OPENCLONING_LINKML.curie("guides"),
     model_uri=OPENCLONING_LINKML.cRISPRSource__guides,
     domain=None,
-    range=Union[Union[int, PrimerId], List[Union[int, PrimerId]]],
+    range=Union[Union[int, PrimerId], list[Union[int, PrimerId]]],
 )
 
 slots.oligoHybridizationSource__forward_oligo = Slot(
@@ -2628,7 +2645,7 @@ slots.cloningStrategy__sequences = Slot(
     curie=OPENCLONING_LINKML.curie("sequences"),
     model_uri=OPENCLONING_LINKML.cloningStrategy__sequences,
     domain=None,
-    range=Union[Dict[Union[int, SequenceId], Union[dict, Sequence]], List[Union[dict, Sequence]]],
+    range=Union[dict[Union[int, SequenceId], Union[dict, Sequence]], list[Union[dict, Sequence]]],
 )
 
 slots.cloningStrategy__sources = Slot(
@@ -2637,7 +2654,7 @@ slots.cloningStrategy__sources = Slot(
     curie=OPENCLONING_LINKML.curie("sources"),
     model_uri=OPENCLONING_LINKML.cloningStrategy__sources,
     domain=None,
-    range=Union[Dict[Union[int, SourceId], Union[dict, Source]], List[Union[dict, Source]]],
+    range=Union[dict[Union[int, SourceId], Union[dict, Source]], list[Union[dict, Source]]],
 )
 
 slots.cloningStrategy__primers = Slot(
@@ -2646,7 +2663,7 @@ slots.cloningStrategy__primers = Slot(
     curie=OPENCLONING_LINKML.curie("primers"),
     model_uri=OPENCLONING_LINKML.cloningStrategy__primers,
     domain=None,
-    range=Optional[Union[Dict[Union[int, PrimerId], Union[dict, Primer]], List[Union[dict, Primer]]]],
+    range=Optional[Union[dict[Union[int, PrimerId], Union[dict, Primer]], list[Union[dict, Primer]]]],
 )
 
 slots.cloningStrategy__description = Slot(
@@ -2664,7 +2681,34 @@ slots.cloningStrategy__files = Slot(
     curie=OPENCLONING_LINKML.curie("files"),
     model_uri=OPENCLONING_LINKML.cloningStrategy__files,
     domain=None,
-    range=Optional[Union[Union[dict, AssociatedFile], List[Union[dict, AssociatedFile]]]],
+    range=Optional[Union[Union[dict, AssociatedFile], list[Union[dict, AssociatedFile]]]],
+)
+
+slots.cloningStrategy__schema_version = Slot(
+    uri=OPENCLONING_LINKML.schema_version,
+    name="cloningStrategy__schema_version",
+    curie=OPENCLONING_LINKML.curie("schema_version"),
+    model_uri=OPENCLONING_LINKML.cloningStrategy__schema_version,
+    domain=None,
+    range=Optional[Union[str, VersionNumber]],
+)
+
+slots.cloningStrategy__backend_version = Slot(
+    uri=OPENCLONING_LINKML.backend_version,
+    name="cloningStrategy__backend_version",
+    curie=OPENCLONING_LINKML.curie("backend_version"),
+    model_uri=OPENCLONING_LINKML.cloningStrategy__backend_version,
+    domain=None,
+    range=Optional[Union[str, VersionNumber]],
+)
+
+slots.cloningStrategy__frontend_version = Slot(
+    uri=OPENCLONING_LINKML.frontend_version,
+    name="cloningStrategy__frontend_version",
+    curie=OPENCLONING_LINKML.curie("frontend_version"),
+    model_uri=OPENCLONING_LINKML.cloningStrategy__frontend_version,
+    domain=None,
+    range=Optional[Union[str, VersionNumber]],
 )
 
 slots.plannotateAnnotationReport__sseqid = Slot(
@@ -2817,7 +2861,7 @@ slots.annotationSource__annotation_report = Slot(
     curie=OPENCLONING_LINKML.curie("annotation_report"),
     model_uri=OPENCLONING_LINKML.annotationSource__annotation_report,
     domain=None,
-    range=Optional[Union[Union[dict, AnnotationReport], List[Union[dict, AnnotationReport]]]],
+    range=Optional[Union[Union[dict, AnnotationReport], list[Union[dict, AnnotationReport]]]],
 )
 
 slots.associatedFile__sequence_id = Slot(
@@ -2853,7 +2897,7 @@ slots.sequencingFile__alignment = Slot(
     curie=OPENCLONING_LINKML.curie("alignment"),
     model_uri=OPENCLONING_LINKML.sequencingFile__alignment,
     domain=None,
-    range=Union[str, List[str]],
+    range=Union[str, list[str]],
 )
 
 slots.TextFileSequence_sequence_file_format = Slot(
@@ -3035,5 +3079,5 @@ slots.RestrictionAndLigationSource_restriction_enzymes = Slot(
     curie=OPENCLONING_LINKML.curie("restriction_enzymes"),
     model_uri=OPENCLONING_LINKML.RestrictionAndLigationSource_restriction_enzymes,
     domain=RestrictionAndLigationSource,
-    range=Union[str, List[str]],
+    range=Union[str, list[str]],
 )

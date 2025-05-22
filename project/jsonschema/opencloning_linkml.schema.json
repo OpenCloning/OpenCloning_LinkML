@@ -500,6 +500,13 @@
             "additionalProperties": false,
             "description": "Represents a cloning strategy",
             "properties": {
+                "backend_version": {
+                    "description": "The version of the backend that was used to generate this cloning strategy",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "description": {
                     "description": "A description of the cloning strategy",
                     "type": [
@@ -524,6 +531,13 @@
                         "null"
                     ]
                 },
+                "frontend_version": {
+                    "description": "The version of the frontend that was used to generate this cloning strategy",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "primers": {
                     "description": "The primers that are used in the cloning strategy",
                     "items": {
@@ -531,6 +545,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "schema_version": {
+                    "description": "The version of the schema that was used to generate this cloning strategy",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },

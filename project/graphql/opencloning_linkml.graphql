@@ -132,6 +132,9 @@ type CloningStrategy
     primers: [Primer]
     description: String
     files: [AssociatedFile]
+    schemaVersion: VersionNumber
+    backendVersion: VersionNumber
+    frontendVersion: VersionNumber
   }
 
 type CollectionOption
