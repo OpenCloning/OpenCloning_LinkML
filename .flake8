@@ -7,3 +7,4 @@ extend-ignore = E203,E501, B008
 exclude =
     project/python/opencloning_linkml.py
     src/opencloning_linkml/datamodel/_models.py
+    src/opencloning_linkml/migrations/model_archive/*.py
