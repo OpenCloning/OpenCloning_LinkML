@@ -60,34 +60,18 @@
         {
           "sequence": 1,
           "left_location": null,
-          "right_location": {
-            "start": 79,
-            "end": 100,
-            "strand": null
-          },
+          "right_location": "80..100",
           "reverse_complemented": false
         },
         {
           "sequence": 2,
-          "left_location": {
-            "start": 40,
-            "end": 61,
-            "strand": null
-          },
-          "right_location": {
-            "start": 2094,
-            "end": 2114,
-            "strand": null
-          },
+          "left_location": "41..61",
+          "right_location": "2095..2114",
           "reverse_complemented": false
         },
         {
           "sequence": 2,
-          "left_location": {
-            "start": 0,
-            "end": 20,
-            "strand": null
-          },
+          "left_location": "1..20",
           "right_location": null,
           "reverse_complemented": true
         }
@@ -124,34 +108,18 @@
         {
           "sequence": 6,
           "left_location": null,
-          "right_location": {
-            "start": 1093,
-            "end": 1173,
-            "strand": null
-          },
+          "right_location": "1094..1173",
           "reverse_complemented": false
         },
         {
           "sequence": 4,
-          "left_location": {
-            "start": 0,
-            "end": 80,
-            "strand": null
-          },
-          "right_location": {
-            "start": 2153,
-            "end": 2233,
-            "strand": null
-          },
+          "left_location": "1..80",
+          "right_location": "2154..2233",
           "reverse_complemented": false
         },
         {
           "sequence": 6,
-          "left_location": {
-            "start": 3416,
-            "end": 3496,
-            "strand": null
-          },
+          "left_location": "3417..3496",
           "right_location": null,
           "reverse_complemented": false
         }
@@ -176,7 +144,7 @@
   ],
   "description": "Deletion of the ORF of ase1 by homologous recombination in S.pombe",
   "files": null,
-  "schema_version": "0.2.8",
+  "schema_version": "0.2.9",
   "backend_version": null,
   "frontend_version": null
 }

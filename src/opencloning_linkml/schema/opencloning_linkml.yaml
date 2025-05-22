@@ -36,7 +36,7 @@ types:
   sequence_range:
     typeof: string
     description: >-
-      A sequence range defined using genbank syntax (e.g. 1..100)
+      A sequence range defined using genbank syntax (e.g. 1..100), note that 1..100 in genbank is equivalent to 0:100 in python
     exact_mappings:
       - GENO:0000965
     pattern: ^(\d+)\.\.(\d+)$

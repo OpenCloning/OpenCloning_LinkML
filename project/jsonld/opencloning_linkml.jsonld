@@ -75,7 +75,7 @@
     {
       "name": "sequence_range",
       "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/SequenceRange",
-      "description": "A sequence range defined using genbank syntax (e.g. 1..100)",
+      "description": "A sequence range defined using genbank syntax (e.g. 1..100), note that 1..100 in genbank is equivalent to 0:100 in python",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "exact_mappings": [
         "GENO:0000965"
@@ -3617,9 +3617,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "opencloning_linkml.yaml",
-  "source_file_date": "2025-05-22T16:22:41",
-  "source_file_size": 26229,
-  "generation_date": "2025-05-22T16:22:46",
+  "source_file_date": "2025-05-22T16:53:48",
+  "source_file_size": 26291,
+  "generation_date": "2025-05-22T17:08:20",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/opencloning_linkml.context.jsonld",

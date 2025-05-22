@@ -75,34 +75,18 @@
         {
           "sequence": 6,
           "left_location": null,
-          "right_location": {
-            "start": 80,
-            "end": 100,
-            "strand": null
-          },
+          "right_location": "81..100",
           "reverse_complemented": false
         },
         {
           "sequence": 4,
-          "left_location": {
-            "start": 66,
-            "end": 86,
-            "strand": null
-          },
-          "right_location": {
-            "start": 136,
-            "end": 156,
-            "strand": null
-          },
+          "left_location": "67..86",
+          "right_location": "137..156",
           "reverse_complemented": false
         },
         {
           "sequence": 7,
-          "left_location": {
-            "start": 0,
-            "end": 20,
-            "strand": null
-          },
+          "left_location": "1..20",
           "right_location": null,
           "reverse_complemented": true
         }
@@ -124,34 +108,18 @@
         {
           "sequence": 3,
           "left_location": null,
-          "right_location": {
-            "start": 1276,
-            "end": 1356,
-            "strand": null
-          },
+          "right_location": "1277..1356",
           "reverse_complemented": false
         },
         {
           "sequence": 6,
-          "left_location": {
-            "start": 0,
-            "end": 80,
-            "strand": null
-          },
-          "right_location": {
-            "start": 170,
-            "end": 250,
-            "strand": null
-          },
+          "left_location": "1..80",
+          "right_location": "171..250",
           "reverse_complemented": false
         },
         {
           "sequence": 3,
-          "left_location": {
-            "start": 1356,
-            "end": 1436,
-            "strand": null
-          },
+          "left_location": "1357..1436",
           "right_location": null,
           "reverse_complemented": false
         }
@@ -186,7 +154,7 @@
   ],
   "description": "Replacing a fragment in the ase1 ORF by a 3xHA tag, using CRISPR-HDR",
   "files": null,
-  "schema_version": "0.2.8",
+  "schema_version": "0.2.9",
   "backend_version": null,
   "frontend_version": null
 }

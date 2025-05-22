@@ -1,0 +1,33 @@
+{
+  "sequences": [
+    {
+      "id": 2,
+      "type": "TextFileSequence",
+      "sequence_file_format": "genbank",
+      "overhang_crick_3prime": 0,
+      "overhang_watson_3prime": 0,
+      "file_content": "LOCUS       part_seq1                  3 bp    DNA     linear   UNK 01-JAN-1980\nDEFINITION  seq1.\nACCESSION   part_seq1\nVERSION     part_seq1\nKEYWORDS    .\nSOURCE      .\n  ORGANISM  .\n            .\nFEATURES             Location/Qualifiers\nORIGIN\n        1 att\n//"
+    }
+  ],
+  "sources": [
+    {
+      "id": 1,
+      "input": [],
+      "output": 2,
+      "type": "UploadedFileSource",
+      "output_name": null,
+      "database_id": null,
+      "sequence_file_format": "fasta",
+      "file_name": "dummy_multi_fasta.fasta",
+      "index_in_file": 0,
+      "circularize": false,
+      "coordinates": "2..4"
+    }
+  ],
+  "primers": [],
+  "description": "",
+  "files": null,
+  "schema_version": "0.2.9",
+  "backend_version": null,
+  "frontend_version": null
+}

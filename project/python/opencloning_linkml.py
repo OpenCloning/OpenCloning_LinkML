@@ -1,5 +1,5 @@
 # Auto generated from opencloning_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-05-22T16:22:47
+# Generation date: 2025-05-22T17:08:22
 # Schema: OpenCloning_LinkML
 #
 # id: https://opencloning.github.io/OpenCloning_LinkML
@@ -55,7 +55,7 @@ class VersionNumber(String):
 
 
 class SequenceRange(String):
-    """A sequence range defined using genbank syntax (e.g. 1..100)"""
+    """A sequence range defined using genbank syntax (e.g. 1..100), note that 1..100 in genbank is equivalent to 0:100 in python"""
 
     type_class_uri = XSD["string"]
     type_class_curie = "xsd:string"

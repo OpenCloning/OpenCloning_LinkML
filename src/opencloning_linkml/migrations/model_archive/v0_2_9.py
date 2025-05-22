@@ -73,10 +73,7 @@ linkml_meta = LinkMLMeta(
         "title": "OpenCloning_LinkML",
         "types": {
             "sequence_range": {
-                "description": "A sequence range defined using "
-                "genbank syntax (e.g. 1..100), "
-                "note that 1..100 in genbank is "
-                "equivalent to 0:100 in python",
+                "description": "A sequence range defined using " "genbank syntax (e.g. 1..100)",
                 "exact_mappings": ["GENO:0000965"],
                 "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
                 "name": "sequence_range",

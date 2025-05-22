@@ -79,34 +79,18 @@
         {
           "sequence": 1,
           "left_location": null,
-          "right_location": {
-            "start": 12,
-            "end": 34,
-            "strand": null
-          },
+          "right_location": "13..34",
           "reverse_complemented": false
         },
         {
           "sequence": 2,
-          "left_location": {
-            "start": 1173,
-            "end": 1195,
-            "strand": null
-          },
-          "right_location": {
-            "start": 3393,
-            "end": 3417,
-            "strand": null
-          },
+          "left_location": "1174..1195",
+          "right_location": "3394..3417",
           "reverse_complemented": false
         },
         {
           "sequence": 2,
-          "left_location": {
-            "start": 0,
-            "end": 24,
-            "strand": null
-          },
+          "left_location": "1..24",
           "right_location": null,
           "reverse_complemented": true
         }
@@ -179,30 +163,14 @@
       "assembly": [
         {
           "sequence": 8,
-          "left_location": {
-            "start": 0,
-            "end": 4,
-            "strand": null
-          },
-          "right_location": {
-            "start": 2250,
-            "end": 2254,
-            "strand": null
-          },
+          "left_location": "1..4",
+          "right_location": "2251..2254",
           "reverse_complemented": false
         },
         {
           "sequence": 10,
-          "left_location": {
-            "start": 0,
-            "end": 4,
-            "strand": null
-          },
-          "right_location": {
-            "start": 3912,
-            "end": 3916,
-            "strand": null
-          },
+          "left_location": "1..4",
+          "right_location": "3913..3916",
           "reverse_complemented": false
         }
       ]
@@ -226,7 +194,7 @@
   ],
   "description": "Cloning of CDS of S. pombe gene pkl1 with an N-term Venus tag using MoClo kit from John Dueber, see:\n\nhttps://www.addgene.org/kits/moclo-ytk/#kit-contents\n\nThe plasmids used are:\n\npYTK002 - ConLS\npYTK009 - pTDH3\npYTK038 - Venus 65145\npayload - CDS of pkl1 from S. pombe\npYTK051 - tENO1 65158\npYTK067 - ConR1 65174\npYTK074 - URA3 65181\npYTK081 - CEN6/ARS4 65188\npYTK083 - AmpR-ColE1 65190\n\n\n\n\n",
   "files": null,
-  "schema_version": "0.2.8",
+  "schema_version": "0.2.9",
   "backend_version": null,
   "frontend_version": null
 }
