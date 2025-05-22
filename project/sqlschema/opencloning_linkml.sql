@@ -82,12 +82,12 @@
 --     * Slot: file_name Description: The name of the file
 --     * Slot: index_in_file Description: The index of the sequence in the file
 --     * Slot: circularize Description: Whether the sequence should be circularized (FASTA only)
+--     * Slot: coordinates Description: If provided, coordinates within the sequence of the file to extract a subsequence
 --     * Slot: output Description: Identifier of the sequence that is the output of this source.
 --     * Slot: type Description: Designates the class
 --     * Slot: output_name Description: Used to specify the name of the output sequence
 --     * Slot: database_id Description: The id of an entity in a database
 --     * Slot: id Description: A unique identifier for a thing
---     * Slot: coordinates_id Description: If provided, coordinates within the sequence of the file to extract a subsequence
 -- # Class: "RepositoryIdSource" Description: "Represents the source of a sequence that is identified by a repository id"
 --     * Slot: repository_id Description: The id of the sequence in the repository
 --     * Slot: repository_name Description:
@@ -186,14 +186,11 @@
 --     * Slot: id Description: A unique identifier for a thing
 --     * Slot: left_edge_id Description:
 --     * Slot: right_edge_id Description:
--- # Class: "SimpleSequenceLocation" Description: "Represents a location within a sequence, for now support for ranges only"
---     * Slot: id Description:
---     * Slot: start Description: The starting coordinate (0-based) of the location
---     * Slot: end Description: The ending coordinate (0-based) of the location
---     * Slot: strand Description: The strand of the location, should be 1 or -1 or null
 -- # Class: "AssemblyFragment" Description: "Represents a fragment in an assembly"
 --     * Slot: id Description:
 --     * Slot: sequence Description:
+--     * Slot: left_location Description:
+--     * Slot: right_location Description:
 --     * Slot: reverse_complemented Description: Whether the sequence is reverse complemented in the assembly
 --     * Slot: AssemblySource_id Description: Autocreated FK slot
 --     * Slot: PCRSource_id Description: Autocreated FK slot
@@ -207,8 +204,6 @@
 --     * Slot: GatewaySource_id Description: Autocreated FK slot
 --     * Slot: CreLoxRecombinationSource_id Description: Autocreated FK slot
 --     * Slot: CRISPRSource_id Description: Autocreated FK slot
---     * Slot: left_location_id Description:
---     * Slot: right_location_id Description:
 -- # Class: "AssemblySource" Description: "Represents the source of a sequence that is an assembly of other sequences"
 --     * Slot: circular Description: Whether the assembly is circular or not
 --     * Slot: output Description: Identifier of the sequence that is the output of this source.
@@ -516,13 +511,6 @@ CREATE TABLE "CollectionOptionInfo" (
 	well TEXT,
 	PRIMARY KEY (id)
 );
-CREATE TABLE "SimpleSequenceLocation" (
-	id INTEGER NOT NULL,
-	start INTEGER NOT NULL,
-	"end" INTEGER NOT NULL,
-	strand INTEGER,
-	PRIMARY KEY (id)
-);
 CREATE TABLE "CloningStrategy" (
 	id INTEGER NOT NULL,
 	description TEXT,
@@ -617,15 +605,14 @@ CREATE TABLE "UploadedFileSource" (
 	file_name TEXT,
 	index_in_file INTEGER,
 	circularize BOOLEAN,
+	coordinates TEXT,
 	output INTEGER,
 	type TEXT,
 	output_name TEXT,
 	database_id INTEGER,
 	id INTEGER NOT NULL,
-	coordinates_id INTEGER,
 	PRIMARY KEY (id),
-	FOREIGN KEY(output) REFERENCES "Sequence" (id),
-	FOREIGN KEY(coordinates_id) REFERENCES "SimpleSequenceLocation" (id)
+	FOREIGN KEY(output) REFERENCES "Sequence" (id)
 );
 CREATE TABLE "RepositoryIdSource" (
 	repository_id TEXT NOT NULL,
@@ -962,6 +949,8 @@ CREATE TABLE "CollectionOption" (
 CREATE TABLE "AssemblyFragment" (
 	id INTEGER NOT NULL,
 	sequence INTEGER NOT NULL,
+	left_location TEXT,
+	right_location TEXT,
 	reverse_complemented BOOLEAN NOT NULL,
 	"AssemblySource_id" INTEGER,
 	"PCRSource_id" INTEGER,
@@ -975,8 +964,6 @@ CREATE TABLE "AssemblyFragment" (
 	"GatewaySource_id" INTEGER,
 	"CreLoxRecombinationSource_id" INTEGER,
 	"CRISPRSource_id" INTEGER,
-	left_location_id INTEGER,
-	right_location_id INTEGER,
 	PRIMARY KEY (id),
 	FOREIGN KEY(sequence) REFERENCES "Sequence" (id),
 	FOREIGN KEY("AssemblySource_id") REFERENCES "AssemblySource" (id),
@@ -990,9 +977,7 @@ CREATE TABLE "AssemblyFragment" (
 	FOREIGN KEY("RestrictionAndLigationSource_id") REFERENCES "RestrictionAndLigationSource" (id),
 	FOREIGN KEY("GatewaySource_id") REFERENCES "GatewaySource" (id),
 	FOREIGN KEY("CreLoxRecombinationSource_id") REFERENCES "CreLoxRecombinationSource" (id),
-	FOREIGN KEY("CRISPRSource_id") REFERENCES "CRISPRSource" (id),
-	FOREIGN KEY(left_location_id) REFERENCES "SimpleSequenceLocation" (id),
-	FOREIGN KEY(right_location_id) REFERENCES "SimpleSequenceLocation" (id)
+	FOREIGN KEY("CRISPRSource_id") REFERENCES "CRISPRSource" (id)
 );
 CREATE TABLE "AnnotationReport" (
 	id INTEGER NOT NULL,

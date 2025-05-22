@@ -37,8 +37,8 @@ message AnnotationSource
 message AssemblyFragment
  {
   sequence sequence = 0
-  simpleSequenceLocation leftLocation = 0
-  simpleSequenceLocation rightLocation = 0
+  sequenceRange leftLocation = 0
+  sequenceRange rightLocation = 0
   boolean reverseComplemented = 0
  }
 // Represents the source of a sequence that is an assembly of other sequences
@@ -455,13 +455,6 @@ message SEVASource
   string sequenceFileUrl = 0
   string repositoryId = 0
  }
-// Represents a location within a sequence, for now support for ranges only
-message SimpleSequenceLocation
- {
-  integer start = 0
-  integer end = 0
-  integer strand = 0
- }
 // Represents the source of a sequence from the SnapGene plasmid library identified by a SnapGene subpath of https://www.snapgene.com/plasmids/
 message SnapGenePlasmidSource
  {
@@ -505,7 +498,7 @@ message UploadedFileSource
   string fileName = 0
   integer indexInFile = 0
   boolean circularize = 0
-  simpleSequenceLocation coordinates = 0
+  sequenceRange coordinates = 0
  }
 // Represents the source of a sequence that is identified by a WekWikGene id
 message WekWikGeneIdSource

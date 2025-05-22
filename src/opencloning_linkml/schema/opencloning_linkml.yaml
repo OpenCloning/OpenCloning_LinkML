@@ -19,6 +19,7 @@ prefixes:
   OBI: http://purl.obolibrary.org/obo/OBI_
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   IAO: http://purl.obolibrary.org/obo/IAO_
+  GENO: http://purl.obolibrary.org/obo/GENO_
 default_prefix: opencloning_linkml
 default_range: string
 
@@ -32,6 +33,13 @@ types:
       A version number
     exact_mappings:
       - IAO:0000129
+  sequence_range:
+    typeof: string
+    description: >-
+      A sequence range defined using genbank syntax (e.g. 1..100)
+    exact_mappings:
+      - GENO:0000965
+    pattern: ^(\d+)\.\.(\d+)$
 
 classes:
   NamedThing:
@@ -280,11 +288,11 @@ classes:
           description: >-
             Whether the sequence should be circularized (FASTA only)
       - coordinates:
-          range: SimpleSequenceLocation
+          range: sequence_range
           description: >-
             If provided, coordinates within the sequence of the file to extract a subsequence
           required: false
-          inlined: true
+
     slot_usage:
       sequence_file_format:
         required: true
@@ -463,29 +471,6 @@ classes:
 
     # TODO: Validation, at least one of them exists
 
-  SimpleSequenceLocation:
-    class_uri: bioschemas:SequenceRange
-    description: >-
-      Represents a location within a sequence, for now support for ranges only
-    attributes:
-      - start:
-          slot_uri: bioschemas:rangeStart
-          range: integer
-          description: >-
-            The starting coordinate (0-based) of the location
-          required: true
-      - end:
-          slot_uri: bioschemas:rangeEnd
-          range: integer
-          description: >-
-            The ending coordinate (0-based) of the location
-          required: true
-      - strand:
-          range: integer
-          description: >-
-            The strand of the location, should be 1 or -1 or null
-          required: false
-
   AssemblyFragment:
     description: >-
       Represents a fragment in an assembly
@@ -494,11 +479,9 @@ classes:
           range: Sequence
           required: true
       - left_location:
-          range: SimpleSequenceLocation
-          inlined: true
+          range: sequence_range
       - right_location:
-          range: SimpleSequenceLocation
-          inlined: true
+          range: sequence_range
       - reverse_complemented:
           range: boolean
           description: >-

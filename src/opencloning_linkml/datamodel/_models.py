@@ -53,6 +53,7 @@ linkml_meta = LinkMLMeta(
         "license": "MIT",
         "name": "OpenCloning_LinkML",
         "prefixes": {
+            "GENO": {"prefix_prefix": "GENO", "prefix_reference": "http://purl.obolibrary.org/obo/GENO_"},
             "IAO": {"prefix_prefix": "IAO", "prefix_reference": "http://purl.obolibrary.org/obo/IAO_"},
             "NCIT": {"prefix_prefix": "NCIT", "prefix_reference": "http://purl.obolibrary.org/obo/NCIT_"},
             "OBI": {"prefix_prefix": "OBI", "prefix_reference": "http://purl.obolibrary.org/obo/OBI_"},
@@ -71,13 +72,21 @@ linkml_meta = LinkMLMeta(
         "source_file": "src/opencloning_linkml/schema/opencloning_linkml.yaml",
         "title": "OpenCloning_LinkML",
         "types": {
+            "sequence_range": {
+                "description": "A sequence range defined using " "genbank syntax (e.g. 1..100)",
+                "exact_mappings": ["GENO:0000965"],
+                "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+                "name": "sequence_range",
+                "pattern": "^(\\d+)\\.\\.(\\d+)$",
+                "typeof": "string",
+            },
             "version_number": {
                 "description": "A version number",
                 "exact_mappings": ["IAO:0000129"],
                 "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
                 "name": "version_number",
                 "typeof": "string",
-            }
+            },
         },
     }
 )
@@ -929,7 +938,7 @@ class UploadedFileSource(Source):
         description="""Whether the sequence should be circularized (FASTA only)""",
         json_schema_extra={"linkml_meta": {"alias": "circularize", "domain_of": ["UploadedFileSource"]}},
     )
-    coordinates: Optional[SimpleSequenceLocation] = Field(
+    coordinates: Optional[str] = Field(
         default=None,
         description="""If provided, coordinates within the sequence of the file to extract a subsequence""",
         json_schema_extra={"linkml_meta": {"alias": "coordinates", "domain_of": ["UploadedFileSource"]}},
@@ -1766,25 +1775,18 @@ class GenomeCoordinatesSource(Source):
     start: int = Field(
         default=...,
         description="""The starting coordinate (1-based) of the sequence in the sequence accession""",
-        json_schema_extra={
-            "linkml_meta": {"alias": "start", "domain_of": ["GenomeCoordinatesSource", "SimpleSequenceLocation"]}
-        },
+        json_schema_extra={"linkml_meta": {"alias": "start", "domain_of": ["GenomeCoordinatesSource"]}},
     )
     end: int = Field(
         default=...,
         description="""The ending coordinate (1-based) of the sequence in the sequence accession""",
-        json_schema_extra={
-            "linkml_meta": {"alias": "end", "domain_of": ["GenomeCoordinatesSource", "SimpleSequenceLocation"]}
-        },
+        json_schema_extra={"linkml_meta": {"alias": "end", "domain_of": ["GenomeCoordinatesSource"]}},
     )
     strand: int = Field(
         default=...,
         description="""The strand of the sequence in the sequence accession, should be 1 or -1""",
         json_schema_extra={
-            "linkml_meta": {
-                "alias": "strand",
-                "domain_of": ["GenomeCoordinatesSource", "SimpleSequenceLocation", "PlannotateAnnotationReport"],
-            }
+            "linkml_meta": {"alias": "strand", "domain_of": ["GenomeCoordinatesSource", "PlannotateAnnotationReport"]}
         },
     )
     input: Optional[list[int]] = Field(
@@ -1975,49 +1977,6 @@ class RestrictionEnzymeDigestionSource(SequenceCutSource):
     )
 
 
-class SimpleSequenceLocation(ConfiguredBaseModel):
-    """
-    Represents a location within a sequence, for now support for ranges only
-    """
-
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
-        {"class_uri": "bioschemas:SequenceRange", "from_schema": "https://opencloning.github.io/OpenCloning_LinkML"}
-    )
-
-    start: int = Field(
-        default=...,
-        description="""The starting coordinate (0-based) of the location""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "start",
-                "domain_of": ["GenomeCoordinatesSource", "SimpleSequenceLocation"],
-                "slot_uri": "bioschemas:rangeStart",
-            }
-        },
-    )
-    end: int = Field(
-        default=...,
-        description="""The ending coordinate (0-based) of the location""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "end",
-                "domain_of": ["GenomeCoordinatesSource", "SimpleSequenceLocation"],
-                "slot_uri": "bioschemas:rangeEnd",
-            }
-        },
-    )
-    strand: Optional[int] = Field(
-        default=None,
-        description="""The strand of the location, should be 1 or -1 or null""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "strand",
-                "domain_of": ["GenomeCoordinatesSource", "SimpleSequenceLocation", "PlannotateAnnotationReport"],
-            }
-        },
-    )
-
-
 class AssemblyFragment(ConfiguredBaseModel):
     """
     Represents a fragment in an assembly
@@ -2034,10 +1993,10 @@ class AssemblyFragment(ConfiguredBaseModel):
             }
         },
     )
-    left_location: Optional[SimpleSequenceLocation] = Field(
+    left_location: Optional[str] = Field(
         default=None, json_schema_extra={"linkml_meta": {"alias": "left_location", "domain_of": ["AssemblyFragment"]}}
     )
-    right_location: Optional[SimpleSequenceLocation] = Field(
+    right_location: Optional[str] = Field(
         default=None, json_schema_extra={"linkml_meta": {"alias": "right_location", "domain_of": ["AssemblyFragment"]}}
     )
     reverse_complemented: bool = Field(
@@ -3157,10 +3116,7 @@ class PlannotateAnnotationReport(AnnotationReport):
     strand: Optional[int] = Field(
         default=None,
         json_schema_extra={
-            "linkml_meta": {
-                "alias": "strand",
-                "domain_of": ["GenomeCoordinatesSource", "SimpleSequenceLocation", "PlannotateAnnotationReport"],
-            }
+            "linkml_meta": {"alias": "strand", "domain_of": ["GenomeCoordinatesSource", "PlannotateAnnotationReport"]}
         },
     )
     percent_identity: Optional[float] = Field(
@@ -3450,7 +3406,6 @@ IGEMSource.model_rebuild()
 GenomeCoordinatesSource.model_rebuild()
 SequenceCutSource.model_rebuild()
 RestrictionEnzymeDigestionSource.model_rebuild()
-SimpleSequenceLocation.model_rebuild()
 AssemblyFragment.model_rebuild()
 AssemblySource.model_rebuild()
 PCRSource.model_rebuild()
