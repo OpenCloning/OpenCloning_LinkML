@@ -99,34 +99,18 @@
         {
           "sequence": 3,
           "left_location": null,
-          "right_location": {
-            "start": 31,
-            "end": 51,
-            "strand": null
-          },
+          "right_location": "32..51",
           "reverse_complemented": false
         },
         {
           "sequence": 2,
-          "left_location": {
-            "start": 1000,
-            "end": 1020,
-            "strand": null
-          },
-          "right_location": {
-            "start": 4052,
-            "end": 4072,
-            "strand": null
-          },
+          "left_location": "1001..1020",
+          "right_location": "4053..4072",
           "reverse_complemented": false
         },
         {
           "sequence": 4,
-          "left_location": {
-            "start": 0,
-            "end": 20,
-            "strand": null
-          },
+          "left_location": "1..20",
           "right_location": null,
           "reverse_complemented": true
         }
@@ -147,30 +131,14 @@
       "assembly": [
         {
           "sequence": 4,
-          "left_location": {
-            "start": 2892,
-            "end": 2905,
-            "strand": null
-          },
-          "right_location": {
-            "start": 648,
-            "end": 661,
-            "strand": null
-          },
+          "left_location": "2893..2905",
+          "right_location": "649..661",
           "reverse_complemented": false
         },
         {
           "sequence": 8,
-          "left_location": {
-            "start": 9,
-            "end": 22,
-            "strand": null
-          },
-          "right_location": {
-            "start": 3111,
-            "end": 3124,
-            "strand": null
-          },
+          "left_location": "10..22",
+          "right_location": "3112..3124",
           "reverse_complemented": false
         }
       ],
@@ -191,30 +159,14 @@
       "assembly": [
         {
           "sequence": 10,
-          "left_location": {
-            "start": 2517,
-            "end": 2530,
-            "strand": null
-          },
-          "right_location": {
-            "start": 0,
-            "end": 13,
-            "strand": null
-          },
+          "left_location": "2518..2530",
+          "right_location": "1..13",
           "reverse_complemented": false
         },
         {
           "sequence": 6,
-          "left_location": {
-            "start": 2471,
-            "end": 2484,
-            "strand": null
-          },
-          "right_location": {
-            "start": 789,
-            "end": 802,
-            "strand": null
-          },
+          "left_location": "2472..2484",
+          "right_location": "790..802",
           "reverse_complemented": false
         }
       ],
@@ -254,7 +206,7 @@
   ],
   "description": "Cloning the lacZ gene from E. coli into an entry clone, then expression clone",
   "files": null,
-  "schema_version": "0.2.8",
+  "schema_version": "0.2.9",
   "backend_version": null,
   "frontend_version": null
 }

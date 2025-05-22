@@ -199,13 +199,10 @@
             "description": "Represents a fragment in an assembly",
             "properties": {
                 "left_location": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/SimpleSequenceLocation"
-                        },
-                        {
-                            "type": "null"
-                        }
+                    "pattern": "^(\\d+)\\.\\.(\\d+)$",
+                    "type": [
+                        "string",
+                        "null"
                     ]
                 },
                 "reverse_complemented": {
@@ -213,13 +210,10 @@
                     "type": "boolean"
                 },
                 "right_location": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/SimpleSequenceLocation"
-                        },
-                        {
-                            "type": "null"
-                        }
+                    "pattern": "^(\\d+)\\.\\.(\\d+)$",
+                    "type": [
+                        "string",
+                        "null"
                     ]
                 },
                 "sequence": {
@@ -2846,33 +2840,6 @@
             "title": "SequencingFile",
             "type": "object"
         },
-        "SimpleSequenceLocation": {
-            "additionalProperties": false,
-            "description": "Represents a location within a sequence, for now support for ranges only",
-            "properties": {
-                "end": {
-                    "description": "The ending coordinate (0-based) of the location",
-                    "type": "integer"
-                },
-                "start": {
-                    "description": "The starting coordinate (0-based) of the location",
-                    "type": "integer"
-                },
-                "strand": {
-                    "description": "The strand of the location, should be 1 or -1 or null",
-                    "type": [
-                        "integer",
-                        "null"
-                    ]
-                }
-            },
-            "required": [
-                "start",
-                "end"
-            ],
-            "title": "SimpleSequenceLocation",
-            "type": "object"
-        },
         "SnapGenePlasmidSource": {
             "additionalProperties": false,
             "description": "Represents the source of a sequence from the SnapGene plasmid library identified by a SnapGene subpath of https://www.snapgene.com/plasmids/",
@@ -3040,15 +3007,12 @@
                     ]
                 },
                 "coordinates": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/SimpleSequenceLocation"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "If provided, coordinates within the sequence of the file to extract a subsequence"
+                    "description": "If provided, coordinates within the sequence of the file to extract a subsequence",
+                    "pattern": "^(\\d+)\\.\\.(\\d+)$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "database_id": {
                     "description": "The id of an entity in a database",

@@ -88,8 +88,8 @@ type AnnotationSource
 type AssemblyFragment
   {
     sequence: Sequence!
-    leftLocation: SimpleSequenceLocation
-    rightLocation: SimpleSequenceLocation
+    leftLocation: SequenceRange
+    rightLocation: SequenceRange
     reverseComplemented: Boolean!
   }
 
@@ -514,13 +514,6 @@ type SEVASource
     repositoryId: String!
   }
 
-type SimpleSequenceLocation
-  {
-    start: Integer!
-    end: Integer!
-    strand: Integer
-  }
-
 type SnapGenePlasmidSource
   {
     id: Integer!
@@ -573,7 +566,7 @@ type UploadedFileSource
     fileName: String
     indexInFile: Integer
     circularize: Boolean
-    coordinates: SimpleSequenceLocation
+    coordinates: SequenceRange
   }
 
 type WekWikGeneIdSource

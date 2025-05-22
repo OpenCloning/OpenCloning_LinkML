@@ -50,6 +50,10 @@
     {
       "prefix_prefix": "IAO",
       "prefix_reference": "http://purl.obolibrary.org/obo/IAO_"
+    },
+    {
+      "prefix_prefix": "GENO",
+      "prefix_reference": "http://purl.obolibrary.org/obo/GENO_"
     }
   ],
   "default_prefix": "opencloning_linkml",
@@ -66,6 +70,20 @@
       "typeof": "string",
       "base": "str",
       "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "sequence_range",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/SequenceRange",
+      "description": "A sequence range defined using genbank syntax (e.g. 1..100), note that 1..100 in genbank is equivalent to 0:100 in python",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "exact_mappings": [
+        "GENO:0000965"
+      ],
+      "typeof": "string",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "pattern": "^(\\d+)\\.\\.(\\d+)$",
       "@type": "TypeDefinition"
     },
     {
@@ -1050,8 +1068,7 @@
       "domain_of": [
         "UploadedFileSource"
       ],
-      "range": "SimpleSequenceLocation",
-      "inlined": true,
+      "range": "sequence_range",
       "@type": "SlotDefinition"
     },
     {
@@ -1227,53 +1244,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "simpleSequenceLocation__start",
-      "description": "The starting coordinate (0-based) of the location",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "mappings": [
-        "https://bioschemas.org/rangeStart"
-      ],
-      "slot_uri": "https://bioschemas.org/rangeStart",
-      "alias": "start",
-      "owner": "SimpleSequenceLocation",
-      "domain_of": [
-        "SimpleSequenceLocation"
-      ],
-      "range": "integer",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "simpleSequenceLocation__end",
-      "description": "The ending coordinate (0-based) of the location",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "mappings": [
-        "https://bioschemas.org/rangeEnd"
-      ],
-      "slot_uri": "https://bioschemas.org/rangeEnd",
-      "alias": "end",
-      "owner": "SimpleSequenceLocation",
-      "domain_of": [
-        "SimpleSequenceLocation"
-      ],
-      "range": "integer",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "simpleSequenceLocation__strand",
-      "description": "The strand of the location, should be 1 or -1 or null",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/strand",
-      "alias": "strand",
-      "owner": "SimpleSequenceLocation",
-      "domain_of": [
-        "SimpleSequenceLocation"
-      ],
-      "range": "integer",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "assemblyFragment__sequence",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequence",
@@ -1295,8 +1265,7 @@
       "domain_of": [
         "AssemblyFragment"
       ],
-      "range": "SimpleSequenceLocation",
-      "inlined": true,
+      "range": "sequence_range",
       "@type": "SlotDefinition"
     },
     {
@@ -1308,8 +1277,7 @@
       "domain_of": [
         "AssemblyFragment"
       ],
-      "range": "SimpleSequenceLocation",
-      "inlined": true,
+      "range": "sequence_range",
       "@type": "SlotDefinition"
     },
     {
@@ -2613,8 +2581,7 @@
         {
           "name": "coordinates",
           "description": "If provided, coordinates within the sequence of the file to extract a subsequence",
-          "range": "SimpleSequenceLocation",
-          "inlined": true,
+          "range": "sequence_range",
           "@type": "SlotDefinition"
         }
       ],
@@ -2943,47 +2910,6 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "SimpleSequenceLocation",
-      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/SimpleSequenceLocation",
-      "description": "Represents a location within a sequence, for now support for ranges only",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "mappings": [
-        "bioschemas:SequenceRange"
-      ],
-      "slots": [
-        "simpleSequenceLocation__start",
-        "simpleSequenceLocation__end",
-        "simpleSequenceLocation__strand"
-      ],
-      "slot_usage": {},
-      "attributes": [
-        {
-          "name": "start",
-          "description": "The starting coordinate (0-based) of the location",
-          "slot_uri": "bioschemas:rangeStart",
-          "range": "integer",
-          "required": true,
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "end",
-          "description": "The ending coordinate (0-based) of the location",
-          "slot_uri": "bioschemas:rangeEnd",
-          "range": "integer",
-          "required": true,
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "strand",
-          "description": "The strand of the location, should be 1 or -1 or null",
-          "range": "integer",
-          "@type": "SlotDefinition"
-        }
-      ],
-      "class_uri": "https://bioschemas.org/SequenceRange",
-      "@type": "ClassDefinition"
-    },
-    {
       "name": "AssemblyFragment",
       "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/AssemblyFragment",
       "description": "Represents a fragment in an assembly",
@@ -3004,14 +2930,12 @@
         },
         {
           "name": "left_location",
-          "range": "SimpleSequenceLocation",
-          "inlined": true,
+          "range": "sequence_range",
           "@type": "SlotDefinition"
         },
         {
           "name": "right_location",
-          "range": "SimpleSequenceLocation",
-          "inlined": true,
+          "range": "sequence_range",
           "@type": "SlotDefinition"
         },
         {
@@ -3693,9 +3617,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "opencloning_linkml.yaml",
-  "source_file_date": "2025-05-22T11:42:49",
-  "source_file_size": 26810,
-  "generation_date": "2025-05-22T11:42:55",
+  "source_file_date": "2025-05-22T16:53:48",
+  "source_file_size": 26291,
+  "generation_date": "2025-05-22T17:08:20",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/opencloning_linkml.context.jsonld",

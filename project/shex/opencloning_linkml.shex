@@ -9,6 +9,8 @@ PREFIX bioschemas: <https://bioschemas.org/>
 
 <VersionNumber> xsd:string
 
+<SequenceRange> xsd:string
+
 linkml:String xsd:string
 
 linkml:Integer xsd:integer
@@ -79,8 +81,8 @@ linkml:Sparqlpath xsd:string
 
 <AssemblyFragment> CLOSED {
     (  $<AssemblyFragment_tes> (  <sequence> @<Sequence> ;
-          <left_location> @<SimpleSequenceLocation> ? ;
-          <right_location> @<SimpleSequenceLocation> ? ;
+          <left_location> @<SequenceRange> ? ;
+          <right_location> @<SequenceRange> ? ;
           <reverse_complemented> @linkml:Boolean
        ) ;
        rdf:type [ <AssemblyFragment> ] ?
@@ -482,15 +484,6 @@ linkml:Sparqlpath xsd:string
     )
 }
 
-<SimpleSequenceLocation> CLOSED {
-    (  $<SimpleSequenceLocation_tes> (  bioschemas:rangeStart @linkml:Integer ;
-          bioschemas:rangeEnd @linkml:Integer ;
-          <strand> @linkml:Integer ?
-       ) ;
-       rdf:type [ bioschemas:SequenceRange ] ?
-    )
-}
-
 <SnapGenePlasmidSource> CLOSED {
     (  $<SnapGenePlasmidSource_tes> (  &<RepositoryIdSource_tes> ;
           rdf:type [ <RepositoryIdSource> ] ? ;
@@ -554,7 +547,7 @@ linkml:Sparqlpath xsd:string
           <file_name> @linkml:String ? ;
           <index_in_file> @linkml:Integer ? ;
           <circularize> @linkml:Boolean ? ;
-          <coordinates> @<SimpleSequenceLocation> ?
+          <coordinates> @<SequenceRange> ?
        ) ;
        rdf:type [ <UploadedFileSource> ]
     )

@@ -1,5 +1,5 @@
 # Auto generated from opencloning_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-05-22T11:42:57
+# Generation date: 2025-05-22T17:08:22
 # Schema: OpenCloning_LinkML
 #
 # id: https://opencloning.github.io/OpenCloning_LinkML
@@ -29,6 +29,7 @@ metamodel_version = "1.7.0"
 version = None
 
 # Namespaces
+GENO = CurieNamespace("GENO", "http://purl.obolibrary.org/obo/GENO_")
 IAO = CurieNamespace("IAO", "http://purl.obolibrary.org/obo/IAO_")
 NCIT = CurieNamespace("NCIT", "http://purl.obolibrary.org/obo/NCIT_")
 OBI = CurieNamespace("OBI", "http://purl.obolibrary.org/obo/OBI_")
@@ -51,6 +52,15 @@ class VersionNumber(String):
     type_class_curie = "xsd:string"
     type_name = "version_number"
     type_model_uri = OPENCLONING_LINKML.VersionNumber
+
+
+class SequenceRange(String):
+    """A sequence range defined using genbank syntax (e.g. 1..100), note that 1..100 in genbank is equivalent to 0:100 in python"""
+
+    type_class_uri = XSD["string"]
+    type_class_curie = "xsd:string"
+    type_name = "sequence_range"
+    type_model_uri = OPENCLONING_LINKML.SequenceRange
 
 
 # Class references
@@ -703,7 +713,7 @@ class UploadedFileSource(Source):
     file_name: Optional[str] = None
     index_in_file: Optional[int] = None
     circularize: Optional[Union[bool, Bool]] = None
-    coordinates: Optional[Union[dict, "SimpleSequenceLocation"]] = None
+    coordinates: Optional[Union[str, SequenceRange]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -725,8 +735,8 @@ class UploadedFileSource(Source):
         if self.circularize is not None and not isinstance(self.circularize, Bool):
             self.circularize = Bool(self.circularize)
 
-        if self.coordinates is not None and not isinstance(self.coordinates, SimpleSequenceLocation):
-            self.coordinates = SimpleSequenceLocation(**as_dict(self.coordinates))
+        if self.coordinates is not None and not isinstance(self.coordinates, SequenceRange):
+            self.coordinates = SequenceRange(self.coordinates)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -1142,40 +1152,6 @@ class RestrictionEnzymeDigestionSource(SequenceCutSource):
 
 
 @dataclass(repr=False)
-class SimpleSequenceLocation(YAMLRoot):
-    """
-    Represents a location within a sequence, for now support for ranges only
-    """
-
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOSCHEMAS["SequenceRange"]
-    class_class_curie: ClassVar[str] = "bioschemas:SequenceRange"
-    class_name: ClassVar[str] = "SimpleSequenceLocation"
-    class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.SimpleSequenceLocation
-
-    start: int = None
-    end: int = None
-    strand: Optional[int] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.start):
-            self.MissingRequiredField("start")
-        if not isinstance(self.start, int):
-            self.start = int(self.start)
-
-        if self._is_empty(self.end):
-            self.MissingRequiredField("end")
-        if not isinstance(self.end, int):
-            self.end = int(self.end)
-
-        if self.strand is not None and not isinstance(self.strand, int):
-            self.strand = int(self.strand)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
 class AssemblyFragment(YAMLRoot):
     """
     Represents a fragment in an assembly
@@ -1190,8 +1166,8 @@ class AssemblyFragment(YAMLRoot):
 
     sequence: Union[int, SequenceId] = None
     reverse_complemented: Union[bool, Bool] = None
-    left_location: Optional[Union[dict, SimpleSequenceLocation]] = None
-    right_location: Optional[Union[dict, SimpleSequenceLocation]] = None
+    left_location: Optional[Union[str, SequenceRange]] = None
+    right_location: Optional[Union[str, SequenceRange]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.sequence):
@@ -1204,11 +1180,11 @@ class AssemblyFragment(YAMLRoot):
         if not isinstance(self.reverse_complemented, Bool):
             self.reverse_complemented = Bool(self.reverse_complemented)
 
-        if self.left_location is not None and not isinstance(self.left_location, SimpleSequenceLocation):
-            self.left_location = SimpleSequenceLocation(**as_dict(self.left_location))
+        if self.left_location is not None and not isinstance(self.left_location, SequenceRange):
+            self.left_location = SequenceRange(self.left_location)
 
-        if self.right_location is not None and not isinstance(self.right_location, SimpleSequenceLocation):
-            self.right_location = SimpleSequenceLocation(**as_dict(self.right_location))
+        if self.right_location is not None and not isinstance(self.right_location, SequenceRange):
+            self.right_location = SequenceRange(self.right_location)
 
         super().__post_init__(**kwargs)
 
@@ -2384,7 +2360,7 @@ slots.uploadedFileSource__coordinates = Slot(
     curie=OPENCLONING_LINKML.curie("coordinates"),
     model_uri=OPENCLONING_LINKML.uploadedFileSource__coordinates,
     domain=None,
-    range=Optional[Union[dict, SimpleSequenceLocation]],
+    range=Optional[Union[str, SequenceRange]],
 )
 
 slots.repositoryIdSource__repository_name = Slot(
@@ -2504,33 +2480,6 @@ slots.restrictionEnzymeDigestionSource__right_edge = Slot(
     range=Optional[Union[dict, RestrictionSequenceCut]],
 )
 
-slots.simpleSequenceLocation__start = Slot(
-    uri=BIOSCHEMAS.rangeStart,
-    name="simpleSequenceLocation__start",
-    curie=BIOSCHEMAS.curie("rangeStart"),
-    model_uri=OPENCLONING_LINKML.simpleSequenceLocation__start,
-    domain=None,
-    range=int,
-)
-
-slots.simpleSequenceLocation__end = Slot(
-    uri=BIOSCHEMAS.rangeEnd,
-    name="simpleSequenceLocation__end",
-    curie=BIOSCHEMAS.curie("rangeEnd"),
-    model_uri=OPENCLONING_LINKML.simpleSequenceLocation__end,
-    domain=None,
-    range=int,
-)
-
-slots.simpleSequenceLocation__strand = Slot(
-    uri=OPENCLONING_LINKML.strand,
-    name="simpleSequenceLocation__strand",
-    curie=OPENCLONING_LINKML.curie("strand"),
-    model_uri=OPENCLONING_LINKML.simpleSequenceLocation__strand,
-    domain=None,
-    range=Optional[int],
-)
-
 slots.assemblyFragment__sequence = Slot(
     uri=OPENCLONING_LINKML.sequence,
     name="assemblyFragment__sequence",
@@ -2546,7 +2495,7 @@ slots.assemblyFragment__left_location = Slot(
     curie=OPENCLONING_LINKML.curie("left_location"),
     model_uri=OPENCLONING_LINKML.assemblyFragment__left_location,
     domain=None,
-    range=Optional[Union[dict, SimpleSequenceLocation]],
+    range=Optional[Union[str, SequenceRange]],
 )
 
 slots.assemblyFragment__right_location = Slot(
@@ -2555,7 +2504,7 @@ slots.assemblyFragment__right_location = Slot(
     curie=OPENCLONING_LINKML.curie("right_location"),
     model_uri=OPENCLONING_LINKML.assemblyFragment__right_location,
     domain=None,
-    range=Optional[Union[dict, SimpleSequenceLocation]],
+    range=Optional[Union[str, SequenceRange]],
 )
 
 slots.assemblyFragment__reverse_complemented = Slot(

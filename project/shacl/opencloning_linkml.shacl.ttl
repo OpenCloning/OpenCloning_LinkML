@@ -8,7 +8,7 @@
 
 schema1:Thing a sh:NodeShape ;
     sh:closed true ;
-    sh:ignoredProperties ( schema1:name opencloning_linkml:assembly_accession opencloning_linkml:assembly opencloning_linkml:annotation_tool_version opencloning_linkml:circularize opencloning_linkml:coordinates opencloning_linkml:annotation_report opencloning_linkml:sequence_accession opencloning_linkml:annotation_tool opencloning_linkml:reaction_type schema1:object opencloning_linkml:image opencloning_linkml:file_name opencloning_linkml:greedy opencloning_linkml:sequence opencloning_linkml:restriction_enzymes opencloning_linkml:sequence_file_format opencloning_linkml:right_edge opencloning_linkml:forward_oligo opencloning_linkml:category_id opencloning_linkml:file_content opencloning_linkml:circular opencloning_linkml:locus_tag opencloning_linkml:overhang_watson_3prime opencloning_linkml:primer_design opencloning_linkml:overhang_crick_3prime opencloning_linkml:description opencloning_linkml:title opencloning_linkml:output_name opencloning_linkml:repository_id opencloning_linkml:strand opencloning_linkml:options opencloning_linkml:add_primer_features opencloning_linkml:guides opencloning_linkml:type opencloning_linkml:sequence_file_url opencloning_linkml:gene_id opencloning_linkml:reverse_oligo opencloning_linkml:addgene_sequence_type rdf:type opencloning_linkml:end opencloning_linkml:index_in_file schema1:result opencloning_linkml:user_input opencloning_linkml:left_edge opencloning_linkml:start opencloning_linkml:repository_name ) ;
+    sh:ignoredProperties ( opencloning_linkml:repository_id opencloning_linkml:circularize opencloning_linkml:description opencloning_linkml:repository_name opencloning_linkml:strand opencloning_linkml:reaction_type opencloning_linkml:title opencloning_linkml:image opencloning_linkml:forward_oligo schema1:object opencloning_linkml:user_input opencloning_linkml:annotation_tool opencloning_linkml:start schema1:result opencloning_linkml:primer_design opencloning_linkml:sequence_file_url opencloning_linkml:right_edge opencloning_linkml:annotation_report opencloning_linkml:options opencloning_linkml:gene_id opencloning_linkml:category_id opencloning_linkml:add_primer_features opencloning_linkml:guides opencloning_linkml:type schema1:name opencloning_linkml:index_in_file opencloning_linkml:reverse_oligo opencloning_linkml:sequence_file_format opencloning_linkml:locus_tag opencloning_linkml:overhang_watson_3prime opencloning_linkml:sequence opencloning_linkml:overhang_crick_3prime opencloning_linkml:output_name opencloning_linkml:assembly_accession opencloning_linkml:sequence_accession opencloning_linkml:circular rdf:type opencloning_linkml:coordinates opencloning_linkml:left_edge opencloning_linkml:file_content opencloning_linkml:restriction_enzymes opencloning_linkml:end opencloning_linkml:file_name opencloning_linkml:annotation_tool_version opencloning_linkml:assembly opencloning_linkml:greedy opencloning_linkml:addgene_sequence_type ) ;
     sh:property [ sh:datatype xsd:integer ;
             sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
@@ -21,13 +21,11 @@ opencloning_linkml:AddgeneIdSource a sh:NodeShape ;
     sh:closed true ;
     sh:description "Represents the source of a sequence that is identified by an Addgene id" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:integer ;
-            sh:description "A unique identifier for a thing" ;
+    sh:property [ sh:in ( "addgene" "genbank" "benchling" "snapgene" "euroscarf" "igem" "wekwikgene" "seva" ) ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 9 ;
-            sh:path schema1:identifier ],
+            sh:order 3 ;
+            sh:path opencloning_linkml:repository_name ],
         [ sh:datatype xsd:string ;
             sh:description "The URL of a sequence file" ;
             sh:maxCount 1 ;
@@ -35,12 +33,21 @@ opencloning_linkml:AddgeneIdSource a sh:NodeShape ;
             sh:order 0 ;
             sh:path opencloning_linkml:sequence_file_url ;
             sh:pattern "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$" ],
+        [ sh:in ( "depositor-full" "addgene-full" ) ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path opencloning_linkml:addgene_sequence_type ],
         [ sh:class bioschemas:DNA ;
             sh:description "Identifier of the sequence that is the output of this source." ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 5 ;
             sh:path schema1:result ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 4 ;
+            sh:path schema1:object ],
         [ sh:datatype xsd:string ;
             sh:description "The id of the sequence in the repository" ;
             sh:maxCount 1 ;
@@ -48,6 +55,19 @@ opencloning_linkml:AddgeneIdSource a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 2 ;
             sh:path opencloning_linkml:repository_id ],
+        [ sh:datatype xsd:integer ;
+            sh:description "The id of an entity in a database" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:integer ;
+            sh:description "A unique identifier for a thing" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 9 ;
+            sh:path schema1:identifier ],
         [ sh:datatype xsd:string ;
             sh:description "Used to specify the name of the output sequence" ;
             sh:maxCount 1 ;
@@ -59,60 +79,51 @@ opencloning_linkml:AddgeneIdSource a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 6 ;
-            sh:path opencloning_linkml:type ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 4 ;
-            sh:path schema1:object ],
-        [ sh:datatype xsd:integer ;
-            sh:description "The id of an entity in a database" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 8 ;
-            sh:path schema1:identifier ],
-        [ sh:in ( "depositor-full" "addgene-full" ) ;
-            sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path opencloning_linkml:addgene_sequence_type ],
-        [ sh:in ( "addgene" "genbank" "benchling" "snapgene" "euroscarf" "igem" "wekwikgene" "seva" ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 3 ;
-            sh:path opencloning_linkml:repository_name ] ;
+            sh:path opencloning_linkml:type ] ;
     sh:targetClass opencloning_linkml:AddgeneIdSource .
 
 opencloning_linkml:AnnotationSource a sh:NodeShape ;
     sh:closed true ;
     sh:description "Represents a computational step in which sequence features are annotated in a sequence" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class bioschemas:DNA ;
-            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path schema1:object ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "Identifier of the sequence that is the output of this source." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 4 ;
-            sh:path schema1:result ],
+    sh:property [ sh:class opencloning_linkml:AnnotationReport ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path opencloning_linkml:annotation_report ],
         [ sh:datatype xsd:integer ;
             sh:description "The id of an entity in a database" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 7 ;
             sh:path schema1:identifier ],
-        [ sh:class opencloning_linkml:AnnotationReport ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 2 ;
-            sh:path opencloning_linkml:annotation_report ],
+        [ sh:datatype xsd:string ;
+            sh:description "Designates the class" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path opencloning_linkml:type ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "Identifier of the sequence that is the output of this source." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 4 ;
+            sh:path schema1:result ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path schema1:object ],
         [ sh:datatype xsd:string ;
             sh:description "The version of the annotation tool" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 1 ;
             sh:path opencloning_linkml:annotation_tool_version ],
+        [ sh:in ( "plannotate" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 0 ;
+            sh:path opencloning_linkml:annotation_tool ],
         [ sh:datatype xsd:integer ;
             sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
@@ -121,29 +132,29 @@ opencloning_linkml:AnnotationSource a sh:NodeShape ;
             sh:order 8 ;
             sh:path schema1:identifier ],
         [ sh:datatype xsd:string ;
-            sh:description "Designates the class" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 5 ;
-            sh:path opencloning_linkml:type ],
-        [ sh:datatype xsd:string ;
             sh:description "Used to specify the name of the output sequence" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 6 ;
-            sh:path opencloning_linkml:output_name ],
-        [ sh:in ( "plannotate" ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 0 ;
-            sh:path opencloning_linkml:annotation_tool ] ;
+            sh:path opencloning_linkml:output_name ] ;
     sh:targetClass opencloning_linkml:AnnotationSource .
 
 opencloning_linkml:AssemblySource a sh:NodeShape ;
     sh:closed true ;
     sh:description "Represents the source of a sequence that is an assembly of other sequences" ;
-    sh:ignoredProperties ( rdf:type opencloning_linkml:restriction_enzymes opencloning_linkml:guides opencloning_linkml:reaction_type opencloning_linkml:add_primer_features opencloning_linkml:greedy ) ;
-    sh:property [ sh:datatype xsd:string ;
+    sh:ignoredProperties ( opencloning_linkml:restriction_enzymes opencloning_linkml:reaction_type opencloning_linkml:add_primer_features opencloning_linkml:guides opencloning_linkml:greedy rdf:type ) ;
+    sh:property [ sh:class opencloning_linkml:AssemblyFragment ;
+            sh:description "A list of the fragments that are assembled, in order" ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path opencloning_linkml:assembly ],
+        [ sh:datatype xsd:string ;
+            sh:description "Used to specify the name of the output sequence" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path opencloning_linkml:output_name ],
+        [ sh:datatype xsd:string ;
             sh:description "Designates the class" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
@@ -156,6 +167,12 @@ opencloning_linkml:AssemblySource a sh:NodeShape ;
             sh:order 0 ;
             sh:path opencloning_linkml:circular ],
         [ sh:datatype xsd:integer ;
+            sh:description "The id of an entity in a database" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:integer ;
             sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -172,31 +189,45 @@ opencloning_linkml:AssemblySource a sh:NodeShape ;
             sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
             sh:nodeKind sh:IRI ;
             sh:order 2 ;
-            sh:path schema1:object ],
-        [ sh:class opencloning_linkml:AssemblyFragment ;
-            sh:description "A list of the fragments that are assembled, in order" ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 1 ;
-            sh:path opencloning_linkml:assembly ],
-        [ sh:datatype xsd:integer ;
-            sh:description "The id of an entity in a database" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 6 ;
-            sh:path schema1:identifier ],
-        [ sh:datatype xsd:string ;
-            sh:description "Used to specify the name of the output sequence" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 5 ;
-            sh:path opencloning_linkml:output_name ] ;
+            sh:path schema1:object ] ;
     sh:targetClass opencloning_linkml:AssemblySource .
 
 opencloning_linkml:BenchlingUrlSource a sh:NodeShape ;
     sh:closed true ;
     sh:description "Represents the source of a sequence that is identified by a Benchling URL" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:in ( "addgene" "genbank" "benchling" "snapgene" "euroscarf" "igem" "wekwikgene" "seva" ) ;
+    sh:property [ sh:class bioschemas:DNA ;
+            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path schema1:object ],
+        [ sh:datatype xsd:string ;
+            sh:description "Used to specify the name of the output sequence" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path opencloning_linkml:output_name ],
+        [ sh:datatype xsd:string ;
+            sh:description "Designates the class" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path opencloning_linkml:type ],
+        [ sh:datatype xsd:string ;
+            sh:description "The url of the gb file associated with the sequence" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path opencloning_linkml:repository_id ;
+            sh:pattern "^https:\\/\\/benchling\\.com\\/.+\\.gb$" ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "Identifier of the sequence that is the output of this source." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path schema1:result ],
+        [ sh:in ( "addgene" "genbank" "benchling" "snapgene" "euroscarf" "igem" "wekwikgene" "seva" ) ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:order 1 ;
@@ -207,57 +238,61 @@ opencloning_linkml:BenchlingUrlSource a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 6 ;
             sh:path schema1:identifier ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path schema1:object ],
         [ sh:datatype xsd:integer ;
             sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 7 ;
-            sh:path schema1:identifier ],
-        [ sh:datatype xsd:string ;
-            sh:description "Used to specify the name of the output sequence" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 5 ;
-            sh:path opencloning_linkml:output_name ],
-        [ sh:datatype xsd:string ;
-            sh:description "Designates the class" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 4 ;
-            sh:path opencloning_linkml:type ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "Identifier of the sequence that is the output of this source." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path schema1:result ],
-        [ sh:datatype xsd:string ;
-            sh:description "The url of the gb file associated with the sequence" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 0 ;
-            sh:path opencloning_linkml:repository_id ;
-            sh:pattern "^https:\\/\\/benchling\\.com\\/.+\\.gb$" ] ;
+            sh:path schema1:identifier ] ;
     sh:targetClass opencloning_linkml:BenchlingUrlSource .
 
 opencloning_linkml:CRISPRSource a sh:NodeShape ;
     sh:closed true ;
     sh:description "Represents the source of a sequence that is generated by CRISPR" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:integer ;
+    sh:property [ sh:datatype xsd:boolean ;
+            sh:description "Whether the assembly is circular or not" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path opencloning_linkml:circular ],
+        [ sh:datatype xsd:integer ;
             sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 8 ;
             sh:path schema1:identifier ],
+        [ sh:datatype xsd:integer ;
+            sh:description "The id of an entity in a database" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path schema1:identifier ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path schema1:object ],
+        [ sh:datatype xsd:string ;
+            sh:description "Used to specify the name of the output sequence" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path opencloning_linkml:output_name ],
+        [ sh:class opencloning_linkml:Primer ;
+            sh:description "The guide RNAs used in the CRISPR" ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path opencloning_linkml:guides ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "Identifier of the sequence that is the output of this source." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 4 ;
+            sh:path schema1:result ],
         [ sh:datatype xsd:string ;
             sh:description "Designates the class" ;
             sh:maxCount 1 ;
@@ -268,49 +303,36 @@ opencloning_linkml:CRISPRSource a sh:NodeShape ;
             sh:description "A list of the fragments that are assembled, in order" ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:order 2 ;
-            sh:path opencloning_linkml:assembly ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path schema1:object ],
-        [ sh:datatype xsd:boolean ;
-            sh:description "Whether the assembly is circular or not" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 1 ;
-            sh:path opencloning_linkml:circular ],
-        [ sh:class opencloning_linkml:Primer ;
-            sh:description "The guide RNAs used in the CRISPR" ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path opencloning_linkml:guides ],
-        [ sh:datatype xsd:integer ;
-            sh:description "The id of an entity in a database" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 7 ;
-            sh:path schema1:identifier ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "Identifier of the sequence that is the output of this source." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 4 ;
-            sh:path schema1:result ],
-        [ sh:datatype xsd:string ;
-            sh:description "Used to specify the name of the output sequence" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 6 ;
-            sh:path opencloning_linkml:output_name ] ;
+            sh:path opencloning_linkml:assembly ] ;
     sh:targetClass opencloning_linkml:CRISPRSource .
 
 opencloning_linkml:CloningStrategy a sh:NodeShape ;
     sh:closed true ;
     sh:description "Represents a cloning strategy" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class opencloning_linkml:AssociatedFile ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "A description of the cloning strategy" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path opencloning_linkml:description ],
+        [ sh:description "The version of the backend that was used to generate this cloning strategy" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path opencloning_linkml:backend_version ],
+        [ sh:class opencloning_linkml:Primer ;
+            sh:description "The primers that are used in the cloning strategy" ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path opencloning_linkml:primers ],
+        [ sh:class schema1:CreateAction ;
+            sh:description "The sources of the sequences that are used in the cloning strategy" ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path opencloning_linkml:sources ],
+        [ sh:class opencloning_linkml:AssociatedFile ;
             sh:description "Files associated with this cloning strategy" ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:order 4 ;
@@ -320,50 +342,77 @@ opencloning_linkml:CloningStrategy a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 5 ;
             sh:path opencloning_linkml:schema_version ],
-        [ sh:datatype xsd:string ;
-            sh:description "A description of the cloning strategy" ;
+        [ sh:description "The version of the frontend that was used to generate this cloning strategy" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 3 ;
-            sh:path opencloning_linkml:description ],
+            sh:order 7 ;
+            sh:path opencloning_linkml:frontend_version ],
         [ sh:class bioschemas:DNA ;
             sh:description "The sequences that are used in the cloning strategy" ;
             sh:minCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 0 ;
-            sh:path opencloning_linkml:sequences ],
-        [ sh:class schema1:CreateAction ;
-            sh:description "The sources of the sequences that are used in the cloning strategy" ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path opencloning_linkml:sources ],
-        [ sh:class opencloning_linkml:Primer ;
-            sh:description "The primers that are used in the cloning strategy" ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path opencloning_linkml:primers ],
-        [ sh:description "The version of the backend that was used to generate this cloning strategy" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 6 ;
-            sh:path opencloning_linkml:backend_version ],
-        [ sh:description "The version of the frontend that was used to generate this cloning strategy" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 7 ;
-            sh:path opencloning_linkml:frontend_version ] ;
+            sh:path opencloning_linkml:sequences ] ;
     sh:targetClass opencloning_linkml:CloningStrategy .
 
 opencloning_linkml:CollectionSource a sh:NodeShape ;
     sh:closed true ;
     sh:description "Represents a collection of possible sources in a template" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class opencloning_linkml:CollectionOption ;
+    sh:property [ sh:datatype xsd:integer ;
+            sh:description "The id of an entity in a database" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 9 ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:description "Designates the class" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path opencloning_linkml:type ],
+        [ sh:datatype xsd:string ;
+            sh:description "The title of the category" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path opencloning_linkml:title ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 5 ;
+            sh:path schema1:object ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "Identifier of the sequence that is the output of this source." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 6 ;
+            sh:path schema1:result ],
+        [ sh:datatype xsd:string ;
+            sh:description "Used to specify the name of the output sequence" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path opencloning_linkml:output_name ],
+        [ sh:class opencloning_linkml:CollectionOption ;
             sh:description "The options available in this category." ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:order 4 ;
             sh:path opencloning_linkml:options ],
+        [ sh:datatype xsd:integer ;
+            sh:description "A unique identifier for a thing" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 10 ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:description "The identifier of the category of the part in the template" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path opencloning_linkml:category_id ],
         [ sh:datatype xsd:string ;
             sh:description "A description of the category" ;
             sh:maxCount 1 ;
@@ -374,56 +423,7 @@ opencloning_linkml:CollectionSource a sh:NodeShape ;
             sh:description "URL and size of the image representing this category. For images with size specification, this is a list with two elements: [url, size]." ;
             sh:nodeKind sh:Literal ;
             sh:order 3 ;
-            sh:path opencloning_linkml:image ],
-        [ sh:datatype xsd:integer ;
-            sh:description "The id of an entity in a database" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 9 ;
-            sh:path schema1:identifier ],
-        [ sh:datatype xsd:string ;
-            sh:description "Used to specify the name of the output sequence" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 8 ;
-            sh:path opencloning_linkml:output_name ],
-        [ sh:datatype xsd:string ;
-            sh:description "The identifier of the category of the part in the template" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 0 ;
-            sh:path opencloning_linkml:category_id ],
-        [ sh:datatype xsd:integer ;
-            sh:description "A unique identifier for a thing" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 10 ;
-            sh:path schema1:identifier ],
-        [ sh:datatype xsd:string ;
-            sh:description "Designates the class" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 7 ;
-            sh:path opencloning_linkml:type ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "Identifier of the sequence that is the output of this source." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 6 ;
-            sh:path schema1:result ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 5 ;
-            sh:path schema1:object ],
-        [ sh:datatype xsd:string ;
-            sh:description "The title of the category" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 1 ;
-            sh:path opencloning_linkml:title ] ;
+            sh:path opencloning_linkml:image ] ;
     sh:targetClass opencloning_linkml:CollectionSource .
 
 opencloning_linkml:CreLoxRecombinationSource a sh:NodeShape ;
@@ -436,29 +436,28 @@ opencloning_linkml:CreLoxRecombinationSource a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 3 ;
             sh:path schema1:result ],
+        [ sh:datatype xsd:string ;
+            sh:description "Used to specify the name of the output sequence" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path opencloning_linkml:output_name ],
+        [ sh:class opencloning_linkml:AssemblyFragment ;
+            sh:description "A list of the fragments that are assembled, in order" ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path opencloning_linkml:assembly ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path schema1:object ],
         [ sh:datatype xsd:boolean ;
             sh:description "Whether the assembly is circular or not" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 0 ;
             sh:path opencloning_linkml:circular ],
-        [ sh:datatype xsd:string ;
-            sh:description "Designates the class" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 4 ;
-            sh:path opencloning_linkml:type ],
-        [ sh:datatype xsd:integer ;
-            sh:description "The id of an entity in a database" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 6 ;
-            sh:path schema1:identifier ],
-        [ sh:class opencloning_linkml:AssemblyFragment ;
-            sh:description "A list of the fragments that are assembled, in order" ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 1 ;
-            sh:path opencloning_linkml:assembly ],
         [ sh:datatype xsd:integer ;
             sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
@@ -466,47 +465,36 @@ opencloning_linkml:CreLoxRecombinationSource a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 7 ;
             sh:path schema1:identifier ],
-        [ sh:datatype xsd:string ;
-            sh:description "Used to specify the name of the output sequence" ;
+        [ sh:datatype xsd:integer ;
+            sh:description "The id of an entity in a database" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 5 ;
-            sh:path opencloning_linkml:output_name ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path schema1:object ] ;
+            sh:order 6 ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:description "Designates the class" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path opencloning_linkml:type ] ;
     sh:targetClass opencloning_linkml:CreLoxRecombinationSource .
 
 opencloning_linkml:DatabaseSource a sh:NodeShape ;
     sh:closed true ;
     sh:description "Represents the source of a sequence that is identified by a database id" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:string ;
-            sh:description "Used to specify the name of the output sequence" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 4 ;
-            sh:path opencloning_linkml:output_name ],
-        [ sh:class bioschemas:DNA ;
+    sh:property [ sh:class bioschemas:DNA ;
             sh:description "Identifier of the sequence that is the output of this source." ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 2 ;
             sh:path schema1:result ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path schema1:object ],
-        [ sh:datatype xsd:integer ;
-            sh:description "A unique identifier for a thing" ;
+        [ sh:datatype xsd:string ;
+            sh:description "Used to specify the name of the output sequence" ;
             sh:maxCount 1 ;
-            sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 5 ;
-            sh:path schema1:identifier ],
+            sh:order 4 ;
+            sh:path opencloning_linkml:output_name ],
         [ sh:datatype xsd:integer ;
             sh:description "The id of an entity in a database" ;
             sh:maxCount 1 ;
@@ -514,6 +502,18 @@ opencloning_linkml:DatabaseSource a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 0 ;
             sh:path schema1:identifier ],
+        [ sh:datatype xsd:integer ;
+            sh:description "A unique identifier for a thing" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path schema1:identifier ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path schema1:object ],
         [ sh:datatype xsd:string ;
             sh:description "Designates the class" ;
             sh:maxCount 1 ;
@@ -532,31 +532,6 @@ opencloning_linkml:EuroscarfSource a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 6 ;
             sh:path schema1:identifier ],
-        [ sh:datatype xsd:string ;
-            sh:description "Designates the class" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 4 ;
-            sh:path opencloning_linkml:type ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "Identifier of the sequence that is the output of this source." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path schema1:result ],
-        [ sh:in ( "addgene" "genbank" "benchling" "snapgene" "euroscarf" "igem" "wekwikgene" "seva" ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 1 ;
-            sh:path opencloning_linkml:repository_name ],
-        [ sh:datatype xsd:string ;
-            sh:description "The id of the plasmid in the Euroscarf plasmid library" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 0 ;
-            sh:path opencloning_linkml:repository_id ;
-            sh:pattern "^P\\d+$" ],
         [ sh:datatype xsd:integer ;
             sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
@@ -564,40 +539,59 @@ opencloning_linkml:EuroscarfSource a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 7 ;
             sh:path schema1:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:description "Designates the class" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path opencloning_linkml:type ],
         [ sh:class bioschemas:DNA ;
             sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
             sh:nodeKind sh:IRI ;
             sh:order 2 ;
             sh:path schema1:object ],
+        [ sh:in ( "addgene" "genbank" "benchling" "snapgene" "euroscarf" "igem" "wekwikgene" "seva" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path opencloning_linkml:repository_name ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "Identifier of the sequence that is the output of this source." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path schema1:result ],
         [ sh:datatype xsd:string ;
             sh:description "Used to specify the name of the output sequence" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 5 ;
-            sh:path opencloning_linkml:output_name ] ;
+            sh:path opencloning_linkml:output_name ],
+        [ sh:datatype xsd:string ;
+            sh:description "The id of the plasmid in the Euroscarf plasmid library" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path opencloning_linkml:repository_id ;
+            sh:pattern "^P\\d+$" ] ;
     sh:targetClass opencloning_linkml:EuroscarfSource .
 
 opencloning_linkml:GatewaySource a sh:NodeShape ;
     sh:closed true ;
     sh:description "Represents the source of a sequence that is generated by Gateway cloning" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:in ( "LR" "BP" ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 0 ;
-            sh:path opencloning_linkml:reaction_type ],
+    sh:property [ sh:class bioschemas:DNA ;
+            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 4 ;
+            sh:path schema1:object ],
         [ sh:datatype xsd:boolean ;
             sh:description "Whether to use a greedy consensus sequence for att sites (see https://github.com/manulera/GateWayMine)" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 1 ;
             sh:path opencloning_linkml:greedy ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "Identifier of the sequence that is the output of this source." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 5 ;
-            sh:path schema1:result ],
         [ sh:class opencloning_linkml:AssemblyFragment ;
             sh:description "A list of the fragments that are assembled, in order" ;
             sh:nodeKind sh:BlankNodeOrIRI ;
@@ -609,18 +603,11 @@ opencloning_linkml:GatewaySource a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 8 ;
             sh:path schema1:identifier ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 4 ;
-            sh:path schema1:object ],
-        [ sh:datatype xsd:integer ;
-            sh:description "A unique identifier for a thing" ;
+        [ sh:in ( "LR" "BP" ) ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 9 ;
-            sh:path schema1:identifier ],
+            sh:order 0 ;
+            sh:path opencloning_linkml:reaction_type ],
         [ sh:datatype xsd:boolean ;
             sh:description "Whether the assembly is circular or not" ;
             sh:maxCount 1 ;
@@ -628,17 +615,30 @@ opencloning_linkml:GatewaySource a sh:NodeShape ;
             sh:order 2 ;
             sh:path opencloning_linkml:circular ],
         [ sh:datatype xsd:string ;
+            sh:description "Used to specify the name of the output sequence" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path opencloning_linkml:output_name ],
+        [ sh:datatype xsd:string ;
             sh:description "Designates the class" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 6 ;
             sh:path opencloning_linkml:type ],
-        [ sh:datatype xsd:string ;
-            sh:description "Used to specify the name of the output sequence" ;
+        [ sh:class bioschemas:DNA ;
+            sh:description "Identifier of the sequence that is the output of this source." ;
             sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 5 ;
+            sh:path schema1:result ],
+        [ sh:datatype xsd:integer ;
+            sh:description "A unique identifier for a thing" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 7 ;
-            sh:path opencloning_linkml:output_name ] ;
+            sh:order 9 ;
+            sh:path schema1:identifier ] ;
     sh:targetClass opencloning_linkml:GatewaySource .
 
 opencloning_linkml:GenomeCoordinatesSource a sh:NodeShape ;
@@ -646,12 +646,31 @@ opencloning_linkml:GenomeCoordinatesSource a sh:NodeShape ;
     sh:description "Represents the source of a sequence that is identified by genome coordinates, requested from NCBI" ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:datatype xsd:integer ;
-            sh:description "The strand of the sequence in the sequence accession, should be 1 or -1" ;
+            sh:description "The starting coordinate (1-based) of the sequence in the sequence accession" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 6 ;
-            sh:path opencloning_linkml:strand ],
+            sh:order 4 ;
+            sh:path opencloning_linkml:start ],
+        [ sh:datatype xsd:string ;
+            sh:description "The accession of the assembly" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path opencloning_linkml:assembly_accession ],
+        [ sh:datatype xsd:string ;
+            sh:description "The accession of the sequence" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path opencloning_linkml:sequence_accession ],
+        [ sh:datatype xsd:string ;
+            sh:description "Used to specify the name of the output sequence" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 10 ;
+            sh:path opencloning_linkml:output_name ],
         [ sh:class bioschemas:DNA ;
             sh:description "Identifier of the sequence that is the output of this source." ;
             sh:maxCount 1 ;
@@ -665,32 +684,19 @@ opencloning_linkml:GenomeCoordinatesSource a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 5 ;
             sh:path opencloning_linkml:end ],
-        [ sh:datatype xsd:string ;
-            sh:description "The accession of the sequence" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 1 ;
-            sh:path opencloning_linkml:sequence_accession ],
-        [ sh:datatype xsd:string ;
-            sh:description "Designates the class" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 9 ;
-            sh:path opencloning_linkml:type ],
-        [ sh:datatype xsd:string ;
-            sh:description "Used to specify the name of the output sequence" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 10 ;
-            sh:path opencloning_linkml:output_name ],
         [ sh:datatype xsd:integer ;
-            sh:description "The starting coordinate (1-based) of the sequence in the sequence accession" ;
+            sh:description "The id of an entity in a database" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 11 ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:integer ;
+            sh:description "The strand of the sequence in the sequence accession, should be 1 or -1" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 4 ;
-            sh:path opencloning_linkml:start ],
+            sh:order 6 ;
+            sh:path opencloning_linkml:strand ],
         [ sh:datatype xsd:string ;
             sh:description "The locus tag of the sequence" ;
             sh:maxCount 1 ;
@@ -704,71 +710,41 @@ opencloning_linkml:GenomeCoordinatesSource a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 12 ;
             sh:path schema1:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:description "Designates the class" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 9 ;
+            sh:path opencloning_linkml:type ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 7 ;
+            sh:path schema1:object ],
         [ sh:datatype xsd:integer ;
             sh:description "The gene id of the sequence" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 3 ;
-            sh:path opencloning_linkml:gene_id ],
-        [ sh:datatype xsd:string ;
-            sh:description "The accession of the assembly" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 0 ;
-            sh:path opencloning_linkml:assembly_accession ],
-        [ sh:datatype xsd:integer ;
-            sh:description "The id of an entity in a database" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 11 ;
-            sh:path schema1:identifier ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 7 ;
-            sh:path schema1:object ] ;
+            sh:path opencloning_linkml:gene_id ] ;
     sh:targetClass opencloning_linkml:GenomeCoordinatesSource .
 
 opencloning_linkml:GibsonAssemblySource a sh:NodeShape ;
     sh:closed true ;
     sh:description "Represents the source of a sequence that is generated by Gibson assembly" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class opencloning_linkml:AssemblyFragment ;
-            sh:description "A list of the fragments that are assembled, in order" ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 1 ;
-            sh:path opencloning_linkml:assembly ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "Identifier of the sequence that is the output of this source." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path schema1:result ],
-        [ sh:datatype xsd:integer ;
-            sh:description "The id of an entity in a database" ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "Designates the class" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 6 ;
-            sh:path schema1:identifier ],
+            sh:order 4 ;
+            sh:path opencloning_linkml:type ],
         [ sh:datatype xsd:boolean ;
             sh:description "Whether the assembly is circular or not" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 0 ;
             sh:path opencloning_linkml:circular ],
-        [ sh:datatype xsd:integer ;
-            sh:description "A unique identifier for a thing" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 7 ;
-            sh:path schema1:identifier ],
-        [ sh:datatype xsd:string ;
-            sh:description "Designates the class" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 4 ;
-            sh:path opencloning_linkml:type ],
         [ sh:datatype xsd:string ;
             sh:description "Used to specify the name of the output sequence" ;
             sh:maxCount 1 ;
@@ -776,17 +752,12 @@ opencloning_linkml:GibsonAssemblySource a sh:NodeShape ;
             sh:order 5 ;
             sh:path opencloning_linkml:output_name ],
         [ sh:class bioschemas:DNA ;
-            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:description "Identifier of the sequence that is the output of this source." ;
+            sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path schema1:object ] ;
-    sh:targetClass opencloning_linkml:GibsonAssemblySource .
-
-opencloning_linkml:HomologousRecombinationSource a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "Represents the source of a sequence that is generated by homologous recombination" ;
-    sh:ignoredProperties ( rdf:type opencloning_linkml:guides ) ;
-    sh:property [ sh:class bioschemas:DNA ;
+            sh:order 3 ;
+            sh:path schema1:result ],
+        [ sh:class bioschemas:DNA ;
             sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
             sh:nodeKind sh:IRI ;
             sh:order 2 ;
@@ -798,29 +769,53 @@ opencloning_linkml:HomologousRecombinationSource a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 7 ;
             sh:path schema1:identifier ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "Identifier of the sequence that is the output of this source." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path schema1:result ],
         [ sh:class opencloning_linkml:AssemblyFragment ;
             sh:description "A list of the fragments that are assembled, in order" ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:order 1 ;
             sh:path opencloning_linkml:assembly ],
-        [ sh:datatype xsd:boolean ;
-            sh:description "Whether the assembly is circular or not" ;
+        [ sh:datatype xsd:integer ;
+            sh:description "The id of an entity in a database" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 0 ;
-            sh:path opencloning_linkml:circular ],
+            sh:order 6 ;
+            sh:path schema1:identifier ] ;
+    sh:targetClass opencloning_linkml:GibsonAssemblySource .
+
+opencloning_linkml:HomologousRecombinationSource a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Represents the source of a sequence that is generated by homologous recombination" ;
+    sh:ignoredProperties ( rdf:type opencloning_linkml:guides ) ;
+    sh:property [ sh:datatype xsd:integer ;
+            sh:description "A unique identifier for a thing" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path schema1:identifier ],
         [ sh:datatype xsd:string ;
             sh:description "Designates the class" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 4 ;
             sh:path opencloning_linkml:type ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path schema1:object ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "Identifier of the sequence that is the output of this source." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path schema1:result ],
+        [ sh:datatype xsd:boolean ;
+            sh:description "Whether the assembly is circular or not" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path opencloning_linkml:circular ],
         [ sh:datatype xsd:string ;
             sh:description "Used to specify the name of the output sequence" ;
             sh:maxCount 1 ;
@@ -832,7 +827,12 @@ opencloning_linkml:HomologousRecombinationSource a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 6 ;
-            sh:path schema1:identifier ] ;
+            sh:path schema1:identifier ],
+        [ sh:class opencloning_linkml:AssemblyFragment ;
+            sh:description "A list of the fragments that are assembled, in order" ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path opencloning_linkml:assembly ] ;
     sh:targetClass opencloning_linkml:HomologousRecombinationSource .
 
 opencloning_linkml:IGEMSource a sh:NodeShape ;
@@ -840,18 +840,24 @@ opencloning_linkml:IGEMSource a sh:NodeShape ;
     sh:description "Represents the source of a sequence from an iGEM collection" ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:datatype xsd:integer ;
-            sh:description "The id of an entity in a database" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 7 ;
-            sh:path schema1:identifier ],
-        [ sh:datatype xsd:integer ;
             sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 8 ;
             sh:path schema1:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:description "Designates the class" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path opencloning_linkml:type ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "Identifier of the sequence that is the output of this source." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 4 ;
+            sh:path schema1:result ],
         [ sh:datatype xsd:string ;
             sh:description "Used to specify the name of the output sequence" ;
             sh:maxCount 1 ;
@@ -865,23 +871,22 @@ opencloning_linkml:IGEMSource a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 1 ;
             sh:path opencloning_linkml:repository_id ],
-        [ sh:datatype xsd:string ;
-            sh:description "Designates the class" ;
+        [ sh:datatype xsd:integer ;
+            sh:description "The id of an entity in a database" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 5 ;
-            sh:path opencloning_linkml:type ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "Identifier of the sequence that is the output of this source." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 4 ;
-            sh:path schema1:result ],
+            sh:order 7 ;
+            sh:path schema1:identifier ],
         [ sh:in ( "addgene" "genbank" "benchling" "snapgene" "euroscarf" "igem" "wekwikgene" "seva" ) ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:order 2 ;
             sh:path opencloning_linkml:repository_name ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path schema1:object ],
         [ sh:datatype xsd:string ;
             sh:description "The URL of the sequence file, for now github repository" ;
             sh:maxCount 1 ;
@@ -889,70 +894,12 @@ opencloning_linkml:IGEMSource a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 0 ;
             sh:path opencloning_linkml:sequence_file_url ;
-            sh:pattern "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$" ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path schema1:object ] ;
+            sh:pattern "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$" ] ;
     sh:targetClass opencloning_linkml:IGEMSource .
 
 opencloning_linkml:InFusionSource a sh:NodeShape ;
     sh:closed true ;
     sh:description "Represents the source of a sequence that is generated by In-Fusion cloning by Takara Bio" ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:string ;
-            sh:description "Designates the class" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 4 ;
-            sh:path opencloning_linkml:type ],
-        [ sh:class opencloning_linkml:AssemblyFragment ;
-            sh:description "A list of the fragments that are assembled, in order" ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 1 ;
-            sh:path opencloning_linkml:assembly ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path schema1:object ],
-        [ sh:datatype xsd:integer ;
-            sh:description "The id of an entity in a database" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 6 ;
-            sh:path schema1:identifier ],
-        [ sh:datatype xsd:boolean ;
-            sh:description "Whether the assembly is circular or not" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 0 ;
-            sh:path opencloning_linkml:circular ],
-        [ sh:datatype xsd:integer ;
-            sh:description "A unique identifier for a thing" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 7 ;
-            sh:path schema1:identifier ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "Identifier of the sequence that is the output of this source." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path schema1:result ],
-        [ sh:datatype xsd:string ;
-            sh:description "Used to specify the name of the output sequence" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 5 ;
-            sh:path opencloning_linkml:output_name ] ;
-    sh:targetClass opencloning_linkml:InFusionSource .
-
-opencloning_linkml:InVivoAssemblySource a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "Represents the source of a sequence that is generated by in vivo assembly. Algorithmically equivalent to Gibson assembly." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:class bioschemas:DNA ;
             sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
@@ -960,11 +907,10 @@ opencloning_linkml:InVivoAssemblySource a sh:NodeShape ;
             sh:order 2 ;
             sh:path schema1:object ],
         [ sh:datatype xsd:integer ;
-            sh:description "A unique identifier for a thing" ;
+            sh:description "The id of an entity in a database" ;
             sh:maxCount 1 ;
-            sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 7 ;
+            sh:order 6 ;
             sh:path schema1:identifier ],
         [ sh:datatype xsd:string ;
             sh:description "Designates the class" ;
@@ -972,6 +918,123 @@ opencloning_linkml:InVivoAssemblySource a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 4 ;
             sh:path opencloning_linkml:type ],
+        [ sh:datatype xsd:integer ;
+            sh:description "A unique identifier for a thing" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path schema1:identifier ],
+        [ sh:class opencloning_linkml:AssemblyFragment ;
+            sh:description "A list of the fragments that are assembled, in order" ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path opencloning_linkml:assembly ],
+        [ sh:datatype xsd:string ;
+            sh:description "Used to specify the name of the output sequence" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path opencloning_linkml:output_name ],
+        [ sh:datatype xsd:boolean ;
+            sh:description "Whether the assembly is circular or not" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path opencloning_linkml:circular ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "Identifier of the sequence that is the output of this source." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path schema1:result ] ;
+    sh:targetClass opencloning_linkml:InFusionSource .
+
+opencloning_linkml:InVivoAssemblySource a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Represents the source of a sequence that is generated by in vivo assembly. Algorithmically equivalent to Gibson assembly." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "Designates the class" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path opencloning_linkml:type ],
+        [ sh:datatype xsd:boolean ;
+            sh:description "Whether the assembly is circular or not" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path opencloning_linkml:circular ],
+        [ sh:class opencloning_linkml:AssemblyFragment ;
+            sh:description "A list of the fragments that are assembled, in order" ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path opencloning_linkml:assembly ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "Identifier of the sequence that is the output of this source." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path schema1:result ],
+        [ sh:datatype xsd:string ;
+            sh:description "Used to specify the name of the output sequence" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path opencloning_linkml:output_name ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path schema1:object ],
+        [ sh:datatype xsd:integer ;
+            sh:description "The id of an entity in a database" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:integer ;
+            sh:description "A unique identifier for a thing" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path schema1:identifier ] ;
+    sh:targetClass opencloning_linkml:InVivoAssemblySource .
+
+opencloning_linkml:LigationSource a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Represents the source of a sequence that is generated by ligation with sticky or blunt ends." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class opencloning_linkml:AssemblyFragment ;
+            sh:description "A list of the fragments that are assembled, in order" ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 1 ;
+            sh:path opencloning_linkml:assembly ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "Identifier of the sequence that is the output of this source." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path schema1:result ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path schema1:object ],
+        [ sh:datatype xsd:string ;
+            sh:description "Designates the class" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path opencloning_linkml:type ],
+        [ sh:datatype xsd:integer ;
+            sh:description "The id of an entity in a database" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path schema1:identifier ],
         [ sh:datatype xsd:boolean ;
             sh:description "Whether the assembly is circular or not" ;
             sh:maxCount 1 ;
@@ -984,88 +1047,24 @@ opencloning_linkml:InVivoAssemblySource a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 5 ;
             sh:path opencloning_linkml:output_name ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "Identifier of the sequence that is the output of this source." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path schema1:result ],
         [ sh:datatype xsd:integer ;
-            sh:description "The id of an entity in a database" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 6 ;
-            sh:path schema1:identifier ],
-        [ sh:class opencloning_linkml:AssemblyFragment ;
-            sh:description "A list of the fragments that are assembled, in order" ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 1 ;
-            sh:path opencloning_linkml:assembly ] ;
-    sh:targetClass opencloning_linkml:InVivoAssemblySource .
-
-opencloning_linkml:LigationSource a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "Represents the source of a sequence that is generated by ligation with sticky or blunt ends." ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:integer ;
             sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 7 ;
-            sh:path schema1:identifier ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path schema1:object ],
-        [ sh:datatype xsd:integer ;
-            sh:description "The id of an entity in a database" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 6 ;
-            sh:path schema1:identifier ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "Identifier of the sequence that is the output of this source." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path schema1:result ],
-        [ sh:class opencloning_linkml:AssemblyFragment ;
-            sh:description "A list of the fragments that are assembled, in order" ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 1 ;
-            sh:path opencloning_linkml:assembly ],
-        [ sh:datatype xsd:string ;
-            sh:description "Designates the class" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 4 ;
-            sh:path opencloning_linkml:type ],
-        [ sh:datatype xsd:string ;
-            sh:description "Used to specify the name of the output sequence" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 5 ;
-            sh:path opencloning_linkml:output_name ],
-        [ sh:datatype xsd:boolean ;
-            sh:description "Whether the assembly is circular or not" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 0 ;
-            sh:path opencloning_linkml:circular ] ;
+            sh:path schema1:identifier ] ;
     sh:targetClass opencloning_linkml:LigationSource .
 
 opencloning_linkml:ManuallyTypedSource a sh:NodeShape ;
     sh:closed true ;
     sh:description "Represents the source of a sequence that is manually typed by the user" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:integer ;
-            sh:description "The id of an entity in a database" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 8 ;
-            sh:path schema1:identifier ],
+    sh:property [ sh:class bioschemas:DNA ;
+            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 4 ;
+            sh:path schema1:object ],
         [ sh:class bioschemas:DNA ;
             sh:description "Identifier of the sequence that is the output of this source." ;
             sh:maxCount 1 ;
@@ -1078,6 +1077,24 @@ opencloning_linkml:ManuallyTypedSource a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 6 ;
             sh:path opencloning_linkml:type ],
+        [ sh:datatype xsd:integer ;
+            sh:description "The id of an entity in a database" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:description "Used to specify the name of the output sequence" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path opencloning_linkml:output_name ],
+        [ sh:datatype xsd:boolean ;
+            sh:description "Whether the sequence is circular or not" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path opencloning_linkml:circular ],
         [ sh:datatype xsd:integer ;
             sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
@@ -1085,17 +1102,6 @@ opencloning_linkml:ManuallyTypedSource a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 9 ;
             sh:path schema1:identifier ],
-        [ sh:datatype xsd:integer ;
-            sh:description "The equivalent of `overhang_crick_3prime` but for the watson strand" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 1 ;
-            sh:path opencloning_linkml:overhang_watson_3prime ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 4 ;
-            sh:path schema1:object ],
         [ sh:datatype xsd:integer ;
             sh:description "Taken from pydna's `dseq::ovhg`An integer describing the length of the crick strand overhang in the 5' of the molecule, or 3' of the crick strand" ;
             sh:maxCount 1 ;
@@ -1109,18 +1115,12 @@ opencloning_linkml:ManuallyTypedSource a sh:NodeShape ;
             sh:order 2 ;
             sh:path opencloning_linkml:user_input ;
             sh:pattern "^[acgtACGT]+$" ],
-        [ sh:datatype xsd:boolean ;
-            sh:description "Whether the sequence is circular or not" ;
+        [ sh:datatype xsd:integer ;
+            sh:description "The equivalent of `overhang_crick_3prime` but for the watson strand" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 3 ;
-            sh:path opencloning_linkml:circular ],
-        [ sh:datatype xsd:string ;
-            sh:description "Used to specify the name of the output sequence" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 7 ;
-            sh:path opencloning_linkml:output_name ] ;
+            sh:order 1 ;
+            sh:path opencloning_linkml:overhang_watson_3prime ] ;
     sh:targetClass opencloning_linkml:ManuallyTypedSource .
 
 opencloning_linkml:OligoHybridizationSource a sh:NodeShape ;
@@ -1132,12 +1132,6 @@ opencloning_linkml:OligoHybridizationSource a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 3 ;
             sh:path schema1:object ],
-        [ sh:datatype xsd:integer ;
-            sh:description "The id of an entity in a database" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 7 ;
-            sh:path schema1:identifier ],
         [ sh:datatype xsd:string ;
             sh:description "Designates the class" ;
             sh:maxCount 1 ;
@@ -1145,30 +1139,10 @@ opencloning_linkml:OligoHybridizationSource a sh:NodeShape ;
             sh:order 5 ;
             sh:path opencloning_linkml:type ],
         [ sh:datatype xsd:integer ;
-            sh:description "Taken from pydna's `dseq::ovhg`An integer describing the length of the crick strand overhang in the 5' of the molecule, or 3' of the crick strand" ;
+            sh:description "The id of an entity in a database" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 0 ;
-            sh:path opencloning_linkml:overhang_crick_3prime ],
-        [ sh:class opencloning_linkml:Primer ;
-            sh:description "The reverse oligo used in the hybridization" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path opencloning_linkml:reverse_oligo ],
-        [ sh:datatype xsd:string ;
-            sh:description "Used to specify the name of the output sequence" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 6 ;
-            sh:path opencloning_linkml:output_name ],
-        [ sh:datatype xsd:integer ;
-            sh:description "A unique identifier for a thing" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 8 ;
+            sh:order 7 ;
             sh:path schema1:identifier ],
         [ sh:class opencloning_linkml:Primer ;
             sh:description "The forward oligo used in the hybridization" ;
@@ -1182,7 +1156,33 @@ opencloning_linkml:OligoHybridizationSource a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 4 ;
-            sh:path schema1:result ] ;
+            sh:path schema1:result ],
+        [ sh:datatype xsd:integer ;
+            sh:description "A unique identifier for a thing" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:integer ;
+            sh:description "Taken from pydna's `dseq::ovhg`An integer describing the length of the crick strand overhang in the 5' of the molecule, or 3' of the crick strand" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path opencloning_linkml:overhang_crick_3prime ],
+        [ sh:datatype xsd:string ;
+            sh:description "Used to specify the name of the output sequence" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path opencloning_linkml:output_name ],
+        [ sh:class opencloning_linkml:Primer ;
+            sh:description "The reverse oligo used in the hybridization" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path opencloning_linkml:reverse_oligo ] ;
     sh:targetClass opencloning_linkml:OligoHybridizationSource .
 
 opencloning_linkml:OverlapExtensionPCRLigationSource a sh:NodeShape ;
@@ -1194,6 +1194,24 @@ opencloning_linkml:OverlapExtensionPCRLigationSource a sh:NodeShape ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:order 1 ;
             sh:path opencloning_linkml:assembly ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "Identifier of the sequence that is the output of this source." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path schema1:result ],
+        [ sh:datatype xsd:integer ;
+            sh:description "The id of an entity in a database" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:boolean ;
+            sh:description "Whether the assembly is circular or not" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path opencloning_linkml:circular ],
         [ sh:datatype xsd:string ;
             sh:description "Used to specify the name of the output sequence" ;
             sh:maxCount 1 ;
@@ -1207,35 +1225,17 @@ opencloning_linkml:OverlapExtensionPCRLigationSource a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 7 ;
             sh:path schema1:identifier ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "Identifier of the sequence that is the output of this source." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path schema1:result ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path schema1:object ],
-        [ sh:datatype xsd:integer ;
-            sh:description "The id of an entity in a database" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 6 ;
-            sh:path schema1:identifier ],
         [ sh:datatype xsd:string ;
             sh:description "Designates the class" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 4 ;
             sh:path opencloning_linkml:type ],
-        [ sh:datatype xsd:boolean ;
-            sh:description "Whether the assembly is circular or not" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 0 ;
-            sh:path opencloning_linkml:circular ] ;
+        [ sh:class bioschemas:DNA ;
+            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path schema1:object ] ;
     sh:targetClass opencloning_linkml:OverlapExtensionPCRLigationSource .
 
 opencloning_linkml:PCRSource a sh:NodeShape ;
@@ -1243,27 +1243,17 @@ opencloning_linkml:PCRSource a sh:NodeShape ;
     sh:description "Represents the source of a sequence that is generated by PCR" ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:datatype xsd:string ;
-            sh:description "Used to specify the name of the output sequence" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 6 ;
-            sh:path opencloning_linkml:output_name ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path schema1:object ],
-        [ sh:class opencloning_linkml:AssemblyFragment ;
-            sh:description "A list of the fragments that are assembled, in order" ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 2 ;
-            sh:path opencloning_linkml:assembly ],
-        [ sh:datatype xsd:string ;
             sh:description "Designates the class" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 5 ;
             sh:path opencloning_linkml:type ],
+        [ sh:datatype xsd:boolean ;
+            sh:description "Whether the assembly is circular or not" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path opencloning_linkml:circular ],
         [ sh:datatype xsd:integer ;
             sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
@@ -1271,255 +1261,29 @@ opencloning_linkml:PCRSource a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 8 ;
             sh:path schema1:identifier ],
-        [ sh:datatype xsd:boolean ;
-            sh:description "Whether the assembly is circular or not" ;
+        [ sh:datatype xsd:string ;
+            sh:description "Used to specify the name of the output sequence" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 1 ;
-            sh:path opencloning_linkml:circular ],
+            sh:order 6 ;
+            sh:path opencloning_linkml:output_name ],
+        [ sh:class opencloning_linkml:AssemblyFragment ;
+            sh:description "A list of the fragments that are assembled, in order" ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path opencloning_linkml:assembly ],
         [ sh:datatype xsd:boolean ;
             sh:description "Whether to add primer features to the PCR product" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 0 ;
             sh:path opencloning_linkml:add_primer_features ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "Identifier of the sequence that is the output of this source." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 4 ;
-            sh:path schema1:result ],
         [ sh:datatype xsd:integer ;
             sh:description "The id of an entity in a database" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 7 ;
-            sh:path schema1:identifier ] ;
-    sh:targetClass opencloning_linkml:PCRSource .
-
-opencloning_linkml:PlannotateAnnotationReport a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "Represents a report of an annotation step using Plannotate" ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:integer ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 2 ;
-            sh:path opencloning_linkml:end_location ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 11 ;
-            sh:path opencloning_linkml:Type ],
-        [ sh:datatype xsd:integer ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 5 ;
-            sh:path opencloning_linkml:full_length_of_feature_in_db ],
-        [ sh:datatype xsd:integer ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 6 ;
-            sh:path opencloning_linkml:length_of_found_feature ],
-        [ sh:datatype xsd:float ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 7 ;
-            sh:path opencloning_linkml:percent_match_length ],
-        [ sh:datatype xsd:boolean ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 8 ;
-            sh:path opencloning_linkml:fragment ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 9 ;
-            sh:path opencloning_linkml:database ],
-        [ sh:datatype xsd:string ;
-            sh:description "Designates the class" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 14 ;
-            sh:path opencloning_linkml:type ],
-        [ sh:datatype xsd:integer ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 1 ;
-            sh:path opencloning_linkml:start_location ],
-        [ sh:datatype xsd:integer ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 3 ;
-            sh:path opencloning_linkml:strand ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 12 ;
-            sh:path opencloning_linkml:Description ],
-        [ sh:datatype xsd:float ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 4 ;
-            sh:path opencloning_linkml:percent_identity ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 13 ;
-            sh:path opencloning_linkml:sequence ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 0 ;
-            sh:path opencloning_linkml:sseqid ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 10 ;
-            sh:path opencloning_linkml:Feature ] ;
-    sh:targetClass opencloning_linkml:PlannotateAnnotationReport .
-
-opencloning_linkml:PolymeraseExtensionSource a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "Represents the source of a sequence that is generated by polymerase extension" ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class bioschemas:DNA ;
-            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path schema1:object ],
-        [ sh:datatype xsd:integer ;
-            sh:description "The id of an entity in a database" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 4 ;
             sh:path schema1:identifier ],
-        [ sh:datatype xsd:integer ;
-            sh:description "A unique identifier for a thing" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 5 ;
-            sh:path schema1:identifier ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "Identifier of the sequence that is the output of this source." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path schema1:result ],
-        [ sh:datatype xsd:string ;
-            sh:description "Designates the class" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 2 ;
-            sh:path opencloning_linkml:type ],
-        [ sh:datatype xsd:string ;
-            sh:description "Used to specify the name of the output sequence" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 3 ;
-            sh:path opencloning_linkml:output_name ] ;
-    sh:targetClass opencloning_linkml:PolymeraseExtensionSource .
-
-opencloning_linkml:RepositoryIdSource a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "Represents the source of a sequence that is identified by a repository id" ;
-    sh:ignoredProperties ( opencloning_linkml:sequence_file_url rdf:type opencloning_linkml:addgene_sequence_type ) ;
-    sh:property [ sh:datatype xsd:integer ;
-            sh:description "The id of an entity in a database" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 6 ;
-            sh:path schema1:identifier ],
-        [ sh:datatype xsd:string ;
-            sh:description "The id of the sequence in the repository" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 0 ;
-            sh:path opencloning_linkml:repository_id ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "Identifier of the sequence that is the output of this source." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path schema1:result ],
-        [ sh:datatype xsd:string ;
-            sh:description "Used to specify the name of the output sequence" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 5 ;
-            sh:path opencloning_linkml:output_name ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path schema1:object ],
-        [ sh:datatype xsd:integer ;
-            sh:description "A unique identifier for a thing" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 7 ;
-            sh:path schema1:identifier ],
-        [ sh:in ( "addgene" "genbank" "benchling" "snapgene" "euroscarf" "igem" "wekwikgene" "seva" ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 1 ;
-            sh:path opencloning_linkml:repository_name ],
-        [ sh:datatype xsd:string ;
-            sh:description "Designates the class" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 4 ;
-            sh:path opencloning_linkml:type ] ;
-    sh:targetClass opencloning_linkml:RepositoryIdSource .
-
-opencloning_linkml:RestrictionAndLigationSource a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "Represents the source of a sequence that is generated by restriction and ligation" ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:integer ;
-            sh:description "The id of an entity in a database" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 7 ;
-            sh:path schema1:identifier ],
-        [ sh:class opencloning_linkml:AssemblyFragment ;
-            sh:description "A list of the fragments that are assembled, in order" ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 2 ;
-            sh:path opencloning_linkml:assembly ],
-        [ sh:datatype xsd:string ;
-            sh:description "Used to specify the name of the output sequence" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 6 ;
-            sh:path opencloning_linkml:output_name ],
-        [ sh:datatype xsd:integer ;
-            sh:description "A unique identifier for a thing" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 8 ;
-            sh:path schema1:identifier ],
-        [ sh:datatype xsd:string ;
-            sh:description "Designates the class" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 5 ;
-            sh:path opencloning_linkml:type ],
-        [ sh:datatype xsd:string ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 0 ;
-            sh:path opencloning_linkml:restriction_enzymes ],
-        [ sh:datatype xsd:boolean ;
-            sh:description "Whether the assembly is circular or not" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 1 ;
-            sh:path opencloning_linkml:circular ],
         [ sh:class bioschemas:DNA ;
             sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
             sh:nodeKind sh:IRI ;
@@ -1531,6 +1295,242 @@ opencloning_linkml:RestrictionAndLigationSource a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 4 ;
             sh:path schema1:result ] ;
+    sh:targetClass opencloning_linkml:PCRSource .
+
+opencloning_linkml:PlannotateAnnotationReport a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Represents a report of an annotation step using Plannotate" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 11 ;
+            sh:path opencloning_linkml:Type ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 10 ;
+            sh:path opencloning_linkml:Feature ],
+        [ sh:datatype xsd:float ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path opencloning_linkml:percent_match_length ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path opencloning_linkml:strand ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 12 ;
+            sh:path opencloning_linkml:Description ],
+        [ sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path opencloning_linkml:fragment ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path opencloning_linkml:end_location ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 13 ;
+            sh:path opencloning_linkml:sequence ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path opencloning_linkml:start_location ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path opencloning_linkml:length_of_found_feature ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path opencloning_linkml:sseqid ],
+        [ sh:datatype xsd:float ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path opencloning_linkml:percent_identity ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 9 ;
+            sh:path opencloning_linkml:database ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path opencloning_linkml:full_length_of_feature_in_db ],
+        [ sh:datatype xsd:string ;
+            sh:description "Designates the class" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 14 ;
+            sh:path opencloning_linkml:type ] ;
+    sh:targetClass opencloning_linkml:PlannotateAnnotationReport .
+
+opencloning_linkml:PolymeraseExtensionSource a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Represents the source of a sequence that is generated by polymerase extension" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:integer ;
+            sh:description "A unique identifier for a thing" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path schema1:identifier ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "Identifier of the sequence that is the output of this source." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path schema1:result ],
+        [ sh:datatype xsd:string ;
+            sh:description "Used to specify the name of the output sequence" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path opencloning_linkml:output_name ],
+        [ sh:datatype xsd:integer ;
+            sh:description "The id of an entity in a database" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path schema1:identifier ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path schema1:object ],
+        [ sh:datatype xsd:string ;
+            sh:description "Designates the class" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path opencloning_linkml:type ] ;
+    sh:targetClass opencloning_linkml:PolymeraseExtensionSource .
+
+opencloning_linkml:RepositoryIdSource a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Represents the source of a sequence that is identified by a repository id" ;
+    sh:ignoredProperties ( rdf:type opencloning_linkml:addgene_sequence_type opencloning_linkml:sequence_file_url ) ;
+    sh:property [ sh:datatype xsd:integer ;
+            sh:description "A unique identifier for a thing" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:description "Used to specify the name of the output sequence" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path opencloning_linkml:output_name ],
+        [ sh:datatype xsd:integer ;
+            sh:description "The id of an entity in a database" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:description "Designates the class" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path opencloning_linkml:type ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path schema1:object ],
+        [ sh:datatype xsd:string ;
+            sh:description "The id of the sequence in the repository" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path opencloning_linkml:repository_id ],
+        [ sh:in ( "addgene" "genbank" "benchling" "snapgene" "euroscarf" "igem" "wekwikgene" "seva" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path opencloning_linkml:repository_name ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "Identifier of the sequence that is the output of this source." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path schema1:result ] ;
+    sh:targetClass opencloning_linkml:RepositoryIdSource .
+
+opencloning_linkml:RestrictionAndLigationSource a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Represents the source of a sequence that is generated by restriction and ligation" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class bioschemas:DNA ;
+            sh:description "Identifier of the sequence that is the output of this source." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 4 ;
+            sh:path schema1:result ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path opencloning_linkml:restriction_enzymes ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path schema1:object ],
+        [ sh:datatype xsd:string ;
+            sh:description "Designates the class" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path opencloning_linkml:type ],
+        [ sh:datatype xsd:integer ;
+            sh:description "A unique identifier for a thing" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:description "Used to specify the name of the output sequence" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path opencloning_linkml:output_name ],
+        [ sh:class opencloning_linkml:AssemblyFragment ;
+            sh:description "A list of the fragments that are assembled, in order" ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 2 ;
+            sh:path opencloning_linkml:assembly ],
+        [ sh:datatype xsd:boolean ;
+            sh:description "Whether the assembly is circular or not" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path opencloning_linkml:circular ],
+        [ sh:datatype xsd:integer ;
+            sh:description "The id of an entity in a database" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path schema1:identifier ] ;
     sh:targetClass opencloning_linkml:RestrictionAndLigationSource .
 
 opencloning_linkml:RestrictionEnzymeDigestionSource a sh:NodeShape ;
@@ -1543,23 +1543,27 @@ opencloning_linkml:RestrictionEnzymeDigestionSource a sh:NodeShape ;
             sh:order 1 ;
             sh:path opencloning_linkml:right_edge ],
         [ sh:datatype xsd:integer ;
-            sh:description "A unique identifier for a thing" ;
+            sh:description "The id of an entity in a database" ;
             sh:maxCount 1 ;
-            sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 7 ;
+            sh:order 6 ;
             sh:path schema1:identifier ],
-        [ sh:class opencloning_linkml:RestrictionSequenceCut ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 0 ;
-            sh:path opencloning_linkml:left_edge ],
         [ sh:class bioschemas:DNA ;
             sh:description "Identifier of the sequence that is the output of this source." ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 3 ;
             sh:path schema1:result ],
+        [ sh:class opencloning_linkml:RestrictionSequenceCut ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:order 0 ;
+            sh:path opencloning_linkml:left_edge ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path schema1:object ],
         [ sh:datatype xsd:string ;
             sh:description "Designates the class" ;
             sh:maxCount 1 ;
@@ -1567,22 +1571,18 @@ opencloning_linkml:RestrictionEnzymeDigestionSource a sh:NodeShape ;
             sh:order 4 ;
             sh:path opencloning_linkml:type ],
         [ sh:datatype xsd:integer ;
-            sh:description "The id of an entity in a database" ;
+            sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
+            sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 6 ;
+            sh:order 7 ;
             sh:path schema1:identifier ],
         [ sh:datatype xsd:string ;
             sh:description "Used to specify the name of the output sequence" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 5 ;
-            sh:path opencloning_linkml:output_name ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path schema1:object ] ;
+            sh:path opencloning_linkml:output_name ] ;
     sh:targetClass opencloning_linkml:RestrictionEnzymeDigestionSource .
 
 opencloning_linkml:ReverseComplementSource a sh:NodeShape ;
@@ -1590,22 +1590,17 @@ opencloning_linkml:ReverseComplementSource a sh:NodeShape ;
     sh:description "Represents the in-silico transformation of a sequence into its reverse complement" ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:class bioschemas:DNA ;
-            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:description "Identifier of the sequence that is the output of this source." ;
+            sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path schema1:object ],
+            sh:order 1 ;
+            sh:path schema1:result ],
         [ sh:datatype xsd:string ;
             sh:description "Used to specify the name of the output sequence" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 3 ;
             sh:path opencloning_linkml:output_name ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "Identifier of the sequence that is the output of this source." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path schema1:result ],
         [ sh:datatype xsd:integer ;
             sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
@@ -1613,6 +1608,11 @@ opencloning_linkml:ReverseComplementSource a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 5 ;
             sh:path schema1:identifier ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path schema1:object ],
         [ sh:datatype xsd:integer ;
             sh:description "The id of an entity in a database" ;
             sh:maxCount 1 ;
@@ -1631,50 +1631,12 @@ opencloning_linkml:SEVASource a sh:NodeShape ;
     sh:closed true ;
     sh:description "Represents the source of a sequence that is identified by a SEVA id" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class bioschemas:DNA ;
-            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path schema1:object ],
-        [ sh:datatype xsd:string ;
-            sh:description "The SEVA plasmid name" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 1 ;
-            sh:path opencloning_linkml:repository_id ;
-            sh:pattern "^pSEVA\\d+.*$" ],
-        [ sh:datatype xsd:integer ;
+    sh:property [ sh:datatype xsd:integer ;
             sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 8 ;
-            sh:path schema1:identifier ],
-        [ sh:in ( "addgene" "genbank" "benchling" "snapgene" "euroscarf" "igem" "wekwikgene" "seva" ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 2 ;
-            sh:path opencloning_linkml:repository_name ],
-        [ sh:datatype xsd:string ;
-            sh:description "The URL of the sequence file, which can refer to a a gb file hosted on the SEVA website or an entry in the NCBI." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 0 ;
-            sh:path opencloning_linkml:sequence_file_url ;
-            sh:pattern "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$" ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "Identifier of the sequence that is the output of this source." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 4 ;
-            sh:path schema1:result ],
-        [ sh:datatype xsd:integer ;
-            sh:description "The id of an entity in a database" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 7 ;
             sh:path schema1:identifier ],
         [ sh:datatype xsd:string ;
             sh:description "Designates the class" ;
@@ -1687,25 +1649,69 @@ opencloning_linkml:SEVASource a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 6 ;
-            sh:path opencloning_linkml:output_name ] ;
+            sh:path opencloning_linkml:output_name ],
+        [ sh:datatype xsd:integer ;
+            sh:description "The id of an entity in a database" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:description "The URL of the sequence file, which can refer to a a gb file hosted on the SEVA website or an entry in the NCBI." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path opencloning_linkml:sequence_file_url ;
+            sh:pattern "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$" ],
+        [ sh:in ( "addgene" "genbank" "benchling" "snapgene" "euroscarf" "igem" "wekwikgene" "seva" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 2 ;
+            sh:path opencloning_linkml:repository_name ],
+        [ sh:datatype xsd:string ;
+            sh:description "The SEVA plasmid name" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path opencloning_linkml:repository_id ;
+            sh:pattern "^pSEVA\\d+.*$" ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path schema1:object ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "Identifier of the sequence that is the output of this source." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 4 ;
+            sh:path schema1:result ] ;
     sh:targetClass opencloning_linkml:SEVASource .
 
 opencloning_linkml:SequenceCutSource a sh:NodeShape ;
     sh:closed true ;
     sh:description "Represents the source of a sequence that is a subfragment of another sequence, generated by sequence cutting." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:string ;
+    sh:property [ sh:class bioschemas:DNA ;
+            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path schema1:object ],
+        [ sh:datatype xsd:integer ;
+            sh:description "A unique identifier for a thing" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:string ;
             sh:description "Designates the class" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 4 ;
             sh:path opencloning_linkml:type ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "Identifier of the sequence that is the output of this source." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path schema1:result ],
         [ sh:datatype xsd:integer ;
             sh:description "The id of an entity in a database" ;
             sh:maxCount 1 ;
@@ -1717,29 +1723,23 @@ opencloning_linkml:SequenceCutSource a sh:NodeShape ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:order 0 ;
             sh:path opencloning_linkml:left_edge ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path schema1:object ],
         [ sh:datatype xsd:string ;
             sh:description "Used to specify the name of the output sequence" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 5 ;
             sh:path opencloning_linkml:output_name ],
-        [ sh:datatype xsd:integer ;
-            sh:description "A unique identifier for a thing" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 7 ;
-            sh:path schema1:identifier ],
         [ sh:class opencloning_linkml:SequenceCut ;
             sh:maxCount 1 ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:order 1 ;
-            sh:path opencloning_linkml:right_edge ] ;
+            sh:path opencloning_linkml:right_edge ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "Identifier of the sequence that is the output of this source." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path schema1:result ] ;
     sh:targetClass opencloning_linkml:SequenceCutSource .
 
 opencloning_linkml:SequencingFile a sh:NodeShape ;
@@ -1752,18 +1752,6 @@ opencloning_linkml:SequencingFile a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 0 ;
             sh:path opencloning_linkml:alignment ],
-        [ sh:description "The type of file" ;
-            sh:in ( NCIT:C171177 ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 4 ;
-            sh:path opencloning_linkml:file_type ],
-        [ sh:datatype xsd:string ;
-            sh:description "Designates the class" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 1 ;
-            sh:path opencloning_linkml:type ],
         [ sh:class bioschemas:DNA ;
             sh:description "The sequence this file is associated with" ;
             sh:maxCount 1 ;
@@ -1777,25 +1765,30 @@ opencloning_linkml:SequencingFile a sh:NodeShape ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 3 ;
-            sh:path opencloning_linkml:file_name ] ;
+            sh:path opencloning_linkml:file_name ],
+        [ sh:datatype xsd:string ;
+            sh:description "Designates the class" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path opencloning_linkml:type ],
+        [ sh:description "The type of file" ;
+            sh:in ( NCIT:C171177 ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 4 ;
+            sh:path opencloning_linkml:file_type ] ;
     sh:targetClass opencloning_linkml:SequencingFile .
 
 opencloning_linkml:SnapGenePlasmidSource a sh:NodeShape ;
     sh:closed true ;
     sh:description "Represents the source of a sequence from the SnapGene plasmid library identified by a SnapGene subpath of https://www.snapgene.com/plasmids/" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:integer ;
-            sh:description "The id of an entity in a database" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 6 ;
-            sh:path schema1:identifier ],
-        [ sh:datatype xsd:string ;
-            sh:description "Used to specify the name of the output sequence" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 5 ;
-            sh:path opencloning_linkml:output_name ],
+    sh:property [ sh:class bioschemas:DNA ;
+            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path schema1:object ],
         [ sh:datatype xsd:string ;
             sh:description "Designates the class" ;
             sh:maxCount 1 ;
@@ -1817,6 +1810,12 @@ opencloning_linkml:SnapGenePlasmidSource a sh:NodeShape ;
             sh:order 3 ;
             sh:path schema1:result ],
         [ sh:datatype xsd:integer ;
+            sh:description "The id of an entity in a database" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:integer ;
             sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -1828,49 +1827,62 @@ opencloning_linkml:SnapGenePlasmidSource a sh:NodeShape ;
             sh:minCount 1 ;
             sh:order 1 ;
             sh:path opencloning_linkml:repository_name ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path schema1:object ] ;
+        [ sh:datatype xsd:string ;
+            sh:description "Used to specify the name of the output sequence" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path opencloning_linkml:output_name ] ;
     sh:targetClass opencloning_linkml:SnapGenePlasmidSource .
 
 opencloning_linkml:TemplateSequence a sh:NodeShape ;
     sh:closed true ;
     sh:description "Represents a sequence that is part of a template, where the actual sequence content will be determined by the user's actions" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:boolean ;
-            sh:description "Whether the sequence is circular or linear" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 0 ;
-            sh:path opencloning_linkml:circular ],
-        [ sh:datatype xsd:string ;
-            sh:description "Designates the class" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 3 ;
-            sh:path opencloning_linkml:type ],
-        [ sh:datatype xsd:string ;
+    sh:property [ sh:datatype xsd:string ;
             sh:description "Can be used to indicate the intended primer design for this sequence in the template" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 1 ;
             sh:path opencloning_linkml:primer_design ],
+        [ sh:datatype xsd:boolean ;
+            sh:description "Whether the sequence is circular or linear" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path opencloning_linkml:circular ],
         [ sh:datatype xsd:integer ;
             sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 2 ;
-            sh:path schema1:identifier ] ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:description "Designates the class" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path opencloning_linkml:type ] ;
     sh:targetClass opencloning_linkml:TemplateSequence .
 
 opencloning_linkml:TextFileSequence a sh:NodeShape ;
     sh:closed true ;
     sh:description "A sequence (may have features) defined by the content of a text file" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:integer ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "Designates the class" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path opencloning_linkml:type ],
+        [ sh:datatype xsd:integer ;
+            sh:description "The equivalent of `overhang_crick_3prime` but for the watson strand" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path opencloning_linkml:overhang_watson_3prime ],
+        [ sh:datatype xsd:integer ;
             sh:description "Taken from pydna's `dseq::ovhg`An integer describing the length of the crick strand overhang in the 5' of the molecule, or 3' of the crick strand" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
@@ -1883,24 +1895,12 @@ opencloning_linkml:TextFileSequence a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 4 ;
             sh:path schema1:identifier ],
-        [ sh:datatype xsd:integer ;
-            sh:description "The equivalent of `overhang_crick_3prime` but for the watson strand" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 2 ;
-            sh:path opencloning_linkml:overhang_watson_3prime ],
         [ sh:description "The format of a sequence file" ;
             sh:in ( "fasta" "genbank" "snapgene" "embl" ) ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:order 0 ;
             sh:path opencloning_linkml:sequence_file_format ],
-        [ sh:datatype xsd:string ;
-            sh:description "Designates the class" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 5 ;
-            sh:path opencloning_linkml:type ],
         [ sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
@@ -1913,6 +1913,24 @@ opencloning_linkml:UploadedFileSource a sh:NodeShape ;
     sh:description "Represents the source of a sequence that is uploaded as a file" ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:class bioschemas:DNA ;
+            sh:description "Identifier of the sequence that is the output of this source." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 6 ;
+            sh:path schema1:result ],
+        [ sh:datatype xsd:integer ;
+            sh:description "The id of an entity in a database" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 9 ;
+            sh:path schema1:identifier ],
+        [ sh:description "The format of a sequence file" ;
+            sh:in ( "fasta" "genbank" "snapgene" "embl" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 0 ;
+            sh:path opencloning_linkml:sequence_file_format ],
+        [ sh:class bioschemas:DNA ;
             sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
             sh:nodeKind sh:IRI ;
             sh:order 5 ;
@@ -1929,6 +1947,12 @@ opencloning_linkml:UploadedFileSource a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 2 ;
             sh:path opencloning_linkml:index_in_file ],
+        [ sh:datatype xsd:string ;
+            sh:description "The name of the file" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path opencloning_linkml:file_name ],
         [ sh:datatype xsd:boolean ;
             sh:description "Whether the sequence should be circularized (FASTA only)" ;
             sh:maxCount 1 ;
@@ -1942,49 +1966,29 @@ opencloning_linkml:UploadedFileSource a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 10 ;
             sh:path schema1:identifier ],
-        [ sh:datatype xsd:integer ;
-            sh:description "The id of an entity in a database" ;
+        [ sh:description "If provided, coordinates within the sequence of the file to extract a subsequence" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 9 ;
-            sh:path schema1:identifier ],
-        [ sh:datatype xsd:string ;
-            sh:description "The name of the file" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 1 ;
-            sh:path opencloning_linkml:file_name ],
-        [ sh:description "The format of a sequence file" ;
-            sh:in ( "fasta" "genbank" "snapgene" "embl" ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 0 ;
-            sh:path opencloning_linkml:sequence_file_format ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "Identifier of the sequence that is the output of this source." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 6 ;
-            sh:path schema1:result ],
+            sh:order 4 ;
+            sh:path opencloning_linkml:coordinates ],
         [ sh:datatype xsd:string ;
             sh:description "Designates the class" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 7 ;
-            sh:path opencloning_linkml:type ],
-        [ sh:class bioschemas:SequenceRange ;
-            sh:description "If provided, coordinates within the sequence of the file to extract a subsequence" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 4 ;
-            sh:path opencloning_linkml:coordinates ] ;
+            sh:path opencloning_linkml:type ] ;
     sh:targetClass opencloning_linkml:UploadedFileSource .
 
 opencloning_linkml:WekWikGeneIdSource a sh:NodeShape ;
     sh:closed true ;
     sh:description "Represents the source of a sequence that is identified by a WekWikGene id" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:string ;
+    sh:property [ sh:in ( "addgene" "genbank" "benchling" "snapgene" "euroscarf" "igem" "wekwikgene" "seva" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 2 ;
+            sh:path opencloning_linkml:repository_name ],
+        [ sh:datatype xsd:string ;
             sh:description "The URL of a sequence file" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
@@ -1992,11 +1996,11 @@ opencloning_linkml:WekWikGeneIdSource a sh:NodeShape ;
             sh:path opencloning_linkml:sequence_file_url ;
             sh:pattern "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$" ],
         [ sh:datatype xsd:string ;
-            sh:description "Designates the class" ;
+            sh:description "Used to specify the name of the output sequence" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 5 ;
-            sh:path opencloning_linkml:type ],
+            sh:order 6 ;
+            sh:path opencloning_linkml:output_name ],
         [ sh:datatype xsd:string ;
             sh:description "The id of the gene in the WekWik gene database" ;
             sh:maxCount 1 ;
@@ -2005,22 +2009,6 @@ opencloning_linkml:WekWikGeneIdSource a sh:NodeShape ;
             sh:order 1 ;
             sh:path opencloning_linkml:repository_id ;
             sh:pattern "^\\d+$" ],
-        [ sh:in ( "addgene" "genbank" "benchling" "snapgene" "euroscarf" "igem" "wekwikgene" "seva" ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 2 ;
-            sh:path opencloning_linkml:repository_name ],
-        [ sh:class bioschemas:DNA ;
-            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path schema1:object ],
-        [ sh:datatype xsd:integer ;
-            sh:description "The id of an entity in a database" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 7 ;
-            sh:path schema1:identifier ],
         [ sh:datatype xsd:integer ;
             sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
@@ -2028,24 +2016,35 @@ opencloning_linkml:WekWikGeneIdSource a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 8 ;
             sh:path schema1:identifier ],
-        [ sh:datatype xsd:string ;
-            sh:description "Used to specify the name of the output sequence" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 6 ;
-            sh:path opencloning_linkml:output_name ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path schema1:object ],
         [ sh:class bioschemas:DNA ;
             sh:description "Identifier of the sequence that is the output of this source." ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 4 ;
-            sh:path schema1:result ] ;
+            sh:path schema1:result ],
+        [ sh:datatype xsd:string ;
+            sh:description "Designates the class" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path opencloning_linkml:type ],
+        [ sh:datatype xsd:integer ;
+            sh:description "The id of an entity in a database" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path schema1:identifier ] ;
     sh:targetClass opencloning_linkml:WekWikGeneIdSource .
 
 opencloning_linkml:AnnotationReport a sh:NodeShape ;
     sh:closed true ;
     sh:description "Represents a report of an annotation step" ;
-    sh:ignoredProperties ( opencloning_linkml:Feature opencloning_linkml:fragment opencloning_linkml:full_length_of_feature_in_db opencloning_linkml:Type rdf:type opencloning_linkml:sequence opencloning_linkml:end_location opencloning_linkml:start_location opencloning_linkml:sseqid opencloning_linkml:length_of_found_feature opencloning_linkml:database opencloning_linkml:Description opencloning_linkml:percent_match_length opencloning_linkml:strand opencloning_linkml:percent_identity ) ;
+    sh:ignoredProperties ( opencloning_linkml:Feature opencloning_linkml:database opencloning_linkml:fragment opencloning_linkml:strand opencloning_linkml:Type opencloning_linkml:sequence opencloning_linkml:end_location opencloning_linkml:percent_match_length opencloning_linkml:sseqid opencloning_linkml:start_location opencloning_linkml:length_of_found_feature opencloning_linkml:Description rdf:type opencloning_linkml:full_length_of_feature_in_db opencloning_linkml:percent_identity ) ;
     sh:property [ sh:datatype xsd:string ;
             sh:description "Designates the class" ;
             sh:maxCount 1 ;
@@ -2064,6 +2063,13 @@ opencloning_linkml:AssociatedFile a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 0 ;
             sh:path opencloning_linkml:type ],
+        [ sh:datatype xsd:string ;
+            sh:description "The name of the file" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path opencloning_linkml:file_name ],
         [ sh:class bioschemas:DNA ;
             sh:description "The sequence this file is associated with" ;
             sh:maxCount 1 ;
@@ -2076,21 +2082,21 @@ opencloning_linkml:AssociatedFile a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:order 3 ;
-            sh:path opencloning_linkml:file_type ],
-        [ sh:datatype xsd:string ;
-            sh:description "The name of the file" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 2 ;
-            sh:path opencloning_linkml:file_name ] ;
+            sh:path opencloning_linkml:file_type ] ;
     sh:targetClass opencloning_linkml:AssociatedFile .
 
 opencloning_linkml:CollectionOption a sh:NodeShape ;
     sh:closed true ;
     sh:description "Represents an option in a collection" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class schema1:CreateAction ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "A human-readable name for a thing" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path schema1:name ],
+        [ sh:class schema1:CreateAction ;
             sh:description "The source of the sequence for this option" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -2102,61 +2108,54 @@ opencloning_linkml:CollectionOption a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:order 2 ;
-            sh:path opencloning_linkml:info ],
-        [ sh:datatype xsd:string ;
-            sh:description "A human-readable name for a thing" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 0 ;
-            sh:path schema1:name ] ;
+            sh:path opencloning_linkml:info ] ;
     sh:targetClass opencloning_linkml:CollectionOption .
 
 opencloning_linkml:CollectionOptionInfo a sh:NodeShape ;
     sh:closed true ;
     sh:description "Additional information about a collection option" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:description "The type of the option, this is redundant with the type of the source, and could be removed." ;
-            sh:in ( "OligoPair" "AddgenePlasmid" ) ;
-            sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path opencloning_linkml:type ],
-        [ sh:datatype xsd:string ;
-            sh:description "A description of the option" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 1 ;
-            sh:path opencloning_linkml:description ],
-        [ sh:datatype xsd:string ;
-            sh:description "The well position in the kit plate" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 4 ;
-            sh:path opencloning_linkml:well ],
-        [ sh:datatype xsd:string ;
+    sh:property [ sh:datatype xsd:string ;
             sh:description "The antibiotic resistance of the plasmid" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 3 ;
             sh:path opencloning_linkml:resistance ],
         [ sh:datatype xsd:string ;
+            sh:description "A description of the option" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path opencloning_linkml:description ],
+        [ sh:description "The type of the option, this is redundant with the type of the source, and could be removed." ;
+            sh:in ( "OligoPair" "AddgenePlasmid" ) ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path opencloning_linkml:type ],
+        [ sh:datatype xsd:string ;
             sh:description "A human-readable name for a thing" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 0 ;
-            sh:path schema1:name ] ;
+            sh:path schema1:name ],
+        [ sh:datatype xsd:string ;
+            sh:description "The well position in the kit plate" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path opencloning_linkml:well ] ;
     sh:targetClass opencloning_linkml:CollectionOptionInfo .
 
 schema1:CreateAction a sh:NodeShape ;
     sh:closed false ;
     sh:description "Represents the source of a sequence" ;
-    sh:ignoredProperties ( opencloning_linkml:assembly_accession opencloning_linkml:assembly opencloning_linkml:annotation_tool_version opencloning_linkml:circularize opencloning_linkml:coordinates opencloning_linkml:annotation_report opencloning_linkml:sequence_accession opencloning_linkml:annotation_tool opencloning_linkml:reaction_type opencloning_linkml:image opencloning_linkml:file_name opencloning_linkml:greedy opencloning_linkml:restriction_enzymes opencloning_linkml:sequence_file_format opencloning_linkml:right_edge opencloning_linkml:forward_oligo opencloning_linkml:category_id opencloning_linkml:circular opencloning_linkml:locus_tag opencloning_linkml:overhang_watson_3prime opencloning_linkml:description opencloning_linkml:overhang_crick_3prime opencloning_linkml:title opencloning_linkml:repository_id opencloning_linkml:strand opencloning_linkml:options opencloning_linkml:add_primer_features opencloning_linkml:guides opencloning_linkml:sequence_file_url opencloning_linkml:gene_id opencloning_linkml:reverse_oligo opencloning_linkml:addgene_sequence_type rdf:type opencloning_linkml:end opencloning_linkml:index_in_file opencloning_linkml:user_input opencloning_linkml:left_edge opencloning_linkml:start opencloning_linkml:repository_name ) ;
-    sh:property [ sh:class bioschemas:DNA ;
-            sh:description "Identifier of the sequence that is the output of this source." ;
+    sh:ignoredProperties ( opencloning_linkml:repository_id opencloning_linkml:circularize opencloning_linkml:description opencloning_linkml:repository_name opencloning_linkml:strand opencloning_linkml:reaction_type opencloning_linkml:title opencloning_linkml:image opencloning_linkml:forward_oligo opencloning_linkml:user_input opencloning_linkml:annotation_tool opencloning_linkml:start opencloning_linkml:sequence_file_url opencloning_linkml:right_edge opencloning_linkml:annotation_report opencloning_linkml:options opencloning_linkml:gene_id opencloning_linkml:category_id opencloning_linkml:add_primer_features opencloning_linkml:guides opencloning_linkml:index_in_file opencloning_linkml:reverse_oligo opencloning_linkml:sequence_file_format opencloning_linkml:locus_tag opencloning_linkml:overhang_watson_3prime opencloning_linkml:overhang_crick_3prime opencloning_linkml:assembly_accession opencloning_linkml:sequence_accession opencloning_linkml:circular rdf:type opencloning_linkml:coordinates opencloning_linkml:left_edge opencloning_linkml:restriction_enzymes opencloning_linkml:end opencloning_linkml:file_name opencloning_linkml:annotation_tool_version opencloning_linkml:assembly opencloning_linkml:greedy opencloning_linkml:addgene_sequence_type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "Used to specify the name of the output sequence" ;
             sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path schema1:result ],
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path opencloning_linkml:output_name ],
         [ sh:class bioschemas:DNA ;
             sh:description "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty." ;
             sh:nodeKind sh:IRI ;
@@ -2168,44 +2167,44 @@ schema1:CreateAction a sh:NodeShape ;
             sh:nodeKind sh:Literal ;
             sh:order 4 ;
             sh:path schema1:identifier ],
-        [ sh:datatype xsd:string ;
-            sh:description "Used to specify the name of the output sequence" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 3 ;
-            sh:path opencloning_linkml:output_name ],
-        [ sh:datatype xsd:string ;
-            sh:description "Designates the class" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 2 ;
-            sh:path opencloning_linkml:type ],
         [ sh:datatype xsd:integer ;
             sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 5 ;
-            sh:path schema1:identifier ] ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:description "Designates the class" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path opencloning_linkml:type ],
+        [ sh:class bioschemas:DNA ;
+            sh:description "Identifier of the sequence that is the output of this source." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path schema1:result ] ;
     sh:targetClass schema1:CreateAction .
 
 opencloning_linkml:RestrictionSequenceCut a sh:NodeShape ;
     sh:closed true ;
     sh:description "Represents a cut in a DNA sequence that is made by a restriction enzyme" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:integer ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path opencloning_linkml:restriction_enzyme ],
+        [ sh:datatype xsd:integer ;
             sh:description "The length of the overhang that is left after the cut. It can be negative, same meaning as in pydna's `dseq::ovhg` and biopython's `Bio.Restriction.RestrictionType.ovhg`." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 2 ;
             sh:path opencloning_linkml:overhang ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 0 ;
-            sh:path opencloning_linkml:restriction_enzyme ],
         [ sh:datatype xsd:integer ;
             sh:description "The position of the cut in the watson strand. The cut is made before the base at this position (zero-based), so that cut position 1 cuts after the first base." ;
             sh:maxCount 1 ;
@@ -2218,66 +2217,39 @@ opencloning_linkml:RestrictionSequenceCut a sh:NodeShape ;
 opencloning_linkml:SequenceCut a sh:NodeShape ;
     sh:closed true ;
     sh:description "Represents a cut in a DNA sequence" ;
-    sh:ignoredProperties ( opencloning_linkml:restriction_enzyme rdf:type ) ;
+    sh:ignoredProperties ( rdf:type opencloning_linkml:restriction_enzyme ) ;
     sh:property [ sh:datatype xsd:integer ;
-            sh:description "The length of the overhang that is left after the cut. It can be negative, same meaning as in pydna's `dseq::ovhg` and biopython's `Bio.Restriction.RestrictionType.ovhg`." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 1 ;
-            sh:path opencloning_linkml:overhang ],
-        [ sh:datatype xsd:integer ;
             sh:description "The position of the cut in the watson strand. The cut is made before the base at this position (zero-based), so that cut position 1 cuts after the first base." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 0 ;
-            sh:path opencloning_linkml:cut_watson ] ;
-    sh:targetClass opencloning_linkml:SequenceCut .
-
-bioschemas:SequenceRange a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "Represents a location within a sequence, for now support for ranges only" ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:integer ;
-            sh:description "The starting coordinate (0-based) of the location" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 0 ;
-            sh:path bioschemas:rangeStart ],
+            sh:path opencloning_linkml:cut_watson ],
         [ sh:datatype xsd:integer ;
-            sh:description "The ending coordinate (0-based) of the location" ;
+            sh:description "The length of the overhang that is left after the cut. It can be negative, same meaning as in pydna's `dseq::ovhg` and biopython's `Bio.Restriction.RestrictionType.ovhg`." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 1 ;
-            sh:path bioschemas:rangeEnd ],
-        [ sh:datatype xsd:integer ;
-            sh:description "The strand of the location, should be 1 or -1 or null" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 2 ;
-            sh:path opencloning_linkml:strand ] ;
-    sh:targetClass bioschemas:SequenceRange .
+            sh:path opencloning_linkml:overhang ] ;
+    sh:targetClass opencloning_linkml:SequenceCut .
 
 opencloning_linkml:Primer a sh:NodeShape ;
     sh:closed true ;
     sh:description "An oligonucleotide or primer" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:integer ;
-            sh:description "A unique identifier for a thing" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 3 ;
-            sh:path schema1:identifier ],
-        [ sh:datatype xsd:string ;
+    sh:property [ sh:datatype xsd:string ;
             sh:description "A human-readable name for a thing" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 0 ;
             sh:path schema1:name ],
+        [ sh:datatype xsd:integer ;
+            sh:description "The id of an entity in a database" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path schema1:identifier ],
         [ sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
@@ -2291,10 +2263,11 @@ opencloning_linkml:Primer a sh:NodeShape ;
             sh:order 4 ;
             sh:path opencloning_linkml:type ],
         [ sh:datatype xsd:integer ;
-            sh:description "The id of an entity in a database" ;
+            sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
+            sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 1 ;
+            sh:order 3 ;
             sh:path schema1:identifier ] ;
     sh:targetClass opencloning_linkml:Primer .
 
@@ -2302,9 +2275,8 @@ opencloning_linkml:AssemblyFragment a sh:NodeShape ;
     sh:closed true ;
     sh:description "Represents a fragment in an assembly" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class bioschemas:SequenceRange ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:property [ sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
             sh:order 1 ;
             sh:path opencloning_linkml:left_location ],
         [ sh:datatype xsd:boolean ;
@@ -2320,9 +2292,8 @@ opencloning_linkml:AssemblyFragment a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 0 ;
             sh:path opencloning_linkml:sequence ],
-        [ sh:class bioschemas:SequenceRange ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
+        [ sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
             sh:order 2 ;
             sh:path opencloning_linkml:right_location ] ;
     sh:targetClass opencloning_linkml:AssemblyFragment .
@@ -2330,18 +2301,18 @@ opencloning_linkml:AssemblyFragment a sh:NodeShape ;
 bioschemas:DNA a sh:NodeShape ;
     sh:closed false ;
     sh:description "Represents a sequence" ;
-    sh:ignoredProperties ( opencloning_linkml:primer_design opencloning_linkml:overhang_crick_3prime rdf:type schema1:name opencloning_linkml:sequence opencloning_linkml:sequence_file_format opencloning_linkml:file_content opencloning_linkml:circular opencloning_linkml:overhang_watson_3prime ) ;
-    sh:property [ sh:datatype xsd:integer ;
+    sh:ignoredProperties ( opencloning_linkml:file_content opencloning_linkml:primer_design opencloning_linkml:overhang_watson_3prime opencloning_linkml:sequence opencloning_linkml:overhang_crick_3prime schema1:name opencloning_linkml:circular rdf:type opencloning_linkml:sequence_file_format ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "Designates the class" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path opencloning_linkml:type ],
+        [ sh:datatype xsd:integer ;
             sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 0 ;
-            sh:path schema1:identifier ],
-        [ sh:datatype xsd:string ;
-            sh:description "Designates the class" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 1 ;
-            sh:path opencloning_linkml:type ] ;
+            sh:path schema1:identifier ] ;
     sh:targetClass bioschemas:DNA .

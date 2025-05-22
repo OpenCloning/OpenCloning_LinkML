@@ -215,34 +215,18 @@
         {
           "sequence": 1,
           "left_location": null,
-          "right_location": {
-            "start": 13,
-            "end": 34,
-            "strand": null
-          },
+          "right_location": "14..34",
           "reverse_complemented": false
         },
         {
           "sequence": 8,
-          "left_location": {
-            "start": 1043,
-            "end": 1064,
-            "strand": null
-          },
-          "right_location": {
-            "start": 3740,
-            "end": 3762,
-            "strand": null
-          },
+          "left_location": "1044..1064",
+          "right_location": "3741..3762",
           "reverse_complemented": false
         },
         {
           "sequence": 2,
-          "left_location": {
-            "start": 0,
-            "end": 22,
-            "strand": null
-          },
+          "left_location": "1..22",
           "right_location": null,
           "reverse_complemented": true
         }
@@ -270,128 +254,56 @@
       "assembly": [
         {
           "sequence": 2,
-          "left_location": {
-            "start": 9,
-            "end": 13,
-            "strand": null
-          },
-          "right_location": {
-            "start": 203,
-            "end": 207,
-            "strand": null
-          },
+          "left_location": "10..13",
+          "right_location": "204..207",
           "reverse_complemented": false
         },
         {
           "sequence": 4,
-          "left_location": {
-            "start": 9,
-            "end": 13,
-            "strand": null
-          },
-          "right_location": {
-            "start": 698,
-            "end": 702,
-            "strand": null
-          },
+          "left_location": "10..13",
+          "right_location": "699..702",
           "reverse_complemented": false
         },
         {
           "sequence": 6,
-          "left_location": {
-            "start": 9,
-            "end": 13,
-            "strand": null
-          },
-          "right_location": {
-            "start": 726,
-            "end": 730,
-            "strand": null
-          },
+          "left_location": "10..13",
+          "right_location": "727..730",
           "reverse_complemented": false
         },
         {
           "sequence": 22,
-          "left_location": {
-            "start": 9,
-            "end": 13,
-            "strand": null
-          },
-          "right_location": {
-            "start": 2732,
-            "end": 2736,
-            "strand": null
-          },
+          "left_location": "10..13",
+          "right_location": "2733..2736",
           "reverse_complemented": false
         },
         {
           "sequence": 12,
-          "left_location": {
-            "start": 9,
-            "end": 13,
-            "strand": null
-          },
-          "right_location": {
-            "start": 247,
-            "end": 251,
-            "strand": null
-          },
+          "left_location": "10..13",
+          "right_location": "248..251",
           "reverse_complemented": false
         },
         {
           "sequence": 14,
-          "left_location": {
-            "start": 9,
-            "end": 13,
-            "strand": null
-          },
-          "right_location": {
-            "start": 182,
-            "end": 186,
-            "strand": null
-          },
+          "left_location": "10..13",
+          "right_location": "183..186",
           "reverse_complemented": false
         },
         {
           "sequence": 16,
-          "left_location": {
-            "start": 9,
-            "end": 13,
-            "strand": null
-          },
-          "right_location": {
-            "start": 1072,
-            "end": 1076,
-            "strand": null
-          },
+          "left_location": "10..13",
+          "right_location": "1073..1076",
           "reverse_complemented": false
         },
         {
           "sequence": 18,
-          "left_location": {
-            "start": 9,
-            "end": 13,
-            "strand": null
-          },
-          "right_location": {
-            "start": 521,
-            "end": 525,
-            "strand": null
-          },
+          "left_location": "10..13",
+          "right_location": "522..525",
           "reverse_complemented": false
         },
         {
           "sequence": 20,
-          "left_location": {
-            "start": 9,
-            "end": 13,
-            "strand": null
-          },
-          "right_location": {
-            "start": 1879,
-            "end": 1883,
-            "strand": null
-          },
+          "left_location": "10..13",
+          "right_location": "1880..1883",
           "reverse_complemented": false
         }
       ],
@@ -418,7 +330,7 @@
   ],
   "description": "Cloning of CDS of S. pombe gene pkl1 with an N-term Venus tag using MoClo kit from John Dueber, see:\n\nhttps://www.addgene.org/kits/moclo-ytk/#kit-contents\n\nThe plasmids used are:\n\npYTK002 - ConLS\npYTK009 - pTDH3\npYTK038 - Venus 65145\npayload - CDS of pkl1 from S. pombe\npYTK051 - tENO1 65158\npYTK067 - ConR1 65174\npYTK074 - URA3 65181\npYTK081 - CEN6/ARS4 65188\npYTK083 - AmpR-ColE1 65190\n\n\n\n\n",
   "files": null,
-  "schema_version": "0.2.8",
+  "schema_version": "0.2.9",
   "backend_version": null,
   "frontend_version": null
 }

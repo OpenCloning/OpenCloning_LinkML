@@ -13,9 +13,11 @@ def load_migrations() -> MigrationDict:
 
     # Import migration modules
     from .transformations.v0_2_6_1_to_v_0_2_8 import migrate_0_2_6_1_to_0_2_8  # noqa: F401
+    from .transformations.v0_2_8_to_v0_2_9 import migrate_0_2_8_to_0_2_9  # noqa: F401
 
     return {
         ("0.2.6.1", "0.2.8"): migrate_0_2_6_1_to_0_2_8,
+        ("0.2.8", "0.2.9"): migrate_0_2_8_to_0_2_9,
     }
 
 

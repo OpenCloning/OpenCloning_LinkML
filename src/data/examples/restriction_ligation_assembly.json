@@ -63,34 +63,18 @@
         {
           "sequence": 1,
           "left_location": null,
-          "right_location": {
-            "start": 12,
-            "end": 34,
-            "strand": null
-          },
+          "right_location": "13..34",
           "reverse_complemented": false
         },
         {
           "sequence": 2,
-          "left_location": {
-            "start": 1173,
-            "end": 1195,
-            "strand": null
-          },
-          "right_location": {
-            "start": 3393,
-            "end": 3417,
-            "strand": null
-          },
+          "left_location": "1174..1195",
+          "right_location": "3394..3417",
           "reverse_complemented": false
         },
         {
           "sequence": 2,
-          "left_location": {
-            "start": 0,
-            "end": 24,
-            "strand": null
-          },
+          "left_location": "1..24",
           "right_location": null,
           "reverse_complemented": true
         }
@@ -123,30 +107,14 @@
       "assembly": [
         {
           "sequence": 4,
-          "left_location": {
-            "start": 7,
-            "end": 11,
-            "strand": null
-          },
-          "right_location": {
-            "start": 2257,
-            "end": 2261,
-            "strand": null
-          },
+          "left_location": "8..11",
+          "right_location": "2258..2261",
           "reverse_complemented": false
         },
         {
           "sequence": 6,
-          "left_location": {
-            "start": 2355,
-            "end": 2359,
-            "strand": null
-          },
-          "right_location": {
-            "start": 2329,
-            "end": 2333,
-            "strand": null
-          },
+          "left_location": "2356..2359",
+          "right_location": "2330..2333",
           "reverse_complemented": false
         }
       ],
@@ -174,7 +142,7 @@
   ],
   "description": "",
   "files": null,
-  "schema_version": "0.2.8",
+  "schema_version": "0.2.9",
   "backend_version": null,
   "frontend_version": null
 }
