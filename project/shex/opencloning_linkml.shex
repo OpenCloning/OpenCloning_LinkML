@@ -7,6 +7,8 @@ PREFIX schema1: <http://schema.org/>
 PREFIX bioschemas: <https://bioschemas.org/>
 
 
+<VersionNumber> xsd:string
+
 linkml:String xsd:string
 
 linkml:Integer xsd:integer
@@ -125,7 +127,10 @@ linkml:Sparqlpath xsd:string
           <sources> @<Source> + ;
           <primers> @<Primer> * ;
           <description> @linkml:String ? ;
-          <files> @<AssociatedFile> *
+          <files> @<AssociatedFile> * ;
+          <schema_version> @<VersionNumber> ? ;
+          <backend_version> @<VersionNumber> ? ;
+          <frontend_version> @<VersionNumber> ?
        ) ;
        rdf:type [ <CloningStrategy> ] ?
     )

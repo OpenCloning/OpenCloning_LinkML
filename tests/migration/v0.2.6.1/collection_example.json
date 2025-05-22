@@ -3,14 +3,12 @@
     {
       "id": 2,
       "type": "TemplateSequence",
-      "circular": true,
-      "primer_design": null
+      "circular": true
     },
     {
       "id": 4,
       "type": "TemplateSequence",
-      "circular": true,
-      "primer_design": null
+      "circular": true
     }
   ],
   "sources": [
@@ -19,9 +17,6 @@
       "input": [],
       "output": 2,
       "type": "CollectionSource",
-      "output_name": null,
-      "database_id": null,
-      "category_id": null,
       "title": "Collection",
       "description": "A collection of plasmids",
       "image": [
@@ -32,33 +27,23 @@
           "name": "pFA6a-3HA-kanMX6",
           "source": {
             "id": 5,
-            "input": null,
-            "output": null,
             "type": "AddgeneIdSource",
-            "output_name": null,
-            "database_id": null,
-            "repository_id": "39295",
-            "repository_name": "addgene",
             "sequence_file_url": "https://media.addgene.org/snapgene-media/v1.7.9-0-g88a3305/sequences/49547/50886467-8250-49c3-8987-07dbd5627b8e/addgene-plasmid-39295-sequence-49547.gbk",
-            "addgene_sequence_type": "depositor-full"
-          },
-          "info": null
+            "addgene_sequence_type": "depositor-full",
+            "repository_name": "addgene",
+            "repository_id": "39295"
+          }
         },
         {
           "name": "pFA6a-kanMX6-P81nmt1",
           "source": {
             "id": 6,
-            "input": null,
-            "output": null,
             "type": "AddgeneIdSource",
-            "output_name": null,
-            "database_id": null,
-            "repository_id": "39282",
             "repository_name": "addgene",
+            "repository_id": "39282",
             "sequence_file_url": "https://media.addgene.org/snapgene-media/v1.7.9-0-g88a3305/sequences/240599/4936a6ae-6b4d-4d24-b7ac-2339fad5755d/addgene-plasmid-39282-sequence-240599.gbk",
             "addgene_sequence_type": "addgene-full"
-          },
-          "info": null
+          }
         }
       ]
     },
@@ -67,9 +52,6 @@
       "input": [],
       "output": 4,
       "type": "CollectionSource",
-      "output_name": null,
-      "database_id": null,
-      "category_id": null,
       "title": "Collection",
       "description": "A collection of plasmids",
       "image": [
@@ -80,53 +62,32 @@
           "name": "pFA6a-3HA-kanMX6",
           "source": {
             "id": 7,
-            "input": null,
-            "output": null,
             "type": "AddgeneIdSource",
-            "output_name": null,
-            "database_id": null,
-            "repository_id": "39295",
-            "repository_name": "addgene",
             "sequence_file_url": "https://media.addgene.org/snapgene-media/v1.7.9-0-g88a3305/sequences/49547/50886467-8250-49c3-8987-07dbd5627b8e/addgene-plasmid-39295-sequence-49547.gbk",
-            "addgene_sequence_type": "depositor-full"
+            "addgene_sequence_type": "depositor-full",
+            "repository_name": "addgene",
+            "repository_id": "39295"
           },
           "info": {
-            "name": null,
-            "description": null,
             "type": "AddgenePlasmid",
-            "resistance": "kanamycin",
-            "well": null
+            "resistance": "kanamycin"
           }
         },
         {
           "name": "pFA6a-kanMX6-P81nmt1",
           "source": {
             "id": 8,
-            "input": null,
-            "output": null,
             "type": "AddgeneIdSource",
-            "output_name": null,
-            "database_id": null,
-            "repository_id": "39282",
             "repository_name": "addgene",
+            "repository_id": "39282",
             "sequence_file_url": "https://media.addgene.org/snapgene-media/v1.7.9-0-g88a3305/sequences/240599/4936a6ae-6b4d-4d24-b7ac-2339fad5755d/addgene-plasmid-39282-sequence-240599.gbk",
             "addgene_sequence_type": "addgene-full"
           },
-          "info": {
-            "name": null,
-            "description": null,
-            "type": null,
-            "resistance": null,
-            "well": null
-          }
+          "info": {}
         }
       ]
     }
   ],
-  "primers": [],
   "description": "A dummy example",
-  "files": null,
-  "schema_version": "0.2.8",
-  "backend_version": null,
-  "frontend_version": null
+  "primers": []
 }

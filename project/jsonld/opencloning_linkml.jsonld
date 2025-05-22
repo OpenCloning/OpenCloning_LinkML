@@ -46,11 +46,28 @@
     {
       "prefix_prefix": "NCIT",
       "prefix_reference": "http://purl.obolibrary.org/obo/NCIT_"
+    },
+    {
+      "prefix_prefix": "IAO",
+      "prefix_reference": "http://purl.obolibrary.org/obo/IAO_"
     }
   ],
   "default_prefix": "opencloning_linkml",
   "default_range": "string",
   "types": [
+    {
+      "name": "version_number",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/VersionNumber",
+      "description": "A version number",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "exact_mappings": [
+        "IAO:0000129"
+      ],
+      "typeof": "string",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "@type": "TypeDefinition"
+    },
     {
       "name": "string",
       "definition_uri": "https://w3id.org/linkml/String",
@@ -1499,6 +1516,45 @@
       "multivalued": true,
       "inlined": true,
       "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "cloningStrategy__schema_version",
+      "description": "The version of the schema that was used to generate this cloning strategy",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/schema_version",
+      "alias": "schema_version",
+      "owner": "CloningStrategy",
+      "domain_of": [
+        "CloningStrategy"
+      ],
+      "range": "version_number",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "cloningStrategy__backend_version",
+      "description": "The version of the backend that was used to generate this cloning strategy",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/backend_version",
+      "alias": "backend_version",
+      "owner": "CloningStrategy",
+      "domain_of": [
+        "CloningStrategy"
+      ],
+      "range": "version_number",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "cloningStrategy__frontend_version",
+      "description": "The version of the frontend that was used to generate this cloning strategy",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/frontend_version",
+      "alias": "frontend_version",
+      "owner": "CloningStrategy",
+      "domain_of": [
+        "CloningStrategy"
+      ],
+      "range": "version_number",
       "@type": "SlotDefinition"
     },
     {
@@ -3329,7 +3385,10 @@
         "cloningStrategy__sources",
         "cloningStrategy__primers",
         "cloningStrategy__description",
-        "cloningStrategy__files"
+        "cloningStrategy__files",
+        "cloningStrategy__schema_version",
+        "cloningStrategy__backend_version",
+        "cloningStrategy__frontend_version"
       ],
       "slot_usage": {},
       "attributes": [
@@ -3371,6 +3430,24 @@
           "range": "AssociatedFile",
           "multivalued": true,
           "inlined_as_list": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "schema_version",
+          "description": "The version of the schema that was used to generate this cloning strategy",
+          "range": "version_number",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "backend_version",
+          "description": "The version of the backend that was used to generate this cloning strategy",
+          "range": "version_number",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "frontend_version",
+          "description": "The version of the frontend that was used to generate this cloning strategy",
+          "range": "version_number",
           "@type": "SlotDefinition"
         }
       ],
@@ -3616,9 +3693,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "opencloning_linkml.yaml",
-  "source_file_date": "2025-05-07T09:13:30",
-  "source_file_size": 26051,
-  "generation_date": "2025-05-07T09:13:49",
+  "source_file_date": "2025-05-22T11:42:49",
+  "source_file_size": 26810,
+  "generation_date": "2025-05-22T11:42:55",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/opencloning_linkml.context.jsonld",

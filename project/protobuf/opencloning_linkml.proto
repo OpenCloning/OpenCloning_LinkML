@@ -81,6 +81,9 @@ message CloningStrategy
  repeated  primer primers = 0
   string description = 0
  repeated  associatedFile files = 0
+  versionNumber schemaVersion = 0
+  versionNumber backendVersion = 0
+  versionNumber frontendVersion = 0
  }
 // Represents an option in a collection
 message CollectionOption
