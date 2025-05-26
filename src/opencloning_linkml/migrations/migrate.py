@@ -44,4 +44,4 @@ if __name__ == "__main__":
 
     for input_file in args.input_files:
 
-        main(input_file, not args.no_backup)
+        main(input_file, not args.no_backup, args.target_version)
