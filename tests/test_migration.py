@@ -1,8 +1,12 @@
 import unittest
-from opencloning_linkml.migrations.migrate import migrate
+from opencloning_linkml.migrations import migrate
+from opencloning_linkml.migrations.migrate import main as migrate_script_main
 import glob
 import os
 import json
+import tempfile
+import shutil
+from unittest.mock import patch
 
 test_folder = os.path.dirname(__file__)
 
@@ -37,6 +41,7 @@ class TestMigration(unittest.TestCase):
         )
         from opencloning_linkml.migrations.model_archive.v0_2_9 import CloningStrategy as new_CloningStrategy
 
+        # Test example files
         for file in glob.glob(os.path.join(test_folder, "migration/v0.2.6.1/*.json")):
             with open(file, "r") as f:
                 data = json.load(f)
@@ -46,6 +51,10 @@ class TestMigration(unittest.TestCase):
             # Sufficient that it can parse the data
             new_CloningStrategy(**migrated_data)
 
+            # If we try again, we get none
+            self.assertIsNone(migrate(migrated_data, "0.2.9"))
+
+        # Test particular example
         # Test that the coordinates are converted correctly
         s1 = GibsonAssemblySource.model_validate(
             {
@@ -86,3 +95,63 @@ class TestMigration(unittest.TestCase):
         cs = new_CloningStrategy(**migrated_data)
         self.assertEqual(cs.sources[0].assembly[0].left_location, "1..100")
         self.assertEqual(cs.sources[1].coordinates, "1..100")
+
+    def test_migration_script(self):
+
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            example_file = os.path.join(test_folder, "migration/v0.2.6.1/homologous_recombination.json")
+            test_file = os.path.join(tmp_dir, "homologous_recombination.json")
+            backup_file = test_file.replace(".json", "_backup.json")
+            shutil.copy(example_file, test_file)
+
+            with patch("builtins.print") as mock_print:
+                migrate_script_main(test_file, backup=True, target_version=None)
+                mock_print.assert_any_call(f"Original file backed up as {test_file.replace('.json', '_backup.json')}")
+                mock_print.assert_any_call(f"Migrated {test_file} to version 0.2.9")
+
+            with open(test_file, "r") as f:
+                data = json.load(f)
+            self.assertEqual(data["schema_version"], "0.2.9")
+            self.assertEqual(data["backend_version"], None)
+            self.assertEqual(data["frontend_version"], None)
+
+            # By default, it will backup the original file
+            self.assertTrue(os.path.exists(backup_file))
+
+            # A backup file cannot be used as input
+            with patch("builtins.print") as mock_print:
+                migrate_script_main(backup_file, backup=False, target_version=None)
+                mock_print.assert_any_call(f"Skipping {backup_file} because it is a backup file")
+
+            # Clear directory
+            for file in os.listdir(tmp_dir):
+                os.remove(os.path.join(tmp_dir, file))
+            shutil.copy(example_file, test_file)
+
+            # Test that it works with a target version and no backup
+            migrate_script_main(test_file, backup=False, target_version="0.2.8")
+
+            with open(test_file, "r") as f:
+                data = json.load(f)
+            self.assertEqual(data["schema_version"], "0.2.8")
+            self.assertFalse(os.path.exists(backup_file))
+
+            # Test that the migration is not done if the target version is the same as the current version
+            with patch("builtins.print") as mock_print:
+                migrate_script_main(test_file, backup=False, target_version="0.2.8")
+                mock_print.assert_any_call(f"No migration needed for {test_file}")
+
+            with open(test_file, "r") as f:
+                data = json.load(f)
+            self.assertEqual(data["schema_version"], "0.2.8")
+            self.assertEqual(data["backend_version"], None)
+            self.assertEqual(data["frontend_version"], None)
+
+            # Can migrate from 0.2.8 to 0.2.9
+            migrate_script_main(test_file, backup=False, target_version="0.2.9")
+
+            with open(test_file, "r") as f:
+                data = json.load(f)
+            self.assertEqual(data["schema_version"], "0.2.9")
+            self.assertEqual(data["backend_version"], None)
+            self.assertEqual(data["frontend_version"], None)
