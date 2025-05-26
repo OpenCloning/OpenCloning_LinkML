@@ -155,5 +155,3 @@ class TestMigration(unittest.TestCase):
             self.assertEqual(data["schema_version"], "0.2.9")
             self.assertEqual(data["backend_version"], None)
             self.assertEqual(data["frontend_version"], None)
-
-            # Can migrate from 0.2.9 to 0.2.8
