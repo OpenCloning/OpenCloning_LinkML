@@ -1,5 +1,6 @@
 from typing import Dict, Callable, Tuple, Any, Optional
 from packaging import version
+import copy
 
 # Migration registry - maps version ranges to migration functions
 # Format: (start_version, end_version) -> migration_function
@@ -21,7 +22,7 @@ def load_migrations() -> MigrationDict:
     }
 
 
-def migrate(data: Dict[str, Any], target_version: Optional[str] = None) -> Dict[str, Any]:
+def migrate(data: Dict[str, Any], target_version: Optional[str] = None) -> Dict[str, Any] | None:
     """
     Migrate data from its current version to the target version.
 
@@ -48,10 +49,10 @@ def migrate(data: Dict[str, Any], target_version: Optional[str] = None) -> Dict[
 
     # No migration needed if already at target version
     if current_version == target_version:
-        return data
+        return None
 
     # Make a copy to avoid modifying the original
-    result = data.copy()
+    result = copy.deepcopy(data)
 
     # Continue migrating until we reach the target version
     if "schema_version" not in result:
