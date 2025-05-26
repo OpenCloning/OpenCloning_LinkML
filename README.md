@@ -1,22 +1,34 @@
 # OpenCloning_LinkML
 
-A LinkML data model for OpenCloning, a standardized schema for describing molecular cloning strategies and DNA assembly protocols.
+A LinkML data model for [OpenCloning](https://opencloning.org/), a standardized schema for describing molecular cloning strategies and DNA assembly protocols.
 
 ## Website
 
-https://opencloning.github.io/OpenCloning_LinkML
+You can access the model documentation at https://opencloning.github.io/OpenCloning_LinkML
 
-## Repository Structure
+## Migration from previous versions of the schema
 
-* [examples/](examples/) - example data
-* [project/](project/) - project files (do not edit these)
-* [src/](src/) - source files (edit these)
-  * [opencloning_linkml](src/opencloning_linkml)
-    * [schema](src/opencloning_linkml/schema) -- LinkML schema
-      (edit this)
-    * [datamodel](src/opencloning_linkml/datamodel) -- generated
-      Python datamodel
-* [tests/](tests/) - Python tests
+If you have json files in older formats, you can migrate them to the latest version using the migrate command:
+
+```bash
+python -m opencloning_linkml.migrations.migrate file.json
+```
+
+This will create a new file with the same name but with the suffix `_backup.json` with the original data, and overwrite the original file with the migrated data.
+
+You can also specify a target version to migrate to:
+
+```bash
+python -m opencloning_linkml.migrations.migrate file.json --target-version 0.2.9
+```
+
+And you can skip the backup (simply edit in place):
+
+```bash
+python -m opencloning_linkml.migrations.migrate file.json --no-backup
+```
+
+
 
 ## Developer Documentation
 

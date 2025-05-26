@@ -38,7 +38,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Migrate JSON files to a target schema version.")
     parser.add_argument("input_files", nargs="+", help="Input JSON files to migrate")
     parser.add_argument("--target-version", default=None, help="Target schema version (optional)")
-    parser.add_argument("--no-backup", default=False, help="Backup the original file", action="store_true")
+    parser.add_argument("--no-backup", default=False, help="Do not backup the original file", action="store_true")
 
     args = parser.parse_args()
 
