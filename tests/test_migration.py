@@ -1,3 +1,4 @@
+from opencloning_linkml._version import __version__
 import unittest
 from opencloning_linkml.migrations import migrate
 from opencloning_linkml.migrations.migrate import main as migrate_script_main
@@ -96,6 +97,12 @@ class TestMigration(unittest.TestCase):
         self.assertEqual(cs.sources[0].assembly[0].left_location, "1..100")
         self.assertEqual(cs.sources[1].coordinates, "1..100")
 
+    def test_migration_to_latest(self):
+        with open(os.path.join(test_folder, "migration/v0.2.6.1/homologous_recombination.json"), "r") as f:
+            data = json.load(f)
+        migrated_data = migrate(data, None)
+        self.assertEqual(migrated_data["schema_version"], __version__)
+
     def test_migration_script(self):
 
         with tempfile.TemporaryDirectory() as tmp_dir:
@@ -107,11 +114,11 @@ class TestMigration(unittest.TestCase):
             with patch("builtins.print") as mock_print:
                 migrate_script_main(test_file, backup=True, target_version=None)
                 mock_print.assert_any_call(f"Original file backed up as {test_file.replace('.json', '_backup.json')}")
-                mock_print.assert_any_call(f"Migrated {test_file} to version 0.2.9")
+                mock_print.assert_any_call(f"Migrated {test_file} to version {__version__}")
 
             with open(test_file, "r") as f:
                 data = json.load(f)
-            self.assertEqual(data["schema_version"], "0.2.9")
+            self.assertEqual(data["schema_version"], __version__)
             self.assertEqual(data["backend_version"], None)
             self.assertEqual(data["frontend_version"], None)
 
