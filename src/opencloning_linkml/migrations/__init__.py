@@ -2,6 +2,9 @@ from typing import Dict, Callable, Tuple, Any, Optional
 from packaging import version
 import copy
 
+from ..datamodel import CloningStrategy
+from .._version import __version__
+
 # Migration registry - maps version ranges to migration functions
 # Format: (start_version, end_version) -> migration_function
 
@@ -33,19 +36,15 @@ def migrate(data: Dict[str, Any], target_version: Optional[str] = None) -> Dict[
     Returns:
         Migrated data dictionary
     """
+    use_latest = False
+    if target_version is None:
+        target_version = __version__
+        use_latest = True
+
     migration_dict = load_migrations()
     current_version = data.get("schema_version")
     if not current_version:
         current_version = "0.2.6.1"
-
-    # Use latest version if target not specified
-    if target_version is None:
-        # Find highest end version in migrations
-        all_end_versions = [end for _, end in migration_dict.keys()]
-
-        if not all_end_versions:
-            return data  # No migrations registered
-        target_version = max(all_end_versions, key=lambda v: version.parse(v))
 
     # No migration needed if already at target version
     if current_version == target_version:
@@ -71,6 +70,10 @@ def migrate(data: Dict[str, Any], target_version: Optional[str] = None) -> Dict[
         # Apply the migration
         result = migration_func(result)
         result["schema_version"] = current_version  # Update the version
+
+    if use_latest:
+        result = CloningStrategy.model_validate(result).model_dump()
+        result["schema_version"] = __version__
 
     return result
 

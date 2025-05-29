@@ -8,16 +8,16 @@ on: [pull_request]
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: ["3.10", "3.11", "3.12"]
 
     steps:
-
       - name: Check out repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
@@ -25,13 +25,12 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Install Poetry
-        uses: snok/install-poetry@v1.3
+        run: |
+          pip install poetry
+          poetry self add "poetry-dynamic-versioning[plugin]"
 
       - name: Install dependencies
-        run: poetry install --no-interaction --no-root
-
-      - name: Install project
-        run: poetry install --no-interaction
+        run: poetry install
 
       - name: Run test suite
         run: make test

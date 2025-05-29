@@ -122,7 +122,7 @@ test-schema:
 	$(RUN) gen-project ${GEN_PARGS} -d tmp $(SOURCE_SCHEMA_PATH)
 
 test-python:
-	$(RUN) python -m unittest discover
+	$(RUN) pytest -vs
 
 lint:
 	$(RUN) linkml-lint $(SOURCE_SCHEMA_PATH)
