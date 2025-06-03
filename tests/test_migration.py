@@ -66,7 +66,8 @@ class TestMigration(unittest.TestCase):
                 "assembly": [
                     {
                         "left_location": {"start": 0, "end": 100, "strand": None},
-                        "right_location": None,
+                        # Inter-base location
+                        "right_location": {"start": 0, "end": 0, "strand": None},
                         "sequence": 3,
                         "reverse_complemented": False,
                     }
@@ -95,6 +96,7 @@ class TestMigration(unittest.TestCase):
         migrated_data = migrate(data, "0.2.9")
         cs = new_CloningStrategy(**migrated_data)
         self.assertEqual(cs.sources[0].assembly[0].left_location, "1..100")
+        self.assertEqual(cs.sources[0].assembly[0].right_location, "0^1")
         self.assertEqual(cs.sources[1].coordinates, "1..100")
 
     def test_migration_to_latest(self):
