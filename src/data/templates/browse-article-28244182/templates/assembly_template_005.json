@@ -1703,7 +1703,48 @@
       "type": "RestrictionAndLigationSource",
       "output_name": null,
       "database_id": null,
-      "input": [],
+      "input": [
+        {
+          "type": "SourceInput",
+          "sequence": 1
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 2
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 3
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 4
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 5
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 6
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 7
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 8
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 9
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 10
+        }
+      ],
       "circular": null,
       "restriction_enzymes": [
         "BsaI"
@@ -1713,7 +1754,7 @@
   "primers": [],
   "description": "2xCDS integration plasmid\n\nA plasmid containing a 2xCDS fusion protein that can be integrated in the genome via recombination",
   "files": null,
-  "schema_version": "0.4.0",
+  "schema_version": "0.3.0a0.post5.dev0+3cee09f",
   "backend_version": null,
   "frontend_version": null
 }

@@ -690,7 +690,28 @@
       "type": "RestrictionAndLigationSource",
       "output_name": null,
       "database_id": null,
-      "input": [],
+      "input": [
+        {
+          "type": "SourceInput",
+          "sequence": 1
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 2
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 3
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 4
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 5
+        }
+      ],
       "circular": null,
       "restriction_enzymes": [
         "BsaI"
@@ -700,7 +721,7 @@
   "primers": [],
   "description": "Transcriptional Unit AE\n\nPlasmid with a transcriptional unit starting and ending with fusion sites A (GGAG) and E (GCTT)",
   "files": null,
-  "schema_version": "0.4.0",
+  "schema_version": "0.3.0a0.post5.dev0+3cee09f",
   "backend_version": null,
   "frontend_version": null
 }

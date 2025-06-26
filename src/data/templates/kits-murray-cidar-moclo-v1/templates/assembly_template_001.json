@@ -68,11 +68,11 @@
             "input": [
               {
                 "type": "SourceInput",
-                "sequence": 8
+                "sequence": 249
               },
               {
                 "type": "SourceInput",
-                "sequence": 9
+                "sequence": 250
               }
             ],
             "overhang_crick_3prime": 0
@@ -95,11 +95,11 @@
             "input": [
               {
                 "type": "SourceInput",
-                "sequence": 10
+                "sequence": 251
               },
               {
                 "type": "SourceInput",
-                "sequence": 11
+                "sequence": 252
               }
             ],
             "overhang_crick_3prime": 0
@@ -122,11 +122,11 @@
             "input": [
               {
                 "type": "SourceInput",
-                "sequence": 14
+                "sequence": 255
               },
               {
                 "type": "SourceInput",
-                "sequence": 15
+                "sequence": 256
               }
             ],
             "overhang_crick_3prime": 0
@@ -149,11 +149,11 @@
             "input": [
               {
                 "type": "SourceInput",
-                "sequence": 18
+                "sequence": 259
               },
               {
                 "type": "SourceInput",
-                "sequence": 19
+                "sequence": 260
               }
             ],
             "overhang_crick_3prime": 0
@@ -176,11 +176,11 @@
             "input": [
               {
                 "type": "SourceInput",
-                "sequence": 22
+                "sequence": 263
               },
               {
                 "type": "SourceInput",
-                "sequence": 23
+                "sequence": 264
               }
             ],
             "overhang_crick_3prime": 0
@@ -203,11 +203,11 @@
             "input": [
               {
                 "type": "SourceInput",
-                "sequence": 26
+                "sequence": 267
               },
               {
                 "type": "SourceInput",
-                "sequence": 27
+                "sequence": 268
               }
             ],
             "overhang_crick_3prime": 0
@@ -230,11 +230,11 @@
             "input": [
               {
                 "type": "SourceInput",
-                "sequence": 30
+                "sequence": 271
               },
               {
                 "type": "SourceInput",
-                "sequence": 31
+                "sequence": 272
               }
             ],
             "overhang_crick_3prime": 0
@@ -257,11 +257,11 @@
             "input": [
               {
                 "type": "SourceInput",
-                "sequence": 34
+                "sequence": 275
               },
               {
                 "type": "SourceInput",
-                "sequence": 35
+                "sequence": 276
               }
             ],
             "overhang_crick_3prime": 0
@@ -3094,11 +3094,11 @@
             "input": [
               {
                 "type": "SourceInput",
-                "sequence": 12
+                "sequence": 253
               },
               {
                 "type": "SourceInput",
-                "sequence": 13
+                "sequence": 254
               }
             ],
             "overhang_crick_3prime": 0
@@ -3121,11 +3121,11 @@
             "input": [
               {
                 "type": "SourceInput",
-                "sequence": 16
+                "sequence": 257
               },
               {
                 "type": "SourceInput",
-                "sequence": 17
+                "sequence": 258
               }
             ],
             "overhang_crick_3prime": 0
@@ -3148,11 +3148,11 @@
             "input": [
               {
                 "type": "SourceInput",
-                "sequence": 20
+                "sequence": 261
               },
               {
                 "type": "SourceInput",
-                "sequence": 21
+                "sequence": 262
               }
             ],
             "overhang_crick_3prime": 0
@@ -3175,11 +3175,11 @@
             "input": [
               {
                 "type": "SourceInput",
-                "sequence": 24
+                "sequence": 265
               },
               {
                 "type": "SourceInput",
-                "sequence": 25
+                "sequence": 266
               }
             ],
             "overhang_crick_3prime": 0
@@ -3202,11 +3202,11 @@
             "input": [
               {
                 "type": "SourceInput",
-                "sequence": 28
+                "sequence": 269
               },
               {
                 "type": "SourceInput",
-                "sequence": 29
+                "sequence": 270
               }
             ],
             "overhang_crick_3prime": 0
@@ -3229,11 +3229,11 @@
             "input": [
               {
                 "type": "SourceInput",
-                "sequence": 32
+                "sequence": 273
               },
               {
                 "type": "SourceInput",
-                "sequence": 33
+                "sequence": 274
               }
             ],
             "overhang_crick_3prime": 0
@@ -3256,11 +3256,11 @@
             "input": [
               {
                 "type": "SourceInput",
-                "sequence": 36
+                "sequence": 277
               },
               {
                 "type": "SourceInput",
-                "sequence": 37
+                "sequence": 278
               }
             ],
             "overhang_crick_3prime": 0
@@ -3283,11 +3283,11 @@
             "input": [
               {
                 "type": "SourceInput",
-                "sequence": 38
+                "sequence": 279
               },
               {
                 "type": "SourceInput",
-                "sequence": 39
+                "sequence": 280
               }
             ],
             "overhang_crick_3prime": 0
@@ -3307,7 +3307,32 @@
       "type": "RestrictionAndLigationSource",
       "output_name": null,
       "database_id": null,
-      "input": [],
+      "input": [
+        {
+          "type": "SourceInput",
+          "sequence": 1
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 2
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 3
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 4
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 5
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 6
+        }
+      ],
       "circular": null,
       "restriction_enzymes": [
         "BsaI"
@@ -3316,336 +3341,336 @@
   ],
   "primers": [
     {
-      "id": 8,
+      "id": 249,
       "type": "Primer",
       "name": "UNS1_A Top",
       "database_id": null,
       "sequence": "CATTACTCGCATCCATTCTCAGGCTGTCTCGTCTCGTCTCGGAGAGAGACCGG"
     },
     {
-      "id": 9,
+      "id": 250,
       "type": "Primer",
       "name": "UNS1_A Bottom",
       "database_id": null,
       "sequence": "CCGGTCTCTCTCCGAGACGAGACGAGACAGCCTGAGAATGGATGCGAGTAATG"
     },
     {
-      "id": 10,
+      "id": 251,
       "type": "Primer",
       "name": "UNS3_A Top",
       "database_id": null,
       "sequence": "GCACTGAAGGTCCTCAATCGCACTGGAAACATCAAGGTCGGGAGAGAGACCGG"
     },
     {
-      "id": 11,
+      "id": 252,
       "type": "Primer",
       "name": "UNS3_A Bottom",
       "database_id": null,
       "sequence": "CCGGTCTCTCTCCCGACCTTGATGTTTCCAGTGCGATTGAGGACCTTCAGTGC"
     },
     {
-      "id": 12,
+      "id": 253,
       "type": "Primer",
       "name": "UNS3_E Top",
       "database_id": null,
       "sequence": "GGGGTCTCTGCTTGCACTGAAGGTCCTCAATCGCACTGGAAACATCAAGGTCG"
     },
     {
-      "id": 13,
+      "id": 254,
       "type": "Primer",
       "name": "UNS3_E Bottom",
       "database_id": null,
       "sequence": "CGACCTTGATGTTTCCAGTGCGATTGAGGACCTTCAGTGCAAGCAGAGACCCC"
     },
     {
-      "id": 14,
+      "id": 255,
       "type": "Primer",
       "name": "UNS4_A Top",
       "database_id": null,
       "sequence": "CTGACCTCCTGCCAGCAATAGTAAGACAACACGCAAAGTCGGAGAGAGACCGG"
     },
     {
-      "id": 15,
+      "id": 256,
       "type": "Primer",
       "name": "UNS4_A Bottom",
       "database_id": null,
       "sequence": "CCGGTCTCTCTCCGACTTTGCGTGTTGTCTTACTATTGCTGGCAGGAGGTCAG"
     },
     {
-      "id": 16,
+      "id": 257,
       "type": "Primer",
       "name": "UNS4_E Top",
       "database_id": null,
       "sequence": "GGGGTCTCTGCTTCTGACCTCCTGCCAGCAATAGTAAGACAACACGCAAAGTC"
     },
     {
-      "id": 17,
+      "id": 258,
       "type": "Primer",
       "name": "UNS4_E Bottom",
       "database_id": null,
       "sequence": "GACTTTGCGTGTTGTCTTACTATTGCTGGCAGGAGGTCAGAAGCAGAGACCCC"
     },
     {
-      "id": 18,
+      "id": 259,
       "type": "Primer",
       "name": "UNS5_A Top",
       "database_id": null,
       "sequence": "GAGCCAACTCCCTTTACAACCTCACTCAAGTCCGTTAGAGGGAGAGAGACCGG"
     },
     {
-      "id": 19,
+      "id": 260,
       "type": "Primer",
       "name": "UNS5_A Bottom",
       "database_id": null,
       "sequence": "CCGGTCTCTCTCCCTCTAACGGACTTGAGTGAGGTTGTAAAGGGAGTTGGCTC"
     },
     {
-      "id": 20,
+      "id": 261,
       "type": "Primer",
       "name": "UNS5_E Top",
       "database_id": null,
       "sequence": "GGGGTCTCTGCTTGAGCCAACTCCCTTTACAACCTCACTCAAGTCCGTTAGAG"
     },
     {
-      "id": 21,
+      "id": 262,
       "type": "Primer",
       "name": "UNS5_E Bottom",
       "database_id": null,
       "sequence": "CTCTAACGGACTTGAGTGAGGTTGTAAAGGGAGTTGGCTCAAGCAGAGACCCC"
     },
     {
-      "id": 22,
+      "id": 263,
       "type": "Primer",
       "name": "UNS6_A Top",
       "database_id": null,
       "sequence": "CTCGTTCGCTGCCACCTAAGAATACTCTACGGTCACATACGGAGAGAGACCGG"
     },
     {
-      "id": 23,
+      "id": 264,
       "type": "Primer",
       "name": "UNS6_A Bottom",
       "database_id": null,
       "sequence": "CCGGTCTCTCTCCGTATGTGACCGTAGAGTATTCTTAGGTGGCAGCGAACGAG"
     },
     {
-      "id": 24,
+      "id": 265,
       "type": "Primer",
       "name": "UNS6_E Top",
       "database_id": null,
       "sequence": "GGGGTCTCTGCTTCTCGTTCGCTGCCACCTAAGAATACTCTACGGTCACATAC"
     },
     {
-      "id": 25,
+      "id": 266,
       "type": "Primer",
       "name": "UNS6_E Bottom",
       "database_id": null,
       "sequence": "GTATGTGACCGTAGAGTATTCTTAGGTGGCAGCGAACGAGAAGCAGAGACCCC"
     },
     {
-      "id": 26,
+      "id": 267,
       "type": "Primer",
       "name": "UNS7_A Top",
       "database_id": null,
       "sequence": "CAAGACGCTGGCTCTGACATTTCCGCTACTGAACTACTCGGGAGAGAGACCGG"
     },
     {
-      "id": 27,
+      "id": 268,
       "type": "Primer",
       "name": "UNS7_A Bottom",
       "database_id": null,
       "sequence": "CCGGTCTCTCTCCCGAGTAGTTCAGTAGCGGAAATGTCAGAGCCAGCGTCTTG"
     },
     {
-      "id": 28,
+      "id": 269,
       "type": "Primer",
       "name": "UNS7_E Top",
       "database_id": null,
       "sequence": "GGGGTCTCTGCTTCAAGACGCTGGCTCTGACATTTCCGCTACTGAACTACTCG"
     },
     {
-      "id": 29,
+      "id": 270,
       "type": "Primer",
       "name": "UNS7_E Bottom",
       "database_id": null,
       "sequence": "CGAGTAGTTCAGTAGCGGAAATGTCAGAGCCAGCGTCTTGAAGCAGAGACCCC"
     },
     {
-      "id": 30,
+      "id": 271,
       "type": "Primer",
       "name": "UNS8_A Top",
       "database_id": null,
       "sequence": "CCTCGTCTCAACCAAAGCAATCAACCCATCAACCACCTGGGGAGAGAGACCGG"
     },
     {
-      "id": 31,
+      "id": 272,
       "type": "Primer",
       "name": "UNS8_A Bottom",
       "database_id": null,
       "sequence": "CCGGTCTCTCTCCCCAGGTGGTTGATGGGTTGATTGCTTTGGTTGAGACGAGG"
     },
     {
-      "id": 32,
+      "id": 273,
       "type": "Primer",
       "name": "UNS8_E Top",
       "database_id": null,
       "sequence": "GGGGTCTCTGCTTCCTCGTCTCAACCAAAGCAATCAACCCATCAACCACCTGG"
     },
     {
-      "id": 33,
+      "id": 274,
       "type": "Primer",
       "name": "UNS8_E Bottom",
       "database_id": null,
       "sequence": "CCAGGTGGTTGATGGGTTGATTGCTTTGGTTGAGACGAGGAAGCAGAGACCCC"
     },
     {
-      "id": 34,
+      "id": 275,
       "type": "Primer",
       "name": "UNS9_A Top",
       "database_id": null,
       "sequence": "GTTCCTTATCATCTGGCGAATCGGACCCACAAGAGCACTGGGAGAGAGACCGG"
     },
     {
-      "id": 35,
+      "id": 276,
       "type": "Primer",
       "name": "UNS9_A Bottom",
       "database_id": null,
       "sequence": "CCGGTCTCTCTCCCAGTGCTCTTGTGGGTCCGATTCGCCAGATGATAAGGAAC"
     },
     {
-      "id": 36,
+      "id": 277,
       "type": "Primer",
       "name": "UNS9_E Top",
       "database_id": null,
       "sequence": "GGGGTCTCTGCTTGTTCCTTATCATCTGGCGAATCGGACCCACAAGAGCACTG"
     },
     {
-      "id": 37,
+      "id": 278,
       "type": "Primer",
       "name": "UNS9_E Bottom",
       "database_id": null,
       "sequence": "CAGTGCTCTTGTGGGTCCGATTCGCCAGATGATAAGGAACAAGCAGAGACCCC"
     },
     {
-      "id": 38,
+      "id": 279,
       "type": "Primer",
       "name": "UNS10_E Top",
       "database_id": null,
       "sequence": "GGGGTCTCTGCTTCCAGGATACATAGATTACCACAACTCCGAGCCCTTCCACC"
     },
     {
-      "id": 39,
+      "id": 280,
       "type": "Primer",
       "name": "UNS10_E Bottom",
       "database_id": null,
       "sequence": "GGTGGAAGGGCTCGGAGTTGTGGTAATCTATGTATCCTGGAAGCAGAGACCCC"
     },
     {
-      "id": 40,
+      "id": 281,
       "type": "Primer",
       "name": "UNS1_Forward",
       "database_id": null,
       "sequence": "CATTACTCGCATCCATTCTCAGGC"
     },
     {
-      "id": 41,
+      "id": 282,
       "type": "Primer",
       "name": "UNS3_Forward",
       "database_id": null,
       "sequence": "GCACTGAAGGTCCTCAATCG"
     },
     {
-      "id": 42,
+      "id": 283,
       "type": "Primer",
       "name": "UNS4_Forward",
       "database_id": null,
       "sequence": "CTGACCTCCTGCCAGCAATAGT"
     },
     {
-      "id": 43,
+      "id": 284,
       "type": "Primer",
       "name": "UNS5_Forward",
       "database_id": null,
       "sequence": "GAGCCAACTCCCTTTACAACCT"
     },
     {
-      "id": 44,
+      "id": 285,
       "type": "Primer",
       "name": "UNS6_Forward",
       "database_id": null,
       "sequence": "CTCGTTCGCTGCCACCTAAGAA"
     },
     {
-      "id": 45,
+      "id": 286,
       "type": "Primer",
       "name": "UNS7_Forward",
       "database_id": null,
       "sequence": "CAAGACGCTGGCTCTGACATTT"
     },
     {
-      "id": 46,
+      "id": 287,
       "type": "Primer",
       "name": "UNS8_Forward",
       "database_id": null,
       "sequence": "CCTCGTCTCAACCAAAGCAATC"
     },
     {
-      "id": 47,
+      "id": 288,
       "type": "Primer",
       "name": "UNS9_Forward",
       "database_id": null,
       "sequence": "GTTCCTTATCATCTGGCGAATCGGA"
     },
     {
-      "id": 48,
+      "id": 289,
       "type": "Primer",
       "name": "UNS3_Reverse",
       "database_id": null,
       "sequence": "CGACCTTGATGTTTCCAGTGCG"
     },
     {
-      "id": 49,
+      "id": 290,
       "type": "Primer",
       "name": "UNS4_Reverse",
       "database_id": null,
       "sequence": "GACTTTGCGTGTTGTCTTACTAT"
     },
     {
-      "id": 50,
+      "id": 291,
       "type": "Primer",
       "name": "UNS5_Reverse",
       "database_id": null,
       "sequence": "CTCTAACGGACTTGAGTGAGGTTG"
     },
     {
-      "id": 51,
+      "id": 292,
       "type": "Primer",
       "name": "UNS6_Reverse",
       "database_id": null,
       "sequence": "GTATGTGACCGTAGAGTATTCTTAGGTGG"
     },
     {
-      "id": 52,
+      "id": 293,
       "type": "Primer",
       "name": "UNS7_Reverse",
       "database_id": null,
       "sequence": "CGAGTAGTTCAGTAGCGGAAA"
     },
     {
-      "id": 53,
+      "id": 294,
       "type": "Primer",
       "name": "UNS8_Reverse",
       "database_id": null,
       "sequence": "CCAGGTGGTTGATGGGTTGATT"
     },
     {
-      "id": 54,
+      "id": 295,
       "type": "Primer",
       "name": "UNS9_Reverse",
       "database_id": null,
       "sequence": "CAGTGCTCTTGTGGGTCCGAT"
     },
     {
-      "id": 55,
+      "id": 296,
       "type": "Primer",
       "name": "UNS10_Reverse",
       "database_id": null,
@@ -3654,7 +3679,7 @@
   ],
   "description": "Transcriptional Unit\n\n5'UTR (with RBS) + promoter + CDS + terminator flanked by Golden Gate adapters",
   "files": null,
-  "schema_version": "0.4.0",
+  "schema_version": "0.3.0a0.post5.dev0+3cee09f",
   "backend_version": null,
   "frontend_version": null
 }
