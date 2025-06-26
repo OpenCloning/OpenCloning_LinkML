@@ -1,10 +1,49 @@
 {
+  "sequences": [
+    {
+      "id": 1,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 2,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 3,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 4,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 5,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 6,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    }
+  ],
   "sources": [
     {
       "id": 1,
-      "input": [],
-      "output": 2,
       "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
       "category_id": "promoter_FB",
       "title": "Promoter",
       "description": "Left fusion site is F (CGCT)",
@@ -18,8 +57,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65982",
             "repository_name": "addgene",
-            "repository_id": "65982"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "J23100_FB",
@@ -34,8 +78,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65986",
             "repository_name": "addgene",
-            "repository_id": "65986"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "J23102_FB",
@@ -50,8 +99,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65990",
             "repository_name": "addgene",
-            "repository_id": "65990"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "J23103_FB",
@@ -66,8 +120,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65994",
             "repository_name": "addgene",
-            "repository_id": "65994"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "J23106_FB",
@@ -82,8 +141,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65998",
             "repository_name": "addgene",
-            "repository_id": "65998"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "J23107_FB",
@@ -98,8 +162,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66002",
             "repository_name": "addgene",
-            "repository_id": "66002"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "J23116_FB",
@@ -114,8 +183,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66006",
             "repository_name": "addgene",
-            "repository_id": "66006"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "R0010 (pLacI)_FB",
@@ -130,8 +204,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66010",
             "repository_name": "addgene",
-            "repository_id": "66010"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "R0040 (pTet)_FB",
@@ -146,8 +225,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66014",
             "repository_name": "addgene",
-            "repository_id": "66014"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "R0063 (pLuxR-pR)_FB",
@@ -162,8 +246,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66018",
             "repository_name": "addgene",
-            "repository_id": "66018"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "I13453 (pBAD)_FB",
@@ -176,10 +265,11 @@
       ]
     },
     {
-      "id": 3,
-      "input": [],
-      "output": 4,
+      "id": 2,
       "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
       "category_id": "RBS_BC",
       "title": "RBS",
       "description": null,
@@ -193,8 +283,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66020",
             "repository_name": "addgene",
-            "repository_id": "66020"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "B0032m_BC",
@@ -209,8 +304,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66021",
             "repository_name": "addgene",
-            "repository_id": "66021"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "B0033m_BC",
@@ -225,8 +325,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66022",
             "repository_name": "addgene",
-            "repository_id": "66022"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "B0034m_BC",
@@ -241,8 +346,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66023",
             "repository_name": "addgene",
-            "repository_id": "66023"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "BCD12_BC",
@@ -257,8 +367,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66024",
             "repository_name": "addgene",
-            "repository_id": "66024"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "BCD2_BC",
@@ -273,8 +388,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66025",
             "repository_name": "addgene",
-            "repository_id": "66025"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "BCD8_BC",
@@ -287,10 +407,11 @@
       ]
     },
     {
-      "id": 5,
-      "input": [],
-      "output": 6,
+      "id": 3,
       "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
       "category_id": "CDS_CD",
       "title": "CDS",
       "description": null,
@@ -304,8 +425,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66026",
             "repository_name": "addgene",
-            "repository_id": "66026"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C0012m (lacI)_CD",
@@ -320,8 +446,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66027",
             "repository_name": "addgene",
-            "repository_id": "66027"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C0040 (tetR)_CD",
@@ -336,8 +467,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66028",
             "repository_name": "addgene",
-            "repository_id": "66028"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C0062 (luxR)_CD",
@@ -352,8 +488,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66029",
             "repository_name": "addgene",
-            "repository_id": "66029"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C0080 (araC)_CD",
@@ -368,8 +509,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66030",
             "repository_name": "addgene",
-            "repository_id": "66030"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "cre_CD",
@@ -384,8 +530,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66031",
             "repository_name": "addgene",
-            "repository_id": "66031"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "E0030 (YFP)_CD",
@@ -400,8 +551,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66032",
             "repository_name": "addgene",
-            "repository_id": "66032"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "E0040m (GFP)_CD",
@@ -416,8 +572,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66033",
             "repository_name": "addgene",
-            "repository_id": "66033"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "E1010m (RFP)_CD",
@@ -432,8 +593,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66034",
             "repository_name": "addgene",
-            "repository_id": "66034"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "eBFP2 (eBFP2)_CD",
@@ -446,10 +612,11 @@
       ]
     },
     {
-      "id": 7,
-      "input": [],
-      "output": 8,
+      "id": 4,
       "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
       "category_id": "terminator_DG",
       "title": "Terminator",
       "description": "Right fusion site is G (TGCC)",
@@ -463,8 +630,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66037",
             "repository_name": "addgene",
-            "repository_id": "66037"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "B0015_DG",
@@ -477,10 +649,11 @@
       ]
     },
     {
-      "id": 9,
-      "input": [],
-      "output": 10,
+      "id": 5,
       "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
       "category_id": "backbone_FG",
       "title": "Backbone",
       "description": "Fusion sites F (CGCT) and G (TGCC)",
@@ -494,8 +667,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66070",
             "repository_name": "addgene",
-            "repository_id": "66070"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "DVK_FG",
@@ -508,47 +686,21 @@
       ]
     },
     {
-      "id": 11,
-      "input": [
-        2,
-        4,
-        6,
-        8,
-        10
-      ],
-      "output": 12,
+      "id": 6,
       "type": "RestrictionAndLigationSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
+      "circular": null,
       "restriction_enzymes": [
         "BsaI"
       ]
     }
   ],
-  "sequences": [
-    {
-      "id": 2,
-      "type": "TemplateSequence"
-    },
-    {
-      "id": 4,
-      "type": "TemplateSequence"
-    },
-    {
-      "id": 6,
-      "type": "TemplateSequence"
-    },
-    {
-      "id": 8,
-      "type": "TemplateSequence"
-    },
-    {
-      "id": 10,
-      "type": "TemplateSequence"
-    },
-    {
-      "id": 12,
-      "type": "TemplateSequence"
-    }
-  ],
+  "primers": [],
   "description": "Transcriptional Unit FG\n\nPlasmid with a transcriptional unit starting and ending with fusion sites F (CGCT) and G (TGCC)",
-  "primers": []
+  "files": null,
+  "schema_version": "0.4.0",
+  "backend_version": null,
+  "frontend_version": null
 }

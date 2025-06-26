@@ -26,6 +26,5 @@ class TestData(unittest.TestCase):
             try:
                 obj = json_loader.load(path, target_class=CloningStrategy)
                 assert obj
-            except Exception as e:
-                print(f"Error loading \033[93m{path}\033[0m:")
-                raise e
+            except Exception:
+                raise AssertionError(f"Error loading \033[93m{path}\033[0m")

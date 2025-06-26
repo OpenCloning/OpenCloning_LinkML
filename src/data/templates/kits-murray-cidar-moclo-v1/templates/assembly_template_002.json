@@ -1,10 +1,43 @@
 {
+  "sequences": [
+    {
+      "id": 1,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 2,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 3,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 4,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 5,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    }
+  ],
   "sources": [
     {
       "id": 1,
-      "input": [],
-      "output": 2,
       "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
       "category_id": "upstream_adapter",
       "title": "Left adapter",
       "description": "Gibson adapter to be joined via an A fusion site (GGAG)",
@@ -18,14 +51,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 249,
-            "reverse_oligo": 250,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 6
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 7
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS1_left",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -33,14 +78,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 251,
-            "reverse_oligo": 252,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 8
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 9
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS3_left",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -48,14 +105,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 255,
-            "reverse_oligo": 256,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 12
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 13
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS4_left",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -63,14 +132,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 259,
-            "reverse_oligo": 260,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 16
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 17
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS5_left",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -78,14 +159,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 263,
-            "reverse_oligo": 264,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 20
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 21
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS6_left",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -93,14 +186,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 267,
-            "reverse_oligo": 268,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 24
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 25
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS7_left",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -108,14 +213,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 271,
-            "reverse_oligo": 272,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 28
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 29
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS8_left",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -123,23 +240,36 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 275,
-            "reverse_oligo": 276,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 32
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 33
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS9_left",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         }
       ]
     },
     {
-      "id": 3,
-      "input": [],
-      "output": 4,
+      "id": 2,
       "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
       "category_id": "five_utr_gRna",
       "title": "5' UTR + gRNA",
       "description": null,
@@ -150,8 +280,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121038",
             "repository_name": "addgene",
-            "repository_id": "121038"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "UC16m",
@@ -166,8 +301,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121039",
             "repository_name": "addgene",
-            "repository_id": "121039"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "UC17m",
@@ -182,8 +322,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121040",
             "repository_name": "addgene",
-            "repository_id": "121040"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "UC20m",
@@ -198,8 +343,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121041",
             "repository_name": "addgene",
-            "repository_id": "121041"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "UCT1m",
@@ -212,10 +362,11 @@
       ]
     },
     {
-      "id": 5,
-      "input": [],
-      "output": 6,
+      "id": 3,
       "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
       "category_id": "terminator",
       "title": "Terminator",
       "description": null,
@@ -229,8 +380,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121028",
             "repository_name": "addgene",
-            "repository_id": "121028"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "T1m",
@@ -245,8 +401,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121029",
             "repository_name": "addgene",
-            "repository_id": "121029"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "T2m",
@@ -261,8 +422,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121030",
             "repository_name": "addgene",
-            "repository_id": "121030"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "T7m",
@@ -277,8 +443,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121031",
             "repository_name": "addgene",
-            "repository_id": "121031"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "T12m",
@@ -293,8 +464,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121032",
             "repository_name": "addgene",
-            "repository_id": "121032"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "T13m",
@@ -309,8 +485,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121033",
             "repository_name": "addgene",
-            "repository_id": "121033"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "T14m",
@@ -325,8 +506,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121034",
             "repository_name": "addgene",
-            "repository_id": "121034"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "T15m",
@@ -341,8 +527,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121035",
             "repository_name": "addgene",
-            "repository_id": "121035"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "T16m",
@@ -357,8 +548,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121036",
             "repository_name": "addgene",
-            "repository_id": "121036"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "T17m",
@@ -373,8 +569,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121037",
             "repository_name": "addgene",
-            "repository_id": "121037"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "T18m",
@@ -387,10 +588,11 @@
       ]
     },
     {
-      "id": 7,
-      "input": [],
-      "output": 8,
+      "id": 4,
       "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
       "category_id": "downstream_adapter",
       "title": "Right adapter",
       "description": "Gibson adapter to be joined via an E fusion site (GCTT)",
@@ -404,14 +606,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 253,
-            "reverse_oligo": 254,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 10
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 11
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS3_right",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -419,14 +633,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 257,
-            "reverse_oligo": 258,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 14
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 15
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS4_right",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -434,14 +660,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 261,
-            "reverse_oligo": 262,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 18
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 19
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS5_right",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -449,14 +687,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 265,
-            "reverse_oligo": 266,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 22
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 23
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS6_right",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -464,14 +714,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 269,
-            "reverse_oligo": 270,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 26
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 27
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS7_right",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -479,14 +741,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 273,
-            "reverse_oligo": 274,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 30
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 31
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS8_right",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -494,14 +768,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 277,
-            "reverse_oligo": 278,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 34
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 35
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS9_right",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -509,296 +795,383 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 279,
-            "reverse_oligo": 280,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 36
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 37
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS10_right",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         }
       ]
     },
     {
-      "id": 9,
-      "input": [
-        2,
-        4,
-        6,
-        8
-      ],
-      "output": 10,
+      "id": 5,
       "type": "RestrictionAndLigationSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
+      "circular": null,
       "restriction_enzymes": [
         "BsaI"
       ]
     }
   ],
-  "sequences": [
-    {
-      "id": 2,
-      "type": "TemplateSequence"
-    },
-    {
-      "id": 4,
-      "type": "TemplateSequence"
-    },
-    {
-      "id": 6,
-      "type": "TemplateSequence"
-    },
-    {
-      "id": 8,
-      "type": "TemplateSequence"
-    },
-    {
-      "id": 10,
-      "type": "TemplateSequence"
-    }
-  ],
-  "description": "Pre-composed 5'UTR + promoter + CDS\n\nTranscriptional Unit that uses a level 0 plasmid containing joined 5'UTR + promoter + CDS",
   "primers": [
     {
+      "id": 6,
+      "type": "Primer",
       "name": "UNS1_A Top",
-      "id": 249,
+      "database_id": null,
       "sequence": "CATTACTCGCATCCATTCTCAGGCTGTCTCGTCTCGTCTCGGAGAGAGACCGG"
     },
     {
+      "id": 7,
+      "type": "Primer",
       "name": "UNS1_A Bottom",
-      "id": 250,
+      "database_id": null,
       "sequence": "CCGGTCTCTCTCCGAGACGAGACGAGACAGCCTGAGAATGGATGCGAGTAATG"
     },
     {
+      "id": 8,
+      "type": "Primer",
       "name": "UNS3_A Top",
-      "id": 251,
+      "database_id": null,
       "sequence": "GCACTGAAGGTCCTCAATCGCACTGGAAACATCAAGGTCGGGAGAGAGACCGG"
     },
     {
+      "id": 9,
+      "type": "Primer",
       "name": "UNS3_A Bottom",
-      "id": 252,
+      "database_id": null,
       "sequence": "CCGGTCTCTCTCCCGACCTTGATGTTTCCAGTGCGATTGAGGACCTTCAGTGC"
     },
     {
+      "id": 10,
+      "type": "Primer",
       "name": "UNS3_E Top",
-      "id": 253,
+      "database_id": null,
       "sequence": "GGGGTCTCTGCTTGCACTGAAGGTCCTCAATCGCACTGGAAACATCAAGGTCG"
     },
     {
+      "id": 11,
+      "type": "Primer",
       "name": "UNS3_E Bottom",
-      "id": 254,
+      "database_id": null,
       "sequence": "CGACCTTGATGTTTCCAGTGCGATTGAGGACCTTCAGTGCAAGCAGAGACCCC"
     },
     {
+      "id": 12,
+      "type": "Primer",
       "name": "UNS4_A Top",
-      "id": 255,
+      "database_id": null,
       "sequence": "CTGACCTCCTGCCAGCAATAGTAAGACAACACGCAAAGTCGGAGAGAGACCGG"
     },
     {
+      "id": 13,
+      "type": "Primer",
       "name": "UNS4_A Bottom",
-      "id": 256,
+      "database_id": null,
       "sequence": "CCGGTCTCTCTCCGACTTTGCGTGTTGTCTTACTATTGCTGGCAGGAGGTCAG"
     },
     {
+      "id": 14,
+      "type": "Primer",
       "name": "UNS4_E Top",
-      "id": 257,
+      "database_id": null,
       "sequence": "GGGGTCTCTGCTTCTGACCTCCTGCCAGCAATAGTAAGACAACACGCAAAGTC"
     },
     {
+      "id": 15,
+      "type": "Primer",
       "name": "UNS4_E Bottom",
-      "id": 258,
+      "database_id": null,
       "sequence": "GACTTTGCGTGTTGTCTTACTATTGCTGGCAGGAGGTCAGAAGCAGAGACCCC"
     },
     {
+      "id": 16,
+      "type": "Primer",
       "name": "UNS5_A Top",
-      "id": 259,
+      "database_id": null,
       "sequence": "GAGCCAACTCCCTTTACAACCTCACTCAAGTCCGTTAGAGGGAGAGAGACCGG"
     },
     {
+      "id": 17,
+      "type": "Primer",
       "name": "UNS5_A Bottom",
-      "id": 260,
+      "database_id": null,
       "sequence": "CCGGTCTCTCTCCCTCTAACGGACTTGAGTGAGGTTGTAAAGGGAGTTGGCTC"
     },
     {
+      "id": 18,
+      "type": "Primer",
       "name": "UNS5_E Top",
-      "id": 261,
+      "database_id": null,
       "sequence": "GGGGTCTCTGCTTGAGCCAACTCCCTTTACAACCTCACTCAAGTCCGTTAGAG"
     },
     {
+      "id": 19,
+      "type": "Primer",
       "name": "UNS5_E Bottom",
-      "id": 262,
+      "database_id": null,
       "sequence": "CTCTAACGGACTTGAGTGAGGTTGTAAAGGGAGTTGGCTCAAGCAGAGACCCC"
     },
     {
+      "id": 20,
+      "type": "Primer",
       "name": "UNS6_A Top",
-      "id": 263,
+      "database_id": null,
       "sequence": "CTCGTTCGCTGCCACCTAAGAATACTCTACGGTCACATACGGAGAGAGACCGG"
     },
     {
+      "id": 21,
+      "type": "Primer",
       "name": "UNS6_A Bottom",
-      "id": 264,
+      "database_id": null,
       "sequence": "CCGGTCTCTCTCCGTATGTGACCGTAGAGTATTCTTAGGTGGCAGCGAACGAG"
     },
     {
+      "id": 22,
+      "type": "Primer",
       "name": "UNS6_E Top",
-      "id": 265,
+      "database_id": null,
       "sequence": "GGGGTCTCTGCTTCTCGTTCGCTGCCACCTAAGAATACTCTACGGTCACATAC"
     },
     {
+      "id": 23,
+      "type": "Primer",
       "name": "UNS6_E Bottom",
-      "id": 266,
+      "database_id": null,
       "sequence": "GTATGTGACCGTAGAGTATTCTTAGGTGGCAGCGAACGAGAAGCAGAGACCCC"
     },
     {
+      "id": 24,
+      "type": "Primer",
       "name": "UNS7_A Top",
-      "id": 267,
+      "database_id": null,
       "sequence": "CAAGACGCTGGCTCTGACATTTCCGCTACTGAACTACTCGGGAGAGAGACCGG"
     },
     {
+      "id": 25,
+      "type": "Primer",
       "name": "UNS7_A Bottom",
-      "id": 268,
+      "database_id": null,
       "sequence": "CCGGTCTCTCTCCCGAGTAGTTCAGTAGCGGAAATGTCAGAGCCAGCGTCTTG"
     },
     {
+      "id": 26,
+      "type": "Primer",
       "name": "UNS7_E Top",
-      "id": 269,
+      "database_id": null,
       "sequence": "GGGGTCTCTGCTTCAAGACGCTGGCTCTGACATTTCCGCTACTGAACTACTCG"
     },
     {
+      "id": 27,
+      "type": "Primer",
       "name": "UNS7_E Bottom",
-      "id": 270,
+      "database_id": null,
       "sequence": "CGAGTAGTTCAGTAGCGGAAATGTCAGAGCCAGCGTCTTGAAGCAGAGACCCC"
     },
     {
+      "id": 28,
+      "type": "Primer",
       "name": "UNS8_A Top",
-      "id": 271,
+      "database_id": null,
       "sequence": "CCTCGTCTCAACCAAAGCAATCAACCCATCAACCACCTGGGGAGAGAGACCGG"
     },
     {
+      "id": 29,
+      "type": "Primer",
       "name": "UNS8_A Bottom",
-      "id": 272,
+      "database_id": null,
       "sequence": "CCGGTCTCTCTCCCCAGGTGGTTGATGGGTTGATTGCTTTGGTTGAGACGAGG"
     },
     {
+      "id": 30,
+      "type": "Primer",
       "name": "UNS8_E Top",
-      "id": 273,
+      "database_id": null,
       "sequence": "GGGGTCTCTGCTTCCTCGTCTCAACCAAAGCAATCAACCCATCAACCACCTGG"
     },
     {
+      "id": 31,
+      "type": "Primer",
       "name": "UNS8_E Bottom",
-      "id": 274,
+      "database_id": null,
       "sequence": "CCAGGTGGTTGATGGGTTGATTGCTTTGGTTGAGACGAGGAAGCAGAGACCCC"
     },
     {
+      "id": 32,
+      "type": "Primer",
       "name": "UNS9_A Top",
-      "id": 275,
+      "database_id": null,
       "sequence": "GTTCCTTATCATCTGGCGAATCGGACCCACAAGAGCACTGGGAGAGAGACCGG"
     },
     {
+      "id": 33,
+      "type": "Primer",
       "name": "UNS9_A Bottom",
-      "id": 276,
+      "database_id": null,
       "sequence": "CCGGTCTCTCTCCCAGTGCTCTTGTGGGTCCGATTCGCCAGATGATAAGGAAC"
     },
     {
+      "id": 34,
+      "type": "Primer",
       "name": "UNS9_E Top",
-      "id": 277,
+      "database_id": null,
       "sequence": "GGGGTCTCTGCTTGTTCCTTATCATCTGGCGAATCGGACCCACAAGAGCACTG"
     },
     {
+      "id": 35,
+      "type": "Primer",
       "name": "UNS9_E Bottom",
-      "id": 278,
+      "database_id": null,
       "sequence": "CAGTGCTCTTGTGGGTCCGATTCGCCAGATGATAAGGAACAAGCAGAGACCCC"
     },
     {
+      "id": 36,
+      "type": "Primer",
       "name": "UNS10_E Top",
-      "id": 279,
+      "database_id": null,
       "sequence": "GGGGTCTCTGCTTCCAGGATACATAGATTACCACAACTCCGAGCCCTTCCACC"
     },
     {
+      "id": 37,
+      "type": "Primer",
       "name": "UNS10_E Bottom",
-      "id": 280,
+      "database_id": null,
       "sequence": "GGTGGAAGGGCTCGGAGTTGTGGTAATCTATGTATCCTGGAAGCAGAGACCCC"
     },
     {
+      "id": 38,
+      "type": "Primer",
       "name": "UNS1_Forward",
-      "id": 281,
+      "database_id": null,
       "sequence": "CATTACTCGCATCCATTCTCAGGC"
     },
     {
+      "id": 39,
+      "type": "Primer",
       "name": "UNS3_Forward",
-      "id": 282,
+      "database_id": null,
       "sequence": "GCACTGAAGGTCCTCAATCG"
     },
     {
+      "id": 40,
+      "type": "Primer",
       "name": "UNS4_Forward",
-      "id": 283,
+      "database_id": null,
       "sequence": "CTGACCTCCTGCCAGCAATAGT"
     },
     {
+      "id": 41,
+      "type": "Primer",
       "name": "UNS5_Forward",
-      "id": 284,
+      "database_id": null,
       "sequence": "GAGCCAACTCCCTTTACAACCT"
     },
     {
+      "id": 42,
+      "type": "Primer",
       "name": "UNS6_Forward",
-      "id": 285,
+      "database_id": null,
       "sequence": "CTCGTTCGCTGCCACCTAAGAA"
     },
     {
+      "id": 43,
+      "type": "Primer",
       "name": "UNS7_Forward",
-      "id": 286,
+      "database_id": null,
       "sequence": "CAAGACGCTGGCTCTGACATTT"
     },
     {
+      "id": 44,
+      "type": "Primer",
       "name": "UNS8_Forward",
-      "id": 287,
+      "database_id": null,
       "sequence": "CCTCGTCTCAACCAAAGCAATC"
     },
     {
+      "id": 45,
+      "type": "Primer",
       "name": "UNS9_Forward",
-      "id": 288,
+      "database_id": null,
       "sequence": "GTTCCTTATCATCTGGCGAATCGGA"
     },
     {
+      "id": 46,
+      "type": "Primer",
       "name": "UNS3_Reverse",
-      "id": 289,
+      "database_id": null,
       "sequence": "CGACCTTGATGTTTCCAGTGCG"
     },
     {
+      "id": 47,
+      "type": "Primer",
       "name": "UNS4_Reverse",
-      "id": 290,
+      "database_id": null,
       "sequence": "GACTTTGCGTGTTGTCTTACTAT"
     },
     {
+      "id": 48,
+      "type": "Primer",
       "name": "UNS5_Reverse",
-      "id": 291,
+      "database_id": null,
       "sequence": "CTCTAACGGACTTGAGTGAGGTTG"
     },
     {
+      "id": 49,
+      "type": "Primer",
       "name": "UNS6_Reverse",
-      "id": 292,
+      "database_id": null,
       "sequence": "GTATGTGACCGTAGAGTATTCTTAGGTGG"
     },
     {
+      "id": 50,
+      "type": "Primer",
       "name": "UNS7_Reverse",
-      "id": 293,
+      "database_id": null,
       "sequence": "CGAGTAGTTCAGTAGCGGAAA"
     },
     {
+      "id": 51,
+      "type": "Primer",
       "name": "UNS8_Reverse",
-      "id": 294,
+      "database_id": null,
       "sequence": "CCAGGTGGTTGATGGGTTGATT"
     },
     {
+      "id": 52,
+      "type": "Primer",
       "name": "UNS9_Reverse",
-      "id": 295,
+      "database_id": null,
       "sequence": "CAGTGCTCTTGTGGGTCCGAT"
     },
     {
+      "id": 53,
+      "type": "Primer",
       "name": "UNS10_Reverse",
-      "id": 296,
+      "database_id": null,
       "sequence": "GGTGGAAGGGCTCGGAGTTG"
     }
-  ]
+  ],
+  "description": "Pre-composed 5'UTR + promoter + CDS\n\nTranscriptional Unit that uses a level 0 plasmid containing joined 5'UTR + promoter + CDS",
+  "files": null,
+  "schema_version": "0.4.0",
+  "backend_version": null,
+  "frontend_version": null
 }

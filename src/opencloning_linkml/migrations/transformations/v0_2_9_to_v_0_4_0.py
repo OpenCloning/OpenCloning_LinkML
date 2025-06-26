@@ -1,5 +1,5 @@
 from ..model_archive.v0_2_9 import CloningStrategy as old_CloningStrategy
-from ...datamodel._models import CloningStrategy as new_CloningStrategy
+from ..model_archive.v0_4_0 import CloningStrategy as new_CloningStrategy
 from copy import deepcopy
 
 
