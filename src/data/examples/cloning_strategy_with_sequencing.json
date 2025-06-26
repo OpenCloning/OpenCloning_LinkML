@@ -1,7 +1,7 @@
 {
   "sequences": [
     {
-      "id": 1,
+      "id": 2,
       "type": "TextFileSequence",
       "sequence_file_format": "genbank",
       "overhang_crick_3prime": 0,
@@ -12,10 +12,11 @@
   "sources": [
     {
       "id": 1,
+      "input": [],
+      "output": 2,
       "type": "UploadedFileSource",
       "output_name": null,
       "database_id": null,
-      "input": [],
       "sequence_file_format": "genbank",
       "file_name": "final_product.gb",
       "index_in_file": 0,
@@ -57,7 +58,7 @@
       ]
     }
   ],
-  "schema_version": "0.4.0",
+  "schema_version": "0.3.0",
   "backend_version": null,
   "frontend_version": null
 }
