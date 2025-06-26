@@ -19,19 +19,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/SourceInput"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -145,19 +138,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/SourceInput"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -217,12 +203,13 @@
                     ]
                 },
                 "sequence": {
+                    "description": "The input sequence",
                     "type": "integer"
                 }
             },
             "required": [
-                "sequence",
-                "reverse_complemented"
+                "reverse_complemented",
+                "sequence"
             ],
             "title": "AssemblyFragment",
             "type": "object"
@@ -231,16 +218,6 @@
             "additionalProperties": false,
             "description": "Represents the source of a sequence that is an assembly of other sequences",
             "properties": {
-                "assembly": {
-                    "description": "A list of the fragments that are assembled, in order",
-                    "items": {
-                        "$ref": "#/$defs/AssemblyFragment"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "circular": {
                     "description": "Whether the assembly is circular or not",
                     "type": [
@@ -260,19 +237,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "A list of the fragments that are assembled, in order",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/AssemblyFragment"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -359,19 +329,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/SourceInput"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -413,16 +376,6 @@
             "additionalProperties": false,
             "description": "Represents the source of a sequence that is generated by CRISPR",
             "properties": {
-                "assembly": {
-                    "description": "A list of the fragments that are assembled, in order",
-                    "items": {
-                        "$ref": "#/$defs/AssemblyFragment"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "circular": {
                     "description": "Whether the assembly is circular or not",
                     "type": [
@@ -449,19 +402,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "A list of the fragments that are assembled, in order",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/AssemblyFragment"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -898,9 +844,9 @@
                     ]
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/SourceInput"
                     },
                     "type": [
                         "array",
@@ -914,13 +860,6 @@
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -957,16 +896,6 @@
             "additionalProperties": false,
             "description": "Represents the source of a sequence that is generated by Cre - Lox recombination",
             "properties": {
-                "assembly": {
-                    "description": "A list of the fragments that are assembled, in order",
-                    "items": {
-                        "$ref": "#/$defs/AssemblyFragment"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "circular": {
                     "description": "Whether the assembly is circular or not",
                     "type": [
@@ -986,19 +915,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "A list of the fragments that are assembled, in order",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/AssemblyFragment"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -1039,19 +961,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/SourceInput"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -1096,19 +1011,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/SourceInput"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -1159,16 +1067,6 @@
             "additionalProperties": false,
             "description": "Represents the source of a sequence that is generated by Gateway cloning",
             "properties": {
-                "assembly": {
-                    "description": "A list of the fragments that are assembled, in order",
-                    "items": {
-                        "$ref": "#/$defs/AssemblyFragment"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "circular": {
                     "description": "Whether the assembly is circular or not",
                     "type": [
@@ -1195,19 +1093,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "A list of the fragments that are assembled, in order",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/AssemblyFragment"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -1273,9 +1164,9 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/SourceInput"
                     },
                     "type": [
                         "array",
@@ -1286,13 +1177,6 @@
                     "description": "The locus tag of the sequence",
                     "type": [
                         "string",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -1340,16 +1224,6 @@
             "additionalProperties": false,
             "description": "Represents the source of a sequence that is generated by Gibson assembly",
             "properties": {
-                "assembly": {
-                    "description": "A list of the fragments that are assembled, in order",
-                    "items": {
-                        "$ref": "#/$defs/AssemblyFragment"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "circular": {
                     "description": "Whether the assembly is circular or not",
                     "type": [
@@ -1369,19 +1243,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "A list of the fragments that are assembled, in order",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/AssemblyFragment"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -1413,16 +1280,6 @@
             "additionalProperties": false,
             "description": "Represents the source of a sequence that is generated by homologous recombination",
             "properties": {
-                "assembly": {
-                    "description": "A list of the fragments that are assembled, in order",
-                    "items": {
-                        "$ref": "#/$defs/AssemblyFragment"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "circular": {
                     "description": "Whether the assembly is circular or not",
                     "type": [
@@ -1442,19 +1299,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "A list of the fragments that are assembled, in order",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/AssemblyFragment"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -1498,19 +1348,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/SourceInput"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -1557,16 +1400,6 @@
             "additionalProperties": false,
             "description": "Represents the source of a sequence that is generated by In-Fusion cloning by Takara Bio",
             "properties": {
-                "assembly": {
-                    "description": "A list of the fragments that are assembled, in order",
-                    "items": {
-                        "$ref": "#/$defs/AssemblyFragment"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "circular": {
                     "description": "Whether the assembly is circular or not",
                     "type": [
@@ -1586,19 +1419,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "A list of the fragments that are assembled, in order",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/AssemblyFragment"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -1630,16 +1456,6 @@
             "additionalProperties": false,
             "description": "Represents the source of a sequence that is generated by in vivo assembly. Algorithmically equivalent to Gibson assembly.",
             "properties": {
-                "assembly": {
-                    "description": "A list of the fragments that are assembled, in order",
-                    "items": {
-                        "$ref": "#/$defs/AssemblyFragment"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "circular": {
                     "description": "Whether the assembly is circular or not",
                     "type": [
@@ -1659,19 +1475,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "A list of the fragments that are assembled, in order",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/AssemblyFragment"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -1703,16 +1512,6 @@
             "additionalProperties": false,
             "description": "Represents the source of a sequence that is generated by ligation with sticky or blunt ends.",
             "properties": {
-                "assembly": {
-                    "description": "A list of the fragments that are assembled, in order",
-                    "items": {
-                        "$ref": "#/$defs/AssemblyFragment"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "circular": {
                     "description": "Whether the assembly is circular or not",
                     "type": [
@@ -1732,19 +1531,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "A list of the fragments that are assembled, in order",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/AssemblyFragment"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -1795,19 +1587,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/SourceInput"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -1892,19 +1677,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/SourceInput"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -1949,16 +1727,6 @@
             "additionalProperties": false,
             "description": "Represents the source of a sequence that is generated by ligation of PCR products as part of overlap extension PCR. Algorithmically equivalent to Gibson assembly.",
             "properties": {
-                "assembly": {
-                    "description": "A list of the fragments that are assembled, in order",
-                    "items": {
-                        "$ref": "#/$defs/AssemblyFragment"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "circular": {
                     "description": "Whether the assembly is circular or not",
                     "type": [
@@ -1978,19 +1746,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "A list of the fragments that are assembled, in order",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/AssemblyFragment"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -2029,16 +1790,6 @@
                         "null"
                     ]
                 },
-                "assembly": {
-                    "description": "A list of the fragments that are assembled, in order",
-                    "items": {
-                        "$ref": "#/$defs/AssemblyFragment"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "circular": {
                     "description": "Whether the assembly is circular or not",
                     "type": [
@@ -2058,19 +1809,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "A list of the fragments that are assembled, in order",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/AssemblyFragment"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -2216,19 +1960,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/SourceInput"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -2318,19 +2055,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/SourceInput"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -2386,16 +2116,6 @@
             "additionalProperties": false,
             "description": "Represents the source of a sequence that is generated by restriction and ligation",
             "properties": {
-                "assembly": {
-                    "description": "A list of the fragments that are assembled, in order",
-                    "items": {
-                        "$ref": "#/$defs/AssemblyFragment"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "circular": {
                     "description": "Whether the assembly is circular or not",
                     "type": [
@@ -2415,19 +2135,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "A list of the fragments that are assembled, in order",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/AssemblyFragment"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -2478,9 +2191,9 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/SourceInput"
                     },
                     "type": [
                         "array",
@@ -2495,13 +2208,6 @@
                         {
                             "type": "null"
                         }
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
-                        "null"
                     ]
                 },
                 "output_name": {
@@ -2578,19 +2284,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/SourceInput"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -2634,19 +2333,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/SourceInput"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -2726,9 +2418,9 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/SourceInput"
                     },
                     "type": [
                         "array",
@@ -2743,13 +2435,6 @@
                         {
                             "type": "null"
                         }
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
-                        "null"
                     ]
                 },
                 "output_name": {
@@ -2856,19 +2541,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/SourceInput"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -2904,6 +2582,21 @@
                 "id"
             ],
             "title": "SnapGenePlasmidSource",
+            "type": "object"
+        },
+        "SourceInput": {
+            "additionalProperties": false,
+            "description": "Represents an input to a source",
+            "properties": {
+                "sequence": {
+                    "description": "The input sequence",
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "sequence"
+            ],
+            "title": "SourceInput",
             "type": "object"
         },
         "TemplateSequence": {
@@ -3040,19 +2733,12 @@
                     ]
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/SourceInput"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -3101,19 +2787,12 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/SourceInput"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "output": {
-                    "description": "Identifier of the sequence that is the output of this source.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
