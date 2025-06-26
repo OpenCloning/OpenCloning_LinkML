@@ -94,7 +94,6 @@ linkml:Sparqlpath xsd:string
     CLOSED {
        (  $<AssemblySource_tes> (  &<Source_tes> ;
              rdf:type [ schema1:CreateAction ] ? ;
-             schema1:object @<AssemblyFragment> * ;
              <circular> @linkml:Boolean ?
           ) ;
           rdf:type [ <AssemblySource> ]
@@ -183,8 +182,7 @@ linkml:Sparqlpath xsd:string
 
 <CRISPRSource> CLOSED {
     (  $<CRISPRSource_tes> (  &<HomologousRecombinationSource_tes> ;
-          rdf:type [ <HomologousRecombinationSource> ] ? ;
-          <input> @<SourceInput> *
+          rdf:type [ <HomologousRecombinationSource> ] ?
        ) ;
        rdf:type [ <CRISPRSource> ]
     )

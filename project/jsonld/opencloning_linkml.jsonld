@@ -1283,25 +1283,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "assemblySource__input",
-      "description": "A list of the fragments that are assembled, in order",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "mappings": [
-        "http://schema.org/object"
-      ],
-      "slot_uri": "http://schema.org/object",
-      "alias": "input",
-      "owner": "AssemblySource",
-      "domain_of": [
-        "AssemblySource"
-      ],
-      "range": "AssemblyFragment",
-      "multivalued": true,
-      "inlined": true,
-      "inlined_as_list": true,
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "assemblySource__circular",
       "description": "Whether the assembly is circular or not",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
@@ -1353,22 +1334,6 @@
         "GatewaySource"
       ],
       "range": "boolean",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "cRISPRSource__input",
-      "description": "Assembly fragments + guide RNAs used in the CRISPR",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/input",
-      "alias": "input",
-      "owner": "CRISPRSource",
-      "domain_of": [
-        "CRISPRSource"
-      ],
-      "range": "SourceInput",
-      "multivalued": true,
-      "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2941,20 +2906,11 @@
         "type",
         "output_name",
         "database_id",
-        "assemblySource__input",
+        "source__input",
         "assemblySource__circular"
       ],
       "slot_usage": {},
       "attributes": [
-        {
-          "name": "input",
-          "description": "A list of the fragments that are assembled, in order",
-          "slot_uri": "schema:object",
-          "range": "AssemblyFragment",
-          "multivalued": true,
-          "inlined_as_list": true,
-          "@type": "SlotDefinition"
-        },
         {
           "name": "circular",
           "description": "Whether the assembly is circular or not",
@@ -2976,7 +2932,7 @@
         "type",
         "output_name",
         "database_id",
-        "assemblySource__input",
+        "source__input",
         "assemblySource__circular",
         "pCRSource__add_primer_features"
       ],
@@ -3004,7 +2960,7 @@
         "type",
         "output_name",
         "database_id",
-        "assemblySource__input",
+        "source__input",
         "assemblySource__circular"
       ],
       "slot_usage": {},
@@ -3022,7 +2978,7 @@
         "type",
         "output_name",
         "database_id",
-        "assemblySource__input",
+        "source__input",
         "assemblySource__circular"
       ],
       "slot_usage": {},
@@ -3040,7 +2996,7 @@
         "type",
         "output_name",
         "database_id",
-        "assemblySource__input",
+        "source__input",
         "assemblySource__circular"
       ],
       "slot_usage": {},
@@ -3058,7 +3014,7 @@
         "type",
         "output_name",
         "database_id",
-        "assemblySource__input",
+        "source__input",
         "assemblySource__circular"
       ],
       "slot_usage": {},
@@ -3076,7 +3032,7 @@
         "type",
         "output_name",
         "database_id",
-        "assemblySource__input",
+        "source__input",
         "assemblySource__circular"
       ],
       "slot_usage": {},
@@ -3094,7 +3050,7 @@
         "type",
         "output_name",
         "database_id",
-        "assemblySource__input",
+        "source__input",
         "assemblySource__circular"
       ],
       "slot_usage": {},
@@ -3112,7 +3068,7 @@
         "type",
         "output_name",
         "database_id",
-        "assemblySource__input",
+        "source__input",
         "assemblySource__circular",
         "RestrictionAndLigationSource_restriction_enzymes"
       ],
@@ -3131,7 +3087,7 @@
         "type",
         "output_name",
         "database_id",
-        "assemblySource__input",
+        "source__input",
         "assemblySource__circular",
         "gatewaySource__reaction_type",
         "gatewaySource__greedy"
@@ -3166,7 +3122,7 @@
         "type",
         "output_name",
         "database_id",
-        "assemblySource__input",
+        "source__input",
         "assemblySource__circular"
       ],
       "slot_usage": {},
@@ -3184,20 +3140,10 @@
         "type",
         "output_name",
         "database_id",
-        "assemblySource__circular",
-        "cRISPRSource__input"
+        "source__input",
+        "assemblySource__circular"
       ],
       "slot_usage": {},
-      "attributes": [
-        {
-          "name": "input",
-          "description": "Assembly fragments + guide RNAs used in the CRISPR",
-          "range": "SourceInput",
-          "multivalued": true,
-          "inlined_as_list": true,
-          "@type": "SlotDefinition"
-        }
-      ],
       "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/CRISPRSource",
       "@type": "ClassDefinition"
     },
@@ -3552,9 +3498,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "opencloning_linkml.yaml",
-  "source_file_date": "2025-06-26T15:31:43",
-  "source_file_size": 26143,
-  "generation_date": "2025-06-26T15:44:09",
+  "source_file_date": "2025-06-26T16:54:56",
+  "source_file_size": 25648,
+  "generation_date": "2025-06-26T16:55:32",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/opencloning_linkml.context.jsonld",

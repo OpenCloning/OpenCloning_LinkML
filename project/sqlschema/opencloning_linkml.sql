@@ -43,6 +43,17 @@
 --     * Slot: GenomeCoordinatesSource_id Description: Autocreated FK slot
 --     * Slot: SequenceCutSource_id Description: Autocreated FK slot
 --     * Slot: RestrictionEnzymeDigestionSource_id Description: Autocreated FK slot
+--     * Slot: AssemblySource_id Description: Autocreated FK slot
+--     * Slot: PCRSource_id Description: Autocreated FK slot
+--     * Slot: LigationSource_id Description: Autocreated FK slot
+--     * Slot: HomologousRecombinationSource_id Description: Autocreated FK slot
+--     * Slot: GibsonAssemblySource_id Description: Autocreated FK slot
+--     * Slot: InFusionSource_id Description: Autocreated FK slot
+--     * Slot: OverlapExtensionPCRLigationSource_id Description: Autocreated FK slot
+--     * Slot: InVivoAssemblySource_id Description: Autocreated FK slot
+--     * Slot: RestrictionAndLigationSource_id Description: Autocreated FK slot
+--     * Slot: GatewaySource_id Description: Autocreated FK slot
+--     * Slot: CreLoxRecombinationSource_id Description: Autocreated FK slot
 --     * Slot: CRISPRSource_id Description: Autocreated FK slot
 --     * Slot: OligoHybridizationSource_id Description: Autocreated FK slot
 --     * Slot: PolymeraseExtensionSource_id Description: Autocreated FK slot
@@ -202,17 +213,6 @@
 --     * Slot: reverse_complemented Description: Whether the sequence is reverse complemented in the assembly
 --     * Slot: type Description: Designates the class
 --     * Slot: sequence Description: The input sequence
---     * Slot: AssemblySource_id Description: Autocreated FK slot
---     * Slot: PCRSource_id Description: Autocreated FK slot
---     * Slot: LigationSource_id Description: Autocreated FK slot
---     * Slot: HomologousRecombinationSource_id Description: Autocreated FK slot
---     * Slot: GibsonAssemblySource_id Description: Autocreated FK slot
---     * Slot: InFusionSource_id Description: Autocreated FK slot
---     * Slot: OverlapExtensionPCRLigationSource_id Description: Autocreated FK slot
---     * Slot: InVivoAssemblySource_id Description: Autocreated FK slot
---     * Slot: RestrictionAndLigationSource_id Description: Autocreated FK slot
---     * Slot: GatewaySource_id Description: Autocreated FK slot
---     * Slot: CreLoxRecombinationSource_id Description: Autocreated FK slot
 -- # Class: "AssemblySource" Description: "Represents the source of a sequence that is an assembly of other sequences"
 --     * Slot: circular Description: Whether the assembly is circular or not
 --     * Slot: type Description: Designates the class
@@ -778,6 +778,17 @@ CREATE TABLE "SourceInput" (
 	"GenomeCoordinatesSource_id" INTEGER,
 	"SequenceCutSource_id" INTEGER,
 	"RestrictionEnzymeDigestionSource_id" INTEGER,
+	"AssemblySource_id" INTEGER,
+	"PCRSource_id" INTEGER,
+	"LigationSource_id" INTEGER,
+	"HomologousRecombinationSource_id" INTEGER,
+	"GibsonAssemblySource_id" INTEGER,
+	"InFusionSource_id" INTEGER,
+	"OverlapExtensionPCRLigationSource_id" INTEGER,
+	"InVivoAssemblySource_id" INTEGER,
+	"RestrictionAndLigationSource_id" INTEGER,
+	"GatewaySource_id" INTEGER,
+	"CreLoxRecombinationSource_id" INTEGER,
 	"CRISPRSource_id" INTEGER,
 	"OligoHybridizationSource_id" INTEGER,
 	"PolymeraseExtensionSource_id" INTEGER,
@@ -801,6 +812,17 @@ CREATE TABLE "SourceInput" (
 	FOREIGN KEY("GenomeCoordinatesSource_id") REFERENCES "GenomeCoordinatesSource" (id),
 	FOREIGN KEY("SequenceCutSource_id") REFERENCES "SequenceCutSource" (id),
 	FOREIGN KEY("RestrictionEnzymeDigestionSource_id") REFERENCES "RestrictionEnzymeDigestionSource" (id),
+	FOREIGN KEY("AssemblySource_id") REFERENCES "AssemblySource" (id),
+	FOREIGN KEY("PCRSource_id") REFERENCES "PCRSource" (id),
+	FOREIGN KEY("LigationSource_id") REFERENCES "LigationSource" (id),
+	FOREIGN KEY("HomologousRecombinationSource_id") REFERENCES "HomologousRecombinationSource" (id),
+	FOREIGN KEY("GibsonAssemblySource_id") REFERENCES "GibsonAssemblySource" (id),
+	FOREIGN KEY("InFusionSource_id") REFERENCES "InFusionSource" (id),
+	FOREIGN KEY("OverlapExtensionPCRLigationSource_id") REFERENCES "OverlapExtensionPCRLigationSource" (id),
+	FOREIGN KEY("InVivoAssemblySource_id") REFERENCES "InVivoAssemblySource" (id),
+	FOREIGN KEY("RestrictionAndLigationSource_id") REFERENCES "RestrictionAndLigationSource" (id),
+	FOREIGN KEY("GatewaySource_id") REFERENCES "GatewaySource" (id),
+	FOREIGN KEY("CreLoxRecombinationSource_id") REFERENCES "CreLoxRecombinationSource" (id),
 	FOREIGN KEY("CRISPRSource_id") REFERENCES "CRISPRSource" (id),
 	FOREIGN KEY("OligoHybridizationSource_id") REFERENCES "OligoHybridizationSource" (id),
 	FOREIGN KEY("PolymeraseExtensionSource_id") REFERENCES "PolymeraseExtensionSource" (id),
@@ -825,30 +847,8 @@ CREATE TABLE "AssemblyFragment" (
 	reverse_complemented BOOLEAN NOT NULL,
 	type TEXT,
 	sequence INTEGER NOT NULL,
-	"AssemblySource_id" INTEGER,
-	"PCRSource_id" INTEGER,
-	"LigationSource_id" INTEGER,
-	"HomologousRecombinationSource_id" INTEGER,
-	"GibsonAssemblySource_id" INTEGER,
-	"InFusionSource_id" INTEGER,
-	"OverlapExtensionPCRLigationSource_id" INTEGER,
-	"InVivoAssemblySource_id" INTEGER,
-	"RestrictionAndLigationSource_id" INTEGER,
-	"GatewaySource_id" INTEGER,
-	"CreLoxRecombinationSource_id" INTEGER,
 	PRIMARY KEY (id),
-	FOREIGN KEY(sequence) REFERENCES "Sequence" (id),
-	FOREIGN KEY("AssemblySource_id") REFERENCES "AssemblySource" (id),
-	FOREIGN KEY("PCRSource_id") REFERENCES "PCRSource" (id),
-	FOREIGN KEY("LigationSource_id") REFERENCES "LigationSource" (id),
-	FOREIGN KEY("HomologousRecombinationSource_id") REFERENCES "HomologousRecombinationSource" (id),
-	FOREIGN KEY("GibsonAssemblySource_id") REFERENCES "GibsonAssemblySource" (id),
-	FOREIGN KEY("InFusionSource_id") REFERENCES "InFusionSource" (id),
-	FOREIGN KEY("OverlapExtensionPCRLigationSource_id") REFERENCES "OverlapExtensionPCRLigationSource" (id),
-	FOREIGN KEY("InVivoAssemblySource_id") REFERENCES "InVivoAssemblySource" (id),
-	FOREIGN KEY("RestrictionAndLigationSource_id") REFERENCES "RestrictionAndLigationSource" (id),
-	FOREIGN KEY("GatewaySource_id") REFERENCES "GatewaySource" (id),
-	FOREIGN KEY("CreLoxRecombinationSource_id") REFERENCES "CreLoxRecombinationSource" (id)
+	FOREIGN KEY(sequence) REFERENCES "Sequence" (id)
 );
 CREATE TABLE "AssociatedFile" (
 	id INTEGER NOT NULL,

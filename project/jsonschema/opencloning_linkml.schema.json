@@ -261,9 +261,16 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "A list of the fragments that are assembled, in order",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/AssemblyFragment"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -426,7 +433,7 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "Assembly fragments + guide RNAs used in the CRISPR",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
                         "anyOf": [
                             {
@@ -952,9 +959,16 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "A list of the fragments that are assembled, in order",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/AssemblyFragment"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -1144,9 +1158,16 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "A list of the fragments that are assembled, in order",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/AssemblyFragment"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -1301,9 +1322,16 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "A list of the fragments that are assembled, in order",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/AssemblyFragment"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -1357,9 +1385,16 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "A list of the fragments that are assembled, in order",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/AssemblyFragment"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -1484,9 +1519,16 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "A list of the fragments that are assembled, in order",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/AssemblyFragment"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -1540,9 +1582,16 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "A list of the fragments that are assembled, in order",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/AssemblyFragment"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -1596,9 +1645,16 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "A list of the fragments that are assembled, in order",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/AssemblyFragment"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -1815,9 +1871,16 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "A list of the fragments that are assembled, in order",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/AssemblyFragment"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -1878,9 +1941,16 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "A list of the fragments that are assembled, in order",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/AssemblyFragment"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -2218,9 +2288,16 @@
                     "type": "integer"
                 },
                 "input": {
-                    "description": "A list of the fragments that are assembled, in order",
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/AssemblyFragment"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",

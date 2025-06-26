@@ -1,5 +1,5 @@
 # Auto generated from opencloning_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-06-26T15:44:11
+# Generation date: 2025-06-26T16:55:34
 # Schema: OpenCloning_LinkML
 #
 # id: https://opencloning.github.io/OpenCloning_LinkML
@@ -1238,7 +1238,6 @@ class AssemblySource(Source):
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.AssemblySource
 
     id: Union[int, AssemblySourceId] = None
-    input: Optional[Union[Union[dict, AssemblyFragment], list[Union[dict, AssemblyFragment]]]] = empty_list()
     circular: Optional[Union[bool, Bool]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -1246,10 +1245,6 @@ class AssemblySource(Source):
             self.MissingRequiredField("id")
         if not isinstance(self.id, AssemblySourceId):
             self.id = AssemblySourceId(self.id)
-
-        if not isinstance(self.input, list):
-            self.input = [self.input] if self.input is not None else []
-        self.input = [v if isinstance(v, AssemblyFragment) else AssemblyFragment(**as_dict(v)) for v in self.input]
 
         if self.circular is not None and not isinstance(self.circular, Bool):
             self.circular = Bool(self.circular)
@@ -1545,17 +1540,12 @@ class CRISPRSource(HomologousRecombinationSource):
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.CRISPRSource
 
     id: Union[int, CRISPRSourceId] = None
-    input: Optional[Union[Union[dict, SourceInput], list[Union[dict, SourceInput]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, CRISPRSourceId):
             self.id = CRISPRSourceId(self.id)
-
-        if not isinstance(self.input, list):
-            self.input = [self.input] if self.input is not None else []
-        self.input = [v if isinstance(v, SourceInput) else SourceInput(**as_dict(v)) for v in self.input]
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -2526,15 +2516,6 @@ slots.assemblyFragment__reverse_complemented = Slot(
     range=Union[bool, Bool],
 )
 
-slots.assemblySource__input = Slot(
-    uri=SCHEMA.object,
-    name="assemblySource__input",
-    curie=SCHEMA.curie("object"),
-    model_uri=OPENCLONING_LINKML.assemblySource__input,
-    domain=None,
-    range=Optional[Union[Union[dict, AssemblyFragment], list[Union[dict, AssemblyFragment]]]],
-)
-
 slots.assemblySource__circular = Slot(
     uri=OPENCLONING_LINKML.circular,
     name="assemblySource__circular",
@@ -2569,15 +2550,6 @@ slots.gatewaySource__greedy = Slot(
     model_uri=OPENCLONING_LINKML.gatewaySource__greedy,
     domain=None,
     range=Optional[Union[bool, Bool]],
-)
-
-slots.cRISPRSource__input = Slot(
-    uri=OPENCLONING_LINKML.input,
-    name="cRISPRSource__input",
-    curie=OPENCLONING_LINKML.curie("input"),
-    model_uri=OPENCLONING_LINKML.cRISPRSource__input,
-    domain=None,
-    range=Optional[Union[Union[dict, SourceInput], list[Union[dict, SourceInput]]]],
 )
 
 slots.cloningStrategy__sequences = Slot(

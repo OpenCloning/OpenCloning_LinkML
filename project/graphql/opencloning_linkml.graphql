@@ -98,7 +98,7 @@ type AssemblySource
     type: String
     outputName: String
     databaseId: Integer
-    input: [AssemblyFragment]
+    input: [SourceInput]
     circular: Boolean
   }
 
@@ -169,7 +169,7 @@ type CreLoxRecombinationSource
     type: String
     outputName: String
     databaseId: Integer
-    input: [AssemblyFragment]
+    input: [SourceInput]
     circular: Boolean
   }
 
@@ -179,8 +179,8 @@ type CRISPRSource
     type: String
     outputName: String
     databaseId: Integer
-    circular: Boolean
     input: [SourceInput]
+    circular: Boolean
   }
 
 type DatabaseSource
@@ -209,7 +209,7 @@ type GatewaySource
     type: String
     outputName: String
     databaseId: Integer
-    input: [AssemblyFragment]
+    input: [SourceInput]
     circular: Boolean
     reactionType: GatewayReactionType!
     greedy: Boolean
@@ -237,7 +237,7 @@ type GibsonAssemblySource
     type: String
     outputName: String
     databaseId: Integer
-    input: [AssemblyFragment]
+    input: [SourceInput]
     circular: Boolean
   }
 
@@ -247,7 +247,7 @@ type HomologousRecombinationSource
     type: String
     outputName: String
     databaseId: Integer
-    input: [AssemblyFragment]
+    input: [SourceInput]
     circular: Boolean
   }
 
@@ -269,7 +269,7 @@ type InFusionSource
     type: String
     outputName: String
     databaseId: Integer
-    input: [AssemblyFragment]
+    input: [SourceInput]
     circular: Boolean
   }
 
@@ -279,7 +279,7 @@ type InVivoAssemblySource
     type: String
     outputName: String
     databaseId: Integer
-    input: [AssemblyFragment]
+    input: [SourceInput]
     circular: Boolean
   }
 
@@ -289,7 +289,7 @@ type LigationSource
     type: String
     outputName: String
     databaseId: Integer
-    input: [AssemblyFragment]
+    input: [SourceInput]
     circular: Boolean
   }
 
@@ -327,7 +327,7 @@ type OverlapExtensionPCRLigationSource
     type: String
     outputName: String
     databaseId: Integer
-    input: [AssemblyFragment]
+    input: [SourceInput]
     circular: Boolean
   }
 
@@ -337,7 +337,7 @@ type PCRSource
     type: String
     outputName: String
     databaseId: Integer
-    input: [AssemblyFragment]
+    input: [SourceInput]
     circular: Boolean
     addPrimerFeatures: Boolean
   }
@@ -396,7 +396,7 @@ type RestrictionAndLigationSource
     type: String
     outputName: String
     databaseId: Integer
-    input: [AssemblyFragment]
+    input: [SourceInput]
     circular: Boolean
     restrictionEnzymes: [String]!
   }
