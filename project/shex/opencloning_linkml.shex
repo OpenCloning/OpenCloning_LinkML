@@ -184,7 +184,7 @@ linkml:Sparqlpath xsd:string
 <CRISPRSource> CLOSED {
     (  $<CRISPRSource_tes> (  &<HomologousRecombinationSource_tes> ;
           rdf:type [ <HomologousRecombinationSource> ] ? ;
-          <guides> @<Primer> +
+          <input> @<SourceInput> *
        ) ;
        rdf:type [ <CRISPRSource> ]
     )
@@ -309,9 +309,7 @@ linkml:Sparqlpath xsd:string
 <OligoHybridizationSource> CLOSED {
     (  $<OligoHybridizationSource_tes> (  &<Source_tes> ;
           rdf:type [ schema1:CreateAction ] ? ;
-          <overhang_crick_3prime> @linkml:Integer ? ;
-          <forward_oligo> @<Primer> ;
-          <reverse_oligo> @<Primer>
+          <overhang_crick_3prime> @linkml:Integer ?
        ) ;
        rdf:type [ <OligoHybridizationSource> ]
     )
@@ -514,7 +512,9 @@ linkml:Sparqlpath xsd:string
 
 <SourceInput>  (
     CLOSED {
-       (  $<SourceInput_tes> <sequence> @<Sequence> ;
+       (  $<SourceInput_tes> (  <type> @linkml:String ? ;
+             <sequence> @<Sequence>
+          ) ;
           rdf:type [ schema1:Role ] ?
        )
     } OR @<AssemblyFragment>

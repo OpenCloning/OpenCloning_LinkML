@@ -6,11 +6,16 @@ from copy import deepcopy
 def remap_source(input_source: dict, sequence_id_map: dict, primer_id_map: dict):
     """Remap ids of sequences and primers in source fields."""
     source = deepcopy(input_source)
+    # Normalise input and assembly fields
     if source["input"] is None:
         source["input"] = []
     if "assembly" in source and source["assembly"] is None:
         source["assembly"] = []
+
+    # Remap input fields
     source["input"] = [sequence_id_map[sequence_id] for sequence_id in source["input"]]
+
+    # Remap assembly fields and CollectionSource options
     if source["type"] == "PCRSource" and len(source["assembly"]):
         fwd, tmp, rvs = source["assembly"]
         fwd["sequence"] = primer_id_map[fwd["sequence"]]
@@ -19,9 +24,17 @@ def remap_source(input_source: dict, sequence_id_map: dict, primer_id_map: dict)
     elif source["type"] == "CollectionSource":
         for option in source["options"]:
             option["source"] = remap_source(option["source"], sequence_id_map, primer_id_map)
-    elif "assembly" in source and len(source["assembly"]):
+    elif "assembly" in source:
         for assembly_fragment in source["assembly"]:
             assembly_fragment["sequence"] = sequence_id_map[assembly_fragment["sequence"]]
+    elif source["type"] == "OligoHybridizationSource":
+        source["forward_oligo"] = primer_id_map[source["forward_oligo"]]
+        source["reverse_oligo"] = primer_id_map[source["reverse_oligo"]]
+
+    # Remap guides field in CRISPR
+    if source["type"] == "CRISPRSource":
+        source["guides"] = [primer_id_map[guide] for guide in source["guides"]]
+
     return source
 
 
@@ -37,6 +50,19 @@ def migrate_source(input_source: dict):
             new_assembly_fragment = assembly_fragment.copy()
             source_inputs.append(new_assembly_fragment)
         del source["assembly"]
+    elif source["type"] == "OligoHybridizationSource":
+        source_inputs.extend(
+            [
+                {
+                    "sequence": source["forward_oligo"],
+                },
+                {
+                    "sequence": source["reverse_oligo"],
+                },
+            ]
+        )
+        del source["forward_oligo"]
+        del source["reverse_oligo"]
     else:
         for sequence_id in source["input"]:
             source_inputs.append(
@@ -44,6 +70,15 @@ def migrate_source(input_source: dict):
                     "sequence": sequence_id,
                 }
             )
+
+    for source_input in source_inputs:
+        source_input["type"] = "AssemblyFragment" if is_assembly else "SourceInput"
+
+    # Special case for CRISPR, move guides to input field and drop guides field
+    if source["type"] == "CRISPRSource":
+        source_inputs.extend([{"sequence": guide, "type": "SourceInput"} for guide in source["guides"]])
+        del source["guides"]
+
     # Drop output field
     del source["output"]
     source["input"] = source_inputs
@@ -81,11 +116,6 @@ def migrate_0_2_9_to_0_4_0(data: dict) -> dict:
     # Convert input fields from list of integers to list of SourceInput objects
     # and drop removed fields
     old_dict["sources"] = [migrate_source(s) for s in old_dict["sources"]]
-
-    with open("old_dict.json", "w") as f:
-        import json
-
-        json.dump(old_dict, f)
 
     new = new_CloningStrategy.model_validate(old_dict)
     new.schema_version = "0.4.0"

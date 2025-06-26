@@ -1,5 +1,5 @@
 # Auto generated from opencloning_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-06-26T13:48:54
+# Generation date: 2025-06-26T15:44:11
 # Schema: OpenCloning_LinkML
 #
 # id: https://opencloning.github.io/OpenCloning_LinkML
@@ -403,6 +403,7 @@ class SourceInput(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.SourceInput
 
     sequence: Union[int, SequenceId] = None
+    type: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.sequence):
@@ -410,7 +411,25 @@ class SourceInput(YAMLRoot):
         if not isinstance(self.sequence, SequenceId):
             self.sequence = SequenceId(self.sequence)
 
+        self.type = str(self.class_name)
+
         super().__post_init__(**kwargs)
+
+    def __new__(cls, *args, **kwargs):
+
+        type_designator = "type"
+        if not type_designator in kwargs:
+            return super().__new__(cls, *args, **kwargs)
+        else:
+            type_designator_value = kwargs[type_designator]
+            target_cls = cls._class_for("class_name", type_designator_value)
+
+            if target_cls is None:
+                raise ValueError(
+                    f"Wrong type designator value: class {cls.__name__} "
+                    f"has no subclass with ['class_name']='{kwargs[type_designator]}'"
+                )
+            return super().__new__(target_cls, *args, **kwargs)
 
 
 @dataclass(repr=False)
@@ -1202,6 +1221,7 @@ class AssemblyFragment(SourceInput):
             self.right_location = SequenceRange(self.right_location)
 
         super().__post_init__(**kwargs)
+        self.type = str(self.class_name)
 
 
 @dataclass(repr=False)
@@ -1525,7 +1545,7 @@ class CRISPRSource(HomologousRecombinationSource):
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.CRISPRSource
 
     id: Union[int, CRISPRSourceId] = None
-    guides: Union[Union[int, PrimerId], list[Union[int, PrimerId]]] = None
+    input: Optional[Union[Union[dict, SourceInput], list[Union[dict, SourceInput]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -1533,11 +1553,9 @@ class CRISPRSource(HomologousRecombinationSource):
         if not isinstance(self.id, CRISPRSourceId):
             self.id = CRISPRSourceId(self.id)
 
-        if self._is_empty(self.guides):
-            self.MissingRequiredField("guides")
-        if not isinstance(self.guides, list):
-            self.guides = [self.guides] if self.guides is not None else []
-        self.guides = [v if isinstance(v, PrimerId) else PrimerId(v) for v in self.guides]
+        if not isinstance(self.input, list):
+            self.input = [self.input] if self.input is not None else []
+        self.input = [v if isinstance(v, SourceInput) else SourceInput(**as_dict(v)) for v in self.input]
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -1557,8 +1575,6 @@ class OligoHybridizationSource(Source):
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.OligoHybridizationSource
 
     id: Union[int, OligoHybridizationSourceId] = None
-    forward_oligo: Union[int, PrimerId] = None
-    reverse_oligo: Union[int, PrimerId] = None
     overhang_crick_3prime: Optional[int] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -1566,16 +1582,6 @@ class OligoHybridizationSource(Source):
             self.MissingRequiredField("id")
         if not isinstance(self.id, OligoHybridizationSourceId):
             self.id = OligoHybridizationSourceId(self.id)
-
-        if self._is_empty(self.forward_oligo):
-            self.MissingRequiredField("forward_oligo")
-        if not isinstance(self.forward_oligo, PrimerId):
-            self.forward_oligo = PrimerId(self.forward_oligo)
-
-        if self._is_empty(self.reverse_oligo):
-            self.MissingRequiredField("reverse_oligo")
-        if not isinstance(self.reverse_oligo, PrimerId):
-            self.reverse_oligo = PrimerId(self.reverse_oligo)
 
         if self.overhang_crick_3prime is not None and not isinstance(self.overhang_crick_3prime, int):
             self.overhang_crick_3prime = int(self.overhang_crick_3prime)
@@ -2565,31 +2571,13 @@ slots.gatewaySource__greedy = Slot(
     range=Optional[Union[bool, Bool]],
 )
 
-slots.cRISPRSource__guides = Slot(
-    uri=OPENCLONING_LINKML.guides,
-    name="cRISPRSource__guides",
-    curie=OPENCLONING_LINKML.curie("guides"),
-    model_uri=OPENCLONING_LINKML.cRISPRSource__guides,
+slots.cRISPRSource__input = Slot(
+    uri=OPENCLONING_LINKML.input,
+    name="cRISPRSource__input",
+    curie=OPENCLONING_LINKML.curie("input"),
+    model_uri=OPENCLONING_LINKML.cRISPRSource__input,
     domain=None,
-    range=Union[Union[int, PrimerId], list[Union[int, PrimerId]]],
-)
-
-slots.oligoHybridizationSource__forward_oligo = Slot(
-    uri=OPENCLONING_LINKML.forward_oligo,
-    name="oligoHybridizationSource__forward_oligo",
-    curie=OPENCLONING_LINKML.curie("forward_oligo"),
-    model_uri=OPENCLONING_LINKML.oligoHybridizationSource__forward_oligo,
-    domain=None,
-    range=Union[int, PrimerId],
-)
-
-slots.oligoHybridizationSource__reverse_oligo = Slot(
-    uri=OPENCLONING_LINKML.reverse_oligo,
-    name="oligoHybridizationSource__reverse_oligo",
-    curie=OPENCLONING_LINKML.curie("reverse_oligo"),
-    model_uri=OPENCLONING_LINKML.oligoHybridizationSource__reverse_oligo,
-    domain=None,
-    range=Union[int, PrimerId],
+    range=Optional[Union[Union[dict, SourceInput], list[Union[dict, SourceInput]]]],
 )
 
 slots.cloningStrategy__sequences = Slot(

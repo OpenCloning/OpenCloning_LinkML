@@ -647,6 +647,7 @@
       "owner": "AssociatedFile",
       "domain_of": [
         "Sequence",
+        "SourceInput",
         "Source",
         "AnnotationReport",
         "AssociatedFile"
@@ -1355,46 +1356,19 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "cRISPRSource__guides",
-      "description": "The guide RNAs used in the CRISPR",
+      "name": "cRISPRSource__input",
+      "description": "Assembly fragments + guide RNAs used in the CRISPR",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/guides",
-      "alias": "guides",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/input",
+      "alias": "input",
       "owner": "CRISPRSource",
       "domain_of": [
         "CRISPRSource"
       ],
-      "range": "Primer",
-      "required": true,
+      "range": "SourceInput",
       "multivalued": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "oligoHybridizationSource__forward_oligo",
-      "description": "The forward oligo used in the hybridization",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/forward_oligo",
-      "alias": "forward_oligo",
-      "owner": "OligoHybridizationSource",
-      "domain_of": [
-        "OligoHybridizationSource"
-      ],
-      "range": "Primer",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "oligoHybridizationSource__reverse_oligo",
-      "description": "The reverse oligo used in the hybridization",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/reverse_oligo",
-      "alias": "reverse_oligo",
-      "owner": "OligoHybridizationSource",
-      "domain_of": [
-        "OligoHybridizationSource"
-      ],
-      "range": "Primer",
-      "required": true,
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2285,6 +2259,7 @@
         "schema:Role"
       ],
       "slots": [
+        "type",
         "sourceInput__sequence"
       ],
       "slot_usage": {},
@@ -2926,6 +2901,7 @@
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "SourceInput",
       "slots": [
+        "type",
         "sourceInput__sequence",
         "assemblyFragment__left_location",
         "assemblyFragment__right_location",
@@ -3208,18 +3184,17 @@
         "type",
         "output_name",
         "database_id",
-        "assemblySource__input",
         "assemblySource__circular",
-        "cRISPRSource__guides"
+        "cRISPRSource__input"
       ],
       "slot_usage": {},
       "attributes": [
         {
-          "name": "guides",
-          "description": "The guide RNAs used in the CRISPR",
-          "range": "Primer",
-          "required": true,
+          "name": "input",
+          "description": "Assembly fragments + guide RNAs used in the CRISPR",
+          "range": "SourceInput",
           "multivalued": true,
+          "inlined_as_list": true,
           "@type": "SlotDefinition"
         }
       ],
@@ -3238,27 +3213,9 @@
         "output_name",
         "database_id",
         "source__input",
-        "overhang_crick_3prime",
-        "oligoHybridizationSource__forward_oligo",
-        "oligoHybridizationSource__reverse_oligo"
+        "overhang_crick_3prime"
       ],
       "slot_usage": {},
-      "attributes": [
-        {
-          "name": "forward_oligo",
-          "description": "The forward oligo used in the hybridization",
-          "range": "Primer",
-          "required": true,
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "reverse_oligo",
-          "description": "The reverse oligo used in the hybridization",
-          "range": "Primer",
-          "required": true,
-          "@type": "SlotDefinition"
-        }
-      ],
       "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/OligoHybridizationSource",
       "@type": "ClassDefinition"
     },
@@ -3595,9 +3552,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "opencloning_linkml.yaml",
-  "source_file_date": "2025-06-26T13:44:04",
-  "source_file_size": 26389,
-  "generation_date": "2025-06-26T13:48:52",
+  "source_file_date": "2025-06-26T15:31:43",
+  "source_file_size": 26143,
+  "generation_date": "2025-06-26T15:44:09",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/opencloning_linkml.context.jsonld",

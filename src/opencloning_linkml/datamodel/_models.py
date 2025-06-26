@@ -233,7 +233,14 @@ class Sequence(NamedThing):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -275,7 +282,14 @@ class TemplateSequence(Sequence):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -343,7 +357,14 @@ class TextFileSequence(Sequence):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -398,7 +419,14 @@ class Primer(Sequence):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -430,6 +458,24 @@ class SourceInput(ConfiguredBaseModel):
         }
     )
 
+    type: Literal["SourceInput"] = Field(
+        default="SourceInput",
+        description="""Designates the class""",
+        json_schema_extra={
+            "linkml_meta": {
+                "alias": "type",
+                "designates_type": True,
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
+            }
+        },
+    )
     sequence: int = Field(
         default=...,
         description="""The input sequence""",
@@ -512,7 +558,14 @@ class Source(NamedThing):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -532,11 +585,15 @@ class Source(NamedThing):
             }
         },
     )
-    input: Optional[list[SourceInput]] = Field(
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     id: int = Field(
@@ -578,7 +635,14 @@ class DatabaseSource(Source):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -587,11 +651,15 @@ class DatabaseSource(Source):
         description="""Used to specify the name of the output sequence""",
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
     )
-    input: Optional[list[SourceInput]] = Field(
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     id: int = Field(
@@ -647,7 +715,14 @@ class CollectionSource(Source):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -667,11 +742,15 @@ class CollectionSource(Source):
             }
         },
     )
-    input: Optional[list[SourceInput]] = Field(
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     id: int = Field(
@@ -790,7 +869,14 @@ class CollectionOptionInfo(ConfiguredBaseModel):
         json_schema_extra={
             "linkml_meta": {
                 "alias": "type",
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -863,7 +949,14 @@ class ManuallyTypedSource(Source):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -883,11 +976,15 @@ class ManuallyTypedSource(Source):
             }
         },
     )
-    input: Optional[list[SourceInput]] = Field(
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     id: int = Field(
@@ -960,7 +1057,14 @@ class UploadedFileSource(Source):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -980,11 +1084,15 @@ class UploadedFileSource(Source):
             }
         },
     )
-    input: Optional[list[SourceInput]] = Field(
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     id: int = Field(
@@ -1019,7 +1127,14 @@ class RepositoryIdSource(Source):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -1039,11 +1154,15 @@ class RepositoryIdSource(Source):
             }
         },
     )
-    input: Optional[list[SourceInput]] = Field(
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     id: int = Field(
@@ -1092,7 +1211,14 @@ class AddgeneIdSource(RepositoryIdSource):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -1112,11 +1238,15 @@ class AddgeneIdSource(RepositoryIdSource):
             }
         },
     )
-    input: Optional[list[SourceInput]] = Field(
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     id: int = Field(
@@ -1187,7 +1317,14 @@ class WekWikGeneIdSource(RepositoryIdSource):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -1207,11 +1344,15 @@ class WekWikGeneIdSource(RepositoryIdSource):
             }
         },
     )
-    input: Optional[list[SourceInput]] = Field(
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     id: int = Field(
@@ -1304,7 +1445,14 @@ class SEVASource(RepositoryIdSource):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -1324,11 +1472,15 @@ class SEVASource(RepositoryIdSource):
             }
         },
     )
-    input: Optional[list[SourceInput]] = Field(
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     id: int = Field(
@@ -1402,7 +1554,14 @@ class BenchlingUrlSource(RepositoryIdSource):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -1422,11 +1581,15 @@ class BenchlingUrlSource(RepositoryIdSource):
             }
         },
     )
-    input: Optional[list[SourceInput]] = Field(
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     id: int = Field(
@@ -1494,7 +1657,14 @@ class SnapGenePlasmidSource(RepositoryIdSource):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -1514,11 +1684,15 @@ class SnapGenePlasmidSource(RepositoryIdSource):
             }
         },
     )
-    input: Optional[list[SourceInput]] = Field(
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     id: int = Field(
@@ -1577,7 +1751,14 @@ class EuroscarfSource(RepositoryIdSource):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -1597,11 +1778,15 @@ class EuroscarfSource(RepositoryIdSource):
             }
         },
     )
-    input: Optional[list[SourceInput]] = Field(
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     id: int = Field(
@@ -1677,7 +1862,14 @@ class IGEMSource(RepositoryIdSource):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -1697,11 +1889,15 @@ class IGEMSource(RepositoryIdSource):
             }
         },
     )
-    input: Optional[list[SourceInput]] = Field(
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     id: int = Field(
@@ -1779,7 +1975,14 @@ class GenomeCoordinatesSource(Source):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -1799,11 +2002,15 @@ class GenomeCoordinatesSource(Source):
             }
         },
     )
-    input: Optional[list[SourceInput]] = Field(
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     id: int = Field(
@@ -1847,7 +2054,14 @@ class SequenceCutSource(Source):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -1867,11 +2081,15 @@ class SequenceCutSource(Source):
             }
         },
     )
-    input: Optional[list[SourceInput]] = Field(
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     id: int = Field(
@@ -1915,7 +2133,14 @@ class RestrictionEnzymeDigestionSource(SequenceCutSource):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -1935,11 +2160,15 @@ class RestrictionEnzymeDigestionSource(SequenceCutSource):
             }
         },
     )
-    input: Optional[list[SourceInput]] = Field(
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     id: int = Field(
@@ -1969,6 +2198,24 @@ class AssemblyFragment(SourceInput):
         description="""Whether the sequence is reverse complemented in the assembly""",
         json_schema_extra={"linkml_meta": {"alias": "reverse_complemented", "domain_of": ["AssemblyFragment"]}},
     )
+    type: Literal["AssemblyFragment"] = Field(
+        default="AssemblyFragment",
+        description="""Designates the class""",
+        json_schema_extra={
+            "linkml_meta": {
+                "alias": "type",
+                "designates_type": True,
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
+            }
+        },
+    )
     sequence: int = Field(
         default=...,
         description="""The input sequence""",
@@ -1989,7 +2236,11 @@ class AssemblySource(Source):
         default=None,
         description="""A list of the fragments that are assembled, in order""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     circular: Optional[bool] = Field(
@@ -2009,7 +2260,14 @@ class AssemblySource(Source):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -2056,7 +2314,11 @@ class PCRSource(AssemblySource):
         default=None,
         description="""A list of the fragments that are assembled, in order""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     circular: Optional[bool] = Field(
@@ -2076,7 +2338,14 @@ class PCRSource(AssemblySource):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -2116,7 +2385,11 @@ class LigationSource(AssemblySource):
         default=None,
         description="""A list of the fragments that are assembled, in order""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     circular: Optional[bool] = Field(
@@ -2136,7 +2409,14 @@ class LigationSource(AssemblySource):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -2176,7 +2456,11 @@ class HomologousRecombinationSource(AssemblySource):
         default=None,
         description="""A list of the fragments that are assembled, in order""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     circular: Optional[bool] = Field(
@@ -2196,7 +2480,14 @@ class HomologousRecombinationSource(AssemblySource):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -2236,7 +2527,11 @@ class GibsonAssemblySource(AssemblySource):
         default=None,
         description="""A list of the fragments that are assembled, in order""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     circular: Optional[bool] = Field(
@@ -2256,7 +2551,14 @@ class GibsonAssemblySource(AssemblySource):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -2296,7 +2598,11 @@ class InFusionSource(AssemblySource):
         default=None,
         description="""A list of the fragments that are assembled, in order""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     circular: Optional[bool] = Field(
@@ -2316,7 +2622,14 @@ class InFusionSource(AssemblySource):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -2356,7 +2669,11 @@ class OverlapExtensionPCRLigationSource(AssemblySource):
         default=None,
         description="""A list of the fragments that are assembled, in order""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     circular: Optional[bool] = Field(
@@ -2376,7 +2693,14 @@ class OverlapExtensionPCRLigationSource(AssemblySource):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -2416,7 +2740,11 @@ class InVivoAssemblySource(AssemblySource):
         default=None,
         description="""A list of the fragments that are assembled, in order""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     circular: Optional[bool] = Field(
@@ -2436,7 +2764,14 @@ class InVivoAssemblySource(AssemblySource):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -2491,7 +2826,11 @@ class RestrictionAndLigationSource(AssemblySource):
         default=None,
         description="""A list of the fragments that are assembled, in order""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     circular: Optional[bool] = Field(
@@ -2511,7 +2850,14 @@ class RestrictionAndLigationSource(AssemblySource):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -2561,7 +2907,11 @@ class GatewaySource(AssemblySource):
         default=None,
         description="""A list of the fragments that are assembled, in order""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     circular: Optional[bool] = Field(
@@ -2581,7 +2931,14 @@ class GatewaySource(AssemblySource):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -2621,7 +2978,11 @@ class CreLoxRecombinationSource(AssemblySource):
         default=None,
         description="""A list of the fragments that are assembled, in order""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     circular: Optional[bool] = Field(
@@ -2641,7 +3002,14 @@ class CreLoxRecombinationSource(AssemblySource):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -2677,16 +3045,11 @@ class CRISPRSource(HomologousRecombinationSource):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
-    guides: list[int] = Field(
-        default=...,
-        description="""The guide RNAs used in the CRISPR""",
-        json_schema_extra={"linkml_meta": {"alias": "guides", "domain_of": ["CRISPRSource"]}},
-    )
-    input: Optional[list[AssemblyFragment]] = Field(
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
-        description="""A list of the fragments that are assembled, in order""",
+        description="""Assembly fragments + guide RNAs used in the CRISPR""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource", "CRISPRSource"]}
         },
     )
     circular: Optional[bool] = Field(
@@ -2706,7 +3069,14 @@ class CRISPRSource(HomologousRecombinationSource):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -2752,16 +3122,6 @@ class OligoHybridizationSource(Source):
             }
         },
     )
-    forward_oligo: int = Field(
-        default=...,
-        description="""The forward oligo used in the hybridization""",
-        json_schema_extra={"linkml_meta": {"alias": "forward_oligo", "domain_of": ["OligoHybridizationSource"]}},
-    )
-    reverse_oligo: int = Field(
-        default=...,
-        description="""The reverse oligo used in the hybridization""",
-        json_schema_extra={"linkml_meta": {"alias": "reverse_oligo", "domain_of": ["OligoHybridizationSource"]}},
-    )
     type: Literal["OligoHybridizationSource"] = Field(
         default="OligoHybridizationSource",
         description="""Designates the class""",
@@ -2769,7 +3129,14 @@ class OligoHybridizationSource(Source):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -2789,11 +3156,15 @@ class OligoHybridizationSource(Source):
             }
         },
     )
-    input: Optional[list[SourceInput]] = Field(
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     id: int = Field(
@@ -2819,7 +3190,14 @@ class PolymeraseExtensionSource(Source):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -2839,11 +3217,15 @@ class PolymeraseExtensionSource(Source):
             }
         },
     )
-    input: Optional[list[SourceInput]] = Field(
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     id: int = Field(
@@ -2958,7 +3340,14 @@ class AnnotationReport(ConfiguredBaseModel):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -3043,7 +3432,14 @@ class PlannotateAnnotationReport(AnnotationReport):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -3075,7 +3471,14 @@ class AnnotationSource(Source):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -3095,11 +3498,15 @@ class AnnotationSource(Source):
             }
         },
     )
-    input: Optional[list[SourceInput]] = Field(
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     id: int = Field(
@@ -3125,7 +3532,14 @@ class ReverseComplementSource(Source):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -3145,11 +3559,15 @@ class ReverseComplementSource(Source):
             }
         },
     )
-    input: Optional[list[SourceInput]] = Field(
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource"], "slot_uri": "schema:object"}
+            "linkml_meta": {
+                "alias": "input",
+                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
+                "slot_uri": "schema:object",
+            }
         },
     )
     id: int = Field(
@@ -3175,7 +3593,14 @@ class AssociatedFile(ConfiguredBaseModel):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )
@@ -3217,7 +3642,14 @@ class SequencingFile(AssociatedFile):
             "linkml_meta": {
                 "alias": "type",
                 "designates_type": True,
-                "domain_of": ["Sequence", "Source", "CollectionOptionInfo", "AnnotationReport", "AssociatedFile"],
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
             }
         },
     )

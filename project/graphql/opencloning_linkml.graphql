@@ -85,6 +85,7 @@ type AnnotationSource
 
 type AssemblyFragment
   {
+    type: String
     sequence: Sequence!
     leftLocation: SequenceRange
     rightLocation: SequenceRange
@@ -178,9 +179,8 @@ type CRISPRSource
     type: String
     outputName: String
     databaseId: Integer
-    input: [AssemblyFragment]
     circular: Boolean
-    guides: [Primer]!
+    input: [SourceInput]
   }
 
 type DatabaseSource
@@ -319,8 +319,6 @@ type OligoHybridizationSource
     databaseId: Integer
     input: [SourceInput]
     overhangCrick3prime: Integer
-    forwardOligo: Primer!
-    reverseOligo: Primer!
   }
 
 type OverlapExtensionPCRLigationSource
@@ -496,6 +494,7 @@ interface Source
 
 type SourceInput
   {
+    type: String
     sequence: Sequence!
   }
 

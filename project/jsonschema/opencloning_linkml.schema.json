@@ -21,7 +21,14 @@
                 "input": {
                     "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/SourceInput"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -140,7 +147,14 @@
                 "input": {
                     "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/SourceInput"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -205,6 +219,16 @@
                 "sequence": {
                     "description": "The input sequence",
                     "type": "integer"
+                },
+                "type": {
+                    "description": "Designates the class",
+                    "enum": [
+                        "AssemblyFragment"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -331,7 +355,14 @@
                 "input": {
                     "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/SourceInput"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -390,21 +421,21 @@
                         "null"
                     ]
                 },
-                "guides": {
-                    "description": "The guide RNAs used in the CRISPR",
-                    "items": {
-                        "type": "integer"
-                    },
-                    "type": "array"
-                },
                 "id": {
                     "description": "A unique identifier for a thing",
                     "type": "integer"
                 },
                 "input": {
-                    "description": "A list of the fragments that are assembled, in order",
+                    "description": "Assembly fragments + guide RNAs used in the CRISPR",
                     "items": {
-                        "$ref": "#/$defs/AssemblyFragment"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -430,7 +461,6 @@
                 }
             },
             "required": [
-                "guides",
                 "id"
             ],
             "title": "CRISPRSource",
@@ -846,7 +876,14 @@
                 "input": {
                     "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/SourceInput"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -963,7 +1000,14 @@
                 "input": {
                     "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/SourceInput"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -1013,7 +1057,14 @@
                 "input": {
                     "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/SourceInput"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -1166,7 +1217,14 @@
                 "input": {
                     "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/SourceInput"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -1350,7 +1408,14 @@
                 "input": {
                     "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/SourceInput"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -1589,7 +1654,14 @@
                 "input": {
                     "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/SourceInput"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -1668,10 +1740,6 @@
                         "null"
                     ]
                 },
-                "forward_oligo": {
-                    "description": "The forward oligo used in the hybridization",
-                    "type": "integer"
-                },
                 "id": {
                     "description": "A unique identifier for a thing",
                     "type": "integer"
@@ -1679,7 +1747,14 @@
                 "input": {
                     "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/SourceInput"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -1700,10 +1775,6 @@
                         "null"
                     ]
                 },
-                "reverse_oligo": {
-                    "description": "The reverse oligo used in the hybridization",
-                    "type": "integer"
-                },
                 "type": {
                     "description": "Designates the class",
                     "enum": [
@@ -1716,8 +1787,6 @@
                 }
             },
             "required": [
-                "forward_oligo",
-                "reverse_oligo",
                 "id"
             ],
             "title": "OligoHybridizationSource",
@@ -1962,7 +2031,14 @@
                 "input": {
                     "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/SourceInput"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -2057,7 +2133,14 @@
                 "input": {
                     "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/SourceInput"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -2193,7 +2276,14 @@
                 "input": {
                     "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/SourceInput"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -2286,7 +2376,14 @@
                 "input": {
                     "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/SourceInput"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -2335,7 +2432,14 @@
                 "input": {
                     "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/SourceInput"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -2420,7 +2524,14 @@
                 "input": {
                     "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/SourceInput"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -2543,7 +2654,14 @@
                 "input": {
                     "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/SourceInput"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -2591,6 +2709,16 @@
                 "sequence": {
                     "description": "The input sequence",
                     "type": "integer"
+                },
+                "type": {
+                    "description": "Designates the class",
+                    "enum": [
+                        "SourceInput"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -2735,7 +2863,14 @@
                 "input": {
                     "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/SourceInput"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
@@ -2789,7 +2924,14 @@
                 "input": {
                     "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
                     "items": {
-                        "$ref": "#/$defs/SourceInput"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
                     },
                     "type": [
                         "array",
