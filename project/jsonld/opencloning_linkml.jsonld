@@ -625,39 +625,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "input",
-      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/input",
-      "description": "The sequences that are an input to this source. If the source represents external import of a sequence, it's empty.",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "mappings": [
-        "http://schema.org/object"
-      ],
-      "slot_uri": "http://schema.org/object",
-      "owner": "Source",
-      "domain_of": [
-        "Source"
-      ],
-      "range": "Sequence",
-      "multivalued": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "output",
-      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/output",
-      "description": "Identifier of the sequence that is the output of this source.",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "mappings": [
-        "http://schema.org/result"
-      ],
-      "slot_uri": "http://schema.org/result",
-      "owner": "Source",
-      "domain_of": [
-        "Source"
-      ],
-      "range": "Sequence",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "output_name",
       "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/output_name",
       "description": "Used to specify the name of the output sequence",
@@ -680,6 +647,7 @@
       "owner": "AssociatedFile",
       "domain_of": [
         "Sequence",
+        "SourceInput",
         "Source",
         "AnnotationReport",
         "AssociatedFile"
@@ -814,6 +782,20 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "sourceInput__sequence",
+      "description": "The input sequence",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequence",
+      "alias": "sequence",
+      "owner": "SourceInput",
+      "domain_of": [
+        "SourceInput"
+      ],
+      "range": "Sequence",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "sequenceCut__cut_watson",
       "description": "The position of the cut in the watson strand. The cut is made before the base at this position (zero-based), so that cut position 1 cuts after the first base.",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
@@ -839,6 +821,25 @@
       ],
       "range": "integer",
       "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "source__input",
+      "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "mappings": [
+        "http://schema.org/object"
+      ],
+      "slot_uri": "http://schema.org/object",
+      "alias": "input",
+      "owner": "Source",
+      "domain_of": [
+        "Source"
+      ],
+      "range": "SourceInput",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1244,19 +1245,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "assemblyFragment__sequence",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequence",
-      "alias": "sequence",
-      "owner": "AssemblyFragment",
-      "domain_of": [
-        "AssemblyFragment"
-      ],
-      "range": "Sequence",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "assemblyFragment__left_location",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/left_location",
@@ -1308,22 +1296,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "assemblySource__assembly",
-      "description": "A list of the fragments that are assembled, in order",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/assembly",
-      "alias": "assembly",
-      "owner": "AssemblySource",
-      "domain_of": [
-        "AssemblySource"
-      ],
-      "range": "AssemblyFragment",
-      "multivalued": true,
-      "inlined": true,
-      "inlined_as_list": true,
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "pCRSource__add_primer_features",
       "description": "Whether to add primer features to the PCR product",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
@@ -1362,49 +1334,6 @@
         "GatewaySource"
       ],
       "range": "boolean",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "cRISPRSource__guides",
-      "description": "The guide RNAs used in the CRISPR",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/guides",
-      "alias": "guides",
-      "owner": "CRISPRSource",
-      "domain_of": [
-        "CRISPRSource"
-      ],
-      "range": "Primer",
-      "required": true,
-      "multivalued": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "oligoHybridizationSource__forward_oligo",
-      "description": "The forward oligo used in the hybridization",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/forward_oligo",
-      "alias": "forward_oligo",
-      "owner": "OligoHybridizationSource",
-      "domain_of": [
-        "OligoHybridizationSource"
-      ],
-      "range": "Primer",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "oligoHybridizationSource__reverse_oligo",
-      "description": "The reverse oligo used in the hybridization",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/reverse_oligo",
-      "alias": "reverse_oligo",
-      "owner": "OligoHybridizationSource",
-      "domain_of": [
-        "OligoHybridizationSource"
-      ],
-      "range": "Primer",
-      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2287,6 +2216,32 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "SourceInput",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/SourceInput",
+      "description": "Represents an input to a source",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "mappings": [
+        "schema:Role"
+      ],
+      "slots": [
+        "type",
+        "sourceInput__sequence"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "sequence",
+          "description": "The input sequence",
+          "range": "Sequence",
+          "required": true,
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "http://schema.org/Role",
+      "represents_relationship": true,
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "SequenceCut",
       "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/SequenceCut",
       "description": "Represents a cut in a DNA sequence",
@@ -2342,13 +2297,23 @@
       "abstract": true,
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
-        "database_id"
+        "database_id",
+        "source__input"
       ],
       "slot_usage": {},
+      "attributes": [
+        {
+          "name": "input",
+          "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
+          "slot_uri": "schema:object",
+          "range": "SourceInput",
+          "multivalued": true,
+          "inlined_as_list": true,
+          "@type": "SlotDefinition"
+        }
+      ],
       "class_uri": "http://schema.org/CreateAction",
       "@type": "ClassDefinition"
     },
@@ -2360,10 +2325,9 @@
       "is_a": "Source",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
+        "source__input",
         "DatabaseSource_database_id"
       ],
       "slot_usage": {},
@@ -2378,11 +2342,10 @@
       "is_a": "Source",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
+        "source__input",
         "collectionSource__category_id",
         "collectionSource__title",
         "collectionSource__description",
@@ -2510,11 +2473,10 @@
       "is_a": "Source",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
+        "source__input",
         "ManuallyTypedSource_overhang_crick_3prime",
         "ManuallyTypedSource_overhang_watson_3prime",
         "manuallyTypedSource__user_input",
@@ -2547,11 +2509,10 @@
       "is_a": "Source",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
+        "source__input",
         "UploadedFileSource_sequence_file_format",
         "uploadedFileSource__file_name",
         "uploadedFileSource__index_in_file",
@@ -2596,11 +2557,10 @@
       "is_a": "Source",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
+        "source__input",
         "repository_id",
         "repositoryIdSource__repository_name"
       ],
@@ -2624,11 +2584,10 @@
       "is_a": "RepositoryIdSource",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
+        "source__input",
         "repository_id",
         "repositoryIdSource__repository_name",
         "sequence_file_url",
@@ -2653,11 +2612,10 @@
       "is_a": "RepositoryIdSource",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
+        "source__input",
         "repositoryIdSource__repository_name",
         "sequence_file_url",
         "WekWikGeneIdSource_repository_id"
@@ -2674,11 +2632,10 @@
       "is_a": "RepositoryIdSource",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
+        "source__input",
         "repositoryIdSource__repository_name",
         "SEVASource_sequence_file_url",
         "SEVASource_repository_id"
@@ -2695,11 +2652,10 @@
       "is_a": "RepositoryIdSource",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
+        "source__input",
         "repositoryIdSource__repository_name",
         "BenchlingUrlSource_repository_id"
       ],
@@ -2715,11 +2671,10 @@
       "is_a": "RepositoryIdSource",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
+        "source__input",
         "repositoryIdSource__repository_name",
         "SnapGenePlasmidSource_repository_id"
       ],
@@ -2735,11 +2690,10 @@
       "is_a": "RepositoryIdSource",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
+        "source__input",
         "repositoryIdSource__repository_name",
         "EuroscarfSource_repository_id"
       ],
@@ -2755,11 +2709,10 @@
       "is_a": "RepositoryIdSource",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
+        "source__input",
         "repositoryIdSource__repository_name",
         "IGEMSource_sequence_file_url",
         "IGEMSource_repository_id"
@@ -2776,11 +2729,10 @@
       "is_a": "Source",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
+        "source__input",
         "genomeCoordinatesSource__assembly_accession",
         "genomeCoordinatesSource__sequence_accession",
         "genomeCoordinatesSource__locus_tag",
@@ -2849,11 +2801,10 @@
       "is_a": "Source",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
+        "source__input",
         "sequenceCutSource__left_edge",
         "sequenceCutSource__right_edge"
       ],
@@ -2883,11 +2834,10 @@
       "is_a": "SequenceCutSource",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
+        "source__input",
         "restrictionEnzymeDigestionSource__left_edge",
         "restrictionEnzymeDigestionSource__right_edge"
       ],
@@ -2914,20 +2864,16 @@
       "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/AssemblyFragment",
       "description": "Represents a fragment in an assembly",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "is_a": "SourceInput",
       "slots": [
-        "assemblyFragment__sequence",
+        "type",
+        "sourceInput__sequence",
         "assemblyFragment__left_location",
         "assemblyFragment__right_location",
         "assemblyFragment__reverse_complemented"
       ],
       "slot_usage": {},
       "attributes": [
-        {
-          "name": "sequence",
-          "range": "Sequence",
-          "required": true,
-          "@type": "SlotDefinition"
-        },
         {
           "name": "left_location",
           "range": "sequence_range",
@@ -2957,13 +2903,11 @@
       "is_a": "Source",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
-        "assemblySource__circular",
-        "assemblySource__assembly"
+        "source__input",
+        "assemblySource__circular"
       ],
       "slot_usage": {},
       "attributes": [
@@ -2971,14 +2915,6 @@
           "name": "circular",
           "description": "Whether the assembly is circular or not",
           "range": "boolean",
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "assembly",
-          "description": "A list of the fragments that are assembled, in order",
-          "range": "AssemblyFragment",
-          "multivalued": true,
-          "inlined_as_list": true,
           "@type": "SlotDefinition"
         }
       ],
@@ -2993,13 +2929,11 @@
       "is_a": "AssemblySource",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
+        "source__input",
         "assemblySource__circular",
-        "assemblySource__assembly",
         "pCRSource__add_primer_features"
       ],
       "slot_usage": {},
@@ -3023,13 +2957,11 @@
       "is_a": "AssemblySource",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
-        "assemblySource__circular",
-        "assemblySource__assembly"
+        "source__input",
+        "assemblySource__circular"
       ],
       "slot_usage": {},
       "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/LigationSource",
@@ -3043,13 +2975,11 @@
       "is_a": "AssemblySource",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
-        "assemblySource__circular",
-        "assemblySource__assembly"
+        "source__input",
+        "assemblySource__circular"
       ],
       "slot_usage": {},
       "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/HomologousRecombinationSource",
@@ -3063,13 +2993,11 @@
       "is_a": "AssemblySource",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
-        "assemblySource__circular",
-        "assemblySource__assembly"
+        "source__input",
+        "assemblySource__circular"
       ],
       "slot_usage": {},
       "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/GibsonAssemblySource",
@@ -3083,13 +3011,11 @@
       "is_a": "AssemblySource",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
-        "assemblySource__circular",
-        "assemblySource__assembly"
+        "source__input",
+        "assemblySource__circular"
       ],
       "slot_usage": {},
       "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/InFusionSource",
@@ -3103,13 +3029,11 @@
       "is_a": "AssemblySource",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
-        "assemblySource__circular",
-        "assemblySource__assembly"
+        "source__input",
+        "assemblySource__circular"
       ],
       "slot_usage": {},
       "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/OverlapExtensionPCRLigationSource",
@@ -3123,13 +3047,11 @@
       "is_a": "AssemblySource",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
-        "assemblySource__circular",
-        "assemblySource__assembly"
+        "source__input",
+        "assemblySource__circular"
       ],
       "slot_usage": {},
       "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/InVivoAssemblySource",
@@ -3143,13 +3065,11 @@
       "is_a": "AssemblySource",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
+        "source__input",
         "assemblySource__circular",
-        "assemblySource__assembly",
         "RestrictionAndLigationSource_restriction_enzymes"
       ],
       "slot_usage": {},
@@ -3164,13 +3084,11 @@
       "is_a": "AssemblySource",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
+        "source__input",
         "assemblySource__circular",
-        "assemblySource__assembly",
         "gatewaySource__reaction_type",
         "gatewaySource__greedy"
       ],
@@ -3201,13 +3119,11 @@
       "is_a": "AssemblySource",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
-        "assemblySource__circular",
-        "assemblySource__assembly"
+        "source__input",
+        "assemblySource__circular"
       ],
       "slot_usage": {},
       "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/CreLoxRecombinationSource",
@@ -3221,26 +3137,13 @@
       "is_a": "HomologousRecombinationSource",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
-        "assemblySource__circular",
-        "assemblySource__assembly",
-        "cRISPRSource__guides"
+        "source__input",
+        "assemblySource__circular"
       ],
       "slot_usage": {},
-      "attributes": [
-        {
-          "name": "guides",
-          "description": "The guide RNAs used in the CRISPR",
-          "range": "Primer",
-          "required": true,
-          "multivalued": true,
-          "@type": "SlotDefinition"
-        }
-      ],
       "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/CRISPRSource",
       "@type": "ClassDefinition"
     },
@@ -3252,32 +3155,13 @@
       "is_a": "Source",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
-        "overhang_crick_3prime",
-        "oligoHybridizationSource__forward_oligo",
-        "oligoHybridizationSource__reverse_oligo"
+        "source__input",
+        "overhang_crick_3prime"
       ],
       "slot_usage": {},
-      "attributes": [
-        {
-          "name": "forward_oligo",
-          "description": "The forward oligo used in the hybridization",
-          "range": "Primer",
-          "required": true,
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "reverse_oligo",
-          "description": "The reverse oligo used in the hybridization",
-          "range": "Primer",
-          "required": true,
-          "@type": "SlotDefinition"
-        }
-      ],
       "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/OligoHybridizationSource",
       "@type": "ClassDefinition"
     },
@@ -3289,11 +3173,10 @@
       "is_a": "Source",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
-        "database_id"
+        "database_id",
+        "source__input"
       ],
       "slot_usage": {},
       "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/PolymeraseExtensionSource",
@@ -3497,11 +3380,10 @@
       "is_a": "Source",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
         "database_id",
+        "source__input",
         "annotationSource__annotation_tool",
         "annotationSource__annotation_tool_version",
         "annotationSource__annotation_report"
@@ -3539,11 +3421,10 @@
       "is_a": "Source",
       "slots": [
         "id",
-        "input",
-        "output",
         "type",
         "output_name",
-        "database_id"
+        "database_id",
+        "source__input"
       ],
       "slot_usage": {},
       "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/ReverseComplementSource",
@@ -3617,9 +3498,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "opencloning_linkml.yaml",
-  "source_file_date": "2025-05-22T16:53:48",
-  "source_file_size": 26291,
-  "generation_date": "2025-05-22T17:08:20",
+  "source_file_date": "2025-06-26T16:54:56",
+  "source_file_size": 25648,
+  "generation_date": "2025-06-26T16:55:32",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/opencloning_linkml.context.jsonld",

@@ -56,11 +56,10 @@ enum SequenceFileFormat
 type AddgeneIdSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     repositoryId: String!
     repositoryName: RepositoryName!
     sequenceFileUrl: String
@@ -75,11 +74,10 @@ type AnnotationReport
 type AnnotationSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     annotationTool: AnnotationTool!
     annotationToolVersion: String
     annotationReport: [AnnotationReport]
@@ -87,6 +85,7 @@ type AnnotationSource
 
 type AssemblyFragment
   {
+    type: String
     sequence: Sequence!
     leftLocation: SequenceRange
     rightLocation: SequenceRange
@@ -96,13 +95,11 @@ type AssemblyFragment
 type AssemblySource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     circular: Boolean
-    assembly: [AssemblyFragment]
   }
 
 type AssociatedFile
@@ -116,11 +113,10 @@ type AssociatedFile
 type BenchlingUrlSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     repositoryName: RepositoryName!
     repositoryId: String!
   }
@@ -156,11 +152,10 @@ type CollectionOptionInfo
 type CollectionSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     categoryId: String
     title: String!
     description: String
@@ -171,46 +166,39 @@ type CollectionSource
 type CreLoxRecombinationSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     circular: Boolean
-    assembly: [AssemblyFragment]
   }
 
 type CRISPRSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     circular: Boolean
-    assembly: [AssemblyFragment]
-    guides: [Primer]!
   }
 
 type DatabaseSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
+    input: [SourceInput]
     databaseId: Integer!
   }
 
 type EuroscarfSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     repositoryName: RepositoryName!
     repositoryId: String!
   }
@@ -218,13 +206,11 @@ type EuroscarfSource
 type GatewaySource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     circular: Boolean
-    assembly: [AssemblyFragment]
     reactionType: GatewayReactionType!
     greedy: Boolean
   }
@@ -232,11 +218,10 @@ type GatewaySource
 type GenomeCoordinatesSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     assemblyAccession: String
     sequenceAccession: String!
     locusTag: String
@@ -249,35 +234,30 @@ type GenomeCoordinatesSource
 type GibsonAssemblySource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     circular: Boolean
-    assembly: [AssemblyFragment]
   }
 
 type HomologousRecombinationSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     circular: Boolean
-    assembly: [AssemblyFragment]
   }
 
 type IGEMSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     repositoryName: RepositoryName!
     sequenceFileUrl: String!
     repositoryId: String!
@@ -286,47 +266,40 @@ type IGEMSource
 type InFusionSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     circular: Boolean
-    assembly: [AssemblyFragment]
   }
 
 type InVivoAssemblySource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     circular: Boolean
-    assembly: [AssemblyFragment]
   }
 
 type LigationSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     circular: Boolean
-    assembly: [AssemblyFragment]
   }
 
 type ManuallyTypedSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     overhangCrick3prime: Integer
     overhangWatson3prime: Integer
     userInput: String!
@@ -341,38 +314,31 @@ type NamedThing
 type OligoHybridizationSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     overhangCrick3prime: Integer
-    forwardOligo: Primer!
-    reverseOligo: Primer!
   }
 
 type OverlapExtensionPCRLigationSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     circular: Boolean
-    assembly: [AssemblyFragment]
   }
 
 type PCRSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     circular: Boolean
-    assembly: [AssemblyFragment]
     addPrimerFeatures: Boolean
   }
 
@@ -398,11 +364,10 @@ type PlannotateAnnotationReport
 type PolymeraseExtensionSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
   }
 
 type Primer
@@ -417,11 +382,10 @@ type Primer
 type RepositoryIdSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     repositoryId: String!
     repositoryName: RepositoryName!
   }
@@ -429,24 +393,21 @@ type RepositoryIdSource
 type RestrictionAndLigationSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     circular: Boolean
-    assembly: [AssemblyFragment]
     restrictionEnzymes: [String]!
   }
 
 type RestrictionEnzymeDigestionSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     leftEdge: RestrictionSequenceCut
     rightEdge: RestrictionSequenceCut
   }
@@ -461,11 +422,10 @@ type RestrictionSequenceCut
 type ReverseComplementSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
   }
 
 interface Sequence
@@ -483,11 +443,10 @@ type SequenceCut
 type SequenceCutSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     leftEdge: SequenceCut
     rightEdge: SequenceCut
   }
@@ -504,11 +463,10 @@ type SequencingFile
 type SEVASource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     repositoryName: RepositoryName!
     sequenceFileUrl: String!
     repositoryId: String!
@@ -517,11 +475,10 @@ type SEVASource
 type SnapGenePlasmidSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     repositoryName: RepositoryName!
     repositoryId: String!
   }
@@ -529,11 +486,16 @@ type SnapGenePlasmidSource
 interface Source
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
+  }
+
+type SourceInput
+  {
+    type: String
+    sequence: Sequence!
   }
 
 type TemplateSequence
@@ -557,11 +519,10 @@ type TextFileSequence
 type UploadedFileSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     sequenceFileFormat: SequenceFileFormat!
     fileName: String
     indexInFile: Integer
@@ -572,11 +533,10 @@ type UploadedFileSource
 type WekWikGeneIdSource
   {
     id: Integer!
-    input: [Sequence]
-    output: Sequence
     type: String
     outputName: String
     databaseId: Integer
+    input: [SourceInput]
     repositoryName: RepositoryName!
     sequenceFileUrl: String
     repositoryId: String!

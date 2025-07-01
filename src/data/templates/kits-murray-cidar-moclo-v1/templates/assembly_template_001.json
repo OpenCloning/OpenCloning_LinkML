@@ -1,10 +1,55 @@
 {
+  "sequences": [
+    {
+      "id": 1,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 2,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 3,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 4,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 5,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 6,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 7,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    }
+  ],
   "sources": [
     {
       "id": 1,
-      "input": [],
-      "output": 2,
       "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
       "category_id": "upstream_adapter",
       "title": "Left adapter",
       "description": "Gibson adapter to be joined via an A fusion site (GGAG)",
@@ -18,14 +63,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 249,
-            "reverse_oligo": 250,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 249
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 250
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS1_left",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -33,14 +90,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 251,
-            "reverse_oligo": 252,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 251
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 252
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS3_left",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -48,14 +117,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 255,
-            "reverse_oligo": 256,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 255
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 256
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS4_left",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -63,14 +144,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 259,
-            "reverse_oligo": 260,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 259
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 260
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS5_left",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -78,14 +171,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 263,
-            "reverse_oligo": 264,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 263
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 264
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS6_left",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -93,14 +198,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 267,
-            "reverse_oligo": 268,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 267
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 268
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS7_left",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -108,14 +225,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 271,
-            "reverse_oligo": 272,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 271
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 272
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS8_left",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -123,23 +252,36 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 275,
-            "reverse_oligo": 276,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 275
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 276
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS9_left",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         }
       ]
     },
     {
-      "id": 3,
-      "input": [],
-      "output": 4,
+      "id": 2,
       "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
       "category_id": "promoter",
       "title": "Promoter",
       "description": null,
@@ -153,8 +295,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120934",
             "repository_name": "addgene",
-            "repository_id": "120934"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "P1m",
@@ -169,8 +316,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120935",
             "repository_name": "addgene",
-            "repository_id": "120935"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "p3m",
@@ -185,8 +337,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120936",
             "repository_name": "addgene",
-            "repository_id": "120936"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "p4m",
@@ -201,8 +358,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120937",
             "repository_name": "addgene",
-            "repository_id": "120937"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "P9m",
@@ -217,8 +379,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120938",
             "repository_name": "addgene",
-            "repository_id": "120938"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "P12m",
@@ -233,8 +400,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120939",
             "repository_name": "addgene",
-            "repository_id": "120939"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "P15m",
@@ -249,8 +421,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120940",
             "repository_name": "addgene",
-            "repository_id": "120940"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "P16m",
@@ -265,8 +442,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120941",
             "repository_name": "addgene",
-            "repository_id": "120941"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "P18m",
@@ -281,8 +463,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120942",
             "repository_name": "addgene",
-            "repository_id": "120942"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "P30m",
@@ -297,8 +484,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120943",
             "repository_name": "addgene",
-            "repository_id": "120943"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "P32m",
@@ -313,8 +505,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120944",
             "repository_name": "addgene",
-            "repository_id": "120944"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "P33m",
@@ -329,8 +526,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120945",
             "repository_name": "addgene",
-            "repository_id": "120945"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "P34m",
@@ -345,8 +547,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120946",
             "repository_name": "addgene",
-            "repository_id": "120946"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "P35m",
@@ -361,8 +568,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120947",
             "repository_name": "addgene",
-            "repository_id": "120947"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "P37m",
@@ -377,8 +589,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120948",
             "repository_name": "addgene",
-            "repository_id": "120948"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "P38m",
@@ -393,8 +610,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120949",
             "repository_name": "addgene",
-            "repository_id": "120949"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "P57m",
@@ -409,8 +631,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120950",
             "repository_name": "addgene",
-            "repository_id": "120950"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "P58m",
@@ -425,8 +652,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120951",
             "repository_name": "addgene",
-            "repository_id": "120951"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "P59m",
@@ -441,8 +673,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120952",
             "repository_name": "addgene",
-            "repository_id": "120952"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "P60m",
@@ -457,8 +694,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120953",
             "repository_name": "addgene",
-            "repository_id": "120953"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "P61m",
@@ -473,8 +715,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120954",
             "repository_name": "addgene",
-            "repository_id": "120954"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "P66m",
@@ -489,8 +736,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65980",
             "repository_name": "addgene",
-            "repository_id": "65980"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "J23100_AB",
@@ -505,8 +757,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65984",
             "repository_name": "addgene",
-            "repository_id": "65984"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "J23102_AB",
@@ -521,8 +778,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65988",
             "repository_name": "addgene",
-            "repository_id": "65988"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "J23103_AB",
@@ -537,8 +799,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65992",
             "repository_name": "addgene",
-            "repository_id": "65992"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "J23106_AB",
@@ -553,8 +820,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65996",
             "repository_name": "addgene",
-            "repository_id": "65996"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "J23107_AB",
@@ -569,8 +841,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66000",
             "repository_name": "addgene",
-            "repository_id": "66000"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "J23116_AB",
@@ -585,8 +862,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66004",
             "repository_name": "addgene",
-            "repository_id": "66004"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "R0010 (pLacI)_AB",
@@ -601,8 +883,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66008",
             "repository_name": "addgene",
-            "repository_id": "66008"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "R0040 (pTet)_AB",
@@ -617,8 +904,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66012",
             "repository_name": "addgene",
-            "repository_id": "66012"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "R0063 (pLuxR-pR)_AB",
@@ -633,8 +925,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66016",
             "repository_name": "addgene",
-            "repository_id": "66016"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "I13453 (pBAD)_AB",
@@ -647,10 +944,11 @@
       ]
     },
     {
-      "id": 5,
-      "input": [],
-      "output": 6,
+      "id": 3,
       "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
       "category_id": "five_utr",
       "title": "5' UTR",
       "description": null,
@@ -664,8 +962,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121015",
             "repository_name": "addgene",
-            "repository_id": "121015"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "U2m",
@@ -680,8 +983,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121016",
             "repository_name": "addgene",
-            "repository_id": "121016"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "U3m",
@@ -696,8 +1004,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121017",
             "repository_name": "addgene",
-            "repository_id": "121017"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "U4m",
@@ -712,8 +1025,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121018",
             "repository_name": "addgene",
-            "repository_id": "121018"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "U5m",
@@ -728,8 +1046,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121019",
             "repository_name": "addgene",
-            "repository_id": "121019"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "U6m",
@@ -744,8 +1067,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121020",
             "repository_name": "addgene",
-            "repository_id": "121020"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "U7m",
@@ -760,8 +1088,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121021",
             "repository_name": "addgene",
-            "repository_id": "121021"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "U8m",
@@ -776,8 +1109,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121022",
             "repository_name": "addgene",
-            "repository_id": "121022"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "U9m",
@@ -792,8 +1130,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121023",
             "repository_name": "addgene",
-            "repository_id": "121023"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "U17m",
@@ -808,8 +1151,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121024",
             "repository_name": "addgene",
-            "repository_id": "121024"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "U19m",
@@ -824,8 +1172,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121025",
             "repository_name": "addgene",
-            "repository_id": "121025"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "U22m",
@@ -840,8 +1193,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121026",
             "repository_name": "addgene",
-            "repository_id": "121026"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "U24m",
@@ -856,8 +1214,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121027",
             "repository_name": "addgene",
-            "repository_id": "121027"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "U25m",
@@ -872,8 +1235,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66020",
             "repository_name": "addgene",
-            "repository_id": "66020"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "B0032m_BC",
@@ -888,8 +1256,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66021",
             "repository_name": "addgene",
-            "repository_id": "66021"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "B0033m_BC",
@@ -904,8 +1277,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66022",
             "repository_name": "addgene",
-            "repository_id": "66022"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "B0034m_BC",
@@ -920,8 +1298,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66023",
             "repository_name": "addgene",
-            "repository_id": "66023"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "BCD12_BC",
@@ -936,8 +1319,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66024",
             "repository_name": "addgene",
-            "repository_id": "66024"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "BCD2_BC",
@@ -952,8 +1340,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66025",
             "repository_name": "addgene",
-            "repository_id": "66025"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "BCD8_BC",
@@ -966,10 +1359,11 @@
       ]
     },
     {
-      "id": 7,
-      "input": [],
-      "output": 8,
+      "id": 4,
       "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
       "category_id": "cds",
       "title": "CDS",
       "description": null,
@@ -983,8 +1377,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120955",
             "repository_name": "addgene",
-            "repository_id": "120955"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C1m",
@@ -999,8 +1398,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120956",
             "repository_name": "addgene",
-            "repository_id": "120956"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C3m",
@@ -1015,8 +1419,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120957",
             "repository_name": "addgene",
-            "repository_id": "120957"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C5m",
@@ -1031,8 +1440,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120958",
             "repository_name": "addgene",
-            "repository_id": "120958"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C9m",
@@ -1047,8 +1461,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120959",
             "repository_name": "addgene",
-            "repository_id": "120959"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C11m",
@@ -1063,8 +1482,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120960",
             "repository_name": "addgene",
-            "repository_id": "120960"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C13m",
@@ -1079,8 +1503,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120961",
             "repository_name": "addgene",
-            "repository_id": "120961"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C20m",
@@ -1095,8 +1524,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120962",
             "repository_name": "addgene",
-            "repository_id": "120962"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C21m",
@@ -1111,8 +1545,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120963",
             "repository_name": "addgene",
-            "repository_id": "120963"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C22m",
@@ -1127,8 +1566,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120964",
             "repository_name": "addgene",
-            "repository_id": "120964"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C24m",
@@ -1143,8 +1587,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120965",
             "repository_name": "addgene",
-            "repository_id": "120965"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C27m",
@@ -1159,8 +1608,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120966",
             "repository_name": "addgene",
-            "repository_id": "120966"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C31m",
@@ -1175,8 +1629,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120967",
             "repository_name": "addgene",
-            "repository_id": "120967"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C32m",
@@ -1191,8 +1650,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120968",
             "repository_name": "addgene",
-            "repository_id": "120968"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C33m",
@@ -1207,8 +1671,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120969",
             "repository_name": "addgene",
-            "repository_id": "120969"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C35m",
@@ -1223,8 +1692,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120970",
             "repository_name": "addgene",
-            "repository_id": "120970"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C36m",
@@ -1239,8 +1713,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120971",
             "repository_name": "addgene",
-            "repository_id": "120971"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C38m",
@@ -1255,8 +1734,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120972",
             "repository_name": "addgene",
-            "repository_id": "120972"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C39m",
@@ -1271,8 +1755,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120973",
             "repository_name": "addgene",
-            "repository_id": "120973"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C40m",
@@ -1287,8 +1776,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120974",
             "repository_name": "addgene",
-            "repository_id": "120974"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C41m",
@@ -1303,8 +1797,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120975",
             "repository_name": "addgene",
-            "repository_id": "120975"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C51m",
@@ -1319,8 +1818,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120976",
             "repository_name": "addgene",
-            "repository_id": "120976"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C59m",
@@ -1335,8 +1839,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120977",
             "repository_name": "addgene",
-            "repository_id": "120977"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C61m",
@@ -1351,8 +1860,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120978",
             "repository_name": "addgene",
-            "repository_id": "120978"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C62m",
@@ -1367,8 +1881,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120979",
             "repository_name": "addgene",
-            "repository_id": "120979"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C63m",
@@ -1383,8 +1902,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120980",
             "repository_name": "addgene",
-            "repository_id": "120980"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C64m",
@@ -1399,8 +1923,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120981",
             "repository_name": "addgene",
-            "repository_id": "120981"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C67m",
@@ -1415,8 +1944,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120982",
             "repository_name": "addgene",
-            "repository_id": "120982"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C70m",
@@ -1431,8 +1965,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120983",
             "repository_name": "addgene",
-            "repository_id": "120983"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C71m",
@@ -1447,8 +1986,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120984",
             "repository_name": "addgene",
-            "repository_id": "120984"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C72m",
@@ -1463,8 +2007,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120985",
             "repository_name": "addgene",
-            "repository_id": "120985"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C73m",
@@ -1479,8 +2028,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120986",
             "repository_name": "addgene",
-            "repository_id": "120986"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C74m",
@@ -1495,8 +2049,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120987",
             "repository_name": "addgene",
-            "repository_id": "120987"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C75m",
@@ -1511,8 +2070,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120988",
             "repository_name": "addgene",
-            "repository_id": "120988"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C76m",
@@ -1527,8 +2091,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120989",
             "repository_name": "addgene",
-            "repository_id": "120989"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C77m",
@@ -1543,8 +2112,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120990",
             "repository_name": "addgene",
-            "repository_id": "120990"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C78m",
@@ -1559,8 +2133,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120991",
             "repository_name": "addgene",
-            "repository_id": "120991"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C79m",
@@ -1575,8 +2154,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120992",
             "repository_name": "addgene",
-            "repository_id": "120992"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C80m",
@@ -1591,8 +2175,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120993",
             "repository_name": "addgene",
-            "repository_id": "120993"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C82m",
@@ -1607,8 +2196,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120994",
             "repository_name": "addgene",
-            "repository_id": "120994"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C83m",
@@ -1623,8 +2217,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120995",
             "repository_name": "addgene",
-            "repository_id": "120995"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C84m",
@@ -1639,8 +2238,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120996",
             "repository_name": "addgene",
-            "repository_id": "120996"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C85m",
@@ -1655,8 +2259,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120997",
             "repository_name": "addgene",
-            "repository_id": "120997"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C86m",
@@ -1671,8 +2280,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120998",
             "repository_name": "addgene",
-            "repository_id": "120998"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C90m",
@@ -1687,8 +2301,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "120999",
             "repository_name": "addgene",
-            "repository_id": "120999"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C91m",
@@ -1703,8 +2322,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121000",
             "repository_name": "addgene",
-            "repository_id": "121000"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C92m",
@@ -1719,8 +2343,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121001",
             "repository_name": "addgene",
-            "repository_id": "121001"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C95m",
@@ -1735,8 +2364,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121002",
             "repository_name": "addgene",
-            "repository_id": "121002"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C98m",
@@ -1751,8 +2385,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121003",
             "repository_name": "addgene",
-            "repository_id": "121003"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C99m",
@@ -1767,8 +2406,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121004",
             "repository_name": "addgene",
-            "repository_id": "121004"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C100m",
@@ -1783,8 +2427,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121005",
             "repository_name": "addgene",
-            "repository_id": "121005"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C101m",
@@ -1799,8 +2448,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121006",
             "repository_name": "addgene",
-            "repository_id": "121006"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C102m",
@@ -1815,8 +2469,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121007",
             "repository_name": "addgene",
-            "repository_id": "121007"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C103m",
@@ -1831,8 +2490,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121008",
             "repository_name": "addgene",
-            "repository_id": "121008"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C105m",
@@ -1847,8 +2511,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121009",
             "repository_name": "addgene",
-            "repository_id": "121009"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C106m",
@@ -1863,8 +2532,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121010",
             "repository_name": "addgene",
-            "repository_id": "121010"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C108m",
@@ -1879,8 +2553,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121011",
             "repository_name": "addgene",
-            "repository_id": "121011"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C109m",
@@ -1895,8 +2574,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121012",
             "repository_name": "addgene",
-            "repository_id": "121012"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C113m",
@@ -1911,8 +2595,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121013",
             "repository_name": "addgene",
-            "repository_id": "121013"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C114m",
@@ -1927,8 +2616,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121014",
             "repository_name": "addgene",
-            "repository_id": "121014"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C115m",
@@ -1943,8 +2637,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66026",
             "repository_name": "addgene",
-            "repository_id": "66026"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C0012m (lacI)_CD",
@@ -1959,8 +2658,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66027",
             "repository_name": "addgene",
-            "repository_id": "66027"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C0040 (tetR)_CD",
@@ -1975,8 +2679,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66028",
             "repository_name": "addgene",
-            "repository_id": "66028"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C0062 (luxR)_CD",
@@ -1991,8 +2700,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66029",
             "repository_name": "addgene",
-            "repository_id": "66029"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "C0080 (araC)_CD",
@@ -2007,8 +2721,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66030",
             "repository_name": "addgene",
-            "repository_id": "66030"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "cre_CD",
@@ -2023,8 +2742,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66031",
             "repository_name": "addgene",
-            "repository_id": "66031"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "E0030 (YFP)_CD",
@@ -2039,8 +2763,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66032",
             "repository_name": "addgene",
-            "repository_id": "66032"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "E0040m (GFP)_CD",
@@ -2055,8 +2784,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66033",
             "repository_name": "addgene",
-            "repository_id": "66033"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "E1010m (RFP)_CD",
@@ -2071,8 +2805,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66034",
             "repository_name": "addgene",
-            "repository_id": "66034"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "eBFP2 (eBFP2)_CD",
@@ -2085,10 +2824,11 @@
       ]
     },
     {
-      "id": 9,
-      "input": [],
-      "output": 10,
+      "id": 5,
       "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
       "category_id": "terminator",
       "title": "Terminator",
       "description": null,
@@ -2102,8 +2842,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121028",
             "repository_name": "addgene",
-            "repository_id": "121028"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "T1m",
@@ -2118,8 +2863,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121029",
             "repository_name": "addgene",
-            "repository_id": "121029"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "T2m",
@@ -2134,8 +2884,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121030",
             "repository_name": "addgene",
-            "repository_id": "121030"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "T7m",
@@ -2150,8 +2905,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121031",
             "repository_name": "addgene",
-            "repository_id": "121031"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "T12m",
@@ -2166,8 +2926,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121032",
             "repository_name": "addgene",
-            "repository_id": "121032"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "T13m",
@@ -2182,8 +2947,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121033",
             "repository_name": "addgene",
-            "repository_id": "121033"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "T14m",
@@ -2198,8 +2968,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121034",
             "repository_name": "addgene",
-            "repository_id": "121034"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "T15m",
@@ -2214,8 +2989,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121035",
             "repository_name": "addgene",
-            "repository_id": "121035"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "T16m",
@@ -2230,8 +3010,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121036",
             "repository_name": "addgene",
-            "repository_id": "121036"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "T17m",
@@ -2246,8 +3031,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "121037",
             "repository_name": "addgene",
-            "repository_id": "121037"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "T18m",
@@ -2262,8 +3052,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "66035",
             "repository_name": "addgene",
-            "repository_id": "66035"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "B0015_DE",
@@ -2276,10 +3071,11 @@
       ]
     },
     {
-      "id": 11,
-      "input": [],
-      "output": 12,
+      "id": 6,
       "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
       "category_id": "downstream_adapter",
       "title": "Right adapter",
       "description": "Gibson adapter to be joined via an E fusion site (GCTT)",
@@ -2293,14 +3089,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 253,
-            "reverse_oligo": 254,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 253
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 254
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS3_right",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -2308,14 +3116,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 257,
-            "reverse_oligo": 258,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 257
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 258
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS4_right",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -2323,14 +3143,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 261,
-            "reverse_oligo": 262,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 261
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 262
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS5_right",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -2338,14 +3170,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 265,
-            "reverse_oligo": 266,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 265
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 266
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS6_right",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -2353,14 +3197,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 269,
-            "reverse_oligo": 270,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 269
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 270
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS7_right",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -2368,14 +3224,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 273,
-            "reverse_oligo": 274,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 273
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 274
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS8_right",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -2383,14 +3251,26 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 277,
-            "reverse_oligo": 278,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 277
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 278
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS9_right",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         },
         {
@@ -2398,306 +3278,408 @@
           "source": {
             "id": 0,
             "type": "OligoHybridizationSource",
-            "forward_oligo": 279,
-            "reverse_oligo": 280,
+            "output_name": null,
+            "database_id": null,
+            "input": [
+              {
+                "type": "SourceInput",
+                "sequence": 279
+              },
+              {
+                "type": "SourceInput",
+                "sequence": 280
+              }
+            ],
             "overhang_crick_3prime": 0
           },
           "info": {
             "name": "UNS10_right",
             "description": null,
-            "type": "OligoPair"
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
           }
         }
       ]
     },
     {
-      "id": 13,
-      "input": [
-        2,
-        4,
-        6,
-        8,
-        10,
-        12
-      ],
-      "output": 14,
+      "id": 7,
       "type": "RestrictionAndLigationSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [
+        {
+          "type": "SourceInput",
+          "sequence": 1
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 2
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 3
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 4
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 5
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 6
+        }
+      ],
+      "circular": null,
       "restriction_enzymes": [
         "BsaI"
       ]
     }
   ],
-  "sequences": [
-    {
-      "id": 2,
-      "type": "TemplateSequence"
-    },
-    {
-      "id": 4,
-      "type": "TemplateSequence"
-    },
-    {
-      "id": 6,
-      "type": "TemplateSequence"
-    },
-    {
-      "id": 8,
-      "type": "TemplateSequence"
-    },
-    {
-      "id": 10,
-      "type": "TemplateSequence"
-    },
-    {
-      "id": 12,
-      "type": "TemplateSequence"
-    },
-    {
-      "id": 14,
-      "type": "TemplateSequence"
-    }
-  ],
-  "description": "Transcriptional Unit\n\n5'UTR (with RBS) + promoter + CDS + terminator flanked by Golden Gate adapters",
   "primers": [
     {
-      "name": "UNS1_A Top",
       "id": 249,
+      "type": "Primer",
+      "name": "UNS1_A Top",
+      "database_id": null,
       "sequence": "CATTACTCGCATCCATTCTCAGGCTGTCTCGTCTCGTCTCGGAGAGAGACCGG"
     },
     {
-      "name": "UNS1_A Bottom",
       "id": 250,
+      "type": "Primer",
+      "name": "UNS1_A Bottom",
+      "database_id": null,
       "sequence": "CCGGTCTCTCTCCGAGACGAGACGAGACAGCCTGAGAATGGATGCGAGTAATG"
     },
     {
-      "name": "UNS3_A Top",
       "id": 251,
+      "type": "Primer",
+      "name": "UNS3_A Top",
+      "database_id": null,
       "sequence": "GCACTGAAGGTCCTCAATCGCACTGGAAACATCAAGGTCGGGAGAGAGACCGG"
     },
     {
-      "name": "UNS3_A Bottom",
       "id": 252,
+      "type": "Primer",
+      "name": "UNS3_A Bottom",
+      "database_id": null,
       "sequence": "CCGGTCTCTCTCCCGACCTTGATGTTTCCAGTGCGATTGAGGACCTTCAGTGC"
     },
     {
-      "name": "UNS3_E Top",
       "id": 253,
+      "type": "Primer",
+      "name": "UNS3_E Top",
+      "database_id": null,
       "sequence": "GGGGTCTCTGCTTGCACTGAAGGTCCTCAATCGCACTGGAAACATCAAGGTCG"
     },
     {
-      "name": "UNS3_E Bottom",
       "id": 254,
+      "type": "Primer",
+      "name": "UNS3_E Bottom",
+      "database_id": null,
       "sequence": "CGACCTTGATGTTTCCAGTGCGATTGAGGACCTTCAGTGCAAGCAGAGACCCC"
     },
     {
-      "name": "UNS4_A Top",
       "id": 255,
+      "type": "Primer",
+      "name": "UNS4_A Top",
+      "database_id": null,
       "sequence": "CTGACCTCCTGCCAGCAATAGTAAGACAACACGCAAAGTCGGAGAGAGACCGG"
     },
     {
-      "name": "UNS4_A Bottom",
       "id": 256,
+      "type": "Primer",
+      "name": "UNS4_A Bottom",
+      "database_id": null,
       "sequence": "CCGGTCTCTCTCCGACTTTGCGTGTTGTCTTACTATTGCTGGCAGGAGGTCAG"
     },
     {
-      "name": "UNS4_E Top",
       "id": 257,
+      "type": "Primer",
+      "name": "UNS4_E Top",
+      "database_id": null,
       "sequence": "GGGGTCTCTGCTTCTGACCTCCTGCCAGCAATAGTAAGACAACACGCAAAGTC"
     },
     {
-      "name": "UNS4_E Bottom",
       "id": 258,
+      "type": "Primer",
+      "name": "UNS4_E Bottom",
+      "database_id": null,
       "sequence": "GACTTTGCGTGTTGTCTTACTATTGCTGGCAGGAGGTCAGAAGCAGAGACCCC"
     },
     {
-      "name": "UNS5_A Top",
       "id": 259,
+      "type": "Primer",
+      "name": "UNS5_A Top",
+      "database_id": null,
       "sequence": "GAGCCAACTCCCTTTACAACCTCACTCAAGTCCGTTAGAGGGAGAGAGACCGG"
     },
     {
-      "name": "UNS5_A Bottom",
       "id": 260,
+      "type": "Primer",
+      "name": "UNS5_A Bottom",
+      "database_id": null,
       "sequence": "CCGGTCTCTCTCCCTCTAACGGACTTGAGTGAGGTTGTAAAGGGAGTTGGCTC"
     },
     {
-      "name": "UNS5_E Top",
       "id": 261,
+      "type": "Primer",
+      "name": "UNS5_E Top",
+      "database_id": null,
       "sequence": "GGGGTCTCTGCTTGAGCCAACTCCCTTTACAACCTCACTCAAGTCCGTTAGAG"
     },
     {
-      "name": "UNS5_E Bottom",
       "id": 262,
+      "type": "Primer",
+      "name": "UNS5_E Bottom",
+      "database_id": null,
       "sequence": "CTCTAACGGACTTGAGTGAGGTTGTAAAGGGAGTTGGCTCAAGCAGAGACCCC"
     },
     {
-      "name": "UNS6_A Top",
       "id": 263,
+      "type": "Primer",
+      "name": "UNS6_A Top",
+      "database_id": null,
       "sequence": "CTCGTTCGCTGCCACCTAAGAATACTCTACGGTCACATACGGAGAGAGACCGG"
     },
     {
-      "name": "UNS6_A Bottom",
       "id": 264,
+      "type": "Primer",
+      "name": "UNS6_A Bottom",
+      "database_id": null,
       "sequence": "CCGGTCTCTCTCCGTATGTGACCGTAGAGTATTCTTAGGTGGCAGCGAACGAG"
     },
     {
-      "name": "UNS6_E Top",
       "id": 265,
+      "type": "Primer",
+      "name": "UNS6_E Top",
+      "database_id": null,
       "sequence": "GGGGTCTCTGCTTCTCGTTCGCTGCCACCTAAGAATACTCTACGGTCACATAC"
     },
     {
-      "name": "UNS6_E Bottom",
       "id": 266,
+      "type": "Primer",
+      "name": "UNS6_E Bottom",
+      "database_id": null,
       "sequence": "GTATGTGACCGTAGAGTATTCTTAGGTGGCAGCGAACGAGAAGCAGAGACCCC"
     },
     {
-      "name": "UNS7_A Top",
       "id": 267,
+      "type": "Primer",
+      "name": "UNS7_A Top",
+      "database_id": null,
       "sequence": "CAAGACGCTGGCTCTGACATTTCCGCTACTGAACTACTCGGGAGAGAGACCGG"
     },
     {
-      "name": "UNS7_A Bottom",
       "id": 268,
+      "type": "Primer",
+      "name": "UNS7_A Bottom",
+      "database_id": null,
       "sequence": "CCGGTCTCTCTCCCGAGTAGTTCAGTAGCGGAAATGTCAGAGCCAGCGTCTTG"
     },
     {
-      "name": "UNS7_E Top",
       "id": 269,
+      "type": "Primer",
+      "name": "UNS7_E Top",
+      "database_id": null,
       "sequence": "GGGGTCTCTGCTTCAAGACGCTGGCTCTGACATTTCCGCTACTGAACTACTCG"
     },
     {
-      "name": "UNS7_E Bottom",
       "id": 270,
+      "type": "Primer",
+      "name": "UNS7_E Bottom",
+      "database_id": null,
       "sequence": "CGAGTAGTTCAGTAGCGGAAATGTCAGAGCCAGCGTCTTGAAGCAGAGACCCC"
     },
     {
-      "name": "UNS8_A Top",
       "id": 271,
+      "type": "Primer",
+      "name": "UNS8_A Top",
+      "database_id": null,
       "sequence": "CCTCGTCTCAACCAAAGCAATCAACCCATCAACCACCTGGGGAGAGAGACCGG"
     },
     {
-      "name": "UNS8_A Bottom",
       "id": 272,
+      "type": "Primer",
+      "name": "UNS8_A Bottom",
+      "database_id": null,
       "sequence": "CCGGTCTCTCTCCCCAGGTGGTTGATGGGTTGATTGCTTTGGTTGAGACGAGG"
     },
     {
-      "name": "UNS8_E Top",
       "id": 273,
+      "type": "Primer",
+      "name": "UNS8_E Top",
+      "database_id": null,
       "sequence": "GGGGTCTCTGCTTCCTCGTCTCAACCAAAGCAATCAACCCATCAACCACCTGG"
     },
     {
-      "name": "UNS8_E Bottom",
       "id": 274,
+      "type": "Primer",
+      "name": "UNS8_E Bottom",
+      "database_id": null,
       "sequence": "CCAGGTGGTTGATGGGTTGATTGCTTTGGTTGAGACGAGGAAGCAGAGACCCC"
     },
     {
-      "name": "UNS9_A Top",
       "id": 275,
+      "type": "Primer",
+      "name": "UNS9_A Top",
+      "database_id": null,
       "sequence": "GTTCCTTATCATCTGGCGAATCGGACCCACAAGAGCACTGGGAGAGAGACCGG"
     },
     {
-      "name": "UNS9_A Bottom",
       "id": 276,
+      "type": "Primer",
+      "name": "UNS9_A Bottom",
+      "database_id": null,
       "sequence": "CCGGTCTCTCTCCCAGTGCTCTTGTGGGTCCGATTCGCCAGATGATAAGGAAC"
     },
     {
-      "name": "UNS9_E Top",
       "id": 277,
+      "type": "Primer",
+      "name": "UNS9_E Top",
+      "database_id": null,
       "sequence": "GGGGTCTCTGCTTGTTCCTTATCATCTGGCGAATCGGACCCACAAGAGCACTG"
     },
     {
-      "name": "UNS9_E Bottom",
       "id": 278,
+      "type": "Primer",
+      "name": "UNS9_E Bottom",
+      "database_id": null,
       "sequence": "CAGTGCTCTTGTGGGTCCGATTCGCCAGATGATAAGGAACAAGCAGAGACCCC"
     },
     {
-      "name": "UNS10_E Top",
       "id": 279,
+      "type": "Primer",
+      "name": "UNS10_E Top",
+      "database_id": null,
       "sequence": "GGGGTCTCTGCTTCCAGGATACATAGATTACCACAACTCCGAGCCCTTCCACC"
     },
     {
-      "name": "UNS10_E Bottom",
       "id": 280,
+      "type": "Primer",
+      "name": "UNS10_E Bottom",
+      "database_id": null,
       "sequence": "GGTGGAAGGGCTCGGAGTTGTGGTAATCTATGTATCCTGGAAGCAGAGACCCC"
     },
     {
-      "name": "UNS1_Forward",
       "id": 281,
+      "type": "Primer",
+      "name": "UNS1_Forward",
+      "database_id": null,
       "sequence": "CATTACTCGCATCCATTCTCAGGC"
     },
     {
-      "name": "UNS3_Forward",
       "id": 282,
+      "type": "Primer",
+      "name": "UNS3_Forward",
+      "database_id": null,
       "sequence": "GCACTGAAGGTCCTCAATCG"
     },
     {
-      "name": "UNS4_Forward",
       "id": 283,
+      "type": "Primer",
+      "name": "UNS4_Forward",
+      "database_id": null,
       "sequence": "CTGACCTCCTGCCAGCAATAGT"
     },
     {
-      "name": "UNS5_Forward",
       "id": 284,
+      "type": "Primer",
+      "name": "UNS5_Forward",
+      "database_id": null,
       "sequence": "GAGCCAACTCCCTTTACAACCT"
     },
     {
-      "name": "UNS6_Forward",
       "id": 285,
+      "type": "Primer",
+      "name": "UNS6_Forward",
+      "database_id": null,
       "sequence": "CTCGTTCGCTGCCACCTAAGAA"
     },
     {
-      "name": "UNS7_Forward",
       "id": 286,
+      "type": "Primer",
+      "name": "UNS7_Forward",
+      "database_id": null,
       "sequence": "CAAGACGCTGGCTCTGACATTT"
     },
     {
-      "name": "UNS8_Forward",
       "id": 287,
+      "type": "Primer",
+      "name": "UNS8_Forward",
+      "database_id": null,
       "sequence": "CCTCGTCTCAACCAAAGCAATC"
     },
     {
-      "name": "UNS9_Forward",
       "id": 288,
+      "type": "Primer",
+      "name": "UNS9_Forward",
+      "database_id": null,
       "sequence": "GTTCCTTATCATCTGGCGAATCGGA"
     },
     {
-      "name": "UNS3_Reverse",
       "id": 289,
+      "type": "Primer",
+      "name": "UNS3_Reverse",
+      "database_id": null,
       "sequence": "CGACCTTGATGTTTCCAGTGCG"
     },
     {
-      "name": "UNS4_Reverse",
       "id": 290,
+      "type": "Primer",
+      "name": "UNS4_Reverse",
+      "database_id": null,
       "sequence": "GACTTTGCGTGTTGTCTTACTAT"
     },
     {
-      "name": "UNS5_Reverse",
       "id": 291,
+      "type": "Primer",
+      "name": "UNS5_Reverse",
+      "database_id": null,
       "sequence": "CTCTAACGGACTTGAGTGAGGTTG"
     },
     {
-      "name": "UNS6_Reverse",
       "id": 292,
+      "type": "Primer",
+      "name": "UNS6_Reverse",
+      "database_id": null,
       "sequence": "GTATGTGACCGTAGAGTATTCTTAGGTGG"
     },
     {
-      "name": "UNS7_Reverse",
       "id": 293,
+      "type": "Primer",
+      "name": "UNS7_Reverse",
+      "database_id": null,
       "sequence": "CGAGTAGTTCAGTAGCGGAAA"
     },
     {
-      "name": "UNS8_Reverse",
       "id": 294,
+      "type": "Primer",
+      "name": "UNS8_Reverse",
+      "database_id": null,
       "sequence": "CCAGGTGGTTGATGGGTTGATT"
     },
     {
-      "name": "UNS9_Reverse",
       "id": 295,
+      "type": "Primer",
+      "name": "UNS9_Reverse",
+      "database_id": null,
       "sequence": "CAGTGCTCTTGTGGGTCCGAT"
     },
     {
-      "name": "UNS10_Reverse",
       "id": 296,
+      "type": "Primer",
+      "name": "UNS10_Reverse",
+      "database_id": null,
       "sequence": "GGTGGAAGGGCTCGGAGTTG"
     }
-  ]
+  ],
+  "description": "Transcriptional Unit\n\n5'UTR (with RBS) + promoter + CDS + terminator flanked by Golden Gate adapters",
+  "files": null,
+  "schema_version": "0.3.0a0.post5.dev0+3cee09f",
+  "backend_version": null,
+  "frontend_version": null
 }

@@ -1,5 +1,5 @@
 # Auto generated from opencloning_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-05-22T17:08:22
+# Generation date: 2025-06-26T16:55:34
 # Schema: OpenCloning_LinkML
 #
 # id: https://opencloning.github.io/OpenCloning_LinkML
@@ -390,6 +390,49 @@ class Primer(Sequence):
 
 
 @dataclass(repr=False)
+class SourceInput(YAMLRoot):
+    """
+    Represents an input to a source
+    """
+
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = SCHEMA["Role"]
+    class_class_curie: ClassVar[str] = "schema:Role"
+    class_name: ClassVar[str] = "SourceInput"
+    class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.SourceInput
+
+    sequence: Union[int, SequenceId] = None
+    type: Optional[str] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.sequence):
+            self.MissingRequiredField("sequence")
+        if not isinstance(self.sequence, SequenceId):
+            self.sequence = SequenceId(self.sequence)
+
+        self.type = str(self.class_name)
+
+        super().__post_init__(**kwargs)
+
+    def __new__(cls, *args, **kwargs):
+
+        type_designator = "type"
+        if not type_designator in kwargs:
+            return super().__new__(cls, *args, **kwargs)
+        else:
+            type_designator_value = kwargs[type_designator]
+            target_cls = cls._class_for("class_name", type_designator_value)
+
+            if target_cls is None:
+                raise ValueError(
+                    f"Wrong type designator value: class {cls.__name__} "
+                    f"has no subclass with ['class_name']='{kwargs[type_designator]}'"
+                )
+            return super().__new__(target_cls, *args, **kwargs)
+
+
+@dataclass(repr=False)
 class SequenceCut(YAMLRoot):
     """
     Represents a cut in a DNA sequence
@@ -459,20 +502,12 @@ class Source(NamedThing):
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.Source
 
     id: Union[int, SourceId] = None
-    input: Optional[Union[Union[int, SequenceId], list[Union[int, SequenceId]]]] = empty_list()
-    output: Optional[Union[int, SequenceId]] = None
     type: Optional[str] = None
     output_name: Optional[str] = None
     database_id: Optional[int] = None
+    input: Optional[Union[Union[dict, SourceInput], list[Union[dict, SourceInput]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if not isinstance(self.input, list):
-            self.input = [self.input] if self.input is not None else []
-        self.input = [v if isinstance(v, SequenceId) else SequenceId(v) for v in self.input]
-
-        if self.output is not None and not isinstance(self.output, SequenceId):
-            self.output = SequenceId(self.output)
-
         self.type = str(self.class_name)
 
         if self.output_name is not None and not isinstance(self.output_name, str):
@@ -480,6 +515,10 @@ class Source(NamedThing):
 
         if self.database_id is not None and not isinstance(self.database_id, int):
             self.database_id = int(self.database_id)
+
+        if not isinstance(self.input, list):
+            self.input = [self.input] if self.input is not None else []
+        self.input = [v if isinstance(v, SourceInput) else SourceInput(**as_dict(v)) for v in self.input]
 
         super().__post_init__(**kwargs)
 
@@ -1152,7 +1191,7 @@ class RestrictionEnzymeDigestionSource(SequenceCutSource):
 
 
 @dataclass(repr=False)
-class AssemblyFragment(YAMLRoot):
+class AssemblyFragment(SourceInput):
     """
     Represents a fragment in an assembly
     """
@@ -1170,11 +1209,6 @@ class AssemblyFragment(YAMLRoot):
     right_location: Optional[Union[str, SequenceRange]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.sequence):
-            self.MissingRequiredField("sequence")
-        if not isinstance(self.sequence, SequenceId):
-            self.sequence = SequenceId(self.sequence)
-
         if self._is_empty(self.reverse_complemented):
             self.MissingRequiredField("reverse_complemented")
         if not isinstance(self.reverse_complemented, Bool):
@@ -1187,6 +1221,7 @@ class AssemblyFragment(YAMLRoot):
             self.right_location = SequenceRange(self.right_location)
 
         super().__post_init__(**kwargs)
+        self.type = str(self.class_name)
 
 
 @dataclass(repr=False)
@@ -1204,7 +1239,6 @@ class AssemblySource(Source):
 
     id: Union[int, AssemblySourceId] = None
     circular: Optional[Union[bool, Bool]] = None
-    assembly: Optional[Union[Union[dict, AssemblyFragment], list[Union[dict, AssemblyFragment]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -1214,12 +1248,6 @@ class AssemblySource(Source):
 
         if self.circular is not None and not isinstance(self.circular, Bool):
             self.circular = Bool(self.circular)
-
-        if not isinstance(self.assembly, list):
-            self.assembly = [self.assembly] if self.assembly is not None else []
-        self.assembly = [
-            v if isinstance(v, AssemblyFragment) else AssemblyFragment(**as_dict(v)) for v in self.assembly
-        ]
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -1512,19 +1540,12 @@ class CRISPRSource(HomologousRecombinationSource):
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.CRISPRSource
 
     id: Union[int, CRISPRSourceId] = None
-    guides: Union[Union[int, PrimerId], list[Union[int, PrimerId]]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, CRISPRSourceId):
             self.id = CRISPRSourceId(self.id)
-
-        if self._is_empty(self.guides):
-            self.MissingRequiredField("guides")
-        if not isinstance(self.guides, list):
-            self.guides = [self.guides] if self.guides is not None else []
-        self.guides = [v if isinstance(v, PrimerId) else PrimerId(v) for v in self.guides]
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -1544,8 +1565,6 @@ class OligoHybridizationSource(Source):
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.OligoHybridizationSource
 
     id: Union[int, OligoHybridizationSourceId] = None
-    forward_oligo: Union[int, PrimerId] = None
-    reverse_oligo: Union[int, PrimerId] = None
     overhang_crick_3prime: Optional[int] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -1553,16 +1572,6 @@ class OligoHybridizationSource(Source):
             self.MissingRequiredField("id")
         if not isinstance(self.id, OligoHybridizationSourceId):
             self.id = OligoHybridizationSourceId(self.id)
-
-        if self._is_empty(self.forward_oligo):
-            self.MissingRequiredField("forward_oligo")
-        if not isinstance(self.forward_oligo, PrimerId):
-            self.forward_oligo = PrimerId(self.forward_oligo)
-
-        if self._is_empty(self.reverse_oligo):
-            self.MissingRequiredField("reverse_oligo")
-        if not isinstance(self.reverse_oligo, PrimerId):
-            self.reverse_oligo = PrimerId(self.reverse_oligo)
 
         if self.overhang_crick_3prime is not None and not isinstance(self.overhang_crick_3prime, int):
             self.overhang_crick_3prime = int(self.overhang_crick_3prime)
@@ -2070,24 +2079,6 @@ slots.restriction_enzymes = Slot(
     range=Optional[Union[str, list[str]]],
 )
 
-slots.input = Slot(
-    uri=SCHEMA.object,
-    name="input",
-    curie=SCHEMA.curie("object"),
-    model_uri=OPENCLONING_LINKML.input,
-    domain=None,
-    range=Optional[Union[Union[int, SequenceId], list[Union[int, SequenceId]]]],
-)
-
-slots.output = Slot(
-    uri=SCHEMA.result,
-    name="output",
-    curie=SCHEMA.curie("result"),
-    model_uri=OPENCLONING_LINKML.output,
-    domain=None,
-    range=Optional[Union[int, SequenceId]],
-)
-
 slots.output_name = Slot(
     uri=OPENCLONING_LINKML.output_name,
     name="output_name",
@@ -2191,6 +2182,15 @@ slots.primer__sequence = Slot(
     pattern=re.compile(r"^[acgtACGT]+$"),
 )
 
+slots.sourceInput__sequence = Slot(
+    uri=OPENCLONING_LINKML.sequence,
+    name="sourceInput__sequence",
+    curie=OPENCLONING_LINKML.curie("sequence"),
+    model_uri=OPENCLONING_LINKML.sourceInput__sequence,
+    domain=None,
+    range=Union[int, SequenceId],
+)
+
 slots.sequenceCut__cut_watson = Slot(
     uri=OPENCLONING_LINKML.cut_watson,
     name="sequenceCut__cut_watson",
@@ -2207,6 +2207,15 @@ slots.sequenceCut__overhang = Slot(
     model_uri=OPENCLONING_LINKML.sequenceCut__overhang,
     domain=None,
     range=int,
+)
+
+slots.source__input = Slot(
+    uri=SCHEMA.object,
+    name="source__input",
+    curie=SCHEMA.curie("object"),
+    model_uri=OPENCLONING_LINKML.source__input,
+    domain=None,
+    range=Optional[Union[Union[dict, SourceInput], list[Union[dict, SourceInput]]]],
 )
 
 slots.collectionSource__category_id = Slot(
@@ -2480,15 +2489,6 @@ slots.restrictionEnzymeDigestionSource__right_edge = Slot(
     range=Optional[Union[dict, RestrictionSequenceCut]],
 )
 
-slots.assemblyFragment__sequence = Slot(
-    uri=OPENCLONING_LINKML.sequence,
-    name="assemblyFragment__sequence",
-    curie=OPENCLONING_LINKML.curie("sequence"),
-    model_uri=OPENCLONING_LINKML.assemblyFragment__sequence,
-    domain=None,
-    range=Union[int, SequenceId],
-)
-
 slots.assemblyFragment__left_location = Slot(
     uri=OPENCLONING_LINKML.left_location,
     name="assemblyFragment__left_location",
@@ -2525,15 +2525,6 @@ slots.assemblySource__circular = Slot(
     range=Optional[Union[bool, Bool]],
 )
 
-slots.assemblySource__assembly = Slot(
-    uri=OPENCLONING_LINKML.assembly,
-    name="assemblySource__assembly",
-    curie=OPENCLONING_LINKML.curie("assembly"),
-    model_uri=OPENCLONING_LINKML.assemblySource__assembly,
-    domain=None,
-    range=Optional[Union[Union[dict, AssemblyFragment], list[Union[dict, AssemblyFragment]]]],
-)
-
 slots.pCRSource__add_primer_features = Slot(
     uri=OPENCLONING_LINKML.add_primer_features,
     name="pCRSource__add_primer_features",
@@ -2559,33 +2550,6 @@ slots.gatewaySource__greedy = Slot(
     model_uri=OPENCLONING_LINKML.gatewaySource__greedy,
     domain=None,
     range=Optional[Union[bool, Bool]],
-)
-
-slots.cRISPRSource__guides = Slot(
-    uri=OPENCLONING_LINKML.guides,
-    name="cRISPRSource__guides",
-    curie=OPENCLONING_LINKML.curie("guides"),
-    model_uri=OPENCLONING_LINKML.cRISPRSource__guides,
-    domain=None,
-    range=Union[Union[int, PrimerId], list[Union[int, PrimerId]]],
-)
-
-slots.oligoHybridizationSource__forward_oligo = Slot(
-    uri=OPENCLONING_LINKML.forward_oligo,
-    name="oligoHybridizationSource__forward_oligo",
-    curie=OPENCLONING_LINKML.curie("forward_oligo"),
-    model_uri=OPENCLONING_LINKML.oligoHybridizationSource__forward_oligo,
-    domain=None,
-    range=Union[int, PrimerId],
-)
-
-slots.oligoHybridizationSource__reverse_oligo = Slot(
-    uri=OPENCLONING_LINKML.reverse_oligo,
-    name="oligoHybridizationSource__reverse_oligo",
-    curie=OPENCLONING_LINKML.curie("reverse_oligo"),
-    model_uri=OPENCLONING_LINKML.oligoHybridizationSource__reverse_oligo,
-    domain=None,
-    range=Union[int, PrimerId],
 )
 
 slots.cloningStrategy__sequences = Slot(

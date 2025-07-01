@@ -1,10 +1,79 @@
 {
+  "sequences": [
+    {
+      "id": 1,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 2,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 3,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 4,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 5,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 6,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 7,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 8,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 9,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 10,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 11,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    }
+  ],
   "sources": [
     {
       "id": 1,
-      "input": [],
-      "output": 2,
       "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
       "category_id": "1",
       "title": "Assembly connector",
       "description": null,
@@ -18,8 +87,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65109",
             "repository_name": "addgene",
-            "repository_id": "65109"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK002",
@@ -34,8 +108,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65110",
             "repository_name": "addgene",
-            "repository_id": "65110"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK003",
@@ -50,8 +129,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65111",
             "repository_name": "addgene",
-            "repository_id": "65111"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK004",
@@ -66,8 +150,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65112",
             "repository_name": "addgene",
-            "repository_id": "65112"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK005",
@@ -82,8 +171,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65113",
             "repository_name": "addgene",
-            "repository_id": "65113"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK006",
@@ -98,8 +192,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65114",
             "repository_name": "addgene",
-            "repository_id": "65114"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK007",
@@ -114,8 +213,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65115",
             "repository_name": "addgene",
-            "repository_id": "65115"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK008",
@@ -128,10 +232,11 @@
       ]
     },
     {
-      "id": 3,
-      "input": [],
-      "output": 4,
+      "id": 2,
       "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
       "category_id": "2",
       "title": "Promoter",
       "description": null,
@@ -145,8 +250,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65116",
             "repository_name": "addgene",
-            "repository_id": "65116"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK009",
@@ -161,8 +271,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65117",
             "repository_name": "addgene",
-            "repository_id": "65117"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK010",
@@ -177,8 +292,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65118",
             "repository_name": "addgene",
-            "repository_id": "65118"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK011",
@@ -193,8 +313,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65119",
             "repository_name": "addgene",
-            "repository_id": "65119"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK012",
@@ -209,8 +334,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65120",
             "repository_name": "addgene",
-            "repository_id": "65120"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK013",
@@ -225,8 +355,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65121",
             "repository_name": "addgene",
-            "repository_id": "65121"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK014",
@@ -241,8 +376,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65122",
             "repository_name": "addgene",
-            "repository_id": "65122"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK015",
@@ -257,8 +397,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65123",
             "repository_name": "addgene",
-            "repository_id": "65123"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK016",
@@ -273,8 +418,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65124",
             "repository_name": "addgene",
-            "repository_id": "65124"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK017",
@@ -289,8 +439,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65125",
             "repository_name": "addgene",
-            "repository_id": "65125"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK018",
@@ -305,8 +460,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65126",
             "repository_name": "addgene",
-            "repository_id": "65126"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK019",
@@ -321,8 +481,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65127",
             "repository_name": "addgene",
-            "repository_id": "65127"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK020",
@@ -337,8 +502,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65128",
             "repository_name": "addgene",
-            "repository_id": "65128"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK021",
@@ -353,8 +523,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65129",
             "repository_name": "addgene",
-            "repository_id": "65129"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK022",
@@ -369,8 +544,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65130",
             "repository_name": "addgene",
-            "repository_id": "65130"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK023",
@@ -385,8 +565,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65131",
             "repository_name": "addgene",
-            "repository_id": "65131"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK024",
@@ -401,8 +586,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65132",
             "repository_name": "addgene",
-            "repository_id": "65132"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK025",
@@ -417,8 +607,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65133",
             "repository_name": "addgene",
-            "repository_id": "65133"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK026",
@@ -433,8 +628,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65134",
             "repository_name": "addgene",
-            "repository_id": "65134"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK027",
@@ -449,8 +649,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65135",
             "repository_name": "addgene",
-            "repository_id": "65135"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK028",
@@ -465,8 +670,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65136",
             "repository_name": "addgene",
-            "repository_id": "65136"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK029",
@@ -481,8 +691,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65137",
             "repository_name": "addgene",
-            "repository_id": "65137"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK030",
@@ -497,8 +712,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65138",
             "repository_name": "addgene",
-            "repository_id": "65138"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK031",
@@ -511,10 +731,11 @@
       ]
     },
     {
-      "id": 5,
-      "input": [],
-      "output": 6,
+      "id": 3,
       "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
       "category_id": "3a",
       "title": "N-term part",
       "description": "You can use the ATG from the fusion site as translation start. Omit STOP codon and make your protein in frame with the Ser for fusion.",
@@ -528,8 +749,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65144",
             "repository_name": "addgene",
-            "repository_id": "65144"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK037",
@@ -544,8 +770,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65145",
             "repository_name": "addgene",
-            "repository_id": "65145"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK038",
@@ -560,8 +791,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65146",
             "repository_name": "addgene",
-            "repository_id": "65146"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK039",
@@ -576,8 +812,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65147",
             "repository_name": "addgene",
-            "repository_id": "65147"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK040",
@@ -592,8 +833,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65148",
             "repository_name": "addgene",
-            "repository_id": "65148"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK041",
@@ -608,8 +854,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65149",
             "repository_name": "addgene",
-            "repository_id": "65149"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK042",
@@ -624,8 +875,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65150",
             "repository_name": "addgene",
-            "repository_id": "65150"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK043",
@@ -638,10 +894,11 @@
       ]
     },
     {
-      "id": 7,
-      "input": [],
-      "output": 8,
+      "id": 4,
       "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
       "category_id": "3b",
       "title": "C-term part",
       "description": "Left Ser should be in frame with previous CDS. If possible omit STOP codon and make your protein in frame with the right Ser for fusion.",
@@ -655,8 +912,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65151",
             "repository_name": "addgene",
-            "repository_id": "65151"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK044",
@@ -671,8 +933,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65152",
             "repository_name": "addgene",
-            "repository_id": "65152"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK045",
@@ -687,8 +954,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65153",
             "repository_name": "addgene",
-            "repository_id": "65153"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK046",
@@ -701,10 +973,11 @@
       ]
     },
     {
-      "id": 9,
-      "input": [],
-      "output": 10,
+      "id": 5,
       "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
       "category_id": "4a",
       "title": "C-term (extra)",
       "description": "Left Ser should be in frame with previous CDS. Warning: You must include a STOP in your CDS!",
@@ -718,8 +991,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65164",
             "repository_name": "addgene",
-            "repository_id": "65164"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK057",
@@ -734,8 +1012,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65165",
             "repository_name": "addgene",
-            "repository_id": "65165"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK058",
@@ -750,8 +1033,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65166",
             "repository_name": "addgene",
-            "repository_id": "65166"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK059",
@@ -766,8 +1054,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65167",
             "repository_name": "addgene",
-            "repository_id": "65167"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK060",
@@ -780,10 +1073,11 @@
       ]
     },
     {
-      "id": 11,
-      "input": [],
-      "output": 12,
+      "id": 6,
       "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
       "category_id": "4b",
       "title": "Terminator",
       "description": null,
@@ -797,8 +1091,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65168",
             "repository_name": "addgene",
-            "repository_id": "65168"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK061",
@@ -813,8 +1112,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65169",
             "repository_name": "addgene",
-            "repository_id": "65169"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK062",
@@ -829,8 +1133,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65170",
             "repository_name": "addgene",
-            "repository_id": "65170"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK063",
@@ -845,8 +1154,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65171",
             "repository_name": "addgene",
-            "repository_id": "65171"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK064",
@@ -861,8 +1175,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65172",
             "repository_name": "addgene",
-            "repository_id": "65172"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK065",
@@ -877,8 +1196,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65173",
             "repository_name": "addgene",
-            "repository_id": "65173"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK066",
@@ -891,10 +1215,11 @@
       ]
     },
     {
-      "id": 13,
-      "input": [],
-      "output": 14,
+      "id": 7,
       "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
       "category_id": "5",
       "title": "Assembly connector",
       "description": null,
@@ -908,8 +1233,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65174",
             "repository_name": "addgene",
-            "repository_id": "65174"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK067",
@@ -924,8 +1254,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65175",
             "repository_name": "addgene",
-            "repository_id": "65175"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK068",
@@ -940,8 +1275,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65176",
             "repository_name": "addgene",
-            "repository_id": "65176"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK069",
@@ -956,8 +1296,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65177",
             "repository_name": "addgene",
-            "repository_id": "65177"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK070",
@@ -972,8 +1317,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65178",
             "repository_name": "addgene",
-            "repository_id": "65178"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK071",
@@ -988,8 +1338,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65179",
             "repository_name": "addgene",
-            "repository_id": "65179"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK072",
@@ -1004,8 +1359,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65180",
             "repository_name": "addgene",
-            "repository_id": "65180"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK073",
@@ -1018,10 +1378,11 @@
       ]
     },
     {
-      "id": 15,
-      "input": [],
-      "output": 16,
+      "id": 8,
       "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
       "category_id": "6",
       "title": "Yeast marker",
       "description": null,
@@ -1035,8 +1396,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65181",
             "repository_name": "addgene",
-            "repository_id": "65181"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK074",
@@ -1051,8 +1417,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65182",
             "repository_name": "addgene",
-            "repository_id": "65182"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK075",
@@ -1067,8 +1438,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65183",
             "repository_name": "addgene",
-            "repository_id": "65183"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK076",
@@ -1083,8 +1459,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65184",
             "repository_name": "addgene",
-            "repository_id": "65184"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK077",
@@ -1099,8 +1480,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65185",
             "repository_name": "addgene",
-            "repository_id": "65185"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK078",
@@ -1115,8 +1501,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65186",
             "repository_name": "addgene",
-            "repository_id": "65186"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK079",
@@ -1131,8 +1522,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65187",
             "repository_name": "addgene",
-            "repository_id": "65187"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK080",
@@ -1145,10 +1541,11 @@
       ]
     },
     {
-      "id": 17,
-      "input": [],
-      "output": 18,
+      "id": 9,
       "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
       "category_id": "7",
       "title": "Yeast plasmid origin of replication",
       "description": null,
@@ -1162,8 +1559,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65188",
             "repository_name": "addgene",
-            "repository_id": "65188"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK081",
@@ -1178,8 +1580,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65189",
             "repository_name": "addgene",
-            "repository_id": "65189"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK082",
@@ -1192,10 +1599,11 @@
       ]
     },
     {
-      "id": 19,
-      "input": [],
-      "output": 20,
+      "id": 10,
       "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
       "category_id": "8",
       "title": "Bacterial marker and origin",
       "description": null,
@@ -1209,8 +1617,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65190",
             "repository_name": "addgene",
-            "repository_id": "65190"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK083",
@@ -1225,8 +1638,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65191",
             "repository_name": "addgene",
-            "repository_id": "65191"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK084",
@@ -1241,8 +1659,13 @@
           "source": {
             "id": 0,
             "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "65192",
             "repository_name": "addgene",
-            "repository_id": "65192"
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
           },
           "info": {
             "name": "pYTK085",
@@ -1255,72 +1678,62 @@
       ]
     },
     {
-      "id": 21,
-      "input": [
-        2,
-        4,
-        6,
-        8,
-        10,
-        12,
-        14,
-        16,
-        18,
-        20
-      ],
-      "output": 22,
+      "id": 11,
       "type": "RestrictionAndLigationSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [
+        {
+          "type": "SourceInput",
+          "sequence": 1
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 2
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 3
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 4
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 5
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 6
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 7
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 8
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 9
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 10
+        }
+      ],
+      "circular": null,
       "restriction_enzymes": [
         "BsaI"
       ]
     }
   ],
-  "sequences": [
-    {
-      "id": 2,
-      "type": "TemplateSequence"
-    },
-    {
-      "id": 4,
-      "type": "TemplateSequence"
-    },
-    {
-      "id": 6,
-      "type": "TemplateSequence"
-    },
-    {
-      "id": 8,
-      "type": "TemplateSequence"
-    },
-    {
-      "id": 10,
-      "type": "TemplateSequence"
-    },
-    {
-      "id": 12,
-      "type": "TemplateSequence"
-    },
-    {
-      "id": 14,
-      "type": "TemplateSequence"
-    },
-    {
-      "id": 16,
-      "type": "TemplateSequence"
-    },
-    {
-      "id": 18,
-      "type": "TemplateSequence"
-    },
-    {
-      "id": 20,
-      "type": "TemplateSequence"
-    },
-    {
-      "id": 22,
-      "type": "TemplateSequence"
-    }
-  ],
+  "primers": [],
   "description": "3xCDS fusion self-replicating plasmid\n\nA plasmid with a yeast ORI with three CDS fused together",
-  "primers": []
+  "files": null,
+  "schema_version": "0.3.0a0.post5.dev0+3cee09f",
+  "backend_version": null,
+  "frontend_version": null
 }

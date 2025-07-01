@@ -80,7 +80,8 @@ linkml:Sparqlpath xsd:string
 }
 
 <AssemblyFragment> CLOSED {
-    (  $<AssemblyFragment_tes> (  <sequence> @<Sequence> ;
+    (  $<AssemblyFragment_tes> (  &<SourceInput_tes> ;
+          rdf:type [ schema1:Role ] ? ;
           <left_location> @<SequenceRange> ? ;
           <right_location> @<SequenceRange> ? ;
           <reverse_complemented> @linkml:Boolean
@@ -93,8 +94,7 @@ linkml:Sparqlpath xsd:string
     CLOSED {
        (  $<AssemblySource_tes> (  &<Source_tes> ;
              rdf:type [ schema1:CreateAction ] ? ;
-             <circular> @linkml:Boolean ? ;
-             <assembly> @<AssemblyFragment> *
+             <circular> @linkml:Boolean ?
           ) ;
           rdf:type [ <AssemblySource> ]
        )
@@ -182,8 +182,7 @@ linkml:Sparqlpath xsd:string
 
 <CRISPRSource> CLOSED {
     (  $<CRISPRSource_tes> (  &<HomologousRecombinationSource_tes> ;
-          rdf:type [ <HomologousRecombinationSource> ] ? ;
-          <guides> @<Primer> +
+          rdf:type [ <HomologousRecombinationSource> ] ?
        ) ;
        rdf:type [ <CRISPRSource> ]
     )
@@ -308,9 +307,7 @@ linkml:Sparqlpath xsd:string
 <OligoHybridizationSource> CLOSED {
     (  $<OligoHybridizationSource_tes> (  &<Source_tes> ;
           rdf:type [ schema1:CreateAction ] ? ;
-          <overhang_crick_3prime> @linkml:Integer ? ;
-          <forward_oligo> @<Primer> ;
-          <reverse_oligo> @<Primer>
+          <overhang_crick_3prime> @linkml:Integer ?
        ) ;
        rdf:type [ <OligoHybridizationSource> ]
     )
@@ -502,15 +499,24 @@ linkml:Sparqlpath xsd:string
 <Source_struct> {
     (  $<Source_tes> (  &<NamedThing_tes> ;
           rdf:type [ schema1:Thing ] ? ;
-          schema1:object @<Sequence> * ;
-          schema1:result @<Sequence> ? ;
           <type> @linkml:String ? ;
           <output_name> @linkml:String ? ;
-          schema1:identifier @linkml:Integer ?
+          schema1:identifier @linkml:Integer ? ;
+          schema1:object @<SourceInput> *
        ) ;
        rdf:type [ schema1:CreateAction ]
     )
 }
+
+<SourceInput>  (
+    CLOSED {
+       (  $<SourceInput_tes> (  <type> @linkml:String ? ;
+             <sequence> @<Sequence>
+          ) ;
+          rdf:type [ schema1:Role ] ?
+       )
+    } OR @<AssemblyFragment>
+)
 
 <TemplateSequence> CLOSED {
     (  $<TemplateSequence_tes> (  &<Sequence_tes> ;

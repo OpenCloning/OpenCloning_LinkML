@@ -18,5 +18,8 @@
    },
    "Source": {
       "@id": "schema:CreateAction"
+   },
+   "SourceInput": {
+      "@id": "schema:Role"
    }
 }
