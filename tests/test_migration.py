@@ -98,6 +98,28 @@ class TestMigration(unittest.TestCase):
         self.assertEqual(cs.sources[0].assembly[0].right_location, "0^1")
         self.assertEqual(cs.sources[1].coordinates, "1..100")
 
+    def test_0_2_9_to_0_4_0(self):
+        from opencloning_linkml.migrations.model_archive.v0_2_9 import CloningStrategy as old_CloningStrategy
+        from opencloning_linkml.migrations.model_archive.v0_4_0 import CloningStrategy as new_CloningStrategy
+
+        for file in glob.glob(os.path.join(test_folder, "migration/v0.2.9/*.json")):
+            with open(file, "r") as f:
+                data = json.load(f)
+
+            old_CloningStrategy(**data)
+            migrated_data = migrate(data, "0.4.0")
+            new_cloning_strategy = new_CloningStrategy(**migrated_data)
+
+            source_ids = [source.id for source in new_cloning_strategy.sources]
+            sequence_ids = [sequence.id for sequence in new_cloning_strategy.sequences]
+            self.assertEqual(source_ids, sequence_ids)
+            self.assertEqual(source_ids, list(range(1, len(source_ids) + 1)))
+
+            # Check that the file ids have been remapped
+            if "files" in file:
+                for file in migrated_data["files"]:
+                    self.assertEqual(file["sequence_id"], 1)
+
     def test_migration_script(self):
 
         with tempfile.TemporaryDirectory() as tmp_dir:
