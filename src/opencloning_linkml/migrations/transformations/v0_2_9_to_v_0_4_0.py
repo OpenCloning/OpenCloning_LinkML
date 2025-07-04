@@ -104,6 +104,10 @@ def migrate_0_2_9_to_0_4_0(data: dict) -> dict:
     for sequence in old_dict["sequences"]:
         sequence["id"] = sequence_id_map[sequence["id"]]
 
+    if "files" in old_dict and old_dict["files"] is not None:
+        for file in old_dict["files"]:
+            file["sequence_id"] = sequence_id_map[file["sequence_id"]]
+
     # Ids of primers cannot clash with sequences anymore
     latest_id = len(sorted_sources)
     for i, primer in enumerate(old_dict["primers"]):
