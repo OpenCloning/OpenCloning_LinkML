@@ -42,6 +42,12 @@ def migrate_source(input_source: dict):
     source = deepcopy(input_source)
     source_inputs = []
     is_assembly = "assembly" in source
+
+    # Special case for some template sources that had an empty assembly list
+    if is_assembly and len(source["assembly"]) == 0:
+        is_assembly = False
+        del source["assembly"]
+
     if source["type"] == "CollectionSource":
         for option in source["options"]:
             option["source"] = migrate_source(option["source"])
