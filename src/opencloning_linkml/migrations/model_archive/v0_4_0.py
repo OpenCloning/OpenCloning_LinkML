@@ -588,13 +588,7 @@ class Source(NamedThing):
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
     id: int = Field(
         default=...,
@@ -654,13 +648,7 @@ class DatabaseSource(Source):
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
     id: int = Field(
         default=...,
@@ -745,13 +733,7 @@ class CollectionSource(Source):
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
     id: int = Field(
         default=...,
@@ -979,13 +961,7 @@ class ManuallyTypedSource(Source):
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
     id: int = Field(
         default=...,
@@ -1087,13 +1063,7 @@ class UploadedFileSource(Source):
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
     id: int = Field(
         default=...,
@@ -1157,13 +1127,7 @@ class RepositoryIdSource(Source):
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
     id: int = Field(
         default=...,
@@ -1241,13 +1205,7 @@ class AddgeneIdSource(RepositoryIdSource):
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
     id: int = Field(
         default=...,
@@ -1347,13 +1305,7 @@ class WekWikGeneIdSource(RepositoryIdSource):
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
     id: int = Field(
         default=...,
@@ -1475,13 +1427,7 @@ class SEVASource(RepositoryIdSource):
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
     id: int = Field(
         default=...,
@@ -1584,13 +1530,7 @@ class BenchlingUrlSource(RepositoryIdSource):
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
     id: int = Field(
         default=...,
@@ -1687,13 +1627,7 @@ class SnapGenePlasmidSource(RepositoryIdSource):
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
     id: int = Field(
         default=...,
@@ -1781,13 +1715,7 @@ class EuroscarfSource(RepositoryIdSource):
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
     id: int = Field(
         default=...,
@@ -1892,13 +1820,7 @@ class IGEMSource(RepositoryIdSource):
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
     id: int = Field(
         default=...,
@@ -2005,13 +1927,7 @@ class GenomeCoordinatesSource(Source):
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
     id: int = Field(
         default=...,
@@ -2084,13 +2000,7 @@ class SequenceCutSource(Source):
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
     id: int = Field(
         default=...,
@@ -2163,13 +2073,7 @@ class RestrictionEnzymeDigestionSource(SequenceCutSource):
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
     id: int = Field(
         default=...,
@@ -2232,17 +2136,6 @@ class AssemblySource(Source):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
-    input: Optional[list[AssemblyFragment]] = Field(
-        default=None,
-        description="""A list of the fragments that are assembled, in order""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
-    )
     circular: Optional[bool] = Field(
         default=None,
         description="""Whether the assembly is circular or not""",
@@ -2287,6 +2180,11 @@ class AssemblySource(Source):
             }
         },
     )
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
+        default=None,
+        description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -2308,17 +2206,6 @@ class PCRSource(AssemblySource):
         description="""Whether to add primer features to the PCR product""",
         json_schema_extra={
             "linkml_meta": {"alias": "add_primer_features", "domain_of": ["PCRSource"], "ifabsent": "boolean(false)"}
-        },
-    )
-    input: Optional[list[AssemblyFragment]] = Field(
-        default=None,
-        description="""A list of the fragments that are assembled, in order""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
         },
     )
     circular: Optional[bool] = Field(
@@ -2365,6 +2252,11 @@ class PCRSource(AssemblySource):
             }
         },
     )
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
+        default=None,
+        description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -2381,17 +2273,6 @@ class LigationSource(AssemblySource):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
-    input: Optional[list[AssemblyFragment]] = Field(
-        default=None,
-        description="""A list of the fragments that are assembled, in order""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
-    )
     circular: Optional[bool] = Field(
         default=None,
         description="""Whether the assembly is circular or not""",
@@ -2436,6 +2317,11 @@ class LigationSource(AssemblySource):
             }
         },
     )
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
+        default=None,
+        description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -2452,17 +2338,6 @@ class HomologousRecombinationSource(AssemblySource):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
-    input: Optional[list[AssemblyFragment]] = Field(
-        default=None,
-        description="""A list of the fragments that are assembled, in order""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
-    )
     circular: Optional[bool] = Field(
         default=None,
         description="""Whether the assembly is circular or not""",
@@ -2507,6 +2382,11 @@ class HomologousRecombinationSource(AssemblySource):
             }
         },
     )
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
+        default=None,
+        description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -2523,17 +2403,6 @@ class GibsonAssemblySource(AssemblySource):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
-    input: Optional[list[AssemblyFragment]] = Field(
-        default=None,
-        description="""A list of the fragments that are assembled, in order""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
-    )
     circular: Optional[bool] = Field(
         default=None,
         description="""Whether the assembly is circular or not""",
@@ -2578,6 +2447,11 @@ class GibsonAssemblySource(AssemblySource):
             }
         },
     )
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
+        default=None,
+        description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -2594,17 +2468,6 @@ class InFusionSource(AssemblySource):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
-    input: Optional[list[AssemblyFragment]] = Field(
-        default=None,
-        description="""A list of the fragments that are assembled, in order""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
-    )
     circular: Optional[bool] = Field(
         default=None,
         description="""Whether the assembly is circular or not""",
@@ -2649,6 +2512,11 @@ class InFusionSource(AssemblySource):
             }
         },
     )
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
+        default=None,
+        description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -2665,17 +2533,6 @@ class OverlapExtensionPCRLigationSource(AssemblySource):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
-    input: Optional[list[AssemblyFragment]] = Field(
-        default=None,
-        description="""A list of the fragments that are assembled, in order""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
-    )
     circular: Optional[bool] = Field(
         default=None,
         description="""Whether the assembly is circular or not""",
@@ -2720,6 +2577,11 @@ class OverlapExtensionPCRLigationSource(AssemblySource):
             }
         },
     )
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
+        default=None,
+        description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -2736,17 +2598,6 @@ class InVivoAssemblySource(AssemblySource):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
-    input: Optional[list[AssemblyFragment]] = Field(
-        default=None,
-        description="""A list of the fragments that are assembled, in order""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
-    )
     circular: Optional[bool] = Field(
         default=None,
         description="""Whether the assembly is circular or not""",
@@ -2791,6 +2642,11 @@ class InVivoAssemblySource(AssemblySource):
             }
         },
     )
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
+        default=None,
+        description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -2819,17 +2675,6 @@ class RestrictionAndLigationSource(AssemblySource):
                 "alias": "restriction_enzymes",
                 "domain_of": ["RestrictionAndLigationSource"],
                 "exact_mappings": ["OBI:0000732"],
-            }
-        },
-    )
-    input: Optional[list[AssemblyFragment]] = Field(
-        default=None,
-        description="""A list of the fragments that are assembled, in order""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
             }
         },
     )
@@ -2877,6 +2722,11 @@ class RestrictionAndLigationSource(AssemblySource):
             }
         },
     )
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
+        default=None,
+        description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -2901,17 +2751,6 @@ class GatewaySource(AssemblySource):
         description="""Whether to use a greedy consensus sequence for att sites (see https://github.com/manulera/GateWayMine)""",
         json_schema_extra={
             "linkml_meta": {"alias": "greedy", "domain_of": ["GatewaySource"], "ifabsent": "boolean(false)"}
-        },
-    )
-    input: Optional[list[AssemblyFragment]] = Field(
-        default=None,
-        description="""A list of the fragments that are assembled, in order""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
         },
     )
     circular: Optional[bool] = Field(
@@ -2958,6 +2797,11 @@ class GatewaySource(AssemblySource):
             }
         },
     )
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
+        default=None,
+        description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -2974,17 +2818,6 @@ class CreLoxRecombinationSource(AssemblySource):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
-    input: Optional[list[AssemblyFragment]] = Field(
-        default=None,
-        description="""A list of the fragments that are assembled, in order""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
-    )
     circular: Optional[bool] = Field(
         default=None,
         description="""Whether the assembly is circular or not""",
@@ -3029,6 +2862,11 @@ class CreLoxRecombinationSource(AssemblySource):
             }
         },
     )
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
+        default=None,
+        description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
+    )
     id: int = Field(
         default=...,
         description="""A unique identifier for a thing""",
@@ -3045,13 +2883,6 @@ class CRISPRSource(HomologousRecombinationSource):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
-    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
-        description="""Assembly fragments + guide RNAs used in the CRISPR""",
-        json_schema_extra={
-            "linkml_meta": {"alias": "input", "domain_of": ["Source", "AssemblySource", "CRISPRSource"]}
-        },
-    )
     circular: Optional[bool] = Field(
         default=None,
         description="""Whether the assembly is circular or not""",
@@ -3095,6 +2926,11 @@ class CRISPRSource(HomologousRecombinationSource):
                 "slot_uri": "schema:identifier",
             }
         },
+    )
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
+        default=None,
+        description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
     id: int = Field(
         default=...,
@@ -3159,13 +2995,7 @@ class OligoHybridizationSource(Source):
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
     id: int = Field(
         default=...,
@@ -3220,13 +3050,7 @@ class PolymeraseExtensionSource(Source):
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
     id: int = Field(
         default=...,
@@ -3501,13 +3325,7 @@ class AnnotationSource(Source):
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
     id: int = Field(
         default=...,
@@ -3562,13 +3380,7 @@ class ReverseComplementSource(Source):
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
         default=None,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
-        json_schema_extra={
-            "linkml_meta": {
-                "alias": "input",
-                "domain_of": ["Source", "AssemblySource", "CRISPRSource"],
-                "slot_uri": "schema:object",
-            }
-        },
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
     id: int = Field(
         default=...,
