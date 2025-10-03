@@ -1,5 +1,5 @@
 # Auto generated from opencloning_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-06-26T16:55:34
+# Generation date: 2025-10-03T14:02:12
 # Schema: OpenCloning_LinkML
 #
 # id: https://opencloning.github.io/OpenCloning_LinkML
@@ -133,6 +133,10 @@ class EuroscarfSourceId(RepositoryIdSourceId):
 
 
 class IGEMSourceId(RepositoryIdSourceId):
+    pass
+
+
+class OpenDNACollectionsSourceId(RepositoryIdSourceId):
     pass
 
 
@@ -856,7 +860,7 @@ class AddgeneIdSource(RepositoryIdSource):
 @dataclass(repr=False)
 class WekWikGeneIdSource(RepositoryIdSource):
     """
-    Represents the source of a sequence that is identified by a WekWikGene id
+    Represents the source of a sequence that is identified by a WeKwikGene id
     """
 
     _inherited_slots: ClassVar[list[str]] = []
@@ -1057,6 +1061,42 @@ class IGEMSource(RepositoryIdSource):
             self.MissingRequiredField("repository_id")
         if not isinstance(self.repository_id, str):
             self.repository_id = str(self.repository_id)
+
+        super().__post_init__(**kwargs)
+        self.type = str(self.class_name)
+
+
+@dataclass(repr=False)
+class OpenDNACollectionsSource(RepositoryIdSource):
+    """
+    Represents the source of a sequence from the Open DNA collections
+    """
+
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["OpenDNACollectionsSource"]
+    class_class_curie: ClassVar[str] = "opencloning_linkml:OpenDNACollectionsSource"
+    class_name: ClassVar[str] = "OpenDNACollectionsSource"
+    class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.OpenDNACollectionsSource
+
+    id: Union[int, OpenDNACollectionsSourceId] = None
+    repository_name: Union[str, "RepositoryName"] = None
+    repository_id: str = None
+    sequence_file_url: Optional[str] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, OpenDNACollectionsSourceId):
+            self.id = OpenDNACollectionsSourceId(self.id)
+
+        if self._is_empty(self.repository_id):
+            self.MissingRequiredField("repository_id")
+        if not isinstance(self.repository_id, str):
+            self.repository_id = str(self.repository_id)
+
+        if self.sequence_file_url is not None and not isinstance(self.sequence_file_url, str):
+            self.sequence_file_url = str(self.sequence_file_url)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -1933,6 +1973,7 @@ class RepositoryName(EnumDefinitionImpl):
     igem = PermissibleValue(text="igem", description="iGEM collection")
     wekwikgene = PermissibleValue(text="wekwikgene", description="WekWikGene")
     seva = PermissibleValue(text="seva", description="SEVA (Standard European Vector Architecture)")
+    open_dna_collections = PermissibleValue(text="open_dna_collections", description="Open DNA collections")
 
     _defn = EnumDefinition(
         name="RepositoryName",
@@ -2984,6 +3025,15 @@ slots.IGEMSource_sequence_file_url = Slot(
     pattern=re.compile(
         r"^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$"
     ),
+)
+
+slots.OpenDNACollectionsSource_repository_id = Slot(
+    uri=OPENCLONING_LINKML.repository_id,
+    name="OpenDNACollectionsSource_repository_id",
+    curie=OPENCLONING_LINKML.curie("repository_id"),
+    model_uri=OPENCLONING_LINKML.OpenDNACollectionsSource_repository_id,
+    domain=OpenDNACollectionsSource,
+    range=str,
 )
 
 slots.RestrictionAndLigationSource_restriction_enzymes = Slot(

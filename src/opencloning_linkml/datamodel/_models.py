@@ -128,6 +128,10 @@ class RepositoryName(str, Enum):
     """
     SEVA (Standard European Vector Architecture)
     """
+    open_dna_collections = "open_dna_collections"
+    """
+    Open DNA collections
+    """
 
 
 class Collection(str, Enum):
@@ -800,6 +804,7 @@ class CollectionOption(ConfiguredBaseModel):
         SnapGenePlasmidSource,
         EuroscarfSource,
         IGEMSource,
+        OpenDNACollectionsSource,
     ] = Field(
         default=...,
         description="""The source of the sequence for this option""",
@@ -1151,7 +1156,13 @@ class AddgeneIdSource(RepositoryIdSource):
         json_schema_extra={
             "linkml_meta": {
                 "alias": "sequence_file_url",
-                "domain_of": ["AddgeneIdSource", "WekWikGeneIdSource", "SEVASource", "IGEMSource"],
+                "domain_of": [
+                    "AddgeneIdSource",
+                    "WekWikGeneIdSource",
+                    "SEVASource",
+                    "IGEMSource",
+                    "OpenDNACollectionsSource",
+                ],
             }
         },
     )
@@ -1233,7 +1244,7 @@ class AddgeneIdSource(RepositoryIdSource):
 
 class WekWikGeneIdSource(RepositoryIdSource):
     """
-    Represents the source of a sequence that is identified by a WekWikGene id
+    Represents the source of a sequence that is identified by a WeKwikGene id
     """
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
@@ -1241,7 +1252,7 @@ class WekWikGeneIdSource(RepositoryIdSource):
             "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
             "slot_usage": {
                 "repository_id": {
-                    "description": "The id of the gene in the " "WekWik gene database",
+                    "description": "The id of the gene in the " "WeKwikGene database",
                     "name": "repository_id",
                     "pattern": "^\\d+$",
                 }
@@ -1255,13 +1266,19 @@ class WekWikGeneIdSource(RepositoryIdSource):
         json_schema_extra={
             "linkml_meta": {
                 "alias": "sequence_file_url",
-                "domain_of": ["AddgeneIdSource", "WekWikGeneIdSource", "SEVASource", "IGEMSource"],
+                "domain_of": [
+                    "AddgeneIdSource",
+                    "WekWikGeneIdSource",
+                    "SEVASource",
+                    "IGEMSource",
+                    "OpenDNACollectionsSource",
+                ],
             }
         },
     )
     repository_id: str = Field(
         default=...,
-        description="""The id of the gene in the WekWik gene database""",
+        description="""The id of the gene in the WeKwikGene database""",
         json_schema_extra={"linkml_meta": {"alias": "repository_id", "domain_of": ["RepositoryIdSource"]}},
     )
     repository_name: RepositoryName = Field(
@@ -1377,7 +1394,13 @@ class SEVASource(RepositoryIdSource):
         json_schema_extra={
             "linkml_meta": {
                 "alias": "sequence_file_url",
-                "domain_of": ["AddgeneIdSource", "WekWikGeneIdSource", "SEVASource", "IGEMSource"],
+                "domain_of": [
+                    "AddgeneIdSource",
+                    "WekWikGeneIdSource",
+                    "SEVASource",
+                    "IGEMSource",
+                    "OpenDNACollectionsSource",
+                ],
             }
         },
     )
@@ -1770,7 +1793,13 @@ class IGEMSource(RepositoryIdSource):
         json_schema_extra={
             "linkml_meta": {
                 "alias": "sequence_file_url",
-                "domain_of": ["AddgeneIdSource", "WekWikGeneIdSource", "SEVASource", "IGEMSource"],
+                "domain_of": [
+                    "AddgeneIdSource",
+                    "WekWikGeneIdSource",
+                    "SEVASource",
+                    "IGEMSource",
+                    "OpenDNACollectionsSource",
+                ],
             }
         },
     )
@@ -1785,6 +1814,111 @@ class IGEMSource(RepositoryIdSource):
     )
     type: Literal["IGEMSource"] = Field(
         default="IGEMSource",
+        description="""Designates the class""",
+        json_schema_extra={
+            "linkml_meta": {
+                "alias": "type",
+                "designates_type": True,
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
+            }
+        },
+    )
+    output_name: Optional[str] = Field(
+        default=None,
+        description="""Used to specify the name of the output sequence""",
+        json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
+    )
+    database_id: Optional[int] = Field(
+        default=None,
+        description="""The id of an entity in a database""",
+        json_schema_extra={
+            "linkml_meta": {
+                "alias": "database_id",
+                "domain_of": ["Primer", "Source", "DatabaseSource"],
+                "slot_uri": "schema:identifier",
+            }
+        },
+    )
+    input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
+        default=None,
+        description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
+        json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
+    )
+    id: int = Field(
+        default=...,
+        description="""A unique identifier for a thing""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "id", "domain_of": ["NamedThing", "Sequence"], "slot_uri": "schema:identifier"}
+        },
+    )
+
+    @field_validator("sequence_file_url")
+    def pattern_sequence_file_url(cls, v):
+        pattern = re.compile(
+            r"^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$"
+        )
+        if isinstance(v, list):
+            for element in v:
+                if isinstance(element, str) and not pattern.match(element):
+                    err_msg = f"Invalid sequence_file_url format: {element}"
+                    raise ValueError(err_msg)
+        elif isinstance(v, str) and not pattern.match(v):
+            err_msg = f"Invalid sequence_file_url format: {v}"
+            raise ValueError(err_msg)
+        return v
+
+
+class OpenDNACollectionsSource(RepositoryIdSource):
+    """
+    Represents the source of a sequence from the Open DNA collections
+    """
+
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
+        {
+            "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+            "slot_usage": {
+                "repository_id": {
+                    "description": "Subpath of the sequence in " "the Open DNA collections " "repository",
+                    "name": "repository_id",
+                }
+            },
+        }
+    )
+
+    sequence_file_url: Optional[str] = Field(
+        default=None,
+        description="""The URL of a sequence file""",
+        json_schema_extra={
+            "linkml_meta": {
+                "alias": "sequence_file_url",
+                "domain_of": [
+                    "AddgeneIdSource",
+                    "WekWikGeneIdSource",
+                    "SEVASource",
+                    "IGEMSource",
+                    "OpenDNACollectionsSource",
+                ],
+            }
+        },
+    )
+    repository_id: str = Field(
+        default=...,
+        description="""Subpath of the sequence in the Open DNA collections repository""",
+        json_schema_extra={"linkml_meta": {"alias": "repository_id", "domain_of": ["RepositoryIdSource"]}},
+    )
+    repository_name: RepositoryName = Field(
+        default=...,
+        json_schema_extra={"linkml_meta": {"alias": "repository_name", "domain_of": ["RepositoryIdSource"]}},
+    )
+    type: Literal["OpenDNACollectionsSource"] = Field(
+        default="OpenDNACollectionsSource",
         description="""Designates the class""",
         json_schema_extra={
             "linkml_meta": {
@@ -3107,6 +3241,7 @@ class CloningStrategy(ConfiguredBaseModel):
             SnapGenePlasmidSource,
             EuroscarfSource,
             IGEMSource,
+            OpenDNACollectionsSource,
         ]
     ] = Field(
         default=...,
@@ -3509,6 +3644,7 @@ BenchlingUrlSource.model_rebuild()
 SnapGenePlasmidSource.model_rebuild()
 EuroscarfSource.model_rebuild()
 IGEMSource.model_rebuild()
+OpenDNACollectionsSource.model_rebuild()
 GenomeCoordinatesSource.model_rebuild()
 SequenceCutSource.model_rebuild()
 RestrictionEnzymeDigestionSource.model_rebuild()

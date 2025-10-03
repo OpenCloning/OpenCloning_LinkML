@@ -432,6 +432,10 @@
         {
           "text": "seva",
           "description": "SEVA (Standard European Vector Architecture)"
+        },
+        {
+          "text": "open_dna_collections",
+          "description": "Open DNA collections"
         }
       ]
     },
@@ -705,12 +709,13 @@
       "description": "The URL of a sequence file",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequence_file_url",
-      "owner": "IGEMSource",
+      "owner": "OpenDNACollectionsSource",
       "domain_of": [
         "AddgeneIdSource",
         "WekWikGeneIdSource",
         "SEVASource",
-        "IGEMSource"
+        "IGEMSource",
+        "OpenDNACollectionsSource"
       ],
       "range": "string",
       "pattern": "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$",
@@ -1923,7 +1928,7 @@
     {
       "name": "WekWikGeneIdSource_repository_id",
       "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/repository_id",
-      "description": "The id of the gene in the WekWik gene database",
+      "description": "The id of the gene in the WeKwikGene database",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "repository_id",
       "domain": "WekWikGeneIdSource",
@@ -2077,6 +2082,25 @@
       "range": "string",
       "required": true,
       "pattern": "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "OpenDNACollectionsSource_repository_id",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/repository_id",
+      "description": "Subpath of the sequence in the Open DNA collections repository",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "is_a": "repository_id",
+      "domain": "OpenDNACollectionsSource",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/repository_id",
+      "alias": "repository_id",
+      "owner": "OpenDNACollectionsSource",
+      "domain_of": [
+        "OpenDNACollectionsSource"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "repository_id",
+      "range": "string",
+      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2607,7 +2631,7 @@
     {
       "name": "WekWikGeneIdSource",
       "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/WekWikGeneIdSource",
-      "description": "Represents the source of a sequence that is identified by a WekWikGene id",
+      "description": "Represents the source of a sequence that is identified by a WeKwikGene id",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "RepositoryIdSource",
       "slots": [
@@ -2719,6 +2743,26 @@
       ],
       "slot_usage": {},
       "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/IGEMSource",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "OpenDNACollectionsSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/OpenDNACollectionsSource",
+      "description": "Represents the source of a sequence from the Open DNA collections",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "is_a": "RepositoryIdSource",
+      "slots": [
+        "id",
+        "type",
+        "output_name",
+        "database_id",
+        "source__input",
+        "repositoryIdSource__repository_name",
+        "sequence_file_url",
+        "OpenDNACollectionsSource_repository_id"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/OpenDNACollectionsSource",
       "@type": "ClassDefinition"
     },
     {
@@ -3498,9 +3542,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "opencloning_linkml.yaml",
-  "source_file_date": "2025-06-26T16:54:56",
-  "source_file_size": 25648,
-  "generation_date": "2025-06-26T16:55:32",
+  "source_file_date": "2025-10-03T13:59:29",
+  "source_file_size": 26051,
+  "generation_date": "2025-10-03T14:02:11",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/opencloning_linkml.context.jsonld",
