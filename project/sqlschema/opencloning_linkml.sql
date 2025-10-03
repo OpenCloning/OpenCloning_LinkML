@@ -40,6 +40,7 @@
 --     * Slot: SnapGenePlasmidSource_id Description: Autocreated FK slot
 --     * Slot: EuroscarfSource_id Description: Autocreated FK slot
 --     * Slot: IGEMSource_id Description: Autocreated FK slot
+--     * Slot: OpenDNACollectionsSource_id Description: Autocreated FK slot
 --     * Slot: GenomeCoordinatesSource_id Description: Autocreated FK slot
 --     * Slot: SequenceCutSource_id Description: Autocreated FK slot
 --     * Slot: RestrictionEnzymeDigestionSource_id Description: Autocreated FK slot
@@ -135,9 +136,9 @@
 --     * Slot: output_name Description: Used to specify the name of the output sequence
 --     * Slot: database_id Description: The id of an entity in a database
 --     * Slot: id Description: A unique identifier for a thing
--- # Class: "WekWikGeneIdSource" Description: "Represents the source of a sequence that is identified by a WekWikGene id"
+-- # Class: "WekWikGeneIdSource" Description: "Represents the source of a sequence that is identified by a WeKwikGene id"
 --     * Slot: sequence_file_url Description: The URL of a sequence file
---     * Slot: repository_id Description: The id of the gene in the WekWik gene database
+--     * Slot: repository_id Description: The id of the gene in the WeKwikGene database
 --     * Slot: repository_name Description:
 --     * Slot: type Description: Designates the class
 --     * Slot: output_name Description: Used to specify the name of the output sequence
@@ -175,6 +176,14 @@
 -- # Class: "IGEMSource" Description: "Represents the source of a sequence from an iGEM collection"
 --     * Slot: sequence_file_url Description: The URL of the sequence file, for now github repository
 --     * Slot: repository_id Description: The unique identifier of the sequence in the iGEM collection (for now, {part_id}-{plasmid_backbone})
+--     * Slot: repository_name Description:
+--     * Slot: type Description: Designates the class
+--     * Slot: output_name Description: Used to specify the name of the output sequence
+--     * Slot: database_id Description: The id of an entity in a database
+--     * Slot: id Description: A unique identifier for a thing
+-- # Class: "OpenDNACollectionsSource" Description: "Represents the source of a sequence from the Open DNA collections"
+--     * Slot: sequence_file_url Description: The URL of a sequence file
+--     * Slot: repository_id Description: Subpath of the sequence in the Open DNA collections repository
 --     * Slot: repository_name Description:
 --     * Slot: type Description: Designates the class
 --     * Slot: output_name Description: Used to specify the name of the output sequence
@@ -445,7 +454,7 @@ CREATE TABLE "UploadedFileSource" (
 );
 CREATE TABLE "RepositoryIdSource" (
 	repository_id TEXT NOT NULL,
-	repository_name VARCHAR(10) NOT NULL,
+	repository_name VARCHAR(20) NOT NULL,
 	type TEXT,
 	output_name TEXT,
 	database_id INTEGER,
@@ -456,7 +465,7 @@ CREATE TABLE "AddgeneIdSource" (
 	sequence_file_url TEXT,
 	addgene_sequence_type VARCHAR(14),
 	repository_id TEXT NOT NULL,
-	repository_name VARCHAR(10) NOT NULL,
+	repository_name VARCHAR(20) NOT NULL,
 	type TEXT,
 	output_name TEXT,
 	database_id INTEGER,
@@ -466,7 +475,7 @@ CREATE TABLE "AddgeneIdSource" (
 CREATE TABLE "WekWikGeneIdSource" (
 	sequence_file_url TEXT,
 	repository_id TEXT NOT NULL,
-	repository_name VARCHAR(10) NOT NULL,
+	repository_name VARCHAR(20) NOT NULL,
 	type TEXT,
 	output_name TEXT,
 	database_id INTEGER,
@@ -476,7 +485,7 @@ CREATE TABLE "WekWikGeneIdSource" (
 CREATE TABLE "SEVASource" (
 	sequence_file_url TEXT NOT NULL,
 	repository_id TEXT NOT NULL,
-	repository_name VARCHAR(10) NOT NULL,
+	repository_name VARCHAR(20) NOT NULL,
 	type TEXT,
 	output_name TEXT,
 	database_id INTEGER,
@@ -485,7 +494,7 @@ CREATE TABLE "SEVASource" (
 );
 CREATE TABLE "BenchlingUrlSource" (
 	repository_id TEXT NOT NULL,
-	repository_name VARCHAR(10) NOT NULL,
+	repository_name VARCHAR(20) NOT NULL,
 	type TEXT,
 	output_name TEXT,
 	database_id INTEGER,
@@ -494,7 +503,7 @@ CREATE TABLE "BenchlingUrlSource" (
 );
 CREATE TABLE "SnapGenePlasmidSource" (
 	repository_id TEXT NOT NULL,
-	repository_name VARCHAR(10) NOT NULL,
+	repository_name VARCHAR(20) NOT NULL,
 	type TEXT,
 	output_name TEXT,
 	database_id INTEGER,
@@ -503,7 +512,7 @@ CREATE TABLE "SnapGenePlasmidSource" (
 );
 CREATE TABLE "EuroscarfSource" (
 	repository_id TEXT NOT NULL,
-	repository_name VARCHAR(10) NOT NULL,
+	repository_name VARCHAR(20) NOT NULL,
 	type TEXT,
 	output_name TEXT,
 	database_id INTEGER,
@@ -513,7 +522,17 @@ CREATE TABLE "EuroscarfSource" (
 CREATE TABLE "IGEMSource" (
 	sequence_file_url TEXT NOT NULL,
 	repository_id TEXT NOT NULL,
-	repository_name VARCHAR(10) NOT NULL,
+	repository_name VARCHAR(20) NOT NULL,
+	type TEXT,
+	output_name TEXT,
+	database_id INTEGER,
+	id INTEGER NOT NULL,
+	PRIMARY KEY (id)
+);
+CREATE TABLE "OpenDNACollectionsSource" (
+	sequence_file_url TEXT,
+	repository_id TEXT NOT NULL,
+	repository_name VARCHAR(20) NOT NULL,
 	type TEXT,
 	output_name TEXT,
 	database_id INTEGER,
@@ -775,6 +794,7 @@ CREATE TABLE "SourceInput" (
 	"SnapGenePlasmidSource_id" INTEGER,
 	"EuroscarfSource_id" INTEGER,
 	"IGEMSource_id" INTEGER,
+	"OpenDNACollectionsSource_id" INTEGER,
 	"GenomeCoordinatesSource_id" INTEGER,
 	"SequenceCutSource_id" INTEGER,
 	"RestrictionEnzymeDigestionSource_id" INTEGER,
@@ -809,6 +829,7 @@ CREATE TABLE "SourceInput" (
 	FOREIGN KEY("SnapGenePlasmidSource_id") REFERENCES "SnapGenePlasmidSource" (id),
 	FOREIGN KEY("EuroscarfSource_id") REFERENCES "EuroscarfSource" (id),
 	FOREIGN KEY("IGEMSource_id") REFERENCES "IGEMSource" (id),
+	FOREIGN KEY("OpenDNACollectionsSource_id") REFERENCES "OpenDNACollectionsSource" (id),
 	FOREIGN KEY("GenomeCoordinatesSource_id") REFERENCES "GenomeCoordinatesSource" (id),
 	FOREIGN KEY("SequenceCutSource_id") REFERENCES "SequenceCutSource" (id),
 	FOREIGN KEY("RestrictionEnzymeDigestionSource_id") REFERENCES "RestrictionEnzymeDigestionSource" (id),

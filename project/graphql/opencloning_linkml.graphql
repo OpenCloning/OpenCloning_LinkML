@@ -43,6 +43,7 @@ enum RepositoryName
     igem
     wekwikgene
     seva
+    open_dna_collections
   }
 
 enum SequenceFileFormat
@@ -319,6 +320,18 @@ type OligoHybridizationSource
     databaseId: Integer
     input: [SourceInput]
     overhangCrick3prime: Integer
+  }
+
+type OpenDNACollectionsSource
+  {
+    id: Integer!
+    type: String
+    outputName: String
+    databaseId: Integer
+    input: [SourceInput]
+    repositoryName: RepositoryName!
+    sequenceFileUrl: String
+    repositoryId: String!
   }
 
 type OverlapExtensionPCRLigationSource

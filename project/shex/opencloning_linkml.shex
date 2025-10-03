@@ -313,6 +313,16 @@ linkml:Sparqlpath xsd:string
     )
 }
 
+<OpenDNACollectionsSource> CLOSED {
+    (  $<OpenDNACollectionsSource_tes> (  &<RepositoryIdSource_tes> ;
+          rdf:type [ <RepositoryIdSource> ] ? ;
+          <sequence_file_url> @linkml:String ? ;
+          <repository_id> @linkml:String
+       ) ;
+       rdf:type [ <OpenDNACollectionsSource> ]
+    )
+}
+
 <OverlapExtensionPCRLigationSource> CLOSED {
     (  $<OverlapExtensionPCRLigationSource_tes> (  &<AssemblySource_tes> ;
           rdf:type [ <AssemblySource> ] ?
@@ -383,12 +393,13 @@ linkml:Sparqlpath xsd:string
                 <https://opencloning.github.io/OpenCloning_LinkML/RepositoryName#euroscarf>
                 <https://opencloning.github.io/OpenCloning_LinkML/RepositoryName#igem>
                 <https://opencloning.github.io/OpenCloning_LinkML/RepositoryName#wekwikgene>
-                <https://opencloning.github.io/OpenCloning_LinkML/RepositoryName#seva> ]
+                <https://opencloning.github.io/OpenCloning_LinkML/RepositoryName#seva>
+                <https://opencloning.github.io/OpenCloning_LinkML/RepositoryName#open_dna_collections> ]
           ) ;
           rdf:type [ <RepositoryIdSource> ]
        )
-    } OR @<AddgeneIdSource> OR @<BenchlingUrlSource> OR @<EuroscarfSource> OR @<IGEMSource> OR @<SEVASource> OR
-    @<SnapGenePlasmidSource> OR @<WekWikGeneIdSource>
+    } OR @<AddgeneIdSource> OR @<BenchlingUrlSource> OR @<EuroscarfSource> OR @<IGEMSource> OR @<OpenDNACollectionsSource> OR
+    @<SEVASource> OR @<SnapGenePlasmidSource> OR @<WekWikGeneIdSource>
 )
 
 <RestrictionAndLigationSource> CLOSED {

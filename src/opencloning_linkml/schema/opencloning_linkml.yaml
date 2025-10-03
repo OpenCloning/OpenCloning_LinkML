@@ -344,11 +344,11 @@ classes:
   WekWikGeneIdSource:
     is_a: RepositoryIdSource
     description: >-
-      Represents the source of a sequence that is identified by a WekWikGene id
+      Represents the source of a sequence that is identified by a WeKwikGene id
     slot_usage:
       repository_id:
         description: >-
-          The id of the gene in the WekWik gene database
+          The id of the gene in the WeKwikGene database
         pattern: ^\d+$
     slots:
       - sequence_file_url
@@ -417,6 +417,17 @@ classes:
         required: true
         description: >-
           The URL of the sequence file, for now github repository
+
+  OpenDNACollectionsSource:
+    is_a: RepositoryIdSource
+    description: >-
+      Represents the source of a sequence from the Open DNA collections
+    slots:
+      - sequence_file_url
+    slot_usage:
+      repository_id:
+        description: >-
+          Subpath of the sequence in the Open DNA collections repository
 
   GenomeCoordinatesSource:
     is_a: Source
@@ -861,6 +872,9 @@ enums:
       seva:
         description: >-
           SEVA (Standard European Vector Architecture)
+      open_dna_collections:
+        description: >-
+          Open DNA collections
 
   Collection:
     permissible_values:
