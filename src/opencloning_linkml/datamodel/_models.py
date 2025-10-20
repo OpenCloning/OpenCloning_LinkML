@@ -590,7 +590,7 @@ class Source(NamedThing):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -650,7 +650,7 @@ class DatabaseSource(Source):
         json_schema_extra={"linkml_meta": {"alias": "output_name", "domain_of": ["Source"]}},
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -735,7 +735,7 @@ class CollectionSource(Source):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -964,7 +964,7 @@ class ManuallyTypedSource(Source):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -1066,7 +1066,7 @@ class UploadedFileSource(Source):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -1130,7 +1130,7 @@ class RepositoryIdSource(Source):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -1214,7 +1214,7 @@ class AddgeneIdSource(RepositoryIdSource):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -1320,7 +1320,7 @@ class WekWikGeneIdSource(RepositoryIdSource):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -1448,7 +1448,7 @@ class SEVASource(RepositoryIdSource):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -1551,7 +1551,7 @@ class BenchlingUrlSource(RepositoryIdSource):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -1648,7 +1648,7 @@ class SnapGenePlasmidSource(RepositoryIdSource):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -1736,7 +1736,7 @@ class EuroscarfSource(RepositoryIdSource):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -1847,7 +1847,7 @@ class IGEMSource(RepositoryIdSource):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -1952,7 +1952,7 @@ class OpenDNACollectionsSource(RepositoryIdSource):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -2059,7 +2059,7 @@ class GenomeCoordinatesSource(Source):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -2132,7 +2132,7 @@ class SequenceCutSource(Source):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -2205,7 +2205,7 @@ class RestrictionEnzymeDigestionSource(SequenceCutSource):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -2315,7 +2315,7 @@ class AssemblySource(Source):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -2387,7 +2387,7 @@ class PCRSource(AssemblySource):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -2452,7 +2452,7 @@ class LigationSource(AssemblySource):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -2517,7 +2517,7 @@ class HomologousRecombinationSource(AssemblySource):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -2582,7 +2582,7 @@ class GibsonAssemblySource(AssemblySource):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -2647,7 +2647,7 @@ class InFusionSource(AssemblySource):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -2712,7 +2712,7 @@ class OverlapExtensionPCRLigationSource(AssemblySource):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -2777,7 +2777,7 @@ class InVivoAssemblySource(AssemblySource):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -2857,7 +2857,7 @@ class RestrictionAndLigationSource(AssemblySource):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -2932,7 +2932,7 @@ class GatewaySource(AssemblySource):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -2997,7 +2997,7 @@ class CreLoxRecombinationSource(AssemblySource):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -3062,7 +3062,7 @@ class CRISPRSource(HomologousRecombinationSource):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -3127,7 +3127,7 @@ class OligoHybridizationSource(Source):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -3182,7 +3182,7 @@ class PolymeraseExtensionSource(Source):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -3458,7 +3458,7 @@ class AnnotationSource(Source):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
@@ -3513,7 +3513,7 @@ class ReverseComplementSource(Source):
         },
     )
     input: Optional[list[Union[SourceInput, AssemblyFragment]]] = Field(
-        default=None,
+        default_factory=list,
         description="""The inputs to this source. If the source represents external import of a sequence, it's empty.""",
         json_schema_extra={"linkml_meta": {"alias": "input", "domain_of": ["Source"], "slot_uri": "schema:object"}},
     )
