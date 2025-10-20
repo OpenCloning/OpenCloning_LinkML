@@ -114,6 +114,8 @@ gen-project: $(PYMODEL)
 # Format with black
 	$(RUN) black $(PYMODEL)/_models.py
 	$(RUN) black $(DEST)/*/*.py
+# Use default_factory=list for input field
+	$(RUN) python modify_input_default.py
 
 
 test: test-schema test-python test-examples

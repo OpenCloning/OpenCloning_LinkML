@@ -3542,9 +3542,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "opencloning_linkml.yaml",
-  "source_file_date": "2025-10-03T13:59:29",
+  "source_file_date": "2025-10-20T16:11:45",
   "source_file_size": 26051,
-  "generation_date": "2025-10-03T14:02:11",
+  "generation_date": "2025-10-20T16:29:26",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/opencloning_linkml.context.jsonld",
