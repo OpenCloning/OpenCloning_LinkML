@@ -1,0 +1,32 @@
+{
+  "sequences": [
+    {
+      "id": 1,
+      "type": "TextFileSequence",
+      "sequence_file_format": "genbank",
+      "overhang_crick_3prime": 0,
+      "overhang_watson_3prime": 0,
+      "file_content": "LOCUS       hm_repair                997 bp    DNA     linear   UNA 14-NOV-2025\nDEFINITION  natural linear DNA.\nACCESSION   .\nVERSION     .\nKEYWORDS    .\nSOURCE      natural DNA sequence\n  ORGANISM  unspecified\n            .\nREFERENCE   1  (bases 1 to 997)\n  AUTHORS   Trial User\n  TITLE     Direct Submission\n  JOURNAL   Exported Nov 14, 2025 from SnapGene 8.2.1 https://www.snapgene.com\nFEATURES             Location/Qualifiers\n     source          1..997\n                     /mol_type=\"genomic DNA\"\n                     /organism=\"unspecified\"\n     misc_feature    590..595\n                     /label=\"modification\"\nORIGIN\n        1 tttagcggtt tagtacaata tggttaattt gataaccaca tacttgatac ctgttgtatc\n       61 tagagttgta tataacaaaa ttagaattat attctattgg ctaagccaat ttctctccac\n      121 caatcagttt acatcggtta tttggaacat tattatcgat aagcaatgtc attatccaaa\n      181 attttggaat gttatcgtat gaagaagagt gtagaagtat cttgatcaca tatgaatggc\n      241 ttacctcaat cctcaaaaaa aaaaaaaaaa acaatgattt tccaaagcat atgtggtaat\n      301 aaataatgtt ataatcttca cttgaaaaaa aaaacaaatc cattggcaca gattagccat\n      361 ttgacgacaa cctcataaac atattccacg tggaccaatc aaaatagaat cctcctaatc\n      421 atcttcctcg tggcaacttg gccaatccgc atcgtgtggc gatcagagag ttaagccttg\n      481 aagacgaaga gataacgaat tggttgttga tcactcgctt tataaatctc tcagtttctt\n      541 gctcacacca acatctctct aagcttcttc ttctaccaat ctaattccta aaaaagcttc\n      601 ttgtgttgtg acgcatactc gtcgcagtct tgagatatgg ccgccgcagt ttccaccgtc\n      661 ggtgccatca acagagctcc ggtacacttc aatctccatt agtggtttaa tgttactttt\n      721 aacataatct taacgctttg tgcttatcca ccacttgaat agctttggtt tttacaaata\n      781 tagctcaaga atttgatcgt ttgaatcact ttgagattct ctgacagaac agaagaatca\n      841 ggactttaac taggaaatct aaagatactt tgatgcttct tttattctct acttgtgaac\n      901 tatagattta gtagatgtgt ttaaatcgat gtatagtaat tgaactgaaa ctgtagagac\n      961 tactactact ctttagtctt caggactagt ctatacc\n//"
+    }
+  ],
+  "sources": [
+    {
+      "id": 1,
+      "type": "UploadedFileSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
+      "sequence_file_format": "genbank",
+      "file_name": "hm_repair.gb",
+      "index_in_file": 0,
+      "circularize": false,
+      "coordinates": null,
+      "output": 1
+    }
+  ],
+  "description": "",
+  "primers": [],
+  "backend_version": "0.4.8",
+  "schema_version": "0.4.4",
+  "frontend_version": "v0.4.17"
+}
