@@ -1382,14 +1382,13 @@ class SEVASource(RepositoryIdSource):
                     "the SEVA website or an "
                     "entry in the NCBI.",
                     "name": "sequence_file_url",
-                    "required": True,
                 },
             },
         }
     )
 
-    sequence_file_url: str = Field(
-        default=...,
+    sequence_file_url: Optional[str] = Field(
+        default=None,
         description="""The URL of the sequence file, which can refer to a a gb file hosted on the SEVA website or an entry in the NCBI.""",
         json_schema_extra={
             "linkml_meta": {

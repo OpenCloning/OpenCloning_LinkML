@@ -368,7 +368,6 @@ classes:
         description: >-
           The URL of the sequence file, which can refer to a a gb file hosted on the SEVA website or an
           entry in the NCBI.
-        required: true
 
   BenchlingUrlSource:
     is_a: RepositoryIdSource

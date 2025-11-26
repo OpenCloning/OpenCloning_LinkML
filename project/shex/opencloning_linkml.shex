@@ -485,7 +485,7 @@ linkml:Sparqlpath xsd:string
 <SEVASource> CLOSED {
     (  $<SEVASource_tes> (  &<RepositoryIdSource_tes> ;
           rdf:type [ <RepositoryIdSource> ] ? ;
-          <sequence_file_url> @linkml:String ;
+          <sequence_file_url> @linkml:String ? ;
           <repository_id> @linkml:String
        ) ;
        rdf:type [ <SEVASource> ]
