@@ -1471,7 +1471,7 @@
                     ]
                 },
                 "repository_id": {
-                    "description": "The unique identifier of the sequence in the iGEM collection (for now, {part_id}-{plasmid_backbone})",
+                    "description": "The unique identifier of the sequence in the iGEM collection (for now, {part_id}-{plasmid_backbone}) pattern: ^[^-]+-[^-]+$",
                     "type": "string"
                 },
                 "repository_name": {
@@ -1479,7 +1479,7 @@
                 },
                 "sequence_file_url": {
                     "description": "The URL of the sequence file, for now github repository",
-                    "pattern": "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$",
+                    "pattern": "^.*.gb$",
                     "type": "string"
                 },
                 "type": {
@@ -1895,6 +1895,7 @@
                 },
                 "repository_id": {
                     "description": "Subpath of the sequence in the Open DNA collections repository",
+                    "pattern": "^[^\\/]+\\/[^\\/]+$",
                     "type": "string"
                 },
                 "repository_name": {
@@ -2836,7 +2837,7 @@
                 },
                 "repository_id": {
                     "description": "The subpath of the plasmid in the SnapGene plasmid library. Requesting the plasmid is possible with https://www.snapgene.com/local/fetch.php?set={category_path}&plasmid={plasmid['subpath']} where category_path is the left part of the subpath before the first / and plasmid is the subpath after the /.",
-                    "pattern": "^.+\\/.+$",
+                    "pattern": "^[^\\/]+\\/[^\\/]+$",
                     "type": "string"
                 },
                 "repository_name": {

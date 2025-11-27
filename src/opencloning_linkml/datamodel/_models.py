@@ -1597,7 +1597,7 @@ class SnapGenePlasmidSource(RepositoryIdSource):
                     "plasmid is the subpath after "
                     "the /.",
                     "name": "repository_id",
-                    "pattern": "^.+\\/.+$",
+                    "pattern": "^[^\\/]+\\/[^\\/]+$",
                 }
             },
         }
@@ -1661,7 +1661,7 @@ class SnapGenePlasmidSource(RepositoryIdSource):
 
     @field_validator("repository_id")
     def pattern_repository_id(cls, v):
-        pattern = re.compile(r"^.+\/.+$")
+        pattern = re.compile(r"^[^\/]+\/[^\/]+$")
         if isinstance(v, list):
             for element in v:
                 if isinstance(element, str) and not pattern.match(element):
@@ -1774,12 +1774,14 @@ class IGEMSource(RepositoryIdSource):
                     "description": "The unique identifier of the "
                     "sequence in the iGEM "
                     "collection (for now, "
-                    "{part_id}-{plasmid_backbone})",
+                    "{part_id}-{plasmid_backbone}) "
+                    "pattern: ^[^-]+-[^-]+$",
                     "name": "repository_id",
                 },
                 "sequence_file_url": {
                     "description": "The URL of the sequence " "file, for now github " "repository",
                     "name": "sequence_file_url",
+                    "pattern": "^.*.gb$",
                     "required": True,
                 },
             },
@@ -1804,7 +1806,7 @@ class IGEMSource(RepositoryIdSource):
     )
     repository_id: str = Field(
         default=...,
-        description="""The unique identifier of the sequence in the iGEM collection (for now, {part_id}-{plasmid_backbone})""",
+        description="""The unique identifier of the sequence in the iGEM collection (for now, {part_id}-{plasmid_backbone}) pattern: ^[^-]+-[^-]+$""",
         json_schema_extra={"linkml_meta": {"alias": "repository_id", "domain_of": ["RepositoryIdSource"]}},
     )
     repository_name: RepositoryName = Field(
@@ -1860,9 +1862,7 @@ class IGEMSource(RepositoryIdSource):
 
     @field_validator("sequence_file_url")
     def pattern_sequence_file_url(cls, v):
-        pattern = re.compile(
-            r"^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$"
-        )
+        pattern = re.compile(r"^.*.gb$")
         if isinstance(v, list):
             for element in v:
                 if isinstance(element, str) and not pattern.match(element):
@@ -1886,6 +1886,7 @@ class OpenDNACollectionsSource(RepositoryIdSource):
                 "repository_id": {
                     "description": "Subpath of the sequence in " "the Open DNA collections " "repository",
                     "name": "repository_id",
+                    "pattern": "^[^\\/]+\\/[^\\/]+$",
                 }
             },
         }
@@ -1975,6 +1976,19 @@ class OpenDNACollectionsSource(RepositoryIdSource):
                     raise ValueError(err_msg)
         elif isinstance(v, str) and not pattern.match(v):
             err_msg = f"Invalid sequence_file_url format: {v}"
+            raise ValueError(err_msg)
+        return v
+
+    @field_validator("repository_id")
+    def pattern_repository_id(cls, v):
+        pattern = re.compile(r"^[^\/]+\/[^\/]+$")
+        if isinstance(v, list):
+            for element in v:
+                if isinstance(element, str) and not pattern.match(element):
+                    err_msg = f"Invalid repository_id format: {element}"
+                    raise ValueError(err_msg)
+        elif isinstance(v, str) and not pattern.match(v):
+            err_msg = f"Invalid repository_id format: {v}"
             raise ValueError(err_msg)
         return v
 
