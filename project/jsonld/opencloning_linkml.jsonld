@@ -2021,7 +2021,7 @@
       "usage_slot_name": "repository_id",
       "range": "string",
       "required": true,
-      "pattern": "^.+\\/.+$",
+      "pattern": "^[^\\\\]*\\\\[^\\\\]$",
       "@type": "SlotDefinition"
     },
     {
@@ -2047,7 +2047,7 @@
     {
       "name": "IGEMSource_repository_id",
       "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/repository_id",
-      "description": "The unique identifier of the sequence in the iGEM collection (for now, {part_id}-{plasmid_backbone})",
+      "description": "The unique identifier of the sequence in the iGEM collection (for now, {part_id}-{plasmid_backbone}) pattern: ^[^-]*-[^-]$",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "is_a": "repository_id",
       "domain": "IGEMSource",
@@ -2100,6 +2100,7 @@
       "usage_slot_name": "repository_id",
       "range": "string",
       "required": true,
+      "pattern": "^[^\\\\]*\\\\[^\\\\]$",
       "@type": "SlotDefinition"
     },
     {
@@ -3541,9 +3542,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "opencloning_linkml.yaml",
-  "source_file_date": "2025-11-27T11:48:18",
-  "source_file_size": 26053,
-  "generation_date": "2025-11-27T11:49:42",
+  "source_file_date": "2025-11-27T13:06:37",
+  "source_file_size": 26125,
+  "generation_date": "2025-11-27T13:06:42",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/opencloning_linkml.context.jsonld",
