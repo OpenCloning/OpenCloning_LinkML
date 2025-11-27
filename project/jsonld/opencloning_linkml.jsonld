@@ -2021,7 +2021,7 @@
       "usage_slot_name": "repository_id",
       "range": "string",
       "required": true,
-      "pattern": "^[^\\\\]*\\\\[^\\\\]$",
+      "pattern": "^[^/]*\\/[^/]$",
       "@type": "SlotDefinition"
     },
     {
@@ -2100,7 +2100,7 @@
       "usage_slot_name": "repository_id",
       "range": "string",
       "required": true,
-      "pattern": "^[^\\\\]*\\\\[^\\\\]$",
+      "pattern": "^[^/]*\\/[^/]$",
       "@type": "SlotDefinition"
     },
     {
@@ -3542,9 +3542,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "opencloning_linkml.yaml",
-  "source_file_date": "2025-11-27T13:06:37",
-  "source_file_size": 26125,
-  "generation_date": "2025-11-27T13:06:42",
+  "source_file_date": "2025-11-27T13:26:30",
+  "source_file_size": 26121,
+  "generation_date": "2025-11-27T13:28:24",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/opencloning_linkml.context.jsonld",

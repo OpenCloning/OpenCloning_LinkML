@@ -1597,7 +1597,7 @@ class SnapGenePlasmidSource(RepositoryIdSource):
                     "plasmid is the subpath after "
                     "the /.",
                     "name": "repository_id",
-                    "pattern": "^[^\\\\]*\\\\[^\\\\]$",
+                    "pattern": "^[^/]*\\/[^/]$",
                 }
             },
         }
@@ -1661,7 +1661,7 @@ class SnapGenePlasmidSource(RepositoryIdSource):
 
     @field_validator("repository_id")
     def pattern_repository_id(cls, v):
-        pattern = re.compile(r"^[^\\]*\\[^\\]$")
+        pattern = re.compile(r"^[^/]*\/[^/]$")
         if isinstance(v, list):
             for element in v:
                 if isinstance(element, str) and not pattern.match(element):
@@ -1886,7 +1886,7 @@ class OpenDNACollectionsSource(RepositoryIdSource):
                 "repository_id": {
                     "description": "Subpath of the sequence in " "the Open DNA collections " "repository",
                     "name": "repository_id",
-                    "pattern": "^[^\\\\]*\\\\[^\\\\]$",
+                    "pattern": "^[^/]*\\/[^/]$",
                 }
             },
         }
@@ -1981,7 +1981,7 @@ class OpenDNACollectionsSource(RepositoryIdSource):
 
     @field_validator("repository_id")
     def pattern_repository_id(cls, v):
-        pattern = re.compile(r"^[^\\]*\\[^\\]$")
+        pattern = re.compile(r"^[^/]*\/[^/]$")
         if isinstance(v, list):
             for element in v:
                 if isinstance(element, str) and not pattern.match(element):
