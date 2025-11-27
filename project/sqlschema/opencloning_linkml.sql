@@ -483,7 +483,7 @@ CREATE TABLE "WekWikGeneIdSource" (
 	PRIMARY KEY (id)
 );
 CREATE TABLE "SEVASource" (
-	sequence_file_url TEXT NOT NULL,
+	sequence_file_url TEXT,
 	repository_id TEXT NOT NULL,
 	repository_name VARCHAR(20) NOT NULL,
 	type TEXT,

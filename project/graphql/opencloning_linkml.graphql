@@ -481,7 +481,7 @@ type SEVASource
     databaseId: Integer
     input: [SourceInput]
     repositoryName: RepositoryName!
-    sequenceFileUrl: String!
+    sequenceFileUrl: String
     repositoryId: String!
   }
 

@@ -1981,7 +1981,6 @@
       "is_usage_slot": true,
       "usage_slot_name": "sequence_file_url",
       "range": "string",
-      "required": true,
       "pattern": "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$",
       "@type": "SlotDefinition"
     },
@@ -3542,9 +3541,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "opencloning_linkml.yaml",
-  "source_file_date": "2025-11-17T18:34:01",
-  "source_file_size": 26051,
-  "generation_date": "2025-11-17T18:53:29",
+  "source_file_date": "2025-11-26T10:35:56",
+  "source_file_size": 26028,
+  "generation_date": "2025-11-26T10:36:03",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/opencloning_linkml.context.jsonld",
