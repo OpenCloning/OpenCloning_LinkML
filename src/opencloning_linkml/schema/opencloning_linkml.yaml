@@ -390,7 +390,7 @@ classes:
           The subpath of the plasmid in the SnapGene plasmid library. Requesting the plasmid
           is possible with https://www.snapgene.com/local/fetch.php?set={category_path}&plasmid={plasmid['subpath']}
           where category_path is the left part of the subpath before the first / and plasmid is the subpath after the /.
-        pattern: ^[^/]*\/[^/]$
+        pattern: ^[^\/]+\/[^\/]+$
 
   EuroscarfSource:
     is_a: RepositoryIdSource
@@ -412,7 +412,7 @@ classes:
       repository_id:
         description: >-
           The unique identifier of the sequence in the iGEM collection (for now, {part_id}-{plasmid_backbone})
-          pattern: ^[^-]*-[^-]$
+          pattern: ^[^-]+-[^-]+$
       sequence_file_url:
         required: true
         description: >-
@@ -429,7 +429,7 @@ classes:
       repository_id:
         description: >-
           Subpath of the sequence in the Open DNA collections repository
-        pattern: ^[^/]*\/[^/]$
+        pattern: ^[^\/]+\/[^\/]+$
 
   GenomeCoordinatesSource:
     is_a: Source

@@ -1,5 +1,5 @@
 # Auto generated from opencloning_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-27T13:28:24
+# Generation date: 2025-11-27T13:31:19
 # Schema: OpenCloning_LinkML
 #
 # id: https://opencloning.github.io/OpenCloning_LinkML
@@ -2991,7 +2991,7 @@ slots.SnapGenePlasmidSource_repository_id = Slot(
     model_uri=OPENCLONING_LINKML.SnapGenePlasmidSource_repository_id,
     domain=SnapGenePlasmidSource,
     range=str,
-    pattern=re.compile(r"^[^/]*\/[^/]$"),
+    pattern=re.compile(r"^[^\/]+\/[^\/]+$"),
 )
 
 slots.EuroscarfSource_repository_id = Slot(
@@ -3030,7 +3030,7 @@ slots.OpenDNACollectionsSource_repository_id = Slot(
     model_uri=OPENCLONING_LINKML.OpenDNACollectionsSource_repository_id,
     domain=OpenDNACollectionsSource,
     range=str,
-    pattern=re.compile(r"^[^/]*\/[^/]$"),
+    pattern=re.compile(r"^[^\/]+\/[^\/]+$"),
 )
 
 slots.RestrictionAndLigationSource_restriction_enzymes = Slot(

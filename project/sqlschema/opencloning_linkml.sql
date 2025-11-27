@@ -175,7 +175,7 @@
 --     * Slot: id Description: A unique identifier for a thing
 -- # Class: "IGEMSource" Description: "Represents the source of a sequence from an iGEM collection"
 --     * Slot: sequence_file_url Description: The URL of the sequence file, for now github repository
---     * Slot: repository_id Description: The unique identifier of the sequence in the iGEM collection (for now, {part_id}-{plasmid_backbone}) pattern: ^[^-]*-[^-]$
+--     * Slot: repository_id Description: The unique identifier of the sequence in the iGEM collection (for now, {part_id}-{plasmid_backbone}) pattern: ^[^-]+-[^-]+$
 --     * Slot: repository_name Description:
 --     * Slot: type Description: Designates the class
 --     * Slot: output_name Description: Used to specify the name of the output sequence
