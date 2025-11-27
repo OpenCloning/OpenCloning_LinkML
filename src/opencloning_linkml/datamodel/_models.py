@@ -1780,6 +1780,7 @@ class IGEMSource(RepositoryIdSource):
                 "sequence_file_url": {
                     "description": "The URL of the sequence " "file, for now github " "repository",
                     "name": "sequence_file_url",
+                    "pattern": "^.*.gb$",
                     "required": True,
                 },
             },
@@ -1860,9 +1861,7 @@ class IGEMSource(RepositoryIdSource):
 
     @field_validator("sequence_file_url")
     def pattern_sequence_file_url(cls, v):
-        pattern = re.compile(
-            r"^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$"
-        )
+        pattern = re.compile(r"^.*.gb$")
         if isinstance(v, list):
             for element in v:
                 if isinstance(element, str) and not pattern.match(element):

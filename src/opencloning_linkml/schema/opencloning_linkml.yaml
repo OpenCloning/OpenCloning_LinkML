@@ -416,6 +416,7 @@ classes:
         required: true
         description: >-
           The URL of the sequence file, for now github repository
+        pattern: ^.*.gb$
 
   OpenDNACollectionsSource:
     is_a: RepositoryIdSource

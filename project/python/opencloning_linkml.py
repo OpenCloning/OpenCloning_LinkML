@@ -1,5 +1,5 @@
 # Auto generated from opencloning_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-26T10:36:04
+# Generation date: 2025-11-27T11:49:43
 # Schema: OpenCloning_LinkML
 #
 # id: https://opencloning.github.io/OpenCloning_LinkML
@@ -3020,9 +3020,7 @@ slots.IGEMSource_sequence_file_url = Slot(
     model_uri=OPENCLONING_LINKML.IGEMSource_sequence_file_url,
     domain=IGEMSource,
     range=str,
-    pattern=re.compile(
-        r"^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$"
-    ),
+    pattern=re.compile(r"^.*.gb$"),
 )
 
 slots.OpenDNACollectionsSource_repository_id = Slot(
