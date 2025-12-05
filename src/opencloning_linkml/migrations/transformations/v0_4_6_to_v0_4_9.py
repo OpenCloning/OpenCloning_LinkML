@@ -44,7 +44,7 @@ def migrate_genome_coordinates_source(source: dict) -> dict:
     excluded_fields = ["type", "strand", "start", "end", "sequence_accession"]
     extra_fields = {key: value for key, value in source.items() if key not in excluded_fields}
     return new_GenomeCoordinatesSource(
-        location=location, repository_name="genbank", repository_id=old_source.sequence_accession, **extra_fields
+        coordinates=location, repository_name="genbank", repository_id=old_source.sequence_accession, **extra_fields
     ).model_dump()
 
 

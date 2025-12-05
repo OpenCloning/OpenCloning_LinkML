@@ -161,7 +161,7 @@ class TestMigration(unittest.TestCase):
         self.assertEqual(migrated_data["sources"][0]["type"], "NCBISequenceSource")
         self.assertEqual(migrated_data["sources"][0]["repository_id"], "X60065.1")
         self.assertEqual(migrated_data["sources"][0]["repository_name"], "genbank")
-        self.assertIsNone(migrated_data["sources"][0]["location"])
+        self.assertIsNone(migrated_data["sources"][0]["coordinates"])
 
     def test_0_4_6_to_0_4_9_GenomeCoordinatesSource(self):
         from opencloning_linkml.migrations.model_archive.v0_4_9 import CloningStrategy as new_CloningStrategy
@@ -182,7 +182,7 @@ class TestMigration(unittest.TestCase):
             gene_id = 123 if i == 0 else 456
             locus_tag = "blah" if i == 0 else "blah2"
             self.assertEqual(migrated_data["sources"][i]["type"], "GenomeCoordinatesSource")
-            self.assertEqual(migrated_data["sources"][i]["location"], location)
+            self.assertEqual(migrated_data["sources"][i]["coordinates"], location)
             self.assertEqual(migrated_data["sources"][i]["repository_id"], "NC_003424.3")
             self.assertEqual(migrated_data["sources"][i]["repository_name"], "genbank")
             self.assertEqual(migrated_data["sources"][i]["assembly_accession"], "GCF_000002945.2")

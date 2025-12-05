@@ -980,7 +980,9 @@ class UploadedFileSource(Source):
     coordinates: Optional[str] = Field(
         default=None,
         description="""If provided, coordinates within the sequence of the file to extract a subsequence""",
-        json_schema_extra={"linkml_meta": {"alias": "coordinates", "domain_of": ["UploadedFileSource"]}},
+        json_schema_extra={
+            "linkml_meta": {"alias": "coordinates", "domain_of": ["UploadedFileSource", "NCBISequenceSource"]}
+        },
     )
     type: Literal["UploadedFileSource"] = Field(
         default="UploadedFileSource",
@@ -1958,10 +1960,12 @@ class NCBISequenceSource(RepositoryIdSource):
         }
     )
 
-    location: Optional[str] = Field(
+    coordinates: Optional[str] = Field(
         default=None,
         description="""If provided, represents the location of a subsequence within the sequence identified by the sequence accession.""",
-        json_schema_extra={"linkml_meta": {"alias": "location", "domain_of": ["NCBISequenceSource"]}},
+        json_schema_extra={
+            "linkml_meta": {"alias": "coordinates", "domain_of": ["UploadedFileSource", "NCBISequenceSource"]}
+        },
     )
     repository_id: str = Field(
         default=...,
@@ -2047,10 +2051,12 @@ class GenomeCoordinatesSource(NCBISequenceSource):
         description="""The gene id of the sequence""",
         json_schema_extra={"linkml_meta": {"alias": "gene_id", "domain_of": ["GenomeCoordinatesSource"]}},
     )
-    location: str = Field(
-        default=...,
+    coordinates: Optional[str] = Field(
+        default=None,
         description="""If provided, represents the location of a subsequence within the sequence identified by the sequence accession.""",
-        json_schema_extra={"linkml_meta": {"alias": "location", "domain_of": ["NCBISequenceSource"]}},
+        json_schema_extra={
+            "linkml_meta": {"alias": "coordinates", "domain_of": ["UploadedFileSource", "NCBISequenceSource"]}
+        },
     )
     repository_id: str = Field(
         default=...,
