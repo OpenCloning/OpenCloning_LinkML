@@ -569,9 +569,6 @@
                                 "$ref": "#/$defs/RepositoryIdSource"
                             },
                             {
-                                "$ref": "#/$defs/GenomeCoordinatesSource"
-                            },
-                            {
                                 "$ref": "#/$defs/SequenceCutSource"
                             },
                             {
@@ -648,6 +645,12 @@
                             },
                             {
                                 "$ref": "#/$defs/OpenDNACollectionsSource"
+                            },
+                            {
+                                "$ref": "#/$defs/NCBISequenceSource"
+                            },
+                            {
+                                "$ref": "#/$defs/GenomeCoordinatesSource"
                             }
                         ]
                     },
@@ -705,9 +708,6 @@
                         },
                         {
                             "$ref": "#/$defs/RepositoryIdSource"
-                        },
-                        {
-                            "$ref": "#/$defs/GenomeCoordinatesSource"
                         },
                         {
                             "$ref": "#/$defs/SequenceCutSource"
@@ -786,6 +786,12 @@
                         },
                         {
                             "$ref": "#/$defs/OpenDNACollectionsSource"
+                        },
+                        {
+                            "$ref": "#/$defs/NCBISequenceSource"
+                        },
+                        {
+                            "$ref": "#/$defs/GenomeCoordinatesSource"
                         }
                     ],
                     "description": "The source of the sequence for this option"
@@ -1226,10 +1232,6 @@
                         "null"
                     ]
                 },
-                "end": {
-                    "description": "The ending coordinate (1-based) of the sequence in the sequence accession",
-                    "type": "integer"
-                },
                 "gene_id": {
                     "description": "The gene id of the sequence",
                     "type": [
@@ -1258,6 +1260,11 @@
                         "null"
                     ]
                 },
+                "location": {
+                    "description": "If provided, represents the location of a subsequence within the sequence identified by the sequence accession.",
+                    "pattern": "^((\\d+)\\.\\.(\\d+)|complement\\((\\d+)\\.\\.(\\d+)\\))$",
+                    "type": "string"
+                },
                 "locus_tag": {
                     "description": "The locus tag of the sequence",
                     "type": [
@@ -1272,17 +1279,12 @@
                         "null"
                     ]
                 },
-                "sequence_accession": {
-                    "description": "The accession of the sequence",
+                "repository_id": {
+                    "description": "The sequence accession (e.g. X60065.1)",
                     "type": "string"
                 },
-                "start": {
-                    "description": "The starting coordinate (1-based) of the sequence in the sequence accession",
-                    "type": "integer"
-                },
-                "strand": {
-                    "description": "The strand of the sequence in the sequence accession, should be 1 or -1",
-                    "type": "integer"
+                "repository_name": {
+                    "$ref": "#/$defs/RepositoryName"
                 },
                 "type": {
                     "description": "Designates the class",
@@ -1296,10 +1298,9 @@
                 }
             },
             "required": [
-                "sequence_accession",
-                "start",
-                "end",
-                "strand",
+                "location",
+                "repository_id",
+                "repository_name",
                 "id"
             ],
             "title": "GenomeCoordinatesSource",
@@ -1695,13 +1696,6 @@
             "additionalProperties": false,
             "description": "Represents the source of a sequence that is manually typed by the user",
             "properties": {
-                "circular": {
-                    "description": "Whether the sequence is circular or not",
-                    "type": [
-                        "boolean",
-                        "null"
-                    ]
-                },
                 "database_id": {
                     "description": "The id of an entity in a database",
                     "type": [
@@ -1737,20 +1731,6 @@
                         "null"
                     ]
                 },
-                "overhang_crick_3prime": {
-                    "description": "Taken from pydna's `dseq::ovhg`An integer describing the length of the crick strand overhang in the 5' of the molecule, or 3' of the crick strand",
-                    "type": [
-                        "integer",
-                        "null"
-                    ]
-                },
-                "overhang_watson_3prime": {
-                    "description": "The equivalent of `overhang_crick_3prime` but for the watson strand",
-                    "type": [
-                        "integer",
-                        "null"
-                    ]
-                },
                 "type": {
                     "description": "Designates the class",
                     "enum": [
@@ -1760,17 +1740,85 @@
                         "string",
                         "null"
                     ]
-                },
-                "user_input": {
-                    "pattern": "^[acgtACGT]+$",
-                    "type": "string"
                 }
             },
             "required": [
-                "user_input",
                 "id"
             ],
             "title": "ManuallyTypedSource",
+            "type": "object"
+        },
+        "NCBISequenceSource": {
+            "additionalProperties": false,
+            "description": "Represents the source of a sequence that is identified by an NCBI sequence accession",
+            "properties": {
+                "database_id": {
+                    "description": "The id of an entity in a database",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "integer"
+                },
+                "input": {
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "location": {
+                    "description": "If provided, represents the location of a subsequence within the sequence identified by the sequence accession.",
+                    "pattern": "^((\\d+)\\.\\.(\\d+)|complement\\((\\d+)\\.\\.(\\d+)\\))$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "output_name": {
+                    "description": "Used to specify the name of the output sequence",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "repository_id": {
+                    "description": "The sequence accession (e.g. X60065.1)",
+                    "type": "string"
+                },
+                "repository_name": {
+                    "$ref": "#/$defs/RepositoryName"
+                },
+                "type": {
+                    "description": "Designates the class",
+                    "enum": [
+                        "NCBISequenceSource"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "repository_id",
+                "repository_name",
+                "id"
+            ],
+            "title": "NCBISequenceSource",
             "type": "object"
         },
         "NamedThing": {

@@ -40,6 +40,14 @@ types:
     exact_mappings:
       - GENO:0000965
     pattern: ^(\d+)\.\.(\d+)$
+  simple_sequence_location:
+    typeof: string
+    description: >-
+      A simple sequence location defined using genbank syntax (e.g. 1..100 or complement(1..100)), note that 1..100 in genbank is equivalent to 0:100 in python
+    exact_mappings:
+      - GENO:0000965
+    pattern: ^((\d+)\.\.(\d+)|complement\((\d+)\.\.(\d+)\))$
+
 
 classes:
   NamedThing:
@@ -269,25 +277,6 @@ classes:
     is_a: Source
     description: >-
       Represents the source of a sequence that is manually typed by the user
-    # TODO: See if we can define a type of raw DNA seq with its own constraints,
-    # should be the same as in primer
-    slots:
-      - overhang_crick_3prime
-      - overhang_watson_3prime
-    attributes:
-      - user_input:
-          required: true
-          range: string
-          pattern: ^[acgtACGT]+$
-      - circular:
-          range: boolean
-          description: >-
-            Whether the sequence is circular or not
-    slot_usage:
-      overhang_crick_3prime:
-        ifabsent: int(0)
-      overhang_watson_3prime:
-        ifabsent: int(0)
 
   UploadedFileSource:
     is_a: Source
@@ -431,8 +420,24 @@ classes:
           Subpath of the sequence in the Open DNA collections repository
         pattern: ^[^\/]+\/[^\/]+$
 
+  NCBISequenceSource:
+    is_a: RepositoryIdSource
+    description: >-
+      Represents the source of a sequence that is identified by an NCBI sequence accession
+    slot_usage:
+      repository_id:
+        description: >-
+          The sequence accession (e.g. X60065.1)
+    attributes:
+      - location:
+          range: simple_sequence_location
+          description: >-
+            If provided, represents the location of a subsequence within the sequence identified by
+            the sequence accession.
+          required: false
+
   GenomeCoordinatesSource:
-    is_a: Source
+    is_a: NCBISequenceSource
     description: >-
       Represents the source of a sequence that is identified by genome coordinates, requested from NCBI
     attributes:
@@ -441,11 +446,6 @@ classes:
           description: >-
             The accession of the assembly
           required: false
-      - sequence_accession:
-          range: string
-          description: >-
-            The accession of the sequence
-          required: true
       - locus_tag:
           range: string
           description: >-
@@ -456,23 +456,10 @@ classes:
           description: >-
             The gene id of the sequence
           required: false
-      # TODO: Move to sequencelocation
-      - start:
-          range: integer
-          description: >-
-            The starting coordinate (1-based) of the sequence in the sequence accession
-          required: true
-      - end:
-          range: integer
-          description: >-
-            The ending coordinate (1-based) of the sequence in the sequence accession
-          required: true
-      # TODO: constrain to 1 / -1
-      - strand:
-          range: integer
-          description: >-
-            The strand of the sequence in the sequence accession, should be 1 or -1
-          required: true
+    slot_usage:
+      location:
+        required: true
+
 
   SequenceCutSource:
     is_a: Source
@@ -855,7 +842,7 @@ enums:
           Addgene
       genbank:
         description: >-
-          GenBank
+          GenBank / NCBI
       benchling:
         description: >-
           Benchling

@@ -11,6 +11,8 @@ PREFIX bioschemas: <https://bioschemas.org/>
 
 <SequenceRange> xsd:string
 
+<SimpleSequenceLocation> xsd:string
+
 linkml:String xsd:string
 
 linkml:Integer xsd:integer
@@ -218,15 +220,12 @@ linkml:Sparqlpath xsd:string
 }
 
 <GenomeCoordinatesSource> CLOSED {
-    (  $<GenomeCoordinatesSource_tes> (  &<Source_tes> ;
-          rdf:type [ schema1:CreateAction ] ? ;
+    (  $<GenomeCoordinatesSource_tes> (  &<NCBISequenceSource_tes> ;
+          rdf:type [ <NCBISequenceSource> ] ? ;
           <assembly_accession> @linkml:String ? ;
-          <sequence_accession> @linkml:String ;
           <locus_tag> @linkml:String ? ;
           <gene_id> @linkml:Integer ? ;
-          <start> @linkml:Integer ;
-          <end> @linkml:Integer ;
-          <strand> @linkml:Integer
+          <location> @<SimpleSequenceLocation>
        ) ;
        rdf:type [ <GenomeCoordinatesSource> ]
     )
@@ -286,11 +285,7 @@ linkml:Sparqlpath xsd:string
 
 <ManuallyTypedSource> CLOSED {
     (  $<ManuallyTypedSource_tes> (  &<Source_tes> ;
-          rdf:type [ schema1:CreateAction ] ? ;
-          <overhang_crick_3prime> @linkml:Integer ? ;
-          <overhang_watson_3prime> @linkml:Integer ? ;
-          <user_input> @linkml:String ;
-          <circular> @linkml:Boolean ?
+          rdf:type [ schema1:CreateAction ] ?
        ) ;
        rdf:type [ <ManuallyTypedSource> ]
     )
@@ -302,6 +297,18 @@ linkml:Sparqlpath xsd:string
           rdf:type [ schema1:Thing ]
        )
     } OR @<Sequence> OR @<Source>
+)
+
+<NCBISequenceSource>  (
+    CLOSED {
+       (  $<NCBISequenceSource_tes> (  &<RepositoryIdSource_tes> ;
+             rdf:type [ <RepositoryIdSource> ] ? ;
+             <location> @<SimpleSequenceLocation> ? ;
+             <repository_id> @linkml:String
+          ) ;
+          rdf:type [ <NCBISequenceSource> ]
+       )
+    } OR @<GenomeCoordinatesSource>
 )
 
 <OligoHybridizationSource> CLOSED {
@@ -398,8 +405,8 @@ linkml:Sparqlpath xsd:string
           ) ;
           rdf:type [ <RepositoryIdSource> ]
        )
-    } OR @<AddgeneIdSource> OR @<BenchlingUrlSource> OR @<EuroscarfSource> OR @<IGEMSource> OR @<OpenDNACollectionsSource> OR
-    @<SEVASource> OR @<SnapGenePlasmidSource> OR @<WekWikGeneIdSource>
+    } OR @<AddgeneIdSource> OR @<BenchlingUrlSource> OR @<EuroscarfSource> OR @<IGEMSource> OR @<NCBISequenceSource> OR
+    @<OpenDNACollectionsSource> OR @<SEVASource> OR @<SnapGenePlasmidSource> OR @<WekWikGeneIdSource>
 )
 
 <RestrictionAndLigationSource> CLOSED {
@@ -502,9 +509,9 @@ linkml:Sparqlpath xsd:string
 }
 
 <Source>  (
-    @<AnnotationSource> OR @<AssemblySource> OR @<CollectionSource> OR @<DatabaseSource> OR @<GenomeCoordinatesSource> OR
-    @<ManuallyTypedSource> OR @<OligoHybridizationSource> OR @<PolymeraseExtensionSource> OR @<RepositoryIdSource> OR
-    @<ReverseComplementSource> OR @<SequenceCutSource> OR @<UploadedFileSource>
+    @<AnnotationSource> OR @<AssemblySource> OR @<CollectionSource> OR @<DatabaseSource> OR @<ManuallyTypedSource> OR
+    @<OligoHybridizationSource> OR @<PolymeraseExtensionSource> OR @<RepositoryIdSource> OR @<ReverseComplementSource> OR
+    @<SequenceCutSource> OR @<UploadedFileSource>
 )
 
 <Source_struct> {

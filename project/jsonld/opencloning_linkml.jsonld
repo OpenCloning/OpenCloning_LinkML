@@ -87,6 +87,20 @@
       "@type": "TypeDefinition"
     },
     {
+      "name": "simple_sequence_location",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/SimpleSequenceLocation",
+      "description": "A simple sequence location defined using genbank syntax (e.g. 1..100 or complement(1..100)), note that 1..100 in genbank is equivalent to 0:100 in python",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "exact_mappings": [
+        "GENO:0000965"
+      ],
+      "typeof": "string",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "pattern": "^((\\d+)\\.\\.(\\d+)|complement\\((\\d+)\\.\\.(\\d+)\\))$",
+      "@type": "TypeDefinition"
+    },
+    {
       "name": "string",
       "definition_uri": "https://w3id.org/linkml/String",
       "description": "A character string",
@@ -407,7 +421,7 @@
         },
         {
           "text": "genbank",
-          "description": "GenBank"
+          "description": "GenBank / NCBI"
         },
         {
           "text": "benchling",
@@ -682,7 +696,6 @@
       "owner": "OligoHybridizationSource",
       "domain_of": [
         "TextFileSequence",
-        "ManuallyTypedSource",
         "OligoHybridizationSource"
       ],
       "range": "integer",
@@ -695,10 +708,9 @@
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/overhang_watson_3prime",
       "ifabsent": "int(0)",
-      "owner": "ManuallyTypedSource",
+      "owner": "TextFileSequence",
       "domain_of": [
-        "TextFileSequence",
-        "ManuallyTypedSource"
+        "TextFileSequence"
       ],
       "range": "integer",
       "@type": "SlotDefinition"
@@ -999,33 +1011,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "manuallyTypedSource__user_input",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/user_input",
-      "alias": "user_input",
-      "owner": "ManuallyTypedSource",
-      "domain_of": [
-        "ManuallyTypedSource"
-      ],
-      "range": "string",
-      "required": true,
-      "pattern": "^[acgtACGT]+$",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "manuallyTypedSource__circular",
-      "description": "Whether the sequence is circular or not",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/circular",
-      "alias": "circular",
-      "owner": "ManuallyTypedSource",
-      "domain_of": [
-        "ManuallyTypedSource"
-      ],
-      "range": "boolean",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "uploadedFileSource__file_name",
       "description": "The name of the file",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
@@ -1103,6 +1088,19 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "nCBISequenceSource__location",
+      "description": "If provided, represents the location of a subsequence within the sequence identified by the sequence accession.",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/location",
+      "alias": "location",
+      "owner": "NCBISequenceSource",
+      "domain_of": [
+        "NCBISequenceSource"
+      ],
+      "range": "simple_sequence_location",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "genomeCoordinatesSource__assembly_accession",
       "description": "The accession of the assembly",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
@@ -1113,20 +1111,6 @@
         "GenomeCoordinatesSource"
       ],
       "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "genomeCoordinatesSource__sequence_accession",
-      "description": "The accession of the sequence",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequence_accession",
-      "alias": "sequence_accession",
-      "owner": "GenomeCoordinatesSource",
-      "domain_of": [
-        "GenomeCoordinatesSource"
-      ],
-      "range": "string",
-      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1153,48 +1137,6 @@
         "GenomeCoordinatesSource"
       ],
       "range": "integer",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "genomeCoordinatesSource__start",
-      "description": "The starting coordinate (1-based) of the sequence in the sequence accession",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/start",
-      "alias": "start",
-      "owner": "GenomeCoordinatesSource",
-      "domain_of": [
-        "GenomeCoordinatesSource"
-      ],
-      "range": "integer",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "genomeCoordinatesSource__end",
-      "description": "The ending coordinate (1-based) of the sequence in the sequence accession",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/end",
-      "alias": "end",
-      "owner": "GenomeCoordinatesSource",
-      "domain_of": [
-        "GenomeCoordinatesSource"
-      ],
-      "range": "integer",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "genomeCoordinatesSource__strand",
-      "description": "The strand of the sequence in the sequence accession, should be 1 or -1",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/strand",
-      "alias": "strand",
-      "owner": "GenomeCoordinatesSource",
-      "domain_of": [
-        "GenomeCoordinatesSource"
-      ],
-      "range": "integer",
-      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1869,44 +1811,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "ManuallyTypedSource_overhang_crick_3prime",
-      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/overhang_crick_3prime",
-      "description": "Taken from pydna's `dseq::ovhg`An integer describing the length of the crick strand overhang in the 5' of the molecule, or 3' of the crick strand",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "is_a": "overhang_crick_3prime",
-      "domain": "ManuallyTypedSource",
-      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/overhang_crick_3prime",
-      "ifabsent": "int(0)",
-      "alias": "overhang_crick_3prime",
-      "owner": "ManuallyTypedSource",
-      "domain_of": [
-        "ManuallyTypedSource"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "overhang_crick_3prime",
-      "range": "integer",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "ManuallyTypedSource_overhang_watson_3prime",
-      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/overhang_watson_3prime",
-      "description": "The equivalent of `overhang_crick_3prime` but for the watson strand",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "is_a": "overhang_watson_3prime",
-      "domain": "ManuallyTypedSource",
-      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/overhang_watson_3prime",
-      "ifabsent": "int(0)",
-      "alias": "overhang_watson_3prime",
-      "owner": "ManuallyTypedSource",
-      "domain_of": [
-        "ManuallyTypedSource"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "overhang_watson_3prime",
-      "range": "integer",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "UploadedFileSource_sequence_file_format",
       "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequence_file_format",
       "description": "The format of a sequence file",
@@ -2101,6 +2005,42 @@
       "range": "string",
       "required": true,
       "pattern": "^[^\\/]+\\/[^\\/]+$",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "NCBISequenceSource_repository_id",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/repository_id",
+      "description": "The sequence accession (e.g. X60065.1)",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "is_a": "repository_id",
+      "domain": "NCBISequenceSource",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/repository_id",
+      "alias": "repository_id",
+      "owner": "NCBISequenceSource",
+      "domain_of": [
+        "NCBISequenceSource"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "repository_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "GenomeCoordinatesSource_location",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "is_a": "nCBISequenceSource__location",
+      "domain": "GenomeCoordinatesSource",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/location",
+      "alias": "location",
+      "owner": "GenomeCoordinatesSource",
+      "domain_of": [
+        "GenomeCoordinatesSource"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "location",
+      "range": "simple_sequence_location",
+      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2500,28 +2440,9 @@
         "type",
         "output_name",
         "database_id",
-        "source__input",
-        "ManuallyTypedSource_overhang_crick_3prime",
-        "ManuallyTypedSource_overhang_watson_3prime",
-        "manuallyTypedSource__user_input",
-        "manuallyTypedSource__circular"
+        "source__input"
       ],
       "slot_usage": {},
-      "attributes": [
-        {
-          "name": "user_input",
-          "range": "string",
-          "required": true,
-          "pattern": "^[acgtACGT]+$",
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "circular",
-          "description": "Whether the sequence is circular or not",
-          "range": "boolean",
-          "@type": "SlotDefinition"
-        }
-      ],
       "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/ManuallyTypedSource",
       "@type": "ClassDefinition"
     },
@@ -2766,24 +2687,51 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "GenomeCoordinatesSource",
-      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/GenomeCoordinatesSource",
-      "description": "Represents the source of a sequence that is identified by genome coordinates, requested from NCBI",
+      "name": "NCBISequenceSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/NCBISequenceSource",
+      "description": "Represents the source of a sequence that is identified by an NCBI sequence accession",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "is_a": "Source",
+      "is_a": "RepositoryIdSource",
       "slots": [
         "id",
         "type",
         "output_name",
         "database_id",
         "source__input",
+        "repositoryIdSource__repository_name",
+        "nCBISequenceSource__location",
+        "NCBISequenceSource_repository_id"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "location",
+          "description": "If provided, represents the location of a subsequence within the sequence identified by the sequence accession.",
+          "range": "simple_sequence_location",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/NCBISequenceSource",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "GenomeCoordinatesSource",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/GenomeCoordinatesSource",
+      "description": "Represents the source of a sequence that is identified by genome coordinates, requested from NCBI",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "is_a": "NCBISequenceSource",
+      "slots": [
+        "id",
+        "type",
+        "output_name",
+        "database_id",
+        "source__input",
+        "repositoryIdSource__repository_name",
+        "NCBISequenceSource_repository_id",
         "genomeCoordinatesSource__assembly_accession",
-        "genomeCoordinatesSource__sequence_accession",
         "genomeCoordinatesSource__locus_tag",
         "genomeCoordinatesSource__gene_id",
-        "genomeCoordinatesSource__start",
-        "genomeCoordinatesSource__end",
-        "genomeCoordinatesSource__strand"
+        "GenomeCoordinatesSource_location"
       ],
       "slot_usage": {},
       "attributes": [
@@ -2791,13 +2739,6 @@
           "name": "assembly_accession",
           "description": "The accession of the assembly",
           "range": "string",
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "sequence_accession",
-          "description": "The accession of the sequence",
-          "range": "string",
-          "required": true,
           "@type": "SlotDefinition"
         },
         {
@@ -2810,27 +2751,6 @@
           "name": "gene_id",
           "description": "The gene id of the sequence",
           "range": "integer",
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "start",
-          "description": "The starting coordinate (1-based) of the sequence in the sequence accession",
-          "range": "integer",
-          "required": true,
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "end",
-          "description": "The ending coordinate (1-based) of the sequence in the sequence accession",
-          "range": "integer",
-          "required": true,
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "strand",
-          "description": "The strand of the sequence in the sequence accession, should be 1 or -1",
-          "range": "integer",
-          "required": true,
           "@type": "SlotDefinition"
         }
       ],
@@ -3542,9 +3462,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "opencloning_linkml.yaml",
-  "source_file_date": "2025-11-27T13:31:15",
-  "source_file_size": 26128,
-  "generation_date": "2025-11-27T13:31:19",
+  "source_file_date": "2025-12-05T15:35:12",
+  "source_file_size": 25767,
+  "generation_date": "2025-12-05T15:35:20",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/opencloning_linkml.context.jsonld",

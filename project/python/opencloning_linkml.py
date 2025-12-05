@@ -1,5 +1,5 @@
 # Auto generated from opencloning_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-27T13:31:19
+# Generation date: 2025-12-05T15:35:21
 # Schema: OpenCloning_LinkML
 #
 # id: https://opencloning.github.io/OpenCloning_LinkML
@@ -61,6 +61,15 @@ class SequenceRange(String):
     type_class_curie = "xsd:string"
     type_name = "sequence_range"
     type_model_uri = OPENCLONING_LINKML.SequenceRange
+
+
+class SimpleSequenceLocation(String):
+    """A simple sequence location defined using genbank syntax (e.g. 1..100 or complement(1..100)), note that 1..100 in genbank is equivalent to 0:100 in python"""
+
+    type_class_uri = XSD["string"]
+    type_class_curie = "xsd:string"
+    type_name = "simple_sequence_location"
+    type_model_uri = OPENCLONING_LINKML.SimpleSequenceLocation
 
 
 # Class references
@@ -140,7 +149,11 @@ class OpenDNACollectionsSourceId(RepositoryIdSourceId):
     pass
 
 
-class GenomeCoordinatesSourceId(SourceId):
+class NCBISequenceSourceId(RepositoryIdSourceId):
+    pass
+
+
+class GenomeCoordinatesSourceId(NCBISequenceSourceId):
     pass
 
 
@@ -709,30 +722,12 @@ class ManuallyTypedSource(Source):
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.ManuallyTypedSource
 
     id: Union[int, ManuallyTypedSourceId] = None
-    user_input: str = None
-    overhang_crick_3prime: Optional[int] = 0
-    overhang_watson_3prime: Optional[int] = 0
-    circular: Optional[Union[bool, Bool]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ManuallyTypedSourceId):
             self.id = ManuallyTypedSourceId(self.id)
-
-        if self._is_empty(self.user_input):
-            self.MissingRequiredField("user_input")
-        if not isinstance(self.user_input, str):
-            self.user_input = str(self.user_input)
-
-        if self.overhang_crick_3prime is not None and not isinstance(self.overhang_crick_3prime, int):
-            self.overhang_crick_3prime = int(self.overhang_crick_3prime)
-
-        if self.overhang_watson_3prime is not None and not isinstance(self.overhang_watson_3prime, int):
-            self.overhang_watson_3prime = int(self.overhang_watson_3prime)
-
-        if self.circular is not None and not isinstance(self.circular, Bool):
-            self.circular = Bool(self.circular)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -1101,7 +1096,43 @@ class OpenDNACollectionsSource(RepositoryIdSource):
 
 
 @dataclass(repr=False)
-class GenomeCoordinatesSource(Source):
+class NCBISequenceSource(RepositoryIdSource):
+    """
+    Represents the source of a sequence that is identified by an NCBI sequence accession
+    """
+
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["NCBISequenceSource"]
+    class_class_curie: ClassVar[str] = "opencloning_linkml:NCBISequenceSource"
+    class_name: ClassVar[str] = "NCBISequenceSource"
+    class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.NCBISequenceSource
+
+    id: Union[int, NCBISequenceSourceId] = None
+    repository_name: Union[str, "RepositoryName"] = None
+    repository_id: str = None
+    location: Optional[Union[str, SimpleSequenceLocation]] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, NCBISequenceSourceId):
+            self.id = NCBISequenceSourceId(self.id)
+
+        if self._is_empty(self.repository_id):
+            self.MissingRequiredField("repository_id")
+        if not isinstance(self.repository_id, str):
+            self.repository_id = str(self.repository_id)
+
+        if self.location is not None and not isinstance(self.location, SimpleSequenceLocation):
+            self.location = SimpleSequenceLocation(self.location)
+
+        super().__post_init__(**kwargs)
+        self.type = str(self.class_name)
+
+
+@dataclass(repr=False)
+class GenomeCoordinatesSource(NCBISequenceSource):
     """
     Represents the source of a sequence that is identified by genome coordinates, requested from NCBI
     """
@@ -1114,10 +1145,9 @@ class GenomeCoordinatesSource(Source):
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.GenomeCoordinatesSource
 
     id: Union[int, GenomeCoordinatesSourceId] = None
-    sequence_accession: str = None
-    start: int = None
-    end: int = None
-    strand: int = None
+    repository_name: Union[str, "RepositoryName"] = None
+    repository_id: str = None
+    location: Union[str, SimpleSequenceLocation] = None
     assembly_accession: Optional[str] = None
     locus_tag: Optional[str] = None
     gene_id: Optional[int] = None
@@ -1128,25 +1158,10 @@ class GenomeCoordinatesSource(Source):
         if not isinstance(self.id, GenomeCoordinatesSourceId):
             self.id = GenomeCoordinatesSourceId(self.id)
 
-        if self._is_empty(self.sequence_accession):
-            self.MissingRequiredField("sequence_accession")
-        if not isinstance(self.sequence_accession, str):
-            self.sequence_accession = str(self.sequence_accession)
-
-        if self._is_empty(self.start):
-            self.MissingRequiredField("start")
-        if not isinstance(self.start, int):
-            self.start = int(self.start)
-
-        if self._is_empty(self.end):
-            self.MissingRequiredField("end")
-        if not isinstance(self.end, int):
-            self.end = int(self.end)
-
-        if self._is_empty(self.strand):
-            self.MissingRequiredField("strand")
-        if not isinstance(self.strand, int):
-            self.strand = int(self.strand)
+        if self._is_empty(self.location):
+            self.MissingRequiredField("location")
+        if not isinstance(self.location, SimpleSequenceLocation):
+            self.location = SimpleSequenceLocation(self.location)
 
         if self.assembly_accession is not None and not isinstance(self.assembly_accession, str):
             self.assembly_accession = str(self.assembly_accession)
@@ -1964,7 +1979,7 @@ class SequencingFile(AssociatedFile):
 class RepositoryName(EnumDefinitionImpl):
 
     addgene = PermissibleValue(text="addgene", description="Addgene")
-    genbank = PermissibleValue(text="genbank", description="GenBank")
+    genbank = PermissibleValue(text="genbank", description="GenBank / NCBI")
     benchling = PermissibleValue(text="benchling", description="Benchling")
     snapgene = PermissibleValue(text="snapgene", description="SnapGene plasmid library")
     euroscarf = PermissibleValue(text="euroscarf", description="Euroscarf (plasmids only)")
@@ -2356,25 +2371,6 @@ slots.collectionOptionInfo__well = Slot(
     range=Optional[str],
 )
 
-slots.manuallyTypedSource__user_input = Slot(
-    uri=OPENCLONING_LINKML.user_input,
-    name="manuallyTypedSource__user_input",
-    curie=OPENCLONING_LINKML.curie("user_input"),
-    model_uri=OPENCLONING_LINKML.manuallyTypedSource__user_input,
-    domain=None,
-    range=str,
-    pattern=re.compile(r"^[acgtACGT]+$"),
-)
-
-slots.manuallyTypedSource__circular = Slot(
-    uri=OPENCLONING_LINKML.circular,
-    name="manuallyTypedSource__circular",
-    curie=OPENCLONING_LINKML.curie("circular"),
-    model_uri=OPENCLONING_LINKML.manuallyTypedSource__circular,
-    domain=None,
-    range=Optional[Union[bool, Bool]],
-)
-
 slots.uploadedFileSource__file_name = Slot(
     uri=OPENCLONING_LINKML.file_name,
     name="uploadedFileSource__file_name",
@@ -2429,6 +2425,15 @@ slots.addgeneIdSource__addgene_sequence_type = Slot(
     range=Optional[Union[str, "AddgeneSequenceType"]],
 )
 
+slots.nCBISequenceSource__location = Slot(
+    uri=OPENCLONING_LINKML.location,
+    name="nCBISequenceSource__location",
+    curie=OPENCLONING_LINKML.curie("location"),
+    model_uri=OPENCLONING_LINKML.nCBISequenceSource__location,
+    domain=None,
+    range=Optional[Union[str, SimpleSequenceLocation]],
+)
+
 slots.genomeCoordinatesSource__assembly_accession = Slot(
     uri=OPENCLONING_LINKML.assembly_accession,
     name="genomeCoordinatesSource__assembly_accession",
@@ -2436,15 +2441,6 @@ slots.genomeCoordinatesSource__assembly_accession = Slot(
     model_uri=OPENCLONING_LINKML.genomeCoordinatesSource__assembly_accession,
     domain=None,
     range=Optional[str],
-)
-
-slots.genomeCoordinatesSource__sequence_accession = Slot(
-    uri=OPENCLONING_LINKML.sequence_accession,
-    name="genomeCoordinatesSource__sequence_accession",
-    curie=OPENCLONING_LINKML.curie("sequence_accession"),
-    model_uri=OPENCLONING_LINKML.genomeCoordinatesSource__sequence_accession,
-    domain=None,
-    range=str,
 )
 
 slots.genomeCoordinatesSource__locus_tag = Slot(
@@ -2463,33 +2459,6 @@ slots.genomeCoordinatesSource__gene_id = Slot(
     model_uri=OPENCLONING_LINKML.genomeCoordinatesSource__gene_id,
     domain=None,
     range=Optional[int],
-)
-
-slots.genomeCoordinatesSource__start = Slot(
-    uri=OPENCLONING_LINKML.start,
-    name="genomeCoordinatesSource__start",
-    curie=OPENCLONING_LINKML.curie("start"),
-    model_uri=OPENCLONING_LINKML.genomeCoordinatesSource__start,
-    domain=None,
-    range=int,
-)
-
-slots.genomeCoordinatesSource__end = Slot(
-    uri=OPENCLONING_LINKML.end,
-    name="genomeCoordinatesSource__end",
-    curie=OPENCLONING_LINKML.curie("end"),
-    model_uri=OPENCLONING_LINKML.genomeCoordinatesSource__end,
-    domain=None,
-    range=int,
-)
-
-slots.genomeCoordinatesSource__strand = Slot(
-    uri=OPENCLONING_LINKML.strand,
-    name="genomeCoordinatesSource__strand",
-    curie=OPENCLONING_LINKML.curie("strand"),
-    model_uri=OPENCLONING_LINKML.genomeCoordinatesSource__strand,
-    domain=None,
-    range=int,
 )
 
 slots.sequenceCutSource__left_edge = Slot(
@@ -2915,24 +2884,6 @@ slots.CollectionOptionInfo_name = Slot(
     range=Optional[str],
 )
 
-slots.ManuallyTypedSource_overhang_crick_3prime = Slot(
-    uri=OPENCLONING_LINKML.overhang_crick_3prime,
-    name="ManuallyTypedSource_overhang_crick_3prime",
-    curie=OPENCLONING_LINKML.curie("overhang_crick_3prime"),
-    model_uri=OPENCLONING_LINKML.ManuallyTypedSource_overhang_crick_3prime,
-    domain=ManuallyTypedSource,
-    range=Optional[int],
-)
-
-slots.ManuallyTypedSource_overhang_watson_3prime = Slot(
-    uri=OPENCLONING_LINKML.overhang_watson_3prime,
-    name="ManuallyTypedSource_overhang_watson_3prime",
-    curie=OPENCLONING_LINKML.curie("overhang_watson_3prime"),
-    model_uri=OPENCLONING_LINKML.ManuallyTypedSource_overhang_watson_3prime,
-    domain=ManuallyTypedSource,
-    range=Optional[int],
-)
-
 slots.UploadedFileSource_sequence_file_format = Slot(
     uri=OPENCLONING_LINKML.sequence_file_format,
     name="UploadedFileSource_sequence_file_format",
@@ -3031,6 +2982,24 @@ slots.OpenDNACollectionsSource_repository_id = Slot(
     domain=OpenDNACollectionsSource,
     range=str,
     pattern=re.compile(r"^[^\/]+\/[^\/]+$"),
+)
+
+slots.NCBISequenceSource_repository_id = Slot(
+    uri=OPENCLONING_LINKML.repository_id,
+    name="NCBISequenceSource_repository_id",
+    curie=OPENCLONING_LINKML.curie("repository_id"),
+    model_uri=OPENCLONING_LINKML.NCBISequenceSource_repository_id,
+    domain=NCBISequenceSource,
+    range=str,
+)
+
+slots.GenomeCoordinatesSource_location = Slot(
+    uri=OPENCLONING_LINKML.location,
+    name="GenomeCoordinatesSource_location",
+    curie=OPENCLONING_LINKML.curie("location"),
+    model_uri=OPENCLONING_LINKML.GenomeCoordinatesSource_location,
+    domain=GenomeCoordinatesSource,
+    range=Union[str, SimpleSequenceLocation],
 )
 
 slots.RestrictionAndLigationSource_restriction_enzymes = Slot(

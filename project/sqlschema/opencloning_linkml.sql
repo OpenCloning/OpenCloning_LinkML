@@ -41,6 +41,7 @@
 --     * Slot: EuroscarfSource_id Description: Autocreated FK slot
 --     * Slot: IGEMSource_id Description: Autocreated FK slot
 --     * Slot: OpenDNACollectionsSource_id Description: Autocreated FK slot
+--     * Slot: NCBISequenceSource_id Description: Autocreated FK slot
 --     * Slot: GenomeCoordinatesSource_id Description: Autocreated FK slot
 --     * Slot: SequenceCutSource_id Description: Autocreated FK slot
 --     * Slot: RestrictionEnzymeDigestionSource_id Description: Autocreated FK slot
@@ -102,10 +103,6 @@
 --     * Slot: resistance Description: The antibiotic resistance of the plasmid
 --     * Slot: well Description: The well position in the kit plate
 -- # Class: "ManuallyTypedSource" Description: "Represents the source of a sequence that is manually typed by the user"
---     * Slot: overhang_crick_3prime Description: Taken from pydna's `dseq::ovhg`An integer describing the length of the crick strand overhang in the 5' of the molecule, or 3' of the crick strand
---     * Slot: overhang_watson_3prime Description: The equivalent of `overhang_crick_3prime` but for the watson strand
---     * Slot: user_input Description:
---     * Slot: circular Description: Whether the sequence is circular or not
 --     * Slot: type Description: Designates the class
 --     * Slot: output_name Description: Used to specify the name of the output sequence
 --     * Slot: database_id Description: The id of an entity in a database
@@ -189,14 +186,21 @@
 --     * Slot: output_name Description: Used to specify the name of the output sequence
 --     * Slot: database_id Description: The id of an entity in a database
 --     * Slot: id Description: A unique identifier for a thing
+-- # Class: "NCBISequenceSource" Description: "Represents the source of a sequence that is identified by an NCBI sequence accession"
+--     * Slot: location Description: If provided, represents the location of a subsequence within the sequence identified by the sequence accession.
+--     * Slot: repository_id Description: The sequence accession (e.g. X60065.1)
+--     * Slot: repository_name Description:
+--     * Slot: type Description: Designates the class
+--     * Slot: output_name Description: Used to specify the name of the output sequence
+--     * Slot: database_id Description: The id of an entity in a database
+--     * Slot: id Description: A unique identifier for a thing
 -- # Class: "GenomeCoordinatesSource" Description: "Represents the source of a sequence that is identified by genome coordinates, requested from NCBI"
 --     * Slot: assembly_accession Description: The accession of the assembly
---     * Slot: sequence_accession Description: The accession of the sequence
 --     * Slot: locus_tag Description: The locus tag of the sequence
 --     * Slot: gene_id Description: The gene id of the sequence
---     * Slot: start Description: The starting coordinate (1-based) of the sequence in the sequence accession
---     * Slot: end Description: The ending coordinate (1-based) of the sequence in the sequence accession
---     * Slot: strand Description: The strand of the sequence in the sequence accession, should be 1 or -1
+--     * Slot: location Description: If provided, represents the location of a subsequence within the sequence identified by the sequence accession.
+--     * Slot: repository_id Description: The sequence accession (e.g. X60065.1)
+--     * Slot: repository_name Description:
 --     * Slot: type Description: Designates the class
 --     * Slot: output_name Description: Used to specify the name of the output sequence
 --     * Slot: database_id Description: The id of an entity in a database
@@ -430,10 +434,6 @@ CREATE TABLE "CollectionOptionInfo" (
 	PRIMARY KEY (id)
 );
 CREATE TABLE "ManuallyTypedSource" (
-	overhang_crick_3prime INTEGER,
-	overhang_watson_3prime INTEGER,
-	user_input TEXT NOT NULL,
-	circular BOOLEAN,
 	type TEXT,
 	output_name TEXT,
 	database_id INTEGER,
@@ -539,14 +539,23 @@ CREATE TABLE "OpenDNACollectionsSource" (
 	id INTEGER NOT NULL,
 	PRIMARY KEY (id)
 );
+CREATE TABLE "NCBISequenceSource" (
+	location TEXT,
+	repository_id TEXT NOT NULL,
+	repository_name VARCHAR(20) NOT NULL,
+	type TEXT,
+	output_name TEXT,
+	database_id INTEGER,
+	id INTEGER NOT NULL,
+	PRIMARY KEY (id)
+);
 CREATE TABLE "GenomeCoordinatesSource" (
 	assembly_accession TEXT,
-	sequence_accession TEXT NOT NULL,
 	locus_tag TEXT,
 	gene_id INTEGER,
-	start INTEGER NOT NULL,
-	"end" INTEGER NOT NULL,
-	strand INTEGER NOT NULL,
+	location TEXT NOT NULL,
+	repository_id TEXT NOT NULL,
+	repository_name VARCHAR(20) NOT NULL,
 	type TEXT,
 	output_name TEXT,
 	database_id INTEGER,
@@ -795,6 +804,7 @@ CREATE TABLE "SourceInput" (
 	"EuroscarfSource_id" INTEGER,
 	"IGEMSource_id" INTEGER,
 	"OpenDNACollectionsSource_id" INTEGER,
+	"NCBISequenceSource_id" INTEGER,
 	"GenomeCoordinatesSource_id" INTEGER,
 	"SequenceCutSource_id" INTEGER,
 	"RestrictionEnzymeDigestionSource_id" INTEGER,
@@ -830,6 +840,7 @@ CREATE TABLE "SourceInput" (
 	FOREIGN KEY("EuroscarfSource_id") REFERENCES "EuroscarfSource" (id),
 	FOREIGN KEY("IGEMSource_id") REFERENCES "IGEMSource" (id),
 	FOREIGN KEY("OpenDNACollectionsSource_id") REFERENCES "OpenDNACollectionsSource" (id),
+	FOREIGN KEY("NCBISequenceSource_id") REFERENCES "NCBISequenceSource" (id),
 	FOREIGN KEY("GenomeCoordinatesSource_id") REFERENCES "GenomeCoordinatesSource" (id),
 	FOREIGN KEY("SequenceCutSource_id") REFERENCES "SequenceCutSource" (id),
 	FOREIGN KEY("RestrictionEnzymeDigestionSource_id") REFERENCES "RestrictionEnzymeDigestionSource" (id),

@@ -223,13 +223,12 @@ type GenomeCoordinatesSource
     outputName: String
     databaseId: Integer
     input: [SourceInput]
+    repositoryName: RepositoryName!
+    repositoryId: String!
     assemblyAccession: String
-    sequenceAccession: String!
     locusTag: String
     geneId: Integer
-    start: Integer!
-    end: Integer!
-    strand: Integer!
+    location: SimpleSequenceLocation!
   }
 
 type GibsonAssemblySource
@@ -301,15 +300,23 @@ type ManuallyTypedSource
     outputName: String
     databaseId: Integer
     input: [SourceInput]
-    overhangCrick3prime: Integer
-    overhangWatson3prime: Integer
-    userInput: String!
-    circular: Boolean
   }
 
 type NamedThing
   {
     id: Integer!
+  }
+
+type NCBISequenceSource
+  {
+    id: Integer!
+    type: String
+    outputName: String
+    databaseId: Integer
+    input: [SourceInput]
+    repositoryName: RepositoryName!
+    location: SimpleSequenceLocation
+    repositoryId: String!
   }
 
 type OligoHybridizationSource
