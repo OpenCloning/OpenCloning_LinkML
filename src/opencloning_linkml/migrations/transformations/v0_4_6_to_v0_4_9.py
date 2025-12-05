@@ -1,5 +1,12 @@
-from ..model_archive.v0_4_9 import CloningStrategy as new_CloningStrategy
-from ..model_archive.v0_4_6 import CloningStrategy as old_CloningStrategy
+from ..model_archive.v0_4_9 import (
+    CloningStrategy as new_CloningStrategy,
+    NCBISequenceSource,
+    GenomeCoordinatesSource as new_GenomeCoordinatesSource,
+)
+from ..model_archive.v0_4_6 import (
+    CloningStrategy as old_CloningStrategy,
+    GenomeCoordinatesSource as old_GenomeCoordinatesSource,
+)
 
 from copy import deepcopy
 
@@ -12,10 +19,33 @@ def migrate_manually_typed_source(source: dict) -> dict:
     return new_source
 
 
+def migrate_repository_id_source(source: dict) -> dict:
+    new_source = {key: value for key, value in source.items() if key != "type"}
+    return NCBISequenceSource(**new_source).model_dump()
+
+
 def migrate_source(source: dict) -> dict:
     if source["type"] == "ManuallyTypedSource":
         return migrate_manually_typed_source(source)
+    elif source["type"] == "RepositoryIdSource" and source["repository_name"] == "genbank":
+        return migrate_repository_id_source(source)
+    elif source["type"] == "GenomeCoordinatesSource":
+        return migrate_genome_coordinates_source(source)
     return source
+
+
+def migrate_genome_coordinates_source(source: dict) -> dict:
+    old_source = old_GenomeCoordinatesSource.model_validate(source)
+    if old_source.strand == -1:
+        location = f"complement({old_source.start}..{old_source.end})"
+    else:
+        location = f"{old_source.start}..{old_source.end}"
+
+    excluded_fields = ["type", "strand", "start", "end", "sequence_accession"]
+    extra_fields = {key: value for key, value in source.items() if key not in excluded_fields}
+    return new_GenomeCoordinatesSource(
+        location=location, repository_name="genbank", repository_id=old_source.sequence_accession, **extra_fields
+    ).model_dump()
 
 
 def migrate_0_4_6_to_0_4_9(data: dict) -> dict:

@@ -26,8 +26,8 @@
       "input": [],
       "assembly_accession": "GCF_000002945.2",
       "sequence_accession": "NC_003424.3",
-      "locus_tag": null,
-      "gene_id": null,
+      "locus_tag": "blah",
+      "gene_id": 123,
       "start": 1877189,
       "end": 1877289,
       "strand": 1
@@ -40,8 +40,8 @@
       "input": [],
       "assembly_accession": "GCF_000002945.2",
       "sequence_accession": "NC_003424.3",
-      "locus_tag": null,
-      "gene_id": null,
+      "locus_tag": "blah2",
+      "gene_id": 456,
       "start": 1877189,
       "end": 1877289,
       "strand": -1
