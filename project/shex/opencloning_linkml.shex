@@ -283,6 +283,18 @@ linkml:Sparqlpath xsd:string
     )
 }
 
+<ManuallyTypedSequence> CLOSED {
+    (  $<ManuallyTypedSequence_tes> (  &<Sequence_tes> ;
+          rdf:type [ bioschemas:DNA ] ? ;
+          <overhang_crick_3prime> @linkml:Integer ? ;
+          <overhang_watson_3prime> @linkml:Integer ? ;
+          <sequence> @linkml:String ;
+          <circular> @linkml:Boolean ?
+       ) ;
+       rdf:type [ <ManuallyTypedSequence> ]
+    )
+}
+
 <ManuallyTypedSource> CLOSED {
     (  $<ManuallyTypedSource_tes> (  &<Source_tes> ;
           rdf:type [ schema1:CreateAction ] ?
@@ -446,7 +458,7 @@ linkml:Sparqlpath xsd:string
 }
 
 <Sequence>  (
-    @<Primer> OR @<TemplateSequence> OR @<TextFileSequence>
+    @<ManuallyTypedSequence> OR @<Primer> OR @<TemplateSequence> OR @<TextFileSequence>
 )
 
 <Sequence_struct> {

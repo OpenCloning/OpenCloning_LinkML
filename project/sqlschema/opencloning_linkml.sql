@@ -16,6 +16,13 @@
 --     * Slot: file_content Description:
 --     * Slot: id Description: A unique identifier for a thing
 --     * Slot: type Description: Designates the class
+-- # Class: "ManuallyTypedSequence" Description: "Represents a sequence that is manually typed by the user"
+--     * Slot: overhang_crick_3prime Description: Taken from pydna's `dseq::ovhg`An integer describing the length of the crick strand overhang in the 5' of the molecule, or 3' of the crick strand
+--     * Slot: overhang_watson_3prime Description: The equivalent of `overhang_crick_3prime` but for the watson strand
+--     * Slot: sequence Description: The sequence of the manually typed sequence
+--     * Slot: circular Description: Whether the sequence is circular or linear
+--     * Slot: id Description: A unique identifier for a thing
+--     * Slot: type Description: Designates the class
 -- # Class: "Primer" Description: "An oligonucleotide or primer"
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: database_id Description: The id of an entity in a database
@@ -390,6 +397,15 @@ CREATE TABLE "TextFileSequence" (
 	overhang_crick_3prime INTEGER,
 	overhang_watson_3prime INTEGER,
 	file_content TEXT,
+	id INTEGER NOT NULL,
+	type TEXT,
+	PRIMARY KEY (id)
+);
+CREATE TABLE "ManuallyTypedSequence" (
+	overhang_crick_3prime INTEGER,
+	overhang_watson_3prime INTEGER,
+	sequence TEXT NOT NULL,
+	circular BOOLEAN,
 	id INTEGER NOT NULL,
 	type TEXT,
 	PRIMARY KEY (id)

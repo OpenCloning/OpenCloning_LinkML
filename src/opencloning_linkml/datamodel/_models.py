@@ -275,7 +275,12 @@ class TemplateSequence(Sequence):
     circular: Optional[bool] = Field(
         default=None,
         description="""Whether the sequence is circular or linear""",
-        json_schema_extra={"linkml_meta": {"alias": "circular", "domain_of": ["TemplateSequence", "AssemblySource"]}},
+        json_schema_extra={
+            "linkml_meta": {
+                "alias": "circular",
+                "domain_of": ["TemplateSequence", "ManuallyTypedSequence", "AssemblySource"],
+            }
+        },
     )
     primer_design: Optional[str] = Field(
         default=None,
@@ -338,7 +343,7 @@ class TextFileSequence(Sequence):
         json_schema_extra={
             "linkml_meta": {
                 "alias": "overhang_crick_3prime",
-                "domain_of": ["TextFileSequence", "OligoHybridizationSource"],
+                "domain_of": ["TextFileSequence", "ManuallyTypedSequence", "OligoHybridizationSource"],
                 "ifabsent": "int(0)",
             }
         },
@@ -347,7 +352,11 @@ class TextFileSequence(Sequence):
         default=0,
         description="""The equivalent of `overhang_crick_3prime` but for the watson strand""",
         json_schema_extra={
-            "linkml_meta": {"alias": "overhang_watson_3prime", "domain_of": ["TextFileSequence"], "ifabsent": "int(0)"}
+            "linkml_meta": {
+                "alias": "overhang_watson_3prime",
+                "domain_of": ["TextFileSequence", "ManuallyTypedSequence"],
+                "ifabsent": "int(0)",
+            }
         },
     )
     file_content: Optional[str] = Field(
@@ -378,6 +387,104 @@ class TextFileSequence(Sequence):
             }
         },
     )
+
+
+class ManuallyTypedSequence(Sequence):
+    """
+    Represents a sequence that is manually typed by the user
+    """
+
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta(
+        {
+            "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+            "slot_usage": {
+                "overhang_crick_3prime": {"ifabsent": "int(0)", "name": "overhang_crick_3prime"},
+                "overhang_watson_3prime": {"ifabsent": "int(0)", "name": "overhang_watson_3prime"},
+            },
+        }
+    )
+
+    overhang_crick_3prime: Optional[int] = Field(
+        default=0,
+        description="""Taken from pydna's `dseq::ovhg`An integer describing the length of the crick strand overhang in the 5' of the molecule, or 3' of the crick strand""",
+        json_schema_extra={
+            "linkml_meta": {
+                "alias": "overhang_crick_3prime",
+                "domain_of": ["TextFileSequence", "ManuallyTypedSequence", "OligoHybridizationSource"],
+                "ifabsent": "int(0)",
+            }
+        },
+    )
+    overhang_watson_3prime: Optional[int] = Field(
+        default=0,
+        description="""The equivalent of `overhang_crick_3prime` but for the watson strand""",
+        json_schema_extra={
+            "linkml_meta": {
+                "alias": "overhang_watson_3prime",
+                "domain_of": ["TextFileSequence", "ManuallyTypedSequence"],
+                "ifabsent": "int(0)",
+            }
+        },
+    )
+    sequence: str = Field(
+        default=...,
+        description="""The sequence of the manually typed sequence""",
+        json_schema_extra={
+            "linkml_meta": {
+                "alias": "sequence",
+                "domain_of": ["ManuallyTypedSequence", "Primer", "SourceInput", "PlannotateAnnotationReport"],
+            }
+        },
+    )
+    circular: Optional[bool] = Field(
+        default=False,
+        description="""Whether the sequence is circular or linear""",
+        json_schema_extra={
+            "linkml_meta": {
+                "alias": "circular",
+                "domain_of": ["TemplateSequence", "ManuallyTypedSequence", "AssemblySource"],
+                "ifabsent": "boolean(false)",
+            }
+        },
+    )
+    id: int = Field(
+        default=...,
+        description="""A unique identifier for a thing""",
+        json_schema_extra={
+            "linkml_meta": {"alias": "id", "domain_of": ["NamedThing", "Sequence"], "slot_uri": "schema:identifier"}
+        },
+    )
+    type: Literal["ManuallyTypedSequence"] = Field(
+        default="ManuallyTypedSequence",
+        description="""Designates the class""",
+        json_schema_extra={
+            "linkml_meta": {
+                "alias": "type",
+                "designates_type": True,
+                "domain_of": [
+                    "Sequence",
+                    "SourceInput",
+                    "Source",
+                    "CollectionOptionInfo",
+                    "AnnotationReport",
+                    "AssociatedFile",
+                ],
+            }
+        },
+    )
+
+    @field_validator("sequence")
+    def pattern_sequence(cls, v):
+        pattern = re.compile(r"^[acgtACGT]+$")
+        if isinstance(v, list):
+            for element in v:
+                if isinstance(element, str) and not pattern.match(element):
+                    err_msg = f"Invalid sequence format: {element}"
+                    raise ValueError(err_msg)
+        elif isinstance(v, str) and not pattern.match(v):
+            err_msg = f"Invalid sequence format: {v}"
+            raise ValueError(err_msg)
+        return v
 
 
 class Primer(Sequence):
@@ -412,7 +519,10 @@ class Primer(Sequence):
     sequence: Optional[str] = Field(
         default=None,
         json_schema_extra={
-            "linkml_meta": {"alias": "sequence", "domain_of": ["Primer", "SourceInput", "PlannotateAnnotationReport"]}
+            "linkml_meta": {
+                "alias": "sequence",
+                "domain_of": ["ManuallyTypedSequence", "Primer", "SourceInput", "PlannotateAnnotationReport"],
+            }
         },
     )
     id: int = Field(
@@ -490,7 +600,10 @@ class SourceInput(ConfiguredBaseModel):
         default=...,
         description="""The input sequence""",
         json_schema_extra={
-            "linkml_meta": {"alias": "sequence", "domain_of": ["Primer", "SourceInput", "PlannotateAnnotationReport"]}
+            "linkml_meta": {
+                "alias": "sequence",
+                "domain_of": ["ManuallyTypedSequence", "Primer", "SourceInput", "PlannotateAnnotationReport"],
+            }
         },
     )
 
@@ -2301,7 +2414,10 @@ class AssemblyFragment(SourceInput):
         default=...,
         description="""The input sequence""",
         json_schema_extra={
-            "linkml_meta": {"alias": "sequence", "domain_of": ["Primer", "SourceInput", "PlannotateAnnotationReport"]}
+            "linkml_meta": {
+                "alias": "sequence",
+                "domain_of": ["ManuallyTypedSequence", "Primer", "SourceInput", "PlannotateAnnotationReport"],
+            }
         },
     )
 
@@ -2316,7 +2432,12 @@ class AssemblySource(Source):
     circular: Optional[bool] = Field(
         default=None,
         description="""Whether the assembly is circular or not""",
-        json_schema_extra={"linkml_meta": {"alias": "circular", "domain_of": ["TemplateSequence", "AssemblySource"]}},
+        json_schema_extra={
+            "linkml_meta": {
+                "alias": "circular",
+                "domain_of": ["TemplateSequence", "ManuallyTypedSequence", "AssemblySource"],
+            }
+        },
     )
     type: Literal["AssemblySource"] = Field(
         default="AssemblySource",
@@ -2383,7 +2504,12 @@ class PCRSource(AssemblySource):
     circular: Optional[bool] = Field(
         default=None,
         description="""Whether the assembly is circular or not""",
-        json_schema_extra={"linkml_meta": {"alias": "circular", "domain_of": ["TemplateSequence", "AssemblySource"]}},
+        json_schema_extra={
+            "linkml_meta": {
+                "alias": "circular",
+                "domain_of": ["TemplateSequence", "ManuallyTypedSequence", "AssemblySource"],
+            }
+        },
     )
     type: Literal["PCRSource"] = Field(
         default="PCRSource",
@@ -2443,7 +2569,12 @@ class LigationSource(AssemblySource):
     circular: Optional[bool] = Field(
         default=None,
         description="""Whether the assembly is circular or not""",
-        json_schema_extra={"linkml_meta": {"alias": "circular", "domain_of": ["TemplateSequence", "AssemblySource"]}},
+        json_schema_extra={
+            "linkml_meta": {
+                "alias": "circular",
+                "domain_of": ["TemplateSequence", "ManuallyTypedSequence", "AssemblySource"],
+            }
+        },
     )
     type: Literal["LigationSource"] = Field(
         default="LigationSource",
@@ -2503,7 +2634,12 @@ class HomologousRecombinationSource(AssemblySource):
     circular: Optional[bool] = Field(
         default=None,
         description="""Whether the assembly is circular or not""",
-        json_schema_extra={"linkml_meta": {"alias": "circular", "domain_of": ["TemplateSequence", "AssemblySource"]}},
+        json_schema_extra={
+            "linkml_meta": {
+                "alias": "circular",
+                "domain_of": ["TemplateSequence", "ManuallyTypedSequence", "AssemblySource"],
+            }
+        },
     )
     type: Literal["HomologousRecombinationSource"] = Field(
         default="HomologousRecombinationSource",
@@ -2563,7 +2699,12 @@ class GibsonAssemblySource(AssemblySource):
     circular: Optional[bool] = Field(
         default=None,
         description="""Whether the assembly is circular or not""",
-        json_schema_extra={"linkml_meta": {"alias": "circular", "domain_of": ["TemplateSequence", "AssemblySource"]}},
+        json_schema_extra={
+            "linkml_meta": {
+                "alias": "circular",
+                "domain_of": ["TemplateSequence", "ManuallyTypedSequence", "AssemblySource"],
+            }
+        },
     )
     type: Literal["GibsonAssemblySource"] = Field(
         default="GibsonAssemblySource",
@@ -2623,7 +2764,12 @@ class InFusionSource(AssemblySource):
     circular: Optional[bool] = Field(
         default=None,
         description="""Whether the assembly is circular or not""",
-        json_schema_extra={"linkml_meta": {"alias": "circular", "domain_of": ["TemplateSequence", "AssemblySource"]}},
+        json_schema_extra={
+            "linkml_meta": {
+                "alias": "circular",
+                "domain_of": ["TemplateSequence", "ManuallyTypedSequence", "AssemblySource"],
+            }
+        },
     )
     type: Literal["InFusionSource"] = Field(
         default="InFusionSource",
@@ -2683,7 +2829,12 @@ class OverlapExtensionPCRLigationSource(AssemblySource):
     circular: Optional[bool] = Field(
         default=None,
         description="""Whether the assembly is circular or not""",
-        json_schema_extra={"linkml_meta": {"alias": "circular", "domain_of": ["TemplateSequence", "AssemblySource"]}},
+        json_schema_extra={
+            "linkml_meta": {
+                "alias": "circular",
+                "domain_of": ["TemplateSequence", "ManuallyTypedSequence", "AssemblySource"],
+            }
+        },
     )
     type: Literal["OverlapExtensionPCRLigationSource"] = Field(
         default="OverlapExtensionPCRLigationSource",
@@ -2743,7 +2894,12 @@ class InVivoAssemblySource(AssemblySource):
     circular: Optional[bool] = Field(
         default=None,
         description="""Whether the assembly is circular or not""",
-        json_schema_extra={"linkml_meta": {"alias": "circular", "domain_of": ["TemplateSequence", "AssemblySource"]}},
+        json_schema_extra={
+            "linkml_meta": {
+                "alias": "circular",
+                "domain_of": ["TemplateSequence", "ManuallyTypedSequence", "AssemblySource"],
+            }
+        },
     )
     type: Literal["InVivoAssemblySource"] = Field(
         default="InVivoAssemblySource",
@@ -2818,7 +2974,12 @@ class RestrictionAndLigationSource(AssemblySource):
     circular: Optional[bool] = Field(
         default=None,
         description="""Whether the assembly is circular or not""",
-        json_schema_extra={"linkml_meta": {"alias": "circular", "domain_of": ["TemplateSequence", "AssemblySource"]}},
+        json_schema_extra={
+            "linkml_meta": {
+                "alias": "circular",
+                "domain_of": ["TemplateSequence", "ManuallyTypedSequence", "AssemblySource"],
+            }
+        },
     )
     type: Literal["RestrictionAndLigationSource"] = Field(
         default="RestrictionAndLigationSource",
@@ -2888,7 +3049,12 @@ class GatewaySource(AssemblySource):
     circular: Optional[bool] = Field(
         default=None,
         description="""Whether the assembly is circular or not""",
-        json_schema_extra={"linkml_meta": {"alias": "circular", "domain_of": ["TemplateSequence", "AssemblySource"]}},
+        json_schema_extra={
+            "linkml_meta": {
+                "alias": "circular",
+                "domain_of": ["TemplateSequence", "ManuallyTypedSequence", "AssemblySource"],
+            }
+        },
     )
     type: Literal["GatewaySource"] = Field(
         default="GatewaySource",
@@ -2948,7 +3114,12 @@ class CreLoxRecombinationSource(AssemblySource):
     circular: Optional[bool] = Field(
         default=None,
         description="""Whether the assembly is circular or not""",
-        json_schema_extra={"linkml_meta": {"alias": "circular", "domain_of": ["TemplateSequence", "AssemblySource"]}},
+        json_schema_extra={
+            "linkml_meta": {
+                "alias": "circular",
+                "domain_of": ["TemplateSequence", "ManuallyTypedSequence", "AssemblySource"],
+            }
+        },
     )
     type: Literal["CreLoxRecombinationSource"] = Field(
         default="CreLoxRecombinationSource",
@@ -3008,7 +3179,12 @@ class CRISPRSource(HomologousRecombinationSource):
     circular: Optional[bool] = Field(
         default=None,
         description="""Whether the assembly is circular or not""",
-        json_schema_extra={"linkml_meta": {"alias": "circular", "domain_of": ["TemplateSequence", "AssemblySource"]}},
+        json_schema_extra={
+            "linkml_meta": {
+                "alias": "circular",
+                "domain_of": ["TemplateSequence", "ManuallyTypedSequence", "AssemblySource"],
+            }
+        },
     )
     type: Literal["CRISPRSource"] = Field(
         default="CRISPRSource",
@@ -3071,7 +3247,7 @@ class OligoHybridizationSource(Source):
         json_schema_extra={
             "linkml_meta": {
                 "alias": "overhang_crick_3prime",
-                "domain_of": ["TextFileSequence", "OligoHybridizationSource"],
+                "domain_of": ["TextFileSequence", "ManuallyTypedSequence", "OligoHybridizationSource"],
             }
         },
     )
@@ -3185,7 +3361,7 @@ class CloningStrategy(ConfiguredBaseModel):
 
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({"from_schema": "https://opencloning.github.io/OpenCloning_LinkML"})
 
-    sequences: list[Union[Sequence, TemplateSequence, TextFileSequence, Primer]] = Field(
+    sequences: list[Union[Sequence, TemplateSequence, TextFileSequence, ManuallyTypedSequence, Primer]] = Field(
         default=...,
         description="""The sequences that are used in the cloning strategy""",
         json_schema_extra={"linkml_meta": {"alias": "sequences", "domain_of": ["CloningStrategy"]}},
@@ -3363,7 +3539,10 @@ class PlannotateAnnotationReport(AnnotationReport):
     sequence: Optional[str] = Field(
         default=None,
         json_schema_extra={
-            "linkml_meta": {"alias": "sequence", "domain_of": ["Primer", "SourceInput", "PlannotateAnnotationReport"]}
+            "linkml_meta": {
+                "alias": "sequence",
+                "domain_of": ["ManuallyTypedSequence", "Primer", "SourceInput", "PlannotateAnnotationReport"],
+            }
         },
     )
     type: Literal["PlannotateAnnotationReport"] = Field(
@@ -3607,6 +3786,7 @@ NamedThing.model_rebuild()
 Sequence.model_rebuild()
 TemplateSequence.model_rebuild()
 TextFileSequence.model_rebuild()
+ManuallyTypedSequence.model_rebuild()
 Primer.model_rebuild()
 SourceInput.model_rebuild()
 SequenceCut.model_rebuild()

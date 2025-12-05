@@ -241,6 +241,16 @@ message LigationSource
  repeated  sourceInput input = 0
   boolean circular = 0
  }
+// Represents a sequence that is manually typed by the user
+message ManuallyTypedSequence
+ {
+  integer id = 0
+  string type = 0
+  integer overhangCrick3prime = 0
+  integer overhangWatson3prime = 0
+  string sequence = 0
+  boolean circular = 0
+ }
 // Represents the source of a sequence that is manually typed by the user
 message ManuallyTypedSource
  {

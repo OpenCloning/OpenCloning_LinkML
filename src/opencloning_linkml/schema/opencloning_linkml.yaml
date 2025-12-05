@@ -100,6 +100,32 @@ classes:
       overhang_watson_3prime:
         ifabsent: int(0)
 
+  ManuallyTypedSequence:
+    is_a: Sequence
+    description: >-
+      Represents a sequence that is manually typed by the user
+    slots:
+      - overhang_crick_3prime
+      - overhang_watson_3prime
+    attributes:
+      - sequence:
+          range: string
+          pattern: ^[acgtACGT]+$
+          description: >-
+            The sequence of the manually typed sequence
+          required: true
+      - circular:
+          range: boolean
+          description: >-
+            Whether the sequence is circular or linear
+          required: false
+          ifabsent: boolean(false)
+    slot_usage:
+      overhang_crick_3prime:
+        ifabsent: int(0)
+      overhang_watson_3prime:
+        ifabsent: int(0)
+
   Primer:
     is_a: Sequence
     description: >-

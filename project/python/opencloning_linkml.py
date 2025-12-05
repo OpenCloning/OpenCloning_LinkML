@@ -1,5 +1,5 @@
 # Auto generated from opencloning_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-12-05T16:07:12
+# Generation date: 2025-12-05T23:17:44
 # Schema: OpenCloning_LinkML
 #
 # id: https://opencloning.github.io/OpenCloning_LinkML
@@ -86,6 +86,10 @@ class TemplateSequenceId(SequenceId):
 
 
 class TextFileSequenceId(SequenceId):
+    pass
+
+
+class ManuallyTypedSequenceId(SequenceId):
     pass
 
 
@@ -364,6 +368,49 @@ class TextFileSequence(Sequence):
 
         if self.file_content is not None and not isinstance(self.file_content, str):
             self.file_content = str(self.file_content)
+
+        super().__post_init__(**kwargs)
+        self.type = str(self.class_name)
+
+
+@dataclass(repr=False)
+class ManuallyTypedSequence(Sequence):
+    """
+    Represents a sequence that is manually typed by the user
+    """
+
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = OPENCLONING_LINKML["ManuallyTypedSequence"]
+    class_class_curie: ClassVar[str] = "opencloning_linkml:ManuallyTypedSequence"
+    class_name: ClassVar[str] = "ManuallyTypedSequence"
+    class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.ManuallyTypedSequence
+
+    id: Union[int, ManuallyTypedSequenceId] = None
+    sequence: str = None
+    overhang_crick_3prime: Optional[int] = 0
+    overhang_watson_3prime: Optional[int] = 0
+    circular: Optional[Union[bool, Bool]] = False
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ManuallyTypedSequenceId):
+            self.id = ManuallyTypedSequenceId(self.id)
+
+        if self._is_empty(self.sequence):
+            self.MissingRequiredField("sequence")
+        if not isinstance(self.sequence, str):
+            self.sequence = str(self.sequence)
+
+        if self.overhang_crick_3prime is not None and not isinstance(self.overhang_crick_3prime, int):
+            self.overhang_crick_3prime = int(self.overhang_crick_3prime)
+
+        if self.overhang_watson_3prime is not None and not isinstance(self.overhang_watson_3prime, int):
+            self.overhang_watson_3prime = int(self.overhang_watson_3prime)
+
+        if self.circular is not None and not isinstance(self.circular, Bool):
+            self.circular = Bool(self.circular)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -2226,6 +2273,25 @@ slots.textFileSequence__file_content = Slot(
     range=Optional[str],
 )
 
+slots.manuallyTypedSequence__sequence = Slot(
+    uri=OPENCLONING_LINKML.sequence,
+    name="manuallyTypedSequence__sequence",
+    curie=OPENCLONING_LINKML.curie("sequence"),
+    model_uri=OPENCLONING_LINKML.manuallyTypedSequence__sequence,
+    domain=None,
+    range=str,
+    pattern=re.compile(r"^[acgtACGT]+$"),
+)
+
+slots.manuallyTypedSequence__circular = Slot(
+    uri=OPENCLONING_LINKML.circular,
+    name="manuallyTypedSequence__circular",
+    curie=OPENCLONING_LINKML.curie("circular"),
+    model_uri=OPENCLONING_LINKML.manuallyTypedSequence__circular,
+    domain=None,
+    range=Optional[Union[bool, Bool]],
+)
+
 slots.primer__sequence = Slot(
     uri=OPENCLONING_LINKML.sequence,
     name="primer__sequence",
@@ -2854,6 +2920,24 @@ slots.TextFileSequence_overhang_watson_3prime = Slot(
     curie=OPENCLONING_LINKML.curie("overhang_watson_3prime"),
     model_uri=OPENCLONING_LINKML.TextFileSequence_overhang_watson_3prime,
     domain=TextFileSequence,
+    range=Optional[int],
+)
+
+slots.ManuallyTypedSequence_overhang_crick_3prime = Slot(
+    uri=OPENCLONING_LINKML.overhang_crick_3prime,
+    name="ManuallyTypedSequence_overhang_crick_3prime",
+    curie=OPENCLONING_LINKML.curie("overhang_crick_3prime"),
+    model_uri=OPENCLONING_LINKML.ManuallyTypedSequence_overhang_crick_3prime,
+    domain=ManuallyTypedSequence,
+    range=Optional[int],
+)
+
+slots.ManuallyTypedSequence_overhang_watson_3prime = Slot(
+    uri=OPENCLONING_LINKML.overhang_watson_3prime,
+    name="ManuallyTypedSequence_overhang_watson_3prime",
+    curie=OPENCLONING_LINKML.curie("overhang_watson_3prime"),
+    model_uri=OPENCLONING_LINKML.ManuallyTypedSequence_overhang_watson_3prime,
+    domain=ManuallyTypedSequence,
     range=Optional[int],
 )
 

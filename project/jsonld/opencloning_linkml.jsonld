@@ -696,6 +696,7 @@
       "owner": "OligoHybridizationSource",
       "domain_of": [
         "TextFileSequence",
+        "ManuallyTypedSequence",
         "OligoHybridizationSource"
       ],
       "range": "integer",
@@ -708,9 +709,10 @@
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/overhang_watson_3prime",
       "ifabsent": "int(0)",
-      "owner": "TextFileSequence",
+      "owner": "ManuallyTypedSequence",
       "domain_of": [
-        "TextFileSequence"
+        "TextFileSequence",
+        "ManuallyTypedSequence"
       ],
       "range": "integer",
       "@type": "SlotDefinition"
@@ -783,6 +785,35 @@
         "TextFileSequence"
       ],
       "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "manuallyTypedSequence__sequence",
+      "description": "The sequence of the manually typed sequence",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequence",
+      "alias": "sequence",
+      "owner": "ManuallyTypedSequence",
+      "domain_of": [
+        "ManuallyTypedSequence"
+      ],
+      "range": "string",
+      "required": true,
+      "pattern": "^[acgtACGT]+$",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "manuallyTypedSequence__circular",
+      "description": "Whether the sequence is circular or linear",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/circular",
+      "ifabsent": "boolean(false)",
+      "alias": "circular",
+      "owner": "ManuallyTypedSequence",
+      "domain_of": [
+        "ManuallyTypedSequence"
+      ],
+      "range": "boolean",
       "@type": "SlotDefinition"
     },
     {
@@ -1733,6 +1764,44 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "ManuallyTypedSequence_overhang_crick_3prime",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/overhang_crick_3prime",
+      "description": "Taken from pydna's `dseq::ovhg`An integer describing the length of the crick strand overhang in the 5' of the molecule, or 3' of the crick strand",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "is_a": "overhang_crick_3prime",
+      "domain": "ManuallyTypedSequence",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/overhang_crick_3prime",
+      "ifabsent": "int(0)",
+      "alias": "overhang_crick_3prime",
+      "owner": "ManuallyTypedSequence",
+      "domain_of": [
+        "ManuallyTypedSequence"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "overhang_crick_3prime",
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "ManuallyTypedSequence_overhang_watson_3prime",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/overhang_watson_3prime",
+      "description": "The equivalent of `overhang_crick_3prime` but for the watson strand",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "is_a": "overhang_watson_3prime",
+      "domain": "ManuallyTypedSequence",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/overhang_watson_3prime",
+      "ifabsent": "int(0)",
+      "alias": "overhang_watson_3prime",
+      "owner": "ManuallyTypedSequence",
+      "domain_of": [
+        "ManuallyTypedSequence"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "overhang_watson_3prime",
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "RestrictionSequenceCut_restriction_enzyme",
       "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/restriction_enzyme",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
@@ -2160,6 +2229,41 @@
         }
       ],
       "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/TextFileSequence",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ManuallyTypedSequence",
+      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/ManuallyTypedSequence",
+      "description": "Represents a sequence that is manually typed by the user",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "is_a": "Sequence",
+      "slots": [
+        "id",
+        "type",
+        "ManuallyTypedSequence_overhang_crick_3prime",
+        "ManuallyTypedSequence_overhang_watson_3prime",
+        "manuallyTypedSequence__sequence",
+        "manuallyTypedSequence__circular"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "sequence",
+          "description": "The sequence of the manually typed sequence",
+          "range": "string",
+          "required": true,
+          "pattern": "^[acgtACGT]+$",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "circular",
+          "description": "Whether the sequence is circular or linear",
+          "ifabsent": "boolean(false)",
+          "range": "boolean",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/ManuallyTypedSequence",
       "@type": "ClassDefinition"
     },
     {
@@ -3471,9 +3575,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "opencloning_linkml.yaml",
-  "source_file_date": "2025-12-05T16:07:04",
-  "source_file_size": 25770,
-  "generation_date": "2025-12-05T16:07:11",
+  "source_file_date": "2025-12-05T23:17:33",
+  "source_file_size": 26478,
+  "generation_date": "2025-12-05T23:17:42",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/opencloning_linkml.context.jsonld",

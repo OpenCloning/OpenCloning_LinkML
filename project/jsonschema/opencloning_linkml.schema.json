@@ -543,6 +543,9 @@
                                 "$ref": "#/$defs/TextFileSequence"
                             },
                             {
+                                "$ref": "#/$defs/ManuallyTypedSequence"
+                            },
+                            {
                                 "$ref": "#/$defs/Primer"
                             }
                         ]
@@ -1692,6 +1695,58 @@
                 "id"
             ],
             "title": "LigationSource",
+            "type": "object"
+        },
+        "ManuallyTypedSequence": {
+            "additionalProperties": false,
+            "description": "Represents a sequence that is manually typed by the user",
+            "properties": {
+                "circular": {
+                    "description": "Whether the sequence is circular or linear",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "integer"
+                },
+                "overhang_crick_3prime": {
+                    "description": "Taken from pydna's `dseq::ovhg`An integer describing the length of the crick strand overhang in the 5' of the molecule, or 3' of the crick strand",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "overhang_watson_3prime": {
+                    "description": "The equivalent of `overhang_crick_3prime` but for the watson strand",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "sequence": {
+                    "description": "The sequence of the manually typed sequence",
+                    "pattern": "^[acgtACGT]+$",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "Designates the class",
+                    "enum": [
+                        "ManuallyTypedSequence"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "sequence",
+                "id"
+            ],
+            "title": "ManuallyTypedSequence",
             "type": "object"
         },
         "ManuallyTypedSource": {

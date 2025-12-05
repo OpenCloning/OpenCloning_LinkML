@@ -294,6 +294,16 @@ type LigationSource
     circular: Boolean
   }
 
+type ManuallyTypedSequence
+  {
+    id: Integer!
+    type: String
+    overhangCrick3prime: Integer
+    overhangWatson3prime: Integer
+    sequence: String!
+    circular: Boolean
+  }
+
 type ManuallyTypedSource
   {
     id: Integer!
