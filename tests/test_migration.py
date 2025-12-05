@@ -131,6 +131,24 @@ class TestMigration(unittest.TestCase):
         new_CloningStrategy(**migrated_data)
         self.assertNotIn("output", migrated_data["sources"][0])
 
+    def test_0_4_6_to_0_4_9(self):
+        from opencloning_linkml.migrations.model_archive.v0_4_9 import CloningStrategy as new_CloningStrategy
+
+        with open(os.path.join(test_folder, "migration/v0.4.9/manually_typed.json"), "r") as f:
+            data = json.load(f)
+        self.assertIn("overhang_crick_3prime", data["sources"][0])
+        self.assertIn("overhang_watson_3prime", data["sources"][0])
+        self.assertIn("user_input", data["sources"][0])
+        self.assertIn("circular", data["sources"][0])
+        migrated_data = migrate(data, "0.4.9")
+
+        # Passes the validation
+        new_CloningStrategy(**migrated_data)
+        self.assertNotIn("overhang_crick_3prime", migrated_data["sources"][0])
+        self.assertNotIn("overhang_watson_3prime", migrated_data["sources"][0])
+        self.assertNotIn("user_input", migrated_data["sources"][0])
+        self.assertNotIn("circular", migrated_data["sources"][0])
+
     def test_migration_script(self):
 
         with tempfile.TemporaryDirectory() as tmp_dir:
