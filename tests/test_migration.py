@@ -98,17 +98,6 @@ class TestMigration(unittest.TestCase):
         self.assertEqual(cs.sources[0].assembly[0].right_location, "0^1")
         self.assertEqual(cs.sources[1].coordinates, "1..100")
 
-    def test_0_4_0_to_0_4_6(self):
-        from opencloning_linkml.migrations.model_archive.v0_4_6 import CloningStrategy as new_CloningStrategy
-
-        with open(os.path.join(test_folder, "migration/v0.4.0/output_field.json"), "r") as f:
-            data = json.load(f)
-        self.assertIn("output", data["sources"][0])
-        migrated_data = migrate(data, "0.4.6")
-        # Just has to pass the validation
-        new_CloningStrategy(**migrated_data)
-        self.assertNotIn("output", migrated_data["sources"][0])
-
     def test_0_2_9_to_0_4_0(self):
         from opencloning_linkml.migrations.model_archive.v0_2_9 import CloningStrategy as old_CloningStrategy
         from opencloning_linkml.migrations.model_archive.v0_4_0 import CloningStrategy as new_CloningStrategy
@@ -130,6 +119,17 @@ class TestMigration(unittest.TestCase):
             if "files" in file:
                 for file in migrated_data["files"]:
                     self.assertEqual(file["sequence_id"], 1)
+
+    def test_0_4_0_to_0_4_6(self):
+        from opencloning_linkml.migrations.model_archive.v0_4_6 import CloningStrategy as new_CloningStrategy
+
+        with open(os.path.join(test_folder, "migration/v0.4.0/output_field.json"), "r") as f:
+            data = json.load(f)
+        self.assertIn("output", data["sources"][0])
+        migrated_data = migrate(data, "0.4.6")
+        # Just has to pass the validation
+        new_CloningStrategy(**migrated_data)
+        self.assertNotIn("output", migrated_data["sources"][0])
 
     def test_migration_script(self):
 
