@@ -225,7 +225,7 @@ linkml:Sparqlpath xsd:string
           <assembly_accession> @linkml:String ? ;
           <locus_tag> @linkml:String ? ;
           <gene_id> @linkml:Integer ? ;
-          <location> @<SimpleSequenceLocation>
+          <location> @linkml:String
        ) ;
        rdf:type [ <GenomeCoordinatesSource> ]
     )
@@ -303,7 +303,7 @@ linkml:Sparqlpath xsd:string
     CLOSED {
        (  $<NCBISequenceSource_tes> (  &<RepositoryIdSource_tes> ;
              rdf:type [ <RepositoryIdSource> ] ? ;
-             <location> @<SimpleSequenceLocation> ? ;
+             <coordinates> @<SimpleSequenceLocation> ? ;
              <repository_id> @linkml:String
           ) ;
           rdf:type [ <NCBISequenceSource> ]

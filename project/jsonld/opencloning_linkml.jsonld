@@ -1088,11 +1088,11 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "nCBISequenceSource__location",
+      "name": "nCBISequenceSource__coordinates",
       "description": "If provided, represents the location of a subsequence within the sequence identified by the sequence accession.",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/location",
-      "alias": "location",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/coordinates",
+      "alias": "coordinates",
       "owner": "NCBISequenceSource",
       "domain_of": [
         "NCBISequenceSource"
@@ -1668,6 +1668,14 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "location",
+      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
+      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/location",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "TextFileSequence_sequence_file_format",
       "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/sequence_file_format",
       "description": "The format of a sequence file",
@@ -2029,7 +2037,7 @@
     {
       "name": "GenomeCoordinatesSource_location",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "is_a": "nCBISequenceSource__location",
+      "is_a": "location",
       "domain": "GenomeCoordinatesSource",
       "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/location",
       "alias": "location",
@@ -2039,7 +2047,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "location",
-      "range": "simple_sequence_location",
+      "range": "string",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -2699,13 +2707,13 @@
         "database_id",
         "source__input",
         "repositoryIdSource__repository_name",
-        "nCBISequenceSource__location",
+        "nCBISequenceSource__coordinates",
         "NCBISequenceSource_repository_id"
       ],
       "slot_usage": {},
       "attributes": [
         {
-          "name": "location",
+          "name": "coordinates",
           "description": "If provided, represents the location of a subsequence within the sequence identified by the sequence accession.",
           "range": "simple_sequence_location",
           "@type": "SlotDefinition"
@@ -2727,6 +2735,7 @@
         "database_id",
         "source__input",
         "repositoryIdSource__repository_name",
+        "nCBISequenceSource__coordinates",
         "NCBISequenceSource_repository_id",
         "genomeCoordinatesSource__assembly_accession",
         "genomeCoordinatesSource__locus_tag",
@@ -3462,9 +3471,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "opencloning_linkml.yaml",
-  "source_file_date": "2025-12-05T15:35:12",
-  "source_file_size": 25767,
-  "generation_date": "2025-12-05T15:35:20",
+  "source_file_date": "2025-12-05T16:07:04",
+  "source_file_size": 25770,
+  "generation_date": "2025-12-05T16:07:11",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/opencloning_linkml.context.jsonld",

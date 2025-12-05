@@ -224,11 +224,12 @@ type GenomeCoordinatesSource
     databaseId: Integer
     input: [SourceInput]
     repositoryName: RepositoryName!
+    coordinates: SimpleSequenceLocation
     repositoryId: String!
     assemblyAccession: String
     locusTag: String
     geneId: Integer
-    location: SimpleSequenceLocation!
+    location: String!
   }
 
 type GibsonAssemblySource
@@ -315,7 +316,7 @@ type NCBISequenceSource
     databaseId: Integer
     input: [SourceInput]
     repositoryName: RepositoryName!
-    location: SimpleSequenceLocation
+    coordinates: SimpleSequenceLocation
     repositoryId: String!
   }
 

@@ -187,7 +187,7 @@
 --     * Slot: database_id Description: The id of an entity in a database
 --     * Slot: id Description: A unique identifier for a thing
 -- # Class: "NCBISequenceSource" Description: "Represents the source of a sequence that is identified by an NCBI sequence accession"
---     * Slot: location Description: If provided, represents the location of a subsequence within the sequence identified by the sequence accession.
+--     * Slot: coordinates Description: If provided, represents the location of a subsequence within the sequence identified by the sequence accession.
 --     * Slot: repository_id Description: The sequence accession (e.g. X60065.1)
 --     * Slot: repository_name Description:
 --     * Slot: type Description: Designates the class
@@ -198,7 +198,7 @@
 --     * Slot: assembly_accession Description: The accession of the assembly
 --     * Slot: locus_tag Description: The locus tag of the sequence
 --     * Slot: gene_id Description: The gene id of the sequence
---     * Slot: location Description: If provided, represents the location of a subsequence within the sequence identified by the sequence accession.
+--     * Slot: coordinates Description: If provided, represents the location of a subsequence within the sequence identified by the sequence accession.
 --     * Slot: repository_id Description: The sequence accession (e.g. X60065.1)
 --     * Slot: repository_name Description:
 --     * Slot: type Description: Designates the class
@@ -540,7 +540,7 @@ CREATE TABLE "OpenDNACollectionsSource" (
 	PRIMARY KEY (id)
 );
 CREATE TABLE "NCBISequenceSource" (
-	location TEXT,
+	coordinates TEXT,
 	repository_id TEXT NOT NULL,
 	repository_name VARCHAR(20) NOT NULL,
 	type TEXT,
@@ -553,7 +553,7 @@ CREATE TABLE "GenomeCoordinatesSource" (
 	assembly_accession TEXT,
 	locus_tag TEXT,
 	gene_id INTEGER,
-	location TEXT NOT NULL,
+	coordinates TEXT,
 	repository_id TEXT NOT NULL,
 	repository_name VARCHAR(20) NOT NULL,
 	type TEXT,

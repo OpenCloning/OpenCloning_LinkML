@@ -429,7 +429,7 @@ classes:
         description: >-
           The sequence accession (e.g. X60065.1)
     attributes:
-      - location:
+      - coordinates:
           range: simple_sequence_location
           description: >-
             If provided, represents the location of a subsequence within the sequence identified by

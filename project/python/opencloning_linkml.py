@@ -1,5 +1,5 @@
 # Auto generated from opencloning_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-12-05T15:35:21
+# Generation date: 2025-12-05T16:07:12
 # Schema: OpenCloning_LinkML
 #
 # id: https://opencloning.github.io/OpenCloning_LinkML
@@ -1111,7 +1111,7 @@ class NCBISequenceSource(RepositoryIdSource):
     id: Union[int, NCBISequenceSourceId] = None
     repository_name: Union[str, "RepositoryName"] = None
     repository_id: str = None
-    location: Optional[Union[str, SimpleSequenceLocation]] = None
+    coordinates: Optional[Union[str, SimpleSequenceLocation]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -1124,8 +1124,8 @@ class NCBISequenceSource(RepositoryIdSource):
         if not isinstance(self.repository_id, str):
             self.repository_id = str(self.repository_id)
 
-        if self.location is not None and not isinstance(self.location, SimpleSequenceLocation):
-            self.location = SimpleSequenceLocation(self.location)
+        if self.coordinates is not None and not isinstance(self.coordinates, SimpleSequenceLocation):
+            self.coordinates = SimpleSequenceLocation(self.coordinates)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -1147,7 +1147,7 @@ class GenomeCoordinatesSource(NCBISequenceSource):
     id: Union[int, GenomeCoordinatesSourceId] = None
     repository_name: Union[str, "RepositoryName"] = None
     repository_id: str = None
-    location: Union[str, SimpleSequenceLocation] = None
+    location: str = None
     assembly_accession: Optional[str] = None
     locus_tag: Optional[str] = None
     gene_id: Optional[int] = None
@@ -1160,8 +1160,8 @@ class GenomeCoordinatesSource(NCBISequenceSource):
 
         if self._is_empty(self.location):
             self.MissingRequiredField("location")
-        if not isinstance(self.location, SimpleSequenceLocation):
-            self.location = SimpleSequenceLocation(self.location)
+        if not isinstance(self.location, str):
+            self.location = str(self.location)
 
         if self.assembly_accession is not None and not isinstance(self.assembly_accession, str):
             self.assembly_accession = str(self.assembly_accession)
@@ -2425,11 +2425,11 @@ slots.addgeneIdSource__addgene_sequence_type = Slot(
     range=Optional[Union[str, "AddgeneSequenceType"]],
 )
 
-slots.nCBISequenceSource__location = Slot(
-    uri=OPENCLONING_LINKML.location,
-    name="nCBISequenceSource__location",
-    curie=OPENCLONING_LINKML.curie("location"),
-    model_uri=OPENCLONING_LINKML.nCBISequenceSource__location,
+slots.nCBISequenceSource__coordinates = Slot(
+    uri=OPENCLONING_LINKML.coordinates,
+    name="nCBISequenceSource__coordinates",
+    curie=OPENCLONING_LINKML.curie("coordinates"),
+    model_uri=OPENCLONING_LINKML.nCBISequenceSource__coordinates,
     domain=None,
     range=Optional[Union[str, SimpleSequenceLocation]],
 )
@@ -2821,6 +2821,15 @@ slots.sequencingFile__alignment = Slot(
     range=Union[str, list[str]],
 )
 
+slots.location = Slot(
+    uri=OPENCLONING_LINKML.location,
+    name="location",
+    curie=OPENCLONING_LINKML.curie("location"),
+    model_uri=OPENCLONING_LINKML.location,
+    domain=None,
+    range=str,
+)
+
 slots.TextFileSequence_sequence_file_format = Slot(
     uri=OPENCLONING_LINKML.sequence_file_format,
     name="TextFileSequence_sequence_file_format",
@@ -2999,7 +3008,7 @@ slots.GenomeCoordinatesSource_location = Slot(
     curie=OPENCLONING_LINKML.curie("location"),
     model_uri=OPENCLONING_LINKML.GenomeCoordinatesSource_location,
     domain=GenomeCoordinatesSource,
-    range=Union[str, SimpleSequenceLocation],
+    range=str,
 )
 
 slots.RestrictionAndLigationSource_restriction_enzymes = Slot(

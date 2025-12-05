@@ -1225,6 +1225,14 @@
                         "null"
                     ]
                 },
+                "coordinates": {
+                    "description": "If provided, represents the location of a subsequence within the sequence identified by the sequence accession.",
+                    "pattern": "^((\\d+)\\.\\.(\\d+)|complement\\((\\d+)\\.\\.(\\d+)\\))$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "database_id": {
                     "description": "The id of an entity in a database",
                     "type": [
@@ -1260,11 +1268,6 @@
                         "null"
                     ]
                 },
-                "location": {
-                    "description": "If provided, represents the location of a subsequence within the sequence identified by the sequence accession.",
-                    "pattern": "^((\\d+)\\.\\.(\\d+)|complement\\((\\d+)\\.\\.(\\d+)\\))$",
-                    "type": "string"
-                },
                 "locus_tag": {
                     "description": "The locus tag of the sequence",
                     "type": [
@@ -1298,7 +1301,6 @@
                 }
             },
             "required": [
-                "location",
                 "repository_id",
                 "repository_name",
                 "id"
@@ -1752,6 +1754,14 @@
             "additionalProperties": false,
             "description": "Represents the source of a sequence that is identified by an NCBI sequence accession",
             "properties": {
+                "coordinates": {
+                    "description": "If provided, represents the location of a subsequence within the sequence identified by the sequence accession.",
+                    "pattern": "^((\\d+)\\.\\.(\\d+)|complement\\((\\d+)\\.\\.(\\d+)\\))$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "database_id": {
                     "description": "The id of an entity in a database",
                     "type": [
@@ -1777,14 +1787,6 @@
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "location": {
-                    "description": "If provided, represents the location of a subsequence within the sequence identified by the sequence accession.",
-                    "pattern": "^((\\d+)\\.\\.(\\d+)|complement\\((\\d+)\\.\\.(\\d+)\\))$",
-                    "type": [
-                        "string",
                         "null"
                     ]
                 },
