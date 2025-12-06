@@ -33,19 +33,6 @@ enum GatewayReactionType
     BP
   }
 
-enum RepositoryName
-  {
-    addgene
-    genbank
-    benchling
-    snapgene
-    euroscarf
-    igem
-    wekwikgene
-    seva
-    open_dna_collections
-  }
-
 enum SequenceFileFormat
   {
     fasta
@@ -62,7 +49,6 @@ type AddgeneIdSource
     databaseId: Integer
     input: [SourceInput]
     repositoryId: String!
-    repositoryName: RepositoryName!
     sequenceFileUrl: String
     addgeneSequenceType: AddgeneSequenceType
   }
@@ -118,7 +104,6 @@ type BenchlingUrlSource
     outputName: String
     databaseId: Integer
     input: [SourceInput]
-    repositoryName: RepositoryName!
     repositoryId: String!
   }
 
@@ -200,7 +185,6 @@ type EuroscarfSource
     outputName: String
     databaseId: Integer
     input: [SourceInput]
-    repositoryName: RepositoryName!
     repositoryId: String!
   }
 
@@ -223,13 +207,12 @@ type GenomeCoordinatesSource
     outputName: String
     databaseId: Integer
     input: [SourceInput]
+    coordinates: SimpleSequenceLocation
+    repositoryId: String!
     assemblyAccession: String
-    sequenceAccession: String!
     locusTag: String
     geneId: Integer
-    start: Integer!
-    end: Integer!
-    strand: Integer!
+    location: String!
   }
 
 type GibsonAssemblySource
@@ -259,7 +242,6 @@ type IGEMSource
     outputName: String
     databaseId: Integer
     input: [SourceInput]
-    repositoryName: RepositoryName!
     sequenceFileUrl: String!
     repositoryId: String!
   }
@@ -294,6 +276,16 @@ type LigationSource
     circular: Boolean
   }
 
+type ManuallyTypedSequence
+  {
+    id: Integer!
+    type: String
+    overhangCrick3prime: Integer
+    overhangWatson3prime: Integer
+    sequence: String!
+    circular: Boolean
+  }
+
 type ManuallyTypedSource
   {
     id: Integer!
@@ -301,15 +293,22 @@ type ManuallyTypedSource
     outputName: String
     databaseId: Integer
     input: [SourceInput]
-    overhangCrick3prime: Integer
-    overhangWatson3prime: Integer
-    userInput: String!
-    circular: Boolean
   }
 
 type NamedThing
   {
     id: Integer!
+  }
+
+type NCBISequenceSource
+  {
+    id: Integer!
+    type: String
+    outputName: String
+    databaseId: Integer
+    input: [SourceInput]
+    coordinates: SimpleSequenceLocation
+    repositoryId: String!
   }
 
 type OligoHybridizationSource
@@ -329,7 +328,6 @@ type OpenDNACollectionsSource
     outputName: String
     databaseId: Integer
     input: [SourceInput]
-    repositoryName: RepositoryName!
     sequenceFileUrl: String
     repositoryId: String!
   }
@@ -400,7 +398,6 @@ type RepositoryIdSource
     databaseId: Integer
     input: [SourceInput]
     repositoryId: String!
-    repositoryName: RepositoryName!
   }
 
 type RestrictionAndLigationSource
@@ -480,7 +477,6 @@ type SEVASource
     outputName: String
     databaseId: Integer
     input: [SourceInput]
-    repositoryName: RepositoryName!
     sequenceFileUrl: String
     repositoryId: String!
   }
@@ -492,7 +488,6 @@ type SnapGenePlasmidSource
     outputName: String
     databaseId: Integer
     input: [SourceInput]
-    repositoryName: RepositoryName!
     repositoryId: String!
   }
 
@@ -550,7 +545,6 @@ type WekWikGeneIdSource
     outputName: String
     databaseId: Integer
     input: [SourceInput]
-    repositoryName: RepositoryName!
     sequenceFileUrl: String
     repositoryId: String!
   }

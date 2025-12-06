@@ -1,0 +1,28 @@
+{
+  "sequences": [
+    {
+      "id": 1,
+      "type": "TextFileSequence",
+      "sequence_file_format": "genbank",
+      "overhang_crick_3prime": 0,
+      "overhang_watson_3prime": 0,
+      "file_content": "LOCUS       X60065                  1136 bp    DNA     linear   MAM 26-JUL-2016\nDEFINITION  B.bovis beta-2-gpI mRNA for beta-2-glycoprotein I.\nACCESSION   X60065\nVERSION     X60065.1\nKEYWORDS    beta-2 glycoprotein I.\nSOURCE      Bos taurus (domestic cattle)\n  ORGANISM  Bos taurus\n            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;\n            Mammalia; Eutheria; Laurasiatheria; Artiodactyla; Ruminantia;\n            Pecora; Bovidae; Bovinae; Bos.\nREFERENCE   1\n  AUTHORS   Bendixen,E., Halkier,T., Magnusson,S., Sottrup-Jensen,L. and\n            Kristensen,T.\n  TITLE     Complete primary structure of bovine beta 2-glycoprotein I:\n            localization of the disulfide bridges\n  JOURNAL   Biochemistry 31 (14), 3611-3617 (1992)\n   PUBMED   1567819\nREFERENCE   2  (bases 1 to 1136)\n  AUTHORS   Kristensen,T.\n  TITLE     Direct Submission\n  JOURNAL   Submitted (11-JUN-1991) T. Kristensen, Dept of Mol Biology,\n            University of Aarhus, C F Mollers Alle 130, DK-8000 Aarhus C,\n            DENMARK\nFEATURES             Location/Qualifiers\n     source          1..1136\n                     /organism=\"Bos taurus\"\n                     /mol_type=\"mRNA\"\n                     /db_xref=\"taxon:9913\"\n                     /clone=\"pBB2I\"\n                     /tissue_type=\"liver\"\n     gene            <1..1136\n                     /gene=\"beta-2-gpI\"\n     CDS             <1..1029\n                     /gene=\"beta-2-gpI\"\n                     /codon_start=1\n                     /product=\"beta-2-glycoprotein I\"\n                     /protein_id=\"CAA42669.1\"\n                     /db_xref=\"GOA:P17690\"\n                     /db_xref=\"InterPro:IPR000436\"\n                     /db_xref=\"InterPro:IPR015104\"\n                     /db_xref=\"InterPro:IPR016060\"\n                     /db_xref=\"UniProtKB/Swiss-Prot:P17690\"\n                     /translation=\"PALVLLLGFLCHVAIAGRTCPKPDELPFSTVVPLKRTYEPGEQIV\n                     FSCQPGYVSRGGIRRFTCPLTGLWPINTLKCMPRVCPFAGILENGTVRYTTFEYPNTIS\n                     FSCHTGFYLKGASSAKCTEEGKWSPDLPVCAPITCPPPPIPKFASLSVYKPLAGNNSFY\n                     GSKAVFKCLPHHAMFGNDTVTCTEHGNWTQLPECREVRCPFPSRPDNGFVNHPANPVLY\n                     YKDTATFGCHETYSLDGPEEVECSKFGNWSAQPSCKASCKLSIKRATVIYEGERVAIQN\n                     KFKNGMLHGQKVSFFCKHKEKKCSYTEDAQCIDGTIEIPKCFKEHSSLAFWKTDASDVK\n                     PC\"\n     sig_peptide     <1..48\n                     /gene=\"beta-2-gpI\"\n     mat_peptide     49..1026\n                     /gene=\"beta-2-gpI\"\n                     /product=\"beta-2-glycoprotein I\"\n     regulatory      1101..1106\n                     /regulatory_class=\"polyA_signal_sequence\"\n                     /gene=\"beta-2-gpI\"\n     polyA_site      1130\n                     /gene=\"beta-2-gpI\"\nORIGIN\n        1 ccagcgctcg tcttgctgtt ggggtttctc tgccacgttg ctatcgcagg acgaacctgc\n       61 cccaagccag atgagctacc gttttccacg gtggttccac tgaaacggac ctatgagccc\n      121 ggggagcaga tagtcttctc ctgccagccg ggctacgtgt cccggggagg gatccggcgg\n      181 tttacatgcc cgctcacagg actctggccc atcaacacgc tgaaatgcat gcccagagta\n      241 tgtccttttg ctgggatctt agaaaacgga acggtacgct atacaacgtt tgagtatccc\n      301 aacaccatca gcttttcttg ccacacgggg ttttatctga aaggagctag ttctgcaaaa\n      361 tgcactgagg aagggaagtg gagcccagac cttcctgtct gtgcccctat aacctgccct\n      421 ccaccaccca tacccaagtt tgcaagtctc agcgtttaca agccgttggc tgggaacaac\n      481 tccttctatg gcagcaaggc agtctttaag tgcttgccac accacgcgat gtttggaaat\n      541 gacaccgtta cctgcacgga acatgggaac tggacgcagt tgccagaatg cagggaagta\n      601 agatgcccat tcccatcaag accagacaat gggtttgtga accatcctgc aaatccagtg\n      661 ctctactata aggacaccgc cacctttggc tgccatgaaa cgtattcctt ggatggaccg\n      721 gaagaagtag aatgcagcaa attcggaaac tggtctgcac agccaagctg taaagcatct\n      781 tgtaagttat ctattaaaag agctactgtg atatatgaag gagagagagt agctatccag\n      841 aacaaattta agaatggaat gctgcatggc caaaaggttt ctttcttctg caagcataag\n      901 gaaaagaagt gcagctacac agaagatgct cagtgcatag acggcaccat cgagattccc\n      961 aaatgcttca aggagcacag ttctttagct ttctggaaaa cggatgcatc tgacgtaaaa\n     1021 ccatgctaag ctggttttca cactgaaaat taaatgtcat gcttatatgt gtctgtctga\n     1081 gaatctgatg gaaacggaaa aataaagaga ctgaatttac cgtgtcaaga aaaaaa\n//"
+    }
+  ],
+  "sources": [
+    {
+      "id": 1,
+      "type": "RepositoryIdSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
+      "repository_id": "X60065.1",
+      "repository_name": "genbank"
+    }
+  ],
+  "description": "",
+  "primers": [],
+  "backend_version": "0.4.11",
+  "schema_version": "0.4.8",
+  "frontend_version": "v0.4.24"
+}

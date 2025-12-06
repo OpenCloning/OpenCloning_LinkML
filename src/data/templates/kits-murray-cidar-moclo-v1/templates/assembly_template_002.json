@@ -284,7 +284,6 @@
             "database_id": null,
             "input": [],
             "repository_id": "121038",
-            "repository_name": "addgene",
             "sequence_file_url": null,
             "addgene_sequence_type": null
           },
@@ -305,7 +304,6 @@
             "database_id": null,
             "input": [],
             "repository_id": "121039",
-            "repository_name": "addgene",
             "sequence_file_url": null,
             "addgene_sequence_type": null
           },
@@ -326,7 +324,6 @@
             "database_id": null,
             "input": [],
             "repository_id": "121040",
-            "repository_name": "addgene",
             "sequence_file_url": null,
             "addgene_sequence_type": null
           },
@@ -347,7 +344,6 @@
             "database_id": null,
             "input": [],
             "repository_id": "121041",
-            "repository_name": "addgene",
             "sequence_file_url": null,
             "addgene_sequence_type": null
           },
@@ -384,7 +380,6 @@
             "database_id": null,
             "input": [],
             "repository_id": "121028",
-            "repository_name": "addgene",
             "sequence_file_url": null,
             "addgene_sequence_type": null
           },
@@ -405,7 +400,6 @@
             "database_id": null,
             "input": [],
             "repository_id": "121029",
-            "repository_name": "addgene",
             "sequence_file_url": null,
             "addgene_sequence_type": null
           },
@@ -426,7 +420,6 @@
             "database_id": null,
             "input": [],
             "repository_id": "121030",
-            "repository_name": "addgene",
             "sequence_file_url": null,
             "addgene_sequence_type": null
           },
@@ -447,7 +440,6 @@
             "database_id": null,
             "input": [],
             "repository_id": "121031",
-            "repository_name": "addgene",
             "sequence_file_url": null,
             "addgene_sequence_type": null
           },
@@ -468,7 +460,6 @@
             "database_id": null,
             "input": [],
             "repository_id": "121032",
-            "repository_name": "addgene",
             "sequence_file_url": null,
             "addgene_sequence_type": null
           },
@@ -489,7 +480,6 @@
             "database_id": null,
             "input": [],
             "repository_id": "121033",
-            "repository_name": "addgene",
             "sequence_file_url": null,
             "addgene_sequence_type": null
           },
@@ -510,7 +500,6 @@
             "database_id": null,
             "input": [],
             "repository_id": "121034",
-            "repository_name": "addgene",
             "sequence_file_url": null,
             "addgene_sequence_type": null
           },
@@ -531,7 +520,6 @@
             "database_id": null,
             "input": [],
             "repository_id": "121035",
-            "repository_name": "addgene",
             "sequence_file_url": null,
             "addgene_sequence_type": null
           },
@@ -552,7 +540,6 @@
             "database_id": null,
             "input": [],
             "repository_id": "121036",
-            "repository_name": "addgene",
             "sequence_file_url": null,
             "addgene_sequence_type": null
           },
@@ -573,7 +560,6 @@
             "database_id": null,
             "input": [],
             "repository_id": "121037",
-            "repository_name": "addgene",
             "sequence_file_url": null,
             "addgene_sequence_type": null
           },
@@ -1188,7 +1174,7 @@
   ],
   "description": "Pre-composed 5'UTR + promoter + CDS\n\nTranscriptional Unit that uses a level 0 plasmid containing joined 5'UTR + promoter + CDS",
   "files": null,
-  "schema_version": "0.3.0a0.post5.dev0+3cee09f",
+  "schema_version": "0.4.9",
   "backend_version": null,
   "frontend_version": null
 }

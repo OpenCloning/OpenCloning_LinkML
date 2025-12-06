@@ -98,17 +98,6 @@ class TestMigration(unittest.TestCase):
         self.assertEqual(cs.sources[0].assembly[0].right_location, "0^1")
         self.assertEqual(cs.sources[1].coordinates, "1..100")
 
-    def test_0_4_0_to_0_4_6(self):
-        from opencloning_linkml.migrations.model_archive.v0_4_6 import CloningStrategy as new_CloningStrategy
-
-        with open(os.path.join(test_folder, "migration/v0.4.0/output_field.json"), "r") as f:
-            data = json.load(f)
-        self.assertIn("output", data["sources"][0])
-        migrated_data = migrate(data, "0.4.6")
-        # Just has to pass the validation
-        new_CloningStrategy(**migrated_data)
-        self.assertNotIn("output", migrated_data["sources"][0])
-
     def test_0_2_9_to_0_4_0(self):
         from opencloning_linkml.migrations.model_archive.v0_2_9 import CloningStrategy as old_CloningStrategy
         from opencloning_linkml.migrations.model_archive.v0_4_0 import CloningStrategy as new_CloningStrategy
@@ -130,6 +119,101 @@ class TestMigration(unittest.TestCase):
             if "files" in file:
                 for file in migrated_data["files"]:
                     self.assertEqual(file["sequence_id"], 1)
+
+    def test_0_4_0_to_0_4_6(self):
+        from opencloning_linkml.migrations.model_archive.v0_4_6 import CloningStrategy as new_CloningStrategy
+
+        with open(os.path.join(test_folder, "migration/v0.4.0/output_field.json"), "r") as f:
+            data = json.load(f)
+        self.assertIn("output", data["sources"][0])
+        migrated_data = migrate(data, "0.4.6")
+        # Just has to pass the validation
+        new_CloningStrategy(**migrated_data)
+        self.assertNotIn("output", migrated_data["sources"][0])
+
+    def test_0_4_6_to_0_4_9_ManuallyTypedSource(self):
+        from opencloning_linkml.migrations.model_archive.v0_4_9 import CloningStrategy as new_CloningStrategy
+
+        with open(os.path.join(test_folder, "migration/v0.4.9/manually_typed.json"), "r") as f:
+            data = json.load(f)
+        self.assertIn("overhang_crick_3prime", data["sources"][0])
+        self.assertIn("overhang_watson_3prime", data["sources"][0])
+        self.assertIn("user_input", data["sources"][0])
+        self.assertIn("circular", data["sources"][0])
+        migrated_data = migrate(data, "0.4.9")
+
+        # Passes the validation
+        new_CloningStrategy(**migrated_data)
+        self.assertNotIn("overhang_crick_3prime", migrated_data["sources"][0])
+        self.assertNotIn("overhang_watson_3prime", migrated_data["sources"][0])
+        self.assertNotIn("user_input", migrated_data["sources"][0])
+        self.assertNotIn("circular", migrated_data["sources"][0])
+
+    def test_0_4_6_to_0_4_9_RepositoryIdSource(self):
+        from opencloning_linkml.migrations.model_archive.v0_4_9 import CloningStrategy as new_CloningStrategy
+
+        with open(os.path.join(test_folder, "migration/v0.4.9/genbank_id.json"), "r") as f:
+            data = json.load(f)
+        self.assertIn("repository_id", data["sources"][0])
+        self.assertIn("repository_name", data["sources"][0])
+        migrated_data = migrate(data, "0.4.9")
+        # Passes the validation
+        new_CloningStrategy(**migrated_data)
+        self.assertEqual(migrated_data["sources"][0]["type"], "NCBISequenceSource")
+        self.assertEqual(migrated_data["sources"][0]["repository_id"], "X60065.1")
+        self.assertNotIn("repository_name", migrated_data["sources"][0])
+        self.assertIsNone(migrated_data["sources"][0]["coordinates"])
+
+        with open(os.path.join(test_folder, "migration/v0.4.9/repository_addgene.json"), "r") as f:
+            data = json.load(f)
+        self.assertIn("repository_id", data["sources"][0])
+        self.assertIn("repository_name", data["sources"][0])
+        migrated_data = migrate(data, "0.4.9")
+        # Passes the validation
+        new_CloningStrategy(**migrated_data)
+        self.assertEqual(migrated_data["sources"][0]["type"], "AddgeneIdSource")
+        self.assertEqual(migrated_data["sources"][0]["repository_id"], "39296")
+        self.assertNotIn("repository_name", migrated_data["sources"][0])
+        self.assertNotIn("coordinates", migrated_data["sources"][0])
+
+    def test_0_4_6_to_0_4_9_GenomeCoordinatesSource(self):
+        from opencloning_linkml.migrations.model_archive.v0_4_9 import CloningStrategy as new_CloningStrategy
+
+        with open(os.path.join(test_folder, "migration/v0.4.9/genome_coordinates.json"), "r") as f:
+            data = json.load(f)
+        self.assertIn("strand", data["sources"][0])
+        self.assertIn("start", data["sources"][0])
+        self.assertIn("end", data["sources"][0])
+        self.assertIn("strand", data["sources"][1])
+        self.assertIn("start", data["sources"][1])
+        self.assertIn("end", data["sources"][1])
+        migrated_data = migrate(data, "0.4.9")
+        # Passes the validation
+        new_CloningStrategy(**migrated_data)
+        for i in range(2):
+            location = "complement(1877189..1877289)" if i == 1 else "1877189..1877289"
+            gene_id = 123 if i == 0 else 456
+            locus_tag = "blah" if i == 0 else "blah2"
+            self.assertEqual(migrated_data["sources"][i]["type"], "GenomeCoordinatesSource")
+            self.assertEqual(migrated_data["sources"][i]["coordinates"], location)
+            self.assertEqual(migrated_data["sources"][i]["repository_id"], "NC_003424.3")
+            self.assertNotIn("repository_name", migrated_data["sources"][i])
+            self.assertEqual(migrated_data["sources"][i]["assembly_accession"], "GCF_000002945.2")
+            self.assertEqual(migrated_data["sources"][i]["locus_tag"], locus_tag)
+            self.assertEqual(migrated_data["sources"][i]["gene_id"], gene_id)
+
+    def test_0_4_6_to_0_4_9_CollectionSource(self):
+        from opencloning_linkml.migrations.model_archive.v0_4_9 import CloningStrategy as new_CloningStrategy
+
+        with open(os.path.join(test_folder, "migration/v0.4.9/collection.json"), "r") as f:
+            data = json.load(f)
+        migrated_data = migrate(data, "0.4.9")
+        # Passes the validation
+        new_CloningStrategy(**migrated_data)
+        self.assertEqual(migrated_data["sources"][0]["type"], "CollectionSource")
+        for i in range(2):
+            self.assertEqual(migrated_data["sources"][0]["options"][i]["source"]["type"], "AddgeneIdSource")
+            self.assertNotIn("repository_name", migrated_data["sources"][0]["options"][i]["source"])
 
     def test_migration_script(self):
 

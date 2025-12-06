@@ -1,0 +1,895 @@
+{
+  "sequences": [
+    {
+      "id": 1,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 2,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 3,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 4,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 5,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 6,
+      "type": "TemplateSequence",
+      "circular": false,
+      "primer_design": null
+    },
+    {
+      "id": 7,
+      "type": "TemplateSequence",
+      "circular": false,
+      "primer_design": null
+    }
+  ],
+  "sources": [
+    {
+      "id": 1,
+      "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
+      "category_id": "promoter",
+      "title": "Promoter",
+      "description": "BB1 plasmid with promoter",
+      "image": [
+        "promoter.png",
+        "60%"
+      ],
+      "options": [
+        {
+          "name": "BB1_12_pGAP - PGAP",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98498",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_12_pGAP",
+            "description": "PGAP",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "A / 4"
+          }
+        },
+        {
+          "name": "BB1_12_pGPM1 - PGPM1",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98499",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_12_pGPM1",
+            "description": "PGPM1",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "A / 5"
+          }
+        },
+        {
+          "name": "BB1_12_pRPP1B - PRPP1B",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98500",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_12_pRPP1B",
+            "description": "PRPP1B",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "A / 6"
+          }
+        },
+        {
+          "name": "BB1_12_pPDC1 - PPDC1",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98501",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_12_pPDC1",
+            "description": "PPDC1",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "A / 7"
+          }
+        },
+        {
+          "name": "BB1_12_pPOR1 - PPOR1",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98502",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_12_pPOR1",
+            "description": "PPOR1",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "A / 8"
+          }
+        },
+        {
+          "name": "BB1_12_pMDH3 - PMDH3",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98503",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_12_pMDH3",
+            "description": "PMDH3",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "A / 9"
+          }
+        },
+        {
+          "name": "BB1_12_pADH2 - PADH2",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98504",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_12_pADH2",
+            "description": "PADH2",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "A / 10"
+          }
+        },
+        {
+          "name": "BB1_12_pFBA1-1 - PFBA1-1",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98505",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_12_pFBA1-1",
+            "description": "PFBA1-1",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "A / 11"
+          }
+        },
+        {
+          "name": "BB1_12_pSHB17 - PSHB17",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98506",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_12_pSHB17",
+            "description": "PSHB17",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "A / 12"
+          }
+        },
+        {
+          "name": "BB1_12_pTEF2 - PTEF2",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98507",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_12_pTEF2",
+            "description": "PTEF2",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "B / 1"
+          }
+        },
+        {
+          "name": "BB1_12_pRPL2A - PRPL2A",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98508",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_12_pRPL2A",
+            "description": "PRPL2A",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "B / 2"
+          }
+        },
+        {
+          "name": "BB1_12_pLAT1 - PLAT1",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98509",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_12_pLAT1",
+            "description": "PLAT1",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "B / 3"
+          }
+        },
+        {
+          "name": "BB1_12_pPFK300 - PPpPfk",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98510",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_12_pPFK300",
+            "description": "PPpPfk",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "B / 4"
+          }
+        },
+        {
+          "name": "BB1_12_pGUT1 - PGUT1",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98511",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_12_pGUT1",
+            "description": "PGUT1",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "B / 5"
+          }
+        },
+        {
+          "name": "BB1_12_pTHI11 - PTHI11",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98512",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_12_pTHI11",
+            "description": "PTHI11",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "B / 6"
+          }
+        },
+        {
+          "name": "BB1_12_pDAS2 - PDAS2",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98513",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_12_pDAS2",
+            "description": "PDAS2",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "B / 7"
+          }
+        },
+        {
+          "name": "BB1_12_pAOX1 - PAOX1",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98514",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_12_pAOX1",
+            "description": "PAOX1",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "B / 8"
+          }
+        },
+        {
+          "name": "BB1_12_pDAS1 - PDAS1",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98515",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_12_pDAS1",
+            "description": "PDAS1",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "B / 9"
+          }
+        },
+        {
+          "name": "BB1_12_pFDH1 - PFDH1",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98516",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_12_pFDH1",
+            "description": "PFDH1",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "B / 10"
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
+      "category_id": "coding sequence",
+      "title": "Coding Sequence",
+      "description": "BB1 plasmid with coding sequence",
+      "image": [
+        "cds.png",
+        "60%"
+      ],
+      "options": [
+        {
+          "name": "BB1_23_eGFP - eGFP",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98518",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_23_eGFP",
+            "description": "eGFP",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "B / 12"
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
+      "category_id": "terminator",
+      "title": "Terminator",
+      "description": "BB1 plasmid with terminator",
+      "image": [
+        "terminator.png",
+        "60%"
+      ],
+      "options": [
+        {
+          "name": "BB1_34_ScCYC1tt - ScCYC1tt",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98519",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_34_ScCYC1tt",
+            "description": "ScCYC1tt",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "C / 1"
+          }
+        },
+        {
+          "name": "BB1_34_TDH3tt - TDH3tt",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98520",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_34_TDH3tt",
+            "description": "TDH3tt",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "C / 2"
+          }
+        },
+        {
+          "name": "BB1_34_RPS2tt - RPS2tt",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98521",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_34_RPS2tt",
+            "description": "RPS2tt",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "C / 3"
+          }
+        },
+        {
+          "name": "BB1_34_RPP1Btt - RPP1Btt",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98522",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_34_RPP1Btt",
+            "description": "RPP1Btt",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "C / 4"
+          }
+        },
+        {
+          "name": "BB1_34_RPS17Btt - RPS17Btt",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98523",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_34_RPS17Btt",
+            "description": "RPS17Btt",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "C / 5"
+          }
+        },
+        {
+          "name": "BB1_34_chr4_0883tt - chr4_0883tt",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98524",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_34_chr4_0883tt",
+            "description": "chr4_0883tt",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "C / 6"
+          }
+        },
+        {
+          "name": "BB1_34_IDP1tt - IDP1tt",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98525",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_34_IDP1tt",
+            "description": "IDP1tt",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "C / 7"
+          }
+        },
+        {
+          "name": "BB1_34_RPS25Att - RPS25Att",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98526",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_34_RPS25Att",
+            "description": "RPS25Att",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "C / 8"
+          }
+        },
+        {
+          "name": "BB1_34_RPS3tt - RPS3tt",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98527",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_34_RPS3tt",
+            "description": "RPS3tt",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "C / 9"
+          }
+        },
+        {
+          "name": "BB1_34_RPL2Att - RPL2Att",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98528",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB1_34_RPL2Att",
+            "description": "RPL2Att",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "C / 10"
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
+      "category_id": "recipient BB3 - single",
+      "title": "Recipient BB3 - single TU",
+      "description": "To clone a single TU directly from 3 BB1",
+      "image": [
+        "backbone.png",
+        "60%"
+      ],
+      "options": [
+        {
+          "name": "BB3aK_14* - 1 TU (locus AOX1tt, Kanamycin)",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98529",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB3aK_14*",
+            "description": "1 TU (locus AOX1tt, Kanamycin)",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "C / 11"
+          }
+        },
+        {
+          "name": "BB3aZ_14* - 1 TU (locus AOX1tt, Zeocin) ",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98542",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB3aZ_14*",
+            "description": "1 TU (locus AOX1tt, Zeocin) ",
+            "type": "AddgenePlasmid",
+            "resistance": "Bleocin (Zeocin)",
+            "well": "D / 12"
+          }
+        },
+        {
+          "name": "BB3eH_14* - 1 TU (locus ENO1, Hygromycin)",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98543",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB3eH_14*",
+            "description": "1 TU (locus ENO1, Hygromycin)",
+            "type": "AddgenePlasmid",
+            "resistance": "Hygromycin",
+            "well": "E / 1"
+          }
+        },
+        {
+          "name": "BB3aN_14* - 1 TU (locus AOX1tt, clonNat)",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98548",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB3aN_14*",
+            "description": "1 TU (locus AOX1tt, clonNat)",
+            "type": "AddgenePlasmid",
+            "resistance": "Nourseothricin (clonNat)",
+            "well": "E / 6"
+          }
+        },
+        {
+          "name": "BB3eN_14* - 1 TU (locus ENO1, clonNat)",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98549",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB3eN_14*",
+            "description": "1 TU (locus ENO1, clonNat)",
+            "type": "AddgenePlasmid",
+            "resistance": "Nourseothricin (clonNat)",
+            "well": "E / 7"
+          }
+        },
+        {
+          "name": "BB3rN_14* - 1 TU (locus RGI2, clonNat)",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98550",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB3rN_14*",
+            "description": "1 TU (locus RGI2, clonNat)",
+            "type": "AddgenePlasmid",
+            "resistance": "Nourseothricin (clonNat)",
+            "well": "E / 8"
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "type": "RestrictionAndLigationSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [
+        {
+          "type": "SourceInput",
+          "sequence": 1
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 2
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 3
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 4
+        }
+      ],
+      "circular": null,
+      "restriction_enzymes": [
+        "BsaI"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "GenomeCoordinatesSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
+      "repository_id": "LT962479.2",
+      "coordinates": "1237975..241966",
+      "assembly_accession": "GCA_900235035.2",
+      "locus_tag": "BQ9382_C4-0695",
+      "gene_id": null
+    },
+    {
+      "id": 7,
+      "type": "HomologousRecombinationSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [
+        {
+          "type": "SourceInput",
+          "sequence": 6
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 5
+        }
+      ],
+      "circular": null
+    }
+  ],
+  "primers": [],
+  "description": "Single TU BB3 plasmid\n\nOverexpression of a single TU, direct cloning from BB1 into a special BB3",
+  "files": null,
+  "schema_version": "0.4.9",
+  "backend_version": null,
+  "frontend_version": null
+}

@@ -1,0 +1,49 @@
+{
+    "sequences": [
+        {
+            "id": 1,
+            "type": "TextFileSequence",
+            "sequence_file_format": "genbank",
+            "overhang_crick_3prime": 0,
+            "overhang_watson_3prime": 0,
+            "file_content": "LOCUS       name                      12 bp    DNA     circular UNK 01-JAN-1980\nDEFINITION  description.\nACCESSION   id\nVERSION     id\nKEYWORDS    .\nSOURCE      .\n  ORGANISM  .\n            .\nFEATURES             Location/Qualifiers\nORIGIN\n        1 aaaaaaaaaa aa\n//"
+        },
+        {
+            "id": 2,
+            "type": "TextFileSequence",
+            "sequence_file_format": "genbank",
+            "overhang_crick_3prime": 2,
+            "overhang_watson_3prime": 3,
+            "file_content": "LOCUS       name                       9 bp    DNA     linear   UNK 01-JAN-1980\nDEFINITION  description.\nACCESSION   id\nVERSION     id\nKEYWORDS    .\nSOURCE      .\n  ORGANISM  .\n            .\nFEATURES             Location/Qualifiers\nORIGIN\n        1 aaaaaaaaa\n//"
+        }
+    ],
+    "sources": [
+        {
+            "id": 1,
+            "type": "ManuallyTypedSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "overhang_crick_3prime": 0,
+            "overhang_watson_3prime": 0,
+            "user_input": "aaaaaaaaaaaa",
+            "circular": true
+        },
+        {
+            "id": 2,
+            "type": "ManuallyTypedSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "overhang_crick_3prime": 2,
+            "overhang_watson_3prime": 3,
+            "user_input": "aaaaaaaaa",
+            "circular": false
+        }
+    ],
+    "description": "",
+    "primers": [],
+    "backend_version": "0.4.11",
+    "schema_version": "0.4.8",
+    "frontend_version": "v0.4.24"
+}

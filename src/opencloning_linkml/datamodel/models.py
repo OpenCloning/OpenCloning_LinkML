@@ -1,7 +1,7 @@
 from ._models import *  # noqa: F403,F401
 from opencloning_linkml._version import __version__
 from typing import Optional
-from pydantic import Field
+from pydantic import Field, model_validator
 
 
 class CloningStrategy(CloningStrategy):  # noqa: F405
@@ -10,3 +10,12 @@ class CloningStrategy(CloningStrategy):  # noqa: F405
         description="""The version of the schema that was used to generate this cloning strategy""",
         json_schema_extra={"linkml_meta": {"alias": "schema_version", "domain_of": ["CloningStrategy"]}},
     )
+
+
+class ManuallyTypedSequence(ManuallyTypedSequence):  # noqa: F405
+    @model_validator(mode="after")
+    def validate_circular_overhangs(self):
+        """Ensure that if circular is True, both overhangs must be 0"""
+        if self.circular is True and not (self.overhang_crick_3prime == self.overhang_watson_3prime == 0):
+            raise ValueError("If circular is True, both overhangs must be 0")
+        return self

@@ -16,6 +16,13 @@
 --     * Slot: file_content Description:
 --     * Slot: id Description: A unique identifier for a thing
 --     * Slot: type Description: Designates the class
+-- # Class: "ManuallyTypedSequence" Description: "Represents a sequence that is manually typed by the user"
+--     * Slot: overhang_crick_3prime Description: Taken from pydna's `dseq::ovhg`An integer describing the length of the crick strand overhang in the 5' of the molecule, or 3' of the crick strand
+--     * Slot: overhang_watson_3prime Description: The equivalent of `overhang_crick_3prime` but for the watson strand
+--     * Slot: sequence Description: The sequence of the manually typed sequence
+--     * Slot: circular Description: Whether the sequence is circular or linear
+--     * Slot: id Description: A unique identifier for a thing
+--     * Slot: type Description: Designates the class
 -- # Class: "Primer" Description: "An oligonucleotide or primer"
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: database_id Description: The id of an entity in a database
@@ -41,6 +48,7 @@
 --     * Slot: EuroscarfSource_id Description: Autocreated FK slot
 --     * Slot: IGEMSource_id Description: Autocreated FK slot
 --     * Slot: OpenDNACollectionsSource_id Description: Autocreated FK slot
+--     * Slot: NCBISequenceSource_id Description: Autocreated FK slot
 --     * Slot: GenomeCoordinatesSource_id Description: Autocreated FK slot
 --     * Slot: SequenceCutSource_id Description: Autocreated FK slot
 --     * Slot: RestrictionEnzymeDigestionSource_id Description: Autocreated FK slot
@@ -102,10 +110,6 @@
 --     * Slot: resistance Description: The antibiotic resistance of the plasmid
 --     * Slot: well Description: The well position in the kit plate
 -- # Class: "ManuallyTypedSource" Description: "Represents the source of a sequence that is manually typed by the user"
---     * Slot: overhang_crick_3prime Description: Taken from pydna's `dseq::ovhg`An integer describing the length of the crick strand overhang in the 5' of the molecule, or 3' of the crick strand
---     * Slot: overhang_watson_3prime Description: The equivalent of `overhang_crick_3prime` but for the watson strand
---     * Slot: user_input Description:
---     * Slot: circular Description: Whether the sequence is circular or not
 --     * Slot: type Description: Designates the class
 --     * Slot: output_name Description: Used to specify the name of the output sequence
 --     * Slot: database_id Description: The id of an entity in a database
@@ -122,7 +126,6 @@
 --     * Slot: id Description: A unique identifier for a thing
 -- # Class: "RepositoryIdSource" Description: "Represents the source of a sequence that is identified by a repository id"
 --     * Slot: repository_id Description: The id of the sequence in the repository
---     * Slot: repository_name Description:
 --     * Slot: type Description: Designates the class
 --     * Slot: output_name Description: Used to specify the name of the output sequence
 --     * Slot: database_id Description: The id of an entity in a database
@@ -131,7 +134,6 @@
 --     * Slot: sequence_file_url Description: The URL of a sequence file
 --     * Slot: addgene_sequence_type Description:
 --     * Slot: repository_id Description: The id of the sequence in the repository
---     * Slot: repository_name Description:
 --     * Slot: type Description: Designates the class
 --     * Slot: output_name Description: Used to specify the name of the output sequence
 --     * Slot: database_id Description: The id of an entity in a database
@@ -139,7 +141,6 @@
 -- # Class: "WekWikGeneIdSource" Description: "Represents the source of a sequence that is identified by a WeKwikGene id"
 --     * Slot: sequence_file_url Description: The URL of a sequence file
 --     * Slot: repository_id Description: The id of the gene in the WeKwikGene database
---     * Slot: repository_name Description:
 --     * Slot: type Description: Designates the class
 --     * Slot: output_name Description: Used to specify the name of the output sequence
 --     * Slot: database_id Description: The id of an entity in a database
@@ -147,28 +148,24 @@
 -- # Class: "SEVASource" Description: "Represents the source of a sequence that is identified by a SEVA id"
 --     * Slot: sequence_file_url Description: The URL of the sequence file, which can refer to a a gb file hosted on the SEVA website or an entry in the NCBI.
 --     * Slot: repository_id Description: The SEVA plasmid name
---     * Slot: repository_name Description:
 --     * Slot: type Description: Designates the class
 --     * Slot: output_name Description: Used to specify the name of the output sequence
 --     * Slot: database_id Description: The id of an entity in a database
 --     * Slot: id Description: A unique identifier for a thing
 -- # Class: "BenchlingUrlSource" Description: "Represents the source of a sequence that is identified by a Benchling URL"
 --     * Slot: repository_id Description: The url of the gb file associated with the sequence
---     * Slot: repository_name Description:
 --     * Slot: type Description: Designates the class
 --     * Slot: output_name Description: Used to specify the name of the output sequence
 --     * Slot: database_id Description: The id of an entity in a database
 --     * Slot: id Description: A unique identifier for a thing
 -- # Class: "SnapGenePlasmidSource" Description: "Represents the source of a sequence from the SnapGene plasmid library identified by a SnapGene subpath of https://www.snapgene.com/plasmids/"
 --     * Slot: repository_id Description: The subpath of the plasmid in the SnapGene plasmid library. Requesting the plasmid is possible with https://www.snapgene.com/local/fetch.php?set={category_path}&plasmid={plasmid['subpath']} where category_path is the left part of the subpath before the first / and plasmid is the subpath after the /.
---     * Slot: repository_name Description:
 --     * Slot: type Description: Designates the class
 --     * Slot: output_name Description: Used to specify the name of the output sequence
 --     * Slot: database_id Description: The id of an entity in a database
 --     * Slot: id Description: A unique identifier for a thing
 -- # Class: "EuroscarfSource" Description: "Represents the source of a sequence from the Euroscarf plasmid library"
 --     * Slot: repository_id Description: The id of the plasmid in the Euroscarf plasmid library
---     * Slot: repository_name Description:
 --     * Slot: type Description: Designates the class
 --     * Slot: output_name Description: Used to specify the name of the output sequence
 --     * Slot: database_id Description: The id of an entity in a database
@@ -176,7 +173,6 @@
 -- # Class: "IGEMSource" Description: "Represents the source of a sequence from an iGEM collection"
 --     * Slot: sequence_file_url Description: The URL of the sequence file, for now github repository
 --     * Slot: repository_id Description: The unique identifier of the sequence in the iGEM collection (for now, {part_id}-{plasmid_backbone}) pattern: ^[^-]+-[^-]+$
---     * Slot: repository_name Description:
 --     * Slot: type Description: Designates the class
 --     * Slot: output_name Description: Used to specify the name of the output sequence
 --     * Slot: database_id Description: The id of an entity in a database
@@ -184,19 +180,23 @@
 -- # Class: "OpenDNACollectionsSource" Description: "Represents the source of a sequence from the Open DNA collections"
 --     * Slot: sequence_file_url Description: The URL of a sequence file
 --     * Slot: repository_id Description: Subpath of the sequence in the Open DNA collections repository
---     * Slot: repository_name Description:
+--     * Slot: type Description: Designates the class
+--     * Slot: output_name Description: Used to specify the name of the output sequence
+--     * Slot: database_id Description: The id of an entity in a database
+--     * Slot: id Description: A unique identifier for a thing
+-- # Class: "NCBISequenceSource" Description: "Represents the source of a sequence that is identified by an NCBI sequence accession"
+--     * Slot: coordinates Description: If provided, represents the location of a subsequence within the sequence identified by the sequence accession.
+--     * Slot: repository_id Description: The sequence accession (e.g. X60065.1)
 --     * Slot: type Description: Designates the class
 --     * Slot: output_name Description: Used to specify the name of the output sequence
 --     * Slot: database_id Description: The id of an entity in a database
 --     * Slot: id Description: A unique identifier for a thing
 -- # Class: "GenomeCoordinatesSource" Description: "Represents the source of a sequence that is identified by genome coordinates, requested from NCBI"
 --     * Slot: assembly_accession Description: The accession of the assembly
---     * Slot: sequence_accession Description: The accession of the sequence
 --     * Slot: locus_tag Description: The locus tag of the sequence
 --     * Slot: gene_id Description: The gene id of the sequence
---     * Slot: start Description: The starting coordinate (1-based) of the sequence in the sequence accession
---     * Slot: end Description: The ending coordinate (1-based) of the sequence in the sequence accession
---     * Slot: strand Description: The strand of the sequence in the sequence accession, should be 1 or -1
+--     * Slot: coordinates Description: If provided, represents the location of a subsequence within the sequence identified by the sequence accession.
+--     * Slot: repository_id Description: The sequence accession (e.g. X60065.1)
 --     * Slot: type Description: Designates the class
 --     * Slot: output_name Description: Used to specify the name of the output sequence
 --     * Slot: database_id Description: The id of an entity in a database
@@ -390,6 +390,15 @@ CREATE TABLE "TextFileSequence" (
 	type TEXT,
 	PRIMARY KEY (id)
 );
+CREATE TABLE "ManuallyTypedSequence" (
+	overhang_crick_3prime INTEGER,
+	overhang_watson_3prime INTEGER,
+	sequence TEXT NOT NULL,
+	circular BOOLEAN,
+	id INTEGER NOT NULL,
+	type TEXT,
+	PRIMARY KEY (id)
+);
 CREATE TABLE "SequenceCut" (
 	id INTEGER NOT NULL,
 	cut_watson INTEGER NOT NULL,
@@ -430,10 +439,6 @@ CREATE TABLE "CollectionOptionInfo" (
 	PRIMARY KEY (id)
 );
 CREATE TABLE "ManuallyTypedSource" (
-	overhang_crick_3prime INTEGER,
-	overhang_watson_3prime INTEGER,
-	user_input TEXT NOT NULL,
-	circular BOOLEAN,
 	type TEXT,
 	output_name TEXT,
 	database_id INTEGER,
@@ -454,7 +459,6 @@ CREATE TABLE "UploadedFileSource" (
 );
 CREATE TABLE "RepositoryIdSource" (
 	repository_id TEXT NOT NULL,
-	repository_name VARCHAR(20) NOT NULL,
 	type TEXT,
 	output_name TEXT,
 	database_id INTEGER,
@@ -465,7 +469,6 @@ CREATE TABLE "AddgeneIdSource" (
 	sequence_file_url TEXT,
 	addgene_sequence_type VARCHAR(14),
 	repository_id TEXT NOT NULL,
-	repository_name VARCHAR(20) NOT NULL,
 	type TEXT,
 	output_name TEXT,
 	database_id INTEGER,
@@ -475,7 +478,6 @@ CREATE TABLE "AddgeneIdSource" (
 CREATE TABLE "WekWikGeneIdSource" (
 	sequence_file_url TEXT,
 	repository_id TEXT NOT NULL,
-	repository_name VARCHAR(20) NOT NULL,
 	type TEXT,
 	output_name TEXT,
 	database_id INTEGER,
@@ -485,7 +487,6 @@ CREATE TABLE "WekWikGeneIdSource" (
 CREATE TABLE "SEVASource" (
 	sequence_file_url TEXT,
 	repository_id TEXT NOT NULL,
-	repository_name VARCHAR(20) NOT NULL,
 	type TEXT,
 	output_name TEXT,
 	database_id INTEGER,
@@ -494,7 +495,6 @@ CREATE TABLE "SEVASource" (
 );
 CREATE TABLE "BenchlingUrlSource" (
 	repository_id TEXT NOT NULL,
-	repository_name VARCHAR(20) NOT NULL,
 	type TEXT,
 	output_name TEXT,
 	database_id INTEGER,
@@ -503,7 +503,6 @@ CREATE TABLE "BenchlingUrlSource" (
 );
 CREATE TABLE "SnapGenePlasmidSource" (
 	repository_id TEXT NOT NULL,
-	repository_name VARCHAR(20) NOT NULL,
 	type TEXT,
 	output_name TEXT,
 	database_id INTEGER,
@@ -512,7 +511,6 @@ CREATE TABLE "SnapGenePlasmidSource" (
 );
 CREATE TABLE "EuroscarfSource" (
 	repository_id TEXT NOT NULL,
-	repository_name VARCHAR(20) NOT NULL,
 	type TEXT,
 	output_name TEXT,
 	database_id INTEGER,
@@ -522,7 +520,6 @@ CREATE TABLE "EuroscarfSource" (
 CREATE TABLE "IGEMSource" (
 	sequence_file_url TEXT NOT NULL,
 	repository_id TEXT NOT NULL,
-	repository_name VARCHAR(20) NOT NULL,
 	type TEXT,
 	output_name TEXT,
 	database_id INTEGER,
@@ -532,7 +529,15 @@ CREATE TABLE "IGEMSource" (
 CREATE TABLE "OpenDNACollectionsSource" (
 	sequence_file_url TEXT,
 	repository_id TEXT NOT NULL,
-	repository_name VARCHAR(20) NOT NULL,
+	type TEXT,
+	output_name TEXT,
+	database_id INTEGER,
+	id INTEGER NOT NULL,
+	PRIMARY KEY (id)
+);
+CREATE TABLE "NCBISequenceSource" (
+	coordinates TEXT,
+	repository_id TEXT NOT NULL,
 	type TEXT,
 	output_name TEXT,
 	database_id INTEGER,
@@ -541,12 +546,10 @@ CREATE TABLE "OpenDNACollectionsSource" (
 );
 CREATE TABLE "GenomeCoordinatesSource" (
 	assembly_accession TEXT,
-	sequence_accession TEXT NOT NULL,
 	locus_tag TEXT,
 	gene_id INTEGER,
-	start INTEGER NOT NULL,
-	"end" INTEGER NOT NULL,
-	strand INTEGER NOT NULL,
+	coordinates TEXT,
+	repository_id TEXT NOT NULL,
 	type TEXT,
 	output_name TEXT,
 	database_id INTEGER,
@@ -795,6 +798,7 @@ CREATE TABLE "SourceInput" (
 	"EuroscarfSource_id" INTEGER,
 	"IGEMSource_id" INTEGER,
 	"OpenDNACollectionsSource_id" INTEGER,
+	"NCBISequenceSource_id" INTEGER,
 	"GenomeCoordinatesSource_id" INTEGER,
 	"SequenceCutSource_id" INTEGER,
 	"RestrictionEnzymeDigestionSource_id" INTEGER,
@@ -830,6 +834,7 @@ CREATE TABLE "SourceInput" (
 	FOREIGN KEY("EuroscarfSource_id") REFERENCES "EuroscarfSource" (id),
 	FOREIGN KEY("IGEMSource_id") REFERENCES "IGEMSource" (id),
 	FOREIGN KEY("OpenDNACollectionsSource_id") REFERENCES "OpenDNACollectionsSource" (id),
+	FOREIGN KEY("NCBISequenceSource_id") REFERENCES "NCBISequenceSource" (id),
 	FOREIGN KEY("GenomeCoordinatesSource_id") REFERENCES "GenomeCoordinatesSource" (id),
 	FOREIGN KEY("SequenceCutSource_id") REFERENCES "SequenceCutSource" (id),
 	FOREIGN KEY("RestrictionEnzymeDigestionSource_id") REFERENCES "RestrictionEnzymeDigestionSource" (id),

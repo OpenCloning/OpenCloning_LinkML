@@ -1,0 +1,652 @@
+{
+  "submitters": [
+    {
+      "full_name": "Manuel Lera-Ramirez",
+      "orcid": "0000-0002-8666-9746",
+      "github_username": "manulera"
+    }
+  ],
+  "kit": {
+    "pmid": "PMID:29221460",
+    "addgene_url": "https://www.addgene.org/kits/gasser-goldenpics",
+    "title": "GoldenPiCS",
+    "description": "Flexible modular system for advanced strain engineering in P. pastoris / K. phaffii"
+  },
+  "sequences": [
+    {
+      "name": "BB1_12",
+      "category": "recipient BB1",
+      "description": "promoter cloning",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98495",
+      "resistance": "Kanamycin",
+      "well": "A / 1"
+    },
+    {
+      "name": "BB1_23",
+      "category": "recipient BB1",
+      "description": "cds cloning",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98496",
+      "resistance": "Kanamycin",
+      "well": "A / 2"
+    },
+    {
+      "name": "BB1_34",
+      "category": "recipient BB1",
+      "description": "terminator cloning",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98497",
+      "resistance": "Kanamycin",
+      "well": "A / 3"
+    },
+    {
+      "name": "BB1_12_pGAP",
+      "category": "promoter",
+      "description": "PGAP",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98498",
+      "resistance": "Kanamycin",
+      "well": "A / 4"
+    },
+    {
+      "name": "BB1_12_pGPM1",
+      "category": "promoter",
+      "description": "PGPM1",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98499",
+      "resistance": "Kanamycin",
+      "well": "A / 5"
+    },
+    {
+      "name": "BB1_12_pRPP1B",
+      "category": "promoter",
+      "description": "PRPP1B",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98500",
+      "resistance": "Kanamycin",
+      "well": "A / 6"
+    },
+    {
+      "name": "BB1_12_pPDC1",
+      "category": "promoter",
+      "description": "PPDC1",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98501",
+      "resistance": "Kanamycin",
+      "well": "A / 7"
+    },
+    {
+      "name": "BB1_12_pPOR1",
+      "category": "promoter",
+      "description": "PPOR1",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98502",
+      "resistance": "Kanamycin",
+      "well": "A / 8"
+    },
+    {
+      "name": "BB1_12_pMDH3",
+      "category": "promoter",
+      "description": "PMDH3",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98503",
+      "resistance": "Kanamycin",
+      "well": "A / 9"
+    },
+    {
+      "name": "BB1_12_pADH2",
+      "category": "promoter",
+      "description": "PADH2",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98504",
+      "resistance": "Kanamycin",
+      "well": "A / 10"
+    },
+    {
+      "name": "BB1_12_pFBA1-1",
+      "category": "promoter",
+      "description": "PFBA1-1",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98505",
+      "resistance": "Kanamycin",
+      "well": "A / 11"
+    },
+    {
+      "name": "BB1_12_pSHB17",
+      "category": "promoter",
+      "description": "PSHB17",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98506",
+      "resistance": "Kanamycin",
+      "well": "A / 12"
+    },
+    {
+      "name": "BB1_12_pTEF2",
+      "category": "promoter",
+      "description": "PTEF2",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98507",
+      "resistance": "Kanamycin",
+      "well": "B / 1"
+    },
+    {
+      "name": "BB1_12_pRPL2A",
+      "category": "promoter",
+      "description": "PRPL2A",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98508",
+      "resistance": "Kanamycin",
+      "well": "B / 2"
+    },
+    {
+      "name": "BB1_12_pLAT1",
+      "category": "promoter",
+      "description": "PLAT1",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98509",
+      "resistance": "Kanamycin",
+      "well": "B / 3"
+    },
+    {
+      "name": "BB1_12_pPFK300",
+      "category": "promoter",
+      "description": "PPpPfk",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98510",
+      "resistance": "Kanamycin",
+      "well": "B / 4"
+    },
+    {
+      "name": "BB1_12_pGUT1",
+      "category": "promoter",
+      "description": "PGUT1",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98511",
+      "resistance": "Kanamycin",
+      "well": "B / 5"
+    },
+    {
+      "name": "BB1_12_pTHI11",
+      "category": "promoter",
+      "description": "PTHI11",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98512",
+      "resistance": "Kanamycin",
+      "well": "B / 6"
+    },
+    {
+      "name": "BB1_12_pDAS2",
+      "category": "promoter",
+      "description": "PDAS2",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98513",
+      "resistance": "Kanamycin",
+      "well": "B / 7"
+    },
+    {
+      "name": "BB1_12_pAOX1",
+      "category": "promoter",
+      "description": "PAOX1",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98514",
+      "resistance": "Kanamycin",
+      "well": "B / 8"
+    },
+    {
+      "name": "BB1_12_pDAS1",
+      "category": "promoter",
+      "description": "PDAS1",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98515",
+      "resistance": "Kanamycin",
+      "well": "B / 9"
+    },
+    {
+      "name": "BB1_12_pFDH1",
+      "category": "promoter",
+      "description": "PFDH1",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98516",
+      "resistance": "Kanamycin",
+      "well": "B / 10"
+    },
+    {
+      "name": "BB1_23_eGFP",
+      "category": "coding sequence",
+      "description": "eGFP",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98518",
+      "resistance": "Kanamycin",
+      "well": "B / 12"
+    },
+    {
+      "name": "BB1_34_ScCYC1tt",
+      "category": "terminator",
+      "description": "ScCYC1tt",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98519",
+      "resistance": "Kanamycin",
+      "well": "C / 1"
+    },
+    {
+      "name": "BB1_34_TDH3tt",
+      "category": "terminator",
+      "description": "TDH3tt",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98520",
+      "resistance": "Kanamycin",
+      "well": "C / 2"
+    },
+    {
+      "name": "BB1_34_RPS2tt",
+      "category": "terminator",
+      "description": "RPS2tt",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98521",
+      "resistance": "Kanamycin",
+      "well": "C / 3"
+    },
+    {
+      "name": "BB1_34_RPP1Btt",
+      "category": "terminator",
+      "description": "RPP1Btt",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98522",
+      "resistance": "Kanamycin",
+      "well": "C / 4"
+    },
+    {
+      "name": "BB1_34_RPS17Btt",
+      "category": "terminator",
+      "description": "RPS17Btt",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98523",
+      "resistance": "Kanamycin",
+      "well": "C / 5"
+    },
+    {
+      "name": "BB1_34_chr4_0883tt",
+      "category": "terminator",
+      "description": "chr4_0883tt",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98524",
+      "resistance": "Kanamycin",
+      "well": "C / 6"
+    },
+    {
+      "name": "BB1_34_IDP1tt",
+      "category": "terminator",
+      "description": "IDP1tt",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98525",
+      "resistance": "Kanamycin",
+      "well": "C / 7"
+    },
+    {
+      "name": "BB1_34_RPS25Att",
+      "category": "terminator",
+      "description": "RPS25Att",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98526",
+      "resistance": "Kanamycin",
+      "well": "C / 8"
+    },
+    {
+      "name": "BB1_34_RPS3tt",
+      "category": "terminator",
+      "description": "RPS3tt",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98527",
+      "resistance": "Kanamycin",
+      "well": "C / 9"
+    },
+    {
+      "name": "BB1_34_RPL2Att",
+      "category": "terminator",
+      "description": "RPL2Att",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98528",
+      "resistance": "Kanamycin",
+      "well": "C / 10"
+    },
+    {
+      "name": "BB3aK_14*",
+      "category": "recipient BB3 - single",
+      "description": "1 TU (locus AOX1tt, Kanamycin)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98529",
+      "resistance": "Kanamycin",
+      "well": "C / 11"
+    },
+    {
+      "name": "BB3aK_AC",
+      "category": "recipient BB3",
+      "description": "2 TUs (locus AOX1tt, Kanamycin)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98530",
+      "resistance": "Kanamycin",
+      "well": "C / 12"
+    },
+    {
+      "name": "BB3aK_AD",
+      "category": "recipient BB3",
+      "description": "3 TUs (locus AOX1tt, Kanamycin)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98531",
+      "resistance": "Kanamycin",
+      "well": "D / 1"
+    },
+    {
+      "name": "BB3aK_AE",
+      "category": "recipient BB3",
+      "description": "4 TUs (locus AOX1tt, Kanamycin)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98532",
+      "resistance": "Kanamycin",
+      "well": "D / 2"
+    },
+    {
+      "name": "BB3aK_AF",
+      "category": "recipient BB3",
+      "description": "5 TUs (locus AOX1tt, Kanamycin)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98533",
+      "resistance": "Kanamycin",
+      "well": "D / 3"
+    },
+    {
+      "name": "BB2_AB",
+      "category": "recipient BB2",
+      "description": "Transcription unit 1 (AB)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98534",
+      "resistance": "Ampicillin",
+      "well": "D / 4"
+    },
+    {
+      "name": "BB2_BC",
+      "category": "recipient BB2",
+      "description": "Transcription unit 2 (BC)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98535",
+      "resistance": "Ampicillin",
+      "well": "D / 5"
+    },
+    {
+      "name": "BB2_CD",
+      "category": "recipient BB2",
+      "description": "Transcription unit 3 (CD)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98536",
+      "resistance": "Ampicillin",
+      "well": "D / 6"
+    },
+    {
+      "name": "BB2_DE",
+      "category": "recipient BB2",
+      "description": "Transcription unit 4 (DE)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98537",
+      "resistance": "Ampicillin",
+      "well": "D / 7"
+    },
+    {
+      "name": "BB2_EF",
+      "category": "recipient BB2",
+      "description": "Transcription unit 5 (EF)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98538",
+      "resistance": "Ampicillin",
+      "well": "D / 8"
+    },
+    {
+      "name": "BB2_FG",
+      "category": "recipient BB2",
+      "description": "Transcription unit 6 (FG)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98539",
+      "resistance": "Ampicillin",
+      "well": "D / 9"
+    },
+    {
+      "name": "BB2_GH",
+      "category": "recipient BB2",
+      "description": "Transcription unit 7 (GH)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98540",
+      "resistance": "Ampicillin",
+      "well": "D / 10"
+    },
+    {
+      "name": "BB2_HI",
+      "category": "recipient BB2",
+      "description": "Transcription unit 8 (HI)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98541",
+      "resistance": "Ampicillin",
+      "well": "D / 11"
+    },
+    {
+      "name": "BB3aZ_14*",
+      "category": "recipient BB3 - single",
+      "description": "1 TU (locus AOX1tt, Zeocin) ",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98542",
+      "resistance": "Bleocin (Zeocin)",
+      "well": "D / 12"
+    },
+    {
+      "name": "BB3eH_14*",
+      "category": "recipient BB3 - single",
+      "description": "1 TU (locus ENO1, Hygromycin)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98543",
+      "resistance": "Hygromycin",
+      "well": "E / 1"
+    },
+    {
+      "name": "BB3eH_AC",
+      "category": "recipient BB3",
+      "description": "2 TUs (locus ENO1, Hygromycin)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98544",
+      "resistance": "Hygromycin",
+      "well": "E / 2"
+    },
+    {
+      "name": "BB3eH_AD",
+      "category": "recipient BB3",
+      "description": "3 TUs (locus ENO1, Hygromycin)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98545",
+      "resistance": "Hygromycin",
+      "well": "E / 3"
+    },
+    {
+      "name": "BB3eH_AE",
+      "category": "recipient BB3",
+      "description": "4 TUs (locus ENO1, Hygromycin)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98546",
+      "resistance": "Hygromycin",
+      "well": "E / 4"
+    },
+    {
+      "name": "BB3eH_AF",
+      "category": "recipient BB3",
+      "description": "5 TUs (locus ENO1, Hygromycin)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98547",
+      "resistance": "Hygromycin",
+      "well": "E / 5"
+    },
+    {
+      "name": "BB3aN_14*",
+      "category": "recipient BB3 - single",
+      "description": "1 TU (locus AOX1tt, clonNat)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98548",
+      "resistance": "Nourseothricin (clonNat)",
+      "well": "E / 6"
+    },
+    {
+      "name": "BB3eN_14*",
+      "category": "recipient BB3 - single",
+      "description": "1 TU (locus ENO1, clonNat)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98549",
+      "resistance": "Nourseothricin (clonNat)",
+      "well": "E / 7"
+    },
+    {
+      "name": "BB3rN_14*",
+      "category": "recipient BB3 - single",
+      "description": "1 TU (locus RGI2, clonNat)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98550",
+      "resistance": "Nourseothricin (clonNat)",
+      "well": "E / 8"
+    },
+    {
+      "name": "BB3rN_AC",
+      "category": "recipient BB3",
+      "description": "2 TUs (locus RGI2, clonNat)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98551",
+      "resistance": "Nourseothricin (clonNat)",
+      "well": "E / 9"
+    },
+    {
+      "name": "BB3rN_AD",
+      "category": "recipient BB3",
+      "description": "3 TUs (locus RGI2, clonNat)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98552",
+      "resistance": "Nourseothricin (clonNat)",
+      "well": "E / 10"
+    },
+    {
+      "name": "BB3rN_AE",
+      "category": "recipient BB3",
+      "description": "4 TUs (locus RGI2, clonNat)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98553",
+      "resistance": "Nourseothricin (clonNat)",
+      "well": "E / 11"
+    },
+    {
+      "name": "BB3rN_AF",
+      "category": "recipient BB3",
+      "description": "5 TUs (locus RGI2, clonNat)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98554",
+      "resistance": "Nourseothricin (clonNat)",
+      "well": "E / 12"
+    },
+    {
+      "name": "BB3rN_AG",
+      "category": "recipient BB3",
+      "description": "6 TUs (locus RGI2, clonNat)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98555",
+      "resistance": "Nourseothricin (clonNat)",
+      "well": "F / 1"
+    },
+    {
+      "name": "BB3rN_AH",
+      "category": "recipient BB3",
+      "description": "7 TUs (locus RGI2, clonNat)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98556",
+      "resistance": "Nourseothricin (clonNat)",
+      "well": "F / 2"
+    },
+    {
+      "name": "BB3rN_AI",
+      "category": "recipient BB3",
+      "description": "8 TUs (locus RGI2, clonNat)",
+      "type": "AddgenePlasmid",
+      "addgene_id": "98557",
+      "resistance": "Nourseothricin (clonNat)",
+      "well": "F / 3"
+    }
+  ],
+  "categories": [
+    {
+      "id": "recipient BB1",
+      "title": "Recipient BB1",
+      "description": "To domesticate parts ",
+      "image": null
+    },
+    {
+      "id": "promoter",
+      "title": "Promoter",
+      "description": "BB1 plasmid with promoter",
+      "image": "promoter.png"
+    },
+    {
+      "id": "coding sequence",
+      "title": "Coding Sequence",
+      "description": "BB1 plasmid with coding sequence",
+      "image": "cds.png"
+    },
+    {
+      "id": "terminator",
+      "title": "Terminator",
+      "description": "BB1 plasmid with terminator",
+      "image": "terminator.png"
+    },
+    {
+      "id": "recipient BB3 - single",
+      "title": "Recipient BB3 - single TU",
+      "description": "To clone a single TU directly from 3 BB1",
+      "image": "backbone.png"
+    },
+    {
+      "id": "recipient BB3",
+      "title": "Recipient BB3",
+      "description": "To clone multiple TUs from BB2 plasmids",
+      "image": null
+    },
+    {
+      "id": "recipient BB2",
+      "title": "Recipient BB2",
+      "description": "To combine several BB1 plasmids into a TU",
+      "image": "backbone.png"
+    }
+  ],
+  "assemblies": [
+    {
+      "title": "Single TU BB3 plasmid",
+      "description": "Overexpression of a single TU, direct cloning from BB1 into a special BB3",
+      "fragment_order": [
+        "promoter",
+        "coding sequence",
+        "terminator",
+        "recipient BB3 - single"
+      ],
+      "template_file": "assembly_template_001.json"
+    },
+    {
+      "title": "TU cloning into BB2",
+      "description": "Cloning of a TU into a BB2 plasmid, for eventual multi-TU assembly into a BB3 plasmid",
+      "fragment_order": [
+        "promoter",
+        "coding sequence",
+        "terminator",
+        "recipient BB2"
+      ],
+      "template_file": "assembly_template_002.json"
+    },
+    {
+      "title": "Multiple BB2 into BB3",
+      "description": "Cloning of several TUs from BB2 plasmids into a BB3",
+      "fragment_order": [
+        "recipient BB3"
+      ],
+      "template_file": "assembly_template_003.json"
+    }
+  ],
+  "oligos": []
+}

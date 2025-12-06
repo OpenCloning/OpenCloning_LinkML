@@ -1,0 +1,75 @@
+{
+  "sequences": [
+    {
+      "id": 1,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    }
+  ],
+  "sources": [
+    {
+      "id": 1,
+      "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
+      "category_id": "upstream_adapter",
+      "title": "Left adapter",
+      "description": "Gibson adapter to be joined via an A fusion site (GGAG)",
+      "image": [
+        "https://assets.opencloning.org/OpenCloning-submission/submissions/kits-murray-cidar-moclo-v1/left_adapter.png",
+        "100%"
+      ],
+      "options": [
+        {
+          "name": "UNS1_left",
+          "source": {
+            "id": 1,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "39296",
+            "repository_name": "addgene",
+            "sequence_file_url": "https://media.addgene.org/snapgene-media/v3.0.0/sequences/364511/7619eb5c-60b7-4e77-8e64-5fb9c2fae131/addgene-plasmid-39296-sequence-364511.gbk",
+            "addgene_sequence_type": "addgene-full"
+          },
+          "info": {
+            "name": "UNS1_left",
+            "description": null,
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
+          }
+        },
+        {
+          "name": "UNS3_left",
+          "source": {
+            "id": 1,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "39296",
+            "repository_name": "addgene",
+            "sequence_file_url": "https://media.addgene.org/snapgene-media/v3.0.0/sequences/364511/7619eb5c-60b7-4e77-8e64-5fb9c2fae131/addgene-plasmid-39296-sequence-364511.gbk",
+            "addgene_sequence_type": "addgene-full"
+          },
+          "info": {
+            "name": "UNS3_left",
+            "description": null,
+            "type": "OligoPair",
+            "resistance": null,
+            "well": null
+          }
+        }
+      ]
+    }
+  ],
+  "description": "Transcriptional Unit\n\n5'UTR (with RBS) + promoter + CDS + terminator flanked by Golden Gate adapters",
+  "primers": [],
+  "backend_version": "0.4.11",
+  "schema_version": "0.4.8",
+  "frontend_version": "v0.4.24"
+}

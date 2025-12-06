@@ -46,9 +46,6 @@
                     "description": "The id of the sequence in the repository",
                     "type": "string"
                 },
-                "repository_name": {
-                    "$ref": "#/$defs/RepositoryName"
-                },
                 "sequence_file_url": {
                     "description": "The URL of a sequence file",
                     "pattern": "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$",
@@ -70,7 +67,6 @@
             },
             "required": [
                 "repository_id",
-                "repository_name",
                 "id"
             ],
             "title": "AddgeneIdSource",
@@ -388,9 +384,6 @@
                     "pattern": "^https:\\/\\/benchling\\.com\\/.+\\.gb$",
                     "type": "string"
                 },
-                "repository_name": {
-                    "$ref": "#/$defs/RepositoryName"
-                },
                 "type": {
                     "description": "Designates the class",
                     "enum": [
@@ -404,7 +397,6 @@
             },
             "required": [
                 "repository_id",
-                "repository_name",
                 "id"
             ],
             "title": "BenchlingUrlSource",
@@ -543,6 +535,9 @@
                                 "$ref": "#/$defs/TextFileSequence"
                             },
                             {
+                                "$ref": "#/$defs/ManuallyTypedSequence"
+                            },
+                            {
                                 "$ref": "#/$defs/Primer"
                             }
                         ]
@@ -567,9 +562,6 @@
                             },
                             {
                                 "$ref": "#/$defs/RepositoryIdSource"
-                            },
-                            {
-                                "$ref": "#/$defs/GenomeCoordinatesSource"
                             },
                             {
                                 "$ref": "#/$defs/SequenceCutSource"
@@ -648,6 +640,12 @@
                             },
                             {
                                 "$ref": "#/$defs/OpenDNACollectionsSource"
+                            },
+                            {
+                                "$ref": "#/$defs/NCBISequenceSource"
+                            },
+                            {
+                                "$ref": "#/$defs/GenomeCoordinatesSource"
                             }
                         ]
                     },
@@ -705,9 +703,6 @@
                         },
                         {
                             "$ref": "#/$defs/RepositoryIdSource"
-                        },
-                        {
-                            "$ref": "#/$defs/GenomeCoordinatesSource"
                         },
                         {
                             "$ref": "#/$defs/SequenceCutSource"
@@ -786,6 +781,12 @@
                         },
                         {
                             "$ref": "#/$defs/OpenDNACollectionsSource"
+                        },
+                        {
+                            "$ref": "#/$defs/NCBISequenceSource"
+                        },
+                        {
+                            "$ref": "#/$defs/GenomeCoordinatesSource"
                         }
                     ],
                     "description": "The source of the sequence for this option"
@@ -1103,9 +1104,6 @@
                     "pattern": "^P\\d+$",
                     "type": "string"
                 },
-                "repository_name": {
-                    "$ref": "#/$defs/RepositoryName"
-                },
                 "type": {
                     "description": "Designates the class",
                     "enum": [
@@ -1119,7 +1117,6 @@
             },
             "required": [
                 "repository_id",
-                "repository_name",
                 "id"
             ],
             "title": "EuroscarfSource",
@@ -1219,16 +1216,20 @@
                         "null"
                     ]
                 },
+                "coordinates": {
+                    "description": "If provided, represents the location of a subsequence within the sequence identified by the sequence accession.",
+                    "pattern": "^((\\d+)\\.\\.(\\d+)|complement\\((\\d+)\\.\\.(\\d+)\\))$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "database_id": {
                     "description": "The id of an entity in a database",
                     "type": [
                         "integer",
                         "null"
                     ]
-                },
-                "end": {
-                    "description": "The ending coordinate (1-based) of the sequence in the sequence accession",
-                    "type": "integer"
                 },
                 "gene_id": {
                     "description": "The gene id of the sequence",
@@ -1272,17 +1273,9 @@
                         "null"
                     ]
                 },
-                "sequence_accession": {
-                    "description": "The accession of the sequence",
+                "repository_id": {
+                    "description": "The sequence accession (e.g. X60065.1)",
                     "type": "string"
-                },
-                "start": {
-                    "description": "The starting coordinate (1-based) of the sequence in the sequence accession",
-                    "type": "integer"
-                },
-                "strand": {
-                    "description": "The strand of the sequence in the sequence accession, should be 1 or -1",
-                    "type": "integer"
                 },
                 "type": {
                     "description": "Designates the class",
@@ -1296,10 +1289,7 @@
                 }
             },
             "required": [
-                "sequence_accession",
-                "start",
-                "end",
-                "strand",
+                "repository_id",
                 "id"
             ],
             "title": "GenomeCoordinatesSource",
@@ -1474,9 +1464,6 @@
                     "description": "The unique identifier of the sequence in the iGEM collection (for now, {part_id}-{plasmid_backbone}) pattern: ^[^-]+-[^-]+$",
                     "type": "string"
                 },
-                "repository_name": {
-                    "$ref": "#/$defs/RepositoryName"
-                },
                 "sequence_file_url": {
                     "description": "The URL of the sequence file, for now github repository",
                     "pattern": "^.*.gb$",
@@ -1496,7 +1483,6 @@
             "required": [
                 "sequence_file_url",
                 "repository_id",
-                "repository_name",
                 "id"
             ],
             "title": "IGEMSource",
@@ -1691,14 +1677,123 @@
             "title": "LigationSource",
             "type": "object"
         },
+        "ManuallyTypedSequence": {
+            "additionalProperties": false,
+            "description": "Represents a sequence that is manually typed by the user",
+            "properties": {
+                "circular": {
+                    "description": "Whether the sequence is circular or linear",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "integer"
+                },
+                "overhang_crick_3prime": {
+                    "description": "Taken from pydna's `dseq::ovhg`An integer describing the length of the crick strand overhang in the 5' of the molecule, or 3' of the crick strand",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "overhang_watson_3prime": {
+                    "description": "The equivalent of `overhang_crick_3prime` but for the watson strand",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "sequence": {
+                    "description": "The sequence of the manually typed sequence",
+                    "pattern": "^[acgtACGT]+$",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "Designates the class",
+                    "enum": [
+                        "ManuallyTypedSequence"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "sequence",
+                "id"
+            ],
+            "title": "ManuallyTypedSequence",
+            "type": "object"
+        },
         "ManuallyTypedSource": {
             "additionalProperties": false,
             "description": "Represents the source of a sequence that is manually typed by the user",
             "properties": {
-                "circular": {
-                    "description": "Whether the sequence is circular or not",
+                "database_id": {
+                    "description": "The id of an entity in a database",
                     "type": [
-                        "boolean",
+                        "integer",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "integer"
+                },
+                "input": {
+                    "description": "The inputs to this source. If the source represents external import of a sequence, it's empty.",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SourceInput"
+                            },
+                            {
+                                "$ref": "#/$defs/AssemblyFragment"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "output_name": {
+                    "description": "Used to specify the name of the output sequence",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "description": "Designates the class",
+                    "enum": [
+                        "ManuallyTypedSource"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "ManuallyTypedSource",
+            "type": "object"
+        },
+        "NCBISequenceSource": {
+            "additionalProperties": false,
+            "description": "Represents the source of a sequence that is identified by an NCBI sequence accession",
+            "properties": {
+                "coordinates": {
+                    "description": "If provided, represents the location of a subsequence within the sequence identified by the sequence accession.",
+                    "pattern": "^((\\d+)\\.\\.(\\d+)|complement\\((\\d+)\\.\\.(\\d+)\\))$",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -1737,40 +1832,26 @@
                         "null"
                     ]
                 },
-                "overhang_crick_3prime": {
-                    "description": "Taken from pydna's `dseq::ovhg`An integer describing the length of the crick strand overhang in the 5' of the molecule, or 3' of the crick strand",
-                    "type": [
-                        "integer",
-                        "null"
-                    ]
-                },
-                "overhang_watson_3prime": {
-                    "description": "The equivalent of `overhang_crick_3prime` but for the watson strand",
-                    "type": [
-                        "integer",
-                        "null"
-                    ]
+                "repository_id": {
+                    "description": "The sequence accession (e.g. X60065.1)",
+                    "type": "string"
                 },
                 "type": {
                     "description": "Designates the class",
                     "enum": [
-                        "ManuallyTypedSource"
+                        "NCBISequenceSource"
                     ],
                     "type": [
                         "string",
                         "null"
                     ]
-                },
-                "user_input": {
-                    "pattern": "^[acgtACGT]+$",
-                    "type": "string"
                 }
             },
             "required": [
-                "user_input",
+                "repository_id",
                 "id"
             ],
-            "title": "ManuallyTypedSource",
+            "title": "NCBISequenceSource",
             "type": "object"
         },
         "NamedThing": {
@@ -1898,9 +1979,6 @@
                     "pattern": "^[^\\/]+\\/[^\\/]+$",
                     "type": "string"
                 },
-                "repository_name": {
-                    "$ref": "#/$defs/RepositoryName"
-                },
                 "sequence_file_url": {
                     "description": "The URL of a sequence file",
                     "pattern": "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$",
@@ -1922,7 +2000,6 @@
             },
             "required": [
                 "repository_id",
-                "repository_name",
                 "id"
             ],
             "title": "OpenDNACollectionsSource",
@@ -2308,9 +2385,6 @@
                     "description": "The id of the sequence in the repository",
                     "type": "string"
                 },
-                "repository_name": {
-                    "$ref": "#/$defs/RepositoryName"
-                },
                 "type": {
                     "description": "Designates the class",
                     "enum": [
@@ -2324,27 +2398,10 @@
             },
             "required": [
                 "repository_id",
-                "repository_name",
                 "id"
             ],
             "title": "RepositoryIdSource",
             "type": "object"
-        },
-        "RepositoryName": {
-            "description": "",
-            "enum": [
-                "addgene",
-                "genbank",
-                "benchling",
-                "snapgene",
-                "euroscarf",
-                "igem",
-                "wekwikgene",
-                "seva",
-                "open_dna_collections"
-            ],
-            "title": "RepositoryName",
-            "type": "string"
         },
         "RestrictionAndLigationSource": {
             "additionalProperties": false,
@@ -2616,9 +2673,6 @@
                     "pattern": "^pSEVA\\d+.*$",
                     "type": "string"
                 },
-                "repository_name": {
-                    "$ref": "#/$defs/RepositoryName"
-                },
                 "sequence_file_url": {
                     "description": "The URL of the sequence file, which can refer to a a gb file hosted on the SEVA website or an entry in the NCBI.",
                     "pattern": "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$",
@@ -2640,7 +2694,6 @@
             },
             "required": [
                 "repository_id",
-                "repository_name",
                 "id"
             ],
             "title": "SEVASource",
@@ -2840,9 +2893,6 @@
                     "pattern": "^[^\\/]+\\/[^\\/]+$",
                     "type": "string"
                 },
-                "repository_name": {
-                    "$ref": "#/$defs/RepositoryName"
-                },
                 "type": {
                     "description": "Designates the class",
                     "enum": [
@@ -2856,7 +2906,6 @@
             },
             "required": [
                 "repository_id",
-                "repository_name",
                 "id"
             ],
             "title": "SnapGenePlasmidSource",
@@ -3110,9 +3159,6 @@
                     "pattern": "^\\d+$",
                     "type": "string"
                 },
-                "repository_name": {
-                    "$ref": "#/$defs/RepositoryName"
-                },
                 "sequence_file_url": {
                     "description": "The URL of a sequence file",
                     "pattern": "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$",
@@ -3134,7 +3180,6 @@
             },
             "required": [
                 "repository_id",
-                "repository_name",
                 "id"
             ],
             "title": "WekWikGeneIdSource",
