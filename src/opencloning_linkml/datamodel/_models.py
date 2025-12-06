@@ -110,45 +110,6 @@ linkml_meta = LinkMLMeta(
 )
 
 
-class RepositoryName(str, Enum):
-    addgene = "addgene"
-    """
-    Addgene
-    """
-    genbank = "genbank"
-    """
-    GenBank / NCBI
-    """
-    benchling = "benchling"
-    """
-    Benchling
-    """
-    snapgene = "snapgene"
-    """
-    SnapGene plasmid library
-    """
-    euroscarf = "euroscarf"
-    """
-    Euroscarf (plasmids only)
-    """
-    igem = "igem"
-    """
-    iGEM collection
-    """
-    wekwikgene = "wekwikgene"
-    """
-    WekWikGene
-    """
-    seva = "seva"
-    """
-    SEVA (Standard European Vector Architecture)
-    """
-    open_dna_collections = "open_dna_collections"
-    """
-    Open DNA collections
-    """
-
-
 class Collection(str, Enum):
     AddgenePlasmid = "AddgenePlasmid"
     """
@@ -1157,10 +1118,6 @@ class RepositoryIdSource(Source):
         description="""The id of the sequence in the repository""",
         json_schema_extra={"linkml_meta": {"alias": "repository_id", "domain_of": ["RepositoryIdSource"]}},
     )
-    repository_name: RepositoryName = Field(
-        default=...,
-        json_schema_extra={"linkml_meta": {"alias": "repository_name", "domain_of": ["RepositoryIdSource"]}},
-    )
     type: Literal["RepositoryIdSource"] = Field(
         default="RepositoryIdSource",
         description="""Designates the class""",
@@ -1240,10 +1197,6 @@ class AddgeneIdSource(RepositoryIdSource):
         default=...,
         description="""The id of the sequence in the repository""",
         json_schema_extra={"linkml_meta": {"alias": "repository_id", "domain_of": ["RepositoryIdSource"]}},
-    )
-    repository_name: RepositoryName = Field(
-        default=...,
-        json_schema_extra={"linkml_meta": {"alias": "repository_name", "domain_of": ["RepositoryIdSource"]}},
     )
     type: Literal["AddgeneIdSource"] = Field(
         default="AddgeneIdSource",
@@ -1346,10 +1299,6 @@ class WekWikGeneIdSource(RepositoryIdSource):
         default=...,
         description="""The id of the gene in the WeKwikGene database""",
         json_schema_extra={"linkml_meta": {"alias": "repository_id", "domain_of": ["RepositoryIdSource"]}},
-    )
-    repository_name: RepositoryName = Field(
-        default=...,
-        json_schema_extra={"linkml_meta": {"alias": "repository_name", "domain_of": ["RepositoryIdSource"]}},
     )
     type: Literal["WekWikGeneIdSource"] = Field(
         default="WekWikGeneIdSource",
@@ -1474,10 +1423,6 @@ class SEVASource(RepositoryIdSource):
         description="""The SEVA plasmid name""",
         json_schema_extra={"linkml_meta": {"alias": "repository_id", "domain_of": ["RepositoryIdSource"]}},
     )
-    repository_name: RepositoryName = Field(
-        default=...,
-        json_schema_extra={"linkml_meta": {"alias": "repository_name", "domain_of": ["RepositoryIdSource"]}},
-    )
     type: Literal["SEVASource"] = Field(
         default="SEVASource",
         description="""Designates the class""",
@@ -1577,10 +1522,6 @@ class BenchlingUrlSource(RepositoryIdSource):
         description="""The url of the gb file associated with the sequence""",
         json_schema_extra={"linkml_meta": {"alias": "repository_id", "domain_of": ["RepositoryIdSource"]}},
     )
-    repository_name: RepositoryName = Field(
-        default=...,
-        json_schema_extra={"linkml_meta": {"alias": "repository_name", "domain_of": ["RepositoryIdSource"]}},
-    )
     type: Literal["BenchlingUrlSource"] = Field(
         default="BenchlingUrlSource",
         description="""Designates the class""",
@@ -1674,10 +1615,6 @@ class SnapGenePlasmidSource(RepositoryIdSource):
         description="""The subpath of the plasmid in the SnapGene plasmid library. Requesting the plasmid is possible with https://www.snapgene.com/local/fetch.php?set={category_path}&plasmid={plasmid['subpath']} where category_path is the left part of the subpath before the first / and plasmid is the subpath after the /.""",
         json_schema_extra={"linkml_meta": {"alias": "repository_id", "domain_of": ["RepositoryIdSource"]}},
     )
-    repository_name: RepositoryName = Field(
-        default=...,
-        json_schema_extra={"linkml_meta": {"alias": "repository_name", "domain_of": ["RepositoryIdSource"]}},
-    )
     type: Literal["SnapGenePlasmidSource"] = Field(
         default="SnapGenePlasmidSource",
         description="""Designates the class""",
@@ -1761,10 +1698,6 @@ class EuroscarfSource(RepositoryIdSource):
         default=...,
         description="""The id of the plasmid in the Euroscarf plasmid library""",
         json_schema_extra={"linkml_meta": {"alias": "repository_id", "domain_of": ["RepositoryIdSource"]}},
-    )
-    repository_name: RepositoryName = Field(
-        default=...,
-        json_schema_extra={"linkml_meta": {"alias": "repository_name", "domain_of": ["RepositoryIdSource"]}},
     )
     type: Literal["EuroscarfSource"] = Field(
         default="EuroscarfSource",
@@ -1875,10 +1808,6 @@ class IGEMSource(RepositoryIdSource):
         description="""The unique identifier of the sequence in the iGEM collection (for now, {part_id}-{plasmid_backbone}) pattern: ^[^-]+-[^-]+$""",
         json_schema_extra={"linkml_meta": {"alias": "repository_id", "domain_of": ["RepositoryIdSource"]}},
     )
-    repository_name: RepositoryName = Field(
-        default=...,
-        json_schema_extra={"linkml_meta": {"alias": "repository_name", "domain_of": ["RepositoryIdSource"]}},
-    )
     type: Literal["IGEMSource"] = Field(
         default="IGEMSource",
         description="""Designates the class""",
@@ -1978,10 +1907,6 @@ class OpenDNACollectionsSource(RepositoryIdSource):
         default=...,
         description="""Subpath of the sequence in the Open DNA collections repository""",
         json_schema_extra={"linkml_meta": {"alias": "repository_id", "domain_of": ["RepositoryIdSource"]}},
-    )
-    repository_name: RepositoryName = Field(
-        default=...,
-        json_schema_extra={"linkml_meta": {"alias": "repository_name", "domain_of": ["RepositoryIdSource"]}},
     )
     type: Literal["OpenDNACollectionsSource"] = Field(
         default="OpenDNACollectionsSource",
@@ -2085,10 +2010,6 @@ class NCBISequenceSource(RepositoryIdSource):
         description="""The sequence accession (e.g. X60065.1)""",
         json_schema_extra={"linkml_meta": {"alias": "repository_id", "domain_of": ["RepositoryIdSource"]}},
     )
-    repository_name: RepositoryName = Field(
-        default=...,
-        json_schema_extra={"linkml_meta": {"alias": "repository_name", "domain_of": ["RepositoryIdSource"]}},
-    )
     type: Literal["NCBISequenceSource"] = Field(
         default="NCBISequenceSource",
         description="""Designates the class""",
@@ -2175,10 +2096,6 @@ class GenomeCoordinatesSource(NCBISequenceSource):
         default=...,
         description="""The sequence accession (e.g. X60065.1)""",
         json_schema_extra={"linkml_meta": {"alias": "repository_id", "domain_of": ["RepositoryIdSource"]}},
-    )
-    repository_name: RepositoryName = Field(
-        default=...,
-        json_schema_extra={"linkml_meta": {"alias": "repository_name", "domain_of": ["RepositoryIdSource"]}},
     )
     type: Literal["GenomeCoordinatesSource"] = Field(
         default="GenomeCoordinatesSource",

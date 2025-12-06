@@ -56,12 +56,13 @@
       "output_name": null,
       "database_id": null,
       "input": [],
-      "repository_id": "NC_000913.3",
-      "repository_name": "genbank",
-      "coordinates": "complement(362231..367305)",
       "assembly_accession": "GCF_000005845.2",
+      "sequence_accession": "NC_000913.3",
       "locus_tag": "b0344",
-      "gene_id": 945006
+      "gene_id": 945006,
+      "start": 362231,
+      "end": 367305,
+      "strand": -1
     },
     {
       "id": 2,
@@ -195,7 +196,7 @@
   ],
   "description": "Cloning the lacZ gene from E. coli into an entry clone, then expression clone",
   "files": null,
-  "schema_version": "0.4.9",
+  "schema_version": "0.4.3",
   "backend_version": null,
   "frontend_version": null
 }

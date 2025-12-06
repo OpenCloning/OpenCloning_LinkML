@@ -404,16 +404,7 @@ linkml:Sparqlpath xsd:string
     CLOSED {
        (  $<RepositoryIdSource_tes> (  &<Source_tes> ;
              rdf:type [ schema1:CreateAction ] ? ;
-             <repository_id> @linkml:String ;
-             <repository_name> [ <https://opencloning.github.io/OpenCloning_LinkML/RepositoryName#addgene>
-                <https://opencloning.github.io/OpenCloning_LinkML/RepositoryName#genbank>
-                <https://opencloning.github.io/OpenCloning_LinkML/RepositoryName#benchling>
-                <https://opencloning.github.io/OpenCloning_LinkML/RepositoryName#snapgene>
-                <https://opencloning.github.io/OpenCloning_LinkML/RepositoryName#euroscarf>
-                <https://opencloning.github.io/OpenCloning_LinkML/RepositoryName#igem>
-                <https://opencloning.github.io/OpenCloning_LinkML/RepositoryName#wekwikgene>
-                <https://opencloning.github.io/OpenCloning_LinkML/RepositoryName#seva>
-                <https://opencloning.github.io/OpenCloning_LinkML/RepositoryName#open_dna_collections> ]
+             <repository_id> @linkml:String
           ) ;
           rdf:type [ <RepositoryIdSource> ]
        )

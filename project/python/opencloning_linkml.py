@@ -1,5 +1,5 @@
 # Auto generated from opencloning_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-12-05T23:17:44
+# Generation date: 2025-12-06T00:30:24
 # Schema: OpenCloning_LinkML
 #
 # id: https://opencloning.github.io/OpenCloning_LinkML
@@ -842,7 +842,6 @@ class RepositoryIdSource(Source):
 
     id: Union[int, RepositoryIdSourceId] = None
     repository_id: str = None
-    repository_name: Union[str, "RepositoryName"] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -854,11 +853,6 @@ class RepositoryIdSource(Source):
             self.MissingRequiredField("repository_id")
         if not isinstance(self.repository_id, str):
             self.repository_id = str(self.repository_id)
-
-        if self._is_empty(self.repository_name):
-            self.MissingRequiredField("repository_name")
-        if not isinstance(self.repository_name, RepositoryName):
-            self.repository_name = RepositoryName(self.repository_name)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -879,7 +873,6 @@ class AddgeneIdSource(RepositoryIdSource):
 
     id: Union[int, AddgeneIdSourceId] = None
     repository_id: str = None
-    repository_name: Union[str, "RepositoryName"] = None
     sequence_file_url: Optional[str] = None
     addgene_sequence_type: Optional[Union[str, "AddgeneSequenceType"]] = None
 
@@ -913,7 +906,6 @@ class WekWikGeneIdSource(RepositoryIdSource):
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.WekWikGeneIdSource
 
     id: Union[int, WekWikGeneIdSourceId] = None
-    repository_name: Union[str, "RepositoryName"] = None
     repository_id: str = None
     sequence_file_url: Optional[str] = None
 
@@ -949,7 +941,6 @@ class SEVASource(RepositoryIdSource):
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.SEVASource
 
     id: Union[int, SEVASourceId] = None
-    repository_name: Union[str, "RepositoryName"] = None
     repository_id: str = None
     sequence_file_url: Optional[str] = None
 
@@ -985,7 +976,6 @@ class BenchlingUrlSource(RepositoryIdSource):
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.BenchlingUrlSource
 
     id: Union[int, BenchlingUrlSourceId] = None
-    repository_name: Union[str, "RepositoryName"] = None
     repository_id: str = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -1018,7 +1008,6 @@ class SnapGenePlasmidSource(RepositoryIdSource):
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.SnapGenePlasmidSource
 
     id: Union[int, SnapGenePlasmidSourceId] = None
-    repository_name: Union[str, "RepositoryName"] = None
     repository_id: str = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -1050,7 +1039,6 @@ class EuroscarfSource(RepositoryIdSource):
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.EuroscarfSource
 
     id: Union[int, EuroscarfSourceId] = None
-    repository_name: Union[str, "RepositoryName"] = None
     repository_id: str = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -1082,7 +1070,6 @@ class IGEMSource(RepositoryIdSource):
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.IGEMSource
 
     id: Union[int, IGEMSourceId] = None
-    repository_name: Union[str, "RepositoryName"] = None
     sequence_file_url: str = None
     repository_id: str = None
 
@@ -1120,7 +1107,6 @@ class OpenDNACollectionsSource(RepositoryIdSource):
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.OpenDNACollectionsSource
 
     id: Union[int, OpenDNACollectionsSourceId] = None
-    repository_name: Union[str, "RepositoryName"] = None
     repository_id: str = None
     sequence_file_url: Optional[str] = None
 
@@ -1156,7 +1142,6 @@ class NCBISequenceSource(RepositoryIdSource):
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.NCBISequenceSource
 
     id: Union[int, NCBISequenceSourceId] = None
-    repository_name: Union[str, "RepositoryName"] = None
     repository_id: str = None
     coordinates: Optional[Union[str, SimpleSequenceLocation]] = None
 
@@ -1192,7 +1177,6 @@ class GenomeCoordinatesSource(NCBISequenceSource):
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.GenomeCoordinatesSource
 
     id: Union[int, GenomeCoordinatesSourceId] = None
-    repository_name: Union[str, "RepositoryName"] = None
     repository_id: str = None
     location: str = None
     assembly_accession: Optional[str] = None
@@ -2023,23 +2007,6 @@ class SequencingFile(AssociatedFile):
 
 
 # Enumerations
-class RepositoryName(EnumDefinitionImpl):
-
-    addgene = PermissibleValue(text="addgene", description="Addgene")
-    genbank = PermissibleValue(text="genbank", description="GenBank / NCBI")
-    benchling = PermissibleValue(text="benchling", description="Benchling")
-    snapgene = PermissibleValue(text="snapgene", description="SnapGene plasmid library")
-    euroscarf = PermissibleValue(text="euroscarf", description="Euroscarf (plasmids only)")
-    igem = PermissibleValue(text="igem", description="iGEM collection")
-    wekwikgene = PermissibleValue(text="wekwikgene", description="WekWikGene")
-    seva = PermissibleValue(text="seva", description="SEVA (Standard European Vector Architecture)")
-    open_dna_collections = PermissibleValue(text="open_dna_collections", description="Open DNA collections")
-
-    _defn = EnumDefinition(
-        name="RepositoryName",
-    )
-
-
 class Collection(EnumDefinitionImpl):
 
     AddgenePlasmid = PermissibleValue(text="AddgenePlasmid", description="A plasmid from Addgene")
@@ -2471,15 +2438,6 @@ slots.uploadedFileSource__coordinates = Slot(
     model_uri=OPENCLONING_LINKML.uploadedFileSource__coordinates,
     domain=None,
     range=Optional[Union[str, SequenceRange]],
-)
-
-slots.repositoryIdSource__repository_name = Slot(
-    uri=OPENCLONING_LINKML.repository_name,
-    name="repositoryIdSource__repository_name",
-    curie=OPENCLONING_LINKML.curie("repository_name"),
-    model_uri=OPENCLONING_LINKML.repositoryIdSource__repository_name,
-    domain=None,
-    range=Union[str, "RepositoryName"],
 )
 
 slots.addgeneIdSource__addgene_sequence_type = Slot(

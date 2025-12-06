@@ -411,49 +411,6 @@
   ],
   "enums": [
     {
-      "name": "RepositoryName",
-      "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/RepositoryName",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "permissible_values": [
-        {
-          "text": "addgene",
-          "description": "Addgene"
-        },
-        {
-          "text": "genbank",
-          "description": "GenBank / NCBI"
-        },
-        {
-          "text": "benchling",
-          "description": "Benchling"
-        },
-        {
-          "text": "snapgene",
-          "description": "SnapGene plasmid library"
-        },
-        {
-          "text": "euroscarf",
-          "description": "Euroscarf (plasmids only)"
-        },
-        {
-          "text": "igem",
-          "description": "iGEM collection"
-        },
-        {
-          "text": "wekwikgene",
-          "description": "WekWikGene"
-        },
-        {
-          "text": "seva",
-          "description": "SEVA (Standard European Vector Architecture)"
-        },
-        {
-          "text": "open_dna_collections",
-          "description": "Open DNA collections"
-        }
-      ]
-    },
-    {
       "name": "Collection",
       "definition_uri": "https://opencloning.github.io/OpenCloning_LinkML/Collection",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
@@ -1091,19 +1048,6 @@
         "UploadedFileSource"
       ],
       "range": "sequence_range",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "repositoryIdSource__repository_name",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/repository_name",
-      "alias": "repository_name",
-      "owner": "RepositoryIdSource",
-      "domain_of": [
-        "RepositoryIdSource"
-      ],
-      "range": "RepositoryName",
-      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2618,18 +2562,9 @@
         "output_name",
         "database_id",
         "source__input",
-        "repository_id",
-        "repositoryIdSource__repository_name"
+        "repository_id"
       ],
       "slot_usage": {},
-      "attributes": [
-        {
-          "name": "repository_name",
-          "range": "RepositoryName",
-          "required": true,
-          "@type": "SlotDefinition"
-        }
-      ],
       "class_uri": "https://opencloning.github.io/OpenCloning_LinkML/RepositoryIdSource",
       "@type": "ClassDefinition"
     },
@@ -2646,7 +2581,6 @@
         "database_id",
         "source__input",
         "repository_id",
-        "repositoryIdSource__repository_name",
         "sequence_file_url",
         "addgeneIdSource__addgene_sequence_type"
       ],
@@ -2673,7 +2607,6 @@
         "output_name",
         "database_id",
         "source__input",
-        "repositoryIdSource__repository_name",
         "sequence_file_url",
         "WekWikGeneIdSource_repository_id"
       ],
@@ -2693,7 +2626,6 @@
         "output_name",
         "database_id",
         "source__input",
-        "repositoryIdSource__repository_name",
         "SEVASource_sequence_file_url",
         "SEVASource_repository_id"
       ],
@@ -2713,7 +2645,6 @@
         "output_name",
         "database_id",
         "source__input",
-        "repositoryIdSource__repository_name",
         "BenchlingUrlSource_repository_id"
       ],
       "slot_usage": {},
@@ -2732,7 +2663,6 @@
         "output_name",
         "database_id",
         "source__input",
-        "repositoryIdSource__repository_name",
         "SnapGenePlasmidSource_repository_id"
       ],
       "slot_usage": {},
@@ -2751,7 +2681,6 @@
         "output_name",
         "database_id",
         "source__input",
-        "repositoryIdSource__repository_name",
         "EuroscarfSource_repository_id"
       ],
       "slot_usage": {},
@@ -2770,7 +2699,6 @@
         "output_name",
         "database_id",
         "source__input",
-        "repositoryIdSource__repository_name",
         "IGEMSource_sequence_file_url",
         "IGEMSource_repository_id"
       ],
@@ -2790,7 +2718,6 @@
         "output_name",
         "database_id",
         "source__input",
-        "repositoryIdSource__repository_name",
         "sequence_file_url",
         "OpenDNACollectionsSource_repository_id"
       ],
@@ -2810,7 +2737,6 @@
         "output_name",
         "database_id",
         "source__input",
-        "repositoryIdSource__repository_name",
         "nCBISequenceSource__coordinates",
         "NCBISequenceSource_repository_id"
       ],
@@ -2838,7 +2764,6 @@
         "output_name",
         "database_id",
         "source__input",
-        "repositoryIdSource__repository_name",
         "nCBISequenceSource__coordinates",
         "NCBISequenceSource_repository_id",
         "genomeCoordinatesSource__assembly_accession",
@@ -3575,9 +3500,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "opencloning_linkml.yaml",
-  "source_file_date": "2025-12-05T23:17:33",
-  "source_file_size": 26478,
-  "generation_date": "2025-12-05T23:17:42",
+  "source_file_date": "2025-12-06T00:30:19",
+  "source_file_size": 25654,
+  "generation_date": "2025-12-06T00:30:23",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/opencloning_linkml.context.jsonld",

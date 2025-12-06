@@ -59,12 +59,13 @@
       "output_name": null,
       "database_id": null,
       "input": [],
-      "repository_id": "NC_003424.3",
-      "repository_name": "genbank",
-      "coordinates": "1877189..1881726",
       "assembly_accession": "GCF_000002945.2",
+      "sequence_accession": "NC_003424.3",
       "locus_tag": "SPOM_SPAPB1A10.09",
-      "gene_id": 2543372
+      "gene_id": 2543372,
+      "start": 1877189,
+      "end": 1881726,
+      "strand": 1
     },
     {
       "id": 3,
@@ -184,7 +185,7 @@
   ],
   "description": "Cloning the ase1 gene from S. pombe's genome into pREP42-MCS+ expression vector using Gibson assembly.",
   "files": null,
-  "schema_version": "0.4.9",
+  "schema_version": "0.4.3",
   "backend_version": null,
   "frontend_version": null
 }

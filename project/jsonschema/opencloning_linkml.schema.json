@@ -46,9 +46,6 @@
                     "description": "The id of the sequence in the repository",
                     "type": "string"
                 },
-                "repository_name": {
-                    "$ref": "#/$defs/RepositoryName"
-                },
                 "sequence_file_url": {
                     "description": "The URL of a sequence file",
                     "pattern": "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$",
@@ -70,7 +67,6 @@
             },
             "required": [
                 "repository_id",
-                "repository_name",
                 "id"
             ],
             "title": "AddgeneIdSource",
@@ -388,9 +384,6 @@
                     "pattern": "^https:\\/\\/benchling\\.com\\/.+\\.gb$",
                     "type": "string"
                 },
-                "repository_name": {
-                    "$ref": "#/$defs/RepositoryName"
-                },
                 "type": {
                     "description": "Designates the class",
                     "enum": [
@@ -404,7 +397,6 @@
             },
             "required": [
                 "repository_id",
-                "repository_name",
                 "id"
             ],
             "title": "BenchlingUrlSource",
@@ -1112,9 +1104,6 @@
                     "pattern": "^P\\d+$",
                     "type": "string"
                 },
-                "repository_name": {
-                    "$ref": "#/$defs/RepositoryName"
-                },
                 "type": {
                     "description": "Designates the class",
                     "enum": [
@@ -1128,7 +1117,6 @@
             },
             "required": [
                 "repository_id",
-                "repository_name",
                 "id"
             ],
             "title": "EuroscarfSource",
@@ -1289,9 +1277,6 @@
                     "description": "The sequence accession (e.g. X60065.1)",
                     "type": "string"
                 },
-                "repository_name": {
-                    "$ref": "#/$defs/RepositoryName"
-                },
                 "type": {
                     "description": "Designates the class",
                     "enum": [
@@ -1305,7 +1290,6 @@
             },
             "required": [
                 "repository_id",
-                "repository_name",
                 "id"
             ],
             "title": "GenomeCoordinatesSource",
@@ -1480,9 +1464,6 @@
                     "description": "The unique identifier of the sequence in the iGEM collection (for now, {part_id}-{plasmid_backbone}) pattern: ^[^-]+-[^-]+$",
                     "type": "string"
                 },
-                "repository_name": {
-                    "$ref": "#/$defs/RepositoryName"
-                },
                 "sequence_file_url": {
                     "description": "The URL of the sequence file, for now github repository",
                     "pattern": "^.*.gb$",
@@ -1502,7 +1483,6 @@
             "required": [
                 "sequence_file_url",
                 "repository_id",
-                "repository_name",
                 "id"
             ],
             "title": "IGEMSource",
@@ -1856,9 +1836,6 @@
                     "description": "The sequence accession (e.g. X60065.1)",
                     "type": "string"
                 },
-                "repository_name": {
-                    "$ref": "#/$defs/RepositoryName"
-                },
                 "type": {
                     "description": "Designates the class",
                     "enum": [
@@ -1872,7 +1849,6 @@
             },
             "required": [
                 "repository_id",
-                "repository_name",
                 "id"
             ],
             "title": "NCBISequenceSource",
@@ -2003,9 +1979,6 @@
                     "pattern": "^[^\\/]+\\/[^\\/]+$",
                     "type": "string"
                 },
-                "repository_name": {
-                    "$ref": "#/$defs/RepositoryName"
-                },
                 "sequence_file_url": {
                     "description": "The URL of a sequence file",
                     "pattern": "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$",
@@ -2027,7 +2000,6 @@
             },
             "required": [
                 "repository_id",
-                "repository_name",
                 "id"
             ],
             "title": "OpenDNACollectionsSource",
@@ -2413,9 +2385,6 @@
                     "description": "The id of the sequence in the repository",
                     "type": "string"
                 },
-                "repository_name": {
-                    "$ref": "#/$defs/RepositoryName"
-                },
                 "type": {
                     "description": "Designates the class",
                     "enum": [
@@ -2429,27 +2398,10 @@
             },
             "required": [
                 "repository_id",
-                "repository_name",
                 "id"
             ],
             "title": "RepositoryIdSource",
             "type": "object"
-        },
-        "RepositoryName": {
-            "description": "",
-            "enum": [
-                "addgene",
-                "genbank",
-                "benchling",
-                "snapgene",
-                "euroscarf",
-                "igem",
-                "wekwikgene",
-                "seva",
-                "open_dna_collections"
-            ],
-            "title": "RepositoryName",
-            "type": "string"
         },
         "RestrictionAndLigationSource": {
             "additionalProperties": false,
@@ -2721,9 +2673,6 @@
                     "pattern": "^pSEVA\\d+.*$",
                     "type": "string"
                 },
-                "repository_name": {
-                    "$ref": "#/$defs/RepositoryName"
-                },
                 "sequence_file_url": {
                     "description": "The URL of the sequence file, which can refer to a a gb file hosted on the SEVA website or an entry in the NCBI.",
                     "pattern": "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$",
@@ -2745,7 +2694,6 @@
             },
             "required": [
                 "repository_id",
-                "repository_name",
                 "id"
             ],
             "title": "SEVASource",
@@ -2945,9 +2893,6 @@
                     "pattern": "^[^\\/]+\\/[^\\/]+$",
                     "type": "string"
                 },
-                "repository_name": {
-                    "$ref": "#/$defs/RepositoryName"
-                },
                 "type": {
                     "description": "Designates the class",
                     "enum": [
@@ -2961,7 +2906,6 @@
             },
             "required": [
                 "repository_id",
-                "repository_name",
                 "id"
             ],
             "title": "SnapGenePlasmidSource",
@@ -3215,9 +3159,6 @@
                     "pattern": "^\\d+$",
                     "type": "string"
                 },
-                "repository_name": {
-                    "$ref": "#/$defs/RepositoryName"
-                },
                 "sequence_file_url": {
                     "description": "The URL of a sequence file",
                     "pattern": "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$",
@@ -3239,7 +3180,6 @@
             },
             "required": [
                 "repository_id",
-                "repository_name",
                 "id"
             ],
             "title": "WekWikGeneIdSource",

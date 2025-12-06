@@ -338,10 +338,6 @@ classes:
     is_a: Source
     description: >-
       Represents the source of a sequence that is identified by a repository id
-    attributes:
-      - repository_name:
-          range: RepositoryName
-          required: true
     slots:
       - repository_id
 
@@ -350,7 +346,6 @@ classes:
     description: >-
       Represents the source of a sequence that is identified by an Addgene id
     attributes:
-      # TODO: repository_name constrain to addgene
       - addgene_sequence_type:
           range: AddgeneSequenceType
     slots:
@@ -861,35 +856,6 @@ slots:
     required: true
 
 enums:
-  RepositoryName:
-    permissible_values:
-      addgene:
-        description: >-
-          Addgene
-      genbank:
-        description: >-
-          GenBank / NCBI
-      benchling:
-        description: >-
-          Benchling
-      snapgene:
-        description: >-
-          SnapGene plasmid library
-      euroscarf:
-        description: >-
-          Euroscarf (plasmids only)
-      igem:
-        description: >-
-          iGEM collection
-      wekwikgene:
-        description: >-
-          WekWikGene
-      seva:
-        description: >-
-          SEVA (Standard European Vector Architecture)
-      open_dna_collections:
-        description: >-
-          Open DNA collections
 
   Collection:
     permissible_values:

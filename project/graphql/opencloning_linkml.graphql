@@ -33,19 +33,6 @@ enum GatewayReactionType
     BP
   }
 
-enum RepositoryName
-  {
-    addgene
-    genbank
-    benchling
-    snapgene
-    euroscarf
-    igem
-    wekwikgene
-    seva
-    open_dna_collections
-  }
-
 enum SequenceFileFormat
   {
     fasta
@@ -62,7 +49,6 @@ type AddgeneIdSource
     databaseId: Integer
     input: [SourceInput]
     repositoryId: String!
-    repositoryName: RepositoryName!
     sequenceFileUrl: String
     addgeneSequenceType: AddgeneSequenceType
   }
@@ -118,7 +104,6 @@ type BenchlingUrlSource
     outputName: String
     databaseId: Integer
     input: [SourceInput]
-    repositoryName: RepositoryName!
     repositoryId: String!
   }
 
@@ -200,7 +185,6 @@ type EuroscarfSource
     outputName: String
     databaseId: Integer
     input: [SourceInput]
-    repositoryName: RepositoryName!
     repositoryId: String!
   }
 
@@ -223,7 +207,6 @@ type GenomeCoordinatesSource
     outputName: String
     databaseId: Integer
     input: [SourceInput]
-    repositoryName: RepositoryName!
     coordinates: SimpleSequenceLocation
     repositoryId: String!
     assemblyAccession: String
@@ -259,7 +242,6 @@ type IGEMSource
     outputName: String
     databaseId: Integer
     input: [SourceInput]
-    repositoryName: RepositoryName!
     sequenceFileUrl: String!
     repositoryId: String!
   }
@@ -325,7 +307,6 @@ type NCBISequenceSource
     outputName: String
     databaseId: Integer
     input: [SourceInput]
-    repositoryName: RepositoryName!
     coordinates: SimpleSequenceLocation
     repositoryId: String!
   }
@@ -347,7 +328,6 @@ type OpenDNACollectionsSource
     outputName: String
     databaseId: Integer
     input: [SourceInput]
-    repositoryName: RepositoryName!
     sequenceFileUrl: String
     repositoryId: String!
   }
@@ -418,7 +398,6 @@ type RepositoryIdSource
     databaseId: Integer
     input: [SourceInput]
     repositoryId: String!
-    repositoryName: RepositoryName!
   }
 
 type RestrictionAndLigationSource
@@ -498,7 +477,6 @@ type SEVASource
     outputName: String
     databaseId: Integer
     input: [SourceInput]
-    repositoryName: RepositoryName!
     sequenceFileUrl: String
     repositoryId: String!
   }
@@ -510,7 +488,6 @@ type SnapGenePlasmidSource
     outputName: String
     databaseId: Integer
     input: [SourceInput]
-    repositoryName: RepositoryName!
     repositoryId: String!
   }
 
@@ -568,7 +545,6 @@ type WekWikGeneIdSource
     outputName: String
     databaseId: Integer
     input: [SourceInput]
-    repositoryName: RepositoryName!
     sequenceFileUrl: String
     repositoryId: String!
   }
