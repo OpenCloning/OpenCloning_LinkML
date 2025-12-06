@@ -1,0 +1,394 @@
+{
+  "sequences": [
+    {
+      "id": 1,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 2,
+      "type": "TemplateSequence",
+      "circular": null,
+      "primer_design": null
+    },
+    {
+      "id": 3,
+      "type": "TemplateSequence",
+      "circular": false,
+      "primer_design": null
+    },
+    {
+      "id": 4,
+      "type": "TemplateSequence",
+      "circular": false,
+      "primer_design": null
+    }
+  ],
+  "sources": [
+    {
+      "id": 1,
+      "type": "CollectionSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
+      "category_id": "recipient BB3",
+      "title": "Recipient BB3",
+      "description": "To clone multiple TUs from BB2 plasmids",
+      "image": null,
+      "options": [
+        {
+          "name": "BB3aK_AC - 2 TUs (locus AOX1tt, Kanamycin)",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98530",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB3aK_AC",
+            "description": "2 TUs (locus AOX1tt, Kanamycin)",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "C / 12"
+          }
+        },
+        {
+          "name": "BB3aK_AD - 3 TUs (locus AOX1tt, Kanamycin)",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98531",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB3aK_AD",
+            "description": "3 TUs (locus AOX1tt, Kanamycin)",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "D / 1"
+          }
+        },
+        {
+          "name": "BB3aK_AE - 4 TUs (locus AOX1tt, Kanamycin)",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98532",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB3aK_AE",
+            "description": "4 TUs (locus AOX1tt, Kanamycin)",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "D / 2"
+          }
+        },
+        {
+          "name": "BB3aK_AF - 5 TUs (locus AOX1tt, Kanamycin)",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98533",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB3aK_AF",
+            "description": "5 TUs (locus AOX1tt, Kanamycin)",
+            "type": "AddgenePlasmid",
+            "resistance": "Kanamycin",
+            "well": "D / 3"
+          }
+        },
+        {
+          "name": "BB3eH_AC - 2 TUs (locus ENO1, Hygromycin)",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98544",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB3eH_AC",
+            "description": "2 TUs (locus ENO1, Hygromycin)",
+            "type": "AddgenePlasmid",
+            "resistance": "Hygromycin",
+            "well": "E / 2"
+          }
+        },
+        {
+          "name": "BB3eH_AD - 3 TUs (locus ENO1, Hygromycin)",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98545",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB3eH_AD",
+            "description": "3 TUs (locus ENO1, Hygromycin)",
+            "type": "AddgenePlasmid",
+            "resistance": "Hygromycin",
+            "well": "E / 3"
+          }
+        },
+        {
+          "name": "BB3eH_AE - 4 TUs (locus ENO1, Hygromycin)",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98546",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB3eH_AE",
+            "description": "4 TUs (locus ENO1, Hygromycin)",
+            "type": "AddgenePlasmid",
+            "resistance": "Hygromycin",
+            "well": "E / 4"
+          }
+        },
+        {
+          "name": "BB3eH_AF - 5 TUs (locus ENO1, Hygromycin)",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98547",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB3eH_AF",
+            "description": "5 TUs (locus ENO1, Hygromycin)",
+            "type": "AddgenePlasmid",
+            "resistance": "Hygromycin",
+            "well": "E / 5"
+          }
+        },
+        {
+          "name": "BB3rN_AC - 2 TUs (locus RGI2, clonNat)",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98551",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB3rN_AC",
+            "description": "2 TUs (locus RGI2, clonNat)",
+            "type": "AddgenePlasmid",
+            "resistance": "Nourseothricin (clonNat)",
+            "well": "E / 9"
+          }
+        },
+        {
+          "name": "BB3rN_AD - 3 TUs (locus RGI2, clonNat)",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98552",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB3rN_AD",
+            "description": "3 TUs (locus RGI2, clonNat)",
+            "type": "AddgenePlasmid",
+            "resistance": "Nourseothricin (clonNat)",
+            "well": "E / 10"
+          }
+        },
+        {
+          "name": "BB3rN_AE - 4 TUs (locus RGI2, clonNat)",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98553",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB3rN_AE",
+            "description": "4 TUs (locus RGI2, clonNat)",
+            "type": "AddgenePlasmid",
+            "resistance": "Nourseothricin (clonNat)",
+            "well": "E / 11"
+          }
+        },
+        {
+          "name": "BB3rN_AF - 5 TUs (locus RGI2, clonNat)",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98554",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB3rN_AF",
+            "description": "5 TUs (locus RGI2, clonNat)",
+            "type": "AddgenePlasmid",
+            "resistance": "Nourseothricin (clonNat)",
+            "well": "E / 12"
+          }
+        },
+        {
+          "name": "BB3rN_AG - 6 TUs (locus RGI2, clonNat)",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98555",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB3rN_AG",
+            "description": "6 TUs (locus RGI2, clonNat)",
+            "type": "AddgenePlasmid",
+            "resistance": "Nourseothricin (clonNat)",
+            "well": "F / 1"
+          }
+        },
+        {
+          "name": "BB3rN_AH - 7 TUs (locus RGI2, clonNat)",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98556",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB3rN_AH",
+            "description": "7 TUs (locus RGI2, clonNat)",
+            "type": "AddgenePlasmid",
+            "resistance": "Nourseothricin (clonNat)",
+            "well": "F / 2"
+          }
+        },
+        {
+          "name": "BB3rN_AI - 8 TUs (locus RGI2, clonNat)",
+          "source": {
+            "id": 0,
+            "type": "AddgeneIdSource",
+            "output_name": null,
+            "database_id": null,
+            "input": [],
+            "repository_id": "98557",
+            "sequence_file_url": null,
+            "addgene_sequence_type": null
+          },
+          "info": {
+            "name": "BB3rN_AI",
+            "description": "8 TUs (locus RGI2, clonNat)",
+            "type": "AddgenePlasmid",
+            "resistance": "Nourseothricin (clonNat)",
+            "well": "F / 3"
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "RestrictionAndLigationSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [
+        {
+          "type": "SourceInput",
+          "sequence": 1
+        }
+      ],
+      "circular": null,
+      "restriction_enzymes": [
+        "BsaI"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "GenomeCoordinatesSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [],
+      "repository_id": "LT962479.2",
+      "coordinates": "1237975..241966",
+      "assembly_accession": "GCA_900235035.2",
+      "locus_tag": "BQ9382_C4-0695",
+      "gene_id": null
+    },
+    {
+      "id": 4,
+      "type": "HomologousRecombinationSource",
+      "output_name": null,
+      "database_id": null,
+      "input": [
+        {
+          "type": "SourceInput",
+          "sequence": 3
+        },
+        {
+          "type": "SourceInput",
+          "sequence": 2
+        }
+      ],
+      "circular": null
+    }
+  ],
+  "primers": [],
+  "description": "Multiple BB2 into BB3\n\nCloning of several TUs from BB2 plasmids into a BB3",
+  "files": null,
+  "schema_version": "0.4.9",
+  "backend_version": null,
+  "frontend_version": null
+}
