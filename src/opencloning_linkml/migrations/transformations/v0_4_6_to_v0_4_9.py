@@ -19,18 +19,28 @@ def migrate_manually_typed_source(source: dict) -> dict:
     return new_source
 
 
-def migrate_repository_id_source(source: dict) -> dict:
-    new_source = {key: value for key, value in source.items() if key != "type"}
+def migrate_genbank_repository_id(source: dict) -> dict:
+    new_source = {key: value for key, value in source.items() if key not in ["type", "repository_name"]}
     return NCBISequenceSource(**new_source).model_dump()
+
+
+def migrate_repository_id_source(source: dict) -> dict:
+    new_source = deepcopy(source)
+    del new_source["repository_name"]
+    return new_source
 
 
 def migrate_source(source: dict) -> dict:
     if source["type"] == "ManuallyTypedSource":
         return migrate_manually_typed_source(source)
     elif source["type"] == "RepositoryIdSource" and source["repository_name"] == "genbank":
+        return migrate_genbank_repository_id(source)
+    elif "repository_name" in source:
         return migrate_repository_id_source(source)
     elif source["type"] == "GenomeCoordinatesSource":
         return migrate_genome_coordinates_source(source)
+    elif source["type"] == "CollectionSource":
+        source["options"] = [{**o, "source": migrate_source(o["source"])} for o in source["options"]]
     return source
 
 
@@ -44,7 +54,7 @@ def migrate_genome_coordinates_source(source: dict) -> dict:
     excluded_fields = ["type", "strand", "start", "end", "sequence_accession"]
     extra_fields = {key: value for key, value in source.items() if key not in excluded_fields}
     return new_GenomeCoordinatesSource(
-        coordinates=location, repository_name="genbank", repository_id=old_source.sequence_accession, **extra_fields
+        coordinates=location, repository_id=old_source.sequence_accession, **extra_fields
     ).model_dump()
 
 
