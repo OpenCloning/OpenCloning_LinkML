@@ -102,7 +102,7 @@ linkml:Sparqlpath xsd:string
        )
     } OR @<CreLoxRecombinationSource> OR @<GatewaySource> OR @<GibsonAssemblySource> OR @<HomologousRecombinationSource> OR
     @<InFusionSource> OR @<InVivoAssemblySource> OR @<LigationSource> OR @<OverlapExtensionPCRLigationSource> OR @<PCRSource> OR
-    @<RestrictionAndLigationSource>
+    @<RecombinaseSource> OR @<RestrictionAndLigationSource>
 )
 
 <AssociatedFile>  (
@@ -397,6 +397,27 @@ linkml:Sparqlpath xsd:string
           <sequence> @linkml:String ?
        ) ;
        rdf:type [ <Primer> ]
+    )
+}
+
+<Recombinase> CLOSED {
+    (  $<Recombinase_tes> (  schema1:name @linkml:String ? ;
+          <site1> @linkml:String ? ;
+          <site2> @linkml:String ? ;
+          <site1_name> @linkml:String ? ;
+          <site2_name> @linkml:String ?
+       ) ;
+       rdf:type [ <Recombinase> ] ?
+    )
+}
+
+<RecombinaseSource> CLOSED {
+    (  $<RecombinaseSource_tes> (  &<AssemblySource_tes> ;
+          rdf:type [ <AssemblySource> ] ? ;
+          <recombinases> @<Recombinase> + ;
+          <reverse_reaction> @linkml:Boolean
+       ) ;
+       rdf:type [ <RecombinaseSource> ]
     )
 }
 

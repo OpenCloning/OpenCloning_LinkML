@@ -390,6 +390,27 @@ type Primer
     sequence: String
   }
 
+type Recombinase
+  {
+    name: String
+    site1: String
+    site2: String
+    site1Name: String
+    site2Name: String
+  }
+
+type RecombinaseSource
+  {
+    id: Integer!
+    type: String
+    outputName: String
+    databaseId: Integer
+    input: [SourceInput]
+    circular: Boolean
+    recombinases: [Recombinase]!
+    reverseReaction: Boolean!
+  }
+
 type RepositoryIdSource
   {
     id: Integer!
