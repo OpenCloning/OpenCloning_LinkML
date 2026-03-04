@@ -414,8 +414,7 @@ linkml:Sparqlpath xsd:string
 <RecombinaseSource> CLOSED {
     (  $<RecombinaseSource_tes> (  &<AssemblySource_tes> ;
           rdf:type [ <AssemblySource> ] ? ;
-          <recombinases> @<Recombinase> + ;
-          <reverse_reaction> @linkml:Boolean
+          <recombinases> @<Recombinase> +
        ) ;
        rdf:type [ <RecombinaseSource> ]
     )

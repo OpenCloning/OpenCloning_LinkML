@@ -1330,20 +1330,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "recombinaseSource__reverse_reaction",
-      "description": "Whether the reaction can happen in both directions (i.e. reverse or forward)",
-      "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
-      "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/reverse_reaction",
-      "alias": "reverse_reaction",
-      "owner": "RecombinaseSource",
-      "domain_of": [
-        "RecombinaseSource"
-      ],
-      "range": "boolean",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "cloningStrategy__sequences",
       "description": "The sequences that are used in the cloning strategy",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
@@ -3325,8 +3311,7 @@
         "database_id",
         "source__input",
         "assemblySource__circular",
-        "recombinaseSource__recombinases",
-        "recombinaseSource__reverse_reaction"
+        "recombinaseSource__recombinases"
       ],
       "slot_usage": {},
       "attributes": [
@@ -3336,13 +3321,6 @@
           "required": true,
           "multivalued": true,
           "inlined_as_list": true,
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "reverse_reaction",
-          "description": "Whether the reaction can happen in both directions (i.e. reverse or forward)",
-          "range": "boolean",
-          "required": true,
           "@type": "SlotDefinition"
         }
       ],
@@ -3665,9 +3643,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "opencloning_linkml.yaml",
-  "source_file_date": "2026-03-04T17:45:24",
-  "source_file_size": 26596,
-  "generation_date": "2026-03-04T17:45:29",
+  "source_file_date": "2026-03-04T18:08:25",
+  "source_file_size": 26405,
+  "generation_date": "2026-03-04T18:08:29",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/opencloning_linkml.context.jsonld",

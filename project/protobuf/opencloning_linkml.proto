@@ -367,7 +367,6 @@ message RecombinaseSource
  repeated  sourceInput input = 0
   boolean circular = 0
  repeated  recombinase recombinases = 0
-  boolean reverseReaction = 0
  }
 // Represents the source of a sequence that is identified by a repository id
 message RepositoryIdSource

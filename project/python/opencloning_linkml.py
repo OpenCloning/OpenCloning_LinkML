@@ -1,5 +1,5 @@
 # Auto generated from opencloning_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-03-04T17:45:29
+# Generation date: 2026-03-04T18:08:30
 # Schema: OpenCloning_LinkML
 #
 # id: https://opencloning.github.io/OpenCloning_LinkML
@@ -1746,7 +1746,6 @@ class RecombinaseSource(AssemblySource):
 
     id: Union[int, RecombinaseSourceId] = None
     recombinases: Union[Union[dict, Recombinase], list[Union[dict, Recombinase]]] = None
-    reverse_reaction: Union[bool, Bool] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -1759,11 +1758,6 @@ class RecombinaseSource(AssemblySource):
         if not isinstance(self.recombinases, list):
             self.recombinases = [self.recombinases] if self.recombinases is not None else []
         self.recombinases = [v if isinstance(v, Recombinase) else Recombinase(**as_dict(v)) for v in self.recombinases]
-
-        if self._is_empty(self.reverse_reaction):
-            self.MissingRequiredField("reverse_reaction")
-        if not isinstance(self.reverse_reaction, Bool):
-            self.reverse_reaction = Bool(self.reverse_reaction)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -2709,15 +2703,6 @@ slots.recombinaseSource__recombinases = Slot(
     model_uri=OPENCLONING_LINKML.recombinaseSource__recombinases,
     domain=None,
     range=Union[Union[dict, Recombinase], list[Union[dict, Recombinase]]],
-)
-
-slots.recombinaseSource__reverse_reaction = Slot(
-    uri=OPENCLONING_LINKML.reverse_reaction,
-    name="recombinaseSource__reverse_reaction",
-    curie=OPENCLONING_LINKML.curie("reverse_reaction"),
-    model_uri=OPENCLONING_LINKML.recombinaseSource__reverse_reaction,
-    domain=None,
-    range=Union[bool, Bool],
 )
 
 slots.cloningStrategy__sequences = Slot(

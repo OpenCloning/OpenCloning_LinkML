@@ -3342,11 +3342,6 @@ class RecombinaseSource(AssemblySource):
     recombinases: list[Recombinase] = Field(
         default=..., json_schema_extra={"linkml_meta": {"alias": "recombinases", "domain_of": ["RecombinaseSource"]}}
     )
-    reverse_reaction: bool = Field(
-        default=...,
-        description="""Whether the reaction can happen in both directions (i.e. reverse or forward)""",
-        json_schema_extra={"linkml_meta": {"alias": "reverse_reaction", "domain_of": ["RecombinaseSource"]}},
-    )
     circular: Optional[bool] = Field(
         default=None,
         description="""Whether the assembly is circular or not""",

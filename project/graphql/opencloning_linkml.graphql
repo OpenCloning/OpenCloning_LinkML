@@ -408,7 +408,6 @@ type RecombinaseSource
     input: [SourceInput]
     circular: Boolean
     recombinases: [Recombinase]!
-    reverseReaction: Boolean!
   }
 
 type RepositoryIdSource

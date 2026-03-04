@@ -660,11 +660,6 @@ classes:
           required: true
           multivalued: true
           inlined_as_list: true
-      - reverse_reaction:
-          range: boolean
-          description: >-
-            Whether the reaction can happen in both directions (i.e. reverse or forward)
-          required: true
 
   CloningStrategy:
     description: >-
