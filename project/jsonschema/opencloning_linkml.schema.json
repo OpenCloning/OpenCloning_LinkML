@@ -2361,10 +2361,7 @@
                 },
                 "site1": {
                     "pattern": "^[A-Z]+[a-z]+[A-Z]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "site1_name": {
                     "type": [
@@ -2374,10 +2371,7 @@
                 },
                 "site2": {
                     "pattern": "^[A-Z]+[a-z]+[A-Z]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "site2_name": {
                     "type": [
@@ -2386,6 +2380,10 @@
                     ]
                 }
             },
+            "required": [
+                "site1",
+                "site2"
+            ],
             "title": "Recombinase",
             "type": "object"
         },

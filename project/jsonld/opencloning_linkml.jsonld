@@ -1269,6 +1269,7 @@
         "Recombinase"
       ],
       "range": "string",
+      "required": true,
       "pattern": "^[A-Z]+[a-z]+[A-Z]+$",
       "@type": "SlotDefinition"
     },
@@ -1282,6 +1283,7 @@
         "Recombinase"
       ],
       "range": "string",
+      "required": true,
       "pattern": "^[A-Z]+[a-z]+[A-Z]+$",
       "@type": "SlotDefinition"
     },
@@ -1289,6 +1291,7 @@
       "name": "recombinase__site1_name",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/site1_name",
+      "ifabsent": "string(\"site1\")",
       "alias": "site1_name",
       "owner": "Recombinase",
       "domain_of": [
@@ -1301,6 +1304,7 @@
       "name": "recombinase__site2_name",
       "from_schema": "https://opencloning.github.io/OpenCloning_LinkML",
       "slot_uri": "https://opencloning.github.io/OpenCloning_LinkML/site2_name",
+      "ifabsent": "string(\"site2\")",
       "alias": "site2_name",
       "owner": "Recombinase",
       "domain_of": [
@@ -3281,22 +3285,26 @@
         {
           "name": "site1",
           "range": "string",
+          "required": true,
           "pattern": "^[A-Z]+[a-z]+[A-Z]+$",
           "@type": "SlotDefinition"
         },
         {
           "name": "site2",
           "range": "string",
+          "required": true,
           "pattern": "^[A-Z]+[a-z]+[A-Z]+$",
           "@type": "SlotDefinition"
         },
         {
           "name": "site1_name",
+          "ifabsent": "string(\"site1\")",
           "range": "string",
           "@type": "SlotDefinition"
         },
         {
           "name": "site2_name",
+          "ifabsent": "string(\"site2\")",
           "range": "string",
           "@type": "SlotDefinition"
         }
@@ -3657,9 +3665,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "opencloning_linkml.yaml",
-  "source_file_date": "2026-03-04T17:32:27",
-  "source_file_size": 26474,
-  "generation_date": "2026-03-04T17:32:29",
+  "source_file_date": "2026-03-04T17:45:24",
+  "source_file_size": 26596,
+  "generation_date": "2026-03-04T17:45:29",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/opencloning_linkml.context.jsonld",

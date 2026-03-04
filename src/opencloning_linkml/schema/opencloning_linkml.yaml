@@ -638,13 +638,17 @@ classes:
       - site1:
           range: string
           pattern: ^[A-Z]+[a-z]+[A-Z]+$
+          required: true
       - site2:
           range: string
           pattern: ^[A-Z]+[a-z]+[A-Z]+$
+          required: true
       - site1_name:
           range: string
+          ifabsent: string("site1")
       - site2_name:
           range: string
+          ifabsent: string("site2")
 
   RecombinaseSource:
     is_a: AssemblySource

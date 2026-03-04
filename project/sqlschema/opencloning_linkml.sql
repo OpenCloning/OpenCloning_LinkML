@@ -789,8 +789,8 @@ CREATE TABLE "RestrictionEnzymeDigestionSource" (
 CREATE TABLE "Recombinase" (
 	id INTEGER NOT NULL,
 	name TEXT,
-	site1 TEXT,
-	site2 TEXT,
+	site1 TEXT NOT NULL,
+	site2 TEXT NOT NULL,
 	site1_name TEXT,
 	site2_name TEXT,
 	"RecombinaseSource_id" INTEGER,

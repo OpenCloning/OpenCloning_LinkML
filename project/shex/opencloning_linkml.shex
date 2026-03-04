@@ -402,8 +402,8 @@ linkml:Sparqlpath xsd:string
 
 <Recombinase> CLOSED {
     (  $<Recombinase_tes> (  schema1:name @linkml:String ? ;
-          <site1> @linkml:String ? ;
-          <site2> @linkml:String ? ;
+          <site1> @linkml:String ;
+          <site2> @linkml:String ;
           <site1_name> @linkml:String ? ;
           <site2_name> @linkml:String ?
        ) ;

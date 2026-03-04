@@ -1,5 +1,5 @@
 # Auto generated from opencloning_linkml.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-03-04T17:32:30
+# Generation date: 2026-03-04T17:45:29
 # Schema: OpenCloning_LinkML
 #
 # id: https://opencloning.github.io/OpenCloning_LinkML
@@ -1702,21 +1702,25 @@ class Recombinase(YAMLRoot):
     class_name: ClassVar[str] = "Recombinase"
     class_model_uri: ClassVar[URIRef] = OPENCLONING_LINKML.Recombinase
 
+    site1: str = None
+    site2: str = None
     name: Optional[str] = None
-    site1: Optional[str] = None
-    site2: Optional[str] = None
-    site1_name: Optional[str] = None
-    site2_name: Optional[str] = None
+    site1_name: Optional[str] = "site1"
+    site2_name: Optional[str] = "site2"
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self.name is not None and not isinstance(self.name, str):
-            self.name = str(self.name)
-
-        if self.site1 is not None and not isinstance(self.site1, str):
+        if self._is_empty(self.site1):
+            self.MissingRequiredField("site1")
+        if not isinstance(self.site1, str):
             self.site1 = str(self.site1)
 
-        if self.site2 is not None and not isinstance(self.site2, str):
+        if self._is_empty(self.site2):
+            self.MissingRequiredField("site2")
+        if not isinstance(self.site2, str):
             self.site2 = str(self.site2)
+
+        if self.name is not None and not isinstance(self.name, str):
+            self.name = str(self.name)
 
         if self.site1_name is not None and not isinstance(self.site1_name, str):
             self.site1_name = str(self.site1_name)
@@ -2666,7 +2670,7 @@ slots.recombinase__site1 = Slot(
     curie=OPENCLONING_LINKML.curie("site1"),
     model_uri=OPENCLONING_LINKML.recombinase__site1,
     domain=None,
-    range=Optional[str],
+    range=str,
     pattern=re.compile(r"^[A-Z]+[a-z]+[A-Z]+$"),
 )
 
@@ -2676,7 +2680,7 @@ slots.recombinase__site2 = Slot(
     curie=OPENCLONING_LINKML.curie("site2"),
     model_uri=OPENCLONING_LINKML.recombinase__site2,
     domain=None,
-    range=Optional[str],
+    range=str,
     pattern=re.compile(r"^[A-Z]+[a-z]+[A-Z]+$"),
 )
 

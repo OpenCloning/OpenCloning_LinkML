@@ -393,8 +393,8 @@ type Primer
 type Recombinase
   {
     name: String
-    site1: String
-    site2: String
+    site1: String!
+    site2: String!
     site1Name: String
     site2Name: String
   }

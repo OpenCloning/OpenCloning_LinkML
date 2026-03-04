@@ -3286,17 +3286,23 @@ class Recombinase(ConfiguredBaseModel):
             }
         },
     )
-    site1: Optional[str] = Field(
-        default=None, json_schema_extra={"linkml_meta": {"alias": "site1", "domain_of": ["Recombinase"]}}
+    site1: str = Field(
+        default=..., json_schema_extra={"linkml_meta": {"alias": "site1", "domain_of": ["Recombinase"]}}
     )
-    site2: Optional[str] = Field(
-        default=None, json_schema_extra={"linkml_meta": {"alias": "site2", "domain_of": ["Recombinase"]}}
+    site2: str = Field(
+        default=..., json_schema_extra={"linkml_meta": {"alias": "site2", "domain_of": ["Recombinase"]}}
     )
     site1_name: Optional[str] = Field(
-        default=None, json_schema_extra={"linkml_meta": {"alias": "site1_name", "domain_of": ["Recombinase"]}}
+        default="site1",
+        json_schema_extra={
+            "linkml_meta": {"alias": "site1_name", "domain_of": ["Recombinase"], "ifabsent": 'string("site1")'}
+        },
     )
     site2_name: Optional[str] = Field(
-        default=None, json_schema_extra={"linkml_meta": {"alias": "site2_name", "domain_of": ["Recombinase"]}}
+        default="site2",
+        json_schema_extra={
+            "linkml_meta": {"alias": "site2_name", "domain_of": ["Recombinase"], "ifabsent": 'string("site2")'}
+        },
     )
 
     @field_validator("site1")
